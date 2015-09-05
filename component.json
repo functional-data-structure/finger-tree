@@ -1,0 +1,11 @@
+{
+	"scripts": [
+		"js/dist/fingertree.js"
+	],
+	"repo": "aureooms/js-fingertree",
+	"name": "aureooms-js-fingertree",
+	"version": "0.0.0",
+	"description": "Finger Trees code bricks for JavaScript",
+	"main": "js/dist/fingertree.js",
+	"license": "AGPL-3.0"
+}
