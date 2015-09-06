@@ -1,0 +1,2 @@
+
+const EMPTY = new EmptyGenerator( ) ;
