@@ -1,7 +1,13 @@
 [js-fingertree](http://aureooms.github.io/js-fingertree)
 ==
 
-Finger Trees code bricks for JavaScript
+Finger trees code bricks for JavaScript.
+
+```js
+Tree a = | Empty
+         | Single a
+         | Deep ( Digit a ) ( Tree ( Node a ) ) ( Digit a )
+```
 
 [![NPM license](http://img.shields.io/npm/l/aureooms-js-fingertree.svg?style=flat)](https://raw.githubusercontent.com/aureooms/js-fingertree/master/LICENSE)
 [![NPM version](http://img.shields.io/npm/v/aureooms-js-fingertree.svg?style=flat)](https://www.npmjs.org/package/aureooms-js-fingertree)
