@@ -96,4 +96,14 @@ assert.deepEqual( list( W.tail( ) ) , [ 'a' , 'b' , 'c' , 'd' , 'e' ] ) ;
 
 assert.deepEqual( list( W.concat( Z ) ) , list( "xabcdeabcdex" ) ) ;
 
+// MAKE NAIVE nodes(.) FAIL
+
+var F = new FingerTree( COUNTER ) ;
+var G = new FingerTree( COUNTER ) ;
+
+F = F.extend( range( 4 + 16 ) ) ;
+G = G.extendleft( range( 4 + 16 ) ) ;
+
+assert.equal( F.concat( G ).measure( ) , 40 ) ;
+
 } ) ;
