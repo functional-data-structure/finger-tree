@@ -104,6 +104,6 @@ var G = new FingerTree( COUNTER ) ;
 F = F.extend( range( 4 + 16 ) ) ;
 G = G.extendleft( range( 4 + 16 ) ) ;
 
-assert.equal( F.concat( G ).measure( ) , 40 ) ;
+assert.equal( F.concat( G ).measure( ) , 40 , "make naive nodes(.) fail" ) ;
 
 } ) ;
