@@ -9,7 +9,7 @@ function deepR ( M , left , middle , right ) {
 
 		if ( middle.empty( ) ) return from_iterable( M , left ) ;
 
-		return new Deep( M , left , middle.init( ) , middle.last( ).digit( ) ) ;
+		return new Deep( M , left , delay( ( ) => middle.init( ) ) , middle.last( ).digit( ) ) ;
 	}
 
 	return new Deep( M , left , middle , digit( right ) ) ;

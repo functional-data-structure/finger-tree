@@ -32,7 +32,7 @@ class Deep extends Tree {
 				return from_iterable( this.measure , this.right ) ;
 			}
 
-			return new Deep( this.measure , this.middle.head( ).digit( ) , this.middle.tail( ) , this.right ) ;
+			return new Deep( this.measure , this.middle.head( ).digit( ) , delay( ( ) => this.middle.tail( ) ) , this.right ) ;
 
 		}
 
@@ -48,7 +48,7 @@ class Deep extends Tree {
 				return from_iterable( this.measure , this.left ) ;
 			}
 
-			return new Deep( this.measure , this.left , this.middle.init( ) , this.middle.last( ).digit( ) ) ;
+			return new Deep( this.measure , this.left , delay( ( ) => this.middle.init( ) ) , this.middle.last( ).digit( ) ) ;
 
 		}
 

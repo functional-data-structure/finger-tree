@@ -19,10 +19,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 	var definition = function definition(exports, undefined) {
 		var marked2$0 = [chain, map, reversed].map(regeneratorRuntime.mark);
 
-		/* js/src/core */
-		/* js/src/core/concatenate */
-		/* js/src/core/concatenate/app3.js */
+		/* js/src/0-core */
+		/* js/src/0-core/concatenate */
+		/* js/src/0-core/concatenate/app3.js */
 		var app3 = function app3(A, list, B) {
+
+			A = A.force();
+			B = B.force();
 
 			if (A instanceof Empty) return extendleft(B, list);
 			if (B instanceof Empty) return extend(A, list);
@@ -30,10 +33,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 			if (A instanceof Single) return extendleft(B, list).unshift(A.head());
 			if (B instanceof Single) return extend(A, list).push(B.last());
 
-			return new Deep(A.measure, A.left, app3(A.middle, nodes(A.measure, [].concat(_toConsumableArray(chain(A.right, list, B.left)))), B.middle), B.right);
+			return new Deep(A.measure, A.left, delay(function () {
+				return app3(A.middle, nodes(A.measure, [].concat(_toConsumableArray(chain(A.right, list, B.left)))), B.middle);
+			}), B.right);
 		};
 
-		/* js/src/core/concatenate/digit.js */
+		/* js/src/0-core/concatenate/digit.js */
 
 		function digit(list) {
 
@@ -53,25 +58,25 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 			}
 		}
 
-		/* js/src/core/concatenate/extend.js */
+		/* js/src/0-core/concatenate/extend.js */
 		function extend(tree, list) {
 
 			return reduce(push, list, tree);
 		}
 
-		/* js/src/core/concatenate/extendleft.js */
+		/* js/src/0-core/concatenate/extendleft.js */
 		function extendleft(tree, list) {
 
 			return reduce(unshift, reversed(list), tree);
 		}
 
-		/* js/src/core/concatenate/from_iterable.js */
+		/* js/src/0-core/concatenate/from_iterable.js */
 		function from_iterable(measure, iterable) {
 
 			return reduce(push, iterable, new Empty(measure));
 		}
 
-		/* js/src/core/concatenate/nodes.js */
+		/* js/src/0-core/concatenate/nodes.js */
 		function nodes(M, list) {
 
 			switch (list.length) {
@@ -88,25 +93,25 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 			}
 		}
 
-		/* js/src/core/concatenate/push.js */
+		/* js/src/0-core/concatenate/push.js */
 		function push(T, x) {
 			return T.push(x);
 		}
 
-		/* js/src/core/concatenate/unshift.js */
+		/* js/src/0-core/concatenate/unshift.js */
 		function unshift(T, x) {
 			return T.unshift(x);
 		}
 
-		/* js/src/core/empty */
-		/* js/src/core/empty/1-EmptyGenerator.js */
+		/* js/src/0-core/empty */
+		/* js/src/0-core/empty/1-EmptyGenerator.js */
 
 		var EmptyGenerator = (function () {
 			function EmptyGenerator() {
 				_classCallCheck(this, EmptyGenerator);
 			}
 
-			/* js/src/core/empty/2-EMPTY.js */
+			/* js/src/0-core/empty/2-EMPTY.js */
 
 			_createClass(EmptyGenerator, [{
 				key: 'next',
@@ -121,8 +126,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 		var EMPTY = new EmptyGenerator();
 
-		/* js/src/core/itertools */
-		/* js/src/core/itertools/chain.js */
+		/* js/src/0-core/itertools */
+		/* js/src/0-core/itertools/chain.js */
 		function chain() {
 			var _iteratorNormalCompletion,
 			    _didIteratorError,
@@ -204,7 +209,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 			}, marked2$0[0], this, [[3, 14, 18, 26], [19,, 21, 25]]);
 		}
 
-		/* js/src/core/itertools/map.js */
+		/* js/src/0-core/itertools/map.js */
 		function map(callable, iterable) {
 			var _iteratorNormalCompletion2, _didIteratorError2, _iteratorError2, _iterator2, _step2, value;
 
@@ -273,7 +278,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 			}, marked2$0[1], this, [[3, 14, 18, 26], [19,, 21, 25]]);
 		}
 
-		/* js/src/core/itertools/reduce.js */
+		/* js/src/0-core/itertools/reduce.js */
 		function reduce(callable, iterable, initial) {
 
 			var accumulator = initial;
@@ -305,7 +310,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 			return accumulator;
 		}
 
-		/* js/src/core/itertools/reversed.js */
+		/* js/src/0-core/itertools/reversed.js */
 		function reversed(list) {
 			var i;
 			return regeneratorRuntime.wrap(function reversed$(context$3$0) {
@@ -333,8 +338,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 			}, marked2$0[2], this);
 		}
 
-		/* js/src/core/measure */
-		/* js/src/core/measure/Measured.js */
+		/* js/src/0-core/measure */
+		/* js/src/0-core/measure/Measured.js */
 
 		var Measured = function Measured(measure, element) {
 			_classCallCheck(this, Measured);
@@ -343,7 +348,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 			this.v = measure.measure(element);
 		}
 
-		/* js/src/core/measure/cache.js */
+		/* js/src/0-core/measure/cache.js */
 
 		;
 
@@ -379,15 +384,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 			return M instanceof CachedMeasure ? M : new CachedMeasure(M);
 		}
 
-		/* js/src/core/measure/measure.js */
+		/* js/src/0-core/measure/measure.js */
 
 		function measure(M, list) {
 
 			return reduce(M.plus.bind(M), map(M.measure.bind(M), list), M.zero());
 		}
 
-		/* js/src/core/split */
-		/* js/src/core/split/Split.js */
+		/* js/src/0-core/split */
+		/* js/src/0-core/split/Split.js */
 
 		var Split = function Split(left, middle, right) {
 			_classCallCheck(this, Split);
@@ -397,7 +402,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 			this.right = right;
 		}
 
-		/* js/src/core/split/deepL.js */
+		/* js/src/0-core/split/deepL.js */
 		/**
   * @param {Array} left
   * @param {FingerTree} middle
@@ -411,13 +416,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 				if (middle.empty()) return from_iterable(M, right);
 
-				return new Deep(M, middle.head().digit(), middle.tail(), right);
+				return new Deep(M, middle.head().digit(), delay(function () {
+					return middle.tail();
+				}), right);
 			}
 
 			return new Deep(M, digit(left), middle, right);
 		}
 
-		/* js/src/core/split/deepR.js */
+		/* js/src/0-core/split/deepR.js */
 		/**
   * @param {Digit} left
   * @param {FingerTree} middle
@@ -429,14 +436,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 				if (middle.empty()) return from_iterable(M, left);
 
-				return new Deep(M, left, middle.init(), middle.last().digit());
+				return new Deep(M, left, delay(function () {
+					return middle.init();
+				}), middle.last().digit());
 			}
 
 			return new Deep(M, left, middle, digit(right));
 		}
 
-		/* js/src/digit */
-		/* js/src/digit/1-One.js */
+		/* js/src/1-digit */
+		/* js/src/1-digit/1-One.js */
 
 		var One = (function () {
 			function One(a) {
@@ -445,7 +454,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 				this.a = a;
 			}
 
-			/* js/src/digit/2-Two.js */
+			/* js/src/1-digit/2-Two.js */
 
 			_createClass(One, [{
 				key: Symbol.iterator,
@@ -524,7 +533,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 				this.b = b;
 			}
 
-			/* js/src/digit/3-Three.js */
+			/* js/src/1-digit/3-Three.js */
 
 			_createClass(Two, [{
 				key: Symbol.iterator,
@@ -610,7 +619,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 				this.c = c;
 			}
 
-			/* js/src/digit/4-Four.js */
+			/* js/src/1-digit/4-Four.js */
 
 			_createClass(Three, [{
 				key: Symbol.iterator,
@@ -703,8 +712,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 				this.d = d;
 			}
 
-			/* js/src/node */
-			/* js/src/node/Node2.js */
+			/* js/src/2-node */
+			/* js/src/2-node/Node2.js */
 
 			_createClass(Four, [{
 				key: Symbol.iterator,
@@ -871,7 +880,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 			return new Node2(measure(M, [a, b]), a, b);
 		}
 
-		/* js/src/node/Node3.js */
+		/* js/src/2-node/Node3.js */
 
 		var Node3 = (function () {
 			function Node3(v, a, b, c) {
@@ -956,19 +965,24 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 			return new Node3(measure(M, [a, b, c]), a, b, c);
 		}
 
-		/* js/src/tree */
-		/* js/src/tree/0-sugar */
-		/* js/src/tree/0-sugar/Tree.js */
+		/* js/src/3-tree */
+		/* js/src/3-tree/0-sugar */
+		/* js/src/3-tree/0-sugar/Tree.js */
 
 		var Tree = (function () {
 			function Tree() {
 				_classCallCheck(this, Tree);
 			}
 
-			/* js/src/tree/1-base */
-			/* js/src/tree/1-base/0-Empty.js */
+			/* js/src/3-tree/1-base */
+			/* js/src/3-tree/1-base/0-Empty.js */
 
 			_createClass(Tree, [{
+				key: 'force',
+				value: function force() {
+					return this;
+				}
+			}, {
 				key: 'takeUntil',
 				value: function takeUntil(p) {
 					return this.split(p)[0];
@@ -1004,7 +1018,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 				this.v = measure.zero();
 			}
 
-			/* js/src/tree/1-base/1-Single.js */
+			/* js/src/3-tree/1-base/1-Single.js */
 
 			_createClass(Empty, [{
 				key: 'empty',
@@ -1082,7 +1096,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 				this.v = measure.measure(element);
 			}
 
-			/* js/src/tree/1-base/2-Deep.js */
+			/* js/src/3-tree/1-base/2-Deep.js */
 
 			_createClass(Single, [{
 				key: 'empty',
@@ -1172,8 +1186,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 				this.v = M.plus(measure(M, this.left), M.plus(this.middle.v, measure(M, this.right)));
 			}
 
-			/* js/src/tree/2-api */
-			/* js/src/tree/2-api/FingerTree.js */
+			/* js/src/3-tree/2-api */
+			/* js/src/3-tree/2-api/FingerTree.js */
 
 			_createClass(Deep, [{
 				key: 'empty',
@@ -1193,6 +1207,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 			}, {
 				key: 'tail',
 				value: function tail() {
+					var _this = this;
 
 					if (this.left.length === 1) {
 
@@ -1200,7 +1215,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 							return from_iterable(this.measure, this.right);
 						}
 
-						return new Deep(this.measure, this.middle.head().digit(), this.middle.tail(), this.right);
+						return new Deep(this.measure, this.middle.head().digit(), delay(function () {
+							return _this.middle.tail();
+						}), this.right);
 					}
 
 					return new Deep(this.measure, this.left.tail(), this.middle, this.right);
@@ -1208,6 +1225,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 			}, {
 				key: 'init',
 				value: function init() {
+					var _this2 = this;
 
 					if (this.right.length === 1) {
 
@@ -1215,7 +1233,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 							return from_iterable(this.measure, this.left);
 						}
 
-						return new Deep(this.measure, this.left, this.middle.init(), this.middle.last().digit());
+						return new Deep(this.measure, this.left, delay(function () {
+							return _this2.middle.init();
+						}), this.middle.last().digit());
 					}
 
 					return new Deep(this.measure, this.left, this.middle, this.right.init());
@@ -1534,6 +1554,106 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 		})(Tree);
 
 		exports.FingerTree = FingerTree;
+
+		/* js/src/4-lazy */
+		/* js/src/4-lazy/Lazy.js */
+
+		var Lazy = (function (_Tree5) {
+			_inherits(Lazy, _Tree5);
+
+			function Lazy(thunk) {
+				_classCallCheck(this, Lazy);
+
+				_get(Object.getPrototypeOf(Lazy.prototype), 'constructor', this).call(this);
+				this.tree = null;
+				this.thunk = thunk;
+			}
+
+			/* js/src/4-lazy/delay.js */
+
+			_createClass(Lazy, [{
+				key: 'force',
+				value: function force() {
+					if (this.tree === null) this.tree = this.thunk();
+					return this.tree;
+				}
+			}, {
+				key: 'empty',
+				value: function empty() {
+					return this.force().empty();
+				}
+			}, {
+				key: 'head',
+				value: function head() {
+					return this.force().head();
+				}
+			}, {
+				key: 'last',
+				value: function last() {
+					return this.force().last();
+				}
+			}, {
+				key: 'unshift',
+				value: function unshift(value) {
+					return this.force().unshift(value);
+				}
+			}, {
+				key: 'push',
+				value: function push(value) {
+					return this.force().push(value);
+				}
+			}, {
+				key: 'tail',
+				value: function tail() {
+					return this.force().tail();
+				}
+			}, {
+				key: 'init',
+				value: function init() {
+					return this.force().init();
+				}
+			}, {
+				key: 'splitTree',
+				value: function splitTree(p, i) {
+					return this.force().splitTree(p, i);
+				}
+			}, {
+				key: 'split',
+				value: function split(p) {
+					return this.force().split(p);
+				}
+			}, {
+				key: 'concat',
+				value: function concat(other) {
+					return this.force().concat(other);
+				}
+			}, {
+				key: Symbol.iterator,
+				value: regeneratorRuntime.mark(function value() {
+					return regeneratorRuntime.wrap(function value$(context$4$0) {
+						while (1) switch (context$4$0.prev = context$4$0.next) {
+							case 0:
+								return context$4$0.delegateYield(this.force(), 't0', 1);
+
+							case 1:
+							case 'end':
+								return context$4$0.stop();
+						}
+					}, value, this);
+				})
+			}, {
+				key: 'v',
+				get: function get() {
+					return this.force().v;
+				}
+			}]);
+
+			return Lazy;
+		})(Tree);
+
+		function delay(thunk) {
+			return new Lazy(thunk);
+		}
 
 		return exports;
 	};
