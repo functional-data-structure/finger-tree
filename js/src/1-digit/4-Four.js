@@ -42,7 +42,7 @@ class Four {
 		throw new Error( "cannot unshift digit Four" ) ;
 	}
 
-	node ( measure ) {
+	node ( M ) {
 		throw new Error( "cannot convert Four to node" ) ;
 	}
 
@@ -50,11 +50,11 @@ class Four {
 	 * It is assumed that p(|this|) is true.
 	 */
 	splitDigit ( p , i , M ) {
-		i = M.plus( i , this.a.v ) ;
+		i = M.plus( i , M.measure( this.a ) ) ;
 		if ( p( i ) ) return new Split( [ ] , this.a , [ this.b , this.c , this.d ] ) ;
-		i = M.plus( i , this.b.v ) ;
+		i = M.plus( i , M.measure( this.b ) ) ;
 		if ( p( i ) ) return new Split( [ this.a ] , this.b , [ this.c , this.d ] ) ;
-		i = M.plus( i , this.c.v ) ;
+		i = M.plus( i , M.measure( this.c ) ) ;
 		if ( p( i ) ) return new Split( [ this.a , this.b ] , this.c , [ this.d ] ) ;
 		return new Split( [ this.a , this.b , this.c ] , this.d , [ ] ) ;
 	}

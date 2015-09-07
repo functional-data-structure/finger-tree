@@ -10,11 +10,11 @@ const app3 = function ( A , list , B ) {
 	if ( B instanceof Single ) return extend( A , list ).push( B.last( ) ) ;
 
 	return new Deep(
-		A.measure ,
+		A.M ,
 		A.left ,
 		delay( ( ) => app3(
 			A.middle ,
-			nodes( A.measure , [ ...chain( A.right , list , B.left ) ] ) ,
+			nodes( A.M , [ ...chain( A.right , list , B.left ) ] ) ,
 			B.middle
 		) ) ,
 		B.right

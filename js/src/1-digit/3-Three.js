@@ -40,17 +40,17 @@ class Three {
 		return new Four( value , this.a , this.b , this.c ) ;
 	}
 
-	node ( measure ) {
-		return node3( measure , this.a , this.b , this.c ) ;
+	node ( M ) {
+		return node3( M , this.a , this.b , this.c ) ;
 	}
 
 	/**
 	 * It is assumed that p(|this|) is true.
 	 */
 	splitDigit ( p , i , M ) {
-		i = M.plus( i , this.a.v ) ;
+		i = M.plus( i , M.measure( this.a ) ) ;
 		if ( p( i ) ) return new Split( [ ] , this.a , [ this.b , this.c ] ) ;
-		i = M.plus( i , this.b.v ) ;
+		i = M.plus( i , M.measure( this.b ) ) ;
 		if ( p( i ) ) return new Split( [ this.a ] , this.b , [ this.c ] ) ;
 		return new Split( [ this.a , this.b ] , this.c , [ ] ) ;
 	}

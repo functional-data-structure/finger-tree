@@ -15,8 +15,8 @@ class Lazy extends Tree {
 		return this.force( ).empty( ) ;
 	}
 
-	get v ( ) {
-		return this.force( ).v ;
+	measure ( ) {
+		return this.force( ).measure( ) ;
 	}
 
 	head ( ) {

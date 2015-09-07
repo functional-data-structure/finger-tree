@@ -1,9 +1,13 @@
 class Empty extends Tree {
 
-	constructor ( measure ) {
+	constructor ( M ) {
 		super( ) ;
-		this.measure = measure ;
-		this.v = measure.zero( ) ;
+		this.M = M ;
+		this.v = M.zero( ) ;
+	}
+
+	measure ( ) {
+		return this.v ;
 	}
 
 	empty ( ) {
@@ -27,11 +31,11 @@ class Empty extends Tree {
 	}
 
 	push ( value ) {
-		return new Single( this.measure , value ) ;
+		return new Single( this.M , value ) ;
 	}
 
 	unshift ( value ) {
-		return new Single( this.measure , value ) ;
+		return new Single( this.M , value ) ;
 	}
 
 	concat ( other ) {

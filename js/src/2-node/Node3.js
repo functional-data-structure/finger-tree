@@ -14,6 +14,10 @@ class Node3 {
 		yield this.c ;
 	}
 
+	measure ( ) {
+		return this.v ;
+	}
+
 	digit ( ) {
 		return new Three( this.a , this.b , this.c ) ;
 	}

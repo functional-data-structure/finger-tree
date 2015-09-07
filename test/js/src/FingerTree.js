@@ -24,7 +24,7 @@ var N = 10 ;
 list( range( N ) ).forEach ( function ( value ) { T = T.push( value ) ; } ) ;
 list( range( N ) ).forEach ( function ( value ) { T = T.unshift( value ) ; } ) ;
 
-assert.deepEqual( list( T ) , list( chain( [ reversed( range( N ) ) , range( N ) ] ) ) ) ;
+assert.deepEqual( list( T ) , list( chain( [ reversed( range( N ) ) , range( N ) ] ) ) , "check T 9..00..9" ) ;
 
 var U = FingerTree.from_iterable( COUNTER , range( N ) ) ;
 
@@ -33,10 +33,10 @@ list( range( N ) ).forEach ( function ( ) {
 	T = T.tail( ) ;
 } ) ;
 
-assert.deepEqual( list( U ) , list( chain( [ range( N ) , reversed( range( N ) ) ] ) ) ) ;
-assert.deepEqual( list( T ) , list( range( N ) ) ) ;
+assert.deepEqual( list( U ) , list( chain( [ range( N ) , reversed( range( N ) ) ] ) ) , "check U 0..99..0" ) ;
+assert.deepEqual( list( T ) , list( range( N ) ) , "check T 0..9" ) ;
 
-assert.deepEqual( list( U.concat( T ) ) , list( chain( [ range( N ) , reversed( range( N ) ) , range( N ) ] ) ) ) ;
+assert.deepEqual( list( U.concat( T ) ) , list( chain( [ range( N ) , reversed( range( N ) ) , range( N ) ] ) ) , "concat U T 0..99..00..9" ) ;
 
 assert.equal( U.measure( ) , 2*N ) ;
 assert.equal( U.tail( ).measure( ) , 2*N-1 ) ;
