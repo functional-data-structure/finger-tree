@@ -4,9 +4,9 @@
 Finger trees code bricks for JavaScript.
 
 ```js
-Tree a = | Empty
-         | Single a
-         | Deep ( Digit a ) ( Tree ( Node a ) ) ( Digit a )
+data FingerTree a = Empty
+                  | Single a
+                  | Deep ( Digit a ) ( FingerTree ( Node a ) ) ( Digit a )
 ```
 
 [![NPM license](http://img.shields.io/npm/l/aureooms-js-fingertree.svg?style=flat)](https://raw.githubusercontent.com/aureooms/js-fingertree/master/LICENSE)
