@@ -1,0 +1,6 @@
+
+class Lazy extends Tree {
+
+
+
+}
