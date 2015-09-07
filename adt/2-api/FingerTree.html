@@ -1,0 +1,72 @@
+<!DOCTYPE html><html lang="en"><head><title>adt/2-api/FingerTree</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../../"><meta name="groc-document-path" content="adt/2-api/FingerTree"><meta name="groc-project-path" content="js/src/adt/2-api/FingerTree.js"><meta name="groc-github-url" content="https://github.com/aureooms/js-fingertree"><link rel="stylesheet" type="text/css" media="all" href="../../assets/style.css"><script type="text/javascript" src="../../assets/behavior.js"></script><body><div id="meta"><div class="file-path"><a href="https://github.com/aureooms/js-fingertree/blob/master/js/src/adt/2-api/FingerTree.js">js/src/adt/2-api/FingerTree.js</a></div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">FingerTree</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Tree</span> </span>{
+
+	constructor ( measure , T = <span class="hljs-keyword">new</span> Empty( cache( measure ) ) ) {
+		<span class="hljs-keyword">super</span>( ) ;
+		<span class="hljs-keyword">this</span>.M = measure ;
+		<span class="hljs-keyword">this</span>.T = T ;
+	}
+
+	measure ( ) {
+		<span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.T.v ;
+	}
+
+	empty ( ) {
+		<span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.T.empty( ) ;
+	}
+
+	head ( ) {
+		<span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.T.head( ).element ;
+	}
+
+	last ( ) {
+		<span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.T.last( ).element ;
+	}
+
+	tail ( ) {
+		<span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> FingerTree( <span class="hljs-keyword">this</span>.M , <span class="hljs-keyword">this</span>.T.tail( ) ) ;
+	}
+
+	init ( ) {
+		<span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> FingerTree( <span class="hljs-keyword">this</span>.M , <span class="hljs-keyword">this</span>.T.init( ) ) ;
+	}
+
+	push ( value ) {
+		<span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> FingerTree( <span class="hljs-keyword">this</span>.M , <span class="hljs-keyword">this</span>.T.push( <span class="hljs-keyword">new</span> Measured( <span class="hljs-keyword">this</span>.M , value ) ) ) ;
+	}
+
+	unshift ( value ) {
+		<span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> FingerTree( <span class="hljs-keyword">this</span>.M , <span class="hljs-keyword">this</span>.T.unshift( <span class="hljs-keyword">new</span> Measured( <span class="hljs-keyword">this</span>.M , value ) ) ) ;
+	}
+
+	concat ( other ) {
+		<span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> FingerTree( <span class="hljs-keyword">this</span>.M , <span class="hljs-keyword">this</span>.T.concat( other.T ) ) ;
+	}
+
+	* [<span class="hljs-built_in">Symbol</span>.iterator] ( ) {
+
+		<span class="hljs-keyword">for</span> ( <span class="hljs-keyword">const</span> measured <span class="hljs-keyword">of</span> <span class="hljs-keyword">this</span>.T ) <span class="hljs-keyword">yield</span> measured.element ;
+
+	}
+
+	splitTree ( p , i ) {
+
+		<span class="hljs-keyword">const</span> { left , middle , right } = <span class="hljs-keyword">this</span>.T.splitTree( p , i ) ;
+
+		<span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> Split( <span class="hljs-keyword">new</span> FingerTree( <span class="hljs-keyword">this</span>.M , left ) , middle.element , <span class="hljs-keyword">new</span> FingerTree( <span class="hljs-keyword">this</span>.M , right ) ) ;
+
+	}
+
+	split ( p ) {
+		<span class="hljs-keyword">const</span> [ left , right ] = <span class="hljs-keyword">this</span>.T.split( p ) ;
+		<span class="hljs-keyword">return</span> [ <span class="hljs-keyword">new</span> FingerTree( <span class="hljs-keyword">this</span>.M , left ) , <span class="hljs-keyword">new</span> FingerTree( <span class="hljs-keyword">this</span>.M , right ) ] ;
+	}
+
+	static from_iterable ( measure , iterable ) {
+
+		<span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> FingerTree( measure ).extend( iterable ) ;
+
+	}
+
+}
+
+exports.FingerTree = FingerTree ;</div></div></div></div></body></html>

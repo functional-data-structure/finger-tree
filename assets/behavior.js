@@ -150,25 +150,745 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
         }
       ]
     }, {
-      "type": "file",
+      "type": "folder",
       "data": {
-        "language": {
-          "nameMatchers": [".js"],
-          "pygmentsLexer": "javascript",
-          "multiLineComment": ["/*", "*", "*/"],
-          "singleLineComment": ["//"],
-          "ignorePrefix": "}",
-          "foldPrefix": "^",
-          "name": "JavaScript"
-        },
-        "sourcePath": "/home/aureooms/dev/js/js-fingertree/js/src/dummy.js",
-        "projectPath": "js/src/dummy.js",
-        "targetPath": "dummy",
-        "pageTitle": "dummy",
-        "title": "dummy"
+        "path": "adt",
+        "title": "adt"
       },
       "depth": 1,
-      "outline": []
+      "children": [
+        {
+          "type": "folder",
+          "data": {
+            "path": "adt/0-sugar",
+            "title": "0-sugar"
+          },
+          "depth": 2,
+          "children": [
+            {
+              "type": "file",
+              "data": {
+                "language": {
+                  "nameMatchers": [".js"],
+                  "pygmentsLexer": "javascript",
+                  "multiLineComment": ["/*", "*", "*/"],
+                  "singleLineComment": ["//"],
+                  "ignorePrefix": "}",
+                  "foldPrefix": "^",
+                  "name": "JavaScript"
+                },
+                "sourcePath": "/home/aureooms/dev/js/js-fingertree/js/src/adt/0-sugar/Tree.js",
+                "projectPath": "js/src/adt/0-sugar/Tree.js",
+                "targetPath": "adt/0-sugar/Tree",
+                "pageTitle": "adt/0-sugar/Tree",
+                "title": "Tree"
+              },
+              "depth": 3,
+              "outline": []
+            }
+          ]
+        }, {
+          "type": "folder",
+          "data": {
+            "path": "adt/1-base",
+            "title": "1-base"
+          },
+          "depth": 2,
+          "children": [
+            {
+              "type": "file",
+              "data": {
+                "language": {
+                  "nameMatchers": [".js"],
+                  "pygmentsLexer": "javascript",
+                  "multiLineComment": ["/*", "*", "*/"],
+                  "singleLineComment": ["//"],
+                  "ignorePrefix": "}",
+                  "foldPrefix": "^",
+                  "name": "JavaScript"
+                },
+                "sourcePath": "/home/aureooms/dev/js/js-fingertree/js/src/adt/1-base/0-Empty.js",
+                "projectPath": "js/src/adt/1-base/0-Empty.js",
+                "targetPath": "adt/1-base/0-Empty",
+                "pageTitle": "adt/1-base/0-Empty",
+                "title": "0-Empty"
+              },
+              "depth": 3,
+              "outline": []
+            }, {
+              "type": "file",
+              "data": {
+                "language": {
+                  "nameMatchers": [".js"],
+                  "pygmentsLexer": "javascript",
+                  "multiLineComment": ["/*", "*", "*/"],
+                  "singleLineComment": ["//"],
+                  "ignorePrefix": "}",
+                  "foldPrefix": "^",
+                  "name": "JavaScript"
+                },
+                "sourcePath": "/home/aureooms/dev/js/js-fingertree/js/src/adt/1-base/1-Single.js",
+                "projectPath": "js/src/adt/1-base/1-Single.js",
+                "targetPath": "adt/1-base/1-Single",
+                "pageTitle": "adt/1-base/1-Single",
+                "title": "1-Single"
+              },
+              "depth": 3,
+              "outline": []
+            }, {
+              "type": "file",
+              "data": {
+                "language": {
+                  "nameMatchers": [".js"],
+                  "pygmentsLexer": "javascript",
+                  "multiLineComment": ["/*", "*", "*/"],
+                  "singleLineComment": ["//"],
+                  "ignorePrefix": "}",
+                  "foldPrefix": "^",
+                  "name": "JavaScript"
+                },
+                "sourcePath": "/home/aureooms/dev/js/js-fingertree/js/src/adt/1-base/2-Deep.js",
+                "projectPath": "js/src/adt/1-base/2-Deep.js",
+                "targetPath": "adt/1-base/2-Deep",
+                "pageTitle": "adt/1-base/2-Deep",
+                "title": "2-Deep"
+              },
+              "depth": 3,
+              "outline": []
+            }
+          ]
+        }, {
+          "type": "folder",
+          "data": {
+            "path": "adt/2-api",
+            "title": "2-api"
+          },
+          "depth": 2,
+          "children": [
+            {
+              "type": "file",
+              "data": {
+                "language": {
+                  "nameMatchers": [".js"],
+                  "pygmentsLexer": "javascript",
+                  "multiLineComment": ["/*", "*", "*/"],
+                  "singleLineComment": ["//"],
+                  "ignorePrefix": "}",
+                  "foldPrefix": "^",
+                  "name": "JavaScript"
+                },
+                "sourcePath": "/home/aureooms/dev/js/js-fingertree/js/src/adt/2-api/FingerTree.js",
+                "projectPath": "js/src/adt/2-api/FingerTree.js",
+                "targetPath": "adt/2-api/FingerTree",
+                "pageTitle": "adt/2-api/FingerTree",
+                "title": "FingerTree"
+              },
+              "depth": 3,
+              "outline": []
+            }
+          ]
+        }
+      ]
+    }, {
+      "type": "folder",
+      "data": {
+        "path": "core",
+        "title": "core"
+      },
+      "depth": 1,
+      "children": [
+        {
+          "type": "folder",
+          "data": {
+            "path": "core/concatenate",
+            "title": "concatenate"
+          },
+          "depth": 2,
+          "children": [
+            {
+              "type": "file",
+              "data": {
+                "language": {
+                  "nameMatchers": [".js"],
+                  "pygmentsLexer": "javascript",
+                  "multiLineComment": ["/*", "*", "*/"],
+                  "singleLineComment": ["//"],
+                  "ignorePrefix": "}",
+                  "foldPrefix": "^",
+                  "name": "JavaScript"
+                },
+                "sourcePath": "/home/aureooms/dev/js/js-fingertree/js/src/core/concatenate/app3.js",
+                "projectPath": "js/src/core/concatenate/app3.js",
+                "targetPath": "core/concatenate/app3",
+                "pageTitle": "core/concatenate/app3",
+                "title": "app3"
+              },
+              "depth": 3,
+              "outline": []
+            }, {
+              "type": "file",
+              "data": {
+                "language": {
+                  "nameMatchers": [".js"],
+                  "pygmentsLexer": "javascript",
+                  "multiLineComment": ["/*", "*", "*/"],
+                  "singleLineComment": ["//"],
+                  "ignorePrefix": "}",
+                  "foldPrefix": "^",
+                  "name": "JavaScript"
+                },
+                "sourcePath": "/home/aureooms/dev/js/js-fingertree/js/src/core/concatenate/digit.js",
+                "projectPath": "js/src/core/concatenate/digit.js",
+                "targetPath": "core/concatenate/digit",
+                "pageTitle": "core/concatenate/digit",
+                "title": "digit"
+              },
+              "depth": 3,
+              "outline": []
+            }, {
+              "type": "file",
+              "data": {
+                "language": {
+                  "nameMatchers": [".js"],
+                  "pygmentsLexer": "javascript",
+                  "multiLineComment": ["/*", "*", "*/"],
+                  "singleLineComment": ["//"],
+                  "ignorePrefix": "}",
+                  "foldPrefix": "^",
+                  "name": "JavaScript"
+                },
+                "sourcePath": "/home/aureooms/dev/js/js-fingertree/js/src/core/concatenate/extend.js",
+                "projectPath": "js/src/core/concatenate/extend.js",
+                "targetPath": "core/concatenate/extend",
+                "pageTitle": "core/concatenate/extend",
+                "title": "extend"
+              },
+              "depth": 3,
+              "outline": []
+            }, {
+              "type": "file",
+              "data": {
+                "language": {
+                  "nameMatchers": [".js"],
+                  "pygmentsLexer": "javascript",
+                  "multiLineComment": ["/*", "*", "*/"],
+                  "singleLineComment": ["//"],
+                  "ignorePrefix": "}",
+                  "foldPrefix": "^",
+                  "name": "JavaScript"
+                },
+                "sourcePath": "/home/aureooms/dev/js/js-fingertree/js/src/core/concatenate/extendleft.js",
+                "projectPath": "js/src/core/concatenate/extendleft.js",
+                "targetPath": "core/concatenate/extendleft",
+                "pageTitle": "core/concatenate/extendleft",
+                "title": "extendleft"
+              },
+              "depth": 3,
+              "outline": []
+            }, {
+              "type": "file",
+              "data": {
+                "language": {
+                  "nameMatchers": [".js"],
+                  "pygmentsLexer": "javascript",
+                  "multiLineComment": ["/*", "*", "*/"],
+                  "singleLineComment": ["//"],
+                  "ignorePrefix": "}",
+                  "foldPrefix": "^",
+                  "name": "JavaScript"
+                },
+                "sourcePath": "/home/aureooms/dev/js/js-fingertree/js/src/core/concatenate/from_iterable.js",
+                "projectPath": "js/src/core/concatenate/from_iterable.js",
+                "targetPath": "core/concatenate/from_iterable",
+                "pageTitle": "core/concatenate/from_iterable",
+                "title": "from_iterable"
+              },
+              "depth": 3,
+              "outline": []
+            }, {
+              "type": "file",
+              "data": {
+                "language": {
+                  "nameMatchers": [".js"],
+                  "pygmentsLexer": "javascript",
+                  "multiLineComment": ["/*", "*", "*/"],
+                  "singleLineComment": ["//"],
+                  "ignorePrefix": "}",
+                  "foldPrefix": "^",
+                  "name": "JavaScript"
+                },
+                "sourcePath": "/home/aureooms/dev/js/js-fingertree/js/src/core/concatenate/nodes.js",
+                "projectPath": "js/src/core/concatenate/nodes.js",
+                "targetPath": "core/concatenate/nodes",
+                "pageTitle": "core/concatenate/nodes",
+                "title": "nodes"
+              },
+              "depth": 3,
+              "outline": []
+            }, {
+              "type": "file",
+              "data": {
+                "language": {
+                  "nameMatchers": [".js"],
+                  "pygmentsLexer": "javascript",
+                  "multiLineComment": ["/*", "*", "*/"],
+                  "singleLineComment": ["//"],
+                  "ignorePrefix": "}",
+                  "foldPrefix": "^",
+                  "name": "JavaScript"
+                },
+                "sourcePath": "/home/aureooms/dev/js/js-fingertree/js/src/core/concatenate/push.js",
+                "projectPath": "js/src/core/concatenate/push.js",
+                "targetPath": "core/concatenate/push",
+                "pageTitle": "core/concatenate/push",
+                "title": "push"
+              },
+              "depth": 3,
+              "outline": []
+            }, {
+              "type": "file",
+              "data": {
+                "language": {
+                  "nameMatchers": [".js"],
+                  "pygmentsLexer": "javascript",
+                  "multiLineComment": ["/*", "*", "*/"],
+                  "singleLineComment": ["//"],
+                  "ignorePrefix": "}",
+                  "foldPrefix": "^",
+                  "name": "JavaScript"
+                },
+                "sourcePath": "/home/aureooms/dev/js/js-fingertree/js/src/core/concatenate/unshift.js",
+                "projectPath": "js/src/core/concatenate/unshift.js",
+                "targetPath": "core/concatenate/unshift",
+                "pageTitle": "core/concatenate/unshift",
+                "title": "unshift"
+              },
+              "depth": 3,
+              "outline": []
+            }
+          ]
+        }, {
+          "type": "folder",
+          "data": {
+            "path": "core/empty",
+            "title": "empty"
+          },
+          "depth": 2,
+          "children": [
+            {
+              "type": "file",
+              "data": {
+                "language": {
+                  "nameMatchers": [".js"],
+                  "pygmentsLexer": "javascript",
+                  "multiLineComment": ["/*", "*", "*/"],
+                  "singleLineComment": ["//"],
+                  "ignorePrefix": "}",
+                  "foldPrefix": "^",
+                  "name": "JavaScript"
+                },
+                "sourcePath": "/home/aureooms/dev/js/js-fingertree/js/src/core/empty/1-EmptyGenerator.js",
+                "projectPath": "js/src/core/empty/1-EmptyGenerator.js",
+                "targetPath": "core/empty/1-EmptyGenerator",
+                "pageTitle": "core/empty/1-EmptyGenerator",
+                "title": "1-EmptyGenerator"
+              },
+              "depth": 3,
+              "outline": []
+            }, {
+              "type": "file",
+              "data": {
+                "language": {
+                  "nameMatchers": [".js"],
+                  "pygmentsLexer": "javascript",
+                  "multiLineComment": ["/*", "*", "*/"],
+                  "singleLineComment": ["//"],
+                  "ignorePrefix": "}",
+                  "foldPrefix": "^",
+                  "name": "JavaScript"
+                },
+                "sourcePath": "/home/aureooms/dev/js/js-fingertree/js/src/core/empty/2-EMPTY.js",
+                "projectPath": "js/src/core/empty/2-EMPTY.js",
+                "targetPath": "core/empty/2-EMPTY",
+                "pageTitle": "core/empty/2-EMPTY",
+                "title": "2-EMPTY"
+              },
+              "depth": 3,
+              "outline": []
+            }
+          ]
+        }, {
+          "type": "folder",
+          "data": {
+            "path": "core/itertools",
+            "title": "itertools"
+          },
+          "depth": 2,
+          "children": [
+            {
+              "type": "file",
+              "data": {
+                "language": {
+                  "nameMatchers": [".js"],
+                  "pygmentsLexer": "javascript",
+                  "multiLineComment": ["/*", "*", "*/"],
+                  "singleLineComment": ["//"],
+                  "ignorePrefix": "}",
+                  "foldPrefix": "^",
+                  "name": "JavaScript"
+                },
+                "sourcePath": "/home/aureooms/dev/js/js-fingertree/js/src/core/itertools/chain.js",
+                "projectPath": "js/src/core/itertools/chain.js",
+                "targetPath": "core/itertools/chain",
+                "pageTitle": "core/itertools/chain",
+                "title": "chain"
+              },
+              "depth": 3,
+              "outline": []
+            }, {
+              "type": "file",
+              "data": {
+                "language": {
+                  "nameMatchers": [".js"],
+                  "pygmentsLexer": "javascript",
+                  "multiLineComment": ["/*", "*", "*/"],
+                  "singleLineComment": ["//"],
+                  "ignorePrefix": "}",
+                  "foldPrefix": "^",
+                  "name": "JavaScript"
+                },
+                "sourcePath": "/home/aureooms/dev/js/js-fingertree/js/src/core/itertools/map.js",
+                "projectPath": "js/src/core/itertools/map.js",
+                "targetPath": "core/itertools/map",
+                "pageTitle": "core/itertools/map",
+                "title": "map"
+              },
+              "depth": 3,
+              "outline": []
+            }, {
+              "type": "file",
+              "data": {
+                "language": {
+                  "nameMatchers": [".js"],
+                  "pygmentsLexer": "javascript",
+                  "multiLineComment": ["/*", "*", "*/"],
+                  "singleLineComment": ["//"],
+                  "ignorePrefix": "}",
+                  "foldPrefix": "^",
+                  "name": "JavaScript"
+                },
+                "sourcePath": "/home/aureooms/dev/js/js-fingertree/js/src/core/itertools/reduce.js",
+                "projectPath": "js/src/core/itertools/reduce.js",
+                "targetPath": "core/itertools/reduce",
+                "pageTitle": "core/itertools/reduce",
+                "title": "reduce"
+              },
+              "depth": 3,
+              "outline": []
+            }, {
+              "type": "file",
+              "data": {
+                "language": {
+                  "nameMatchers": [".js"],
+                  "pygmentsLexer": "javascript",
+                  "multiLineComment": ["/*", "*", "*/"],
+                  "singleLineComment": ["//"],
+                  "ignorePrefix": "}",
+                  "foldPrefix": "^",
+                  "name": "JavaScript"
+                },
+                "sourcePath": "/home/aureooms/dev/js/js-fingertree/js/src/core/itertools/reversed.js",
+                "projectPath": "js/src/core/itertools/reversed.js",
+                "targetPath": "core/itertools/reversed",
+                "pageTitle": "core/itertools/reversed",
+                "title": "reversed"
+              },
+              "depth": 3,
+              "outline": []
+            }
+          ]
+        }, {
+          "type": "folder",
+          "data": {
+            "path": "core/measure",
+            "title": "measure"
+          },
+          "depth": 2,
+          "children": [
+            {
+              "type": "file",
+              "data": {
+                "language": {
+                  "nameMatchers": [".js"],
+                  "pygmentsLexer": "javascript",
+                  "multiLineComment": ["/*", "*", "*/"],
+                  "singleLineComment": ["//"],
+                  "ignorePrefix": "}",
+                  "foldPrefix": "^",
+                  "name": "JavaScript"
+                },
+                "sourcePath": "/home/aureooms/dev/js/js-fingertree/js/src/core/measure/Measured.js",
+                "projectPath": "js/src/core/measure/Measured.js",
+                "targetPath": "core/measure/Measured",
+                "pageTitle": "core/measure/Measured",
+                "title": "Measured"
+              },
+              "depth": 3,
+              "outline": []
+            }, {
+              "type": "file",
+              "data": {
+                "language": {
+                  "nameMatchers": [".js"],
+                  "pygmentsLexer": "javascript",
+                  "multiLineComment": ["/*", "*", "*/"],
+                  "singleLineComment": ["//"],
+                  "ignorePrefix": "}",
+                  "foldPrefix": "^",
+                  "name": "JavaScript"
+                },
+                "sourcePath": "/home/aureooms/dev/js/js-fingertree/js/src/core/measure/cache.js",
+                "projectPath": "js/src/core/measure/cache.js",
+                "targetPath": "core/measure/cache",
+                "pageTitle": "core/measure/cache",
+                "title": "cache"
+              },
+              "depth": 3,
+              "outline": []
+            }, {
+              "type": "file",
+              "data": {
+                "language": {
+                  "nameMatchers": [".js"],
+                  "pygmentsLexer": "javascript",
+                  "multiLineComment": ["/*", "*", "*/"],
+                  "singleLineComment": ["//"],
+                  "ignorePrefix": "}",
+                  "foldPrefix": "^",
+                  "name": "JavaScript"
+                },
+                "sourcePath": "/home/aureooms/dev/js/js-fingertree/js/src/core/measure/measure.js",
+                "projectPath": "js/src/core/measure/measure.js",
+                "targetPath": "core/measure/measure",
+                "pageTitle": "core/measure/measure",
+                "title": "measure"
+              },
+              "depth": 3,
+              "outline": []
+            }
+          ]
+        }, {
+          "type": "folder",
+          "data": {
+            "path": "core/split",
+            "title": "split"
+          },
+          "depth": 2,
+          "children": [
+            {
+              "type": "file",
+              "data": {
+                "language": {
+                  "nameMatchers": [".js"],
+                  "pygmentsLexer": "javascript",
+                  "multiLineComment": ["/*", "*", "*/"],
+                  "singleLineComment": ["//"],
+                  "ignorePrefix": "}",
+                  "foldPrefix": "^",
+                  "name": "JavaScript"
+                },
+                "sourcePath": "/home/aureooms/dev/js/js-fingertree/js/src/core/split/Split.js",
+                "projectPath": "js/src/core/split/Split.js",
+                "targetPath": "core/split/Split",
+                "pageTitle": "core/split/Split",
+                "title": "Split"
+              },
+              "depth": 3,
+              "outline": []
+            }, {
+              "type": "file",
+              "data": {
+                "language": {
+                  "nameMatchers": [".js"],
+                  "pygmentsLexer": "javascript",
+                  "multiLineComment": ["/*", "*", "*/"],
+                  "singleLineComment": ["//"],
+                  "ignorePrefix": "}",
+                  "foldPrefix": "^",
+                  "name": "JavaScript"
+                },
+                "sourcePath": "/home/aureooms/dev/js/js-fingertree/js/src/core/split/deepL.js",
+                "projectPath": "js/src/core/split/deepL.js",
+                "targetPath": "core/split/deepL",
+                "pageTitle": "core/split/deepL",
+                "title": "deepL"
+              },
+              "depth": 3,
+              "outline": []
+            }, {
+              "type": "file",
+              "data": {
+                "language": {
+                  "nameMatchers": [".js"],
+                  "pygmentsLexer": "javascript",
+                  "multiLineComment": ["/*", "*", "*/"],
+                  "singleLineComment": ["//"],
+                  "ignorePrefix": "}",
+                  "foldPrefix": "^",
+                  "name": "JavaScript"
+                },
+                "sourcePath": "/home/aureooms/dev/js/js-fingertree/js/src/core/split/deepR.js",
+                "projectPath": "js/src/core/split/deepR.js",
+                "targetPath": "core/split/deepR",
+                "pageTitle": "core/split/deepR",
+                "title": "deepR"
+              },
+              "depth": 3,
+              "outline": []
+            }
+          ]
+        }
+      ]
+    }, {
+      "type": "folder",
+      "data": {
+        "path": "digit",
+        "title": "digit"
+      },
+      "depth": 1,
+      "children": [
+        {
+          "type": "file",
+          "data": {
+            "language": {
+              "nameMatchers": [".js"],
+              "pygmentsLexer": "javascript",
+              "multiLineComment": ["/*", "*", "*/"],
+              "singleLineComment": ["//"],
+              "ignorePrefix": "}",
+              "foldPrefix": "^",
+              "name": "JavaScript"
+            },
+            "sourcePath": "/home/aureooms/dev/js/js-fingertree/js/src/digit/1-One.js",
+            "projectPath": "js/src/digit/1-One.js",
+            "targetPath": "digit/1-One",
+            "pageTitle": "digit/1-One",
+            "title": "1-One"
+          },
+          "depth": 2,
+          "outline": []
+        }, {
+          "type": "file",
+          "data": {
+            "language": {
+              "nameMatchers": [".js"],
+              "pygmentsLexer": "javascript",
+              "multiLineComment": ["/*", "*", "*/"],
+              "singleLineComment": ["//"],
+              "ignorePrefix": "}",
+              "foldPrefix": "^",
+              "name": "JavaScript"
+            },
+            "sourcePath": "/home/aureooms/dev/js/js-fingertree/js/src/digit/2-Two.js",
+            "projectPath": "js/src/digit/2-Two.js",
+            "targetPath": "digit/2-Two",
+            "pageTitle": "digit/2-Two",
+            "title": "2-Two"
+          },
+          "depth": 2,
+          "outline": []
+        }, {
+          "type": "file",
+          "data": {
+            "language": {
+              "nameMatchers": [".js"],
+              "pygmentsLexer": "javascript",
+              "multiLineComment": ["/*", "*", "*/"],
+              "singleLineComment": ["//"],
+              "ignorePrefix": "}",
+              "foldPrefix": "^",
+              "name": "JavaScript"
+            },
+            "sourcePath": "/home/aureooms/dev/js/js-fingertree/js/src/digit/3-Three.js",
+            "projectPath": "js/src/digit/3-Three.js",
+            "targetPath": "digit/3-Three",
+            "pageTitle": "digit/3-Three",
+            "title": "3-Three"
+          },
+          "depth": 2,
+          "outline": []
+        }, {
+          "type": "file",
+          "data": {
+            "language": {
+              "nameMatchers": [".js"],
+              "pygmentsLexer": "javascript",
+              "multiLineComment": ["/*", "*", "*/"],
+              "singleLineComment": ["//"],
+              "ignorePrefix": "}",
+              "foldPrefix": "^",
+              "name": "JavaScript"
+            },
+            "sourcePath": "/home/aureooms/dev/js/js-fingertree/js/src/digit/4-Four.js",
+            "projectPath": "js/src/digit/4-Four.js",
+            "targetPath": "digit/4-Four",
+            "pageTitle": "digit/4-Four",
+            "title": "4-Four"
+          },
+          "depth": 2,
+          "outline": []
+        }
+      ]
+    }, {
+      "type": "folder",
+      "data": {
+        "path": "node",
+        "title": "node"
+      },
+      "depth": 1,
+      "children": [
+        {
+          "type": "file",
+          "data": {
+            "language": {
+              "nameMatchers": [".js"],
+              "pygmentsLexer": "javascript",
+              "multiLineComment": ["/*", "*", "*/"],
+              "singleLineComment": ["//"],
+              "ignorePrefix": "}",
+              "foldPrefix": "^",
+              "name": "JavaScript"
+            },
+            "sourcePath": "/home/aureooms/dev/js/js-fingertree/js/src/node/Node2.js",
+            "projectPath": "js/src/node/Node2.js",
+            "targetPath": "node/Node2",
+            "pageTitle": "node/Node2",
+            "title": "Node2"
+          },
+          "depth": 2,
+          "outline": []
+        }, {
+          "type": "file",
+          "data": {
+            "language": {
+              "nameMatchers": [".js"],
+              "pygmentsLexer": "javascript",
+              "multiLineComment": ["/*", "*", "*/"],
+              "singleLineComment": ["//"],
+              "ignorePrefix": "}",
+              "foldPrefix": "^",
+              "name": "JavaScript"
+            },
+            "sourcePath": "/home/aureooms/dev/js/js-fingertree/js/src/node/Node3.js",
+            "projectPath": "js/src/node/Node3.js",
+            "targetPath": "node/Node3",
+            "pageTitle": "node/Node3",
+            "title": "Node3"
+          },
+          "depth": 2,
+          "outline": []
+        }
+      ]
     }
   ];
 
