@@ -1,6 +1,6 @@
-function from_iterable ( measure , iterable ) {
+function from_iterable ( M , iterable ) {
 
-	return reduce( push , iterable , new Empty( measure ) ) ;
+	return new Empty( M ).extend( iterable ) ;
 
 }
 

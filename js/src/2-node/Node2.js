@@ -12,6 +12,10 @@ class Node2 {
 		yield this.b ;
 	}
 
+	measure ( ) {
+		return this.v ;
+	}
+
 	digit ( ) {
 		return new Two( this.a , this.b ) ;
 	}

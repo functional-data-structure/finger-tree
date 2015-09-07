@@ -38,7 +38,7 @@ class Two {
 		return new Three( value , this.a , this.b ) ;
 	}
 
-	node ( measure ) {
+	node ( M ) {
 		throw new Error( "Two should never be converted to Node2 with current implementation" ) ;
 	}
 
@@ -46,7 +46,7 @@ class Two {
 	 * It is assumed that p(|this|) is true.
 	 */
 	splitDigit ( p , i , M ) {
-		i = M.plus( i , this.a.v ) ;
+		i = M.plus( i , M.measure( this.a ) ) ;
 		if ( p( i ) ) return new Split( [ ] , this.a , [ this.b ] ) ;
 		return new Split( [ this.a ] , this.b , [ ] ) ;
 	}

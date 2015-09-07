@@ -36,7 +36,7 @@ class One {
 		return new Two( value , this.a ) ;
 	}
 
-	node ( measure ) {
+	node ( M ) {
 		throw new Error( "cannot convert One to node" ) ;
 	}
 

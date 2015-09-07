@@ -2,14 +2,18 @@ class Deep extends Tree {
 
 	constructor ( M , left , middle , right ) {
 		super( ) ;
-		this.measure = M ;
+		this.M = M ;
 		this.left = left ;
 		this.middle = middle ;
 		this.right = right ;
 		this.v = M.plus(
 			measure( M , this.left ) ,
-			M.plus( this.middle.v , measure( M , this.right ) )
+			M.plus( this.middle.measure( ) , measure( M , this.right ) )
 		) ;
+	}
+
+	measure ( ) {
+		return this.v ;
 	}
 
 	empty ( ) {
@@ -29,14 +33,14 @@ class Deep extends Tree {
 		if ( this.left.length === 1 ) {
 
 			if ( this.middle.empty( ) ) {
-				return from_iterable( this.measure , this.right ) ;
+				return from_iterable( this.M , this.right ) ;
 			}
 
-			return new Deep( this.measure , this.middle.head( ).digit( ) , delay( ( ) => this.middle.tail( ) ) , this.right ) ;
+			return new Deep( this.M , this.middle.head( ).digit( ) , delay( ( ) => this.middle.tail( ) ) , this.right ) ;
 
 		}
 
-		return new Deep( this.measure , this.left.tail( ) , this.middle , this.right ) ;
+		return new Deep( this.M , this.left.tail( ) , this.middle , this.right ) ;
 
 	}
 
@@ -45,14 +49,14 @@ class Deep extends Tree {
 		if ( this.right.length === 1 ) {
 
 			if ( this.middle.empty( ) ) {
-				return from_iterable( this.measure , this.left ) ;
+				return from_iterable( this.M , this.left ) ;
 			}
 
-			return new Deep( this.measure , this.left , delay( ( ) => this.middle.init( ) ) , this.middle.last( ).digit( ) ) ;
+			return new Deep( this.M , this.left , delay( ( ) => this.middle.init( ) ) , this.middle.last( ).digit( ) ) ;
 
 		}
 
-		return new Deep( this.measure , this.left , this.middle , this.right.init( ) ) ;
+		return new Deep( this.M , this.left , this.middle , this.right.init( ) ) ;
 
 	}
 
@@ -61,15 +65,15 @@ class Deep extends Tree {
 		if ( this.left.length === 4 ) {
 
 			return new Deep(
-				this.measure ,
+				this.M ,
 				new Two( value , this.left.head( ) ) ,
-				this.middle.unshift( this.left.tail( ).node( this.measure ) ) ,
+				this.middle.unshift( this.left.tail( ).node( this.M ) ) ,
 				this.right
 			) ;
 
 		}
 
-		return new Deep( this.measure , this.left.unshift( value ) , this.middle , this.right ) ;
+		return new Deep( this.M , this.left.unshift( value ) , this.middle , this.right ) ;
 
 	}
 
@@ -78,15 +82,15 @@ class Deep extends Tree {
 		if ( this.right.length === 4 ) {
 
 			return new Deep(
-				this.measure ,
+				this.M ,
 				this.left ,
-				this.middle.push( this.right.init( ).node( this.measure ) ) ,
+				this.middle.push( this.right.init( ).node( this.M ) ) ,
 				new Two( this.right.last( ) , value )
 			) ;
 
 		}
 
-		return new Deep( this.measure , this.left , this.middle , this.right.push( value ) ) ;
+		return new Deep( this.M , this.left , this.middle , this.right.push( value ) ) ;
 
 	}
 
@@ -109,7 +113,7 @@ class Deep extends Tree {
 	 */
 	splitTree ( p , i ) {
 
-		const { left , middle , right , measure : M } = this ;
+		const { left , middle , right , M } = this ;
 
 		// see if the split point is inside the left tree
 		const leftMeasure = M.plus( i , measure( M , left ) ) ;
@@ -123,12 +127,12 @@ class Deep extends Tree {
 		}
 
 		// see if the split point is inside the middle tree
-		const midMeasure = M.plus( leftMeasure , middle.v ) ;
+		const midMeasure = M.plus( leftMeasure , middle.measure( ) ) ;
 
 		if ( p( midMeasure ) ) {
 			const midSplit = middle.splitTree( p , leftMeasure ) ;
 			// midsplit.middle is a Node since middle is a Tree ( Node a )
-			const split = midSplit.middle.digit( ).splitDigit( p , M.plus( leftMeasure , midSplit.left.v ) , M ) ;
+			const split = midSplit.middle.digit( ).splitDigit( p , M.plus( leftMeasure , midSplit.left.measure( ) ) , M ) ;
 			return new Split(
 				deepR( M , left , midSplit.left, split.left ) ,
 				split.middle ,
@@ -147,12 +151,12 @@ class Deep extends Tree {
 
 	split ( p ) {
 
-		if ( p( this.v ) ) {
-			const split = this.splitTree( p , this.measure.zero( ) ) ;
+		if ( p( this.measure( ) ) ) {
+			const split = this.splitTree( p , this.M.zero( ) ) ;
 			return [ split.left , split.right.unshift( split.middle ) ] ;
 		}
 
-		return [ this , new Empty( this.measure ) ] ;
+		return [ this , new Empty( this.M ) ] ;
 
 	}
 

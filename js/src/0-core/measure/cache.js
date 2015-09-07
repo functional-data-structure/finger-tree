@@ -14,7 +14,7 @@ class CachedMeasure {
 	}
 
 	measure ( measured ) {
-		return measured.v ;
+		return measured.measure( ) ;
 	}
 
 }

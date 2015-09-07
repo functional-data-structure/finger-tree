@@ -1,10 +1,14 @@
 class Single extends Tree {
 
-	constructor ( measure , element ) {
+	constructor ( M , element ) {
 		super( ) ;
-		this.measure = measure ;
+		this.M = M ;
 		this.element = element ;
-		this.v = measure.measure( element ) ;
+		this.v = M.measure( element ) ;
+	}
+
+	measure ( ) {
+		return this.v ;
 	}
 
 	empty ( ) {
@@ -20,27 +24,27 @@ class Single extends Tree {
 	}
 
 	tail ( ) {
-		return new Empty( this.measure ) ;
+		return new Empty( this.M ) ;
 	}
 
 	init ( ) {
-		return new Empty( this.measure ) ;
+		return new Empty( this.M ) ;
 	}
 
 	unshift ( value ) {
 		return new Deep(
-			this.measure ,
+			this.M ,
 			new One( value ) ,
-			new Empty( this.measure ) ,
+			new Empty( cache( this.M ) ) ,
 			new One( this.element )
 		) ;
 	}
 
 	push ( value ) {
 		return new Deep(
-			this.measure ,
+			this.M ,
 			new One( this.element ) ,
-			new Empty( this.measure ) ,
+			new Empty( cache( this.M ) ) ,
 			new One( value )
 		) ;
 	}
@@ -57,11 +61,11 @@ class Single extends Tree {
 	 * It is assumed that p(|this|) is true.
 	 */
 	splitTree ( p , i ) {
-		return new Split( new Empty( this.measure ) , this.element , new Empty( this.measure ) ) ;
+		return new Split( new Empty( this.M ) , this.element , new Empty( this.M ) ) ;
 	}
 
 	split ( p ) {
-		return p( this.v ) ? [ new Empty( this.measure ) , this ] : [ this , new Empty( this.measure ) ] ;
+		return p( this.measure( ) ) ? [ new Empty( this.M ) , this ] : [ this , new Empty( this.M ) ] ;
 	}
 
 }
