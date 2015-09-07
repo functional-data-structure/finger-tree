@@ -1,0 +1,23 @@
+<!DOCTYPE html><html lang="en"><head><title>3-tree/0-sugar/Tree</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../../"><meta name="groc-document-path" content="3-tree/0-sugar/Tree"><meta name="groc-project-path" content="js/src/3-tree/0-sugar/Tree.js"><meta name="groc-github-url" content="https://github.com/aureooms/js-fingertree"><link rel="stylesheet" type="text/css" media="all" href="../../assets/style.css"><script type="text/javascript" src="../../assets/behavior.js"></script><body><div id="meta"><div class="file-path"><a href="https://github.com/aureooms/js-fingertree/blob/master/js/src/3-tree/0-sugar/Tree.js">js/src/3-tree/0-sugar/Tree.js</a></div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Tree</span> </span>{
+
+	force ( ) {
+		<span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span> ;
+	}
+
+	takeUntil ( p ) {
+		<span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.split( p )[<span class="hljs-number">0</span>] ;
+	}
+
+	dropUntil ( p ) {
+		<span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.split( p )[<span class="hljs-number">1</span>] ;
+	}
+
+	extend ( iterable ) {
+		<span class="hljs-keyword">return</span> reduce( push , iterable , <span class="hljs-keyword">this</span> ) ;
+	}
+
+	extendleft ( iterable ) {
+		<span class="hljs-keyword">return</span> reduce( unshift , reversed( [ ...iterable ] ) , <span class="hljs-keyword">this</span> ) ;
+	}
+
+}</div></div></div></div></body></html>

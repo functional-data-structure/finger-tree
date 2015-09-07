@@ -1,0 +1,13 @@
+<!DOCTYPE html><html lang="en"><head><title>0-core/concatenate/digit</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../../"><meta name="groc-document-path" content="0-core/concatenate/digit"><meta name="groc-project-path" content="js/src/0-core/concatenate/digit.js"><meta name="groc-github-url" content="https://github.com/aureooms/js-fingertree"><link rel="stylesheet" type="text/css" media="all" href="../../assets/style.css"><script type="text/javascript" src="../../assets/behavior.js"></script><body><div id="meta"><div class="file-path"><a href="https://github.com/aureooms/js-fingertree/blob/master/js/src/0-core/concatenate/digit.js">js/src/0-core/concatenate/digit.js</a></div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">digit</span> (<span class="hljs-params"> list </span>) </span>{
+
+	<span class="hljs-keyword">switch</span> ( list.length ) {
+
+		<span class="hljs-keyword">case</span> <span class="hljs-number">1</span> : <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> One( list[<span class="hljs-number">0</span>] ) ;
+		<span class="hljs-keyword">case</span> <span class="hljs-number">2</span> : <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> Two( list[<span class="hljs-number">0</span>] , list[<span class="hljs-number">1</span>] ) ;
+		<span class="hljs-keyword">case</span> <span class="hljs-number">3</span> : <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> Three( list[<span class="hljs-number">0</span>] , list[<span class="hljs-number">1</span>] , list[<span class="hljs-number">2</span>] ) ;
+		<span class="hljs-keyword">case</span> <span class="hljs-number">4</span> : <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>( <span class="hljs-string">'digit(.) should never be called on length 4 lists since it is only called on results of splitDigit which outputs lists of length at most 3'</span> ) ;
+		<span class="hljs-keyword">default</span>: <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>( <span class="hljs-string">`cannot make digit for length <span class="hljs-subst">${list.length}</span>`</span> ) ;
+
+	}
+
+}</div></div></div></div></body></html>
