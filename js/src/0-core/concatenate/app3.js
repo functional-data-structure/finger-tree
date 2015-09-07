@@ -1,5 +1,8 @@
 const app3 = function ( A , list , B ) {
 
+	A = A.force( ) ;
+	B = B.force( ) ;
+
 	if ( A instanceof Empty ) return extendleft( B , list ) ;
 	if ( B instanceof Empty ) return extend( A , list ) ;
 
@@ -9,11 +12,11 @@ const app3 = function ( A , list , B ) {
 	return new Deep(
 		A.measure ,
 		A.left ,
-		app3(
+		delay( ( ) => app3(
 			A.middle ,
 			nodes( A.measure , [ ...chain( A.right , list , B.left ) ] ) ,
 			B.middle
-		) ,
+		) ) ,
 		B.right
 	) ;
 
