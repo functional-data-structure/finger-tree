@@ -44,4 +44,15 @@ class Three {
 		return node3( measure , this.a , this.b , this.c ) ;
 	}
 
+	/**
+	 * It is assumed that p(|this|) is true.
+	 */
+	splitDigit ( p , i , M ) {
+		i = M.plus( i , this.a.v ) ;
+		if ( p( i ) ) return new Split( [ ] , this.a , [ this.b , this.c ] ) ;
+		i = M.plus( i , this.b.v ) ;
+		if ( p( i ) ) return new Split( [ this.a ] , this.b , [ this.c ] ) ;
+		return new Split( [ this.a , this.b ] , this.c , [ ] ) ;
+	}
+
 }

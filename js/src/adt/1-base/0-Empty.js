@@ -1,6 +1,7 @@
-class Empty {
+class Empty extends Tree {
 
 	constructor ( measure ) {
+		super( ) ;
 		this.measure = measure ;
 		this.v = measure.zero( ) ;
 	}
@@ -39,6 +40,17 @@ class Empty {
 
 	[Symbol.iterator] ( ) {
 		return EMPTY ;
+	}
+
+	/**
+	 * It is assumed that p(|this|) is true.
+	 */
+	splitTree ( p , i ) {
+		throw new Error( "splitTree not implemented in Empty" ) ;
+	}
+
+	split ( p ) {
+		return [ this , this ] ;
 	}
 
 }

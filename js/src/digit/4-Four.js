@@ -46,4 +46,17 @@ class Four {
 		throw new Error( "cannot convert Four to node" ) ;
 	}
 
+	/**
+	 * It is assumed that p(|this|) is true.
+	 */
+	splitDigit ( p , i , M ) {
+		i = M.plus( i , this.a.v ) ;
+		if ( p( i ) ) return new Split( [ ] , this.a , [ this.b , this.c , this.d ] ) ;
+		i = M.plus( i , this.b.v ) ;
+		if ( p( i ) ) return new Split( [ this.a ] , this.b , [ this.c , this.d ] ) ;
+		i = M.plus( i , this.c.v ) ;
+		if ( p( i ) ) return new Split( [ this.a , this.b ] , this.c , [ this.d ] ) ;
+		return new Split( [ this.a , this.b , this.c ] , this.d , [ ] ) ;
+	}
+
 }

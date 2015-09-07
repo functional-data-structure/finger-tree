@@ -19,31 +19,31 @@ class Node3 {
 	}
 
 	get length ( ) {
-		throw new Error( "trying to call length of Node2" ) ;
+		throw new Error( "trying to call length of Node3" ) ;
 	}
 
 	head ( ) {
-		throw new Error( "trying to call head of Node2" ) ;
+		throw new Error( "trying to call head of Node3" ) ;
 	}
 
 	last ( ) {
-		throw new Error( "trying to call last of Node2" ) ;
+		throw new Error( "trying to call last of Node3" ) ;
 	}
 
 	init ( ) {
-		throw new Error( "trying to call init of Node2" ) ;
+		throw new Error( "trying to call init of Node3" ) ;
 	}
 
 	tail ( ) {
-		throw new Error( "trying to call tail of Node2" ) ;
+		throw new Error( "trying to call tail of Node3" ) ;
 	}
 
 	push ( value ) {
-		throw new Error( "trying to call push of Node2" ) ;
+		throw new Error( "trying to call push of Node3" ) ;
 	}
 
 	unshift ( value ) {
-		throw new Error( "trying to call unshift of Node2" ) ;
+		throw new Error( "trying to call unshift of Node3" ) ;
 	}
 
 }

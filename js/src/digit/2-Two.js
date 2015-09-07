@@ -39,7 +39,16 @@ class Two {
 	}
 
 	node ( measure ) {
-		return node2( measure , this.a , this.b ) ;
+		throw new Error( "Two should never be converted to Node2 with current implementation" ) ;
+	}
+
+	/**
+	 * It is assumed that p(|this|) is true.
+	 */
+	splitDigit ( p , i , M ) {
+		i = M.plus( i , this.a.v ) ;
+		if ( p( i ) ) return new Split( [ ] , this.a , [ this.b ] ) ;
+		return new Split( [ this.a ] , this.b , [ ] ) ;
 	}
 
 }

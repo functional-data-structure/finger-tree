@@ -1,8 +1,14 @@
 "use strict";
 
+var _slicedToArray = (function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; })();
+
+var _get = function get(_x2, _x3, _x4) { var _again = true; _function: while (_again) { var object = _x2, property = _x3, receiver = _x4; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x2 = parent; _x3 = property; _x4 = receiver; _again = true; continue _function; } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
 var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) arr2[i] = arr[i]; return arr2; } else { return Array.from(arr); } }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -14,170 +20,54 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 		var marked2$0 = [chain, map, reversed].map(regeneratorRuntime.mark);
 
 		/* js/src/adt */
-		/* js/src/adt/FingerTree.js */
+		/* js/src/adt/0-sugar */
+		/* js/src/adt/0-sugar/Tree.js */
 
-		var FingerTree = (function () {
-			function FingerTree(measure) {
-				var T = arguments.length <= 1 || arguments[1] === undefined ? new Empty(cache(measure)) : arguments[1];
-				return (function () {
-					_classCallCheck(this, FingerTree);
-
-					this.M = measure;
-					this.T = T;
-				}).apply(this, arguments);
+		var Tree = (function () {
+			function Tree() {
+				_classCallCheck(this, Tree);
 			}
 
-			_createClass(FingerTree, [{
-				key: "measure",
-				value: function measure() {
-					return this.T.v;
+			/* js/src/adt/1-base */
+			/* js/src/adt/1-base/0-Empty.js */
+
+			_createClass(Tree, [{
+				key: "takeUntil",
+				value: function takeUntil(p) {
+					return this.split(p)[0];
 				}
 			}, {
-				key: "empty",
-				value: function empty() {
-					return this.T.empty();
-				}
-			}, {
-				key: "head",
-				value: function head() {
-					return this.T.head().element;
-				}
-			}, {
-				key: "last",
-				value: function last() {
-					return this.T.last().element;
-				}
-			}, {
-				key: "tail",
-				value: function tail() {
-					return new FingerTree(this.M, this.T.tail());
-				}
-			}, {
-				key: "init",
-				value: function init() {
-					return new FingerTree(this.M, this.T.init());
-				}
-			}, {
-				key: "push",
-				value: function push(value) {
-					return new FingerTree(this.M, this.T.push(new Measured(this.M, value)));
-				}
-			}, {
-				key: "unshift",
-				value: function unshift(value) {
-					return new FingerTree(this.M, this.T.unshift(new Measured(this.M, value)));
-				}
-			}, {
-				key: "concat",
-				value: function concat(other) {
-					return new FingerTree(this.M, this.T.concat(other.T));
+				key: "dropUntil",
+				value: function dropUntil(p) {
+					return this.split(p)[1];
 				}
 			}, {
 				key: "extend",
 				value: function extend(iterable) {
-
 					return reduce(push, iterable, this);
 				}
 			}, {
 				key: "extendleft",
 				value: function extendleft(iterable) {
-
 					return reduce(unshift, reversed([].concat(_toConsumableArray(iterable))), this);
-				}
-			}, {
-				key: Symbol.iterator,
-				value: regeneratorRuntime.mark(function value() {
-					var _iteratorNormalCompletion, _didIteratorError, _iteratorError, _iterator, _step, measured;
-
-					return regeneratorRuntime.wrap(function value$(context$4$0) {
-						while (1) switch (context$4$0.prev = context$4$0.next) {
-							case 0:
-								_iteratorNormalCompletion = true;
-								_didIteratorError = false;
-								_iteratorError = undefined;
-								context$4$0.prev = 3;
-								_iterator = this.T[Symbol.iterator]();
-
-							case 5:
-								if (_iteratorNormalCompletion = (_step = _iterator.next()).done) {
-									context$4$0.next = 12;
-									break;
-								}
-
-								measured = _step.value;
-								context$4$0.next = 9;
-								return measured.element;
-
-							case 9:
-								_iteratorNormalCompletion = true;
-								context$4$0.next = 5;
-								break;
-
-							case 12:
-								context$4$0.next = 18;
-								break;
-
-							case 14:
-								context$4$0.prev = 14;
-								context$4$0.t0 = context$4$0["catch"](3);
-								_didIteratorError = true;
-								_iteratorError = context$4$0.t0;
-
-							case 18:
-								context$4$0.prev = 18;
-								context$4$0.prev = 19;
-
-								if (!_iteratorNormalCompletion && _iterator["return"]) {
-									_iterator["return"]();
-								}
-
-							case 21:
-								context$4$0.prev = 21;
-
-								if (!_didIteratorError) {
-									context$4$0.next = 24;
-									break;
-								}
-
-								throw _iteratorError;
-
-							case 24:
-								return context$4$0.finish(21);
-
-							case 25:
-								return context$4$0.finish(18);
-
-							case 26:
-							case "end":
-								return context$4$0.stop();
-						}
-					}, value, this, [[3, 14, 18, 26], [19,, 21, 25]]);
-				})
-			}], [{
-				key: "from_iterable",
-				value: function from_iterable(measure, iterable) {
-
-					return new FingerTree(measure).extend(iterable);
 				}
 			}]);
 
-			return FingerTree;
+			return Tree;
 		})();
 
-		exports.FingerTree = FingerTree;
+		var Empty = (function (_Tree) {
+			_inherits(Empty, _Tree);
 
-		/* js/src/adt/base */
-		/* js/src/adt/base/0-Empty.js */
-
-		var Empty = (function () {
 			function Empty(measure) {
 				_classCallCheck(this, Empty);
 
+				_get(Object.getPrototypeOf(Empty.prototype), "constructor", this).call(this);
 				this.measure = measure;
 				this.v = measure.zero();
 			}
 
-			/* js/src/adt/base/1-Single.js */
+			/* js/src/adt/1-base/1-Single.js */
 
 			_createClass(Empty, [{
 				key: "empty",
@@ -224,21 +114,38 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 				value: function value() {
 					return EMPTY;
 				}
+
+				/**
+     * It is assumed that p(|this|) is true.
+     */
+			}, {
+				key: "splitTree",
+				value: function splitTree(p, i) {
+					throw new Error("splitTree not implemented in Empty");
+				}
+			}, {
+				key: "split",
+				value: function split(p) {
+					return [this, this];
+				}
 			}]);
 
 			return Empty;
-		})();
+		})(Tree);
 
-		var Single = (function () {
+		var Single = (function (_Tree2) {
+			_inherits(Single, _Tree2);
+
 			function Single(measure, element) {
 				_classCallCheck(this, Single);
 
+				_get(Object.getPrototypeOf(Single.prototype), "constructor", this).call(this);
 				this.measure = measure;
 				this.element = element;
 				this.v = measure.measure(element);
 			}
 
-			/* js/src/adt/base/2-Deep.js */
+			/* js/src/adt/1-base/2-Deep.js */
 
 			_createClass(Single, [{
 				key: "empty",
@@ -295,15 +202,32 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 						}
 					}, value, this);
 				})
+
+				/**
+     * It is assumed that p(|this|) is true.
+     */
+			}, {
+				key: "splitTree",
+				value: function splitTree(p, i) {
+					return new Split(new Empty(this.measure), this.element, new Empty(this.measure));
+				}
+			}, {
+				key: "split",
+				value: function split(p) {
+					return p(this.v) ? [new Empty(this.measure), this] : [this, new Empty(this.measure)];
+				}
 			}]);
 
 			return Single;
-		})();
+		})(Tree);
 
-		var Deep = (function () {
+		var Deep = (function (_Tree3) {
+			_inherits(Deep, _Tree3);
+
 			function Deep(M, left, middle, right) {
 				_classCallCheck(this, Deep);
 
+				_get(Object.getPrototypeOf(Deep.prototype), "constructor", this).call(this);
 				this.measure = M;
 				this.left = left;
 				this.middle = middle;
@@ -311,9 +235,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 				this.v = M.plus(measure(M, this.left), M.plus(this.middle.v, measure(M, this.right)));
 			}
 
-			/* js/src/core */
-			/* js/src/core/concatenate */
-			/* js/src/core/concatenate/app3.js */
+			/* js/src/adt/2-api */
+			/* js/src/adt/2-api/FingerTree.js */
 
 			_createClass(Deep, [{
 				key: "empty",
@@ -391,7 +314,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 			}, {
 				key: Symbol.iterator,
 				value: regeneratorRuntime.mark(function value() {
-					var _iteratorNormalCompletion2, _didIteratorError2, _iteratorError2, _iterator2, _step2, node;
+					var _iteratorNormalCompletion, _didIteratorError, _iteratorError, _iterator, _step, node;
 
 					return regeneratorRuntime.wrap(function value$(context$4$0) {
 						while (1) switch (context$4$0.prev = context$4$0.next) {
@@ -399,23 +322,23 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 								return context$4$0.delegateYield(this.left, "t0", 1);
 
 							case 1:
-								_iteratorNormalCompletion2 = true;
-								_didIteratorError2 = false;
-								_iteratorError2 = undefined;
+								_iteratorNormalCompletion = true;
+								_didIteratorError = false;
+								_iteratorError = undefined;
 								context$4$0.prev = 4;
-								_iterator2 = this.middle[Symbol.iterator]();
+								_iterator = this.middle[Symbol.iterator]();
 
 							case 6:
-								if (_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done) {
+								if (_iteratorNormalCompletion = (_step = _iterator.next()).done) {
 									context$4$0.next = 12;
 									break;
 								}
 
-								node = _step2.value;
+								node = _step.value;
 								return context$4$0.delegateYield(node, "t1", 9);
 
 							case 9:
-								_iteratorNormalCompletion2 = true;
+								_iteratorNormalCompletion = true;
 								context$4$0.next = 6;
 								break;
 
@@ -426,8 +349,188 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 							case 14:
 								context$4$0.prev = 14;
 								context$4$0.t2 = context$4$0["catch"](4);
+								_didIteratorError = true;
+								_iteratorError = context$4$0.t2;
+
+							case 18:
+								context$4$0.prev = 18;
+								context$4$0.prev = 19;
+
+								if (!_iteratorNormalCompletion && _iterator["return"]) {
+									_iterator["return"]();
+								}
+
+							case 21:
+								context$4$0.prev = 21;
+
+								if (!_didIteratorError) {
+									context$4$0.next = 24;
+									break;
+								}
+
+								throw _iteratorError;
+
+							case 24:
+								return context$4$0.finish(21);
+
+							case 25:
+								return context$4$0.finish(18);
+
+							case 26:
+								return context$4$0.delegateYield(this.right, "t3", 27);
+
+							case 27:
+							case "end":
+								return context$4$0.stop();
+						}
+					}, value, this, [[4, 14, 18, 26], [19,, 21, 25]]);
+				})
+
+				/**
+     * It is assumed that p(|this|) is true.
+     */
+			}, {
+				key: "splitTree",
+				value: function splitTree(p, i) {
+					var left = this.left;
+					var middle = this.middle;
+					var right = this.right;
+					var M = this.measure;
+
+					// see if the split point is inside the left tree
+					var leftMeasure = M.plus(i, measure(M, left));
+					if (p(leftMeasure)) {
+						var _split = left.splitDigit(p, i, M);
+						return new Split(from_iterable(M, _split.left), _split.middle, deepL(M, _split.right, middle, right));
+					}
+
+					// see if the split point is inside the middle tree
+					var midMeasure = M.plus(leftMeasure, middle.v);
+
+					if (p(midMeasure)) {
+						var midSplit = middle.splitTree(p, leftMeasure);
+						// midsplit.middle is a Node since middle is a Tree ( Node a )
+						var _split2 = midSplit.middle.digit().splitDigit(p, M.plus(leftMeasure, midSplit.left.v), M);
+						return new Split(deepR(M, left, midSplit.left, _split2.left), _split2.middle, deepL(M, _split2.right, midSplit.right, right));
+					}
+
+					// the split point is in the right tree
+					var split = right.splitDigit(p, midMeasure, M);
+					return new Split(deepR(M, left, middle, split.left), split.middle, from_iterable(M, split.right));
+				}
+			}, {
+				key: "split",
+				value: function split(p) {
+
+					if (p(this.v)) {
+						var split = this.splitTree(p, this.measure.zero());
+						return [split.left, split.right.unshift(split.middle)];
+					}
+
+					return [this, new Empty(this.measure)];
+				}
+			}]);
+
+			return Deep;
+		})(Tree);
+
+		var FingerTree = (function (_Tree4) {
+			_inherits(FingerTree, _Tree4);
+
+			function FingerTree(measure) {
+				var T = arguments.length <= 1 || arguments[1] === undefined ? new Empty(cache(measure)) : arguments[1];
+				return (function () {
+					_classCallCheck(this, FingerTree);
+
+					_get(Object.getPrototypeOf(FingerTree.prototype), "constructor", this).call(this);
+					this.M = measure;
+					this.T = T;
+				}).apply(this, arguments);
+			}
+
+			_createClass(FingerTree, [{
+				key: "measure",
+				value: function measure() {
+					return this.T.v;
+				}
+			}, {
+				key: "empty",
+				value: function empty() {
+					return this.T.empty();
+				}
+			}, {
+				key: "head",
+				value: function head() {
+					return this.T.head().element;
+				}
+			}, {
+				key: "last",
+				value: function last() {
+					return this.T.last().element;
+				}
+			}, {
+				key: "tail",
+				value: function tail() {
+					return new FingerTree(this.M, this.T.tail());
+				}
+			}, {
+				key: "init",
+				value: function init() {
+					return new FingerTree(this.M, this.T.init());
+				}
+			}, {
+				key: "push",
+				value: function push(value) {
+					return new FingerTree(this.M, this.T.push(new Measured(this.M, value)));
+				}
+			}, {
+				key: "unshift",
+				value: function unshift(value) {
+					return new FingerTree(this.M, this.T.unshift(new Measured(this.M, value)));
+				}
+			}, {
+				key: "concat",
+				value: function concat(other) {
+					return new FingerTree(this.M, this.T.concat(other.T));
+				}
+			}, {
+				key: Symbol.iterator,
+				value: regeneratorRuntime.mark(function value() {
+					var _iteratorNormalCompletion2, _didIteratorError2, _iteratorError2, _iterator2, _step2, measured;
+
+					return regeneratorRuntime.wrap(function value$(context$4$0) {
+						while (1) switch (context$4$0.prev = context$4$0.next) {
+							case 0:
+								_iteratorNormalCompletion2 = true;
+								_didIteratorError2 = false;
+								_iteratorError2 = undefined;
+								context$4$0.prev = 3;
+								_iterator2 = this.T[Symbol.iterator]();
+
+							case 5:
+								if (_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done) {
+									context$4$0.next = 12;
+									break;
+								}
+
+								measured = _step2.value;
+								context$4$0.next = 9;
+								return measured.element;
+
+							case 9:
+								_iteratorNormalCompletion2 = true;
+								context$4$0.next = 5;
+								break;
+
+							case 12:
+								context$4$0.next = 18;
+								break;
+
+							case 14:
+								context$4$0.prev = 14;
+								context$4$0.t0 = context$4$0["catch"](3);
 								_didIteratorError2 = true;
-								_iteratorError2 = context$4$0.t2;
+								_iteratorError2 = context$4$0.t0;
 
 							case 18:
 								context$4$0.prev = 18;
@@ -454,19 +557,50 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 								return context$4$0.finish(18);
 
 							case 26:
-								return context$4$0.delegateYield(this.right, "t3", 27);
-
-							case 27:
 							case "end":
 								return context$4$0.stop();
 						}
-					}, value, this, [[4, 14, 18, 26], [19,, 21, 25]]);
+					}, value, this, [[3, 14, 18, 26], [19,, 21, 25]]);
 				})
+			}, {
+				key: "splitTree",
+				value: function splitTree(p, i) {
+					var _T$splitTree = this.T.splitTree(p, i);
+
+					var left = _T$splitTree.left;
+					var middle = _T$splitTree.middle;
+					var right = _T$splitTree.right;
+
+					return new Split(new FingerTree(this.M, left), middle.element, new FingerTree(this.M, right));
+				}
+			}, {
+				key: "split",
+				value: function split(p) {
+					var _T$split = this.T.split(p);
+
+					var _T$split2 = _slicedToArray(_T$split, 2);
+
+					var left = _T$split2[0];
+					var right = _T$split2[1];
+
+					return [new FingerTree(this.M, left), new FingerTree(this.M, right)];
+				}
+			}], [{
+				key: "from_iterable",
+				value: function from_iterable(measure, iterable) {
+
+					return new FingerTree(measure).extend(iterable);
+				}
 			}]);
 
-			return Deep;
-		})();
+			return FingerTree;
+		})(Tree);
 
+		exports.FingerTree = FingerTree;
+
+		/* js/src/core */
+		/* js/src/core/concatenate */
+		/* js/src/core/concatenate/app3.js */
 		var app3 = function app3(A, list, B) {
 
 			if (A instanceof Empty) return extendleft(B, list);
@@ -477,6 +611,26 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 			return new Deep(A.measure, A.left, app3(A.middle, nodes(A.measure, [].concat(_toConsumableArray(chain(A.right, list, B.left)))), B.middle), B.right);
 		};
+
+		/* js/src/core/concatenate/digit.js */
+
+		function digit(list) {
+
+			switch (list.length) {
+
+				case 1:
+					return new One(list[0]);
+				case 2:
+					return new Two(list[0], list[1]);
+				case 3:
+					return new Three(list[0], list[1], list[2]);
+				case 4:
+					throw new Error('digit(.) should never be called on length 4 lists since it is only called on results of splitDigit which outputs lists of length at most 3');
+				default:
+					throw new Error("cannot make digit for length " + list.length);
+
+			}
+		}
 
 		/* js/src/core/concatenate/extend.js */
 		function extend(tree, list) {
@@ -811,6 +965,55 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 			return reduce(M.plus.bind(M), map(M.measure.bind(M), list), M.zero());
 		}
 
+		/* js/src/core/split */
+		/* js/src/core/split/Split.js */
+
+		var Split = function Split(left, middle, right) {
+			_classCallCheck(this, Split);
+
+			this.left = left;
+			this.middle = middle;
+			this.right = right;
+		}
+
+		/* js/src/core/split/deepL.js */
+		/**
+  * @param {Array} left
+  * @param {FingerTree} middle
+  * @param {Digit} right
+  */
+		;
+
+		function deepL(M, left, middle, right) {
+
+			if (left.length === 0) {
+
+				if (middle.empty()) return from_iterable(M, right);
+
+				return new Deep(M, middle.head().digit(), middle.tail(), right);
+			}
+
+			return new Deep(M, digit(left), middle, right);
+		}
+
+		/* js/src/core/split/deepR.js */
+		/**
+  * @param {Digit} left
+  * @param {FingerTree} middle
+  * @param {Array} right
+  */
+		function deepR(M, left, middle, right) {
+
+			if (right.length === 0) {
+
+				if (middle.empty()) return from_iterable(M, left);
+
+				return new Deep(M, left, middle.init(), middle.last().digit());
+			}
+
+			return new Deep(M, left, middle, digit(right));
+		}
+
 		/* js/src/digit */
 		/* js/src/digit/1-One.js */
 
@@ -872,6 +1075,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 				key: "node",
 				value: function node(measure) {
 					throw new Error("cannot convert One to node");
+				}
+
+				/**
+     * It is assumed that p(|this|) is true.
+     */
+			}, {
+				key: "splitDigit",
+				value: function splitDigit(p, i, M) {
+					return new Split([], this.a, []);
 				}
 			}, {
 				key: "length",
@@ -945,7 +1157,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 			}, {
 				key: "node",
 				value: function node(measure) {
-					return node2(measure, this.a, this.b);
+					throw new Error("Two should never be converted to Node2 with current implementation");
+				}
+
+				/**
+     * It is assumed that p(|this|) is true.
+     */
+			}, {
+				key: "splitDigit",
+				value: function splitDigit(p, i, M) {
+					i = M.plus(i, this.a.v);
+					if (p(i)) return new Split([], this.a, [this.b]);
+					return new Split([this.a], this.b, []);
 				}
 			}, {
 				key: "length",
@@ -1025,6 +1248,19 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 				key: "node",
 				value: function node(measure) {
 					return node3(measure, this.a, this.b, this.c);
+				}
+
+				/**
+     * It is assumed that p(|this|) is true.
+     */
+			}, {
+				key: "splitDigit",
+				value: function splitDigit(p, i, M) {
+					i = M.plus(i, this.a.v);
+					if (p(i)) return new Split([], this.a, [this.b, this.c]);
+					i = M.plus(i, this.b.v);
+					if (p(i)) return new Split([this.a], this.b, [this.c]);
+					return new Split([this.a, this.b], this.c, []);
 				}
 			}, {
 				key: "length",
@@ -1110,6 +1346,21 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 				key: "node",
 				value: function node(measure) {
 					throw new Error("cannot convert Four to node");
+				}
+
+				/**
+     * It is assumed that p(|this|) is true.
+     */
+			}, {
+				key: "splitDigit",
+				value: function splitDigit(p, i, M) {
+					i = M.plus(i, this.a.v);
+					if (p(i)) return new Split([], this.a, [this.b, this.c, this.d]);
+					i = M.plus(i, this.b.v);
+					if (p(i)) return new Split([this.a], this.b, [this.c, this.d]);
+					i = M.plus(i, this.c.v);
+					if (p(i)) return new Split([this.a, this.b], this.c, [this.d]);
+					return new Split([this.a, this.b, this.c], this.d, []);
 				}
 			}, {
 				key: "length",
@@ -1242,37 +1493,37 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 			}, {
 				key: "head",
 				value: function head() {
-					throw new Error("trying to call head of Node2");
+					throw new Error("trying to call head of Node3");
 				}
 			}, {
 				key: "last",
 				value: function last() {
-					throw new Error("trying to call last of Node2");
+					throw new Error("trying to call last of Node3");
 				}
 			}, {
 				key: "init",
 				value: function init() {
-					throw new Error("trying to call init of Node2");
+					throw new Error("trying to call init of Node3");
 				}
 			}, {
 				key: "tail",
 				value: function tail() {
-					throw new Error("trying to call tail of Node2");
+					throw new Error("trying to call tail of Node3");
 				}
 			}, {
 				key: "push",
 				value: function push(value) {
-					throw new Error("trying to call push of Node2");
+					throw new Error("trying to call push of Node3");
 				}
 			}, {
 				key: "unshift",
 				value: function unshift(value) {
-					throw new Error("trying to call unshift of Node2");
+					throw new Error("trying to call unshift of Node3");
 				}
 			}, {
 				key: "length",
 				get: function get() {
-					throw new Error("trying to call length of Node2");
+					throw new Error("trying to call length of Node3");
 				}
 			}]);
 
