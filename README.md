@@ -99,3 +99,9 @@ Alternatively, you can use any tool mentioned [here](http://bower.io/docs/tools/
 ```js
 require( [ "aureooms-js-fingertree" ] , function ( fingertree ) { ... } ) ;
 ```
+
+## References
+
+  - [Hinze and Paterson](http://staff.city.ac.uk/~ross/papers/FingerTree.pdf)
+  - [A previous JavaScript implementation](https://github.com/qiao/fingertree.js)
+  - [A coffeescript implementation](https://github.com/zot/Leisure/blob/master/src/lib/fingertree.coffee)
