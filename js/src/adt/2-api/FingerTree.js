@@ -1,6 +1,7 @@
-class FingerTree {
+class FingerTree extends Tree {
 
 	constructor ( measure , T = new Empty( cache( measure ) ) ) {
+		super( ) ;
 		this.M = measure ;
 		this.T = T ;
 	}
@@ -41,22 +42,23 @@ class FingerTree {
 		return new FingerTree( this.M , this.T.concat( other.T ) ) ;
 	}
 
-	extend ( iterable ) {
-
-		return reduce( push , iterable , this ) ;
-
-	}
-
-	extendleft ( iterable ) {
-
-		return reduce( unshift , reversed( [ ...iterable ] ) , this ) ;
-
-	}
-
 	* [Symbol.iterator] ( ) {
 
 		for ( const measured of this.T ) yield measured.element ;
 
+	}
+
+	splitTree ( p , i ) {
+
+		const { left , middle , right } = this.T.splitTree( p , i ) ;
+
+		return new Split( new FingerTree( this.M , left ) , middle.element , new FingerTree( this.M , right ) ) ;
+
+	}
+
+	split ( p ) {
+		const [ left , right ] = this.T.split( p ) ;
+		return [ new FingerTree( this.M , left ) , new FingerTree( this.M , right ) ] ;
 	}
 
 	static from_iterable ( measure , iterable ) {

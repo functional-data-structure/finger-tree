@@ -40,4 +40,11 @@ class One {
 		throw new Error( "cannot convert One to node" ) ;
 	}
 
+	/**
+	 * It is assumed that p(|this|) is true.
+	 */
+	splitDigit ( p , i , M ) {
+		return new Split( [ ] , this.a , [ ] ) ;
+	}
+
 }

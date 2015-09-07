@@ -1,6 +1,7 @@
-class Single {
+class Single extends Tree {
 
 	constructor ( measure , element ) {
+		super( ) ;
 		this.measure = measure ;
 		this.element = element ;
 		this.v = measure.measure( element ) ;
@@ -50,6 +51,17 @@ class Single {
 
 	* [Symbol.iterator] ( ) {
 		yield this.element ;
+	}
+
+	/**
+	 * It is assumed that p(|this|) is true.
+	 */
+	splitTree ( p , i ) {
+		return new Split( new Empty( this.measure ) , this.element , new Empty( this.measure ) ) ;
+	}
+
+	split ( p ) {
+		return p( this.v ) ? [ new Empty( this.measure ) , this ] : [ this , new Empty( this.measure ) ] ;
 	}
 
 }
