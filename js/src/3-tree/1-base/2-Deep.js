@@ -6,17 +6,27 @@ class Deep extends Tree {
 		this.left = left ;
 		this.middle = middle ;
 		this.right = right ;
-		this.v = M.plus(
-			this.left.measure( M ) ,
-			M.plus(
-				this.middle.measure( ) ,
-				this.right.measure( M )
-			)
-		) ;
+		this.v = null ;
 	}
 
 	measure ( ) {
+
+		if ( this.v === null ) {
+
+			const M = this.M ;
+
+			this.v = M.plus(
+				this.left.measure( M ) ,
+				M.plus(
+					this.middle.measure( ) ,
+					this.right.measure( M )
+				)
+			) ;
+
+		}
+
 		return this.v ;
+
 	}
 
 	empty ( ) {
