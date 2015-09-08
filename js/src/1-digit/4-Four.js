@@ -27,10 +27,6 @@ class Four {
 		) ;
 	}
 
-	get length ( ) {
-		return 4 ;
-	}
-
 	head ( ) {
 		return this.a ;
 	}

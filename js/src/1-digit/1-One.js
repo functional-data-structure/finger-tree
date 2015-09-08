@@ -12,10 +12,6 @@ class One {
 		return M.measure( this.a ) ;
 	}
 
-	get length ( ) {
-		return 1 ;
-	}
-
 	head ( ) {
 		return this.a ;
 	}

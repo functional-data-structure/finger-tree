@@ -22,10 +22,6 @@ class Three {
 		) ;
 	}
 
-	get length ( ) {
-		return 3 ;
-	}
-
 	head ( ) {
 		return this.a ;
 	}

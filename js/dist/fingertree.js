@@ -431,11 +431,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 				value: function splitDigit(p, i, M) {
 					return new Split([], this.a, []);
 				}
-			}, {
-				key: 'length',
-				get: function get() {
-					return 1;
-				}
 			}]);
 
 			return One;
@@ -520,11 +515,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 					i = M.plus(i, M.measure(this.a));
 					if (p(i)) return new Split([], this.a, [this.b]);
 					return new Split([this.a], this.b, []);
-				}
-			}, {
-				key: 'length',
-				get: function get() {
-					return 2;
 				}
 			}]);
 
@@ -617,11 +607,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 					i = M.plus(i, M.measure(this.b));
 					if (p(i)) return new Split([this.a], this.b, [this.c]);
 					return new Split([this.a, this.b], this.c, []);
-				}
-			}, {
-				key: 'length',
-				get: function get() {
-					return 3;
 				}
 			}]);
 
@@ -723,11 +708,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 					if (p(i)) return new Split([this.a, this.b], this.c, [this.d]);
 					return new Split([this.a, this.b, this.c], this.d, []);
 				}
-			}, {
-				key: 'length',
-				get: function get() {
-					return 4;
-				}
 			}]);
 
 			return Four;
@@ -800,11 +780,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 				key: 'cons',
 				value: function cons(value) {
 					throw new Error("trying to call cons of Node2");
-				}
-			}, {
-				key: 'length',
-				get: function get() {
-					throw new Error("trying to call length of Node2");
 				}
 			}]);
 
@@ -890,11 +865,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 				key: 'cons',
 				value: function cons(value) {
 					throw new Error("trying to call cons of Node3");
-				}
-			}, {
-				key: 'length',
-				get: function get() {
-					throw new Error("trying to call length of Node3");
 				}
 			}]);
 
@@ -1165,7 +1135,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 				value: function tail() {
 					var _this = this;
 
-					if (this.left.length === 1) {
+					if (this.left instanceof One) {
 
 						if (this.middle.empty()) {
 							return from_iterable(this.M, this.right);
@@ -1183,7 +1153,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 				value: function init() {
 					var _this2 = this;
 
-					if (this.right.length === 1) {
+					if (this.right instanceof One) {
 
 						if (this.middle.empty()) {
 							return from_iterable(this.M, this.left);
@@ -1200,7 +1170,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 				key: 'cons',
 				value: function cons(value) {
 
-					if (this.left.length === 4) {
+					if (this.left instanceof Four) {
 
 						return new Deep(this.M, new Two(value, this.left.head()), this.middle.cons(this.left.tail().node(this.M)), this.right);
 					}
@@ -1211,7 +1181,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 				key: 'push',
 				value: function push(value) {
 
-					if (this.right.length === 4) {
+					if (this.right instanceof Four) {
 
 						return new Deep(this.M, this.left, this.middle.push(this.right.init().node(this.M)), new Two(this.right.last(), value));
 					}

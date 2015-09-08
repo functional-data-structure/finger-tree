@@ -33,7 +33,7 @@ class Deep extends Tree {
 
 	tail ( ) {
 
-		if ( this.left.length === 1 ) {
+		if ( this.left instanceof One ) {
 
 			if ( this.middle.empty( ) ) {
 				return from_iterable( this.M , this.right ) ;
@@ -49,7 +49,7 @@ class Deep extends Tree {
 
 	init ( ) {
 
-		if ( this.right.length === 1 ) {
+		if ( this.right instanceof One ) {
 
 			if ( this.middle.empty( ) ) {
 				return from_iterable( this.M , this.left ) ;
@@ -65,7 +65,7 @@ class Deep extends Tree {
 
 	cons ( value )  {
 
-		if ( this.left.length === 4 ) {
+		if ( this.left instanceof Four ) {
 
 			return new Deep(
 				this.M ,
@@ -82,7 +82,7 @@ class Deep extends Tree {
 
 	push ( value ) {
 
-		if ( this.right.length === 4 ) {
+		if ( this.right instanceof Four ) {
 
 			return new Deep(
 				this.M ,

@@ -14,10 +14,6 @@ class Two {
 		return M.plus( M.measure( this.a ) , M.measure( this.b ) ) ;
 	}
 
-	get length ( ) {
-		return 2 ;
-	}
-
 	head ( ) {
 		return this.a ;
 	}
