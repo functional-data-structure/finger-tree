@@ -34,7 +34,7 @@ class Empty extends Tree {
 		return new Single( this.M , value ) ;
 	}
 
-	unshift ( value ) {
+	cons ( value ) {
 		return new Single( this.M , value ) ;
 	}
 

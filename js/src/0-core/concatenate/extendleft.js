@@ -1,5 +1,5 @@
-function extendleft ( tree , list ) {
+function prepend ( tree , list ) {
 
-	return reduce( unshift , reversed( list ) , tree ) ;
+	return reduce( cons , reversed( list ) , tree ) ;
 
 }

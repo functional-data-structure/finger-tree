@@ -7,12 +7,12 @@ var t, i, len = 100000;
 
 console.log('number of operations: ', len);
 
-console.time('unshift');
+console.time('cons');
 t = FingerTree.from_iterable( COUNTER , []);
 for (i = 0; i < len; ++i) {
-  t = t.unshift(i);
+  t = t.cons(i);
 }
-console.timeEnd('unshift');
+console.timeEnd('cons');
 
 console.time('tail');
 for (i = 0; i < len; ++i) {

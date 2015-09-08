@@ -12,6 +12,16 @@ class Three {
 		yield this.c ;
 	}
 
+	measure ( M ) {
+		return M.plus(
+			M.measure( this.a ) ,
+			M.plus(
+				M.measure( this.b ) ,
+				M.measure( this.c )
+			)
+		) ;
+	}
+
 	get length ( ) {
 		return 3 ;
 	}
@@ -36,7 +46,7 @@ class Three {
 		return new Four( this.a , this.b , this.c , value ) ;
 	}
 
-	unshift ( value ) {
+	cons ( value ) {
 		return new Four( value , this.a , this.b , this.c ) ;
 	}
 

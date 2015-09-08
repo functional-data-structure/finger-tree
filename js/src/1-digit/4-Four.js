@@ -14,6 +14,19 @@ class Four {
 		yield this.d ;
 	}
 
+	measure ( M ) {
+		return M.plus(
+			M.measure( this.a ) ,
+			M.plus(
+				M.measure( this.b ) ,
+				M.plus(
+					M.measure( this.c ) ,
+					M.measure( this.d )
+				)
+			)
+		) ;
+	}
+
 	get length ( ) {
 		return 4 ;
 	}
@@ -38,8 +51,8 @@ class Four {
 		throw new Error( "cannot push digit Four" ) ;
 	}
 
-	unshift ( value ) {
-		throw new Error( "cannot unshift digit Four" ) ;
+	cons ( value ) {
+		throw new Error( "cannot cons digit Four" ) ;
 	}
 
 	node ( M ) {

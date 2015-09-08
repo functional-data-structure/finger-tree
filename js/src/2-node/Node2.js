@@ -44,14 +44,15 @@ class Node2 {
 		throw new Error( "trying to call push of Node2" ) ;
 	}
 
-	unshift ( value ) {
-		throw new Error( "trying to call unshift of Node2" ) ;
+	cons ( value ) {
+		throw new Error( "trying to call cons of Node2" ) ;
 	}
 
 }
 
 function node2 ( M , a , b ) {
 
-	return new Node2( measure( M , [ a , b ] ) , a , b ) ;
+	return new Node2( M.plus( M.measure( a ) , M.measure( b ) ) , a , b ) ;
 
 }
+

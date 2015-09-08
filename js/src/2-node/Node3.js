@@ -46,14 +46,14 @@ class Node3 {
 		throw new Error( "trying to call push of Node3" ) ;
 	}
 
-	unshift ( value ) {
-		throw new Error( "trying to call unshift of Node3" ) ;
+	cons ( value ) {
+		throw new Error( "trying to call cons of Node3" ) ;
 	}
 
 }
 
 function node3 ( M , a , b , c ) {
 
-	return new Node3( measure( M , [ a , b , c ] ) , a , b , c ) ;
+	return new Node3( M.plus( M.measure( a ) , M.plus( M.measure( b ) , M.measure( c ) ) ) , a , b , c ) ;
 
 }

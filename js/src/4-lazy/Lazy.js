@@ -27,8 +27,8 @@ class Lazy extends Tree {
 		return this.force( ).last( ) ;
 	}
 
-	unshift ( value ) {
-		return this.force( ).unshift( value ) ;
+	cons ( value ) {
+		return this.force( ).cons( value ) ;
 	}
 
 	push ( value ) {

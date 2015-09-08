@@ -25,11 +25,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 			A = A.force();
 			B = B.force();
 
-			if (A instanceof Empty) return extendleft(B, list);
-			if (B instanceof Empty) return extend(A, list);
+			if (A instanceof Empty) return prepend(B, list);
+			if (B instanceof Empty) return append(A, list);
 
-			if (A instanceof Single) return extendleft(B, list).unshift(A.head());
-			if (B instanceof Single) return extend(A, list).push(B.last());
+			if (A instanceof Single) return prepend(B, list).cons(A.head());
+			if (B instanceof Single) return append(A, list).push(B.last());
 
 			return new Deep(A.M, A.left, delay(function () {
 				return app3(A.middle, nodes(A.M, [].concat(_toConsumableArray(chain(A.right, list, B.left)))), B.middle);
@@ -57,21 +57,21 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 		}
 
 		/* js/src/0-core/concatenate/extend.js */
-		function extend(tree, list) {
+		function append(tree, list) {
 
 			return reduce(push, list, tree);
 		}
 
 		/* js/src/0-core/concatenate/extendleft.js */
-		function extendleft(tree, list) {
+		function prepend(tree, list) {
 
-			return reduce(unshift, reversed(list), tree);
+			return reduce(cons, reversed(list), tree);
 		}
 
 		/* js/src/0-core/concatenate/from_iterable.js */
 		function from_iterable(M, iterable) {
 
-			return new Empty(M).extend(iterable);
+			return new Empty(M).append(iterable);
 		}
 
 		/* js/src/0-core/concatenate/nodes.js */
@@ -97,8 +97,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 		}
 
 		/* js/src/0-core/concatenate/unshift.js */
-		function unshift(T, x) {
-			return T.unshift(x);
+		function cons(T, x) {
+			return T.cons(x);
 		}
 
 		/* js/src/0-core/empty */
@@ -459,6 +459,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 					}, value, this);
 				})
 			}, {
+				key: 'measure',
+				value: function measure(M) {
+					return M.measure(this.a);
+				}
+			}, {
 				key: 'head',
 				value: function head() {
 					return this.a;
@@ -484,8 +489,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 					return new Two(this.a, value);
 				}
 			}, {
-				key: 'unshift',
-				value: function unshift(value) {
+				key: 'cons',
+				value: function cons(value) {
 					return new Two(value, this.a);
 				}
 			}, {
@@ -542,6 +547,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 					}, value, this);
 				})
 			}, {
+				key: 'measure',
+				value: function measure(M) {
+					return M.plus(M.measure(this.a), M.measure(this.b));
+				}
+			}, {
 				key: 'head',
 				value: function head() {
 					return this.a;
@@ -567,8 +577,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 					return new Three(this.a, this.b, value);
 				}
 			}, {
-				key: 'unshift',
-				value: function unshift(value) {
+				key: 'cons',
+				value: function cons(value) {
 					return new Three(value, this.a, this.b);
 				}
 			}, {
@@ -632,6 +642,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 					}, value, this);
 				})
 			}, {
+				key: 'measure',
+				value: function measure(M) {
+					return M.plus(M.measure(this.a), M.plus(M.measure(this.b), M.measure(this.c)));
+				}
+			}, {
 				key: 'head',
 				value: function head() {
 					return this.a;
@@ -657,8 +672,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 					return new Four(this.a, this.b, this.c, value);
 				}
 			}, {
-				key: 'unshift',
-				value: function unshift(value) {
+				key: 'cons',
+				value: function cons(value) {
 					return new Four(value, this.a, this.b, this.c);
 				}
 			}, {
@@ -730,6 +745,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 					}, value, this);
 				})
 			}, {
+				key: 'measure',
+				value: function measure(M) {
+					return M.plus(M.measure(this.a), M.plus(M.measure(this.b), M.plus(M.measure(this.c), M.measure(this.d))));
+				}
+			}, {
 				key: 'head',
 				value: function head() {
 					return this.a;
@@ -755,9 +775,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 					throw new Error("cannot push digit Four");
 				}
 			}, {
-				key: 'unshift',
-				value: function unshift(value) {
-					throw new Error("cannot unshift digit Four");
+				key: 'cons',
+				value: function cons(value) {
+					throw new Error("cannot cons digit Four");
 				}
 			}, {
 				key: 'node',
@@ -853,9 +873,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 					throw new Error("trying to call push of Node2");
 				}
 			}, {
-				key: 'unshift',
-				value: function unshift(value) {
-					throw new Error("trying to call unshift of Node2");
+				key: 'cons',
+				value: function cons(value) {
+					throw new Error("trying to call cons of Node2");
 				}
 			}, {
 				key: 'length',
@@ -869,7 +889,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 		function node2(M, a, b) {
 
-			return new Node2(measure(M, [a, b]), a, b);
+			return new Node2(M.plus(M.measure(a), M.measure(b)), a, b);
 		}
 
 		/* js/src/2-node/Node3.js */
@@ -943,9 +963,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 					throw new Error("trying to call push of Node3");
 				}
 			}, {
-				key: 'unshift',
-				value: function unshift(value) {
-					throw new Error("trying to call unshift of Node3");
+				key: 'cons',
+				value: function cons(value) {
+					throw new Error("trying to call cons of Node3");
 				}
 			}, {
 				key: 'length',
@@ -959,7 +979,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 		function node3(M, a, b, c) {
 
-			return new Node3(measure(M, [a, b, c]), a, b, c);
+			return new Node3(M.plus(M.measure(a), M.plus(M.measure(b), M.measure(c))), a, b, c);
 		}
 
 		/* js/src/3-tree */
@@ -990,14 +1010,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 					return this.split(p)[1];
 				}
 			}, {
-				key: 'extend',
-				value: function extend(iterable) {
+				key: 'append',
+				value: function append(iterable) {
 					return reduce(push, iterable, this);
 				}
 			}, {
-				key: 'extendleft',
-				value: function extendleft(iterable) {
-					return reduce(unshift, reversed([].concat(_toConsumableArray(iterable))), this);
+				key: 'prepend',
+				value: function prepend(iterable) {
+					return reduce(cons, reversed([].concat(_toConsumableArray(iterable))), this);
 				}
 			}]);
 
@@ -1053,8 +1073,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 					return new Single(this.M, value);
 				}
 			}, {
-				key: 'unshift',
-				value: function unshift(value) {
+				key: 'cons',
+				value: function cons(value) {
 					return new Single(this.M, value);
 				}
 			}, {
@@ -1131,8 +1151,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 					return new Empty(this.M);
 				}
 			}, {
-				key: 'unshift',
-				value: function unshift(value) {
+				key: 'cons',
+				value: function cons(value) {
 					return new Deep(this.M, new One(value), new Empty(cache(this.M)), new One(this.element));
 				}
 			}, {
@@ -1143,7 +1163,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 			}, {
 				key: 'concat',
 				value: function concat(other) {
-					return other.unshift(this.element);
+					return other.cons(this.element);
 				}
 			}, {
 				key: Symbol.iterator,
@@ -1190,7 +1210,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 				this.left = left;
 				this.middle = middle;
 				this.right = right;
-				this.v = M.plus(measure(M, this.left), M.plus(this.middle.measure(), measure(M, this.right)));
+				this.v = M.plus(this.left.measure(M), M.plus(this.middle.measure(), this.right.measure(M)));
 			}
 
 			/* js/src/3-tree/2-api */
@@ -1253,15 +1273,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 					return new Deep(this.M, this.left, this.middle, this.right.init());
 				}
 			}, {
-				key: 'unshift',
-				value: function unshift(value) {
+				key: 'cons',
+				value: function cons(value) {
 
 					if (this.left.length === 4) {
 
-						return new Deep(this.M, new Two(value, this.left.head()), this.middle.unshift(this.left.tail().node(this.M)), this.right);
+						return new Deep(this.M, new Two(value, this.left.head()), this.middle.cons(this.left.tail().node(this.M)), this.right);
 					}
 
-					return new Deep(this.M, this.left.unshift(value), this.middle, this.right);
+					return new Deep(this.M, this.left.cons(value), this.middle, this.right);
 				}
 			}, {
 				key: 'push',
@@ -1393,7 +1413,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 					if (p(this.measure())) {
 						var split = this.splitTree(p, this.M.zero());
-						return [split.left, split.right.unshift(split.middle)];
+						return [split.left, split.right.cons(split.middle)];
 					}
 
 					return [this, new Empty(this.M)];
@@ -1454,9 +1474,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 					return this.force().last();
 				}
 			}, {
-				key: 'unshift',
-				value: function unshift(value) {
-					return this.force().unshift(value);
+				key: 'cons',
+				value: function cons(value) {
+					return this.force().cons(value);
 				}
 			}, {
 				key: 'push',

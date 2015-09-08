@@ -3,11 +3,11 @@ const app3 = function ( A , list , B ) {
 	A = A.force( ) ;
 	B = B.force( ) ;
 
-	if ( A instanceof Empty ) return extendleft( B , list ) ;
-	if ( B instanceof Empty ) return extend( A , list ) ;
+	if ( A instanceof Empty ) return prepend( B , list ) ;
+	if ( B instanceof Empty ) return append( A , list ) ;
 
-	if ( A instanceof Single ) return extendleft( B , list ).unshift( A.head( ) ) ;
-	if ( B instanceof Single ) return extend( A , list ).push( B.last( ) ) ;
+	if ( A instanceof Single ) return prepend( B , list ).cons( A.head( ) ) ;
+	if ( B instanceof Single ) return append( A , list ).push( B.last( ) ) ;
 
 	return new Deep(
 		A.M ,

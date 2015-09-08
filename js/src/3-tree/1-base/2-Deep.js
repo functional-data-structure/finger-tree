@@ -7,8 +7,11 @@ class Deep extends Tree {
 		this.middle = middle ;
 		this.right = right ;
 		this.v = M.plus(
-			measure( M , this.left ) ,
-			M.plus( this.middle.measure( ) , measure( M , this.right ) )
+			this.left.measure( M ) ,
+			M.plus(
+				this.middle.measure( ) ,
+				this.right.measure( M )
+			)
 		) ;
 	}
 
@@ -60,20 +63,20 @@ class Deep extends Tree {
 
 	}
 
-	unshift ( value )  {
+	cons ( value )  {
 
 		if ( this.left.length === 4 ) {
 
 			return new Deep(
 				this.M ,
 				new Two( value , this.left.head( ) ) ,
-				this.middle.unshift( this.left.tail( ).node( this.M ) ) ,
+				this.middle.cons( this.left.tail( ).node( this.M ) ) ,
 				this.right
 			) ;
 
 		}
 
-		return new Deep( this.M , this.left.unshift( value ) , this.middle , this.right ) ;
+		return new Deep( this.M , this.left.cons( value ) , this.middle , this.right ) ;
 
 	}
 
@@ -153,7 +156,7 @@ class Deep extends Tree {
 
 		if ( p( this.measure( ) ) ) {
 			const split = this.splitTree( p , this.M.zero( ) ) ;
-			return [ split.left , split.right.unshift( split.middle ) ] ;
+			return [ split.left , split.right.cons( split.middle ) ] ;
 		}
 
 		return [ this , new Empty( this.M ) ] ;
