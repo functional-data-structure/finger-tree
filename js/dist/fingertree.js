@@ -15,7 +15,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 	'use strict';
 
 	var definition = function definition(exports, undefined) {
-		var marked2$0 = [chain, map, reversed].map(regeneratorRuntime.mark);
+		var marked2$0 = [chain, reversed].map(regeneratorRuntime.mark);
 
 		/* js/src/0-core */
 		/* js/src/0-core/concatenate */
@@ -207,100 +207,31 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 			}, marked2$0[0], this, [[3, 14, 18, 26], [19,, 21, 25]]);
 		}
 
-		/* js/src/0-core/itertools/map.js */
-		function map(callable, iterable) {
-			var _iteratorNormalCompletion2, _didIteratorError2, _iteratorError2, _iterator2, _step2, value;
-
-			return regeneratorRuntime.wrap(function map$(context$3$0) {
-				while (1) switch (context$3$0.prev = context$3$0.next) {
-					case 0:
-						_iteratorNormalCompletion2 = true;
-						_didIteratorError2 = false;
-						_iteratorError2 = undefined;
-						context$3$0.prev = 3;
-						_iterator2 = iterable[Symbol.iterator]();
-
-					case 5:
-						if (_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done) {
-							context$3$0.next = 12;
-							break;
-						}
-
-						value = _step2.value;
-						context$3$0.next = 9;
-						return callable(value);
-
-					case 9:
-						_iteratorNormalCompletion2 = true;
-						context$3$0.next = 5;
-						break;
-
-					case 12:
-						context$3$0.next = 18;
-						break;
-
-					case 14:
-						context$3$0.prev = 14;
-						context$3$0.t0 = context$3$0['catch'](3);
-						_didIteratorError2 = true;
-						_iteratorError2 = context$3$0.t0;
-
-					case 18:
-						context$3$0.prev = 18;
-						context$3$0.prev = 19;
-
-						if (!_iteratorNormalCompletion2 && _iterator2['return']) {
-							_iterator2['return']();
-						}
-
-					case 21:
-						context$3$0.prev = 21;
-
-						if (!_didIteratorError2) {
-							context$3$0.next = 24;
-							break;
-						}
-
-						throw _iteratorError2;
-
-					case 24:
-						return context$3$0.finish(21);
-
-					case 25:
-						return context$3$0.finish(18);
-
-					case 26:
-					case 'end':
-						return context$3$0.stop();
-				}
-			}, marked2$0[1], this, [[3, 14, 18, 26], [19,, 21, 25]]);
-		}
-
 		/* js/src/0-core/itertools/reduce.js */
 		function reduce(callable, iterable, initial) {
 
 			var accumulator = initial;
 
-			var _iteratorNormalCompletion3 = true;
-			var _didIteratorError3 = false;
-			var _iteratorError3 = undefined;
+			var _iteratorNormalCompletion2 = true;
+			var _didIteratorError2 = false;
+			var _iteratorError2 = undefined;
 
 			try {
-				for (var _iterator3 = iterable[Symbol.iterator](), _step3; !(_iteratorNormalCompletion3 = (_step3 = _iterator3.next()).done); _iteratorNormalCompletion3 = true) {
-					var value = _step3.value;
+				for (var _iterator2 = iterable[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
+					var value = _step2.value;
 					accumulator = callable(accumulator, value);
 				}
 			} catch (err) {
-				_didIteratorError3 = true;
-				_iteratorError3 = err;
+				_didIteratorError2 = true;
+				_iteratorError2 = err;
 			} finally {
 				try {
-					if (!_iteratorNormalCompletion3 && _iterator3['return']) {
-						_iterator3['return']();
+					if (!_iteratorNormalCompletion2 && _iterator2['return']) {
+						_iterator2['return']();
 					}
 				} finally {
-					if (_didIteratorError3) {
-						throw _iteratorError3;
+					if (_didIteratorError2) {
+						throw _iteratorError2;
 					}
 				}
 			}
@@ -333,7 +264,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 					case 'end':
 						return context$3$0.stop();
 				}
-			}, marked2$0[2], this);
+			}, marked2$0[1], this);
 		}
 
 		/* js/src/0-core/measure */
@@ -369,13 +300,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 		function cache(M) {
 
 			return M instanceof CachedMeasure ? M : new CachedMeasure(M);
-		}
-
-		/* js/src/0-core/measure/measure.js */
-
-		function measure(M, list) {
-
-			return reduce(M.plus.bind(M), map(M.measure.bind(M), list), M.zero());
 		}
 
 		/* js/src/0-core/split */
@@ -1303,7 +1227,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 			}, {
 				key: Symbol.iterator,
 				value: regeneratorRuntime.mark(function value() {
-					var _iteratorNormalCompletion4, _didIteratorError4, _iteratorError4, _iterator4, _step4, node;
+					var _iteratorNormalCompletion3, _didIteratorError3, _iteratorError3, _iterator3, _step3, node;
 
 					return regeneratorRuntime.wrap(function value$(context$4$0) {
 						while (1) switch (context$4$0.prev = context$4$0.next) {
@@ -1311,23 +1235,23 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 								return context$4$0.delegateYield(this.left, 't0', 1);
 
 							case 1:
-								_iteratorNormalCompletion4 = true;
-								_didIteratorError4 = false;
-								_iteratorError4 = undefined;
+								_iteratorNormalCompletion3 = true;
+								_didIteratorError3 = false;
+								_iteratorError3 = undefined;
 								context$4$0.prev = 4;
-								_iterator4 = this.middle[Symbol.iterator]();
+								_iterator3 = this.middle[Symbol.iterator]();
 
 							case 6:
-								if (_iteratorNormalCompletion4 = (_step4 = _iterator4.next()).done) {
+								if (_iteratorNormalCompletion3 = (_step3 = _iterator3.next()).done) {
 									context$4$0.next = 12;
 									break;
 								}
 
-								node = _step4.value;
+								node = _step3.value;
 								return context$4$0.delegateYield(node, 't1', 9);
 
 							case 9:
-								_iteratorNormalCompletion4 = true;
+								_iteratorNormalCompletion3 = true;
 								context$4$0.next = 6;
 								break;
 
@@ -1338,26 +1262,26 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 							case 14:
 								context$4$0.prev = 14;
 								context$4$0.t2 = context$4$0['catch'](4);
-								_didIteratorError4 = true;
-								_iteratorError4 = context$4$0.t2;
+								_didIteratorError3 = true;
+								_iteratorError3 = context$4$0.t2;
 
 							case 18:
 								context$4$0.prev = 18;
 								context$4$0.prev = 19;
 
-								if (!_iteratorNormalCompletion4 && _iterator4['return']) {
-									_iterator4['return']();
+								if (!_iteratorNormalCompletion3 && _iterator3['return']) {
+									_iterator3['return']();
 								}
 
 							case 21:
 								context$4$0.prev = 21;
 
-								if (!_didIteratorError4) {
+								if (!_didIteratorError3) {
 									context$4$0.next = 24;
 									break;
 								}
 
-								throw _iteratorError4;
+								throw _iteratorError3;
 
 							case 24:
 								return context$4$0.finish(21);
@@ -1387,7 +1311,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 					var M = this.M;
 
 					// see if the split point is inside the left tree
-					var leftMeasure = M.plus(i, measure(M, left));
+					var leftMeasure = M.plus(i, left.measure(M));
 					if (p(leftMeasure)) {
 						var _split = left.splitDigit(p, i, M);
 						return new Split(from_iterable(M, _split.left), _split.middle, deepL(M, _split.right, middle, right));

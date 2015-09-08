@@ -119,7 +119,7 @@ class Deep extends Tree {
 		const { left , middle , right , M } = this ;
 
 		// see if the split point is inside the left tree
-		const leftMeasure = M.plus( i , measure( M , left ) ) ;
+		const leftMeasure = M.plus( i , left.measure( M ) ) ;
 		if ( p( leftMeasure ) ) {
 			const split = left.splitDigit( p , i , M ) ;
 			return new Split(
