@@ -22,10 +22,6 @@ class Node3 {
 		return new Three( this.a , this.b , this.c ) ;
 	}
 
-	get length ( ) {
-		throw new Error( "trying to call length of Node3" ) ;
-	}
-
 	head ( ) {
 		throw new Error( "trying to call head of Node3" ) ;
 	}

@@ -20,10 +20,6 @@ class Node2 {
 		return new Two( this.a , this.b ) ;
 	}
 
-	get length ( ) {
-		throw new Error( "trying to call length of Node2" ) ;
-	}
-
 	head ( ) {
 		throw new Error( "trying to call head of Node2" ) ;
 	}
