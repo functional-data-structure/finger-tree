@@ -1104,7 +1104,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 				this.left = left;
 				this.middle = middle;
 				this.right = right;
-				this.v = M.plus(this.left.measure(M), M.plus(this.middle.measure(), this.right.measure(M)));
+				this.v = null;
 			}
 
 			/* js/src/3-tree/2-api */
@@ -1113,6 +1113,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 			_createClass(Deep, [{
 				key: 'measure',
 				value: function measure() {
+
+					if (this.v === null) {
+
+						var M = this.M;
+
+						this.v = M.plus(this.left.measure(M), M.plus(this.middle.measure(), this.right.measure(M)));
+					}
+
 					return this.v;
 				}
 			}, {
