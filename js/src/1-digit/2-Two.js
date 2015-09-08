@@ -10,6 +10,10 @@ class Two {
 		yield this.b ;
 	}
 
+	measure ( M ) {
+		return M.plus( M.measure( this.a ) , M.measure( this.b ) ) ;
+	}
+
 	get length ( ) {
 		return 2 ;
 	}
@@ -34,7 +38,7 @@ class Two {
 		return new Three( this.a , this.b , value ) ;
 	}
 
-	unshift ( value ) {
+	cons ( value ) {
 		return new Three( value , this.a , this.b ) ;
 	}
 

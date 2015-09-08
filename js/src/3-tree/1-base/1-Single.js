@@ -31,7 +31,7 @@ class Single extends Tree {
 		return new Empty( this.M ) ;
 	}
 
-	unshift ( value ) {
+	cons ( value ) {
 		return new Deep(
 			this.M ,
 			new One( value ) ,
@@ -50,7 +50,7 @@ class Single extends Tree {
 	}
 
 	concat ( other ) {
-		return other.unshift( this.element ) ;
+		return other.cons( this.element ) ;
 	}
 
 	* [Symbol.iterator] ( ) {

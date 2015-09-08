@@ -1,3 +1,3 @@
-function unshift ( T , x ) {
-	return T.unshift( x ) ;
+function cons ( T , x ) {
+	return T.cons( x ) ;
 }

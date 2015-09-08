@@ -13,12 +13,12 @@ class Tree {
 		return this.split( p )[1] ;
 	}
 
-	extend ( iterable ) {
+	append ( iterable ) {
 		return reduce( push , iterable , this ) ;
 	}
 
-	extendleft ( iterable ) {
-		return reduce( unshift , reversed( [ ...iterable ] ) , this ) ;
+	prepend ( iterable ) {
+		return reduce( cons , reversed( [ ...iterable ] ) , this ) ;
 	}
 
 }
