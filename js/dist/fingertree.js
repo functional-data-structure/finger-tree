@@ -19,17 +19,29 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 		/* js/src/0-core */
 		/* js/src/0-core/concatenate */
+		/* js/src/0-core/concatenate/_append.js */
+		function _append(tree, list) {
+
+			return reduce(push, list, tree);
+		}
+
+		/* js/src/0-core/concatenate/_prepend.js */
+		function _prepend(tree, list) {
+
+			return reduce(cons, reversed(list), tree);
+		}
+
 		/* js/src/0-core/concatenate/app3.js */
 		var app3 = function app3(A, list, B) {
 
 			A = A.force();
 			B = B.force();
 
-			if (A instanceof Empty) return prepend(B, list);
-			if (B instanceof Empty) return append(A, list);
+			if (A instanceof Empty) return _prepend(B, list);
+			if (B instanceof Empty) return _append(A, list);
 
-			if (A instanceof Single) return prepend(B, list).cons(A.head());
-			if (B instanceof Single) return append(A, list).push(B.last());
+			if (A instanceof Single) return _prepend(B, list).cons(A.head());
+			if (B instanceof Single) return _append(A, list).push(B.last());
 
 			return new Deep(A.M, A.left, delay(function () {
 				return app3(A.middle, nodes(A.M, [].concat(_toConsumableArray(chain(A.right, list, B.left)))), B.middle);
@@ -54,18 +66,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 					throw new Error('cannot make digit for length ' + list.length);
 
 			}
-		}
-
-		/* js/src/0-core/concatenate/extend.js */
-		function append(tree, list) {
-
-			return reduce(push, list, tree);
-		}
-
-		/* js/src/0-core/concatenate/extendleft.js */
-		function prepend(tree, list) {
-
-			return reduce(cons, reversed(list), tree);
 		}
 
 		/* js/src/0-core/concatenate/from_iterable.js */

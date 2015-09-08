@@ -1,4 +1,4 @@
-function prepend ( tree , list ) {
+function _prepend ( tree , list ) {
 
 	return reduce( cons , reversed( list ) , tree ) ;
 
