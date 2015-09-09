@@ -151,6 +151,81 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
           "type": "heading",
           "data": {
             "level": 2,
+            "title": "Optimization of the code step by step",
+            "slug": "optimization-of-the-code-step-by-step"
+          },
+          "depth": 2,
+          "children": [
+            {
+              "type": "heading",
+              "data": {
+                "level": 3,
+                "title": "When the benchmark was added",
+                "slug": "when-the-benchmark-was-added"
+              },
+              "depth": 3
+            }, {
+              "type": "heading",
+              "data": {
+                "level": 3,
+                "title": "First implementation of lazy evaluation of subtrees",
+                "slug": "first-implementation-of-lazy-evaluation-of-subtrees"
+              },
+              "depth": 3
+            }, {
+              "type": "heading",
+              "data": {
+                "level": 3,
+                "title": "Unwrap values",
+                "slug": "unwrap-values"
+              },
+              "depth": 3
+            }, {
+              "type": "heading",
+              "data": {
+                "level": 3,
+                "title": "Removing iterator loops and bindings for fixed size sequences",
+                "slug": "removing-iterator-loops-and-bindings-for-fixed-size-sequences"
+              },
+              "depth": 3
+            }, {
+              "type": "heading",
+              "data": {
+                "level": 3,
+                "title": "Removing loops: part II",
+                "slug": "removing-loops-part-ii"
+              },
+              "depth": 3
+            }, {
+              "type": "heading",
+              "data": {
+                "level": 3,
+                "title": "Specialized procedures for small loops: part II",
+                "slug": "specialized-procedures-for-small-loops-part-ii"
+              },
+              "depth": 3
+            }, {
+              "type": "heading",
+              "data": {
+                "level": 3,
+                "title": "Dropping some of the es6 syntax",
+                "slug": "dropping-some-of-the-es6-syntax"
+              },
+              "depth": 3
+            }, {
+              "type": "heading",
+              "data": {
+                "level": 3,
+                "title": "To be continued...",
+                "slug": "to-be-continued"
+              },
+              "depth": 3
+            }
+          ]
+        }, {
+          "type": "heading",
+          "data": {
+            "level": 2,
             "title": "References",
             "slug": "references"
           },
@@ -394,6 +469,26 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
           "depth": 2,
           "children": [
             {
+              "type": "file",
+              "data": {
+                "language": {
+                  "nameMatchers": [".js"],
+                  "pygmentsLexer": "javascript",
+                  "multiLineComment": ["/*", "*", "*/"],
+                  "singleLineComment": ["//"],
+                  "ignorePrefix": "}",
+                  "foldPrefix": "^",
+                  "name": "JavaScript"
+                },
+                "sourcePath": "/home/aureooms/dev/js/js-fingertree/js/src/0-core/measure/CachedMeasure.js",
+                "projectPath": "js/src/0-core/measure/CachedMeasure.js",
+                "targetPath": "0-core/measure/CachedMeasure",
+                "pageTitle": "0-core/measure/CachedMeasure",
+                "title": "CachedMeasure"
+              },
+              "depth": 3,
+              "outline": []
+            }, {
               "type": "file",
               "data": {
                 "language": {

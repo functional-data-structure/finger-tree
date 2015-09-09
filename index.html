@@ -56,9 +56,210 @@ jspm install npm:aureooms-js-fingertree</code></pre>
 <p>Alternatively, you can use any tool mentioned <a href="http://bower.io/docs/tools/">here</a>.</p>
 <h3 id="jam">jam</h3>
 <pre><code class="lang-js"><span class="hljs-built_in">require</span>( [ <span class="hljs-string">"aureooms-js-fingertree"</span> ] , <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"> fingertree </span>) </span>{ ... } ) ;</code></pre>
+<h2 id="optimization-of-the-code-step-by-step">Optimization of the code step by step</h2>
+<p>I will copy here the output of a benchmark run on my computer after each
+optimization change together with a small explanation.</p>
+<p><em><strong>Note</strong>: I did not check if the real issues were caused by generators, bound functions,
+V8 optimization inhibitors, or anything else...</em></p>
+<h3 id="when-the-benchmark-was-added">When the benchmark was added</h3>
+<blockquote>
+<p>d903efb8d9011a44a5ff732c569b2ae33aa5b8f1</p>
+</blockquote>
+<p>What the benchmark code does is, in order:</p>
+<ul>
+<li>build an empty tree <code>T</code></li>
+<li>add 100000 elements to the beginning of <code>T</code></li>
+<li>remove those 100000 elements by popping the first element of <code>T</code> 100000 times</li>
+<li>add 100000 elements to the end of <code>T</code></li>
+<li>split <code>T</code> at all 100000 positions, one after the other</li>
+<li>remove the 100000 elements of <code>T</code> by popping the last element 100000 times</li>
+</ul>
+<p>Here are the first running times I measured for this implementation. It is not
+difficult to see that the implementation is not fast at all. 100000 elements is
+not that much right?</p>
+<pre><code class="lang-sh">$ node benchmark/benchmark.js
+number of operations:  <span class="hljs-number">100000</span>
+cons: <span class="hljs-number">8584</span>ms
+tail: <span class="hljs-number">6841</span>ms
+push: <span class="hljs-number">8581</span>ms
+split: <span class="hljs-number">144243</span>ms
+init: <span class="hljs-number">6896</span>ms</code></pre>
+<p>However most of the motivation for those optimization steps came from applying
+the same benchmark to
+<a href="https://github.com/qiao/fingertree.js">another JavaScript implementation</a>
+(actually, I copied the benchmark from Joe&#39;s repository). This made it obvious
+that my implementation was performing badly.</p>
+<pre><code class="lang-sh">$ node ../fingertree.js/benchmark/benchmark.js
+number of operations:  <span class="hljs-number">100000</span>
+cons: <span class="hljs-number">155</span>ms
+tail: <span class="hljs-number">221</span>ms
+push: <span class="hljs-number">134</span>ms
+split: <span class="hljs-number">1889</span>ms
+init: <span class="hljs-number">141</span>ms</code></pre>
+<h3 id="first-implementation-of-lazy-evaluation-of-subtrees">First implementation of lazy evaluation of subtrees</h3>
+<blockquote>
+<p>f0ca58169a32140a8617625466f15489a3549124</p>
+</blockquote>
+<p>A Deep instance posseses a subtree which in some cases is not accessed at all
+during the whole lifetime of its parent. So why build it? The idea is to delay
+the construction of the object, which might be expensive, to a later point in
+time using a proxy: a finger tree look-alike object that will construct the
+real subtree if needed.</p>
+<p>Time measurements after applying lazy evaluation concepts:</p>
+<pre><code class="lang-sh">$ node benchmark/benchmark.js
+number of operations:  <span class="hljs-number">100000</span>
+cons: <span class="hljs-number">8585</span>ms
+tail: <span class="hljs-number">6812</span>ms
+push: <span class="hljs-number">8113</span>ms
+split: <span class="hljs-number">139449</span>ms
+init: <span class="hljs-number">6777</span>ms</code></pre>
+<p>Unfortunately there is no big performance improvement here but as you&#39;ll see
+there are some nastier things to change.</p>
+<h3 id="unwrap-values">Unwrap values</h3>
+<blockquote>
+<p>19c8ca9298c98eef7e3f257257cb4e01adfe0edb</p>
+</blockquote>
+<p>Before this change, each value was first wrapped in a unique-value-node-like
+structure defined as:</p>
+<pre><code class="lang-js"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Measured</span> </span>{
+
+    constructor ( element , v ) {
+        <span class="hljs-keyword">this</span>.element = element ;
+        <span class="hljs-keyword">this</span>.v = v ;
+    }
+
+    measure ( ) {
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.v ;
+    }
+
+}</code></pre>
+<p>where <code>v</code> is the value returned by <code>Measure.measure( element )</code>. This wrapping
+allowed to give the same interface to elements, nodes, digits and trees with
+respect to computing measures. This approach has at least 2 problems:</p>
+<ul>
+<li>It introduces one additional level of indirection by wrapping all values.</li>
+<li>The way it was implemented here caches measures for all elements. This might not
+be a good thing in settings where measures are big objects. Moreover, this
+is in contradiction with the <em>lazy way</em> of functional programming
+paradigms.</li>
+</ul>
+<p>However, there is a simpler way to solve the <em>common interface</em> problem. Indeed,
+the elements contained in the digits of the root tree can be measured
+with the Measure object left unchanged, and starting from the subtree of the
+root level we just need a modified Measure object that uses the interface of
+Node2 and Node3 to compute the node measures. Never will digits contain objects
+of different types, so patching the Measure object this way suffices, there is
+no need to give the same interface to nodes and elements.</p>
+<p>Here are the measurements after the change:</p>
+<pre><code class="lang-sh">$ node benchmark/benchmark.js
+number of operations:  <span class="hljs-number">100000</span>
+cons: <span class="hljs-number">8452</span>ms
+tail: <span class="hljs-number">6930</span>ms
+push: <span class="hljs-number">7983</span>ms
+split: <span class="hljs-number">141338</span>ms
+init: <span class="hljs-number">6657</span>ms</code></pre>
+<p>Mostly noise for the moment. There must be something else to fix...</p>
+<h3 id="removing-iterator-loops-and-bindings-for-fixed-size-sequences">Removing iterator loops and bindings for fixed size sequences</h3>
+<blockquote>
+<p>28f6ee08d33e2cb2b9d0e5cae69948a7013bc0b7</p>
+</blockquote>
+<p>At some point I decided to use a better tool than intuition to progress:
+profiling. This change is the first where I guided the pruning by looking at
+the output of <code>node --prof benchmark/benchmark.js</code> using <code>node-tick-processor</code>
+from the <a href="https://www.npmjs.com/package/tick">tick</a> package.</p>
+<p>Before this change, digit measures where computed using the idiom</p>
+<pre><code class="lang-js">reduce( M.plus.bind( M ) , map( M.measure.bind( M ) , digit ) , M.zero( ) ) ;</code></pre>
+<p>However, since all four digit types are hard-coded has classes One, Two, Three
+and Four we could as well give a custom implementation of the measure( ) method
+to each digit type. For type Two for example, we have:</p>
+<pre><code class="lang-js"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Two</span> </span>{
+
+    ...
+
+    measure ( M ) {
+        <span class="hljs-keyword">return</span> M.plus( M.measure( <span class="hljs-keyword">this</span>.a ) , M.measure( <span class="hljs-keyword">this</span>.b ) ) ;
+    }
+
+    ...
+
+}</code></pre>
+<p>Here are the times:</p>
+<pre><code class="lang-sh">$ node benchmark/benchmark.js
+number of operations:  <span class="hljs-number">100000</span>
+cons: <span class="hljs-number">350</span>ms
+tail: <span class="hljs-number">493</span>ms
+push: <span class="hljs-number">398</span>ms
+split: <span class="hljs-number">25851</span>ms
+init: <span class="hljs-number">442</span>ms</code></pre>
+<p>A drastic improvement right? However, there seems to be a problem with the
+split method...</p>
+<h3 id="removing-loops-part-ii">Removing loops: part II</h3>
+<blockquote>
+<p>5b0af102240b3f0cfda7001f6b108a9811594c7a</p>
+</blockquote>
+<p>It turns out I didn&#39;t remove all occurences of this generic digit measurement
+method. Here are the running times after removing occurences of this method
+from <code>Deep.splitTree</code>.</p>
+<pre><code class="lang-js">$ node benchmark/benchmark.js
+number <span class="hljs-keyword">of</span> operations:  <span class="hljs-number">100000</span>
+cons: <span class="hljs-number">370</span>ms
+tail: <span class="hljs-number">473</span>ms
+push: <span class="hljs-number">293</span>ms
+split: <span class="hljs-number">7563</span>ms
+init: <span class="hljs-number">396</span>ms</code></pre>
+<p>Better.</p>
+<h3 id="specialized-procedures-for-small-loops-part-ii">Specialized procedures for small loops: part II</h3>
+<blockquote>
+<p>88592b2562bea585c868e036a04dd1687e91211c
+726354a3bd0591d767fb658d206680a6a74d2fbb</p>
+</blockquote>
+<p>These two commits introduce specialized procedures for building trees from
+small lists and digits. These are really small trees, i.e. 0 to 4 elements, so
+why use the generic <code>from_iterable</code> constructor?</p>
+<pre><code class="lang-js">$ node benchmark/benchmark.js
+number <span class="hljs-keyword">of</span> operations:  <span class="hljs-number">100000</span>
+cons: <span class="hljs-number">315</span>ms
+tail: <span class="hljs-number">435</span>ms
+push: <span class="hljs-number">249</span>ms
+split: <span class="hljs-number">4834</span>ms
+init: <span class="hljs-number">408</span>ms</code></pre>
+<p>Here again a big improvement on the split method.</p>
+<h3 id="dropping-some-of-the-es6-syntax">Dropping some of the es6 syntax</h3>
+<blockquote>
+<p>295011e3293b3dd2fe1edc80bdf1a14ca6d4dcca</p>
+</blockquote>
+<p>This is a big one. I started writing this library with es6 syntax in mind.
+However, looking at the profiler output you will see:</p>
+<pre><code class="lang-sh">$ node-tick-processor isolate-<span class="hljs-number">0</span>x2af4cf0-v8.log | grep <span class="hljs-string">'3:24'</span>
+    <span class="hljs-number">146</span>    <span class="hljs-number">2.3</span>%    <span class="hljs-number">2.4</span>%  LazyCompile: *get /home/aureooms/sandbox/js-fingertree/js/dist/fingertree.js:<span class="hljs-number">3</span>:<span class="hljs-number">24</span>
+    <span class="hljs-number">278</span>  <span class="hljs-number">100.0</span>%          LazyCompile: *get /home/aureooms/sandbox/js-fingertree/js/dist/fingertree.js:<span class="hljs-number">3</span>:<span class="hljs-number">24</span>
+      <span class="hljs-number">6</span>  <span class="hljs-number">100.0</span>%            LazyCompile: *get /home/aureooms/sandbox/js-fingertree/js/dist/fingertree.js:<span class="hljs-number">3</span>:<span class="hljs-number">24</span>
+    <span class="hljs-number">165</span>  <span class="hljs-number">100.0</span>%          LazyCompile: *get /home/aureooms/sandbox/js-fingertree/js/dist/fingertree.js:<span class="hljs-number">3</span>:<span class="hljs-number">24</span>
+     <span class="hljs-number">97</span>   <span class="hljs-number">99.0</span>%        LazyCompile: *get /home/aureooms/sandbox/js-fingertree/js/dist/fingertree.js:<span class="hljs-number">3</span>:<span class="hljs-number">24</span>
+    <span class="hljs-number">127</span>   <span class="hljs-number">98.4</span>%          LazyCompile: *get /home/aureooms/sandbox/js-fingertree/js/dist/fingertree.js:<span class="hljs-number">3</span>:<span class="hljs-number">24</span>
+    <span class="hljs-number">163</span>  <span class="hljs-number">100.0</span>%          LazyCompile: *get /home/aureooms/sandbox/js-fingertree/js/dist/fingertree.js:<span class="hljs-number">3</span>:<span class="hljs-number">24</span>
+    <span class="hljs-number">146</span>    <span class="hljs-number">2.3</span>%  LazyCompile: *get /home/aureooms/sandbox/js-fingertree/js/dist/fingertree.js:<span class="hljs-number">3</span>:<span class="hljs-number">24</span>
+    <span class="hljs-number">138</span>  <span class="hljs-number">100.0</span>%          LazyCompile: *get /home/aureooms/sandbox/js-fingertree/js/dist/fingertree.js:<span class="hljs-number">3</span>:<span class="hljs-number">24</span>
+     <span class="hljs-number">58</span>  <span class="hljs-number">100.0</span>%          LazyCompile: *get /home/aureooms/sandbox/js-fingertree/js/dist/fingertree.js:<span class="hljs-number">3</span>:<span class="hljs-number">24</span>
+    <span class="hljs-number">129</span>  <span class="hljs-number">100.0</span>%      LazyCompile: *get /home/aureooms/sandbox/js-fingertree/js/dist/fingertree.js:<span class="hljs-number">3</span>:<span class="hljs-number">24</span>
+      <span class="hljs-number">3</span>    <span class="hljs-number">2.3</span>%    LazyCompile: *get /home/aureooms/sandbox/js-fingertree/js/dist/fingertree.js:<span class="hljs-number">3</span>:<span class="hljs-number">24</span></code></pre>
+<p>I didn&#39;t analyze much but it has to do with the way classes are handled by
+babel.</p>
+<p>Ok so I just threw the es6 classes and replaced them with plain old prototypes.
+Hereunder are the new running times:</p>
+<pre><code class="lang-sh">$ node benchmark/benchmark.js
+number of operations:  <span class="hljs-number">100000</span>
+cons: <span class="hljs-number">83</span>ms
+tail: <span class="hljs-number">196</span>ms
+push: <span class="hljs-number">64</span>ms
+split: <span class="hljs-number">1177</span>ms
+init: <span class="hljs-number">148</span>ms</code></pre>
+<p>Great!</p>
+<h3 id="to-be-continued">To be continued...</h3>
 <h2 id="references">References</h2>
 <ul>
 <li><a href="http://staff.city.ac.uk/~ross/papers/FingerTree.pdf">Hinze and Paterson</a></li>
+<li><a href="https://github.com/kachayev/fn.py/blob/master/fn/immutable/finger.py">An (incomplete) implementation in Python</a></li>
 <li><a href="https://github.com/qiao/fingertree.js">A previous JavaScript implementation</a></li>
 <li><a href="https://github.com/zot/Leisure/blob/master/src/lib/fingertree.coffee">A coffeescript implementation</a></li>
 </ul></div></div></div></div></body></html>
