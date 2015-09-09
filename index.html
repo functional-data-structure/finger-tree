@@ -1,8 +1,8 @@
 <!DOCTYPE html><html lang="en"><head><title>index</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content=""><meta name="groc-document-path" content="index"><meta name="groc-project-path" content="README.md"><meta name="groc-github-url" content="https://github.com/aureooms/js-fingertree"><link rel="stylesheet" type="text/css" media="all" href="assets/style.css"><script type="text/javascript" src="assets/behavior.js"></script><body><div id="meta"><div class="file-path"><a href="https://github.com/aureooms/js-fingertree/blob/master/README.md">README.md</a></div></div><div id="document"><div class="segment"><div class="comments "><div class="wrapper"><h1 id="-js-fingertree-http-aureooms-github-io-js-fingertree-"><a href="http://aureooms.github.io/js-fingertree">js-fingertree</a></h1>
 <p>Finger trees code bricks for JavaScript.</p>
-<pre><code class="lang-js">Tree a = | Empty
-         | Single a
-         | Deep ( Digit a ) ( Tree ( Node a ) ) ( Digit a )</code></pre>
+<pre><code class="lang-js">data FingerTree a = Empty
+                  | Single a
+                  | Deep ( Digit a ) ( FingerTree ( Node a ) ) ( Digit a )</code></pre>
 <p><a href="https://raw.githubusercontent.com/aureooms/js-fingertree/master/LICENSE"><img src="http://img.shields.io/npm/l/aureooms-js-fingertree.svg?style=flat" alt="NPM license"></a>
 <a href="https://www.npmjs.org/package/aureooms-js-fingertree"><img src="http://img.shields.io/npm/v/aureooms-js-fingertree.svg?style=flat" alt="NPM version"></a>
 <a href="http://bower.io/search/?q=aureooms-js-fingertree"><img src="http://img.shields.io/bower/v/aureooms-js-fingertree.svg?style=flat" alt="Bower version"></a>
@@ -55,4 +55,10 @@ jspm install npm:aureooms-js-fingertree</code></pre>
 <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"bower_components/aureooms-js-fingertree/js/dist/fingertree.min.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span></code></pre>
 <p>Alternatively, you can use any tool mentioned <a href="http://bower.io/docs/tools/">here</a>.</p>
 <h3 id="jam">jam</h3>
-<pre><code class="lang-js"><span class="hljs-built_in">require</span>( [ <span class="hljs-string">"aureooms-js-fingertree"</span> ] , <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"> fingertree </span>) </span>{ ... } ) ;</code></pre></div></div></div></div></body></html>
+<pre><code class="lang-js"><span class="hljs-built_in">require</span>( [ <span class="hljs-string">"aureooms-js-fingertree"</span> ] , <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"> fingertree </span>) </span>{ ... } ) ;</code></pre>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="http://staff.city.ac.uk/~ross/papers/FingerTree.pdf">Hinze and Paterson</a></li>
+<li><a href="https://github.com/qiao/fingertree.js">A previous JavaScript implementation</a></li>
+<li><a href="https://github.com/zot/Leisure/blob/master/src/lib/fingertree.coffee">A coffeescript implementation</a></li>
+</ul></div></div></div></div></body></html>
