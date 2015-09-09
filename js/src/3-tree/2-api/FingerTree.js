@@ -1,4 +1,3 @@
-
 function FingerTree ( M ) {
 	return new Empty( M ) ;
 }

@@ -1,24 +1,22 @@
 
-class Tree {
+function Tree ( ) { }
 
-	force ( ) {
-		return this ;
-	}
+Tree.prototype.force = function ( ) {
+	return this ;
+} ;
 
-	takeUntil ( p ) {
-		return this.split( p )[0] ;
-	}
+Tree.prototype.takeUntil = function ( p ) {
+	return this.split( p )[0] ;
+} ;
 
-	dropUntil ( p ) {
-		return this.split( p )[1] ;
-	}
+Tree.prototype.dropUntil = function ( p ) {
+	return this.split( p )[1] ;
+} ;
 
-	append ( iterable ) {
-		return append( this , iterable ) ;
-	}
+Tree.prototype.append = function ( iterable ) {
+	return append( this , iterable ) ;
+} ;
 
-	prepend ( iterable ) {
-		return prepend( this , iterable ) ;
-	}
-
-}
+Tree.prototype.prepend = function ( iterable ) {
+	return prepend( this , iterable ) ;
+} ;

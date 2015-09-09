@@ -1,4 +1,4 @@
-const app3 = function ( A , list , B ) {
+function app3 ( A , list , B ) {
 
 	A = A.force( ) ;
 	B = B.force( ) ;
@@ -20,4 +20,4 @@ const app3 = function ( A , list , B ) {
 		B.right
 	) ;
 
-} ;
+}

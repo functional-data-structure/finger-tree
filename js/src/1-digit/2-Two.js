@@ -1,54 +1,50 @@
-class Two {
-
-	constructor ( a , b ) {
-		this.a = a ;
-		this.b = b ;
-	}
-
-	*[Symbol.iterator] ( ) {
-		yield this.a ;
-		yield this.b ;
-	}
-
-	measure ( M ) {
-		return M.plus( M.measure( this.a ) , M.measure( this.b ) ) ;
-	}
-
-	head ( ) {
-		return this.a ;
-	}
-
-	last ( ) {
-		return this.b ;
-	}
-
-	init ( ) {
-		return new One( this.a ) ;
-	}
-
-	tail ( ) {
-		return new One( this.b ) ;
-	}
-
-	push ( value ) {
-		return new Three( this.a , this.b , value ) ;
-	}
-
-	cons ( value ) {
-		return new Three( value , this.a , this.b ) ;
-	}
-
-	node ( M ) {
-		throw new Error( "Two should never be converted to Node2 with current implementation" ) ;
-	}
-
-	/**
-	 * It is assumed that p(|this|) is true.
-	 */
-	splitDigit ( p , i , M ) {
-		i = M.plus( i , M.measure( this.a ) ) ;
-		if ( p( i ) ) return new Split( [ ] , this.a , [ this.b ] ) ;
-		return new Split( [ this.a ] , this.b , [ ] ) ;
-	}
-
+function Two ( a , b ) {
+	this.a = a ;
+	this.b = b ;
 }
+
+Two.prototype[Symbol.iterator] = function* ( ) {
+	yield this.a ;
+	yield this.b ;
+} ;
+
+Two.prototype.measure = function ( M ) {
+	return M.plus( M.measure( this.a ) , M.measure( this.b ) ) ;
+} ;
+
+Two.prototype.head = function ( ) {
+	return this.a ;
+} ;
+
+Two.prototype.last = function ( ) {
+	return this.b ;
+} ;
+
+Two.prototype.init = function ( ) {
+	return new One( this.a ) ;
+} ;
+
+Two.prototype.tail = function ( ) {
+	return new One( this.b ) ;
+} ;
+
+Two.prototype.push = function ( value ) {
+	return new Three( this.a , this.b , value ) ;
+} ;
+
+Two.prototype.cons = function ( value ) {
+	return new Three( value , this.a , this.b ) ;
+} ;
+
+Two.prototype.node = function ( M ) {
+	throw new Error( "Two should never be converted to Node2 with current implementation" ) ;
+} ;
+
+/**
+ * It is assumed that p(|this|) is true.
+ */
+Two.prototype.splitDigit = function ( p , i , M ) {
+	i = M.plus( i , M.measure( this.a ) ) ;
+	if ( p( i ) ) return new Split( [ ] , this.a , [ this.b ] ) ;
+	return new Split( [ this.a ] , this.b , [ ] ) ;
+} ;
