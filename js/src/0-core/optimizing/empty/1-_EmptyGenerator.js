@@ -1,9 +1,3 @@
-class _EmptyGenerator {
+function _EmptyGenerator ( ) { }
 
-	next ( ) {
-
-		return { done : true } ;
-
-	}
-
-}
+_EmptyGenerator.prototype.next = function ( ) { return { done : true } ; } ;

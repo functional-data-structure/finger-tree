@@ -1,52 +1,48 @@
-
-class Node3 {
-
-	constructor ( v , a , b , c ) {
-		this.v = v ;
-		this.a = a ;
-		this.b = b ;
-		this.c = c ;
-	}
-
-	*[Symbol.iterator] ( ) {
-		yield this.a ;
-		yield this.b ;
-		yield this.c ;
-	}
-
-	measure ( ) {
-		return this.v ;
-	}
-
-	digit ( ) {
-		return new Three( this.a , this.b , this.c ) ;
-	}
-
-	head ( ) {
-		throw new Error( "trying to call head of Node3" ) ;
-	}
-
-	last ( ) {
-		throw new Error( "trying to call last of Node3" ) ;
-	}
-
-	init ( ) {
-		throw new Error( "trying to call init of Node3" ) ;
-	}
-
-	tail ( ) {
-		throw new Error( "trying to call tail of Node3" ) ;
-	}
-
-	push ( value ) {
-		throw new Error( "trying to call push of Node3" ) ;
-	}
-
-	cons ( value ) {
-		throw new Error( "trying to call cons of Node3" ) ;
-	}
-
+function Node3 ( v , a , b , c ) {
+	this.v = v ;
+	this.a = a ;
+	this.b = b ;
+	this.c = c ;
 }
+
+Node3.prototype[Symbol.iterator] = function* ( ) {
+	yield this.a ;
+	yield this.b ;
+	yield this.c ;
+} ;
+
+Node3.prototype.measure = function ( ) {
+	return this.v ;
+} ;
+
+Node3.prototype.digit = function ( ) {
+	return new Three( this.a , this.b , this.c ) ;
+} ;
+
+Node3.prototype.head = function ( ) {
+	throw new Error( "trying to call head of Node3" ) ;
+} ;
+
+Node3.prototype.last = function ( ) {
+	throw new Error( "trying to call last of Node3" ) ;
+} ;
+
+Node3.prototype.init = function ( ) {
+	throw new Error( "trying to call init of Node3" ) ;
+} ;
+
+Node3.prototype.tail = function ( ) {
+	throw new Error( "trying to call tail of Node3" ) ;
+} ;
+
+Node3.prototype.push = function ( value ) {
+	throw new Error( "trying to call push of Node3" ) ;
+} ;
+
+Node3.prototype.cons = function ( value ) {
+	throw new Error( "trying to call cons of Node3" ) ;
+} ;
+
 
 function node3 ( M , a , b , c ) {
 

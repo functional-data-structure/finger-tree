@@ -1,176 +1,170 @@
-class Deep extends Tree {
+function Deep ( M , left , middle , right ) {
+	this.M = M ;
+	this.left = left ;
+	this.middle = middle ;
+	this.right = right ;
+	this.v = null ;
+}
 
-	constructor ( M , left , middle , right ) {
-		super( ) ;
-		this.M = M ;
-		this.left = left ;
-		this.middle = middle ;
-		this.right = right ;
-		this.v = null ;
+Deep.prototype = new Tree( ) ;
+
+Deep.prototype.measure = function ( ) {
+
+	if ( this.v === null ) {
+
+		const M = this.M ;
+
+		this.v = M.plus(
+			this.left.measure( M ) ,
+			M.plus(
+				this.middle.measure( ) ,
+				this.right.measure( M )
+			)
+		) ;
+
 	}
 
-	measure ( ) {
+	return this.v ;
 
-		if ( this.v === null ) {
+} ;
 
-			const M = this.M ;
+Deep.prototype.empty = function ( ) {
+	return false ;
+} ;
 
-			this.v = M.plus(
-				this.left.measure( M ) ,
-				M.plus(
-					this.middle.measure( ) ,
-					this.right.measure( M )
-				)
-			) ;
+Deep.prototype.head = function ( ) {
+	return this.left.head( ) ;
+} ;
 
+Deep.prototype.last = function ( ) {
+	return this.right.last( ) ;
+} ;
+
+Deep.prototype.tail = function ( ) {
+
+	if ( this.left instanceof One ) {
+
+		if ( this.middle.empty( ) ) {
+			return _from_digit( this.M , this.right ) ;
 		}
 
-		return this.v ;
+		return new Deep( this.M , this.middle.head( ).digit( ) , delay( ( ) => this.middle.tail( ) ) , this.right ) ;
 
 	}
 
-	empty ( ) {
-		return false ;
-	}
+	return new Deep( this.M , this.left.tail( ) , this.middle , this.right ) ;
 
-	head ( ) {
-		return this.left.head( ) ;
-	}
+} ;
 
-	last ( ) {
-		return this.right.last( ) ;
-	}
+Deep.prototype.init = function ( ) {
 
-	tail ( ) {
+	if ( this.right instanceof One ) {
 
-		if ( this.left instanceof One ) {
-
-			if ( this.middle.empty( ) ) {
-				return _from_digit( this.M , this.right ) ;
-			}
-
-			return new Deep( this.M , this.middle.head( ).digit( ) , delay( ( ) => this.middle.tail( ) ) , this.right ) ;
-
+		if ( this.middle.empty( ) ) {
+			return _from_digit( this.M , this.left ) ;
 		}
 
-		return new Deep( this.M , this.left.tail( ) , this.middle , this.right ) ;
+		return new Deep( this.M , this.left , delay( ( ) => this.middle.init( ) ) , this.middle.last( ).digit( ) ) ;
 
 	}
 
-	init ( ) {
+	return new Deep( this.M , this.left , this.middle , this.right.init( ) ) ;
 
-		if ( this.right instanceof One ) {
+} ;
+Deep.prototype.cons = function ( value ) {
 
-			if ( this.middle.empty( ) ) {
-				return _from_digit( this.M , this.left ) ;
-			}
+	if ( this.left instanceof Four ) {
 
-			return new Deep( this.M , this.left , delay( ( ) => this.middle.init( ) ) , this.middle.last( ).digit( ) ) ;
-
-		}
-
-		return new Deep( this.M , this.left , this.middle , this.right.init( ) ) ;
-
-	}
-
-	cons ( value )  {
-
-		if ( this.left instanceof Four ) {
-
-			return new Deep(
-				this.M ,
-				new Two( value , this.left.head( ) ) ,
-				this.middle.cons( this.left.tail( ).node( this.M ) ) ,
-				this.right
-			) ;
-
-		}
-
-		return new Deep( this.M , this.left.cons( value ) , this.middle , this.right ) ;
+		return new Deep(
+			this.M ,
+			new Two( value , this.left.head( ) ) ,
+			this.middle.cons( this.left.tail( ).node( this.M ) ) ,
+			this.right
+		) ;
 
 	}
 
-	push ( value ) {
+	return new Deep( this.M , this.left.cons( value ) , this.middle , this.right ) ;
 
-		if ( this.right instanceof Four ) {
+} ;
+Deep.prototype.push = function ( value ) {
 
-			return new Deep(
-				this.M ,
-				this.left ,
-				this.middle.push( this.right.init( ).node( this.M ) ) ,
-				new Two( this.right.last( ) , value )
-			) ;
+	if ( this.right instanceof Four ) {
 
-		}
-
-		return new Deep( this.M , this.left , this.middle , this.right.push( value ) ) ;
-
-	}
-
-	concat ( other ) {
-
-		return app3( this , [ ] , other ) ;
+		return new Deep(
+			this.M ,
+			this.left ,
+			this.middle.push( this.right.init( ).node( this.M ) ) ,
+			new Two( this.right.last( ) , value )
+		) ;
 
 	}
 
-	*[Symbol.iterator] ( ) {
+	return new Deep( this.M , this.left , this.middle , this.right.push( value ) ) ;
 
-		yield* this.left ;
-		for ( const node of this.middle ) yield* node ;
-		yield* this.right ;
+} ;
+Deep.prototype.concat = function ( other ) {
 
-	}
+	return app3( this , [ ] , other ) ;
 
-	/**
-	 * It is assumed that p(|this|) is true.
-	 */
-	splitTree ( p , i ) {
+} ;
 
-		const { left , middle , right , M } = this ;
+Deep.prototype[Symbol.iterator] = function* ( ) {
 
-		// see if the split point is inside the left tree
-		const leftMeasure = M.plus( i , left.measure( M ) ) ;
-		if ( p( leftMeasure ) ) {
-			const split = left.splitDigit( p , i , M ) ;
-			return new Split(
-				_from_small_list( M , split.left ) ,
-				split.middle ,
-				_deepL( M , split.right , middle , right )
-			) ;
-		}
+	yield* this.left ;
+	for ( const node of this.middle ) yield* node ;
+	yield* this.right ;
 
-		// see if the split point is inside the middle tree
-		const midMeasure = M.plus( leftMeasure , middle.measure( ) ) ;
+} ;
 
-		if ( p( midMeasure ) ) {
-			const midSplit = middle.splitTree( p , leftMeasure ) ;
-			// midsplit.middle is a Node since middle is a Tree ( Node a )
-			const split = midSplit.middle.digit( ).splitDigit( p , M.plus( leftMeasure , midSplit.left.measure( ) ) , M ) ;
-			return new Split(
-				_deepR( M , left , midSplit.left, split.left ) ,
-				split.middle ,
-				_deepL( M , split.right , midSplit.right , right )
-			) ;
-		}
+/**
+ * It is assumed that p(|this|) is true.
+ */
+Deep.prototype.splitTree = function ( p , i ) {
 
-		// the split point is in the right tree
-		const split = right.splitDigit( p , midMeasure , M ) ;
+	const { left , middle , right , M } = this ;
+
+	// see if the split point is inside the left tree
+	const leftMeasure = M.plus( i , left.measure( M ) ) ;
+	if ( p( leftMeasure ) ) {
+		const split = left.splitDigit( p , i , M ) ;
 		return new Split(
-			_deepR( M , left , middle , split.left ) ,
+			_from_small_list( M , split.left ) ,
 			split.middle ,
-			_from_small_list( M , split.right )
+			_deepL( M , split.right , middle , right )
 		) ;
 	}
 
-	split ( p ) {
+	// see if the split point is inside the middle tree
+	const midMeasure = M.plus( leftMeasure , middle.measure( ) ) ;
 
-		if ( p( this.measure( ) ) ) {
-			const split = this.splitTree( p , this.M.zero( ) ) ;
-			return [ split.left , split.right.cons( split.middle ) ] ;
-		}
-
-		return [ this , new Empty( this.M ) ] ;
-
+	if ( p( midMeasure ) ) {
+		const midSplit = middle.splitTree( p , leftMeasure ) ;
+		// midsplit.middle is a Node since middle is a Tree ( Node a )
+		const split = midSplit.middle.digit( ).splitDigit( p , M.plus( leftMeasure , midSplit.left.measure( ) ) , M ) ;
+		return new Split(
+			_deepR( M , left , midSplit.left, split.left ) ,
+			split.middle ,
+			_deepL( M , split.right , midSplit.right , right )
+		) ;
 	}
 
-}
+	// the split point is in the right tree
+	const split = right.splitDigit( p , midMeasure , M ) ;
+	return new Split(
+		_deepR( M , left , middle , split.left ) ,
+		split.middle ,
+		_from_small_list( M , split.right )
+	) ;
+} ;
+
+Deep.prototype.split = function ( p ) {
+
+	if ( p( this.measure( ) ) ) {
+		const split = this.splitTree( p , this.M.zero( ) ) ;
+		return [ split.left , split.right.cons( split.middle ) ] ;
+	}
+
+	return [ this , new Empty( this.M ) ] ;
+
+} ;
