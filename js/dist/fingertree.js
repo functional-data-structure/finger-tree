@@ -260,6 +260,20 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 		}
 
 		/* js/src/0-core/optimizing */
+		/* js/src/0-core/optimizing/_deepL.js */
+		function _deepL(M, left, middle, right) {
+			return delay(function () {
+				return deepL(M, left, middle, right);
+			});
+		}
+
+		/* js/src/0-core/optimizing/_deepR.js */
+		function _deepR(M, left, middle, right) {
+			return delay(function () {
+				return deepR(M, left, middle, right);
+			});
+		}
+
 		/* js/src/0-core/optimizing/_digit.js */
 		function _digit(list) {
 
@@ -1317,7 +1331,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 					var leftMeasure = M.plus(i, left.measure(M));
 					if (p(leftMeasure)) {
 						var _split = left.splitDigit(p, i, M);
-						return new Split(_from_small_list(M, _split.left), _split.middle, deepL(M, _split.right, middle, right));
+						return new Split(_from_small_list(M, _split.left), _split.middle, _deepL(M, _split.right, middle, right));
 					}
 
 					// see if the split point is inside the middle tree
@@ -1327,12 +1341,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 						var midSplit = middle.splitTree(p, leftMeasure);
 						// midsplit.middle is a Node since middle is a Tree ( Node a )
 						var _split2 = midSplit.middle.digit().splitDigit(p, M.plus(leftMeasure, midSplit.left.measure()), M);
-						return new Split(deepR(M, left, midSplit.left, _split2.left), _split2.middle, deepL(M, _split2.right, midSplit.right, right));
+						return new Split(_deepR(M, left, midSplit.left, _split2.left), _split2.middle, _deepL(M, _split2.right, midSplit.right, right));
 					}
 
 					// the split point is in the right tree
 					var split = right.splitDigit(p, midMeasure, M);
-					return new Split(deepR(M, left, middle, split.left), split.middle, _from_small_list(M, split.right));
+					return new Split(_deepR(M, left, middle, split.left), split.middle, _from_small_list(M, split.right));
 				}
 			}, {
 				key: 'split',

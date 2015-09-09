@@ -135,7 +135,7 @@ class Deep extends Tree {
 			return new Split(
 				_from_small_list( M , split.left ) ,
 				split.middle ,
-				deepL( M , split.right , middle , right )
+				_deepL( M , split.right , middle , right )
 			) ;
 		}
 
@@ -147,16 +147,16 @@ class Deep extends Tree {
 			// midsplit.middle is a Node since middle is a Tree ( Node a )
 			const split = midSplit.middle.digit( ).splitDigit( p , M.plus( leftMeasure , midSplit.left.measure( ) ) , M ) ;
 			return new Split(
-				deepR( M , left , midSplit.left, split.left ) ,
+				_deepR( M , left , midSplit.left, split.left ) ,
 				split.middle ,
-				deepL( M , split.right , midSplit.right , right )
+				_deepL( M , split.right , midSplit.right , right )
 			) ;
 		}
 
 		// the split point is in the right tree
 		const split = right.splitDigit( p , midMeasure , M ) ;
 		return new Split(
-			deepR( M , left , middle , split.left ) ,
+			_deepR( M , left , middle , split.left ) ,
 			split.middle ,
 			_from_small_list( M , split.right )
 		) ;
