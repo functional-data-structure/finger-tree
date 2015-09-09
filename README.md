@@ -102,23 +102,23 @@ require( [ "aureooms-js-fingertree" ] , function ( fingertree ) { ... } ) ;
 
 ## Optimization of the code step by step
 
-I will copy here the output of the benchmark run on my computer after each
+I will copy here the output of a benchmark run on my computer after each
 optimization change together with a small explanation.
-_
-*__Note__: I did not check if the real issues were caused by generators, bound functions,
-V8 optimization inhibitors, or anything else...*
+
+_**Note**: I did not check if the real issues were caused by generators, bound functions,
+V8 optimization inhibitors, or anything else..._
 
 ### When the benchmark was added
 > d903efb8d9011a44a5ff732c569b2ae33aa5b8f1
 
 What the benchmark code does is, in order:
 
-  - build an empty tree T
-  - add 100000 elements to the beginning of T
-  - remove those 100000 elements by popping the first element of T 100000 times
-  - add 100000 elements to the end of T
-  - split T at all 100000 positions, one after the other
-  - remove the 100000 elements of T by popping the last element 100000 times
+  - build an empty tree `T`
+  - add 100000 elements to the beginning of `T`
+  - remove those 100000 elements by popping the first element of `T` 100000 times
+  - add 100000 elements to the end of `T`
+  - split `T` at all 100000 positions, one after the other
+  - remove the 100000 elements of `T` by popping the last element 100000 times
 
 Here are the first running times I measured for this implementation. It is not
 difficult to see that the implementation is not fast at all. 100000 elements is
@@ -237,7 +237,7 @@ from the [tick](https://www.npmjs.com/package/tick) package.
 Before this change, digit measures where computed using the idiom
 
 ```js
-reduce( M.plus.bind( M ) , map( M.measure.bind( M ) , values ) , M.zero( ) ) ;
+reduce( M.plus.bind( M ) , map( M.measure.bind( M ) , digit ) , M.zero( ) ) ;
 ```
 
 However, since all four digit types are hard-coded has classes One, Two, Three
