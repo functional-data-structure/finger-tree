@@ -4,7 +4,7 @@
 	],
 	"repo": "aureooms/js-fingertree",
 	"name": "aureooms-js-fingertree",
-	"version": "0.2.1",
+	"version": "1.0.0",
 	"description": "Finger Trees code bricks for JavaScript",
 	"main": "js/dist/fingertree.js",
 	"license": "AGPL-3.0"
