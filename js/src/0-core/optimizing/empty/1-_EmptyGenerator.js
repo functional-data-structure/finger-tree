@@ -1,5 +1,4 @@
-
-class EmptyGenerator {
+class _EmptyGenerator {
 
 	next ( ) {
 

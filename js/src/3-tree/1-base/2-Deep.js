@@ -46,7 +46,7 @@ class Deep extends Tree {
 		if ( this.left instanceof One ) {
 
 			if ( this.middle.empty( ) ) {
-				return from_iterable( this.M , this.right ) ;
+				return _from_digit( this.M , this.right ) ;
 			}
 
 			return new Deep( this.M , this.middle.head( ).digit( ) , delay( ( ) => this.middle.tail( ) ) , this.right ) ;
@@ -62,7 +62,7 @@ class Deep extends Tree {
 		if ( this.right instanceof One ) {
 
 			if ( this.middle.empty( ) ) {
-				return from_iterable( this.M , this.left ) ;
+				return _from_digit( this.M , this.left ) ;
 			}
 
 			return new Deep( this.M , this.left , delay( ( ) => this.middle.init( ) ) , this.middle.last( ).digit( ) ) ;
@@ -133,7 +133,7 @@ class Deep extends Tree {
 		if ( p( leftMeasure ) ) {
 			const split = left.splitDigit( p , i , M ) ;
 			return new Split(
-				from_iterable( M , split.left ) ,
+				_from_small_list( M , split.left ) ,
 				split.middle ,
 				deepL( M , split.right , middle , right )
 			) ;
@@ -158,7 +158,7 @@ class Deep extends Tree {
 		return new Split(
 			deepR( M , left , middle , split.left ) ,
 			split.middle ,
-			from_iterable( M , split.right )
+			_from_small_list( M , split.right )
 		) ;
 	}
 

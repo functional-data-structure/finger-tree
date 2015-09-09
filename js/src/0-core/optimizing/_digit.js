@@ -1,5 +1,4 @@
-
-function digit ( list ) {
+function _digit ( list ) {
 
 	switch ( list.length ) {
 

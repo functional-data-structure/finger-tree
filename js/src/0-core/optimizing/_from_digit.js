@@ -1,5 +1,4 @@
-
-function _tree ( M , digit ) {
+function _from_digit ( M , digit ) {
 
 	if ( digit instanceof One ) return new Single( M , digit.a ) ;
 	if ( digit instanceof Two || digit instanceof Three || digit instanceof Four ) {
