@@ -7,7 +7,7 @@ function deepL ( M , left , middle , right ) {
 
 	if ( left.length === 0 ) {
 
-		if ( middle.empty( ) ) return from_iterable( M , right ) ;
+		if ( middle.empty( ) ) return _tree( M , right ) ;
 
 		return new Deep( M , middle.head( ).digit( ) , delay( ( ) => middle.tail( ) ) , right ) ;
 	}

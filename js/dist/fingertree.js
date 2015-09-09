@@ -48,26 +48,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 			}), B.right);
 		};
 
-		/* js/src/0-core/concatenate/digit.js */
-
-		function digit(list) {
-
-			switch (list.length) {
-
-				case 1:
-					return new One(list[0]);
-				case 2:
-					return new Two(list[0], list[1]);
-				case 3:
-					return new Three(list[0], list[1], list[2]);
-				case 4:
-					throw new Error('digit(.) should never be called on length 4 lists since it is only called on results of splitDigit which outputs lists of length at most 3');
-				default:
-					throw new Error('cannot make digit for length ' + list.length);
-
-			}
-		}
-
 		/* js/src/0-core/concatenate/from_iterable.js */
 		function from_iterable(M, iterable) {
 
@@ -313,19 +293,51 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 			this.right = right;
 		}
 
+		/* js/src/0-core/split/_digit.js */
+
+		;
+
+		function digit(list) {
+
+			switch (list.length) {
+
+				case 1:
+					return new One(list[0]);
+				case 2:
+					return new Two(list[0], list[1]);
+				case 3:
+					return new Three(list[0], list[1], list[2]);
+				case 4:
+					throw new Error('digit(.) should never be called on length 4 lists since it is only called on results of splitDigit which outputs lists of length at most 3');
+				default:
+					throw new Error('cannot make digit for length ' + list.length);
+
+			}
+		}
+
+		/* js/src/0-core/split/_tree.js */
+
+		function _tree(M, digit) {
+
+			if (digit instanceof One) return new Single(M, digit.a);
+			if (digit instanceof Two || digit instanceof Three || digit instanceof Four) {
+				return new Deep(M, digit.init(), new Empty(M), new One(digit.last()));
+			}
+
+			throw new Error('second argument is not a Digit');
+		}
+
 		/* js/src/0-core/split/deepL.js */
 		/**
   * @param {Array} left
   * @param {FingerTree} middle
   * @param {Digit} right
   */
-		;
-
 		function deepL(M, left, middle, right) {
 
 			if (left.length === 0) {
 
-				if (middle.empty()) return from_iterable(M, right);
+				if (middle.empty()) return _tree(M, right);
 
 				return new Deep(M, middle.head().digit(), delay(function () {
 					return middle.tail();
@@ -345,7 +357,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 			if (right.length === 0) {
 
-				if (middle.empty()) return from_iterable(M, left);
+				if (middle.empty()) return _tree(M, left);
 
 				return new Deep(M, left, delay(function () {
 					return middle.init();
