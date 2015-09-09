@@ -19,18 +19,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 		/* js/src/0-core */
 		/* js/src/0-core/concatenate */
-		/* js/src/0-core/concatenate/_append.js */
-		function _append(tree, list) {
-
-			return reduce(push, list, tree);
-		}
-
-		/* js/src/0-core/concatenate/_prepend.js */
-		function _prepend(tree, list) {
-
-			return reduce(cons, reversed(list), tree);
-		}
-
 		/* js/src/0-core/concatenate/app3.js */
 		var app3 = function app3(A, list, B) {
 
@@ -47,6 +35,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 				return app3(A.middle, nodes(A.M, [].concat(_toConsumableArray(chain(A.right, list, B.left)))), B.middle);
 			}), B.right);
 		};
+
+		/* js/src/0-core/concatenate/append.js */
+		function _append(tree, list) {
+
+			return reduce(push, list, tree);
+		}
 
 		/* js/src/0-core/concatenate/from_iterable.js */
 		function from_iterable(M, iterable) {
@@ -71,6 +65,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 			}
 		}
 
+		/* js/src/0-core/concatenate/prepend.js */
+		function _prepend2(tree, list) {
+
+			return reduce(cons, reversed([].concat(_toConsumableArray(list))), tree);
+		}
+
 		/* js/src/0-core/concatenate/push.js */
 		function push(T, x) {
 			return T.push(x);
@@ -80,29 +80,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 		function cons(T, x) {
 			return T.cons(x);
 		}
-
-		/* js/src/0-core/empty */
-		/* js/src/0-core/empty/1-EmptyGenerator.js */
-
-		var EmptyGenerator = (function () {
-			function EmptyGenerator() {
-				_classCallCheck(this, EmptyGenerator);
-			}
-
-			/* js/src/0-core/empty/2-EMPTY.js */
-
-			_createClass(EmptyGenerator, [{
-				key: 'next',
-				value: function next() {
-
-					return { done: true };
-				}
-			}]);
-
-			return EmptyGenerator;
-		})();
-
-		var EMPTY = new EmptyGenerator();
 
 		/* js/src/0-core/itertools */
 		/* js/src/0-core/itertools/chain.js */
@@ -282,22 +259,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 			return M instanceof CachedMeasure ? M : new CachedMeasure(M);
 		}
 
-		/* js/src/0-core/split */
-		/* js/src/0-core/split/Split.js */
-
-		var Split = function Split(left, middle, right) {
-			_classCallCheck(this, Split);
-
-			this.left = left;
-			this.middle = middle;
-			this.right = right;
-		}
-
-		/* js/src/0-core/split/_digit.js */
-
-		;
-
-		function digit(list) {
+		/* js/src/0-core/optimizing */
+		/* js/src/0-core/optimizing/_digit.js */
+		function _digit(list) {
 
 			switch (list.length) {
 
@@ -315,9 +279,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 			}
 		}
 
-		/* js/src/0-core/split/_tree.js */
-
-		function _tree(M, digit) {
+		/* js/src/0-core/optimizing/_from_digit.js */
+		function _from_digit(M, digit) {
 
 			if (digit instanceof One) return new Single(M, digit.a);
 			if (digit instanceof Two || digit instanceof Three || digit instanceof Four) {
@@ -327,24 +290,74 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 			throw new Error('second argument is not a Digit');
 		}
 
+		/* js/src/0-core/optimizing/_from_small_list.js */
+		function _from_small_list(M, list) {
+
+			if (list.length === 0) return new Empty(M);
+
+			return _from_digit(M, _digit(list));
+		}
+
+		/* js/src/0-core/optimizing/_prepend.js */
+		function _prepend(tree, list) {
+
+			return reduce(cons, reversed(list), tree);
+		}
+
+		/* js/src/0-core/optimizing/empty */
+		/* js/src/0-core/optimizing/empty/1-_EmptyGenerator.js */
+
+		var _EmptyGenerator = (function () {
+			function _EmptyGenerator() {
+				_classCallCheck(this, _EmptyGenerator);
+			}
+
+			/* js/src/0-core/optimizing/empty/2-_EMPTY.js */
+
+			_createClass(_EmptyGenerator, [{
+				key: 'next',
+				value: function next() {
+
+					return { done: true };
+				}
+			}]);
+
+			return _EmptyGenerator;
+		})();
+
+		var _EMPTY = new _EmptyGenerator();
+
+		/* js/src/0-core/split */
+		/* js/src/0-core/split/Split.js */
+
+		var Split = function Split(left, middle, right) {
+			_classCallCheck(this, Split);
+
+			this.left = left;
+			this.middle = middle;
+			this.right = right;
+		}
+
 		/* js/src/0-core/split/deepL.js */
 		/**
   * @param {Array} left
   * @param {FingerTree} middle
   * @param {Digit} right
   */
+		;
+
 		function deepL(M, left, middle, right) {
 
 			if (left.length === 0) {
 
-				if (middle.empty()) return _tree(M, right);
+				if (middle.empty()) return _from_digit(M, right);
 
 				return new Deep(M, middle.head().digit(), delay(function () {
 					return middle.tail();
 				}), right);
 			}
 
-			return new Deep(M, digit(left), middle, right);
+			return new Deep(M, _digit(left), middle, right);
 		}
 
 		/* js/src/0-core/split/deepR.js */
@@ -357,14 +370,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 			if (right.length === 0) {
 
-				if (middle.empty()) return _tree(M, left);
+				if (middle.empty()) return _from_digit(M, left);
 
 				return new Deep(M, left, delay(function () {
 					return middle.init();
 				}), middle.last().digit());
 			}
 
-			return new Deep(M, left, middle, digit(right));
+			return new Deep(M, left, middle, _digit(right));
 		}
 
 		/* js/src/1-digit */
@@ -918,12 +931,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 			}, {
 				key: 'append',
 				value: function append(iterable) {
-					return reduce(push, iterable, this);
+					return _append(this, iterable);
 				}
 			}, {
 				key: 'prepend',
 				value: function prepend(iterable) {
-					return reduce(cons, reversed([].concat(_toConsumableArray(iterable))), this);
+					return _prepend2(this, iterable);
 				}
 			}]);
 
@@ -991,7 +1004,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 			}, {
 				key: Symbol.iterator,
 				value: function value() {
-					return EMPTY;
+					return _EMPTY;
 				}
 
 				/**
@@ -1158,7 +1171,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 					if (this.left instanceof One) {
 
 						if (this.middle.empty()) {
-							return from_iterable(this.M, this.right);
+							return _from_digit(this.M, this.right);
 						}
 
 						return new Deep(this.M, this.middle.head().digit(), delay(function () {
@@ -1176,7 +1189,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 					if (this.right instanceof One) {
 
 						if (this.middle.empty()) {
-							return from_iterable(this.M, this.left);
+							return _from_digit(this.M, this.left);
 						}
 
 						return new Deep(this.M, this.left, delay(function () {
@@ -1304,7 +1317,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 					var leftMeasure = M.plus(i, left.measure(M));
 					if (p(leftMeasure)) {
 						var _split = left.splitDigit(p, i, M);
-						return new Split(from_iterable(M, _split.left), _split.middle, deepL(M, _split.right, middle, right));
+						return new Split(_from_small_list(M, _split.left), _split.middle, deepL(M, _split.right, middle, right));
 					}
 
 					// see if the split point is inside the middle tree
@@ -1319,7 +1332,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 					// the split point is in the right tree
 					var split = right.splitDigit(p, midMeasure, M);
-					return new Split(deepR(M, left, middle, split.left), split.middle, from_iterable(M, split.right));
+					return new Split(deepR(M, left, middle, split.left), split.middle, _from_small_list(M, split.right));
 				}
 			}, {
 				key: 'split',

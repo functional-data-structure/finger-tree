@@ -7,12 +7,12 @@ function deepR ( M , left , middle , right ) {
 
 	if ( right.length === 0 ) {
 
-		if ( middle.empty( ) ) return _tree( M , left ) ;
+		if ( middle.empty( ) ) return _from_digit( M , left ) ;
 
 		return new Deep( M , left , delay( ( ) => middle.init( ) ) , middle.last( ).digit( ) ) ;
 	}
 
-	return new Deep( M , left , middle , digit( right ) ) ;
+	return new Deep( M , left , middle , _digit( right ) ) ;
 
 }
 

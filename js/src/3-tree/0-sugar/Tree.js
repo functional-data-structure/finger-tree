@@ -14,11 +14,11 @@ class Tree {
 	}
 
 	append ( iterable ) {
-		return reduce( push , iterable , this ) ;
+		return append( this , iterable ) ;
 	}
 
 	prepend ( iterable ) {
-		return reduce( cons , reversed( [ ...iterable ] ) , this ) ;
+		return prepend( this , iterable ) ;
 	}
 
 }

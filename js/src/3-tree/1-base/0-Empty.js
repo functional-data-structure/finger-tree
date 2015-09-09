@@ -43,7 +43,7 @@ class Empty extends Tree {
 	}
 
 	[Symbol.iterator] ( ) {
-		return EMPTY ;
+		return _EMPTY ;
 	}
 
 	/**
