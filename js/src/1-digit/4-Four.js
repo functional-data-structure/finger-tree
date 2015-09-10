@@ -67,3 +67,13 @@ Four.prototype.splitDigit = function ( p , i , M ) {
 	if ( p( i ) ) return new Split( [ this.a , this.b ] , this.c , [ this.d ] ) ;
 	return new Split( [ this.a , this.b , this.c ] , this.d , [ ] ) ;
 } ;
+
+Four.prototype._nodes = function ( M , other ) {
+	if ( other instanceof One )
+		return [ node3( M , this.a , this.b , this.c ) , node2( M , this.d , other.a ) ] ;
+	if ( other instanceof Two )
+		return [ node3( M , this.a , this.b , this.c ) , node3( M , this.d , other.a , other.b ) ] ;
+	if ( other instanceof Three )
+		return [ node3( M , this.a , this.b , this.c ) , node2( M , this.d , other.a ) , node2( M , other.b , other.c ) ] ;
+	return [ node3( M , this.a , this.b , this.c ) , node3( M , this.d , other.a , other.b ) , node2( M , other.c , other.d ) ] ;
+} ;
