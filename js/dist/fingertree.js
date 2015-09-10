@@ -43,18 +43,31 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 		/* js/src/0-core/concatenate/nodes.js */
 		function nodes(M, list) {
 
-			switch (list.length) {
+			var out = [];
 
+			var n = list.length;
+
+			var i = 0;
+
+			switch (n % 3) {
+
+				case 1:
+					out.push(node2(M, list[0], list[1]));
+					out.push(node2(M, list[2], list[3]));
+					i += 4;
+					break;
 				case 2:
-					return [node2(M, list[0], list[1])];
-				case 3:
-					return [node3(M, list[0], list[1], list[2])];
-				case 4:
-					return [node2(M, list[0], list[1]), node2(M, list[2], list[3])];
-				default:
-					return [node3(M, list[0], list[1], list[2])].concat(nodes(M, list.slice(3)));
+					out.push(node2(M, list[0], list[1]));
+					i += 2;
+					break;
 
 			}
+
+			for (; i < n; i += 3) {
+				out.push(node3(M, list[i], list[i + 1], list[i + 2]));
+			}
+
+			return out;
 		}
 
 		/* js/src/0-core/concatenate/prepend.js */
@@ -240,6 +253,20 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 		}
 
 		/* js/src/0-core/optimizing */
+		/* js/src/0-core/optimizing/_app3.js */
+		function _app3(A, B) {
+
+			B = B.force();
+
+			if (B instanceof Empty) return A;
+
+			if (B instanceof Single) return A.push(B.last());
+
+			return new Deep(A.M, A.left, delay(function () {
+				return app3(A.middle, A.right._nodes(A.M, B.left), B.middle);
+			}), B.right);
+		}
+
 		/* js/src/0-core/optimizing/_deepL.js */
 		function _deepL(M, left, middle, right) {
 			return delay(function () {
@@ -450,6 +477,13 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 			return new Split([], this.a, []);
 		};
 
+		One.prototype._nodes = function (M, other) {
+			if (other instanceof One) return [node2(M, this.a, other.a)];
+			if (other instanceof Two) return [node3(M, this.a, other.a, other.b)];
+			if (other instanceof Three) return [node2(M, this.a, other.a), node2(M, other.b, other.c)];
+			return [node3(M, this.a, other.a, other.b), node2(M, other.c, other.d)];
+		};
+
 		/* js/src/1-digit/2-Two.js */
 		function Two(a, b) {
 			this.a = a;
@@ -504,6 +538,13 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 			i = M.plus(i, M.measure(this.a));
 			if (p(i)) return new Split([], this.a, [this.b]);
 			return new Split([this.a], this.b, []);
+		};
+
+		Two.prototype._nodes = function (M, other) {
+			if (other instanceof One) return [node3(M, this.a, this.b, other.a)];
+			if (other instanceof Two) return [node2(M, this.a, this.b), node2(M, other.a, other.b)];
+			if (other instanceof Three) return [node3(M, this.a, this.b, other.a), node2(M, other.b, other.c)];
+			return [node3(M, this.a, this.b, other.a), node3(M, other.b, other.c, other.d)];
 		};
 
 		/* js/src/1-digit/3-Three.js */
@@ -563,6 +604,13 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 			i = M.plus(i, M.measure(this.b));
 			if (p(i)) return new Split([this.a], this.b, [this.c]);
 			return new Split([this.a, this.b], this.c, []);
+		};
+
+		Three.prototype._nodes = function (M, other) {
+			if (other instanceof One) return [node2(M, this.a, this.b), node2(M, this.c, other.a)];
+			if (other instanceof Two) return [node3(M, this.a, this.b, this.c), node2(M, other.a, other.b)];
+			if (other instanceof Three) return [node3(M, this.a, this.b, this.c), node3(M, other.a, other.b, other.c)];
+			return [node3(M, this.a, this.b, this.c), node2(M, other.a, other.b), node2(M, other.c, other.d)];
 		};
 
 		/* js/src/1-digit/4-Four.js */
@@ -625,6 +673,13 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 			i = M.plus(i, M.measure(this.c));
 			if (p(i)) return new Split([this.a, this.b], this.c, [this.d]);
 			return new Split([this.a, this.b, this.c], this.d, []);
+		};
+
+		Four.prototype._nodes = function (M, other) {
+			if (other instanceof One) return [node3(M, this.a, this.b, this.c), node2(M, this.d, other.a)];
+			if (other instanceof Two) return [node3(M, this.a, this.b, this.c), node3(M, this.d, other.a, other.b)];
+			if (other instanceof Three) return [node3(M, this.a, this.b, this.c), node2(M, this.d, other.a), node2(M, other.b, other.c)];
+			return [node3(M, this.a, this.b, this.c), node3(M, this.d, other.a, other.b), node2(M, other.c, other.d)];
 		};
 
 		/* js/src/2-node */
@@ -730,8 +785,8 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 		}
 
 		/* js/src/3-tree */
-		/* js/src/3-tree/0-sugar */
-		/* js/src/3-tree/0-sugar/Tree.js */
+		/* js/src/3-tree/0-base */
+		/* js/src/3-tree/0-base/Tree.js */
 
 		function Tree() {}
 
@@ -755,8 +810,8 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 			return prepend(this, iterable);
 		};
 
-		/* js/src/3-tree/1-base */
-		/* js/src/3-tree/1-base/0-Empty.js */
+		/* js/src/3-tree/1-implementations */
+		/* js/src/3-tree/1-implementations/0-Empty.js */
 		function Empty(M) {
 			this.M = M;
 			this.v = M.zero();
@@ -815,7 +870,7 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 			return [this, this];
 		};
 
-		/* js/src/3-tree/1-base/1-Single.js */
+		/* js/src/3-tree/1-implementations/1-Single.js */
 		function Single(M, element) {
 			this.M = M;
 			this.element = element;
@@ -885,7 +940,7 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 			return p(this.measure()) ? [new Empty(this.M), this] : [this, new Empty(this.M)];
 		};
 
-		/* js/src/3-tree/1-base/2-Deep.js */
+		/* js/src/3-tree/1-implementations/2-Deep.js */
 		function Deep(M, left, middle, right) {
 			this.M = M;
 			this.left = left;
@@ -973,7 +1028,7 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 		};
 		Deep.prototype.concat = function (other) {
 
-			return app3(this, [], other);
+			return _app3(this, other);
 		};
 
 		Deep.prototype[Symbol.iterator] = regeneratorRuntime.mark(function callee$2$0() {
@@ -1090,16 +1145,6 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 			return [this, new Empty(this.M)];
 		};
 
-		/* js/src/3-tree/2-api */
-		/* js/src/3-tree/2-api/FingerTree.js */
-		function FingerTree(M) {
-			return new Empty(M);
-		}
-
-		FingerTree.from_iterable = from_iterable;
-
-		exports.FingerTree = FingerTree;
-
 		/* js/src/4-lazy */
 		/* js/src/4-lazy/Lazy.js */
 		function Lazy(thunk) {
@@ -1166,6 +1211,12 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 		function delay(thunk) {
 			return new Lazy(thunk);
 		}
+
+		/* js/src/5-api.js */
+		exports.empty = function (M) {
+			return new Empty(M);
+		};
+		exports.from_iterable = from_iterable;
 
 		return exports;
 	};

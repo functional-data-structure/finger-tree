@@ -49,3 +49,14 @@ One.prototype.node = function ( M ) {
 One.prototype.splitDigit = function ( p , i , M ) {
 	return new Split( [ ] , this.a , [ ] ) ;
 } ;
+
+One.prototype._nodes = function ( M , other ) {
+	if ( other instanceof One )
+		return [ node2( M , this.a , other.a ) ] ;
+	if ( other instanceof Two )
+		return [ node3( M , this.a , other.a , other.b ) ] ;
+	if ( other instanceof Three )
+		return [ node2( M , this.a , other.a ) , node2( M , other.b , other.c ) ] ;
+	return [ node3( M , this.a , other.a , other.b ) , node2( M , other.c , other.d ) ] ;
+} ;
+

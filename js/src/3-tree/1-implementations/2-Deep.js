@@ -105,7 +105,7 @@ Deep.prototype.push = function ( value ) {
 } ;
 Deep.prototype.concat = function ( other ) {
 
-	return app3( this , [ ] , other ) ;
+	return _app3( this , other ) ;
 
 } ;
 

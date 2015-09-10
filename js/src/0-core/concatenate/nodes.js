@@ -1,12 +1,31 @@
 function nodes ( M , list ) {
 
-	switch ( list.length ) {
+	const out = [ ] ;
 
-		case 2 : return [ node2( M , list[0] , list[1] ) ] ;
-		case 3 : return [ node3( M , list[0] , list[1] , list[2] ) ] ;
-		case 4 : return [ node2( M , list[0] , list[1] ) , node2( M , list[2] , list[3] ) ] ;
-		default: return [ node3( M , list[0] , list[1] , list[2] ) ].concat( nodes( M , list.slice( 3 ) ) ) ;
+	const n = list.length ;
+
+	let i = 0 ;
+
+	switch ( n % 3 ) {
+
+		case 1 :
+			out.push( node2( M , list[0] , list[1] ) );
+			out.push( node2( M , list[2] , list[3] ) ) ;
+			i += 4 ;
+			break ;
+		case 2 :
+			out.push( node2( M , list[0] , list[1] ) ) ;
+			i += 2 ;
+			break ;
 
 	}
+
+	for ( ; i < n ; i += 3 ) {
+		out.push( node3( M , list[i] , list[i+1] , list[i+2] ) ) ;
+	}
+
+	return out ;
+
+
 
 }

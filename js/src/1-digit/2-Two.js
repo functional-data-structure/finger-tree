@@ -52,3 +52,13 @@ Two.prototype.splitDigit = function ( p , i , M ) {
 	if ( p( i ) ) return new Split( [ ] , this.a , [ this.b ] ) ;
 	return new Split( [ this.a ] , this.b , [ ] ) ;
 } ;
+
+Two.prototype._nodes = function ( M , other ) {
+	if ( other instanceof One )
+		return [ node3( M , this.a , this.b , other.a ) ] ;
+	if ( other instanceof Two )
+		return [ node2( M , this.a , this.b ) , node2( M , other.a , other.b ) ] ;
+	if ( other instanceof Three )
+		return [ node3( M , this.a , this.b , other.a ) , node2( M , other.b , other.c ) ] ;
+	return [ node3( M , this.a , this.b , other.a ) , node3( M , other.b , other.c , other.d ) ] ;
+} ;

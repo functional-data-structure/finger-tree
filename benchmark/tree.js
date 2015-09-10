@@ -1,6 +1,6 @@
 
 require( "../node_modules/aureooms-node-package/node_modules/babel-core/polyfill" ) ;
-var FingerTree = require('..').FingerTree ;
+var from_iterable = require('..').from_iterable ;
 //var COUNTER = require( 'aureooms-js-measure' ).Measures.COUNTER ;
 var COUNTER = {
 	plus : function ( a , b ) { return a + b ; } ,
@@ -10,11 +10,13 @@ var COUNTER = {
 
 var t, i, len = 100000;
 
-console.log('number of operations: ', len);
+var start = +new Date();
+
+console.log('number of operations:', len);
 
 console.time('total');
 console.time('cons');
-t = FingerTree.from_iterable( COUNTER , []);
+t = from_iterable( COUNTER , []);
 for (i = 0; i < len; ++i) {
   t = t.cons(i);
 }
@@ -27,7 +29,7 @@ for (i = 0; i < len; ++i) {
 console.timeEnd('tail');
 
 console.time('push');
-t = FingerTree.from_iterable( COUNTER , []);
+t = from_iterable( COUNTER , []);
 for (i = 0; i < len; ++i) {
   t = t.push(i);
 }
@@ -35,15 +37,30 @@ console.timeEnd('push');
 
 console.time('split');
 for (i = 0; i < len; ++i) {
-  t.split(function (m) {
-    return m > i;
-  });
+  t.split( function ( m ) { return m > i ; } ) ;
 }
 console.timeEnd('split');
+
+var time = +new Date()-start;
+
+var splits = [ ] ;
+for (i = 0; i < len; ++i) {
+  splits.push( t.split( function ( m ) { return m > i ; } ) ) ;
+}
+
+start = +new Date()-time;
+
+console.time('concat');
+for (i = 0; i < len; ++i) {
+  t = splits[i][0].concat( splits[i][1] ) ;
+}
+console.timeEnd('concat');
+
+splits.splice( 0 ) ;
 
 console.time('init');
 for (i = 0; i < len; ++i) {
   t = t.init();
 }
 console.timeEnd('init');
-console.timeEnd('total');
+console.log('total:', (+new Date()-start)+'ms' );
