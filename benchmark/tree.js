@@ -7,6 +7,7 @@ var t, i, len = 100000;
 
 console.log('number of operations: ', len);
 
+console.time('total');
 console.time('cons');
 t = FingerTree.from_iterable( COUNTER , []);
 for (i = 0; i < len; ++i) {
@@ -40,3 +41,4 @@ for (i = 0; i < len; ++i) {
   t = t.init();
 }
 console.timeEnd('init');
+console.timeEnd('total');

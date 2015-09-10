@@ -3,6 +3,7 @@ var t, i, len = 100000;
 
 console.log('number of operations: ', len);
 
+console.time('total');
 console.time('cons');
 t = [ ] ;
 for (i = 0; i < len; ++i) {
@@ -30,3 +31,4 @@ for (i = 0; i < len; ++i) {
   t.pop( ) ;
 }
 console.timeEnd('init');
+console.timeEnd('total');
