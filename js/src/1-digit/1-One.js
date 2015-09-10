@@ -1,13 +1,18 @@
 function One ( a ) {
 	this.a = a ;
+	this.v = null ;
 }
 
-One.prototype[Symbol.iterator] = function* ( ) {
-	yield this.a ;
+One.prototype[Symbol.iterator] = function ( ) {
+//One.prototype[Symbol.iterator] = function* ( ) {
+	//yield this.a ;
+	//return [ this.a ][Symbol.iterator] ;
+	return _h( _l( this.a ) ) ;
 } ;
 
 One.prototype.measure = function ( M ) {
-	return M.measure( this.a ) ;
+	if ( this.v === null ) this.v = M.measure( this.a ) ;
+	return this.v ;
 } ;
 
 One.prototype.head = function ( ) {
