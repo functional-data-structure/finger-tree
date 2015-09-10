@@ -77,7 +77,7 @@ V8 optimization inhibitors, or anything else...</em></p>
 <p>Here are the first running times I measured for this implementation. It is not
 difficult to see that the implementation is not fast at all. 100000 elements is
 not that much right?</p>
-<pre><code class="lang-sh">$ node benchmark/benchmark.js
+<pre><code class="lang-sh">$ node benchmark/tree.js
 number of operations:  <span class="hljs-number">100000</span>
 cons: <span class="hljs-number">8584</span>ms
 tail: <span class="hljs-number">6841</span>ms
@@ -106,7 +106,7 @@ the construction of the object, which might be expensive, to a later point in
 time using a proxy: a finger tree look-alike object that will construct the
 real subtree if needed.</p>
 <p>Time measurements after applying lazy evaluation concepts:</p>
-<pre><code class="lang-sh">$ node benchmark/benchmark.js
+<pre><code class="lang-sh">$ node benchmark/tree.js
 number of operations:  <span class="hljs-number">100000</span>
 cons: <span class="hljs-number">8585</span>ms
 tail: <span class="hljs-number">6812</span>ms
@@ -151,7 +151,7 @@ Node2 and Node3 to compute the node measures. Never will digits contain objects
 of different types, so patching the Measure object this way suffices, there is
 no need to give the same interface to nodes and elements.</p>
 <p>Here are the measurements after the change:</p>
-<pre><code class="lang-sh">$ node benchmark/benchmark.js
+<pre><code class="lang-sh">$ node benchmark/tree.js
 number of operations:  <span class="hljs-number">100000</span>
 cons: <span class="hljs-number">8452</span>ms
 tail: <span class="hljs-number">6930</span>ms
@@ -165,7 +165,7 @@ init: <span class="hljs-number">6657</span>ms</code></pre>
 </blockquote>
 <p>At some point I decided to use a better tool than intuition to progress:
 profiling. This change is the first where I guided the pruning by looking at
-the output of <code>node --prof benchmark/benchmark.js</code> using <code>node-tick-processor</code>
+the output of <code>node --prof benchmark/tree.js</code> using <code>node-tick-processor</code>
 from the <a href="https://www.npmjs.com/package/tick">tick</a> package.</p>
 <p>Before this change, digit measures where computed using the idiom</p>
 <pre><code class="lang-js">reduce( M.plus.bind( M ) , map( M.measure.bind( M ) , digit ) , M.zero( ) ) ;</code></pre>
@@ -184,7 +184,7 @@ to each digit type. For type Two for example, we have:</p>
 
 }</code></pre>
 <p>Here are the times:</p>
-<pre><code class="lang-sh">$ node benchmark/benchmark.js
+<pre><code class="lang-sh">$ node benchmark/tree.js
 number of operations:  <span class="hljs-number">100000</span>
 cons: <span class="hljs-number">350</span>ms
 tail: <span class="hljs-number">493</span>ms
@@ -200,7 +200,7 @@ split method...</p>
 <p>It turns out I didn&#39;t remove all occurences of this generic digit measurement
 method. Here are the running times after removing occurences of this method
 from <code>Deep.splitTree</code>.</p>
-<pre><code class="lang-js">$ node benchmark/benchmark.js
+<pre><code class="lang-js">$ node benchmark/tree.js
 number <span class="hljs-keyword">of</span> operations:  <span class="hljs-number">100000</span>
 cons: <span class="hljs-number">370</span>ms
 tail: <span class="hljs-number">473</span>ms
@@ -216,7 +216,7 @@ init: <span class="hljs-number">396</span>ms</code></pre>
 <p>These two commits introduce specialized procedures for building trees from
 small lists and digits. These are really small trees, i.e. 0 to 4 elements, so
 why use the generic <code>from_iterable</code> constructor?</p>
-<pre><code class="lang-js">$ node benchmark/benchmark.js
+<pre><code class="lang-js">$ node benchmark/tree.js
 number <span class="hljs-keyword">of</span> operations:  <span class="hljs-number">100000</span>
 cons: <span class="hljs-number">315</span>ms
 tail: <span class="hljs-number">435</span>ms
@@ -247,7 +247,7 @@ However, looking at the profiler output you will see:</p>
 babel.</p>
 <p>Ok so I just threw the es6 classes and replaced them with plain old prototypes.
 Hereunder are the new running times:</p>
-<pre><code class="lang-sh">$ node benchmark/benchmark.js
+<pre><code class="lang-sh">$ node benchmark/tree.js
 number of operations:  <span class="hljs-number">100000</span>
 cons: <span class="hljs-number">83</span>ms
 tail: <span class="hljs-number">196</span>ms
