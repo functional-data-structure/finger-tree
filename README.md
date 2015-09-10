@@ -125,7 +125,7 @@ difficult to see that the implementation is not fast at all. 100000 elements is
 not that much right?
 
 ```sh
-$ node benchmark/benchmark.js
+$ node benchmark/tree.js
 number of operations:  100000
 cons: 8584ms
 tail: 6841ms
@@ -161,7 +161,7 @@ real subtree if needed.
 
 Time measurements after applying lazy evaluation concepts:
 ```sh
-$ node benchmark/benchmark.js
+$ node benchmark/tree.js
 number of operations:  100000
 cons: 8585ms
 tail: 6812ms
@@ -215,7 +215,7 @@ no need to give the same interface to nodes and elements.
 Here are the measurements after the change:
 
 ```sh
-$ node benchmark/benchmark.js
+$ node benchmark/tree.js
 number of operations:  100000
 cons: 8452ms
 tail: 6930ms
@@ -231,7 +231,7 @@ Mostly noise for the moment. There must be something else to fix...
 
 At some point I decided to use a better tool than intuition to progress:
 profiling. This change is the first where I guided the pruning by looking at
-the output of `node --prof benchmark/benchmark.js` using `node-tick-processor`
+the output of `node --prof benchmark/tree.js` using `node-tick-processor`
 from the [tick](https://www.npmjs.com/package/tick) package.
 
 Before this change, digit measures where computed using the idiom
@@ -261,7 +261,7 @@ class Two {
 Here are the times:
 
 ```sh
-$ node benchmark/benchmark.js
+$ node benchmark/tree.js
 number of operations:  100000
 cons: 350ms
 tail: 493ms
@@ -281,7 +281,7 @@ method. Here are the running times after removing occurences of this method
 from `Deep.splitTree`.
 
 ```js
-$ node benchmark/benchmark.js
+$ node benchmark/tree.js
 number of operations:  100000
 cons: 370ms
 tail: 473ms
@@ -301,7 +301,7 @@ small lists and digits. These are really small trees, i.e. 0 to 4 elements, so
 why use the generic `from_iterable` constructor?
 
 ```js
-$ node benchmark/benchmark.js
+$ node benchmark/tree.js
 number of operations:  100000
 cons: 315ms
 tail: 435ms
@@ -341,7 +341,7 @@ Ok so I just threw the es6 classes and replaced them with plain old prototypes.
 Hereunder are the new running times:
 
 ```sh
-$ node benchmark/benchmark.js
+$ node benchmark/tree.js
 number of operations:  100000
 cons: 83ms
 tail: 196ms
