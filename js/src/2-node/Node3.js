@@ -5,10 +5,10 @@ function Node3 ( v , a , b , c ) {
 	this.c = c ;
 }
 
-Node3.prototype[Symbol.iterator] = function* ( ) {
-	yield this.a ;
-	yield this.b ;
-	yield this.c ;
+Node3.prototype[Symbol.iterator] = function ( ) {
+//Node3.prototype[Symbol.iterator] = function* ( ) {
+	//yield this.a ; yield this.b ; yield this.c ;
+	return _h( _c( this.a , _c( this.b , _l( this.c ) ) ) ) ;
 } ;
 
 Node3.prototype.measure = function ( ) {

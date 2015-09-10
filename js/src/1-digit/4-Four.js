@@ -3,17 +3,18 @@ function Four ( a , b , c , d ) {
 	this.b = b ;
 	this.c = c ;
 	this.d = d ;
+	this.v = null ;
 }
 
-Four.prototype[Symbol.iterator] = function* ( ) {
-	yield this.a ;
-	yield this.b ;
-	yield this.c ;
-	yield this.d ;
+Four.prototype[Symbol.iterator] = function ( ) {
+//Four.prototype[Symbol.iterator] = function* ( ) {
+	// yield this.a ; yield this.b ; yield this.c ; yield this.d ;
+	// return [ this.a , this.b , this.c , this.d ][Symbol.iterator] ;
+	return _h( _c( this.a , _c( this.b , _c( this.c , _l( this.d ) ) ) ) ) ;
 } ;
 
 Four.prototype.measure = function ( M ) {
-	return M.plus(
+	if ( this.v === null ) this.v = M.plus(
 		M.measure( this.a ) ,
 		M.plus(
 			M.measure( this.b ) ,
@@ -23,6 +24,7 @@ Four.prototype.measure = function ( M ) {
 			)
 		)
 	) ;
+	return this.v ;
 } ;
 
 Four.prototype.head = function ( ) {

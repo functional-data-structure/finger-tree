@@ -54,6 +54,6 @@ Lazy.prototype.concat = function ( other ) {
 	return this.force( ).concat( other ) ;
 } ;
 
-Lazy.prototype[Symbol.iterator] = function* ( ) {
-	yield* this.force( ) ;
+Lazy.prototype[Symbol.iterator] = function ( ) {
+	return this.force( )[Symbol.iterator]( ) ;
 } ;

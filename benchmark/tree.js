@@ -1,7 +1,12 @@
 
 require( "../node_modules/aureooms-node-package/node_modules/babel-core/polyfill" ) ;
 var FingerTree = require('..').FingerTree ;
-var COUNTER = require( 'aureooms-js-measure' ).Measures.COUNTER ;
+//var COUNTER = require( 'aureooms-js-measure' ).Measures.COUNTER ;
+var COUNTER = {
+	plus : function ( a , b ) { return a + b ; } ,
+	measure : function ( x ) { return 1 ; } ,
+	zero : function ( ) { return 0 ; } ,
+} ;
 
 var t, i, len = 100000;
 

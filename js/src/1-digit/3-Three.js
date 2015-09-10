@@ -2,22 +2,25 @@ function Three ( a , b , c ) {
 	this.a = a ;
 	this.b = b ;
 	this.c = c ;
+	this.v = null ;
 }
 
-Three.prototype[Symbol.iterator] = function* ( ) {
-	yield this.a ;
-	yield this.b ;
-	yield this.c ;
+Three.prototype[Symbol.iterator] = function ( ) {
+//Three.prototype[Symbol.iterator] = function* ( ) {
+	//yield this.a ; yield this.b ; yield this.c ;
+	//return [ this.a , this.b , this.c ][Symbol.iterator] ;
+	return _h( _c( this.a , _c( this.b , _l( this.c ) ) ) ) ;
 } ;
 
 Three.prototype.measure = function ( M ) {
-	return M.plus(
+	if ( this.v === null ) this.v = M.plus(
 		M.measure( this.a ) ,
 		M.plus(
 			M.measure( this.b ) ,
 			M.measure( this.c )
 		)
 	) ;
+	return this.v ;
 } ;
 
 Three.prototype.head = function ( ) {

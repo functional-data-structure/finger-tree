@@ -298,16 +298,55 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 			return reduce(cons, reversed(list), tree);
 		}
 
-		/* js/src/0-core/optimizing/empty */
-		/* js/src/0-core/optimizing/empty/1-_EmptyGenerator.js */
+		/* js/src/0-core/optimizing/fast-iterators */
+		/* js/src/0-core/optimizing/fast-iterators/1-_EmptyGenerator.js */
 		function _EmptyGenerator() {}
 
 		_EmptyGenerator.prototype.next = function () {
 			return { done: true };
 		};
 
-		/* js/src/0-core/optimizing/empty/2-_EMPTY.js */
+		/* js/src/0-core/optimizing/fast-iterators/2-_EMPTY.js */
 		var _EMPTY = new _EmptyGenerator();
+
+		/* js/src/0-core/optimizing/fast-iterators/3-_Node.js */
+		function _Node(value, next) {
+			this.value = value;
+			this.next = next;
+		}
+
+		/* js/src/0-core/optimizing/fast-iterators/4-_Iterator.js */
+		function _Iterator(head) {
+			this.current = head;
+		}
+
+		_Iterator.prototype.next = function () {
+			return (this.current = this.current.next).value;
+		};
+
+		/* js/src/0-core/optimizing/fast-iterators/5-_h.js */
+		function _h(head) {
+			return new _Iterator(new _Node(null, head));
+		}
+
+		/* js/src/0-core/optimizing/fast-iterators/6-_c.js */
+		function _c(value, head) {
+			return new _Node({ done: false, value: value }, head);
+		}
+
+		/* js/src/0-core/optimizing/fast-iterators/7-_l.js */
+		function _l(value) {
+			return new _Node({ done: false, value: value }, _END);
+		}
+
+		/* js/src/0-core/optimizing/fast-iterators/8-_End.js */
+		function _End() {
+			this.value = { done: true };
+			this.next = this;
+		}
+
+		/* js/src/0-core/optimizing/fast-iterators/9-_END.js */
+		var _END = new _End();
 
 		/* js/src/0-core/split */
 		/* js/src/0-core/split/Split.js */
@@ -361,24 +400,19 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 		/* js/src/1-digit/1-One.js */
 		function One(a) {
 			this.a = a;
+			this.v = null;
 		}
 
-		One.prototype[Symbol.iterator] = regeneratorRuntime.mark(function callee$2$0() {
-			return regeneratorRuntime.wrap(function callee$2$0$(context$3$0) {
-				while (1) switch (context$3$0.prev = context$3$0.next) {
-					case 0:
-						context$3$0.next = 2;
-						return this.a;
-
-					case 2:
-					case 'end':
-						return context$3$0.stop();
-				}
-			}, callee$2$0, this);
-		});
+		One.prototype[Symbol.iterator] = function () {
+			//One.prototype[Symbol.iterator] = function* ( ) {
+			//yield this.a ;
+			//return [ this.a ][Symbol.iterator] ;
+			return _h(_l(this.a));
+		};
 
 		One.prototype.measure = function (M) {
-			return M.measure(this.a);
+			if (this.v === null) this.v = M.measure(this.a);
+			return this.v;
 		};
 
 		One.prototype.head = function () {
@@ -420,28 +454,19 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 		function Two(a, b) {
 			this.a = a;
 			this.b = b;
+			this.v = null;
 		}
 
-		Two.prototype[Symbol.iterator] = regeneratorRuntime.mark(function callee$2$0() {
-			return regeneratorRuntime.wrap(function callee$2$0$(context$3$0) {
-				while (1) switch (context$3$0.prev = context$3$0.next) {
-					case 0:
-						context$3$0.next = 2;
-						return this.a;
-
-					case 2:
-						context$3$0.next = 4;
-						return this.b;
-
-					case 4:
-					case 'end':
-						return context$3$0.stop();
-				}
-			}, callee$2$0, this);
-		});
+		Two.prototype[Symbol.iterator] = function () {
+			//Two.prototype[Symbol.iterator] = function* ( ) {
+			//yield this.a ; yield this.b ;
+			//return [ this.a , this.b ][Symbol.iterator] ;
+			return _h(_c(this.a, _l(this.b)));
+		};
 
 		Two.prototype.measure = function (M) {
-			return M.plus(M.measure(this.a), M.measure(this.b));
+			if (this.v === null) this.v = M.plus(M.measure(this.a), M.measure(this.b));
+			return this.v;
 		};
 
 		Two.prototype.head = function () {
@@ -486,32 +511,19 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 			this.a = a;
 			this.b = b;
 			this.c = c;
+			this.v = null;
 		}
 
-		Three.prototype[Symbol.iterator] = regeneratorRuntime.mark(function callee$2$0() {
-			return regeneratorRuntime.wrap(function callee$2$0$(context$3$0) {
-				while (1) switch (context$3$0.prev = context$3$0.next) {
-					case 0:
-						context$3$0.next = 2;
-						return this.a;
-
-					case 2:
-						context$3$0.next = 4;
-						return this.b;
-
-					case 4:
-						context$3$0.next = 6;
-						return this.c;
-
-					case 6:
-					case 'end':
-						return context$3$0.stop();
-				}
-			}, callee$2$0, this);
-		});
+		Three.prototype[Symbol.iterator] = function () {
+			//Three.prototype[Symbol.iterator] = function* ( ) {
+			//yield this.a ; yield this.b ; yield this.c ;
+			//return [ this.a , this.b , this.c ][Symbol.iterator] ;
+			return _h(_c(this.a, _c(this.b, _l(this.c))));
+		};
 
 		Three.prototype.measure = function (M) {
-			return M.plus(M.measure(this.a), M.plus(M.measure(this.b), M.measure(this.c)));
+			if (this.v === null) this.v = M.plus(M.measure(this.a), M.plus(M.measure(this.b), M.measure(this.c)));
+			return this.v;
 		};
 
 		Three.prototype.head = function () {
@@ -559,36 +571,19 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 			this.b = b;
 			this.c = c;
 			this.d = d;
+			this.v = null;
 		}
 
-		Four.prototype[Symbol.iterator] = regeneratorRuntime.mark(function callee$2$0() {
-			return regeneratorRuntime.wrap(function callee$2$0$(context$3$0) {
-				while (1) switch (context$3$0.prev = context$3$0.next) {
-					case 0:
-						context$3$0.next = 2;
-						return this.a;
-
-					case 2:
-						context$3$0.next = 4;
-						return this.b;
-
-					case 4:
-						context$3$0.next = 6;
-						return this.c;
-
-					case 6:
-						context$3$0.next = 8;
-						return this.d;
-
-					case 8:
-					case 'end':
-						return context$3$0.stop();
-				}
-			}, callee$2$0, this);
-		});
+		Four.prototype[Symbol.iterator] = function () {
+			//Four.prototype[Symbol.iterator] = function* ( ) {
+			// yield this.a ; yield this.b ; yield this.c ; yield this.d ;
+			// return [ this.a , this.b , this.c , this.d ][Symbol.iterator] ;
+			return _h(_c(this.a, _c(this.b, _c(this.c, _l(this.d)))));
+		};
 
 		Four.prototype.measure = function (M) {
-			return M.plus(M.measure(this.a), M.plus(M.measure(this.b), M.plus(M.measure(this.c), M.measure(this.d))));
+			if (this.v === null) this.v = M.plus(M.measure(this.a), M.plus(M.measure(this.b), M.plus(M.measure(this.c), M.measure(this.d))));
+			return this.v;
 		};
 
 		Four.prototype.head = function () {
@@ -640,23 +635,11 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 			this.b = b;
 		}
 
-		Node2.prototype[Symbol.iterator] = regeneratorRuntime.mark(function callee$2$0() {
-			return regeneratorRuntime.wrap(function callee$2$0$(context$3$0) {
-				while (1) switch (context$3$0.prev = context$3$0.next) {
-					case 0:
-						context$3$0.next = 2;
-						return this.a;
-
-					case 2:
-						context$3$0.next = 4;
-						return this.b;
-
-					case 4:
-					case 'end':
-						return context$3$0.stop();
-				}
-			}, callee$2$0, this);
-		});
+		Node2.prototype[Symbol.iterator] = function () {
+			//Node2.prototype[Symbol.iterator] = function* ( ) {
+			//yield this.a ; yield this.b ;
+			return _h(_c(this.a, _l(this.b)));
+		};
 
 		Node2.prototype.measure = function () {
 			return this.v;
@@ -703,27 +686,11 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 			this.c = c;
 		}
 
-		Node3.prototype[Symbol.iterator] = regeneratorRuntime.mark(function callee$2$0() {
-			return regeneratorRuntime.wrap(function callee$2$0$(context$3$0) {
-				while (1) switch (context$3$0.prev = context$3$0.next) {
-					case 0:
-						context$3$0.next = 2;
-						return this.a;
-
-					case 2:
-						context$3$0.next = 4;
-						return this.b;
-
-					case 4:
-						context$3$0.next = 6;
-						return this.c;
-
-					case 6:
-					case 'end':
-						return context$3$0.stop();
-				}
-			}, callee$2$0, this);
-		});
+		Node3.prototype[Symbol.iterator] = function () {
+			//Node3.prototype[Symbol.iterator] = function* ( ) {
+			//yield this.a ; yield this.b ; yield this.c ;
+			return _h(_c(this.a, _c(this.b, _l(this.c))));
+		};
 
 		Node3.prototype.measure = function () {
 			return this.v;
@@ -1191,18 +1158,9 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 			return this.force().concat(other);
 		};
 
-		Lazy.prototype[Symbol.iterator] = regeneratorRuntime.mark(function callee$2$0() {
-			return regeneratorRuntime.wrap(function callee$2$0$(context$3$0) {
-				while (1) switch (context$3$0.prev = context$3$0.next) {
-					case 0:
-						return context$3$0.delegateYield(this.force(), 't0', 1);
-
-					case 1:
-					case 'end':
-						return context$3$0.stop();
-				}
-			}, callee$2$0, this);
-		});
+		Lazy.prototype[Symbol.iterator] = function () {
+			return this.force()[Symbol.iterator]();
+		};
 
 		/* js/src/4-lazy/delay.js */
 		function delay(thunk) {

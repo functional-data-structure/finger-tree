@@ -1,15 +1,19 @@
 function Two ( a , b ) {
 	this.a = a ;
 	this.b = b ;
+	this.v = null ;
 }
 
-Two.prototype[Symbol.iterator] = function* ( ) {
-	yield this.a ;
-	yield this.b ;
+Two.prototype[Symbol.iterator] = function ( ) {
+//Two.prototype[Symbol.iterator] = function* ( ) {
+	//yield this.a ; yield this.b ;
+	//return [ this.a , this.b ][Symbol.iterator] ;
+	return _h( _c( this.a , _l( this.b ) ) ) ;
 } ;
 
 Two.prototype.measure = function ( M ) {
-	return M.plus( M.measure( this.a ) , M.measure( this.b ) ) ;
+	if ( this.v === null ) this.v = M.plus( M.measure( this.a ) , M.measure( this.b ) ) ;
+	return this.v ;
 } ;
 
 Two.prototype.head = function ( ) {
