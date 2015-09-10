@@ -15,7 +15,7 @@
 	],
 	"homepage": "http://aureooms.github.io/js-fingertree/",
 	"name": "aureooms-js-fingertree",
-	"version": "1.1.0",
+	"version": "1.1.1",
 	"description": "Finger Trees code bricks for JavaScript",
 	"main": "js/dist/fingertree.js",
 	"license": "AGPL-3.0"
