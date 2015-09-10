@@ -2,22 +2,25 @@
 	<span class="hljs-keyword">this</span>.a = a ;
 	<span class="hljs-keyword">this</span>.b = b ;
 	<span class="hljs-keyword">this</span>.c = c ;
+	<span class="hljs-keyword">this</span>.v = <span class="hljs-literal">null</span> ;
 }
 
-Three.prototype[<span class="hljs-built_in">Symbol</span>.iterator] = <span class="hljs-function"><span class="hljs-keyword">function</span>* (<span class="hljs-params"> </span>) </span>{
-	<span class="hljs-keyword">yield</span> <span class="hljs-keyword">this</span>.a ;
-	<span class="hljs-keyword">yield</span> <span class="hljs-keyword">this</span>.b ;
-	<span class="hljs-keyword">yield</span> <span class="hljs-keyword">this</span>.c ;
+Three.prototype[<span class="hljs-built_in">Symbol</span>.iterator] = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"> </span>) </span>{
+<span class="hljs-comment">//Three.prototype[Symbol.iterator] = function* ( ) {</span>
+	<span class="hljs-comment">//yield this.a ; yield this.b ; yield this.c ;</span>
+	<span class="hljs-comment">//return [ this.a , this.b , this.c ][Symbol.iterator] ;</span>
+	<span class="hljs-keyword">return</span> _h( _c( <span class="hljs-keyword">this</span>.a , _c( <span class="hljs-keyword">this</span>.b , _l( <span class="hljs-keyword">this</span>.c ) ) ) ) ;
 } ;
 
 Three.prototype.measure = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"> M </span>) </span>{
-	<span class="hljs-keyword">return</span> M.plus(
+	<span class="hljs-keyword">if</span> ( <span class="hljs-keyword">this</span>.v === <span class="hljs-literal">null</span> ) <span class="hljs-keyword">this</span>.v = M.plus(
 		M.measure( <span class="hljs-keyword">this</span>.a ) ,
 		M.plus(
 			M.measure( <span class="hljs-keyword">this</span>.b ) ,
 			M.measure( <span class="hljs-keyword">this</span>.c )
 		)
 	) ;
+	<span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.v ;
 } ;
 
 Three.prototype.head = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"> </span>) </span>{
@@ -52,4 +55,14 @@ Three.prototype.node = <span class="hljs-function"><span class="hljs-keyword">fu
 	i = M.plus( i , M.measure( <span class="hljs-keyword">this</span>.b ) ) ;
 	<span class="hljs-keyword">if</span> ( p( i ) ) <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> Split( [ <span class="hljs-keyword">this</span>.a ] , <span class="hljs-keyword">this</span>.b , [ <span class="hljs-keyword">this</span>.c ] ) ;
 	<span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> Split( [ <span class="hljs-keyword">this</span>.a , <span class="hljs-keyword">this</span>.b ] , <span class="hljs-keyword">this</span>.c , [ ] ) ;
+} ;
+
+Three.prototype._nodes = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"> M , other </span>) </span>{
+	<span class="hljs-keyword">if</span> ( other <span class="hljs-keyword">instanceof</span> One )
+		<span class="hljs-keyword">return</span> [ node2( M , <span class="hljs-keyword">this</span>.a , <span class="hljs-keyword">this</span>.b ) , node2( M , <span class="hljs-keyword">this</span>.c , other.a ) ] ;
+	<span class="hljs-keyword">if</span> ( other <span class="hljs-keyword">instanceof</span> Two )
+		<span class="hljs-keyword">return</span> [ node3( M , <span class="hljs-keyword">this</span>.a , <span class="hljs-keyword">this</span>.b , <span class="hljs-keyword">this</span>.c ) , node2( M , other.a , other.b ) ] ;
+	<span class="hljs-keyword">if</span> ( other <span class="hljs-keyword">instanceof</span> Three )
+		<span class="hljs-keyword">return</span> [ node3( M , <span class="hljs-keyword">this</span>.a , <span class="hljs-keyword">this</span>.b , <span class="hljs-keyword">this</span>.c ) , node3( M , other.a , other.b , other.c ) ] ;
+	<span class="hljs-keyword">return</span> [ node3( M , <span class="hljs-keyword">this</span>.a , <span class="hljs-keyword">this</span>.b , <span class="hljs-keyword">this</span>.c ) , node2( M , other.a , other.b ) , node2( M , other.c , other.d ) ] ;
 } ;</div></div></div></div></body></html>

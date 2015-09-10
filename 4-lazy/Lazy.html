@@ -54,6 +54,6 @@ Lazy.prototype.concat = <span class="hljs-function"><span class="hljs-keyword">f
 	<span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.force( ).concat( other ) ;
 } ;
 
-Lazy.prototype[<span class="hljs-built_in">Symbol</span>.iterator] = <span class="hljs-function"><span class="hljs-keyword">function</span>* (<span class="hljs-params"> </span>) </span>{
-	<span class="hljs-keyword">yield</span>* <span class="hljs-keyword">this</span>.force( ) ;
+Lazy.prototype[<span class="hljs-built_in">Symbol</span>.iterator] = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"> </span>) </span>{
+	<span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.force( )[<span class="hljs-built_in">Symbol</span>.iterator]( ) ;
 } ;</div></div></div></div></body></html>

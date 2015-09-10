@@ -1,12 +1,31 @@
 <!DOCTYPE html><html lang="en"><head><title>0-core/concatenate/nodes</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../../"><meta name="groc-document-path" content="0-core/concatenate/nodes"><meta name="groc-project-path" content="js/src/0-core/concatenate/nodes.js"><meta name="groc-github-url" content="https://github.com/aureooms/js-fingertree"><link rel="stylesheet" type="text/css" media="all" href="../../assets/style.css"><script type="text/javascript" src="../../assets/behavior.js"></script><body><div id="meta"><div class="file-path"><a href="https://github.com/aureooms/js-fingertree/blob/master/js/src/0-core/concatenate/nodes.js">js/src/0-core/concatenate/nodes.js</a></div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">nodes</span> (<span class="hljs-params"> M , list </span>) </span>{
 
-	<span class="hljs-keyword">switch</span> ( list.length ) {
+	<span class="hljs-keyword">const</span> out = [ ] ;
 
-		<span class="hljs-keyword">case</span> <span class="hljs-number">2</span> : <span class="hljs-keyword">return</span> [ node2( M , list[<span class="hljs-number">0</span>] , list[<span class="hljs-number">1</span>] ) ] ;
-		<span class="hljs-keyword">case</span> <span class="hljs-number">3</span> : <span class="hljs-keyword">return</span> [ node3( M , list[<span class="hljs-number">0</span>] , list[<span class="hljs-number">1</span>] , list[<span class="hljs-number">2</span>] ) ] ;
-		<span class="hljs-keyword">case</span> <span class="hljs-number">4</span> : <span class="hljs-keyword">return</span> [ node2( M , list[<span class="hljs-number">0</span>] , list[<span class="hljs-number">1</span>] ) , node2( M , list[<span class="hljs-number">2</span>] , list[<span class="hljs-number">3</span>] ) ] ;
-		<span class="hljs-keyword">default</span>: <span class="hljs-keyword">return</span> [ node3( M , list[<span class="hljs-number">0</span>] , list[<span class="hljs-number">1</span>] , list[<span class="hljs-number">2</span>] ) ].concat( nodes( M , list.slice( <span class="hljs-number">3</span> ) ) ) ;
+	<span class="hljs-keyword">const</span> n = list.length ;
+
+	<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span> ;
+
+	<span class="hljs-keyword">switch</span> ( n % <span class="hljs-number">3</span> ) {
+
+		<span class="hljs-keyword">case</span> <span class="hljs-number">1</span> :
+			out.push( node2( M , list[<span class="hljs-number">0</span>] , list[<span class="hljs-number">1</span>] ) );
+			out.push( node2( M , list[<span class="hljs-number">2</span>] , list[<span class="hljs-number">3</span>] ) ) ;
+			i += <span class="hljs-number">4</span> ;
+			<span class="hljs-keyword">break</span> ;
+		<span class="hljs-keyword">case</span> <span class="hljs-number">2</span> :
+			out.push( node2( M , list[<span class="hljs-number">0</span>] , list[<span class="hljs-number">1</span>] ) ) ;
+			i += <span class="hljs-number">2</span> ;
+			<span class="hljs-keyword">break</span> ;
 
 	}
+
+	<span class="hljs-keyword">for</span> ( ; i &lt; n ; i += <span class="hljs-number">3</span> ) {
+		out.push( node3( M , list[i] , list[i+<span class="hljs-number">1</span>] , list[i+<span class="hljs-number">2</span>] ) ) ;
+	}
+
+	<span class="hljs-keyword">return</span> out ;
+
+
 
 }</div></div></div></div></body></html>

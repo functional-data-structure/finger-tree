@@ -5,10 +5,10 @@
 	<span class="hljs-keyword">this</span>.c = c ;
 }
 
-Node3.prototype[<span class="hljs-built_in">Symbol</span>.iterator] = <span class="hljs-function"><span class="hljs-keyword">function</span>* (<span class="hljs-params"> </span>) </span>{
-	<span class="hljs-keyword">yield</span> <span class="hljs-keyword">this</span>.a ;
-	<span class="hljs-keyword">yield</span> <span class="hljs-keyword">this</span>.b ;
-	<span class="hljs-keyword">yield</span> <span class="hljs-keyword">this</span>.c ;
+Node3.prototype[<span class="hljs-built_in">Symbol</span>.iterator] = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"> </span>) </span>{
+<span class="hljs-comment">//Node3.prototype[Symbol.iterator] = function* ( ) {</span>
+	<span class="hljs-comment">//yield this.a ; yield this.b ; yield this.c ;</span>
+	<span class="hljs-keyword">return</span> _h( _c( <span class="hljs-keyword">this</span>.a , _c( <span class="hljs-keyword">this</span>.b , _l( <span class="hljs-keyword">this</span>.c ) ) ) ) ;
 } ;
 
 Node3.prototype.measure = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"> </span>) </span>{
