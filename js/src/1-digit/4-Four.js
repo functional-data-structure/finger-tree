@@ -6,12 +6,14 @@ function Four ( a , b , c , d ) {
 	this.v = null ;
 }
 
-Four.prototype[Symbol.iterator] = function ( ) {
+Four.prototype = new Digit( ) ;
+
+//Four.prototype[Symbol.iterator] = function ( ) {
 //Four.prototype[Symbol.iterator] = function* ( ) {
 	// yield this.a ; yield this.b ; yield this.c ; yield this.d ;
 	// return [ this.a , this.b , this.c , this.d ][Symbol.iterator] ;
-	return _h( _c( this.a , _c( this.b , _c( this.c , _l( this.d ) ) ) ) ) ;
-} ;
+	//return _h( _c( this.a , _c( this.b , _c( this.c , _l( this.d ) ) ) ) ) ;
+//} ;
 
 Four.prototype.measure = function ( M ) {
 	if ( this.v === null ) this.v = M.plus(
@@ -78,3 +80,6 @@ Four.prototype._nodes = function ( M , other ) {
 	return [ node3( M , this.a , this.b , this.c ) , node3( M , this.d , other.a , other.b ) , node2( M , other.c , other.d ) ] ;
 } ;
 
+Four.prototype._list = function ( ) {
+	return [ this.a , this.b , this.c , this.d ] ;
+} ;

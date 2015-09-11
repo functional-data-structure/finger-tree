@@ -1,5 +1,7 @@
-function append ( tree , list ) {
+function append ( tree , iterable ) {
 
-	return reduce( push , list , tree ) ;
+	for ( const value of iterable ) tree = tree.push( value ) ;
+
+	return tree ;
 
 }

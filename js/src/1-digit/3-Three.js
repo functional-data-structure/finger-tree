@@ -5,12 +5,14 @@ function Three ( a , b , c ) {
 	this.v = null ;
 }
 
-Three.prototype[Symbol.iterator] = function ( ) {
+Three.prototype = new Digit( ) ;
+
+//Three.prototype[Symbol.iterator] = function ( ) {
 //Three.prototype[Symbol.iterator] = function* ( ) {
 	//yield this.a ; yield this.b ; yield this.c ;
 	//return [ this.a , this.b , this.c ][Symbol.iterator] ;
-	return _h( _c( this.a , _c( this.b , _l( this.c ) ) ) ) ;
-} ;
+	//return _h( _c( this.a , _c( this.b , _l( this.c ) ) ) ) ;
+//} ;
 
 Three.prototype.measure = function ( M ) {
 	if ( this.v === null ) this.v = M.plus(
@@ -71,3 +73,8 @@ Three.prototype._nodes = function ( M , other ) {
 		return [ node3( M , this.a , this.b , this.c ) , node3( M , other.a , other.b , other.c ) ] ;
 	return [ node3( M , this.a , this.b , this.c ) , node2( M , other.a , other.b ) , node2( M , other.c , other.d ) ] ;
 } ;
+
+Three.prototype._list = function ( ) {
+	return [ this.a , this.b , this.c ] ;
+} ;
+

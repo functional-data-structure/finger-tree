@@ -1,13 +1,10 @@
 'use strict';
 
-function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) arr2[i] = arr[i]; return arr2; } else { return Array.from(arr); } }
-
 (function () {
 
 	'use strict';
 
 	var definition = function definition(exports, undefined) {
-		var marked2$0 = [chain, reversed].map(regeneratorRuntime.mark);
 
 		/* js/src/0-core */
 		/* js/src/0-core/concatenate */
@@ -18,20 +15,44 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 			B = B.force();
 
 			if (A instanceof Empty) return _prepend(B, list);
-			if (B instanceof Empty) return append(A, list);
+			if (B instanceof Empty) return _append(A, list);
 
 			if (A instanceof Single) return _prepend(B, list).cons(A.head());
-			if (B instanceof Single) return append(A, list).push(B.last());
+			if (B instanceof Single) return _append(A, list).push(B.last());
 
 			return new Deep(A.M, A.left, delay(function () {
-				return app3(A.middle, nodes(A.M, [].concat(_toConsumableArray(chain(A.right, list, B.left)))), B.middle);
+				return app3(A.middle, A.right._nodes_with_list(A.M, list, B.left), B.middle);
 			}), B.right);
 		}
 
 		/* js/src/0-core/concatenate/append.js */
-		function append(tree, list) {
+		function append(tree, iterable) {
+			var _iteratorNormalCompletion = true;
+			var _didIteratorError = false;
+			var _iteratorError = undefined;
 
-			return reduce(push, list, tree);
+			try {
+
+				for (var _iterator = iterable[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+					var value = _step.value;
+					tree = tree.push(value);
+				}
+			} catch (err) {
+				_didIteratorError = true;
+				_iteratorError = err;
+			} finally {
+				try {
+					if (!_iteratorNormalCompletion && _iterator['return']) {
+						_iterator['return']();
+					}
+				} finally {
+					if (_didIteratorError) {
+						throw _iteratorError;
+					}
+				}
+			}
+
+			return tree;
 		}
 
 		/* js/src/0-core/concatenate/from_iterable.js */
@@ -71,162 +92,9 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 		}
 
 		/* js/src/0-core/concatenate/prepend.js */
-		function prepend(tree, list) {
+		function prepend(tree, iterable) {
 
-			return reduce(cons, reversed([].concat(_toConsumableArray(list))), tree);
-		}
-
-		/* js/src/0-core/concatenate/push.js */
-		function push(T, x) {
-			return T.push(x);
-		}
-
-		/* js/src/0-core/concatenate/unshift.js */
-		function cons(T, x) {
-			return T.cons(x);
-		}
-
-		/* js/src/0-core/itertools */
-		/* js/src/0-core/itertools/chain.js */
-		function chain() {
-			var _iteratorNormalCompletion,
-			    _didIteratorError,
-			    _iteratorError,
-			    _len,
-			    iterables,
-			    _key,
-			    _iterator,
-			    _step,
-			    iterable,
-			    args$3$0 = arguments;
-
-			return regeneratorRuntime.wrap(function chain$(context$3$0) {
-				while (1) switch (context$3$0.prev = context$3$0.next) {
-					case 0:
-						_iteratorNormalCompletion = true;
-						_didIteratorError = false;
-						_iteratorError = undefined;
-						context$3$0.prev = 3;
-
-						for (_len = args$3$0.length, iterables = Array(_len), _key = 0; _key < _len; _key++) {
-							iterables[_key] = args$3$0[_key];
-						}
-
-						_iterator = iterables[Symbol.iterator]();
-
-					case 6:
-						if (_iteratorNormalCompletion = (_step = _iterator.next()).done) {
-							context$3$0.next = 12;
-							break;
-						}
-
-						iterable = _step.value;
-						return context$3$0.delegateYield(iterable, 't0', 9);
-
-					case 9:
-						_iteratorNormalCompletion = true;
-						context$3$0.next = 6;
-						break;
-
-					case 12:
-						context$3$0.next = 18;
-						break;
-
-					case 14:
-						context$3$0.prev = 14;
-						context$3$0.t1 = context$3$0['catch'](3);
-						_didIteratorError = true;
-						_iteratorError = context$3$0.t1;
-
-					case 18:
-						context$3$0.prev = 18;
-						context$3$0.prev = 19;
-
-						if (!_iteratorNormalCompletion && _iterator['return']) {
-							_iterator['return']();
-						}
-
-					case 21:
-						context$3$0.prev = 21;
-
-						if (!_didIteratorError) {
-							context$3$0.next = 24;
-							break;
-						}
-
-						throw _iteratorError;
-
-					case 24:
-						return context$3$0.finish(21);
-
-					case 25:
-						return context$3$0.finish(18);
-
-					case 26:
-					case 'end':
-						return context$3$0.stop();
-				}
-			}, marked2$0[0], this, [[3, 14, 18, 26], [19,, 21, 25]]);
-		}
-
-		/* js/src/0-core/itertools/reduce.js */
-		function reduce(callable, iterable, initial) {
-
-			var accumulator = initial;
-
-			var _iteratorNormalCompletion2 = true;
-			var _didIteratorError2 = false;
-			var _iteratorError2 = undefined;
-
-			try {
-				for (var _iterator2 = iterable[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
-					var value = _step2.value;
-					accumulator = callable(accumulator, value);
-				}
-			} catch (err) {
-				_didIteratorError2 = true;
-				_iteratorError2 = err;
-			} finally {
-				try {
-					if (!_iteratorNormalCompletion2 && _iterator2['return']) {
-						_iterator2['return']();
-					}
-				} finally {
-					if (_didIteratorError2) {
-						throw _iteratorError2;
-					}
-				}
-			}
-
-			return accumulator;
-		}
-
-		/* js/src/0-core/itertools/reversed.js */
-		function reversed(list) {
-			var i;
-			return regeneratorRuntime.wrap(function reversed$(context$3$0) {
-				while (1) switch (context$3$0.prev = context$3$0.next) {
-					case 0:
-						i = list.length;
-
-					case 1:
-						if (! i--) {
-							context$3$0.next = 6;
-							break;
-						}
-
-						context$3$0.next = 4;
-						return list[i];
-
-					case 4:
-						context$3$0.next = 1;
-						break;
-
-					case 6:
-					case 'end':
-						return context$3$0.stop();
-				}
-			}, marked2$0[1], this);
+			return _prepend(tree, Array.from(iterable));
 		}
 
 		/* js/src/0-core/measure */
@@ -265,6 +133,16 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 			return new Deep(A.M, A.left, delay(function () {
 				return app3(A.middle, A.right._nodes(A.M, B.left), B.middle);
 			}), B.right);
+		}
+
+		/* js/src/0-core/optimizing/_append.js */
+		function _append(tree, list) {
+
+			var n = list.length;
+
+			for (var i = 0; i < n; ++i) {
+				tree = tree.push(list[i]);
+			}return tree;
 		}
 
 		/* js/src/0-core/optimizing/_deepL.js */
@@ -333,7 +211,11 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 		/* js/src/0-core/optimizing/_prepend.js */
 		function _prepend(tree, list) {
 
-			return reduce(cons, reversed(list), tree);
+			var i = list.length;
+
+			while (i--) tree = tree.cons(list[i]);
+
+			return tree;
 		}
 
 		/* js/src/0-core/optimizing/fast-iterators */
@@ -435,18 +317,35 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 		}
 
 		/* js/src/1-digit */
+		/* js/src/1-digit/0-Digit.js */
+		function Digit() {}
+
+		Digit.prototype._concat = function (list, other) {
+			return this._list().concat(list).concat(other._list());
+		};
+
+		Digit.prototype._nodes_with_list = function (M, list, other) {
+			return nodes(M, this._concat(list, other));
+		};
+
+		Digit.prototype[Symbol.iterator] = function () {
+			return this._list()[Symbol.iterator]();
+		};
+
 		/* js/src/1-digit/1-One.js */
 		function One(a) {
 			this.a = a;
 			this.v = null;
 		}
 
-		One.prototype[Symbol.iterator] = function () {
-			//One.prototype[Symbol.iterator] = function* ( ) {
-			//yield this.a ;
-			//return [ this.a ][Symbol.iterator] ;
-			return _h(_l(this.a));
-		};
+		One.prototype = new Digit();
+
+		//One.prototype[Symbol.iterator] = function ( ) {
+		//One.prototype[Symbol.iterator] = function* ( ) {
+		//yield this.a ;
+		//return [ this.a ][Symbol.iterator] ;
+		//return _h( _l( this.a ) ) ;
+		//} ;
 
 		One.prototype.measure = function (M) {
 			if (this.v === null) this.v = M.measure(this.a);
@@ -495,6 +394,10 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 			return [node3(M, this.a, other.a, other.b), node2(M, other.c, other.d)];
 		};
 
+		One.prototype._list = function () {
+			return [this.a];
+		};
+
 		/* js/src/1-digit/2-Two.js */
 		function Two(a, b) {
 			this.a = a;
@@ -502,12 +405,14 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 			this.v = null;
 		}
 
-		Two.prototype[Symbol.iterator] = function () {
-			//Two.prototype[Symbol.iterator] = function* ( ) {
-			//yield this.a ; yield this.b ;
-			//return [ this.a , this.b ][Symbol.iterator] ;
-			return _h(_c(this.a, _l(this.b)));
-		};
+		Two.prototype = new Digit();
+
+		//Two.prototype[Symbol.iterator] = function ( ) {
+		//Two.prototype[Symbol.iterator] = function* ( ) {
+		//yield this.a ; yield this.b ;
+		//return [ this.a , this.b ][Symbol.iterator] ;
+		//return _h( _c( this.a , _l( this.b ) ) ) ;
+		//} ;
 
 		Two.prototype.measure = function (M) {
 			if (this.v === null) this.v = M.plus(M.measure(this.a), M.measure(this.b));
@@ -558,6 +463,10 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 			return [node3(M, this.a, this.b, other.a), node3(M, other.b, other.c, other.d)];
 		};
 
+		Two.prototype._list = function () {
+			return [this.a, this.b];
+		};
+
 		/* js/src/1-digit/3-Three.js */
 		function Three(a, b, c) {
 			this.a = a;
@@ -566,12 +475,14 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 			this.v = null;
 		}
 
-		Three.prototype[Symbol.iterator] = function () {
-			//Three.prototype[Symbol.iterator] = function* ( ) {
-			//yield this.a ; yield this.b ; yield this.c ;
-			//return [ this.a , this.b , this.c ][Symbol.iterator] ;
-			return _h(_c(this.a, _c(this.b, _l(this.c))));
-		};
+		Three.prototype = new Digit();
+
+		//Three.prototype[Symbol.iterator] = function ( ) {
+		//Three.prototype[Symbol.iterator] = function* ( ) {
+		//yield this.a ; yield this.b ; yield this.c ;
+		//return [ this.a , this.b , this.c ][Symbol.iterator] ;
+		//return _h( _c( this.a , _c( this.b , _l( this.c ) ) ) ) ;
+		//} ;
 
 		Three.prototype.measure = function (M) {
 			if (this.v === null) this.v = M.plus(M.measure(this.a), M.plus(M.measure(this.b), M.measure(this.c)));
@@ -624,6 +535,10 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 			return [node3(M, this.a, this.b, this.c), node2(M, other.a, other.b), node2(M, other.c, other.d)];
 		};
 
+		Three.prototype._list = function () {
+			return [this.a, this.b, this.c];
+		};
+
 		/* js/src/1-digit/4-Four.js */
 		function Four(a, b, c, d) {
 			this.a = a;
@@ -633,12 +548,14 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 			this.v = null;
 		}
 
-		Four.prototype[Symbol.iterator] = function () {
-			//Four.prototype[Symbol.iterator] = function* ( ) {
-			// yield this.a ; yield this.b ; yield this.c ; yield this.d ;
-			// return [ this.a , this.b , this.c , this.d ][Symbol.iterator] ;
-			return _h(_c(this.a, _c(this.b, _c(this.c, _l(this.d)))));
-		};
+		Four.prototype = new Digit();
+
+		//Four.prototype[Symbol.iterator] = function ( ) {
+		//Four.prototype[Symbol.iterator] = function* ( ) {
+		// yield this.a ; yield this.b ; yield this.c ; yield this.d ;
+		// return [ this.a , this.b , this.c , this.d ][Symbol.iterator] ;
+		//return _h( _c( this.a , _c( this.b , _c( this.c , _l( this.d ) ) ) ) ) ;
+		//} ;
 
 		Four.prototype.measure = function (M) {
 			if (this.v === null) this.v = M.plus(M.measure(this.a), M.plus(M.measure(this.b), M.plus(M.measure(this.c), M.measure(this.d))));
@@ -691,6 +608,10 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 			if (other instanceof Two) return [node3(M, this.a, this.b, this.c), node3(M, this.d, other.a, other.b)];
 			if (other instanceof Three) return [node3(M, this.a, this.b, this.c), node2(M, this.d, other.a), node2(M, other.b, other.c)];
 			return [node3(M, this.a, this.b, this.c), node3(M, this.d, other.a, other.b), node2(M, other.c, other.d)];
+		};
+
+		Four.prototype._list = function () {
+			return [this.a, this.b, this.c, this.d];
 		};
 
 		/* js/src/2-node */
@@ -1043,7 +964,7 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 		};
 
 		Deep.prototype[Symbol.iterator] = regeneratorRuntime.mark(function callee$2$0() {
-			var _iteratorNormalCompletion3, _didIteratorError3, _iteratorError3, _iterator3, _step3, node;
+			var _iteratorNormalCompletion2, _didIteratorError2, _iteratorError2, _iterator2, _step2, node;
 
 			return regeneratorRuntime.wrap(function callee$2$0$(context$3$0) {
 				while (1) switch (context$3$0.prev = context$3$0.next) {
@@ -1051,23 +972,23 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 						return context$3$0.delegateYield(this.left, 't0', 1);
 
 					case 1:
-						_iteratorNormalCompletion3 = true;
-						_didIteratorError3 = false;
-						_iteratorError3 = undefined;
+						_iteratorNormalCompletion2 = true;
+						_didIteratorError2 = false;
+						_iteratorError2 = undefined;
 						context$3$0.prev = 4;
-						_iterator3 = this.middle[Symbol.iterator]();
+						_iterator2 = this.middle[Symbol.iterator]();
 
 					case 6:
-						if (_iteratorNormalCompletion3 = (_step3 = _iterator3.next()).done) {
+						if (_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done) {
 							context$3$0.next = 12;
 							break;
 						}
 
-						node = _step3.value;
+						node = _step2.value;
 						return context$3$0.delegateYield(node, 't1', 9);
 
 					case 9:
-						_iteratorNormalCompletion3 = true;
+						_iteratorNormalCompletion2 = true;
 						context$3$0.next = 6;
 						break;
 
@@ -1078,26 +999,26 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 					case 14:
 						context$3$0.prev = 14;
 						context$3$0.t2 = context$3$0['catch'](4);
-						_didIteratorError3 = true;
-						_iteratorError3 = context$3$0.t2;
+						_didIteratorError2 = true;
+						_iteratorError2 = context$3$0.t2;
 
 					case 18:
 						context$3$0.prev = 18;
 						context$3$0.prev = 19;
 
-						if (!_iteratorNormalCompletion3 && _iterator3['return']) {
-							_iterator3['return']();
+						if (!_iteratorNormalCompletion2 && _iterator2['return']) {
+							_iterator2['return']();
 						}
 
 					case 21:
 						context$3$0.prev = 21;
 
-						if (!_didIteratorError3) {
+						if (!_didIteratorError2) {
 							context$3$0.next = 24;
 							break;
 						}
 
-						throw _iteratorError3;
+						throw _iteratorError2;
 
 					case 24:
 						return context$3$0.finish(21);
