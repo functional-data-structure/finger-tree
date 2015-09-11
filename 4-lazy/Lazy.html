@@ -6,7 +6,10 @@
 Lazy.prototype = <span class="hljs-keyword">new</span> Tree( ) ;
 
 Lazy.prototype.force = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"> </span>) </span>{
-	<span class="hljs-keyword">if</span> ( <span class="hljs-keyword">this</span>.tree === <span class="hljs-literal">null</span> ) <span class="hljs-keyword">this</span>.tree = <span class="hljs-keyword">this</span>.thunk( ) ;
+	<span class="hljs-keyword">if</span> ( <span class="hljs-keyword">this</span>.tree === <span class="hljs-literal">null</span> ) {
+		<span class="hljs-keyword">this</span>.tree = <span class="hljs-keyword">this</span>.thunk( ) ;
+		<span class="hljs-keyword">this</span>.thunk = <span class="hljs-literal">null</span> ;
+	}
 	<span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.tree ;
 } ;
 
