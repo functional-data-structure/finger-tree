@@ -1,5 +1,5 @@
-function prepend ( tree , list ) {
+function prepend ( tree , iterable ) {
 
-	return reduce( cons , reversed( [ ...list ] ) , tree ) ;
+	return _prepend( tree , Array.from( iterable ) ) ;
 
 }

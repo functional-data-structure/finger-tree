@@ -4,12 +4,14 @@ function Two ( a , b ) {
 	this.v = null ;
 }
 
-Two.prototype[Symbol.iterator] = function ( ) {
+Two.prototype = new Digit( ) ;
+
+//Two.prototype[Symbol.iterator] = function ( ) {
 //Two.prototype[Symbol.iterator] = function* ( ) {
 	//yield this.a ; yield this.b ;
 	//return [ this.a , this.b ][Symbol.iterator] ;
-	return _h( _c( this.a , _l( this.b ) ) ) ;
-} ;
+	//return _h( _c( this.a , _l( this.b ) ) ) ;
+//} ;
 
 Two.prototype.measure = function ( M ) {
 	if ( this.v === null ) this.v = M.plus( M.measure( this.a ) , M.measure( this.b ) ) ;
@@ -61,4 +63,8 @@ Two.prototype._nodes = function ( M , other ) {
 	if ( other instanceof Three )
 		return [ node3( M , this.a , this.b , other.a ) , node2( M , other.b , other.c ) ] ;
 	return [ node3( M , this.a , this.b , other.a ) , node3( M , other.b , other.c , other.d ) ] ;
+} ;
+
+Two.prototype._list = function ( ) {
+	return [ this.a , this.b ] ;
 } ;

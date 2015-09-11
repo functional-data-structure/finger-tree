@@ -3,12 +3,14 @@ function One ( a ) {
 	this.v = null ;
 }
 
-One.prototype[Symbol.iterator] = function ( ) {
+One.prototype = new Digit( ) ;
+
+//One.prototype[Symbol.iterator] = function ( ) {
 //One.prototype[Symbol.iterator] = function* ( ) {
 	//yield this.a ;
 	//return [ this.a ][Symbol.iterator] ;
-	return _h( _l( this.a ) ) ;
-} ;
+	//return _h( _l( this.a ) ) ;
+//} ;
 
 One.prototype.measure = function ( M ) {
 	if ( this.v === null ) this.v = M.measure( this.a ) ;
@@ -58,4 +60,8 @@ One.prototype._nodes = function ( M , other ) {
 	if ( other instanceof Three )
 		return [ node2( M , this.a , other.a ) , node2( M , other.b , other.c ) ] ;
 	return [ node3( M , this.a , other.a , other.b ) , node2( M , other.c , other.d ) ] ;
+} ;
+
+One.prototype._list = function ( ) {
+	return [ this.a ] ;
 } ;

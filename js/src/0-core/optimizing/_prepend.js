@@ -1,5 +1,9 @@
 function _prepend ( tree , list ) {
 
-	return reduce( cons , reversed( list ) , tree ) ;
+	let i = list.length ;
+
+	while ( i-- ) tree = tree.cons( list[i] ) ;
+
+	return tree ;
 
 }

@@ -1,6 +1,9 @@
 
 require( "../node_modules/aureooms-node-package/node_modules/babel-core/polyfill" ) ;
-var from_iterable = require('..').from_iterable ;
+var itertools = require( "../node_modules/aureooms-js-itertools" ) ;
+var fingertree = require('..') ;
+var empty = fingertree.empty ;
+var from_iterable = fingertree.from_iterable ;
 //var COUNTER = require( 'aureooms-js-measure' ).Measures.COUNTER ;
 var COUNTER = {
 	plus : function ( a , b ) { return a + b ; } ,
@@ -35,6 +38,19 @@ for (i = 0; i < len; ++i) {
 }
 console.timeEnd('push');
 
+console.time('init');
+for (i = 0; i < len; ++i) {
+  t = t.init();
+}
+console.timeEnd('init');
+
+console.time('prepend');
+t = empty( COUNTER ).prepend( itertools.range( len ) ) ;
+console.timeEnd('prepend');
+console.time('append');
+t = empty( COUNTER ).append( itertools.range( len ) ) ;
+console.timeEnd('append');
+
 console.time('split');
 for (i = 0; i < len; ++i) {
   t.split( function ( m ) { return m > i ; } ) ;
@@ -57,10 +73,4 @@ for (i = 0; i < len; ++i) {
 console.timeEnd('concat');
 
 splits.splice( 0 ) ;
-
-console.time('init');
-for (i = 0; i < len; ++i) {
-  t = t.init();
-}
-console.timeEnd('init');
 console.log('total:', (+new Date()-start)+'ms' );
