@@ -6,7 +6,10 @@ function Lazy ( thunk ) {
 Lazy.prototype = new Tree( ) ;
 
 Lazy.prototype.force = function ( ) {
-	if ( this.tree === null ) this.tree = this.thunk( ) ;
+	if ( this.tree === null ) {
+		this.tree = this.thunk( ) ;
+		this.thunk = null ;
+	}
 	return this.tree ;
 } ;
 

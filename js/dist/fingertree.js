@@ -1166,7 +1166,10 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 		Lazy.prototype = new Tree();
 
 		Lazy.prototype.force = function () {
-			if (this.tree === null) this.tree = this.thunk();
+			if (this.tree === null) {
+				this.tree = this.thunk();
+				this.thunk = null;
+			}
 			return this.tree;
 		};
 
