@@ -8,13 +8,6 @@ function Four ( a , b , c , d ) {
 
 Four.prototype = new Digit( ) ;
 
-//Four.prototype[Symbol.iterator] = function ( ) {
-//Four.prototype[Symbol.iterator] = function* ( ) {
-	// yield this.a ; yield this.b ; yield this.c ; yield this.d ;
-	// return [ this.a , this.b , this.c , this.d ][Symbol.iterator] ;
-	//return _h( _c( this.a , _c( this.b , _c( this.c , _l( this.d ) ) ) ) ) ;
-//} ;
-
 Four.prototype.measure = function ( M ) {
 	if ( this.v === null ) this.v = M.plus(
 		M.measure( this.a ) ,

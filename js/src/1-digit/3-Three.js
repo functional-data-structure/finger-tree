@@ -7,13 +7,6 @@ function Three ( a , b , c ) {
 
 Three.prototype = new Digit( ) ;
 
-//Three.prototype[Symbol.iterator] = function ( ) {
-//Three.prototype[Symbol.iterator] = function* ( ) {
-	//yield this.a ; yield this.b ; yield this.c ;
-	//return [ this.a , this.b , this.c ][Symbol.iterator] ;
-	//return _h( _c( this.a , _c( this.b , _l( this.c ) ) ) ) ;
-//} ;
-
 Three.prototype.measure = function ( M ) {
 	if ( this.v === null ) this.v = M.plus(
 		M.measure( this.a ) ,

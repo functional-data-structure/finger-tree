@@ -229,45 +229,6 @@
 		/* js/src/0-core/optimizing/fast-iterators/2-_EMPTY.js */
 		var _EMPTY = new _EmptyGenerator();
 
-		/* js/src/0-core/optimizing/fast-iterators/3-_Node.js */
-		function _Node(value, next) {
-			this.value = value;
-			this.next = next;
-		}
-
-		/* js/src/0-core/optimizing/fast-iterators/4-_Iterator.js */
-		function _Iterator(head) {
-			this.current = head;
-		}
-
-		_Iterator.prototype.next = function () {
-			return (this.current = this.current.next).value;
-		};
-
-		/* js/src/0-core/optimizing/fast-iterators/5-_h.js */
-		function _h(head) {
-			return new _Iterator(new _Node(null, head));
-		}
-
-		/* js/src/0-core/optimizing/fast-iterators/6-_c.js */
-		function _c(value, head) {
-			return new _Node({ done: false, value: value }, head);
-		}
-
-		/* js/src/0-core/optimizing/fast-iterators/7-_l.js */
-		function _l(value) {
-			return new _Node({ done: false, value: value }, _END);
-		}
-
-		/* js/src/0-core/optimizing/fast-iterators/8-_End.js */
-		function _End() {
-			this.value = { done: true };
-			this.next = this;
-		}
-
-		/* js/src/0-core/optimizing/fast-iterators/9-_END.js */
-		var _END = new _End();
-
 		/* js/src/0-core/split */
 		/* js/src/0-core/split/Split.js */
 		function Split(left, middle, right) {
@@ -340,13 +301,6 @@
 
 		One.prototype = new Digit();
 
-		//One.prototype[Symbol.iterator] = function ( ) {
-		//One.prototype[Symbol.iterator] = function* ( ) {
-		//yield this.a ;
-		//return [ this.a ][Symbol.iterator] ;
-		//return _h( _l( this.a ) ) ;
-		//} ;
-
 		One.prototype.measure = function (M) {
 			if (this.v === null) this.v = M.measure(this.a);
 			return this.v;
@@ -406,13 +360,6 @@
 		}
 
 		Two.prototype = new Digit();
-
-		//Two.prototype[Symbol.iterator] = function ( ) {
-		//Two.prototype[Symbol.iterator] = function* ( ) {
-		//yield this.a ; yield this.b ;
-		//return [ this.a , this.b ][Symbol.iterator] ;
-		//return _h( _c( this.a , _l( this.b ) ) ) ;
-		//} ;
 
 		Two.prototype.measure = function (M) {
 			if (this.v === null) this.v = M.plus(M.measure(this.a), M.measure(this.b));
@@ -476,13 +423,6 @@
 		}
 
 		Three.prototype = new Digit();
-
-		//Three.prototype[Symbol.iterator] = function ( ) {
-		//Three.prototype[Symbol.iterator] = function* ( ) {
-		//yield this.a ; yield this.b ; yield this.c ;
-		//return [ this.a , this.b , this.c ][Symbol.iterator] ;
-		//return _h( _c( this.a , _c( this.b , _l( this.c ) ) ) ) ;
-		//} ;
 
 		Three.prototype.measure = function (M) {
 			if (this.v === null) this.v = M.plus(M.measure(this.a), M.plus(M.measure(this.b), M.measure(this.c)));
@@ -550,13 +490,6 @@
 
 		Four.prototype = new Digit();
 
-		//Four.prototype[Symbol.iterator] = function ( ) {
-		//Four.prototype[Symbol.iterator] = function* ( ) {
-		// yield this.a ; yield this.b ; yield this.c ; yield this.d ;
-		// return [ this.a , this.b , this.c , this.d ][Symbol.iterator] ;
-		//return _h( _c( this.a , _c( this.b , _c( this.c , _l( this.d ) ) ) ) ) ;
-		//} ;
-
 		Four.prototype.measure = function (M) {
 			if (this.v === null) this.v = M.plus(M.measure(this.a), M.plus(M.measure(this.b), M.plus(M.measure(this.c), M.measure(this.d))));
 			return this.v;
@@ -623,9 +556,7 @@
 		}
 
 		Node2.prototype[Symbol.iterator] = function () {
-			//Node2.prototype[Symbol.iterator] = function* ( ) {
-			//yield this.a ; yield this.b ;
-			return _h(_c(this.a, _l(this.b)));
+			return [this.a, this.b][Symbol.iterator]();
 		};
 
 		Node2.prototype.measure = function () {
@@ -674,9 +605,7 @@
 		}
 
 		Node3.prototype[Symbol.iterator] = function () {
-			//Node3.prototype[Symbol.iterator] = function* ( ) {
-			//yield this.a ; yield this.b ; yield this.c ;
-			return _h(_c(this.a, _c(this.b, _l(this.c))));
+			return [this.a, this.b, this.c][Symbol.iterator]();
 		};
 
 		Node3.prototype.measure = function () {
