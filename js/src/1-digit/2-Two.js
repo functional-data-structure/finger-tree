@@ -6,13 +6,6 @@ function Two ( a , b ) {
 
 Two.prototype = new Digit( ) ;
 
-//Two.prototype[Symbol.iterator] = function ( ) {
-//Two.prototype[Symbol.iterator] = function* ( ) {
-	//yield this.a ; yield this.b ;
-	//return [ this.a , this.b ][Symbol.iterator] ;
-	//return _h( _c( this.a , _l( this.b ) ) ) ;
-//} ;
-
 Two.prototype.measure = function ( M ) {
 	if ( this.v === null ) this.v = M.plus( M.measure( this.a ) , M.measure( this.b ) ) ;
 	return this.v ;

@@ -5,13 +5,6 @@ function One ( a ) {
 
 One.prototype = new Digit( ) ;
 
-//One.prototype[Symbol.iterator] = function ( ) {
-//One.prototype[Symbol.iterator] = function* ( ) {
-	//yield this.a ;
-	//return [ this.a ][Symbol.iterator] ;
-	//return _h( _l( this.a ) ) ;
-//} ;
-
 One.prototype.measure = function ( M ) {
 	if ( this.v === null ) this.v = M.measure( this.a ) ;
 	return this.v ;

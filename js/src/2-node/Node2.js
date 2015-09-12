@@ -5,9 +5,7 @@ function Node2 ( v , a , b ) {
 }
 
 Node2.prototype[Symbol.iterator] = function ( ) {
-//Node2.prototype[Symbol.iterator] = function* ( ) {
-	//yield this.a ; yield this.b ;
-	return _h( _c( this.a , _l( this.b ) ) ) ;
+	return [ this.a , this.b ][Symbol.iterator]( ) ;
 } ;
 
 Node2.prototype.measure = function ( ) {
