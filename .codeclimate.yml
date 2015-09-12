@@ -5,3 +5,5 @@ exclude_paths:
 - "js/dist/**/*.js"
 - "test/*.js"
 - "test/**/*.js"
+- "benchmark/*.js"
+- "profile/*.js"
