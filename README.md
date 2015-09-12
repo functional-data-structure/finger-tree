@@ -106,6 +106,7 @@ require( [ "aureooms-js-fingertree" ] , function ( fingertree ) { ... } ) ;
 const { empty , from_iterable } = fingertree ;
 
 const { Measure : { COUNTER : COUNTER } } = require( 'aureooms-js-measure' ) ;
+const { gt } = require( 'aureooms-js-predicate' ) ;
 
 let t = from_iterable( COUNTER , 'abc' ) ;
 // OR
