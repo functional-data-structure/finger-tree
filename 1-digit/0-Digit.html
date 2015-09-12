@@ -1,0 +1,13 @@
+<!DOCTYPE html><html lang="en"><head><title>1-digit/0-Digit</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../"><meta name="groc-document-path" content="1-digit/0-Digit"><meta name="groc-project-path" content="js/src/1-digit/0-Digit.js"><meta name="groc-github-url" content="https://github.com/aureooms/js-fingertree"><link rel="stylesheet" type="text/css" media="all" href="../assets/style.css"><script type="text/javascript" src="../assets/behavior.js"></script><body><div id="meta"><div class="file-path"><a href="https://github.com/aureooms/js-fingertree/blob/master/js/src/1-digit/0-Digit.js">js/src/1-digit/0-Digit.js</a></div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Digit</span> (<span class="hljs-params"> </span>) </span>{ }
+
+Digit.prototype._concat = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"> list , other </span>) </span>{
+	<span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>._list( ).concat( list ).concat( other._list( ) ) ;
+} ;
+
+Digit.prototype._nodes_with_list = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"> M , list , other </span>) </span>{
+	<span class="hljs-keyword">return</span> nodes( M , <span class="hljs-keyword">this</span>._concat( list , other ) ) ;
+} ;
+
+Digit.prototype[<span class="hljs-built_in">Symbol</span>.iterator] = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"> </span>) </span>{
+	<span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>._list( )[<span class="hljs-built_in">Symbol</span>.iterator]( ) ;
+} ;</div></div></div></div></body></html>
