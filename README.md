@@ -100,6 +100,29 @@ Alternatively, you can use any tool mentioned [here](http://bower.io/docs/tools/
 require( [ "aureooms-js-fingertree" ] , function ( fingertree ) { ... } ) ;
 ```
 
+## Use
+
+```js
+const { empty , from_iterable } = fingertree ;
+
+const { Measure : { COUNTER : COUNTER } } = require( 'aureooms-js-measure' ) ;
+
+let t = from_iterable( COUNTER , 'abc' ) ;
+// OR
+// let t = empty( COUNTER ).append( 'abc' )
+[ ...t ] ; // abc
+t.head( ) ; // 'a'
+t.last( ) ; // 'c'
+[ ...t.init( ) ] ; // ab
+[ ...t.tail( ) ] ; // bc
+[ ...t.concat( t ) ] ; // abcabc
+const _1 , _2 = t.split( gt( 1 ) ) ;
+[ ..._1 ] ; // a
+[ ..._2 ] ; // bc
+[ ...t.append( 'def' ) ] ; // abcdef
+[ ...t.prepend( 'def' ) ] ; // defabc
+```
+
 ## Optimization of the code step by step
 
 I will copy here the output of a benchmark run on my computer after each
