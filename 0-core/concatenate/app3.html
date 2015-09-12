@@ -4,17 +4,17 @@
 	B = B.force( ) ;
 
 	<span class="hljs-keyword">if</span> ( A <span class="hljs-keyword">instanceof</span> Empty ) <span class="hljs-keyword">return</span> _prepend( B , list ) ;
-	<span class="hljs-keyword">if</span> ( B <span class="hljs-keyword">instanceof</span> Empty ) <span class="hljs-keyword">return</span> append( A , list ) ;
+	<span class="hljs-keyword">if</span> ( B <span class="hljs-keyword">instanceof</span> Empty ) <span class="hljs-keyword">return</span> _append( A , list ) ;
 
 	<span class="hljs-keyword">if</span> ( A <span class="hljs-keyword">instanceof</span> Single ) <span class="hljs-keyword">return</span> _prepend( B , list ).cons( A.head( ) ) ;
-	<span class="hljs-keyword">if</span> ( B <span class="hljs-keyword">instanceof</span> Single ) <span class="hljs-keyword">return</span> append( A , list ).push( B.last( ) ) ;
+	<span class="hljs-keyword">if</span> ( B <span class="hljs-keyword">instanceof</span> Single ) <span class="hljs-keyword">return</span> _append( A , list ).push( B.last( ) ) ;
 
 	<span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> Deep(
 		A.M ,
 		A.left ,
 		delay( ( ) =&gt; app3(
 			A.middle ,
-			nodes( A.M , [ ...chain( A.right , list , B.left ) ] ) ,
+			A.right._nodes_with_list( A.M , list , B.left ) ,
 			B.middle
 		) ) ,
 		B.right

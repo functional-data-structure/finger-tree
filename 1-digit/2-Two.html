@@ -4,12 +4,7 @@
 	<span class="hljs-keyword">this</span>.v = <span class="hljs-literal">null</span> ;
 }
 
-Two.prototype[<span class="hljs-built_in">Symbol</span>.iterator] = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"> </span>) </span>{
-<span class="hljs-comment">//Two.prototype[Symbol.iterator] = function* ( ) {</span>
-	<span class="hljs-comment">//yield this.a ; yield this.b ;</span>
-	<span class="hljs-comment">//return [ this.a , this.b ][Symbol.iterator] ;</span>
-	<span class="hljs-keyword">return</span> _h( _c( <span class="hljs-keyword">this</span>.a , _l( <span class="hljs-keyword">this</span>.b ) ) ) ;
-} ;
+Two.prototype = <span class="hljs-keyword">new</span> Digit( ) ;
 
 Two.prototype.measure = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"> M </span>) </span>{
 	<span class="hljs-keyword">if</span> ( <span class="hljs-keyword">this</span>.v === <span class="hljs-literal">null</span> ) <span class="hljs-keyword">this</span>.v = M.plus( M.measure( <span class="hljs-keyword">this</span>.a ) , M.measure( <span class="hljs-keyword">this</span>.b ) ) ;
@@ -56,4 +51,8 @@ Two.prototype._nodes = <span class="hljs-function"><span class="hljs-keyword">fu
 	<span class="hljs-keyword">if</span> ( other <span class="hljs-keyword">instanceof</span> Three )
 		<span class="hljs-keyword">return</span> [ node3( M , <span class="hljs-keyword">this</span>.a , <span class="hljs-keyword">this</span>.b , other.a ) , node2( M , other.b , other.c ) ] ;
 	<span class="hljs-keyword">return</span> [ node3( M , <span class="hljs-keyword">this</span>.a , <span class="hljs-keyword">this</span>.b , other.a ) , node3( M , other.b , other.c , other.d ) ] ;
+} ;
+
+Two.prototype._list = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"> </span>) </span>{
+	<span class="hljs-keyword">return</span> [ <span class="hljs-keyword">this</span>.a , <span class="hljs-keyword">this</span>.b ] ;
 } ;</div></div></div></div></body></html>

@@ -3,12 +3,7 @@
 	<span class="hljs-keyword">this</span>.v = <span class="hljs-literal">null</span> ;
 }
 
-One.prototype[<span class="hljs-built_in">Symbol</span>.iterator] = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"> </span>) </span>{
-<span class="hljs-comment">//One.prototype[Symbol.iterator] = function* ( ) {</span>
-	<span class="hljs-comment">//yield this.a ;</span>
-	<span class="hljs-comment">//return [ this.a ][Symbol.iterator] ;</span>
-	<span class="hljs-keyword">return</span> _h( _l( <span class="hljs-keyword">this</span>.a ) ) ;
-} ;
+One.prototype = <span class="hljs-keyword">new</span> Digit( ) ;
 
 One.prototype.measure = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"> M </span>) </span>{
 	<span class="hljs-keyword">if</span> ( <span class="hljs-keyword">this</span>.v === <span class="hljs-literal">null</span> ) <span class="hljs-keyword">this</span>.v = M.measure( <span class="hljs-keyword">this</span>.a ) ;
@@ -53,4 +48,8 @@ One.prototype._nodes = <span class="hljs-function"><span class="hljs-keyword">fu
 	<span class="hljs-keyword">if</span> ( other <span class="hljs-keyword">instanceof</span> Three )
 		<span class="hljs-keyword">return</span> [ node2( M , <span class="hljs-keyword">this</span>.a , other.a ) , node2( M , other.b , other.c ) ] ;
 	<span class="hljs-keyword">return</span> [ node3( M , <span class="hljs-keyword">this</span>.a , other.a , other.b ) , node2( M , other.c , other.d ) ] ;
+} ;
+
+One.prototype._list = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"> </span>) </span>{
+	<span class="hljs-keyword">return</span> [ <span class="hljs-keyword">this</span>.a ] ;
 } ;</div></div></div></div></body></html>

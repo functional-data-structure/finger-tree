@@ -348,116 +348,6 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               },
               "depth": 3,
               "outline": []
-            }, {
-              "type": "file",
-              "data": {
-                "language": {
-                  "nameMatchers": [".js"],
-                  "pygmentsLexer": "javascript",
-                  "multiLineComment": ["/*", "*", "*/"],
-                  "singleLineComment": ["//"],
-                  "ignorePrefix": "}",
-                  "foldPrefix": "^",
-                  "name": "JavaScript"
-                },
-                "sourcePath": "/home/aureooms/dev/js/js-fingertree/js/src/0-core/concatenate/push.js",
-                "projectPath": "js/src/0-core/concatenate/push.js",
-                "targetPath": "0-core/concatenate/push",
-                "pageTitle": "0-core/concatenate/push",
-                "title": "push"
-              },
-              "depth": 3,
-              "outline": []
-            }, {
-              "type": "file",
-              "data": {
-                "language": {
-                  "nameMatchers": [".js"],
-                  "pygmentsLexer": "javascript",
-                  "multiLineComment": ["/*", "*", "*/"],
-                  "singleLineComment": ["//"],
-                  "ignorePrefix": "}",
-                  "foldPrefix": "^",
-                  "name": "JavaScript"
-                },
-                "sourcePath": "/home/aureooms/dev/js/js-fingertree/js/src/0-core/concatenate/unshift.js",
-                "projectPath": "js/src/0-core/concatenate/unshift.js",
-                "targetPath": "0-core/concatenate/unshift",
-                "pageTitle": "0-core/concatenate/unshift",
-                "title": "unshift"
-              },
-              "depth": 3,
-              "outline": []
-            }
-          ]
-        }, {
-          "type": "folder",
-          "data": {
-            "path": "0-core/itertools",
-            "title": "itertools"
-          },
-          "depth": 2,
-          "children": [
-            {
-              "type": "file",
-              "data": {
-                "language": {
-                  "nameMatchers": [".js"],
-                  "pygmentsLexer": "javascript",
-                  "multiLineComment": ["/*", "*", "*/"],
-                  "singleLineComment": ["//"],
-                  "ignorePrefix": "}",
-                  "foldPrefix": "^",
-                  "name": "JavaScript"
-                },
-                "sourcePath": "/home/aureooms/dev/js/js-fingertree/js/src/0-core/itertools/chain.js",
-                "projectPath": "js/src/0-core/itertools/chain.js",
-                "targetPath": "0-core/itertools/chain",
-                "pageTitle": "0-core/itertools/chain",
-                "title": "chain"
-              },
-              "depth": 3,
-              "outline": []
-            }, {
-              "type": "file",
-              "data": {
-                "language": {
-                  "nameMatchers": [".js"],
-                  "pygmentsLexer": "javascript",
-                  "multiLineComment": ["/*", "*", "*/"],
-                  "singleLineComment": ["//"],
-                  "ignorePrefix": "}",
-                  "foldPrefix": "^",
-                  "name": "JavaScript"
-                },
-                "sourcePath": "/home/aureooms/dev/js/js-fingertree/js/src/0-core/itertools/reduce.js",
-                "projectPath": "js/src/0-core/itertools/reduce.js",
-                "targetPath": "0-core/itertools/reduce",
-                "pageTitle": "0-core/itertools/reduce",
-                "title": "reduce"
-              },
-              "depth": 3,
-              "outline": []
-            }, {
-              "type": "file",
-              "data": {
-                "language": {
-                  "nameMatchers": [".js"],
-                  "pygmentsLexer": "javascript",
-                  "multiLineComment": ["/*", "*", "*/"],
-                  "singleLineComment": ["//"],
-                  "ignorePrefix": "}",
-                  "foldPrefix": "^",
-                  "name": "JavaScript"
-                },
-                "sourcePath": "/home/aureooms/dev/js/js-fingertree/js/src/0-core/itertools/reversed.js",
-                "projectPath": "js/src/0-core/itertools/reversed.js",
-                "targetPath": "0-core/itertools/reversed",
-                "pageTitle": "0-core/itertools/reversed",
-                "title": "reversed"
-              },
-              "depth": 3,
-              "outline": []
             }
           ]
         }, {
@@ -535,6 +425,26 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
                 "targetPath": "0-core/optimizing/_app3",
                 "pageTitle": "0-core/optimizing/_app3",
                 "title": "_app3"
+              },
+              "depth": 3,
+              "outline": []
+            }, {
+              "type": "file",
+              "data": {
+                "language": {
+                  "nameMatchers": [".js"],
+                  "pygmentsLexer": "javascript",
+                  "multiLineComment": ["/*", "*", "*/"],
+                  "singleLineComment": ["//"],
+                  "ignorePrefix": "}",
+                  "foldPrefix": "^",
+                  "name": "JavaScript"
+                },
+                "sourcePath": "/home/aureooms/dev/js/js-fingertree/js/src/0-core/optimizing/_append.js",
+                "projectPath": "js/src/0-core/optimizing/_append.js",
+                "targetPath": "0-core/optimizing/_append",
+                "pageTitle": "0-core/optimizing/_append",
+                "title": "_append"
               },
               "depth": 3,
               "outline": []
@@ -706,146 +616,6 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
                   },
                   "depth": 4,
                   "outline": []
-                }, {
-                  "type": "file",
-                  "data": {
-                    "language": {
-                      "nameMatchers": [".js"],
-                      "pygmentsLexer": "javascript",
-                      "multiLineComment": ["/*", "*", "*/"],
-                      "singleLineComment": ["//"],
-                      "ignorePrefix": "}",
-                      "foldPrefix": "^",
-                      "name": "JavaScript"
-                    },
-                    "sourcePath": "/home/aureooms/dev/js/js-fingertree/js/src/0-core/optimizing/fast-iterators/3-_Node.js",
-                    "projectPath": "js/src/0-core/optimizing/fast-iterators/3-_Node.js",
-                    "targetPath": "0-core/optimizing/fast-iterators/3-_Node",
-                    "pageTitle": "0-core/optimizing/fast-iterators/3-_Node",
-                    "title": "3-_Node"
-                  },
-                  "depth": 4,
-                  "outline": []
-                }, {
-                  "type": "file",
-                  "data": {
-                    "language": {
-                      "nameMatchers": [".js"],
-                      "pygmentsLexer": "javascript",
-                      "multiLineComment": ["/*", "*", "*/"],
-                      "singleLineComment": ["//"],
-                      "ignorePrefix": "}",
-                      "foldPrefix": "^",
-                      "name": "JavaScript"
-                    },
-                    "sourcePath": "/home/aureooms/dev/js/js-fingertree/js/src/0-core/optimizing/fast-iterators/4-_Iterator.js",
-                    "projectPath": "js/src/0-core/optimizing/fast-iterators/4-_Iterator.js",
-                    "targetPath": "0-core/optimizing/fast-iterators/4-_Iterator",
-                    "pageTitle": "0-core/optimizing/fast-iterators/4-_Iterator",
-                    "title": "4-_Iterator"
-                  },
-                  "depth": 4,
-                  "outline": []
-                }, {
-                  "type": "file",
-                  "data": {
-                    "language": {
-                      "nameMatchers": [".js"],
-                      "pygmentsLexer": "javascript",
-                      "multiLineComment": ["/*", "*", "*/"],
-                      "singleLineComment": ["//"],
-                      "ignorePrefix": "}",
-                      "foldPrefix": "^",
-                      "name": "JavaScript"
-                    },
-                    "sourcePath": "/home/aureooms/dev/js/js-fingertree/js/src/0-core/optimizing/fast-iterators/5-_h.js",
-                    "projectPath": "js/src/0-core/optimizing/fast-iterators/5-_h.js",
-                    "targetPath": "0-core/optimizing/fast-iterators/5-_h",
-                    "pageTitle": "0-core/optimizing/fast-iterators/5-_h",
-                    "title": "5-_h"
-                  },
-                  "depth": 4,
-                  "outline": []
-                }, {
-                  "type": "file",
-                  "data": {
-                    "language": {
-                      "nameMatchers": [".js"],
-                      "pygmentsLexer": "javascript",
-                      "multiLineComment": ["/*", "*", "*/"],
-                      "singleLineComment": ["//"],
-                      "ignorePrefix": "}",
-                      "foldPrefix": "^",
-                      "name": "JavaScript"
-                    },
-                    "sourcePath": "/home/aureooms/dev/js/js-fingertree/js/src/0-core/optimizing/fast-iterators/6-_c.js",
-                    "projectPath": "js/src/0-core/optimizing/fast-iterators/6-_c.js",
-                    "targetPath": "0-core/optimizing/fast-iterators/6-_c",
-                    "pageTitle": "0-core/optimizing/fast-iterators/6-_c",
-                    "title": "6-_c"
-                  },
-                  "depth": 4,
-                  "outline": []
-                }, {
-                  "type": "file",
-                  "data": {
-                    "language": {
-                      "nameMatchers": [".js"],
-                      "pygmentsLexer": "javascript",
-                      "multiLineComment": ["/*", "*", "*/"],
-                      "singleLineComment": ["//"],
-                      "ignorePrefix": "}",
-                      "foldPrefix": "^",
-                      "name": "JavaScript"
-                    },
-                    "sourcePath": "/home/aureooms/dev/js/js-fingertree/js/src/0-core/optimizing/fast-iterators/7-_l.js",
-                    "projectPath": "js/src/0-core/optimizing/fast-iterators/7-_l.js",
-                    "targetPath": "0-core/optimizing/fast-iterators/7-_l",
-                    "pageTitle": "0-core/optimizing/fast-iterators/7-_l",
-                    "title": "7-_l"
-                  },
-                  "depth": 4,
-                  "outline": []
-                }, {
-                  "type": "file",
-                  "data": {
-                    "language": {
-                      "nameMatchers": [".js"],
-                      "pygmentsLexer": "javascript",
-                      "multiLineComment": ["/*", "*", "*/"],
-                      "singleLineComment": ["//"],
-                      "ignorePrefix": "}",
-                      "foldPrefix": "^",
-                      "name": "JavaScript"
-                    },
-                    "sourcePath": "/home/aureooms/dev/js/js-fingertree/js/src/0-core/optimizing/fast-iterators/8-_End.js",
-                    "projectPath": "js/src/0-core/optimizing/fast-iterators/8-_End.js",
-                    "targetPath": "0-core/optimizing/fast-iterators/8-_End",
-                    "pageTitle": "0-core/optimizing/fast-iterators/8-_End",
-                    "title": "8-_End"
-                  },
-                  "depth": 4,
-                  "outline": []
-                }, {
-                  "type": "file",
-                  "data": {
-                    "language": {
-                      "nameMatchers": [".js"],
-                      "pygmentsLexer": "javascript",
-                      "multiLineComment": ["/*", "*", "*/"],
-                      "singleLineComment": ["//"],
-                      "ignorePrefix": "}",
-                      "foldPrefix": "^",
-                      "name": "JavaScript"
-                    },
-                    "sourcePath": "/home/aureooms/dev/js/js-fingertree/js/src/0-core/optimizing/fast-iterators/9-_END.js",
-                    "projectPath": "js/src/0-core/optimizing/fast-iterators/9-_END.js",
-                    "targetPath": "0-core/optimizing/fast-iterators/9-_END",
-                    "pageTitle": "0-core/optimizing/fast-iterators/9-_END",
-                    "title": "9-_END"
-                  },
-                  "depth": 4,
-                  "outline": []
                 }
               ]
             }
@@ -931,6 +701,26 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
       "depth": 1,
       "children": [
         {
+          "type": "file",
+          "data": {
+            "language": {
+              "nameMatchers": [".js"],
+              "pygmentsLexer": "javascript",
+              "multiLineComment": ["/*", "*", "*/"],
+              "singleLineComment": ["//"],
+              "ignorePrefix": "}",
+              "foldPrefix": "^",
+              "name": "JavaScript"
+            },
+            "sourcePath": "/home/aureooms/dev/js/js-fingertree/js/src/1-digit/0-Digit.js",
+            "projectPath": "js/src/1-digit/0-Digit.js",
+            "targetPath": "1-digit/0-Digit",
+            "pageTitle": "1-digit/0-Digit",
+            "title": "0-Digit"
+          },
+          "depth": 2,
+          "outline": []
+        }, {
           "type": "file",
           "data": {
             "language": {
