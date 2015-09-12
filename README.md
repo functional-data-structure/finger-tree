@@ -1,7 +1,7 @@
 [js-fingertree](http://aureooms.github.io/js-fingertree)
 ==
 
-Finger trees code bricks for JavaScript.
+Finger trees code bricks for JavaScript. Parent is [aureooms/js-persistent](https://github.com/aureooms/js-persistent).
 
 ```js
 data FingerTree a = Empty
