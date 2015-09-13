@@ -288,12 +288,14 @@ SPLIT
 
 new Benchmark.Suite( )
 .on( 'start' , function ( ) { console.log( '\nCONCAT\n==\n' ) ; } )
-.add('fingertree#concat', function ( ) {
+// I had to put this version first because the second uses a lot of memory.
+// This is probably because qiao/fingetree.js keeps references of used thunks.
+.add('aureooms-js-fingertree#concat', function ( ) {
 	var _M = M ;
 	var _s = splits ;
 	for ( var i = 0 ; i < _M ; ++i ) _s[i][0].concat( _s[i][1] ) ;
 } , { setup : function ( ) {
-		var t = fromArray( Array.from( range( M ) ) ) ;
+		var t = from_iterable( COUNTER , range( M ) ) ;
 		var splits = [ ] ;
 		for (var i = 0; i < M; ++i) {
 		  splits.push( t.split( function ( m ) { return m > i ; } ) ) ;
@@ -303,12 +305,12 @@ new Benchmark.Suite( )
 		splits.splice( 0 ) ;
 	}
 } )
-.add('aureooms-js-fingertree#concat', function ( ) {
+.add('fingertree#concat', function ( ) {
 	var _M = M ;
 	var _s = splits ;
 	for ( var i = 0 ; i < _M ; ++i ) _s[i][0].concat( _s[i][1] ) ;
 } , { setup : function ( ) {
-		var t = from_iterable( COUNTER , range( M ) ) ;
+		var t = fromArray( Array.from( range( M ) ) ) ;
 		var splits = [ ] ;
 		for (var i = 0; i < M; ++i) {
 		  splits.push( t.split( function ( m ) { return m > i ; } ) ) ;
