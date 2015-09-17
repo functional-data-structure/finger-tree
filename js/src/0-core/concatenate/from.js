@@ -1,6 +1,5 @@
-function from_iterable ( M , iterable ) {
+function from ( M , iterable ) {
 
 	return new Empty( M ).append( iterable ) ;
 
 }
-

@@ -6,7 +6,7 @@ var qiao_fingertree = require( 'fingertree' ) ;
 var fromArray = qiao_fingertree.fromArray ;
 var aureooms_fingertree = require( '..' ) ;
 var empty = aureooms_fingertree.empty ;
-var from_iterable = aureooms_fingertree.from_iterable ;
+var from = aureooms_fingertree.from ;
 
 var COUNTER = {
 	plus : function ( a , b ) { return a + b ; } ,
@@ -23,7 +23,7 @@ global.M = args.M ;
 global.COUNTER = COUNTER ;
 global.fromArray = fromArray ;
 global.empty = empty ;
-global.from_iterable = from_iterable ;
+global.from = from ;
 global.range = itertools.range ;
 
 var Benchmark = require( 'benchmark' ) ;
@@ -229,17 +229,17 @@ PREPEND
 })
 .run({ 'async': false });
 
-// FROM_ITERABLE
+// FROM
 
 new Benchmark.Suite( )
-.on( 'start' , function ( ) { console.log( '\nFROM_ITERABLE\n==\n' ) ; } )
+.on( 'start' , function ( ) { console.log( '\nFROM\n==\n' ) ; } )
 .add('fingertree.fromArray', function() {
 	fromArray( Array.from( range( M ) ) ) ;
 })
-.add('aureooms-js-fingertree.from_iterable', function() {
-	from_iterable( COUNTER , range( M ) ) ;
+.add('aureooms-js-fingertree.from', function() {
+	from( COUNTER , range( M ) ) ;
 })
-.add('Mock.from_iterable', function() {
+.add('Mock.from', function() {
 	Array.from( range( M ) ) ;
 })
 .on('cycle', function(event) {
@@ -295,7 +295,7 @@ new Benchmark.Suite( )
 	var _s = splits ;
 	for ( var i = 0 ; i < _M ; ++i ) _s[i][0].concat( _s[i][1] ) ;
 } , { setup : function ( ) {
-		var t = from_iterable( COUNTER , range( M ) ) ;
+		var t = from( COUNTER , range( M ) ) ;
 		var splits = [ ] ;
 		for (var i = 0; i < M; ++i) {
 		  splits.push( t.split( function ( m ) { return m > i ; } ) ) ;

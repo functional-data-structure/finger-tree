@@ -55,8 +55,8 @@
 			return tree;
 		}
 
-		/* js/src/0-core/concatenate/from_iterable.js */
-		function from_iterable(M, iterable) {
+		/* js/src/0-core/concatenate/from.js */
+		function from(M, iterable) {
 
 			return new Empty(M).append(iterable);
 		}
@@ -1080,7 +1080,7 @@
 		exports.empty = function (M) {
 			return new Empty(M);
 		};
-		exports.from_iterable = from_iterable;
+		exports.from = from;
 
 		return exports;
 	};
