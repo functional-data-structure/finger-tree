@@ -14,7 +14,7 @@ var reversed = itertools.reversed ;
 var COUNTER = measure.Measures.COUNTER ;
 
 var empty = fingertree.empty ;
-var from_iterable = fingertree.from_iterable ;
+var from = fingertree.from ;
 
 test( "FingerTree" , function ( assert ) {
 
@@ -27,7 +27,7 @@ list( range( N ) ).forEach ( function ( value ) { T = T.cons( value ) ; } ) ;
 
 assert.deepEqual( list( T ) , list( chain( [ reversed( range( N ) ) , range( N ) ] ) ) , "check T 9..00..9" ) ;
 
-var U = from_iterable( COUNTER , range( N ) ) ;
+var U = from( COUNTER , range( N ) ) ;
 
 list( range( N ) ).forEach ( function ( ) {
 	U = U.push( T.head( ) ) ;
@@ -45,11 +45,11 @@ assert.equal( U.init( ).measure( ) , 2*N-1 ) ;
 
 var M = 100 ;
 
-var V1 = from_iterable( COUNTER , [ 0 ] ) ;
-var V2 = from_iterable( COUNTER , range( 1 , M - 50 ) ) ;
-var V3 = from_iterable( COUNTER , range( M - 50 , M - 1 ) ) ;
-var V4 = from_iterable( COUNTER , [ M - 1 ] ) ;
-var EMPTY = from_iterable( COUNTER , [ ] ) ;
+var V1 = from( COUNTER , [ 0 ] ) ;
+var V2 = from( COUNTER , range( 1 , M - 50 ) ) ;
+var V3 = from( COUNTER , range( M - 50 , M - 1 ) ) ;
+var V4 = from( COUNTER , [ M - 1 ] ) ;
+var EMPTY = from( COUNTER , [ ] ) ;
 
 var V = EMPTY
 .concat( V1 )
@@ -87,16 +87,16 @@ for ( var i = 0 ; i <= M ; ++i ) {
 
 var W , Z ;
 
-assert.deepEqual( from_iterable( COUNTER , "xabcde" ).head( ) , 'x' ) ;
-assert.deepEqual( from_iterable( COUNTER , "abcdex" ).last( ) , 'x' ) ;
-assert.deepEqual( list( from_iterable( COUNTER , "abcdex" ).init( ) ) , [ 'a' , 'b' , 'c' , 'd' , 'e' ] ) ;
-assert.deepEqual( list( from_iterable( COUNTER , "xabcde" ).tail( ) ) , [ 'a' , 'b' , 'c' , 'd' , 'e' ] ) ;
+assert.deepEqual( from( COUNTER , "xabcde" ).head( ) , 'x' ) ;
+assert.deepEqual( from( COUNTER , "abcdex" ).last( ) , 'x' ) ;
+assert.deepEqual( list( from( COUNTER , "abcdex" ).init( ) ) , [ 'a' , 'b' , 'c' , 'd' , 'e' ] ) ;
+assert.deepEqual( list( from( COUNTER , "xabcde" ).tail( ) ) , [ 'a' , 'b' , 'c' , 'd' , 'e' ] ) ;
 
-Z = from_iterable( COUNTER , "ex" ).prepend( "abcd" ) ;
+Z = from( COUNTER , "ex" ).prepend( "abcd" ) ;
 
 assert.deepEqual( list( Z.init( ) ) , [ 'a' , 'b' , 'c' , 'd' , 'e' ] ) ;
 
-W = from_iterable( COUNTER , "de" ).prepend( "xabc" ) ;
+W = from( COUNTER , "de" ).prepend( "xabc" ) ;
 assert.deepEqual( list( W.tail( ) ) , [ 'a' , 'b' , 'c' , 'd' , 'e' ] ) ;
 
 assert.deepEqual( list( W.concat( Z ) ) , list( "xabcdeabcdex" ) ) ;
@@ -113,7 +113,7 @@ assert.equal( F.concat( G ).measure( ) , 40 , "make naive nodes(.) fail" ) ;
 
 // SPLIT
 
-F = from_iterable( COUNTER , "abcdefgh" ) ;
+F = from( COUNTER , "abcdefgh" ) ;
 
 assert.deepEqual( list( map( list , F.split( gt( 0 ) ) ) ) , [ list( "" ) , list( "abcdefgh" ) ] , "split " + 0 ) ;
 assert.deepEqual( list( map( list , F.split( gt( 1 ) ) ) ) , [ list( "a" ) , list( "bcdefgh" ) ] , "split " + 1 ) ;
@@ -131,44 +131,44 @@ assert.deepEqual( [ list( split.left ) , split.middle , list( split.right ) ] , 
 
 var _N = 1000 ;
 var __N = _N / 2 | 0 ;
-var J = from_iterable( COUNTER , range( _N ) ) ;
+var J = from( COUNTER , range( _N ) ) ;
 assert.deepEqual( list( map( list , J.split( gt( __N ) ) ) ) , [ list( range( __N ) ) , list( range( __N , _N ) ) ] , "split 1000" ) ;
 
 assert.deepEqual( list ( J.takeUntil( gt( __N ) ) )  , list( range( __N ) ) , "takeUntil 1000" ) ;
 assert.deepEqual( list ( J.dropUntil( gt( __N ) ) )  , list( range( __N , _N ) ) , "dropUntil 1000" ) ;
 
-assert.deepEqual( list( map( list , from_iterable( COUNTER , "" ).split( gt( 0 ) ) ) ) , [ [ ] , [ ] ] , "split empty" ) ;
-assert.deepEqual( list( map( list , from_iterable( COUNTER , "a" ).split( gt( 0 ) ) ) ) , [ [ ] , [ "a" ] ] , "split single 0" ) ;
-assert.deepEqual( list( map( list , from_iterable( COUNTER , "a" ).split( gt( 1 ) ) ) ) , [ [ "a" ] , [ ] ] , "split single 1" ) ;
+assert.deepEqual( list( map( list , from( COUNTER , "" ).split( gt( 0 ) ) ) ) , [ [ ] , [ ] ] , "split empty" ) ;
+assert.deepEqual( list( map( list , from( COUNTER , "a" ).split( gt( 0 ) ) ) ) , [ [ ] , [ "a" ] ] , "split single 0" ) ;
+assert.deepEqual( list( map( list , from( COUNTER , "a" ).split( gt( 1 ) ) ) ) , [ [ "a" ] , [ ] ] , "split single 1" ) ;
 
 // provoke split of digit One
-assert.deepEqual( list( map( list , from_iterable( COUNTER , "a" ).append( "bcde" ).split( gt( 0 ) ) ) ) , [ list( "" ) , list( "abcde" ) ] , "One.splitDigit 0" ) ;
+assert.deepEqual( list( map( list , from( COUNTER , "a" ).append( "bcde" ).split( gt( 0 ) ) ) ) , [ list( "" ) , list( "abcde" ) ] , "One.splitDigit 0" ) ;
 // provoke split of digit Two
-assert.deepEqual( list( map( list , from_iterable( COUNTER , "b" ).append( "cde" ).prepend( "a" ).split( gt( 0 ) ) ) ) , [ list( "" ) , list( "abcde" ) ] , "Two.splitDigit 0" ) ;
-assert.deepEqual( list( map( list , from_iterable( COUNTER , "b" ).append( "cde" ).prepend( "a" ).split( gt( 1 ) ) ) ) , [ list( "a" ) , list( "bcde" ) ] , "Two.splitDigit 1" ) ;
+assert.deepEqual( list( map( list , from( COUNTER , "b" ).append( "cde" ).prepend( "a" ).split( gt( 0 ) ) ) ) , [ list( "" ) , list( "abcde" ) ] , "Two.splitDigit 0" ) ;
+assert.deepEqual( list( map( list , from( COUNTER , "b" ).append( "cde" ).prepend( "a" ).split( gt( 1 ) ) ) ) , [ list( "a" ) , list( "bcde" ) ] , "Two.splitDigit 1" ) ;
 // provoke split of digit Three
-assert.deepEqual( list( map( list , from_iterable( COUNTER , "c" ).append( "de" ).prepend( "ab" ).split( gt( 0 ) ) ) ) , [ list( "" ) , list( "abcde" ) ] , "Three.splitDigit 0" ) ;
-assert.deepEqual( list( map( list , from_iterable( COUNTER , "c" ).append( "de" ).prepend( "ab" ).split( gt( 1 ) ) ) ) , [ list( "a" ) , list( "bcde" ) ] , "Three.splitDigit 1" ) ;
-assert.deepEqual( list( map( list , from_iterable( COUNTER , "c" ).append( "de" ).prepend( "ab" ).split( gt( 2 ) ) ) ) , [ list( "ab" ) , list( "cde" ) ] , "Three.splitDigit 2" ) ;
+assert.deepEqual( list( map( list , from( COUNTER , "c" ).append( "de" ).prepend( "ab" ).split( gt( 0 ) ) ) ) , [ list( "" ) , list( "abcde" ) ] , "Three.splitDigit 0" ) ;
+assert.deepEqual( list( map( list , from( COUNTER , "c" ).append( "de" ).prepend( "ab" ).split( gt( 1 ) ) ) ) , [ list( "a" ) , list( "bcde" ) ] , "Three.splitDigit 1" ) ;
+assert.deepEqual( list( map( list , from( COUNTER , "c" ).append( "de" ).prepend( "ab" ).split( gt( 2 ) ) ) ) , [ list( "ab" ) , list( "cde" ) ] , "Three.splitDigit 2" ) ;
 // provoke split of digit Four
-assert.deepEqual( list( map( list , from_iterable( COUNTER , "d" ).append( "e" ).prepend( "abc" ).split( gt( 0 ) ) ) ) , [ list( "" ) , list( "abcde" ) ] , "Four.splitDigit 0" ) ;
-assert.deepEqual( list( map( list , from_iterable( COUNTER , "d" ).append( "e" ).prepend( "abc" ).split( gt( 1 ) ) ) ) , [ list( "a" ) , list( "bcde" ) ] , "Four.splitDigit 1" ) ;
-assert.deepEqual( list( map( list , from_iterable( COUNTER , "d" ).append( "e" ).prepend( "abc" ).split( gt( 2 ) ) ) ) , [ list( "ab" ) , list( "cde" ) ] , "Four.splitDigit 2" ) ;
-assert.deepEqual( list( map( list , from_iterable( COUNTER , "d" ).append( "e" ).prepend( "abc" ).split( gt( 3 ) ) ) ) , [ list( "abc" ) , list( "de" ) ] , "Four.splitDigit 3" ) ;
+assert.deepEqual( list( map( list , from( COUNTER , "d" ).append( "e" ).prepend( "abc" ).split( gt( 0 ) ) ) ) , [ list( "" ) , list( "abcde" ) ] , "Four.splitDigit 0" ) ;
+assert.deepEqual( list( map( list , from( COUNTER , "d" ).append( "e" ).prepend( "abc" ).split( gt( 1 ) ) ) ) , [ list( "a" ) , list( "bcde" ) ] , "Four.splitDigit 1" ) ;
+assert.deepEqual( list( map( list , from( COUNTER , "d" ).append( "e" ).prepend( "abc" ).split( gt( 2 ) ) ) ) , [ list( "ab" ) , list( "cde" ) ] , "Four.splitDigit 2" ) ;
+assert.deepEqual( list( map( list , from( COUNTER , "d" ).append( "e" ).prepend( "abc" ).split( gt( 3 ) ) ) ) , [ list( "abc" ) , list( "de" ) ] , "Four.splitDigit 3" ) ;
 
 
 // provoke head / last on digits
-assert.equal( from_iterable( COUNTER , "x" ).prepend( "a" ).head( ) , "a" , "One.head" ) ;
-assert.equal( from_iterable( COUNTER , "a" ).append( "x" ).last( ) , "x" , "One.last" ) ;
-assert.equal( from_iterable( COUNTER , "x" ).prepend( "ab" ).head( ) , "a" , "Two.head" ) ;
-assert.equal( from_iterable( COUNTER , "a" ).append( "bx" ).last( ) , "x" , "Two.last" ) ;
-assert.equal( from_iterable( COUNTER , "x" ).prepend( "abc" ).head( ) , "a" , "Three.head" ) ;
-assert.equal( from_iterable( COUNTER , "a" ).append( "bcx" ).last( ) , "x" , "Three.last" ) ;
-assert.equal( from_iterable( COUNTER , "x" ).prepend( "abcd" ).head( ) , "a" , "Four.head" ) ;
-assert.equal( from_iterable( COUNTER , "a" ).append( "bcdx" ).last( ) , "x" , "Four.last" ) ;
+assert.equal( from( COUNTER , "x" ).prepend( "a" ).head( ) , "a" , "One.head" ) ;
+assert.equal( from( COUNTER , "a" ).append( "x" ).last( ) , "x" , "One.last" ) ;
+assert.equal( from( COUNTER , "x" ).prepend( "ab" ).head( ) , "a" , "Two.head" ) ;
+assert.equal( from( COUNTER , "a" ).append( "bx" ).last( ) , "x" , "Two.last" ) ;
+assert.equal( from( COUNTER , "x" ).prepend( "abc" ).head( ) , "a" , "Three.head" ) ;
+assert.equal( from( COUNTER , "a" ).append( "bcx" ).last( ) , "x" , "Three.last" ) ;
+assert.equal( from( COUNTER , "x" ).prepend( "abcd" ).head( ) , "a" , "Four.head" ) ;
+assert.equal( from( COUNTER , "a" ).append( "bcdx" ).last( ) , "x" , "Four.last" ) ;
 
 // provoke several corner cases
-Z = from_iterable( COUNTER , range( 10000 ) ) ;
+Z = from( COUNTER , range( 10000 ) ) ;
 
 var x = Z.split( gt( 5000 ) ) ;
 

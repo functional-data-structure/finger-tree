@@ -3,8 +3,8 @@ require( "../node_modules/aureooms-node-package/node_modules/babel-core/polyfill
 var itertools = require( "../node_modules/aureooms-js-itertools" ) ;
 var fingertree = require('..') ;
 var empty = fingertree.empty ;
-var from_iterable = fingertree.from_iterable ;
-//var COUNTER = require( 'aureooms-js-measure' ).Measures.COUNTER ;
+var from = fingertree.from ;
+
 var COUNTER = {
 	plus : function ( a , b ) { return a + b ; } ,
 	measure : function ( x ) { return 1 ; } ,
@@ -19,7 +19,7 @@ console.log('number of operations:', len);
 
 console.time('total');
 console.time('cons');
-t = from_iterable( COUNTER , []);
+t = from( COUNTER , []);
 for (i = 0; i < len; ++i) {
   t = t.cons(i);
 }
@@ -32,7 +32,7 @@ for (i = 0; i < len; ++i) {
 console.timeEnd('tail');
 
 console.time('push');
-t = from_iterable( COUNTER , []);
+t = from( COUNTER , []);
 for (i = 0; i < len; ++i) {
   t = t.push(i);
 }
