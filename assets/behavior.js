@@ -308,11 +308,11 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
                   "foldPrefix": "^",
                   "name": "JavaScript"
                 },
-                "sourcePath": "/home/aureooms/dev/js/js-fingertree/js/src/0-core/concatenate/from_iterable.js",
-                "projectPath": "js/src/0-core/concatenate/from_iterable.js",
-                "targetPath": "0-core/concatenate/from_iterable",
-                "pageTitle": "0-core/concatenate/from_iterable",
-                "title": "from_iterable"
+                "sourcePath": "/home/aureooms/dev/js/js-fingertree/js/src/0-core/concatenate/from.js",
+                "projectPath": "js/src/0-core/concatenate/from.js",
+                "targetPath": "0-core/concatenate/from",
+                "pageTitle": "0-core/concatenate/from",
+                "title": "from"
               },
               "depth": 3,
               "outline": []
