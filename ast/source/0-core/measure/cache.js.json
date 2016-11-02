@@ -1,0 +1,370 @@
+{
+  "type": "Program",
+  "body": [
+    {
+      "type": "ImportDeclaration",
+      "specifiers": [
+        {
+          "type": "ImportSpecifier",
+          "local": {
+            "type": "Identifier",
+            "name": "CachedMeasure",
+            "range": [
+              9,
+              22
+            ],
+            "loc": {
+              "start": {
+                "line": 1,
+                "column": 9
+              },
+              "end": {
+                "line": 1,
+                "column": 22
+              }
+            }
+          },
+          "imported": {
+            "type": "Identifier",
+            "name": "CachedMeasure",
+            "range": [
+              9,
+              22
+            ],
+            "loc": {
+              "start": {
+                "line": 1,
+                "column": 9
+              },
+              "end": {
+                "line": 1,
+                "column": 22
+              }
+            }
+          },
+          "range": [
+            9,
+            22
+          ],
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 9
+            },
+            "end": {
+              "line": 1,
+              "column": 22
+            }
+          }
+        }
+      ],
+      "source": {
+        "type": "Literal",
+        "value": ".",
+        "raw": "'.'",
+        "range": [
+          30,
+          33
+        ],
+        "loc": {
+          "start": {
+            "line": 1,
+            "column": 30
+          },
+          "end": {
+            "line": 1,
+            "column": 33
+          }
+        }
+      },
+      "range": [
+        0,
+        35
+      ],
+      "loc": {
+        "start": {
+          "line": 1,
+          "column": 0
+        },
+        "end": {
+          "line": 1,
+          "column": 35
+        }
+      }
+    },
+    {
+      "type": "ExportNamedDeclaration",
+      "declaration": {
+        "type": "FunctionDeclaration",
+        "id": {
+          "type": "Identifier",
+          "name": "cache",
+          "range": [
+            53,
+            58
+          ],
+          "loc": {
+            "start": {
+              "line": 3,
+              "column": 16
+            },
+            "end": {
+              "line": 3,
+              "column": 21
+            }
+          }
+        },
+        "params": [
+          {
+            "type": "Identifier",
+            "name": "M",
+            "range": [
+              61,
+              62
+            ],
+            "loc": {
+              "start": {
+                "line": 3,
+                "column": 24
+              },
+              "end": {
+                "line": 3,
+                "column": 25
+              }
+            }
+          }
+        ],
+        "body": {
+          "type": "BlockStatement",
+          "body": [
+            {
+              "type": "ReturnStatement",
+              "argument": {
+                "type": "ConditionalExpression",
+                "test": {
+                  "type": "BinaryExpression",
+                  "operator": "instanceof",
+                  "left": {
+                    "type": "Identifier",
+                    "name": "M",
+                    "range": [
+                      75,
+                      76
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 4,
+                        "column": 8
+                      },
+                      "end": {
+                        "line": 4,
+                        "column": 9
+                      }
+                    }
+                  },
+                  "right": {
+                    "type": "Identifier",
+                    "name": "CachedMeasure",
+                    "range": [
+                      88,
+                      101
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 4,
+                        "column": 21
+                      },
+                      "end": {
+                        "line": 4,
+                        "column": 34
+                      }
+                    }
+                  },
+                  "range": [
+                    75,
+                    101
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 4,
+                      "column": 8
+                    },
+                    "end": {
+                      "line": 4,
+                      "column": 34
+                    }
+                  }
+                },
+                "consequent": {
+                  "type": "Identifier",
+                  "name": "M",
+                  "range": [
+                    104,
+                    105
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 4,
+                      "column": 37
+                    },
+                    "end": {
+                      "line": 4,
+                      "column": 38
+                    }
+                  }
+                },
+                "alternate": {
+                  "type": "NewExpression",
+                  "callee": {
+                    "type": "Identifier",
+                    "name": "CachedMeasure",
+                    "range": [
+                      112,
+                      125
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 4,
+                        "column": 45
+                      },
+                      "end": {
+                        "line": 4,
+                        "column": 58
+                      }
+                    }
+                  },
+                  "arguments": [
+                    {
+                      "type": "Identifier",
+                      "name": "M",
+                      "range": [
+                        127,
+                        128
+                      ],
+                      "loc": {
+                        "start": {
+                          "line": 4,
+                          "column": 60
+                        },
+                        "end": {
+                          "line": 4,
+                          "column": 61
+                        }
+                      }
+                    }
+                  ],
+                  "range": [
+                    108,
+                    130
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 4,
+                      "column": 41
+                    },
+                    "end": {
+                      "line": 4,
+                      "column": 63
+                    }
+                  }
+                },
+                "range": [
+                  75,
+                  130
+                ],
+                "loc": {
+                  "start": {
+                    "line": 4,
+                    "column": 8
+                  },
+                  "end": {
+                    "line": 4,
+                    "column": 63
+                  }
+                }
+              },
+              "range": [
+                68,
+                132
+              ],
+              "loc": {
+                "start": {
+                  "line": 4,
+                  "column": 1
+                },
+                "end": {
+                  "line": 4,
+                  "column": 65
+                }
+              }
+            }
+          ],
+          "range": [
+            65,
+            134
+          ],
+          "loc": {
+            "start": {
+              "line": 3,
+              "column": 28
+            },
+            "end": {
+              "line": 5,
+              "column": 1
+            }
+          }
+        },
+        "generator": false,
+        "expression": false,
+        "range": [
+          44,
+          134
+        ],
+        "loc": {
+          "start": {
+            "line": 3,
+            "column": 7
+          },
+          "end": {
+            "line": 5,
+            "column": 1
+          }
+        },
+        "leadingComments": [],
+        "trailingComments": []
+      },
+      "specifiers": [],
+      "source": null,
+      "range": [
+        37,
+        134
+      ],
+      "loc": {
+        "start": {
+          "line": 3,
+          "column": 0
+        },
+        "end": {
+          "line": 5,
+          "column": 1
+        }
+      }
+    }
+  ],
+  "sourceType": "module",
+  "range": [
+    0,
+    134
+  ],
+  "loc": {
+    "start": {
+      "line": 1,
+      "column": 0
+    },
+    "end": {
+      "line": 5,
+      "column": 1
+    }
+  },
+  "comments": []
+}

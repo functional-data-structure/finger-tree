@@ -1,0 +1,240 @@
+{
+  "type": "Program",
+  "body": [
+    {
+      "type": "ExportAllDeclaration",
+      "source": {
+        "type": "Literal",
+        "value": "./5-api",
+        "raw": "'./5-api'",
+        "range": [
+          160,
+          169
+        ],
+        "loc": {
+          "start": {
+            "line": 6,
+            "column": 14
+          },
+          "end": {
+            "line": 6,
+            "column": 23
+          }
+        }
+      },
+      "range": [
+        146,
+        171
+      ],
+      "loc": {
+        "start": {
+          "line": 6,
+          "column": 0
+        },
+        "end": {
+          "line": 6,
+          "column": 25
+        }
+      },
+      "leadingComments": [
+        {
+          "type": "Line",
+          "value": "export * from './0-core' ;",
+          "range": [
+            0,
+            28
+          ],
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 0
+            },
+            "end": {
+              "line": 1,
+              "column": 28
+            }
+          }
+        },
+        {
+          "type": "Line",
+          "value": "export * from './1-digit' ;",
+          "range": [
+            29,
+            58
+          ],
+          "loc": {
+            "start": {
+              "line": 2,
+              "column": 0
+            },
+            "end": {
+              "line": 2,
+              "column": 29
+            }
+          }
+        },
+        {
+          "type": "Line",
+          "value": "export * from './2-node' ;",
+          "range": [
+            59,
+            87
+          ],
+          "loc": {
+            "start": {
+              "line": 3,
+              "column": 0
+            },
+            "end": {
+              "line": 3,
+              "column": 28
+            }
+          }
+        },
+        {
+          "type": "Line",
+          "value": "export * from './3-tree' ;",
+          "range": [
+            88,
+            116
+          ],
+          "loc": {
+            "start": {
+              "line": 4,
+              "column": 0
+            },
+            "end": {
+              "line": 4,
+              "column": 28
+            }
+          }
+        },
+        {
+          "type": "Line",
+          "value": "export * from './4-lazy' ;",
+          "range": [
+            117,
+            145
+          ],
+          "loc": {
+            "start": {
+              "line": 5,
+              "column": 0
+            },
+            "end": {
+              "line": 5,
+              "column": 28
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "sourceType": "module",
+  "range": [
+    146,
+    171
+  ],
+  "loc": {
+    "start": {
+      "line": 6,
+      "column": 0
+    },
+    "end": {
+      "line": 6,
+      "column": 25
+    }
+  },
+  "comments": [
+    {
+      "type": "Line",
+      "value": "export * from './0-core' ;",
+      "range": [
+        0,
+        28
+      ],
+      "loc": {
+        "start": {
+          "line": 1,
+          "column": 0
+        },
+        "end": {
+          "line": 1,
+          "column": 28
+        }
+      }
+    },
+    {
+      "type": "Line",
+      "value": "export * from './1-digit' ;",
+      "range": [
+        29,
+        58
+      ],
+      "loc": {
+        "start": {
+          "line": 2,
+          "column": 0
+        },
+        "end": {
+          "line": 2,
+          "column": 29
+        }
+      }
+    },
+    {
+      "type": "Line",
+      "value": "export * from './2-node' ;",
+      "range": [
+        59,
+        87
+      ],
+      "loc": {
+        "start": {
+          "line": 3,
+          "column": 0
+        },
+        "end": {
+          "line": 3,
+          "column": 28
+        }
+      }
+    },
+    {
+      "type": "Line",
+      "value": "export * from './3-tree' ;",
+      "range": [
+        88,
+        116
+      ],
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 0
+        },
+        "end": {
+          "line": 4,
+          "column": 28
+        }
+      }
+    },
+    {
+      "type": "Line",
+      "value": "export * from './4-lazy' ;",
+      "range": [
+        117,
+        145
+      ],
+      "loc": {
+        "start": {
+          "line": 5,
+          "column": 0
+        },
+        "end": {
+          "line": 5,
+          "column": 28
+        }
+      }
+    }
+  ]
+}
