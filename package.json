@@ -1,57 +1,57 @@
 {
-	"dependencies": {},
-	"bugs": {
-		"url": "https://github.com/aureooms/js-fingertree/issues"
-	},
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/aureooms/js-fingertree.git"
-	},
-	"name": "aureooms-js-fingertree",
-	"description": "Finger Trees code bricks for JavaScript",
-	"devDependencies": {
-		"argparse": "^1.0.7",
-		"aureooms-js-itertools": "^1.3.0",
-		"aureooms-js-measure": "0.2.0",
-		"aureooms-js-predicate": "^2.0.2",
-		"ava": "^0.16.0",
-		"babel-cli": "^6.18.0",
-		"babel-plugin-transform-runtime": "^6.15.0",
-		"babel-polyfill": "^6.16.0",
-		"babel-preset-latest": "^6.16.0",
-		"benchmark": "^2.1.1",
-		"codeclimate-test-reporter": "^0.4.0",
-		"coveralls": "^2.11.14",
-		"esdoc": "^0.4.8",
-		"fingertree": "^0.1.7",
-		"jspm": "^0.16.47",
-		"microtime": "^2.1.1",
-		"nyc": "^8.3.2"
-	},
-	"license": "AGPL-3.0",
-	"homepage": "http://aureooms.github.io/js-fingertree",
-	"author": "Aurélien Ooms <aurelien.ooms@gmail.com>",
-	"version": "3.0.0",
-	"keywords": [
-		"bricks",
-		"data",
-		"ender",
-		"finger",
-		"functional",
-		"immutable",
-		"javascript",
-		"js",
-		"persistent",
-		"structure",
-		"tree"
-	],
-	"main": "lib/index.js",
-	"scripts": {
-		"build": "babel src -d lib",
-		"prepublish": "npm run build",
-		"test": "ava ./test/src",
-		"cover": "nyc --reporter=lcov npm test"
-	},
+  "dependencies": {},
+  "bugs": {
+    "url": "https://github.com/aureooms/js-fingertree/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aureooms/js-fingertree.git"
+  },
+  "name": "aureooms-js-fingertree",
+  "description": "Finger Trees code bricks for JavaScript",
+  "devDependencies": {
+    "argparse": "^1.0.7",
+    "aureooms-js-itertools": "^1.3.0",
+    "aureooms-js-measure": "0.2.0",
+    "aureooms-js-predicate": "^2.0.2",
+    "ava": "^0.16.0",
+    "babel-cli": "^6.18.0",
+    "babel-plugin-transform-runtime": "^6.15.0",
+    "babel-polyfill": "^6.16.0",
+    "babel-preset-latest": "^6.16.0",
+    "benchmark": "^2.1.1",
+    "codeclimate-test-reporter": "^0.4.0",
+    "coveralls": "^2.11.14",
+    "esdoc": "^0.4.8",
+    "fingertree": "^0.1.7",
+    "jspm": "^0.16.47",
+    "microtime": "^2.1.1",
+    "nyc": "^8.3.2"
+  },
+  "license": "AGPL-3.0",
+  "homepage": "http://aureooms.github.io/js-fingertree",
+  "author": "Aurélien Ooms <aurelien.ooms@gmail.com>",
+  "version": "3.0.0",
+  "keywords": [
+    "bricks",
+    "data",
+    "ender",
+    "finger",
+    "functional",
+    "immutable",
+    "javascript",
+    "js",
+    "persistent",
+    "structure",
+    "tree"
+  ],
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "babel src -d lib",
+    "prepublish": "npm run build",
+    "test": "ava ./test/src",
+    "cover": "nyc --reporter=lcov npm test"
+  },
   "ava": {
     "require": [
       "babel-polyfill",
@@ -66,6 +66,14 @@
       "development": {
         "sourceMaps": "inline"
       }
+    }
+  },
+  "jspm": {
+    "dependencies": {},
+    "devDependencies": {
+      "babel": "npm:babel-core@^5.8.24",
+      "babel-runtime": "npm:babel-runtime@^5.8.24",
+      "core-js": "npm:core-js@^1.1.4"
     }
   }
 }
