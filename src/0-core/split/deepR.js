@@ -3,6 +3,7 @@ import { delay } from '../../4-lazy' ;
 import { _from_digit , _digit } from '../_fast' ;
 
 /**
+ * @param {Measure} M
  * @param {Digit} left
  * @param {FingerTree} middle
  * @param {Array} right
