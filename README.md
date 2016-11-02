@@ -34,8 +34,6 @@ and [npm](https://github.com/npm/npm).
 
 ### jspm
 ```terminal
-jspm install github:aureooms/js-fingertree
-# or
 jspm install npm:aureooms-js-fingertree
 ```
 ### duo
