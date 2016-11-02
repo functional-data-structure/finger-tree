@@ -1,5 +1,5 @@
 console.time('prepare');
-require( '../node_modules/aureooms-node-package/node_modules/babel-core/polyfill' ) ;
+require( 'babel-polyfill' ) ;
 var ArgumentParser = require( 'argparse' ).ArgumentParser ;
 var itertools = require( 'aureooms-js-itertools' ) ;
 var empty = require('..').empty ;

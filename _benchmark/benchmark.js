@@ -1,4 +1,4 @@
-require( '../node_modules/aureooms-node-package/node_modules/babel-core/polyfill' ) ;
+require( 'babel-polyfill' ) ;
 
 var itertools = require( 'aureooms-js-itertools' ) ;
 
@@ -60,7 +60,7 @@ PUSH
 	console.log(String(event.target));
 })
 .on('complete', function() {
-	console.log('Fastest is ' + this.filter('fastest').pluck('name'));
+	console.log('Fastest is ' + this.filter('fastest').map('name'));
 })
 .run({ 'async': false });
 
@@ -98,7 +98,7 @@ CONS
 	console.log(String(event.target));
 })
 .on('complete', function() {
-	console.log('Fastest is ' + this.filter('fastest').pluck('name'));
+	console.log('Fastest is ' + this.filter('fastest').map('name'));
 })
 .run({ 'async': false });
 
@@ -143,7 +143,7 @@ INIT
 	console.dir(event);
 })
 .on('complete', function() {
-	console.log('Fastest is ' + this.filter('fastest').pluck('name'));
+	console.log('Fastest is ' + this.filter('fastest').map('name'));
 })
 .run({ 'async': false });
 
@@ -181,7 +181,7 @@ TAIL
 	console.dir(event);
 })
 .on('complete', function() {
-	console.log('Fastest is ' + this.filter('fastest').pluck('name'));
+	console.log('Fastest is ' + this.filter('fastest').map('name'));
 })
 .run({ 'async': false });
 
@@ -203,7 +203,7 @@ APPEND
 	console.log(String(event.target));
 })
 .on('complete', function() {
-	console.log('Fastest is ' + this.filter('fastest').pluck('name'));
+	console.log('Fastest is ' + this.filter('fastest').map('name'));
 })
 .run({ 'async': false });
 
@@ -225,7 +225,7 @@ PREPEND
 	console.log(String(event.target));
 })
 .on('complete', function() {
-	console.log('Fastest is ' + this.filter('fastest').pluck('name'));
+	console.log('Fastest is ' + this.filter('fastest').map('name'));
 })
 .run({ 'async': false });
 
@@ -246,7 +246,7 @@ new Benchmark.Suite( )
 	console.log(String(event.target));
 })
 .on('complete', function() {
-	console.log('Fastest is ' + this.filter('fastest').pluck('name'));
+	console.log('Fastest is ' + this.filter('fastest').map('name'));
 })
 .run({ 'async': false });
 
@@ -280,7 +280,7 @@ SPLIT
 	console.log(String(event.target));
 })
 .on('complete', function() {
-	console.log('Fastest is ' + this.filter('fastest').pluck('name'));
+	console.log('Fastest is ' + this.filter('fastest').map('name'));
 })
 .run({ 'async': false });
 
@@ -324,6 +324,6 @@ new Benchmark.Suite( )
 	console.log(String(event.target));
 })
 .on('complete', function() {
-	console.log('Fastest is ' + this.filter('fastest').pluck('name'));
+	console.log('Fastest is ' + this.filter('fastest').map('name'));
 })
 .run({ 'async': false });
