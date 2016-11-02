@@ -16,7 +16,6 @@
     "aureooms-js-predicate": "^2.0.2",
     "ava": "^0.16.0",
     "babel-cli": "^6.18.0",
-    "babel-plugin-transform-runtime": "^6.15.0",
     "babel-polyfill": "^6.16.0",
     "babel-preset-latest": "^6.16.0",
     "benchmark": "^2.1.2",
@@ -32,9 +31,7 @@
   "author": "Aurélien Ooms <aurelien.ooms@gmail.com>",
   "version": "4.0.3",
   "keywords": [
-    "bricks",
     "data",
-    "ender",
     "finger",
     "functional",
     "immutable",
