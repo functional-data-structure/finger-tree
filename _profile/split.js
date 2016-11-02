@@ -1,5 +1,5 @@
 console.time('prepare');
-require( '../node_modules/aureooms-node-package/node_modules/babel-core/polyfill' ) ;
+require( 'babel-polyfill' ) ;
 var ArgumentParser = require( 'argparse' ).ArgumentParser ;
 var itertools = require( 'aureooms-js-itertools' ) ;
 var empty = require('..').empty ;
@@ -18,7 +18,7 @@ var N = args.N ;
 
 console.log( 'number of operations:' , M * N ) ;
 
-t = empty( COUNTER ).append( itertools.range( M ) ) ;
+var t = empty( COUNTER ).append( itertools.range( M ) ) ;
 console.timeEnd('prepare');
 
 console.time('split');
