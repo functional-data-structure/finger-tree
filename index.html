@@ -75,14 +75,13 @@
 </nav>
 
 <div class="content" data-ice="content"><div data-ice="index" class="github-markdown"><h1 id="-js-fingertree-http-aureooms-github-io-js-fingertree-"><a href="http://aureooms.github.io/js-fingertree">js-fingertree</a></h1>
-<p>Finger trees code bricks for JavaScript. Parent is <a href="https://github.com/aureooms/js-persistent">aureooms/js-persistent</a>.</p>
+<p>Finger trees for JavaScript. Parent is <a href="https://github.com/aureooms/js-persistent">aureooms/js-persistent</a>.</p>
 <pre><code class="lang-js"><code class="source-code prettyprint">data FingerTree a = Empty
                   | Single a
                   | Deep ( Digit a ) ( FingerTree ( Node a ) ) ( Digit a )</code>
 </code></pre>
 <p><a href="https://raw.githubusercontent.com/aureooms/js-fingertree/master/LICENSE"><img src="http://img.shields.io/npm/l/aureooms-js-fingertree.svg?style=flat" alt="NPM license"></a>
 <a href="https://www.npmjs.org/package/aureooms-js-fingertree"><img src="http://img.shields.io/npm/v/aureooms-js-fingertree.svg?style=flat" alt="NPM version"></a>
-<a href="http://bower.io/search/?q=aureooms-js-fingertree"><img src="http://img.shields.io/bower/v/aureooms-js-fingertree.svg?style=flat" alt="Bower version"></a>
 <a href="https://travis-ci.org/aureooms/js-fingertree"><img src="http://img.shields.io/travis/aureooms/js-fingertree.svg?style=flat" alt="Build Status"></a>
 <a href="https://coveralls.io/r/aureooms/js-fingertree"><img src="http://img.shields.io/coveralls/aureooms/js-fingertree.svg?style=flat" alt="Coverage Status"></a>
 <a href="https://david-dm.org/aureooms/js-fingertree#info=dependencies"><img src="http://img.shields.io/david/aureooms/js-fingertree.svg?style=flat" alt="Dependencies Status"></a>
@@ -91,79 +90,6 @@
 <a href="https://www.npmjs.org/package/aureooms-js-fingertree"><img src="http://img.shields.io/npm/dm/aureooms-js-fingertree.svg?style=flat" alt="NPM downloads per month"></a>
 <a href="https://github.com/aureooms/js-fingertree/issues"><img src="http://img.shields.io/github/issues/aureooms/js-fingertree.svg?style=flat" alt="GitHub issues"></a>
 <a href="https://aureooms.github.io/js-fingertree/source.html"><img src="https://aureooms.github.io/js-fingertree/badge.svg" alt="Documentation"></a></p>
-<p>Can be managed through <a href="https://github.com/jspm/jspm-cli">jspm</a>,
-<a href="https://github.com/duojs/duo">duo</a>,
-<a href="https://github.com/componentjs/component">component</a>,
-<a href="https://github.com/bower/bower">bower</a>,
-<a href="https://github.com/ender-js/Ender">ender</a>,
-<a href="https://github.com/caolan/jam">jam</a>,
-<a href="https://github.com/spmjs/spm">spm</a>,
-and <a href="https://github.com/npm/npm">npm</a>.</p>
-<h2 id="install">Install</h2>
-<h3 id="jspm">jspm</h3>
-<pre><code class="lang-terminal"><code class="source-code prettyprint">jspm install npm:aureooms-js-fingertree</code>
-</code></pre>
-<h3 id="duo">duo</h3>
-<p>No install step needed for duo!</p>
-<h3 id="component">component</h3>
-<pre><code class="lang-terminal"><code class="source-code prettyprint">component install aureooms/js-fingertree</code>
-</code></pre>
-<h3 id="bower">bower</h3>
-<pre><code class="lang-terminal"><code class="source-code prettyprint">bower install aureooms-js-fingertree</code>
-</code></pre>
-<h3 id="ender">ender</h3>
-<pre><code class="lang-terminal"><code class="source-code prettyprint">ender add aureooms-js-fingertree</code>
-</code></pre>
-<h3 id="jam">jam</h3>
-<pre><code class="lang-terminal"><code class="source-code prettyprint">jam install aureooms-js-fingertree</code>
-</code></pre>
-<h3 id="spm">spm</h3>
-<pre><code class="lang-terminal"><code class="source-code prettyprint">spm install aureooms-js-fingertree --save</code>
-</code></pre>
-<h3 id="npm">npm</h3>
-<pre><code class="lang-terminal"><code class="source-code prettyprint">npm install aureooms-js-fingertree --save</code>
-</code></pre>
-<h2 id="require">Require</h2>
-<h3 id="jspm">jspm</h3>
-<pre><code class="lang-js"><code class="source-code prettyprint">let fingertree = require( &quot;github:aureooms/js-fingertree&quot; ) ;
-// or
-import fingertree from &apos;aureooms-js-fingertree&apos; ;</code>
-</code></pre>
-<h3 id="duo">duo</h3>
-<pre><code class="lang-js"><code class="source-code prettyprint">let fingertree = require( &quot;aureooms/js-fingertree&quot; ) ;</code>
-</code></pre>
-<h3 id="component-ender-spm-npm">component, ender, spm, npm</h3>
-<pre><code class="lang-js"><code class="source-code prettyprint">let fingertree = require( &quot;aureooms-js-fingertree&quot; ) ;</code>
-</code></pre>
-<h3 id="bower">bower</h3>
-<p>The script tag exposes the global variable <code>fingertree</code>.</p>
-<pre><code class="lang-html"><code class="source-code prettyprint">&lt;script src=&quot;bower_components/aureooms-js-fingertree/js/dist/fingertree.min.js&quot;&gt;&lt;/script&gt;</code>
-</code></pre>
-<p>Alternatively, you can use any tool mentioned <a href="http://bower.io/docs/tools/">here</a>.</p>
-<h3 id="jam">jam</h3>
-<pre><code class="lang-js"><code class="source-code prettyprint">require( [ &quot;aureooms-js-fingertree&quot; ] , function ( fingertree ) { ... } ) ;</code>
-</code></pre>
-<h2 id="use">Use</h2>
-<pre><code class="lang-js"><code class="source-code prettyprint">const { empty , from_iterable } = fingertree ;
-
-const { Measure : { COUNTER : COUNTER } } = require( &apos;aureooms-js-measure&apos; ) ;
-const { gt } = require( &apos;aureooms-js-predicate&apos; ) ;
-
-let t = from_iterable( COUNTER , &apos;abc&apos; ) ;
-// OR
-// let t = empty( COUNTER ).append( &apos;abc&apos; )
-[ ...t ] ; // abc
-t.head( ) ; // &apos;a&apos;
-t.last( ) ; // &apos;c&apos;
-[ ...t.init( ) ] ; // ab
-[ ...t.tail( ) ] ; // bc
-[ ...t.concat( t ) ] ; // abcabc
-const _1 , _2 = t.split( gt( 1 ) ) ;
-[ ..._1 ] ; // a
-[ ..._2 ] ; // bc
-[ ...t.append( &apos;def&apos; ) ] ; // abcdef
-[ ...t.prepend( &apos;def&apos; ) ] ; // defabc</code>
-</code></pre>
 <h2 id="optimization-of-the-code-step-by-step">Optimization of the code step by step</h2>
 <p>I will copy here the output of a benchmark run on my computer after each
 optimization change together with a small explanation.</p>
