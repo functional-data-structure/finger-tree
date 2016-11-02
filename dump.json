@@ -1044,7 +1044,7 @@
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "import { Deep } from '../../3-tree' ;\nimport { delay } from '../../4-lazy' ;\nimport { _from_digit , _digit } from '../_fast' ;\n\n/**\n * @param {Array} left\n * @param {FingerTree} middle\n * @param {Digit} right\n */\nexport function deepL ( M , left , middle , right ) {\n\n\tif ( left.length === 0 ) {\n\n\t\tif ( middle.empty( ) ) return _from_digit( M , right ) ;\n\n\t\treturn new Deep( M , middle.head( ).digit( ) , delay( ( ) => middle.tail( ) ) , right ) ;\n\t}\n\n\treturn new Deep( M , _digit( left ) , middle , right ) ;\n\n}\n"
+    "content": "import { Deep } from '../../3-tree' ;\nimport { delay } from '../../4-lazy' ;\nimport { _from_digit , _digit } from '../_fast' ;\n\n/**\n * @param {Measure} M\n * @param {Array} left\n * @param {FingerTree} middle\n * @param {Digit} right\n */\nexport function deepL ( M , left , middle , right ) {\n\n\tif ( left.length === 0 ) {\n\n\t\tif ( middle.empty( ) ) return _from_digit( M , right ) ;\n\n\t\treturn new Deep( M , middle.head( ).digit( ) , delay( ( ) => middle.tail( ) ) , right ) ;\n\t}\n\n\treturn new Deep( M , _digit( left ) , middle , right ) ;\n\n}\n"
   },
   {
     "__docId__": 46,
@@ -1059,8 +1059,18 @@
     "importPath": "aureooms-js-fingertree/src/0-core/split/deepL.js",
     "importStyle": "{deepL}",
     "description": "",
-    "lineNumber": 10,
+    "lineNumber": 11,
     "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Measure"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "M",
+        "description": ""
+      },
       {
         "nullable": null,
         "types": [
@@ -1110,7 +1120,7 @@
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "import { Deep } from '../../3-tree' ;\nimport { delay } from '../../4-lazy' ;\nimport { _from_digit , _digit } from '../_fast' ;\n\n/**\n * @param {Digit} left\n * @param {FingerTree} middle\n * @param {Array} right\n */\nexport function deepR ( M , left , middle , right ) {\n\n\tif ( right.length === 0 ) {\n\n\t\tif ( middle.empty( ) ) return _from_digit( M , left ) ;\n\n\t\treturn new Deep( M , left , delay( ( ) => middle.init( ) ) , middle.last( ).digit( ) ) ;\n\t}\n\n\treturn new Deep( M , left , middle , _digit( right ) ) ;\n\n}\n\n"
+    "content": "import { Deep } from '../../3-tree' ;\nimport { delay } from '../../4-lazy' ;\nimport { _from_digit , _digit } from '../_fast' ;\n\n/**\n * @param {Measure} M\n * @param {Digit} left\n * @param {FingerTree} middle\n * @param {Array} right\n */\nexport function deepR ( M , left , middle , right ) {\n\n\tif ( right.length === 0 ) {\n\n\t\tif ( middle.empty( ) ) return _from_digit( M , left ) ;\n\n\t\treturn new Deep( M , left , delay( ( ) => middle.init( ) ) , middle.last( ).digit( ) ) ;\n\t}\n\n\treturn new Deep( M , left , middle , _digit( right ) ) ;\n\n}\n\n"
   },
   {
     "__docId__": 48,
@@ -1125,8 +1135,18 @@
     "importPath": "aureooms-js-fingertree/src/0-core/split/deepR.js",
     "importStyle": "{deepR}",
     "description": "",
-    "lineNumber": 10,
+    "lineNumber": 11,
     "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Measure"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "M",
+        "description": ""
+      },
       {
         "nullable": null,
         "types": [
