@@ -19,7 +19,7 @@ data FingerTree a = Empty
 [![Code Climate](http://img.shields.io/codeclimate/github/aureooms/js-fingertree.svg?style=flat)](https://codeclimate.com/github/aureooms/js-fingertree)
 [![NPM downloads per month](http://img.shields.io/npm/dm/aureooms-js-fingertree.svg?style=flat)](https://www.npmjs.org/package/aureooms-js-fingertree)
 [![GitHub issues](http://img.shields.io/github/issues/aureooms/js-fingertree.svg?style=flat)](https://github.com/aureooms/js-fingertree/issues)
-[![Inline docs](http://inch-ci.org/github/aureooms/js-fingertree.svg?branch=master&style=shields)](http://inch-ci.org/github/aureooms/js-fingertree)
+[![Documentation](https://aureooms.github.io/js-fingertree/badge.svg)](https://aureooms.github.io/js-fingertree/source.html)
 
 Can be managed through [jspm](https://github.com/jspm/jspm-cli),
 [duo](https://github.com/duojs/duo),
