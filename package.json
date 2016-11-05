@@ -11,7 +11,7 @@
   "description": "Finger Trees code bricks for JavaScript",
   "devDependencies": {
     "argparse": "^1.0.9",
-    "aureooms-js-itertools": "^1.3.0",
+    "aureooms-js-itertools": "^3.0.0",
     "aureooms-js-measure": "1.0.3",
     "aureooms-js-predicate": "^2.0.2",
     "ava": "^0.16.0",
