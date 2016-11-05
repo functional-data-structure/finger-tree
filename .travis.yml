@@ -21,5 +21,5 @@ script:
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)            || true
-  - npm coveralls                 < coverage/lcov.info || true
-  - npm codeclimate-test-reporter < coverage/lcov.info || true
+  - coveralls                 < coverage/lcov.info || true
+  - codeclimate-test-reporter < coverage/lcov.info || true
