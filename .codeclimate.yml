@@ -1,8 +1,8 @@
 languages:
   JavaScript: true
 exclude_paths:
-- "_benchmark/**/*.js"
-- "_profile/**/*.js"
-- "doc/**/*.js"
-- "test/**/*.js"
-- "lib/**/*.js"
+- "_benchmark/**"
+- "_profile/**"
+- "doc/**"
+- "lib/**"
+- "test/**"

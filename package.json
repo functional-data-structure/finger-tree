@@ -1,14 +1,28 @@
 {
-  "dependencies": {},
+  "name": "aureooms-js-fingertree",
+  "description": "Finger Trees for JavaScript",
+  "version": "4.0.3",
+  "author": "Aurélien Ooms <aurelien.ooms@gmail.com>",
+  "ava": {
+    "require": [
+      "babel-polyfill",
+      "babel-register"
+    ]
+  },
+  "babel": {
+    "presets": [
+      "latest"
+    ],
+    "env": {
+      "development": {
+        "sourceMaps": "inline"
+      }
+    }
+  },
   "bugs": {
     "url": "https://github.com/aureooms/js-fingertree/issues"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/aureooms/js-fingertree.git"
-  },
-  "name": "aureooms-js-fingertree",
-  "description": "Finger Trees code bricks for JavaScript",
+  "dependencies": {},
   "devDependencies": {
     "argparse": "^1.0.9",
     "aureooms-js-itertools": "^3.0.0",
@@ -26,10 +40,7 @@
     "microtime": "^2.1.1",
     "nyc": "^8.4.0"
   },
-  "license": "AGPL-3.0",
   "homepage": "http://aureooms.github.io/js-fingertree",
-  "author": "Aurélien Ooms <aurelien.ooms@gmail.com>",
-  "version": "4.0.3",
   "keywords": [
     "data",
     "finger",
@@ -41,27 +52,16 @@
     "structure",
     "tree"
   ],
+  "license": "AGPL-3.0",
   "main": "lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aureooms/js-fingertree.git"
+  },
   "scripts": {
     "build": "babel src -d lib",
+    "cover": "nyc --reporter=lcov npm test",
     "prepublish": "npm run build",
-    "test": "ava ./test/src",
-    "cover": "nyc --reporter=lcov npm test"
-  },
-  "ava": {
-    "require": [
-      "babel-polyfill",
-      "babel-register"
-    ]
-  },
-  "babel": {
-    "presets": [
-      "latest"
-    ],
-    "env": {
-      "development": {
-        "sourceMaps": "inline"
-      }
-    }
+    "test": "ava ./test/src"
   }
 }
