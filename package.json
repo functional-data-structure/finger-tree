@@ -38,7 +38,7 @@
     "esdoc": "^0.4.8",
     "fingertree": "^0.1.7",
     "microtime": "^2.1.1",
-    "nyc": "^8.4.0"
+    "nyc": "^9.0.1"
   },
   "homepage": "http://aureooms.github.io/js-fingertree",
   "keywords": [
