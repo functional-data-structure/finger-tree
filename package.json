@@ -28,7 +28,7 @@
     "aureooms-js-itertools": "^3.0.0",
     "aureooms-js-measure": "1.0.3",
     "aureooms-js-predicate": "^2.0.2",
-    "ava": "^0.16.0",
+    "ava": "^0.17.0",
     "babel-cli": "^6.18.0",
     "babel-polyfill": "^6.16.0",
     "babel-preset-latest": "^6.16.0",
