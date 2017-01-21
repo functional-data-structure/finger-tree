@@ -1,9 +1,11 @@
-[js-fingertree](http://aureooms.github.io/js-fingertree)
+[@aureooms/js-fingertree](http://aureooms.github.io/js-fingertree)
 ==
 
 <img src="https://cdn.rawgit.com/aureooms/js-fingertree/master/media/sketch.svg" width="864">
 
-Finger trees for JavaScript. Parent is [aureooms/js-persistent](https://github.com/aureooms/js-persistent).
+Finger trees for JavaScript.
+See [docs](http://aureooms.github.io/js-fingertree).
+Parent is [@aureooms/js-persistent](https://github.com/aureooms/js-persistent).
 
 ```js
 data FingerTree a = Empty
