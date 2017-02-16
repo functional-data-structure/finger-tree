@@ -13,7 +13,7 @@ data FingerTree a = Empty
                   | Deep ( Digit a ) ( FingerTree ( Node a ) ) ( Digit a )
 ```
 
-[![NPM license](https://img.shields.io/npm/l/@aureooms/js-fingertree.svg?style=flat)](https://raw.githubusercontent.com/aureooms/js-fingertree/master/LICENSE)
+[![License](https://img.shields.io/github/license/aureooms/js-fingertree.svg?style=flat)](https://raw.githubusercontent.com/aureooms/js-fingertree/master/LICENSE)
 [![NPM version](https://img.shields.io/npm/v/@aureooms/js-fingertree.svg?style=flat)](https://www.npmjs.org/package/@aureooms/js-fingertree)
 [![Build Status](https://img.shields.io/travis/aureooms/js-fingertree.svg?style=flat)](https://travis-ci.org/aureooms/js-fingertree)
 [![Coverage Status](https://img.shields.io/coveralls/aureooms/js-fingertree.svg?style=flat)](https://coveralls.io/r/aureooms/js-fingertree)
