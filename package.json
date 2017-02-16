@@ -1,5 +1,5 @@
 {
-  "name": "aureooms-js-fingertree",
+  "name": "@aureooms/js-fingertree",
   "description": "Finger Trees for JavaScript",
   "version": "4.0.3",
   "author": "Aurélien Ooms <aurelien.ooms@gmail.com>",
@@ -25,9 +25,9 @@
   "dependencies": {},
   "devDependencies": {
     "argparse": "^1.0.9",
-    "aureooms-js-itertools": "^3.0.0",
-    "aureooms-js-measure": "1.0.3",
-    "aureooms-js-predicate": "^2.0.2",
+    "@aureooms/js-itertools": "^3.0.0",
+    "@aureooms/js-measure": "1.0.3",
+    "@aureooms/js-predicate": "^2.0.2",
     "ava": "^0.17.0",
     "babel-cli": "^6.18.0",
     "babel-polyfill": "^6.16.0",
