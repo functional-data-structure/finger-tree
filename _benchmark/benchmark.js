@@ -1,6 +1,6 @@
 require( 'babel-polyfill' ) ;
 
-var itertools = require( 'aureooms-js-itertools' ) ;
+var itertools = require( '@aureooms/js-itertools' ) ;
 
 var qiao_fingertree = require( 'fingertree' ) ;
 var fromArray = qiao_fingertree.fromArray ;
@@ -42,7 +42,7 @@ var PUSH = new Benchmark.Suite( )
 	var _M = M ;
 	for ( var i = 0 ; i < _M ; ++i ) t = t.addLast( i ) ;
 })
-.add('aureooms-js-fingertree#push', function() {
+.add('@aureooms/js-fingertree#push', function() {
 	var t = empty( COUNTER ) ;
 	var _M = M ;
 	for ( var i = 0 ; i < _M ; ++i ) t = t.push( i ) ;
@@ -81,7 +81,7 @@ CONS.add('fingertree#addFirst', function() {
 	var _M = M ;
 	for ( var i = 0 ; i < _M ; ++i ) t = t.addFirst( i ) ;
 })
-.add('aureooms-js-fingertree#cons', function() {
+.add('@aureooms/js-fingertree#cons', function() {
 	var t = empty( COUNTER ) ;
 	var _M = M ;
 	for ( var i = 0 ; i < _M ; ++i ) t = t.cons( i ) ;
@@ -124,7 +124,7 @@ var INIT = new Benchmark.Suite( )
 	var _t = qt ;
 	for ( var i = 0 ; i < _M ; ++i ) _t = _t.removeLast( ) ;
 } , { setup : setup } )
-.add('aureooms-js-fingertree#init', function ( ) {
+.add('@aureooms/js-fingertree#init', function ( ) {
 	var _t = at ;
 	for ( var i = 0 ; i < _M ; ++i ) _t = _t.init( ) ;
 } , { setup : setup } ) ;
@@ -162,7 +162,7 @@ TAIL.add('fingertree#removeLast', function ( ) {
 	var _t = qt ;
 	for ( var i = 0 ; i < _M ; ++i ) _t = _t.removeFirst( ) ;
 } , { setup : setup } )
-.add('aureooms-js-fingertree#init', function ( ) {
+.add('@aureooms/js-fingertree#init', function ( ) {
 	var _t = at ;
 	for ( var i = 0 ; i < _M ; ++i ) _t = _t.tail( ) ;
 } , { setup : setup } ) ;
@@ -189,7 +189,7 @@ TAIL
 
 var APPEND = new Benchmark.Suite( )
 .on( 'start' , function ( ) { console.log( '\nAPPEND\n==\n' ) ; } )
-.add('aureooms-js-fingertree#append', function() {
+.add('@aureooms/js-fingertree#append', function() {
 	at.append( range( M ) ) ;
 } , { setup : setup } ) ;
 
@@ -211,7 +211,7 @@ APPEND
 
 var PREPEND = new Benchmark.Suite( )
 .on( 'start' , function ( ) { console.log( '\nPREPEND\n==\n' ) ; } )
-.add('aureooms-js-fingertree#prepend', function() {
+.add('@aureooms/js-fingertree#prepend', function() {
 	at.prepend( range( M ) ) ;
 } , { setup : setup } ) ;
 
@@ -236,7 +236,7 @@ new Benchmark.Suite( )
 .add('fingertree.fromArray', function() {
 	fromArray( Array.from( range( M ) ) ) ;
 })
-.add('aureooms-js-fingertree.from', function() {
+.add('@aureooms/js-fingertree.from', function() {
 	from( COUNTER , range( M ) ) ;
 })
 .add('Mock.from', function() {
@@ -259,7 +259,7 @@ var SPLIT = new Benchmark.Suite( )
 	var _qt = qt ;
 	for ( var i = 0 ; i < _M ; ++i ) _qt.split( function ( m ) { return m > i ; } ) ;
 } , { setup : setup } )
-.add('aureooms-js-fingertree#split', function ( ) {
+.add('@aureooms/js-fingertree#split', function ( ) {
 	var _M = M ;
 	var _at = at ;
 	for ( var i = 0 ; i < _M ; ++i ) _at.split( function ( m ) { return m > i ; } ) ;
@@ -290,7 +290,7 @@ new Benchmark.Suite( )
 .on( 'start' , function ( ) { console.log( '\nCONCAT\n==\n' ) ; } )
 // I had to put this version first because the second uses a lot of memory.
 // This is probably because qiao/fingetree.js keeps references of used thunks.
-.add('aureooms-js-fingertree#concat', function ( ) {
+.add('@aureooms/js-fingertree#concat', function ( ) {
 	var _M = M ;
 	var _s = splits ;
 	for ( var i = 0 ; i < _M ; ++i ) _s[i][0].concat( _s[i][1] ) ;

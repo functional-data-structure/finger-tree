@@ -1,11 +1,11 @@
 import test from 'ava' ;
 
-import { Measures } from 'aureooms-js-measure' ;
+import { Measures } from '@aureooms/js-measure' ;
 const { COUNTER } = Measures ;
 
-import { map , list , chain , range , reversed } from 'aureooms-js-itertools' ;
+import { map , list , chain , range , reversed } from '@aureooms/js-itertools' ;
 
-import { gt } from 'aureooms-js-predicate' ;
+import { gt } from '@aureooms/js-predicate' ;
 
 import { empty , from } from '../../src' ;
 

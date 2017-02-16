@@ -1,6 +1,6 @@
 
 require( "babel-polyfill" ) ;
-var itertools = require( "aureooms-js-itertools" ) ;
+var itertools = require( "@aureooms/js-itertools" ) ;
 var fingertree = require('..') ;
 var empty = fingertree.empty ;
 var from = fingertree.from ;

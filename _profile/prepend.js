@@ -1,7 +1,7 @@
 console.time('prepare');
 require( 'babel-polyfill' ) ;
 var ArgumentParser = require( 'argparse' ).ArgumentParser ;
-var itertools = require( 'aureooms-js-itertools' ) ;
+var itertools = require( '@aureooms/js-itertools' ) ;
 var empty = require('..').empty ;
 var COUNTER = {
 	plus : function ( a , b ) { return a + b ; } ,
