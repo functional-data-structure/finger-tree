@@ -8,7 +8,7 @@ import 'babel-polyfill' ;
 
 Then
 ```js
-const fingertree = require( 'aureooms-js-fingertree' ) ;
+const fingertree = require( '@aureooms/js-fingertree' ) ;
 // or
-import fingertree from 'aureooms-js-fingertree' ;
+import fingertree from '@aureooms/js-fingertree' ;
 ```

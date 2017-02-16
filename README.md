@@ -13,14 +13,14 @@ data FingerTree a = Empty
                   | Deep ( Digit a ) ( FingerTree ( Node a ) ) ( Digit a )
 ```
 
-[![NPM license](http://img.shields.io/npm/l/aureooms-js-fingertree.svg?style=flat)](https://raw.githubusercontent.com/aureooms/js-fingertree/master/LICENSE)
-[![NPM version](http://img.shields.io/npm/v/aureooms-js-fingertree.svg?style=flat)](https://www.npmjs.org/package/aureooms-js-fingertree)
+[![NPM license](http://img.shields.io/npm/l/@aureooms/js-fingertree.svg?style=flat)](https://raw.githubusercontent.com/aureooms/js-fingertree/master/LICENSE)
+[![NPM version](http://img.shields.io/npm/v/@aureooms/js-fingertree.svg?style=flat)](https://www.npmjs.org/package/@aureooms/js-fingertree)
 [![Build Status](http://img.shields.io/travis/aureooms/js-fingertree.svg?style=flat)](https://travis-ci.org/aureooms/js-fingertree)
 [![Coverage Status](http://img.shields.io/coveralls/aureooms/js-fingertree.svg?style=flat)](https://coveralls.io/r/aureooms/js-fingertree)
 [![Dependencies Status](http://img.shields.io/david/aureooms/js-fingertree.svg?style=flat)](https://david-dm.org/aureooms/js-fingertree#info=dependencies)
 [![devDependencies Status](http://img.shields.io/david/dev/aureooms/js-fingertree.svg?style=flat)](https://david-dm.org/aureooms/js-fingertree#info=devDependencies)
 [![Code Climate](http://img.shields.io/codeclimate/github/aureooms/js-fingertree.svg?style=flat)](https://codeclimate.com/github/aureooms/js-fingertree)
-[![NPM downloads per month](http://img.shields.io/npm/dm/aureooms-js-fingertree.svg?style=flat)](https://www.npmjs.org/package/aureooms-js-fingertree)
+[![NPM downloads per month](http://img.shields.io/npm/dm/@aureooms/js-fingertree.svg?style=flat)](https://www.npmjs.org/package/@aureooms/js-fingertree)
 [![GitHub issues](http://img.shields.io/github/issues/aureooms/js-fingertree.svg?style=flat)](https://github.com/aureooms/js-fingertree/issues)
 [![Documentation](https://aureooms.github.io/js-fingertree/badge.svg)](https://aureooms.github.io/js-fingertree/source.html)
 

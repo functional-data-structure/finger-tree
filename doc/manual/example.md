@@ -1,10 +1,10 @@
 ```js
-import { Measure } from 'aureooms-js-measure' ;
-import { gt } from 'aureooms-js-predicate' ;
+import { Measure } from '@aureooms/js-measure' ;
+import { gt } from '@aureooms/js-predicate' ;
 
 const { COUNTER } = Measure ;
 
-import { empty , from } from 'aureooms-js-fingertree' ;
+import { empty , from } from '@aureooms/js-fingertree' ;
 
 let t = from( COUNTER , 'abc' ) ;
 // OR
