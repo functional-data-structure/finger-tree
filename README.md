@@ -282,5 +282,5 @@ Great!
 
   - [Hinze and Paterson](http://staff.city.ac.uk/~ross/papers/FingerTree.pdf)
   - [An (incomplete) implementation in Python](https://github.com/kachayev/fn.py/blob/master/fn/immutable/finger.py)
-  - [A previous JavaScript implementation](https://github.com/qiao/fingertree.js)
+  - [A (buggy) previous JavaScript implementation](https://github.com/qiao/fingertree.js)
   - [A coffeescript implementation](https://github.com/zot/Leisure/blob/master/src/lib/fingertree.coffee)
