@@ -1,3 +1,5 @@
+# Example
+
 ```js
 import { Measure } from '@aureooms/js-measure' ;
 import { gt } from '@aureooms/js-predicate' ;

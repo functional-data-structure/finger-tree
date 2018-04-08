@@ -11,7 +11,7 @@
   },
   "babel": {
     "presets": [
-      "latest"
+      "env"
     ],
     "env": {
       "development": {
@@ -24,21 +24,25 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "argparse": "^1.0.9",
-    "@aureooms/js-itertools": "^3.0.0",
+    "@aureooms/js-itertools": "^3.4.0",
     "@aureooms/js-measure": "1.0.3",
     "@aureooms/js-predicate": "^2.0.2",
-    "ava": "^0.19.1",
-    "babel-cli": "^6.18.0",
-    "babel-polyfill": "^6.16.0",
-    "babel-preset-latest": "^6.16.0",
-    "benchmark": "^2.1.2",
-    "codeclimate-test-reporter": "^0.4.0",
-    "coveralls": "^2.11.14",
-    "esdoc": "^0.5.0",
+    "argparse": "^1.0.10",
+    "ava": "^0.25.0",
+    "babel-cli": "^6.26.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "benchmark": "^2.1.4",
+    "codeclimate-test-reporter": "^0.5.0",
+    "coveralls": "^3.0.0",
+    "esdoc": "^1.0.4",
+    "esdoc-inject-script-plugin": "^1.0.0",
+    "esdoc-inject-style-plugin": "^1.0.0",
+    "esdoc-standard-plugin": "^1.0.0",
     "fingertree": "^0.1.7",
-    "microtime": "^2.1.1",
-    "nyc": "^11.0.0"
+    "microtime": "^2.1.7",
+    "np": "^2.20.1",
+    "nyc": "^11.6.0"
   },
   "homepage": "http://aureooms.github.io/js-fingertree",
   "keywords": [
@@ -59,9 +63,11 @@
     "url": "https://github.com/aureooms/js-fingertree.git"
   },
   "scripts": {
-    "build": "babel src -d lib",
+    "build": "rm -rf lib && babel src -d lib",
     "cover": "nyc --reporter=lcov npm test",
-    "prepublish": "npm run build",
+    "esdoc": "esdoc",
+    "prepare": "npm run build",
+    "release": "np",
     "test": "ava ./test/src"
   }
 }

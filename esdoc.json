@@ -1,21 +1,48 @@
 {
   "source": "./src",
   "destination": "./gh-pages",
-  "access": ["public", "protected", "private"],
   "debug": false,
   "index": "./README.md",
   "package": "./package.json",
-  "title": "aureooms/js-fingertree",
-  "test": {
-    "type": "ava",
-    "source": "./test/src"
-  },
-  "manual": {
-    "overview": ["./doc/manual/overview.md"],
-    "installation": ["./doc/manual/installation.md"],
-    "usage": ["./doc/manual/usage.md"],
-    "example": ["./doc/manual/example.md"]
-  },
-  "styles": ["./doc/css/style.css"],
-  "scripts": ["./doc/scripts/header.js"]
+  "plugins": [
+    {
+      "name": "esdoc-standard-plugin",
+      "option": {
+        "accessor": {
+          "access": ["public", "protected", "private"],
+          "autoPrivate": true
+        },
+        "brand": {
+          "title": "aureooms/js-fingertree"
+        },
+        "test": {
+          "type": "ava",
+          "source": "./test/src"
+        },
+        "manual": {
+          "files":[
+            "./doc/manual/overview.md",
+            "./doc/manual/installation.md",
+            "./doc/manual/usage.md",
+            "./doc/manual/example.md",
+            "./doc/manual/optimization.md"
+          ]
+        }
+      }
+    },
+    {
+      "name": "esdoc-inject-style-plugin",
+      "option": {
+        "enable": true,
+        "styles": ["./doc/css/style.css"]
+      }
+    },
+    {
+      "name": "esdoc-inject-script-plugin",
+      "option": {
+        "enable": true,
+        "scripts": ["./doc/scripts/header.js"]
+      }
+    }
+  ]
 }
