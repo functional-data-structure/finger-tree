@@ -1,122 +1,8 @@
 {
-  "coverage": "5.55%",
-  "expectCount": 36,
-  "actualCount": 2,
+  "coverage": "5.66%",
+  "expectCount": 159,
+  "actualCount": 9,
   "files": {
-    "src/0-core/measure/CachedMeasure.js": {
-      "expectCount": 1,
-      "actualCount": 0,
-      "undocumentLines": [
-        1
-      ]
-    },
-    "src/3-tree/implementations/2-Deep.js": {
-      "expectCount": 1,
-      "actualCount": 0,
-      "undocumentLines": [
-        7
-      ]
-    },
-    "src/1-digit/0-Digit.js": {
-      "expectCount": 1,
-      "actualCount": 0,
-      "undocumentLines": [
-        3
-      ]
-    },
-    "src/3-tree/implementations/0-Empty.js": {
-      "expectCount": 1,
-      "actualCount": 0,
-      "undocumentLines": [
-        5
-      ]
-    },
-    "src/1-digit/4-Four.js": {
-      "expectCount": 1,
-      "actualCount": 0,
-      "undocumentLines": [
-        5
-      ]
-    },
-    "src/4-lazy/0-Lazy.js": {
-      "expectCount": 1,
-      "actualCount": 0,
-      "undocumentLines": [
-        3
-      ]
-    },
-    "src/2-node/2-Node2.js": {
-      "expectCount": 2,
-      "actualCount": 0,
-      "undocumentLines": [
-        3,
-        46
-      ]
-    },
-    "src/2-node/3-Node3.js": {
-      "expectCount": 2,
-      "actualCount": 0,
-      "undocumentLines": [
-        3,
-        47
-      ]
-    },
-    "src/1-digit/1-One.js": {
-      "expectCount": 1,
-      "actualCount": 0,
-      "undocumentLines": [
-        5
-      ]
-    },
-    "src/3-tree/implementations/1-Single.js": {
-      "expectCount": 1,
-      "actualCount": 0,
-      "undocumentLines": [
-        6
-      ]
-    },
-    "src/0-core/split/Split.js": {
-      "expectCount": 1,
-      "actualCount": 0,
-      "undocumentLines": [
-        1
-      ]
-    },
-    "src/1-digit/3-Three.js": {
-      "expectCount": 1,
-      "actualCount": 0,
-      "undocumentLines": [
-        5
-      ]
-    },
-    "src/3-tree/base/Tree.js": {
-      "expectCount": 1,
-      "actualCount": 0,
-      "undocumentLines": [
-        3
-      ]
-    },
-    "src/1-digit/2-Two.js": {
-      "expectCount": 1,
-      "actualCount": 0,
-      "undocumentLines": [
-        5
-      ]
-    },
-    "src/0-core/_fast/fast-iterators/2-_EMPTY.js": {
-      "expectCount": 1,
-      "actualCount": 0,
-      "undocumentLines": [
-        3
-      ]
-    },
-    "src/0-core/_fast/fast-iterators/1-_EmptyGenerator.js": {
-      "expectCount": 1,
-      "actualCount": 0,
-      "undocumentLines": [
-        1
-      ]
-    },
     "src/0-core/_fast/_app3.js": {
       "expectCount": 1,
       "actualCount": 0,
@@ -173,6 +59,21 @@
         1
       ]
     },
+    "src/0-core/_fast/fast-iterators/1-_EmptyGenerator.js": {
+      "expectCount": 2,
+      "actualCount": 0,
+      "undocumentLines": [
+        1,
+        3
+      ]
+    },
+    "src/0-core/_fast/fast-iterators/2-_EMPTY.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        3
+      ]
+    },
     "src/0-core/concatenate/app3.js": {
       "expectCount": 1,
       "actualCount": 0,
@@ -185,37 +86,6 @@
       "actualCount": 0,
       "undocumentLines": [
         1
-      ]
-    },
-    "src/0-core/measure/cache.js": {
-      "expectCount": 1,
-      "actualCount": 0,
-      "undocumentLines": [
-        3
-      ]
-    },
-    "src/0-core/split/deepL.js": {
-      "expectCount": 1,
-      "actualCount": 1,
-      "undocumentLines": []
-    },
-    "src/0-core/split/deepR.js": {
-      "expectCount": 1,
-      "actualCount": 1,
-      "undocumentLines": []
-    },
-    "src/4-lazy/1-delay.js": {
-      "expectCount": 1,
-      "actualCount": 0,
-      "undocumentLines": [
-        3
-      ]
-    },
-    "src/5-api.js": {
-      "expectCount": 1,
-      "actualCount": 0,
-      "undocumentLines": [
-        3
       ]
     },
     "src/0-core/concatenate/from.js": {
@@ -237,6 +107,252 @@
       "actualCount": 0,
       "undocumentLines": [
         4
+      ]
+    },
+    "src/0-core/measure/CachedMeasure.js": {
+      "expectCount": 4,
+      "actualCount": 0,
+      "undocumentLines": [
+        1,
+        5,
+        9,
+        13
+      ]
+    },
+    "src/0-core/measure/cache.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        3
+      ]
+    },
+    "src/0-core/split/Split.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        1
+      ]
+    },
+    "src/0-core/split/deepL.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "src/0-core/split/deepR.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "src/1-digit/0-Digit.js": {
+      "expectCount": 4,
+      "actualCount": 0,
+      "undocumentLines": [
+        3,
+        5,
+        9,
+        13
+      ]
+    },
+    "src/1-digit/1-One.js": {
+      "expectCount": 12,
+      "actualCount": 1,
+      "undocumentLines": [
+        5,
+        12,
+        17,
+        21,
+        25,
+        29,
+        33,
+        37,
+        41,
+        52,
+        62
+      ]
+    },
+    "src/1-digit/2-Two.js": {
+      "expectCount": 12,
+      "actualCount": 1,
+      "undocumentLines": [
+        5,
+        13,
+        18,
+        22,
+        26,
+        30,
+        34,
+        38,
+        42,
+        55,
+        65
+      ]
+    },
+    "src/1-digit/3-Three.js": {
+      "expectCount": 12,
+      "actualCount": 1,
+      "undocumentLines": [
+        5,
+        14,
+        25,
+        29,
+        33,
+        37,
+        41,
+        45,
+        49,
+        64,
+        74
+      ]
+    },
+    "src/1-digit/4-Four.js": {
+      "expectCount": 12,
+      "actualCount": 1,
+      "undocumentLines": [
+        5,
+        15,
+        29,
+        33,
+        37,
+        41,
+        45,
+        49,
+        53,
+        70,
+        80
+      ]
+    },
+    "src/2-node/2-Node2.js": {
+      "expectCount": 11,
+      "actualCount": 0,
+      "undocumentLines": [
+        3,
+        9,
+        13,
+        17,
+        21,
+        25,
+        29,
+        33,
+        37,
+        41,
+        46
+      ]
+    },
+    "src/2-node/3-Node3.js": {
+      "expectCount": 11,
+      "actualCount": 0,
+      "undocumentLines": [
+        3,
+        10,
+        14,
+        18,
+        22,
+        26,
+        30,
+        34,
+        38,
+        42,
+        47
+      ]
+    },
+    "src/3-tree/base/Tree.js": {
+      "expectCount": 6,
+      "actualCount": 0,
+      "undocumentLines": [
+        3,
+        5,
+        9,
+        13,
+        17,
+        21
+      ]
+    },
+    "src/3-tree/implementations/0-Empty.js": {
+      "expectCount": 13,
+      "actualCount": 1,
+      "undocumentLines": [
+        5,
+        12,
+        16,
+        20,
+        24,
+        28,
+        32,
+        36,
+        40,
+        44,
+        48,
+        59
+      ]
+    },
+    "src/3-tree/implementations/1-Single.js": {
+      "expectCount": 13,
+      "actualCount": 1,
+      "undocumentLines": [
+        6,
+        14,
+        18,
+        22,
+        26,
+        30,
+        34,
+        38,
+        47,
+        56,
+        60,
+        71
+      ]
+    },
+    "src/3-tree/implementations/2-Deep.js": {
+      "expectCount": 13,
+      "actualCount": 1,
+      "undocumentLines": [
+        7,
+        17,
+        37,
+        41,
+        45,
+        49,
+        65,
+        80,
+        96,
+        112,
+        118,
+        167
+      ]
+    },
+    "src/4-lazy/0-Lazy.js": {
+      "expectCount": 14,
+      "actualCount": 0,
+      "undocumentLines": [
+        3,
+        10,
+        18,
+        22,
+        26,
+        30,
+        34,
+        38,
+        42,
+        46,
+        50,
+        54,
+        58,
+        62
+      ]
+    },
+    "src/4-lazy/1-delay.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        3
+      ]
+    },
+    "src/5-api.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        3
       ]
     }
   }

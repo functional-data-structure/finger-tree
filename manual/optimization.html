@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../">
+  <title data-ice="title">Manual | aureooms/js-fingertree</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+<link rel="stylesheet" href="./inject/css/0-style.css"><script src="./inject/script/0-header.js"></script><meta name="description" content="Finger Trees for JavaScript"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="aureooms/js-fingertree"><meta property="twitter:description" content="Finger Trees for JavaScript"></head>
+<body class="layout-container manual-root" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+<a style="position:relative; top:3px;" href="https://github.com/aureooms/js-fingertree.git"><img width="20px" src="./image/github.png"></a></header>
+
+<nav class="navigation" data-ice="nav"><div class="manual-toc-root">
+  
+<div data-ice="manual">
+    <ul class="manual-toc">
+      
+    <li data-ice="manualNav" class="indent-h1" data-link="manual/overview.html"><a href="manual/overview.html" data-ice="link">Overview</a></li>
+</ul>
+  </div>
+<div data-ice="manual">
+    <ul class="manual-toc">
+      
+    <li data-ice="manualNav" class="indent-h1" data-link="manual/installation.html"><a href="manual/installation.html" data-ice="link">Installation</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/installation.html"><a href="manual/installation.html#jspm" data-ice="link">jspm</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/installation.html"><a href="manual/installation.html#npm" data-ice="link">npm</a></li>
+</ul>
+  </div>
+<div data-ice="manual">
+    <ul class="manual-toc">
+      
+    <li data-ice="manualNav" class="indent-h1" data-link="manual/usage.html"><a href="manual/usage.html" data-ice="link">Usage</a></li>
+</ul>
+  </div>
+<div data-ice="manual">
+    <ul class="manual-toc">
+      
+    <li data-ice="manualNav" class="indent-h1" data-link="manual/example.html"><a href="manual/example.html" data-ice="link">Example</a></li>
+</ul>
+  </div>
+<div data-ice="manual">
+    <ul class="manual-toc">
+      
+    <li data-ice="manualNav" class="indent-h1" data-link="manual/optimization.html"><a href="manual/optimization.html" data-ice="link">Optimization of the code step by step</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/optimization.html"><a href="manual/optimization.html#when-the-benchmark-was-added" data-ice="link">When the benchmark was added</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/optimization.html"><a href="manual/optimization.html#first-implementation-of-lazy-evaluation-of-subtrees" data-ice="link">First implementation of lazy evaluation of subtrees</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/optimization.html"><a href="manual/optimization.html#unwrap-values" data-ice="link">Unwrap values</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/optimization.html"><a href="manual/optimization.html#removing-iterator-loops-and-bindings-for-fixed-size-sequences" data-ice="link">Removing iterator loops and bindings for fixed size sequences</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/optimization.html"><a href="manual/optimization.html#removing-loops--part-ii" data-ice="link">Removing loops: part II</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/optimization.html"><a href="manual/optimization.html#specialized-procedures-for-small-loops--part-ii" data-ice="link">Specialized procedures for small loops: part II</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/optimization.html"><a href="manual/optimization.html#dropping-some-of-the-es6-syntax" data-ice="link">Dropping some of the es6 syntax</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/optimization.html"><a href="manual/optimization.html#to-be-continued---" data-ice="link">To be continued...</a></li>
+</ul>
+  </div>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><div class="github-markdown" data-ice="content"><h1 id="optimization-of-the-code-step-by-step">Optimization of the code step by step</h1><p>I will copy here the output of a benchmark run on my computer after each
+optimization change together with a small explanation.</p>
+<p><em><strong>Note</strong>: I did not check if the real issues were caused by generators, bound functions,
+V8 optimization inhibitors, or anything else...</em></p>
+<h2 id="when-the-benchmark-was-added">When the benchmark was added</h2><blockquote>
+<p>d903efb8d9011a44a5ff732c569b2ae33aa5b8f1</p>
+</blockquote>
+<p>What the benchmark code does is, in order:</p>
+<ul>
+<li>build an empty tree <code>T</code></li>
+<li>add 100000 elements to the beginning of <code>T</code></li>
+<li>remove those 100000 elements by popping the first element of <code>T</code> 100000 times</li>
+<li>add 100000 elements to the end of <code>T</code></li>
+<li>split <code>T</code> at all 100000 positions, one after the other</li>
+<li>remove the 100000 elements of <code>T</code> by popping the last element 100000 times</li>
+</ul>
+<p>Here are the first running times I measured for this implementation. It is not
+difficult to see that the implementation is not fast at all. 100000 elements is
+not that much right?</p>
+<pre><code class="lang-sh"><code class="source-code prettyprint">$ node benchmark/tree.js
+number of operations:  100000
+cons: 8584ms
+tail: 6841ms
+push: 8581ms
+split: 144243ms
+init: 6896ms</code>
+</code></pre>
+<p>However most of the motivation for those optimization steps came from applying
+the same benchmark to
+<a href="https://github.com/qiao/fingertree.js">another JavaScript implementation</a>
+(actually, I copied the benchmark from Joe&apos;s repository). This made it obvious
+that my implementation was performing badly.</p>
+<pre><code class="lang-sh"><code class="source-code prettyprint">$ node ../fingertree.js/benchmark/benchmark.js
+number of operations:  100000
+cons: 155ms
+tail: 221ms
+push: 134ms
+split: 1889ms
+init: 141ms</code>
+</code></pre>
+<h2 id="first-implementation-of-lazy-evaluation-of-subtrees">First implementation of lazy evaluation of subtrees</h2><blockquote>
+<p>f0ca58169a32140a8617625466f15489a3549124</p>
+</blockquote>
+<p>A Deep instance posseses a subtree which in some cases is not accessed at all
+during the whole lifetime of its parent. So why build it? The idea is to delay
+the construction of the object, which might be expensive, to a later point in
+time using a proxy: a finger tree look-alike object that will construct the
+real subtree if needed.</p>
+<p>Time measurements after applying lazy evaluation concepts:</p>
+<pre><code class="lang-sh"><code class="source-code prettyprint">$ node benchmark/tree.js
+number of operations:  100000
+cons: 8585ms
+tail: 6812ms
+push: 8113ms
+split: 139449ms
+init: 6777ms</code>
+</code></pre>
+<p>Unfortunately there is no big performance improvement here but as you&apos;ll see
+there are some nastier things to change.</p>
+<h2 id="unwrap-values">Unwrap values</h2><blockquote>
+<p>19c8ca9298c98eef7e3f257257cb4e01adfe0edb</p>
+</blockquote>
+<p>Before this change, each value was first wrapped in a unique-value-node-like
+structure defined as:</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">class Measured {
+
+    constructor ( element , v ) {
+        this.element = element ;
+        this.v = v ;
+    }
+
+    measure ( ) {
+        return this.v ;
+    }
+
+}</code>
+</code></pre>
+<p>where <code>v</code> is the value returned by <code>Measure.measure( element )</code>. This wrapping
+allowed to give the same interface to elements, nodes, digits and trees with
+respect to computing measures. This approach has at least 2 problems:</p>
+<ul>
+<li>It introduces one additional level of indirection by wrapping all values.</li>
+<li>The way it was implemented here caches measures for all elements. This might not
+be a good thing in settings where measures are big objects. Moreover, this
+is in contradiction with the <em>lazy way</em> of functional programming
+paradigms.</li>
+</ul>
+<p>However, there is a simpler way to solve the <em>common interface</em> problem. Indeed,
+the elements contained in the digits of the root tree can be measured
+with the Measure object left unchanged, and starting from the subtree of the
+root level we just need a modified Measure object that uses the interface of
+Node2 and Node3 to compute the node measures. Never will digits contain objects
+of different types, so patching the Measure object this way suffices, there is
+no need to give the same interface to nodes and elements.</p>
+<p>Here are the measurements after the change:</p>
+<pre><code class="lang-sh"><code class="source-code prettyprint">$ node benchmark/tree.js
+number of operations:  100000
+cons: 8452ms
+tail: 6930ms
+push: 7983ms
+split: 141338ms
+init: 6657ms</code>
+</code></pre>
+<p>Mostly noise for the moment. There must be something else to fix...</p>
+<h2 id="removing-iterator-loops-and-bindings-for-fixed-size-sequences">Removing iterator loops and bindings for fixed size sequences</h2><blockquote>
+<p>28f6ee08d33e2cb2b9d0e5cae69948a7013bc0b7</p>
+</blockquote>
+<p>At some point I decided to use a better tool than intuition to progress:
+profiling. This change is the first where I guided the pruning by looking at
+the output of <code>node --prof benchmark/tree.js</code> using <code>node-tick-processor</code>
+from the <a href="https://www.npmjs.com/package/tick">tick</a> package.</p>
+<p>Before this change, digit measures where computed using the idiom</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">reduce( M.plus.bind( M ) , map( M.measure.bind( M ) , digit ) , M.zero( ) ) ;</code>
+</code></pre>
+<p>However, since all four digit types are hard-coded has classes One, Two, Three
+and Four we could as well give a custom implementation of the measure( ) method
+to each digit type. For type Two for example, we have:</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">class Two {
+
+    ...
+
+    measure ( M ) {
+        return M.plus( M.measure( this.a ) , M.measure( this.b ) ) ;
+    }
+
+    ...
+
+}</code>
+</code></pre>
+<p>Here are the times:</p>
+<pre><code class="lang-sh"><code class="source-code prettyprint">$ node benchmark/tree.js
+number of operations:  100000
+cons: 350ms
+tail: 493ms
+push: 398ms
+split: 25851ms
+init: 442ms</code>
+</code></pre>
+<p>A drastic improvement right? However, there seems to be a problem with the
+split method...</p>
+<h2 id="removing-loops--part-ii">Removing loops: part II</h2><blockquote>
+<p>5b0af102240b3f0cfda7001f6b108a9811594c7a</p>
+</blockquote>
+<p>It turns out I didn&apos;t remove all occurences of this generic digit measurement
+method. Here are the running times after removing occurences of this method
+from <code>Deep.splitTree</code>.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">$ node benchmark/tree.js
+number of operations:  100000
+cons: 370ms
+tail: 473ms
+push: 293ms
+split: 7563ms
+init: 396ms</code>
+</code></pre>
+<p>Better.</p>
+<h2 id="specialized-procedures-for-small-loops--part-ii">Specialized procedures for small loops: part II</h2><blockquote>
+<p>88592b2562bea585c868e036a04dd1687e91211c
+726354a3bd0591d767fb658d206680a6a74d2fbb</p>
+</blockquote>
+<p>These two commits introduce specialized procedures for building trees from
+small lists and digits. These are really small trees, i.e. 0 to 4 elements, so
+why use the generic <code>from_iterable</code> constructor?</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">$ node benchmark/tree.js
+number of operations:  100000
+cons: 315ms
+tail: 435ms
+push: 249ms
+split: 4834ms
+init: 408ms</code>
+</code></pre>
+<p>Here again a big improvement on the split method.</p>
+<h2 id="dropping-some-of-the-es6-syntax">Dropping some of the es6 syntax</h2><blockquote>
+<p>295011e3293b3dd2fe1edc80bdf1a14ca6d4dcca</p>
+</blockquote>
+<p>This is a big one. I started writing this library with es6 syntax in mind.
+However, looking at the profiler output you will see:</p>
+<pre><code class="lang-sh"><code class="source-code prettyprint">$ node-tick-processor isolate-0x2af4cf0-v8.log | grep &apos;3:24&apos;
+    146    2.3%    2.4%  LazyCompile: *get /home/aureooms/sandbox/js-fingertree/js/dist/fingertree.js:3:24
+    278  100.0%          LazyCompile: *get /home/aureooms/sandbox/js-fingertree/js/dist/fingertree.js:3:24
+      6  100.0%            LazyCompile: *get /home/aureooms/sandbox/js-fingertree/js/dist/fingertree.js:3:24
+    165  100.0%          LazyCompile: *get /home/aureooms/sandbox/js-fingertree/js/dist/fingertree.js:3:24
+     97   99.0%        LazyCompile: *get /home/aureooms/sandbox/js-fingertree/js/dist/fingertree.js:3:24
+    127   98.4%          LazyCompile: *get /home/aureooms/sandbox/js-fingertree/js/dist/fingertree.js:3:24
+    163  100.0%          LazyCompile: *get /home/aureooms/sandbox/js-fingertree/js/dist/fingertree.js:3:24
+    146    2.3%  LazyCompile: *get /home/aureooms/sandbox/js-fingertree/js/dist/fingertree.js:3:24
+    138  100.0%          LazyCompile: *get /home/aureooms/sandbox/js-fingertree/js/dist/fingertree.js:3:24
+     58  100.0%          LazyCompile: *get /home/aureooms/sandbox/js-fingertree/js/dist/fingertree.js:3:24
+    129  100.0%      LazyCompile: *get /home/aureooms/sandbox/js-fingertree/js/dist/fingertree.js:3:24
+      3    2.3%    LazyCompile: *get /home/aureooms/sandbox/js-fingertree/js/dist/fingertree.js:3:24</code>
+</code></pre>
+<p>I didn&apos;t analyze much but it has to do with the way classes are handled by
+babel.</p>
+<p>Ok so I just threw the es6 classes and replaced them with plain old prototypes.
+Hereunder are the new running times:</p>
+<pre><code class="lang-sh"><code class="source-code prettyprint">$ node benchmark/tree.js
+number of operations:  100000
+cons: 83ms
+tail: 196ms
+push: 64ms
+split: 1177ms
+init: 148ms</code>
+</code></pre>
+<p>Great!</p>
+<h2 id="to-be-continued---">To be continued...</h2></div>
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.0.4)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

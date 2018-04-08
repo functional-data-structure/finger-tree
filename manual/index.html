@@ -3,16 +3,12 @@
 <head>
   <meta charset="utf-8">
   <base data-ice="baseUrl" href="../">
-  <title data-ice="title">Manual</title>
+  <title data-ice="title">Manual | aureooms/js-fingertree</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
-  
-  
   <script src="script/manual.js"></script>
-<script data-ice="userScript" src="user/script/0-header.js"></script>
-<link data-ice="userStyle" rel="stylesheet" href="user/css/0-style.css">
-</head>
+<link rel="stylesheet" href="./inject/css/0-style.css"><script src="./inject/script/0-header.js"></script><meta name="description" content="Finger Trees for JavaScript"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="aureooms/js-fingertree"><meta property="twitter:description" content="Finger Trees for JavaScript"></head>
 <body class="layout-container manual-root manual-index" data-ice="rootContainer">
 
 <header>
@@ -20,8 +16,7 @@
   <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
   <a href="source.html">Source</a>
-  <a href="test.html" data-ice="testLink">Test</a>
-  <a data-ice="repoURL" href="https://github.com/aureooms/js-fingertree.git" class="repo-url-github">Repository</a>
+  
   <div class="search-box">
   <span>
     <img src="./image/search.png">
@@ -29,38 +24,48 @@
   </span>
     <ul class="search-result"></ul>
   </div>
-</header>
+<a style="position:relative; top:3px;" href="https://github.com/aureooms/js-fingertree.git"><img width="20px" src="./image/github.png"></a></header>
 
 <nav class="navigation" data-ice="nav"><div class="manual-toc-root">
   
-<div data-ice="manual" data-toc-name="overview">
+<div data-ice="manual">
     <ul class="manual-toc">
       
-    </ul>
-  </div>
-<div data-ice="manual" data-toc-name="installation">
-    <ul class="manual-toc">
-      
-    <li data-ice="manualNav" class="indent-h3" data-link="manual/installation/installation.html"><a href="manual/installation/installation.html#jspm" data-ice="link">jspm</a></li>
-<li data-ice="manualNav" class="indent-h3" data-link="manual/installation/installation.html"><a href="manual/installation/installation.html#npm" data-ice="link">npm</a></li>
+    <li data-ice="manualNav" class="indent-h1" data-link="manual/overview.html"><a href="manual/overview.html" data-ice="link">Overview</a></li>
 </ul>
   </div>
-<div data-ice="manual" data-toc-name="usage">
+<div data-ice="manual">
     <ul class="manual-toc">
       
-    </ul>
+    <li data-ice="manualNav" class="indent-h1" data-link="manual/installation.html"><a href="manual/installation.html" data-ice="link">Installation</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/installation.html"><a href="manual/installation.html#jspm" data-ice="link">jspm</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/installation.html"><a href="manual/installation.html#npm" data-ice="link">npm</a></li>
+</ul>
   </div>
-<div data-ice="manual" data-toc-name="example">
+<div data-ice="manual">
     <ul class="manual-toc">
       
-    </ul>
+    <li data-ice="manualNav" class="indent-h1" data-link="manual/usage.html"><a href="manual/usage.html" data-ice="link">Usage</a></li>
+</ul>
   </div>
-<div data-ice="manual" data-toc-name="reference">
+<div data-ice="manual">
     <ul class="manual-toc">
       
-    <li data-ice="manualNav" class="indent-h1 manual-color manual-color-reference" data-section-count="&#x25A0;&#x25A0;&#x25A0;&#x25A0;&#x25A0;" data-link="identifiers.html"><a href="identifiers.html" data-ice="link">Reference</a></li>
-<li data-ice="manualNav" class="indent-h2" data-link="identifiers.html"><a href="identifiers.html#function" data-ice="link">Function</a></li>
-<li data-ice="manualNav" class="indent-h2" data-link="identifiers.html"><a href="identifiers.html#variable" data-ice="link">Variable</a></li>
+    <li data-ice="manualNav" class="indent-h1" data-link="manual/example.html"><a href="manual/example.html" data-ice="link">Example</a></li>
+</ul>
+  </div>
+<div data-ice="manual">
+    <ul class="manual-toc">
+      
+    <li data-ice="manualNav" class="indent-h1" data-link="manual/optimization.html"><a href="manual/optimization.html" data-ice="link">Optimization of the code step by step</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/optimization.html"><a href="manual/optimization.html#when-the-benchmark-was-added" data-ice="link">When the benchmark was added</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/optimization.html"><a href="manual/optimization.html#first-implementation-of-lazy-evaluation-of-subtrees" data-ice="link">First implementation of lazy evaluation of subtrees</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/optimization.html"><a href="manual/optimization.html#unwrap-values" data-ice="link">Unwrap values</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/optimization.html"><a href="manual/optimization.html#removing-iterator-loops-and-bindings-for-fixed-size-sequences" data-ice="link">Removing iterator loops and bindings for fixed size sequences</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/optimization.html"><a href="manual/optimization.html#removing-loops--part-ii" data-ice="link">Removing loops: part II</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/optimization.html"><a href="manual/optimization.html#specialized-procedures-for-small-loops--part-ii" data-ice="link">Specialized procedures for small loops: part II</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/optimization.html"><a href="manual/optimization.html#dropping-some-of-the-es6-syntax" data-ice="link">Dropping some of the es6 syntax</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/optimization.html"><a href="manual/optimization.html#to-be-continued---" data-ice="link">To be continued...</a></li>
 </ul>
   </div>
 </div>
@@ -69,1012 +74,226 @@
 <div class="content" data-ice="content"><div class="github-markdown">
   
 
-  <p class="manual-badge" data-ice="manualBadge"><img src="./manual-badge.svg"></p>
+  
 
   <div class="manual-cards">
     
   <div class="manual-card-wrap" data-ice="cards">
-      <h1 data-ice="label" class="manual-color manual-color-reference" data-section-count="&#x25A0;&#x25A0;&#x25A0;&#x25A0;&#x25A0;"><span data-ice="label-inner">References</span></h1>
       <div class="manual-card">
-        <div data-ice="card"><h1>References</h1>
+        <div data-ice="card"><h1>Overview</h1></div>
+        <a data-ice="link" href="manual/overview.html"></a>
+      </div>
+    </div>
+<div class="manual-card-wrap" data-ice="cards">
+      <div class="manual-card">
+        <div data-ice="card"><h1>Installation</h1><p>Can be managed using
+<a href="http://jspm.io">jspm</a>
+or <a href="https://github.com/npm/npm">npm</a>.</p><h3>jspm</h3><pre><code class="lang-terminal"><code class="source-code prettyprint">jspm install npm:@aureooms/js-fingertree</code>
+</code></pre><h3>npm</h3><pre><code class="lang-terminal"><code class="source-code prettyprint">npm install @aureooms/js-fingertree --save</code>
+</code></pre></div>
+        <a data-ice="link" href="manual/installation.html"></a>
+      </div>
+    </div>
+<div class="manual-card-wrap" data-ice="cards">
+      <div class="manual-card">
+        <div data-ice="card"><h1>Usage</h1><p>The code needs a ES2015+ polyfill to work, for example
+<a href="https://babeljs.io/docs/usage/polyfill">babel-polyfill</a>.</p><pre><code class="lang-js"><code class="source-code prettyprint">require( &apos;babel-polyfill&apos; ) ;
+// or
+import &apos;babel-polyfill&apos; ;</code>
+</code></pre><p>Then</p><pre><code class="lang-js"><code class="source-code prettyprint">const fingertree = require( &apos;@aureooms/js-fingertree&apos; ) ;
+// or
+import fingertree from &apos;@aureooms/js-fingertree&apos; ;</code>
+</code></pre></div>
+        <a data-ice="link" href="manual/usage.html"></a>
+      </div>
+    </div>
+<div class="manual-card-wrap" data-ice="cards">
+      <div class="manual-card">
+        <div data-ice="card"><h1>Example</h1><pre><code class="lang-js"><code class="source-code prettyprint">import { Measure } from &apos;@aureooms/js-measure&apos; ;
+import { gt } from &apos;@aureooms/js-predicate&apos; ;
 
+const { COUNTER } = Measure ;
 
-<div data-ice="functionSummary"><h2 id="function">Function Summary</h2><table class="summary" data-ice="summary">
-  <thead><tr><td data-ice="title" colspan="3">Static Public Function Summary</td></tr></thead>
-  <tbody>
-  
-  <tr data-ice="target">
-    <td>
-      <span class="access" data-ice="access">public</span>
-      
-      
-      
-      <span class="override" data-ice="override"></span>
-    </td>
-    <td>
-      <div>
-        <p>
-          
-          
-          <span data-ice="name"><span><a href="function/index.html#static-function-CachedMeasure">CachedMeasure</a></span></span><span data-ice="signature">(M: <span>*</span>)</span>
-        </p>
-      </div>
-      <div>
-        
-        
-        
-      </div>
-    </td>
-    <td>
-      
-      
-    </td>
-  </tr>
-<tr data-ice="target">
-    <td>
-      <span class="access" data-ice="access">public</span>
-      
-      
-      
-      <span class="override" data-ice="override"></span>
-    </td>
-    <td>
-      <div>
-        <p>
-          
-          
-          <span data-ice="name"><span><a href="function/index.html#static-function-Deep">Deep</a></span></span><span data-ice="signature">(M: <span>*</span>, left: <span>*</span>, middle: <span>*</span>, right: <span>*</span>)</span>
-        </p>
-      </div>
-      <div>
-        
-        
-        
-      </div>
-    </td>
-    <td>
-      
-      
-    </td>
-  </tr>
-<tr data-ice="target">
-    <td>
-      <span class="access" data-ice="access">public</span>
-      
-      
-      
-      <span class="override" data-ice="override"></span>
-    </td>
-    <td>
-      <div>
-        <p>
-          
-          
-          <span data-ice="name"><span><a href="function/index.html#static-function-Digit">Digit</a></span></span><span data-ice="signature">()</span>
-        </p>
-      </div>
-      <div>
-        
-        
-        
-      </div>
-    </td>
-    <td>
-      
-      
-    </td>
-  </tr>
-<tr data-ice="target">
-    <td>
-      <span class="access" data-ice="access">public</span>
-      
-      
-      
-      <span class="override" data-ice="override"></span>
-    </td>
-    <td>
-      <div>
-        <p>
-          
-          
-          <span data-ice="name"><span><a href="function/index.html#static-function-Empty">Empty</a></span></span><span data-ice="signature">(M: <span>*</span>)</span>
-        </p>
-      </div>
-      <div>
-        
-        
-        
-      </div>
-    </td>
-    <td>
-      
-      
-    </td>
-  </tr>
-<tr data-ice="target">
-    <td>
-      <span class="access" data-ice="access">public</span>
-      
-      
-      
-      <span class="override" data-ice="override"></span>
-    </td>
-    <td>
-      <div>
-        <p>
-          
-          
-          <span data-ice="name"><span><a href="function/index.html#static-function-Four">Four</a></span></span><span data-ice="signature">(a: <span>*</span>, b: <span>*</span>, c: <span>*</span>, d: <span>*</span>)</span>
-        </p>
-      </div>
-      <div>
-        
-        
-        
-      </div>
-    </td>
-    <td>
-      
-      
-    </td>
-  </tr>
-<tr data-ice="target">
-    <td>
-      <span class="access" data-ice="access">public</span>
-      
-      
-      
-      <span class="override" data-ice="override"></span>
-    </td>
-    <td>
-      <div>
-        <p>
-          
-          
-          <span data-ice="name"><span><a href="function/index.html#static-function-Lazy">Lazy</a></span></span><span data-ice="signature">(thunk: <span>*</span>)</span>
-        </p>
-      </div>
-      <div>
-        
-        
-        
-      </div>
-    </td>
-    <td>
-      
-      
-    </td>
-  </tr>
-<tr data-ice="target">
-    <td>
-      <span class="access" data-ice="access">public</span>
-      
-      
-      
-      <span class="override" data-ice="override"></span>
-    </td>
-    <td>
-      <div>
-        <p>
-          
-          
-          <span data-ice="name"><span><a href="function/index.html#static-function-Node2">Node2</a></span></span><span data-ice="signature">(v: <span>*</span>, a: <span>*</span>, b: <span>*</span>)</span>
-        </p>
-      </div>
-      <div>
-        
-        
-        
-      </div>
-    </td>
-    <td>
-      
-      
-    </td>
-  </tr>
-<tr data-ice="target">
-    <td>
-      <span class="access" data-ice="access">public</span>
-      
-      
-      
-      <span class="override" data-ice="override"></span>
-    </td>
-    <td>
-      <div>
-        <p>
-          
-          
-          <span data-ice="name"><span><a href="function/index.html#static-function-Node3">Node3</a></span></span><span data-ice="signature">(v: <span>*</span>, a: <span>*</span>, b: <span>*</span>, c: <span>*</span>)</span>
-        </p>
-      </div>
-      <div>
-        
-        
-        
-      </div>
-    </td>
-    <td>
-      
-      
-    </td>
-  </tr>
-<tr data-ice="target">
-    <td>
-      <span class="access" data-ice="access">public</span>
-      
-      
-      
-      <span class="override" data-ice="override"></span>
-    </td>
-    <td>
-      <div>
-        <p>
-          
-          
-          <span data-ice="name"><span><a href="function/index.html#static-function-One">One</a></span></span><span data-ice="signature">(a: <span>*</span>)</span>
-        </p>
-      </div>
-      <div>
-        
-        
-        
-      </div>
-    </td>
-    <td>
-      
-      
-    </td>
-  </tr>
-<tr data-ice="target">
-    <td>
-      <span class="access" data-ice="access">public</span>
-      
-      
-      
-      <span class="override" data-ice="override"></span>
-    </td>
-    <td>
-      <div>
-        <p>
-          
-          
-          <span data-ice="name"><span><a href="function/index.html#static-function-Single">Single</a></span></span><span data-ice="signature">(M: <span>*</span>, element: <span>*</span>)</span>
-        </p>
-      </div>
-      <div>
-        
-        
-        
-      </div>
-    </td>
-    <td>
-      
-      
-    </td>
-  </tr>
-<tr data-ice="target">
-    <td>
-      <span class="access" data-ice="access">public</span>
-      
-      
-      
-      <span class="override" data-ice="override"></span>
-    </td>
-    <td>
-      <div>
-        <p>
-          
-          
-          <span data-ice="name"><span><a href="function/index.html#static-function-Split">Split</a></span></span><span data-ice="signature">(left: <span>*</span>, middle: <span>*</span>, right: <span>*</span>)</span>
-        </p>
-      </div>
-      <div>
-        
-        
-        
-      </div>
-    </td>
-    <td>
-      
-      
-    </td>
-  </tr>
-<tr data-ice="target">
-    <td>
-      <span class="access" data-ice="access">public</span>
-      
-      
-      
-      <span class="override" data-ice="override"></span>
-    </td>
-    <td>
-      <div>
-        <p>
-          
-          
-          <span data-ice="name"><span><a href="function/index.html#static-function-Three">Three</a></span></span><span data-ice="signature">(a: <span>*</span>, b: <span>*</span>, c: <span>*</span>)</span>
-        </p>
-      </div>
-      <div>
-        
-        
-        
-      </div>
-    </td>
-    <td>
-      
-      
-    </td>
-  </tr>
-<tr data-ice="target">
-    <td>
-      <span class="access" data-ice="access">public</span>
-      
-      
-      
-      <span class="override" data-ice="override"></span>
-    </td>
-    <td>
-      <div>
-        <p>
-          
-          
-          <span data-ice="name"><span><a href="function/index.html#static-function-Tree">Tree</a></span></span><span data-ice="signature">()</span>
-        </p>
-      </div>
-      <div>
-        
-        
-        
-      </div>
-    </td>
-    <td>
-      
-      
-    </td>
-  </tr>
-<tr data-ice="target">
-    <td>
-      <span class="access" data-ice="access">public</span>
-      
-      
-      
-      <span class="override" data-ice="override"></span>
-    </td>
-    <td>
-      <div>
-        <p>
-          
-          
-          <span data-ice="name"><span><a href="function/index.html#static-function-Two">Two</a></span></span><span data-ice="signature">(a: <span>*</span>, b: <span>*</span>)</span>
-        </p>
-      </div>
-      <div>
-        
-        
-        
-      </div>
-    </td>
-    <td>
-      
-      
-    </td>
-  </tr>
-<tr data-ice="target">
-    <td>
-      <span class="access" data-ice="access">public</span>
-      
-      
-      
-      <span class="override" data-ice="override"></span>
-    </td>
-    <td>
-      <div>
-        <p>
-          
-          
-          <span data-ice="name"><span><a href="function/index.html#static-function-app3">app3</a></span></span><span data-ice="signature">(A: <span>*</span>, list: <span>*</span>, B: <span>*</span>): <span>*</span></span>
-        </p>
-      </div>
-      <div>
-        
-        
-        
-      </div>
-    </td>
-    <td>
-      
-      
-    </td>
-  </tr>
-<tr data-ice="target">
-    <td>
-      <span class="access" data-ice="access">public</span>
-      
-      
-      
-      <span class="override" data-ice="override"></span>
-    </td>
-    <td>
-      <div>
-        <p>
-          
-          
-          <span data-ice="name"><span><a href="function/index.html#static-function-append">append</a></span></span><span data-ice="signature">(tree: <span>*</span>, iterable: <span>*</span>): <span>*</span></span>
-        </p>
-      </div>
-      <div>
-        
-        
-        
-      </div>
-    </td>
-    <td>
-      
-      
-    </td>
-  </tr>
-<tr data-ice="target">
-    <td>
-      <span class="access" data-ice="access">public</span>
-      
-      
-      
-      <span class="override" data-ice="override"></span>
-    </td>
-    <td>
-      <div>
-        <p>
-          
-          
-          <span data-ice="name"><span><a href="function/index.html#static-function-cache">cache</a></span></span><span data-ice="signature">(M: <span>*</span>): <span>*</span></span>
-        </p>
-      </div>
-      <div>
-        
-        
-        
-      </div>
-    </td>
-    <td>
-      
-      
-    </td>
-  </tr>
-<tr data-ice="target">
-    <td>
-      <span class="access" data-ice="access">public</span>
-      
-      
-      
-      <span class="override" data-ice="override"></span>
-    </td>
-    <td>
-      <div>
-        <p>
-          
-          
-          <span data-ice="name"><span><a href="function/index.html#static-function-deepL">deepL</a></span></span><span data-ice="signature">(M: <span>Measure</span>, left: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span>, middle: <span>FingerTree</span>, right: <span><a href="function/index.html#static-function-Digit">Digit</a></span>): <span>*</span></span>
-        </p>
-      </div>
-      <div>
-        
-        
-        
-      </div>
-    </td>
-    <td>
-      
-      
-    </td>
-  </tr>
-<tr data-ice="target">
-    <td>
-      <span class="access" data-ice="access">public</span>
-      
-      
-      
-      <span class="override" data-ice="override"></span>
-    </td>
-    <td>
-      <div>
-        <p>
-          
-          
-          <span data-ice="name"><span><a href="function/index.html#static-function-deepR">deepR</a></span></span><span data-ice="signature">(M: <span>Measure</span>, left: <span><a href="function/index.html#static-function-Digit">Digit</a></span>, middle: <span>FingerTree</span>, right: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span>): <span>*</span></span>
-        </p>
-      </div>
-      <div>
-        
-        
-        
-      </div>
-    </td>
-    <td>
-      
-      
-    </td>
-  </tr>
-<tr data-ice="target">
-    <td>
-      <span class="access" data-ice="access">public</span>
-      
-      
-      
-      <span class="override" data-ice="override"></span>
-    </td>
-    <td>
-      <div>
-        <p>
-          
-          
-          <span data-ice="name"><span><a href="function/index.html#static-function-delay">delay</a></span></span><span data-ice="signature">(thunk: <span>*</span>): <span>*</span></span>
-        </p>
-      </div>
-      <div>
-        
-        
-        
-      </div>
-    </td>
-    <td>
-      
-      
-    </td>
-  </tr>
-<tr data-ice="target">
-    <td>
-      <span class="access" data-ice="access">public</span>
-      
-      
-      
-      <span class="override" data-ice="override"></span>
-    </td>
-    <td>
-      <div>
-        <p>
-          
-          
-          <span data-ice="name"><span><a href="function/index.html#static-function-empty">empty</a></span></span><span data-ice="signature">(M: <span>*</span>)</span>
-        </p>
-      </div>
-      <div>
-        
-        
-        
-      </div>
-    </td>
-    <td>
-      
-      
-    </td>
-  </tr>
-<tr data-ice="target">
-    <td>
-      <span class="access" data-ice="access">public</span>
-      
-      
-      
-      <span class="override" data-ice="override"></span>
-    </td>
-    <td>
-      <div>
-        <p>
-          
-          
-          <span data-ice="name"><span><a href="function/index.html#static-function-from">from</a></span></span><span data-ice="signature">(M: <span>*</span>, iterable: <span>*</span>): <span>*</span></span>
-        </p>
-      </div>
-      <div>
-        
-        
-        
-      </div>
-    </td>
-    <td>
-      
-      
-    </td>
-  </tr>
-<tr data-ice="target">
-    <td>
-      <span class="access" data-ice="access">public</span>
-      
-      
-      
-      <span class="override" data-ice="override"></span>
-    </td>
-    <td>
-      <div>
-        <p>
-          
-          
-          <span data-ice="name"><span><a href="function/index.html#static-function-node2">node2</a></span></span><span data-ice="signature">(M: <span>*</span>, a: <span>*</span>, b: <span>*</span>): <span>*</span></span>
-        </p>
-      </div>
-      <div>
-        
-        
-        
-      </div>
-    </td>
-    <td>
-      
-      
-    </td>
-  </tr>
-<tr data-ice="target">
-    <td>
-      <span class="access" data-ice="access">public</span>
-      
-      
-      
-      <span class="override" data-ice="override"></span>
-    </td>
-    <td>
-      <div>
-        <p>
-          
-          
-          <span data-ice="name"><span><a href="function/index.html#static-function-node3">node3</a></span></span><span data-ice="signature">(M: <span>*</span>, a: <span>*</span>, b: <span>*</span>, c: <span>*</span>): <span>*</span></span>
-        </p>
-      </div>
-      <div>
-        
-        
-        
-      </div>
-    </td>
-    <td>
-      
-      
-    </td>
-  </tr>
-<tr data-ice="target">
-    <td>
-      <span class="access" data-ice="access">public</span>
-      
-      
-      
-      <span class="override" data-ice="override"></span>
-    </td>
-    <td>
-      <div>
-        <p>
-          
-          
-          <span data-ice="name"><span><a href="function/index.html#static-function-nodes">nodes</a></span></span><span data-ice="signature">(M: <span>*</span>, list: <span>*</span>): <span>*</span></span>
-        </p>
-      </div>
-      <div>
-        
-        
-        
-      </div>
-    </td>
-    <td>
-      
-      
-    </td>
-  </tr>
-<tr data-ice="target">
-    <td>
-      <span class="access" data-ice="access">public</span>
-      
-      
-      
-      <span class="override" data-ice="override"></span>
-    </td>
-    <td>
-      <div>
-        <p>
-          
-          
-          <span data-ice="name"><span><a href="function/index.html#static-function-prepend">prepend</a></span></span><span data-ice="signature">(tree: <span>*</span>, iterable: <span>*</span>): <span>*</span></span>
-        </p>
-      </div>
-      <div>
-        
-        
-        
-      </div>
-    </td>
-    <td>
-      
-      
-    </td>
-  </tr>
-</tbody>
-</table>
-<table class="summary" data-ice="summary">
-  <thead><tr><td data-ice="title" colspan="3">Static Private Function Summary</td></tr></thead>
-  <tbody>
-  
-  <tr data-ice="target">
-    <td>
-      <span class="access" data-ice="access">private</span>
-      
-      
-      
-      <span class="override" data-ice="override"></span>
-    </td>
-    <td>
-      <div>
-        <p>
-          
-          
-          <span data-ice="name"><span><a href="function/index.html#static-function-_EmptyGenerator">_EmptyGenerator</a></span></span><span data-ice="signature">()</span>
-        </p>
-      </div>
-      <div>
-        
-        
-        
-      </div>
-    </td>
-    <td>
-      
-      
-    </td>
-  </tr>
-<tr data-ice="target">
-    <td>
-      <span class="access" data-ice="access">private</span>
-      
-      
-      
-      <span class="override" data-ice="override"></span>
-    </td>
-    <td>
-      <div>
-        <p>
-          
-          
-          <span data-ice="name"><span><a href="function/index.html#static-function-_app3">_app3</a></span></span><span data-ice="signature">(A: <span>*</span>, B: <span>*</span>): <span>*</span></span>
-        </p>
-      </div>
-      <div>
-        
-        
-        
-      </div>
-    </td>
-    <td>
-      
-      
-    </td>
-  </tr>
-<tr data-ice="target">
-    <td>
-      <span class="access" data-ice="access">private</span>
-      
-      
-      
-      <span class="override" data-ice="override"></span>
-    </td>
-    <td>
-      <div>
-        <p>
-          
-          
-          <span data-ice="name"><span><a href="function/index.html#static-function-_append">_append</a></span></span><span data-ice="signature">(tree: <span>*</span>, list: <span>*</span>): <span>*</span></span>
-        </p>
-      </div>
-      <div>
-        
-        
-        
-      </div>
-    </td>
-    <td>
-      
-      
-    </td>
-  </tr>
-<tr data-ice="target">
-    <td>
-      <span class="access" data-ice="access">private</span>
-      
-      
-      
-      <span class="override" data-ice="override"></span>
-    </td>
-    <td>
-      <div>
-        <p>
-          
-          
-          <span data-ice="name"><span><a href="function/index.html#static-function-_deepL">_deepL</a></span></span><span data-ice="signature">(M: <span>*</span>, left: <span>*</span>, middle: <span>*</span>, right: <span>*</span>): <span>*</span></span>
-        </p>
-      </div>
-      <div>
-        
-        
-        
-      </div>
-    </td>
-    <td>
-      
-      
-    </td>
-  </tr>
-<tr data-ice="target">
-    <td>
-      <span class="access" data-ice="access">private</span>
-      
-      
-      
-      <span class="override" data-ice="override"></span>
-    </td>
-    <td>
-      <div>
-        <p>
-          
-          
-          <span data-ice="name"><span><a href="function/index.html#static-function-_deepR">_deepR</a></span></span><span data-ice="signature">(M: <span>*</span>, left: <span>*</span>, middle: <span>*</span>, right: <span>*</span>): <span>*</span></span>
-        </p>
-      </div>
-      <div>
-        
-        
-        
-      </div>
-    </td>
-    <td>
-      
-      
-    </td>
-  </tr>
-<tr data-ice="target">
-    <td>
-      <span class="access" data-ice="access">private</span>
-      
-      
-      
-      <span class="override" data-ice="override"></span>
-    </td>
-    <td>
-      <div>
-        <p>
-          
-          
-          <span data-ice="name"><span><a href="function/index.html#static-function-_digit">_digit</a></span></span><span data-ice="signature">(list: <span>*</span>): <span>*</span></span>
-        </p>
-      </div>
-      <div>
-        
-        
-        
-      </div>
-    </td>
-    <td>
-      
-      
-    </td>
-  </tr>
-<tr data-ice="target">
-    <td>
-      <span class="access" data-ice="access">private</span>
-      
-      
-      
-      <span class="override" data-ice="override"></span>
-    </td>
-    <td>
-      <div>
-        <p>
-          
-          
-          <span data-ice="name"><span><a href="function/index.html#static-function-_from_digit">_from_digit</a></span></span><span data-ice="signature">(M: <span>*</span>, digit: <span>*</span>): <span>*</span></span>
-        </p>
-      </div>
-      <div>
-        
-        
-        
-      </div>
-    </td>
-    <td>
-      
-      
-    </td>
-  </tr>
-<tr data-ice="target">
-    <td>
-      <span class="access" data-ice="access">private</span>
-      
-      
-      
-      <span class="override" data-ice="override"></span>
-    </td>
-    <td>
-      <div>
-        <p>
-          
-          
-          <span data-ice="name"><span><a href="function/index.html#static-function-_from_small_list">_from_small_list</a></span></span><span data-ice="signature">(M: <span>*</span>, list: <span>*</span>): <span>*</span></span>
-        </p>
-      </div>
-      <div>
-        
-        
-        
-      </div>
-    </td>
-    <td>
-      
-      
-    </td>
-  </tr>
-<tr data-ice="target">
-    <td>
-      <span class="access" data-ice="access">private</span>
-      
-      
-      
-      <span class="override" data-ice="override"></span>
-    </td>
-    <td>
-      <div>
-        <p>
-          
-          
-          <span data-ice="name"><span><a href="function/index.html#static-function-_prepend">_prepend</a></span></span><span data-ice="signature">(tree: <span>*</span>, list: <span>*</span>): <span>*</span></span>
-        </p>
-      </div>
-      <div>
-        
-        
-        
-      </div>
-    </td>
-    <td>
-      
-      
-    </td>
-  </tr>
-</tbody>
-</table>
-</div>
-<div data-ice="variableSummary"><h2 id="variable">Variable Summary</h2><table class="summary" data-ice="summary">
-  <thead><tr><td data-ice="title" colspan="3">Static Private Variable Summary</td></tr></thead>
-  <tbody>
-  
-  <tr data-ice="target">
-    <td>
-      <span class="access" data-ice="access">private</span>
-      
-      
-      
-      <span class="override" data-ice="override"></span>
-    </td>
-    <td>
-      <div>
-        <p>
-          
-          
-          <span data-ice="name"><span><a href="variable/index.html#static-variable-_EMPTY">_EMPTY</a></span></span><span data-ice="signature">: <span>src/0-core/_fast/fast-iterators/..js~_EmptyGenerator</span></span>
-        </p>
-      </div>
-      <div>
-        
-        
-        
-      </div>
-    </td>
-    <td>
-      
-      
-    </td>
-  </tr>
-</tbody>
-</table>
-</div>
+import { empty , from } from &apos;@aureooms/js-fingertree&apos; ;
 
+let t = from( COUNTER , &apos;abc&apos; ) ;
+// OR
+// let t = empty( COUNTER ).append( &apos;abc&apos; )
+[ ...t ] ; // abc
+t.head( ) ; // &apos;a&apos;
+t.last( ) ; // &apos;c&apos;
+[ ...t.init( ) ] ; // ab
+[ ...t.tail( ) ] ; // bc
+[ ...t.concat( t ) ] ; // abcabc
+const _1 , _2 = t.split( gt( 1 ) ) ;
+[ ..._1 ] ; // a
+[ ..._2 ] ; // bc
+[ ...t.append( &apos;def&apos; ) ] ; // abcdef
+[ ...t.prepend( &apos;def&apos; ) ] ; // defabc</code>
+</code></pre></div>
+        <a data-ice="link" href="manual/example.html"></a>
+      </div>
+    </div>
+<div class="manual-card-wrap" data-ice="cards">
+      <div class="manual-card">
+        <div data-ice="card"><h1>Optimization of the code step by step</h1><p>I will copy here the output of a benchmark run on my computer after each
+optimization change together with a small explanation.</p><p><em><strong>Note</strong>: I did not check if the real issues were caused by generators, bound functions,
+V8 optimization inhibitors, or anything else...</em></p><h2>When the benchmark was added</h2><blockquote>
+<p>d903efb8d9011a44a5ff732c569b2ae33aa5b8f1</p>
+</blockquote><p>What the benchmark code does is, in order:</p><ul>
+<li>build an empty tree <code>T</code></li>
+<li>add 100000 elements to the beginning of <code>T</code></li>
+<li>remove those 100000 elements by popping the first element of <code>T</code> 100000 times</li>
+<li>add 100000 elements to the end of <code>T</code></li>
+<li>split <code>T</code> at all 100000 positions, one after the other</li>
+<li>remove the 100000 elements of <code>T</code> by popping the last element 100000 times</li>
+</ul><p>Here are the first running times I measured for this implementation. It is not
+difficult to see that the implementation is not fast at all. 100000 elements is
+not that much right?</p><pre><code class="lang-sh"><code class="source-code prettyprint">$ node benchmark/tree.js
+number of operations:  100000
+cons: 8584ms
+tail: 6841ms
+push: 8581ms
+split: 144243ms
+init: 6896ms</code>
+</code></pre><p>However most of the motivation for those optimization steps came from applying
+the same benchmark to
+<a href="https://github.com/qiao/fingertree.js">another JavaScript implementation</a>
+(actually, I copied the benchmark from Joe&apos;s repository). This made it obvious
+that my implementation was performing badly.</p><pre><code class="lang-sh"><code class="source-code prettyprint">$ node ../fingertree.js/benchmark/benchmark.js
+number of operations:  100000
+cons: 155ms
+tail: 221ms
+push: 134ms
+split: 1889ms
+init: 141ms</code>
+</code></pre><h2>First implementation of lazy evaluation of subtrees</h2><blockquote>
+<p>f0ca58169a32140a8617625466f15489a3549124</p>
+</blockquote><p>A Deep instance posseses a subtree which in some cases is not accessed at all
+during the whole lifetime of its parent. So why build it? The idea is to delay
+the construction of the object, which might be expensive, to a later point in
+time using a proxy: a finger tree look-alike object that will construct the
+real subtree if needed.</p><p>Time measurements after applying lazy evaluation concepts:</p><pre><code class="lang-sh"><code class="source-code prettyprint">$ node benchmark/tree.js
+number of operations:  100000
+cons: 8585ms
+tail: 6812ms
+push: 8113ms
+split: 139449ms
+init: 6777ms</code>
+</code></pre><p>Unfortunately there is no big performance improvement here but as you&apos;ll see
+there are some nastier things to change.</p><h2>Unwrap values</h2><blockquote>
+<p>19c8ca9298c98eef7e3f257257cb4e01adfe0edb</p>
+</blockquote><p>Before this change, each value was first wrapped in a unique-value-node-like
+structure defined as:</p><pre><code class="lang-js"><code class="source-code prettyprint">class Measured {
 
-</div>
-        <a data-ice="link" href="identifiers.html"></a>
+    constructor ( element , v ) {
+        this.element = element ;
+        this.v = v ;
+    }
+
+    measure ( ) {
+        return this.v ;
+    }
+
+}</code>
+</code></pre><p>where <code>v</code> is the value returned by <code>Measure.measure( element )</code>. This wrapping
+allowed to give the same interface to elements, nodes, digits and trees with
+respect to computing measures. This approach has at least 2 problems:</p><ul>
+<li>It introduces one additional level of indirection by wrapping all values.</li>
+<li>The way it was implemented here caches measures for all elements. This might not
+be a good thing in settings where measures are big objects. Moreover, this
+is in contradiction with the <em>lazy way</em> of functional programming
+paradigms.</li>
+</ul><p>However, there is a simpler way to solve the <em>common interface</em> problem. Indeed,
+the elements contained in the digits of the root tree can be measured
+with the Measure object left unchanged, and starting from the subtree of the
+root level we just need a modified Measure object that uses the interface of
+Node2 and Node3 to compute the node measures. Never will digits contain objects
+of different types, so patching the Measure object this way suffices, there is
+no need to give the same interface to nodes and elements.</p><p>Here are the measurements after the change:</p><pre><code class="lang-sh"><code class="source-code prettyprint">$ node benchmark/tree.js
+number of operations:  100000
+cons: 8452ms
+tail: 6930ms
+push: 7983ms
+split: 141338ms
+init: 6657ms</code>
+</code></pre><p>Mostly noise for the moment. There must be something else to fix...</p><h2>Removing iterator loops and bindings for fixed size sequences</h2><blockquote>
+<p>28f6ee08d33e2cb2b9d0e5cae69948a7013bc0b7</p>
+</blockquote><p>At some point I decided to use a better tool than intuition to progress:
+profiling. This change is the first where I guided the pruning by looking at
+the output of <code>node --prof benchmark/tree.js</code> using <code>node-tick-processor</code>
+from the <a href="https://www.npmjs.com/package/tick">tick</a> package.</p><p>Before this change, digit measures where computed using the idiom</p><pre><code class="lang-js"><code class="source-code prettyprint">reduce( M.plus.bind( M ) , map( M.measure.bind( M ) , digit ) , M.zero( ) ) ;</code>
+</code></pre><p>However, since all four digit types are hard-coded has classes One, Two, Three
+and Four we could as well give a custom implementation of the measure( ) method
+to each digit type. For type Two for example, we have:</p><pre><code class="lang-js"><code class="source-code prettyprint">class Two {
+
+    ...
+
+    measure ( M ) {
+        return M.plus( M.measure( this.a ) , M.measure( this.b ) ) ;
+    }
+
+    ...
+
+}</code>
+</code></pre><p>Here are the times:</p><pre><code class="lang-sh"><code class="source-code prettyprint">$ node benchmark/tree.js
+number of operations:  100000
+cons: 350ms
+tail: 493ms
+push: 398ms
+split: 25851ms
+init: 442ms</code>
+</code></pre><p>A drastic improvement right? However, there seems to be a problem with the
+split method...</p><h2>Removing loops: part II</h2><blockquote>
+<p>5b0af102240b3f0cfda7001f6b108a9811594c7a</p>
+</blockquote><p>It turns out I didn&apos;t remove all occurences of this generic digit measurement
+method. Here are the running times after removing occurences of this method
+from <code>Deep.splitTree</code>.</p><pre><code class="lang-js"><code class="source-code prettyprint">$ node benchmark/tree.js
+number of operations:  100000
+cons: 370ms
+tail: 473ms
+push: 293ms
+split: 7563ms
+init: 396ms</code>
+</code></pre><p>Better.</p><h2>Specialized procedures for small loops: part II</h2><blockquote>
+<p>88592b2562bea585c868e036a04dd1687e91211c
+726354a3bd0591d767fb658d206680a6a74d2fbb</p>
+</blockquote><p>These two commits introduce specialized procedures for building trees from
+small lists and digits. These are really small trees, i.e. 0 to 4 elements, so
+why use the generic <code>from_iterable</code> constructor?</p><pre><code class="lang-js"><code class="source-code prettyprint">$ node benchmark/tree.js
+number of operations:  100000
+cons: 315ms
+tail: 435ms
+push: 249ms
+split: 4834ms
+init: 408ms</code>
+</code></pre><p>Here again a big improvement on the split method.</p><h2>Dropping some of the es6 syntax</h2><blockquote>
+<p>295011e3293b3dd2fe1edc80bdf1a14ca6d4dcca</p>
+</blockquote><p>This is a big one. I started writing this library with es6 syntax in mind.
+However, looking at the profiler output you will see:</p><pre><code class="lang-sh"><code class="source-code prettyprint">$ node-tick-processor isolate-0x2af4cf0-v8.log | grep &apos;3:24&apos;
+    146    2.3%    2.4%  LazyCompile: *get /home/aureooms/sandbox/js-fingertree/js/dist/fingertree.js:3:24
+    278  100.0%          LazyCompile: *get /home/aureooms/sandbox/js-fingertree/js/dist/fingertree.js:3:24
+      6  100.0%            LazyCompile: *get /home/aureooms/sandbox/js-fingertree/js/dist/fingertree.js:3:24
+    165  100.0%          LazyCompile: *get /home/aureooms/sandbox/js-fingertree/js/dist/fingertree.js:3:24
+     97   99.0%        LazyCompile: *get /home/aureooms/sandbox/js-fingertree/js/dist/fingertree.js:3:24
+    127   98.4%          LazyCompile: *get /home/aureooms/sandbox/js-fingertree/js/dist/fingertree.js:3:24
+    163  100.0%          LazyCompile: *get /home/aureooms/sandbox/js-fingertree/js/dist/fingertree.js:3:24
+    146    2.3%  LazyCompile: *get /home/aureooms/sandbox/js-fingertree/js/dist/fingertree.js:3:24
+    138  100.0%          LazyCompile: *get /home/aureooms/sandbox/js-fingertree/js/dist/fingertree.js:3:24
+     58  100.0%          LazyCompile: *get /home/aureooms/sandbox/js-fingertree/js/dist/fingertree.js:3:24
+    129  100.0%      LazyCompile: *get /home/aureooms/sandbox/js-fingertree/js/dist/fingertree.js:3:24
+      3    2.3%    LazyCompile: *get /home/aureooms/sandbox/js-fingertree/js/dist/fingertree.js:3:24</code>
+</code></pre><p>I didn&apos;t analyze much but it has to do with the way classes are handled by
+babel.</p><p>Ok so I just threw the es6 classes and replaced them with plain old prototypes.
+Hereunder are the new running times:</p><pre><code class="lang-sh"><code class="source-code prettyprint">$ node benchmark/tree.js
+number of operations:  100000
+cons: 83ms
+tail: 196ms
+push: 64ms
+split: 1177ms
+init: 148ms</code>
+</code></pre><p>Great!</p><h2>To be continued...</h2></div>
+        <a data-ice="link" href="manual/optimization.html"></a>
       </div>
     </div>
 </div>
@@ -1082,7 +301,7 @@
 </div>
 
 <footer class="footer">
-  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(0.5.2)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.0.4)</span><img src="./image/esdoc-logo-mini-black.png"></a>
 </footer>
 
 <script src="script/search_index.js"></script>

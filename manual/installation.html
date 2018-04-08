@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../">
+  <title data-ice="title">Manual | aureooms/js-fingertree</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+<link rel="stylesheet" href="./inject/css/0-style.css"><script src="./inject/script/0-header.js"></script><meta name="description" content="Finger Trees for JavaScript"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="aureooms/js-fingertree"><meta property="twitter:description" content="Finger Trees for JavaScript"></head>
+<body class="layout-container manual-root" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+<a style="position:relative; top:3px;" href="https://github.com/aureooms/js-fingertree.git"><img width="20px" src="./image/github.png"></a></header>
+
+<nav class="navigation" data-ice="nav"><div class="manual-toc-root">
+  
+<div data-ice="manual">
+    <ul class="manual-toc">
+      
+    <li data-ice="manualNav" class="indent-h1" data-link="manual/overview.html"><a href="manual/overview.html" data-ice="link">Overview</a></li>
+</ul>
+  </div>
+<div data-ice="manual">
+    <ul class="manual-toc">
+      
+    <li data-ice="manualNav" class="indent-h1" data-link="manual/installation.html"><a href="manual/installation.html" data-ice="link">Installation</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/installation.html"><a href="manual/installation.html#jspm" data-ice="link">jspm</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/installation.html"><a href="manual/installation.html#npm" data-ice="link">npm</a></li>
+</ul>
+  </div>
+<div data-ice="manual">
+    <ul class="manual-toc">
+      
+    <li data-ice="manualNav" class="indent-h1" data-link="manual/usage.html"><a href="manual/usage.html" data-ice="link">Usage</a></li>
+</ul>
+  </div>
+<div data-ice="manual">
+    <ul class="manual-toc">
+      
+    <li data-ice="manualNav" class="indent-h1" data-link="manual/example.html"><a href="manual/example.html" data-ice="link">Example</a></li>
+</ul>
+  </div>
+<div data-ice="manual">
+    <ul class="manual-toc">
+      
+    <li data-ice="manualNav" class="indent-h1" data-link="manual/optimization.html"><a href="manual/optimization.html" data-ice="link">Optimization of the code step by step</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/optimization.html"><a href="manual/optimization.html#when-the-benchmark-was-added" data-ice="link">When the benchmark was added</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/optimization.html"><a href="manual/optimization.html#first-implementation-of-lazy-evaluation-of-subtrees" data-ice="link">First implementation of lazy evaluation of subtrees</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/optimization.html"><a href="manual/optimization.html#unwrap-values" data-ice="link">Unwrap values</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/optimization.html"><a href="manual/optimization.html#removing-iterator-loops-and-bindings-for-fixed-size-sequences" data-ice="link">Removing iterator loops and bindings for fixed size sequences</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/optimization.html"><a href="manual/optimization.html#removing-loops--part-ii" data-ice="link">Removing loops: part II</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/optimization.html"><a href="manual/optimization.html#specialized-procedures-for-small-loops--part-ii" data-ice="link">Specialized procedures for small loops: part II</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/optimization.html"><a href="manual/optimization.html#dropping-some-of-the-es6-syntax" data-ice="link">Dropping some of the es6 syntax</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/optimization.html"><a href="manual/optimization.html#to-be-continued---" data-ice="link">To be continued...</a></li>
+</ul>
+  </div>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><div class="github-markdown" data-ice="content"><h1 id="installation">Installation</h1><p>Can be managed using
+<a href="http://jspm.io">jspm</a>
+or <a href="https://github.com/npm/npm">npm</a>.</p>
+<h3 id="jspm">jspm</h3><pre><code class="lang-terminal"><code class="source-code prettyprint">jspm install npm:@aureooms/js-fingertree</code>
+</code></pre>
+<h3 id="npm">npm</h3><pre><code class="lang-terminal"><code class="source-code prettyprint">npm install @aureooms/js-fingertree --save</code>
+</code></pre>
+</div>
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.0.4)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>
