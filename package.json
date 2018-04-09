@@ -44,6 +44,9 @@
     "np": "^2.20.1",
     "nyc": "^11.6.0"
   },
+  "files": [
+    "lib"
+  ],
   "homepage": "http://aureooms.github.io/js-fingertree",
   "keywords": [
     "data",
