@@ -29,6 +29,12 @@ The data structure is
 [fully persistent](https://en.wikipedia.org/wiki/Persistent_data_structure#Fully_persistent):
 All methods are pure functions that do not modify their object. 
 
+The code needs a ES2015+ polyfill to work (`regeneratorRuntime`), for example
+[babel-polyfill](https://babeljs.io/docs/usage/polyfill).
+```js
+import 'babel-polyfill' ;
+```
+
 ### Definition of a `Tree`
 
     data Tree x = Empty
@@ -205,15 +211,6 @@ Returns the right tree of `Tree#split`.
 
 ```js
 let right = tree.dropUntil( measure => measure > 2 ) ;
-```
-
-### `Tree#force() -> Tree`
-
-For performance purposes, some of the operations are implemented lazily.
-This method will force the (shallow) evaluation of the tree.
-
-```js
-tree = tree.force();
 ```
 
 ## References

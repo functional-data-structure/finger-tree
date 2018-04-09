@@ -1,10 +1,10 @@
 # Example
 
 ```js
-import { Measure } from '@aureooms/js-measure' ;
+import { Measures } from '@aureooms/js-measure' ;
 import { gt } from '@aureooms/js-predicate' ;
 
-const { COUNTER } = Measure ;
+const { COUNTER } = Measures ;
 
 import { empty , from } from '@aureooms/js-fingertree' ;
 
