@@ -55,8 +55,7 @@ import 'babel-polyfill' ;
 
 ### Example of a `Measure`
 
-The following measure will record the position of each element inside the tree
-as if it was an `Array`:
+The following measure will compute the size of each subtree.
 
 ```js
 const counter = {
