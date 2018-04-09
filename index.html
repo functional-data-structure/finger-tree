@@ -105,8 +105,7 @@ specialized persistent data structures can be build on top of those methods.</p>
   measure = x -&gt; m
   zero = ( ) =&gt; m
 )</code>
-</code></pre><h3 id="example-of-a--code-measure--code-">Example of a <code>Measure</code></h3><p>The following measure will record the position of each element inside the tree
-as if it was an <code>Array</code>:</p>
+</code></pre><h3 id="example-of-a--code-measure--code-">Example of a <code>Measure</code></h3><p>The following measure will compute the size of each subtree.</p>
 <pre><code class="lang-js"><code class="source-code prettyprint">const counter = {
   plus : ( x , y ) =&gt; x + y ,
   measure : x =&gt; 1 ,
