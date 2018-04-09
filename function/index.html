@@ -430,7 +430,8 @@
       <div>
         
         
-        
+        <div data-ice="description"><p>Base class for all implementations.</p>
+</div>
       </div>
     </td>
     <td>
@@ -620,13 +621,15 @@
           
           
           
-          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-delay">delay</a></span></span><span class="code" data-ice="signature">(thunk: <span>*</span>): <span>*</span></span>
+          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-delay">delay</a></span></span><span class="code" data-ice="signature">(Function: <span>*</span>): <span><a href="function/index.html#static-function-Tree">Tree</a></span></span>
         </p>
       </div>
       <div>
         
         
-        
+        <div data-ice="description"><p>Wraps a tree-returning function with a tree proxy that will shallow evaluate
+as soon as a method is called on it.</p>
+</div>
       </div>
     </td>
     <td>
@@ -1865,14 +1868,15 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/3-tree/base/Tree.js.html#lineNumber3">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/3-tree/base/Tree.js.html#lineNumber6">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {Tree} from &apos;<span><a href="file/src/3-tree/base/Tree.js.html#lineNumber3">@aureooms/js-fingertree/src/3-tree/base/Tree.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {Tree} from &apos;<span><a href="file/src/3-tree/base/Tree.js.html#lineNumber6">@aureooms/js-fingertree/src/3-tree/base/Tree.js</a></span>&apos;</code></pre></div>
   
   
-  
+  <div data-ice="description"><p>Base class for all implementations.</p>
+</div>
 
   
 
@@ -2378,18 +2382,20 @@
     
     
     
-    <span class="code" data-ice="name">delay</span><span class="code" data-ice="signature">(thunk: <span>*</span>): <span>*</span></span>
+    <span class="code" data-ice="name">delay</span><span class="code" data-ice="signature">(Function: <span>*</span>): <span><a href="function/index.html#static-function-Tree">Tree</a></span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/4-lazy/1-delay.js.html#lineNumber3">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/4-lazy/1-delay.js.html#lineNumber10">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {delay} from &apos;<span><a href="file/src/4-lazy/1-delay.js.html#lineNumber3">@aureooms/js-fingertree/src/4-lazy/1-delay.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {delay} from &apos;<span><a href="file/src/4-lazy/1-delay.js.html#lineNumber10">@aureooms/js-fingertree/src/4-lazy/1-delay.js</a></span>&apos;</code></pre></div>
   
   
-  
+  <div data-ice="description"><p>Wraps a tree-returning function with a tree proxy that will shallow evaluate
+as soon as a method is called on it.</p>
+</div>
 
   
 
@@ -2402,10 +2408,11 @@
     <tbody>
     
     <tr data-ice="property" data-depth="0">
-      <td data-ice="name" class="code" data-depth="0">thunk</td>
+      <td data-ice="name" class="code" data-depth="0">Function</td>
       <td data-ice="type" class="code"><span>*</span></td>
       <td data-ice="appendix"></td>
-      <td data-ice="description"></td>
+      <td data-ice="description"><p>thunk The function that evaluates to the underlying tree.</p>
+</td>
     </tr>
 </tbody>
   </table>
@@ -2417,8 +2424,9 @@
     <table>
       <tbody>
         <tr>
-          <td class="return-type code" data-ice="returnType"><span>*</span></td>
-          
+          <td class="return-type code" data-ice="returnType"><span><a href="function/index.html#static-function-Tree">Tree</a></span></td>
+          <td class="return-desc" data-ice="returnDescription"><p>The lazy tree.</p>
+</td>
         </tr>
       </tbody>
     </table>

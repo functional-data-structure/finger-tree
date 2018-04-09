@@ -72,6 +72,13 @@
 <div class="content" data-ice="content"><h1 data-ice="title">src/4-lazy/1-delay.js</h1>
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import { Lazy } from &apos;.&apos; ;
 
+/**
+ * Wraps a tree-returning function with a tree proxy that will shallow evaluate
+ * as soon as a method is called on it.
+ *
+ * @param Function thunk The function that evaluates to the underlying tree.
+ * @returns {Tree} The lazy tree.
+ */
 export function delay ( thunk ) {
 	return new Lazy( thunk ) ;
 }

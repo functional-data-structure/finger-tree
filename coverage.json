@@ -1,7 +1,7 @@
 {
-  "coverage": "5.66%",
+  "coverage": "10.06%",
   "expectCount": 159,
-  "actualCount": 9,
+  "actualCount": 16,
   "files": {
     "src/0-core/_fast/_app3.js": {
       "expectCount": 1,
@@ -257,15 +257,8 @@
     },
     "src/3-tree/base/Tree.js": {
       "expectCount": 6,
-      "actualCount": 0,
-      "undocumentLines": [
-        3,
-        5,
-        9,
-        13,
-        17,
-        21
-      ]
+      "actualCount": 6,
+      "undocumentLines": []
     },
     "src/3-tree/implementations/0-Empty.js": {
       "expectCount": 13,
@@ -343,10 +336,8 @@
     },
     "src/4-lazy/1-delay.js": {
       "expectCount": 1,
-      "actualCount": 0,
-      "undocumentLines": [
-        3
-      ]
+      "actualCount": 1,
+      "undocumentLines": []
     },
     "src/5-api.js": {
       "expectCount": 1,

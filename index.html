@@ -73,11 +73,10 @@
 <p>Finger trees for JavaScript.
 See <a href="http://aureooms.github.io/js-fingertree">docs</a>.
 Parent is <a href="https://github.com/aureooms/js-persistent">@aureooms/js-persistent</a>.</p>
-<pre><code class="lang-js"><code class="source-code prettyprint">data FingerTree x = Empty
+<pre><code><code class="source-code prettyprint">data FingerTree x = Empty
                   | Single x
                   | Deep ( Digit x ) ( FingerTree ( Node x ) ) ( Digit x )</code>
-</code></pre>
-<p><a href="https://raw.githubusercontent.com/aureooms/js-fingertree/master/LICENSE"><img src="https://img.shields.io/github/license/aureooms/js-fingertree.svg?style=flat" alt="License"></a>
+</code></pre><p><a href="https://raw.githubusercontent.com/aureooms/js-fingertree/master/LICENSE"><img src="https://img.shields.io/github/license/aureooms/js-fingertree.svg?style=flat" alt="License"></a>
 <a href="https://www.npmjs.org/package/@aureooms/js-fingertree"><img src="https://img.shields.io/npm/v/@aureooms/js-fingertree.svg?style=flat" alt="NPM version"></a>
 <a href="https://travis-ci.org/aureooms/js-fingertree"><img src="https://img.shields.io/travis/aureooms/js-fingertree.svg?style=flat" alt="Build Status"></a>
 <a href="https://coveralls.io/r/aureooms/js-fingertree"><img src="https://img.shields.io/coveralls/aureooms/js-fingertree.svg?style=flat" alt="Coverage Status"></a>
@@ -90,6 +89,14 @@ Parent is <a href="https://github.com/aureooms/js-persistent">@aureooms/js-persi
 <h2 id="api-reference">API reference</h2><p>The data structure is
 <a href="https://en.wikipedia.org/wiki/Persistent_data_structure#Fully_persistent">fully persistent</a>:
 All methods are pure functions that do not modify their object. </p>
+<blockquote>
+<p>The <a href="https://github.com/aureooms/js-persistent">parent project</a> shows how
+specialized persistent data structures can be build on top of those methods.</p>
+<p>The code needs a ES2015+ polyfill to work (<code>regeneratorRuntime</code>), for example
+<a href="https://babeljs.io/docs/usage/polyfill">babel-polyfill</a>.</p>
+</blockquote>
+<pre><code class="lang-js"><code class="source-code prettyprint">import &apos;babel-polyfill&apos; ;</code>
+</code></pre>
 <h3 id="definition-of-a--code-tree--code-">Definition of a <code>Tree</code></h3><pre><code><code class="source-code prettyprint">data Tree x = Empty
             | Single x
             | Deep ( Digit x ) ( Tree ( Node x ) ) ( Digit x )</code>
@@ -100,58 +107,77 @@ All methods are pure functions that do not modify their object. </p>
 )</code>
 </code></pre><h3 id="example-of-a--code-measure--code-">Example of a <code>Measure</code></h3><p>The following measure will record the position of each element inside the tree
 as if it was an <code>Array</code>:</p>
-<pre><code><code class="source-code prettyprint">const counter = {
+<pre><code class="lang-js"><code class="source-code prettyprint">const counter = {
   plus : ( x , y ) =&gt; x + y ,
   measure : x =&gt; 1 ,
   zero : ( ) =&gt; 0 ,
 } ;</code>
-</code></pre><h3 id="how-to--code-import--code-">How to <code>import</code></h3><p>No surprises here:</p>
-<pre><code><code class="source-code prettyprint">import { from , empty } from &apos;@aureooms/js-fingertree&apos; ;</code>
-</code></pre><h3 id="-code-from-measure--iterable----gt--tree--code-"><code>from(Measure, Iterable) -&gt; Tree</code></h3><p>Create a fingertree from a measure object and an iterable.</p>
-<pre><code><code class="source-code prettyprint">let tree = from( counter , &apos;abc&apos; ) ;</code>
-</code></pre><h3 id="-code-tree-measure-----gt--m--code-"><code>Tree#measure() -&gt; m</code></h3><p>Returns the measure of the tree.</p>
-<pre><code><code class="source-code prettyprint">if ( tree.measure() &gt; 1 ) ...</code>
-</code></pre><h3 id="-code-tree-empty-----gt--boolean--code-"><code>Tree#empty() -&gt; Boolean</code></h3><p>Returns <code>true</code> if the tree is empty, <code>false</code> otherwise.</p>
-<pre><code><code class="source-code prettyprint">return tree.empty() ? &apos;empty&apos; : &apos;not empty&apos; ;</code>
-</code></pre><h3 id="-code-tree-head-----gt--x--code-"><code>Tree#head() -&gt; x</code></h3><p>Returns the left-most value in the tree.</p>
-<pre><code><code class="source-code prettyprint">let head = tree.head() ; // &apos;a&apos;</code>
-</code></pre><h3 id="-code-tree-last-----gt--x--code-"><code>Tree#last() -&gt; x</code></h3><p>Returns the right-most value in the tree.</p>
-<pre><code><code class="source-code prettyprint">let last = tree.last() ; // &apos;b&apos;</code>
-</code></pre><h3 id="-code-tree-push-x----gt--tree--code-"><code>Tree#push(x) -&gt; Tree</code></h3><p>Returns a new tree with an additional value as the new right-most value.</p>
-<pre><code><code class="source-code prettyprint">tree = tree.cons(&apos;k&apos;);</code>
-</code></pre><h3 id="-code-tree-cons-x----gt--tree--code-"><code>Tree#cons(x) -&gt; Tree</code></h3><p>Returns a new tree with an additional value as the new left-most value.</p>
-<pre><code><code class="source-code prettyprint">tree = tree.cons(&apos;g&apos;);</code>
-</code></pre><h3 id="-code-tree-init-----gt--tree--code-"><code>Tree#init() -&gt; Tree</code></h3><p>Returns a new tree without the right-most element.</p>
-<pre><code><code class="source-code prettyprint">while ( ! tree.empty() ) tree = tree.init() ;</code>
-</code></pre><h3 id="-code-tree-tail-----gt--tree--code-"><code>Tree#tail() -&gt; Tree</code></h3><p>Returns a new tree without the left-most element.</p>
-<pre><code><code class="source-code prettyprint">while ( ! tree.empty() ) tree = tree.tail() ;</code>
-</code></pre><h3 id="-code-tree-append-iterable----gt--tree--code-"><code>Tree#append(Iterable) -&gt; Tree</code></h3><p>Equivalent to applying <code>push</code> to each value of the iterable in order.</p>
-<pre><code><code class="source-code prettyprint">tree.append( &apos;www&apos; ) ;</code>
-</code></pre><h3 id="-code-tree-prepend-iterable----gt--tree--code-"><code>Tree#prepend(Iterable) -&gt; Tree</code></h3><p>Equivalent to applying <code>cons</code> to each value of the iterable in reverse order.</p>
-<pre><code><code class="source-code prettyprint">tree.prepend( &apos;xyz&apos; ) ;</code>
-</code></pre><h3 id="-code-tree-concat-tree----gt--tree--code-"><code>Tree#concat(Tree) -&gt; Tree</code></h3><p>Returns the concatenation of two trees.</p>
-<pre><code><code class="source-code prettyprint">tree = tree.concat( tree );</code>
-</code></pre><h3 id="-code-tree-symbol-iterator------gt--iterable--code-"><code>Tree[Symbol.iterator]() -&gt; Iterable</code></h3><p>Returns an iterator on the values of the tree in left-to-right order.</p>
-<pre><code><code class="source-code prettyprint">for ( const x of tree ) console.log( x ) ;</code>
-</code></pre><h3 id="-code-tree-splittree-function--m----gt----tree---x---tree----code-"><code>Tree#splitTree(Function, m) -&gt; [ Tree , x , Tree ]</code></h3><p>Split the tree into a left tree, a middle value, and a right tree according to
-a predicate on the measure of the tree <strong>increased by a constant <code>c</code></strong>. The
-predicate must be monotone, false then true, on prefixes of the values in
+</code></pre>
+<h3 id="how-to--code-import--code-">How to <code>import</code></h3><p>No surprises here:</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">import { from , empty } from &apos;@aureooms/js-fingertree&apos; ;</code>
+</code></pre>
+<h3 id="-code-empty-measure----gt--tree--code-"><code>empty(Measure) -&gt; Tree</code></h3><p>Create an empty fingertree from a measure object.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">let tree = empty( counter ) ;</code>
+</code></pre>
+<h3 id="-code-from-measure--iterable----gt--tree--code-"><code>from(Measure, Iterable) -&gt; Tree</code></h3><p>Create a fingertree from a measure object and an iterable.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">let tree = from( counter , &apos;abc&apos; ) ;</code>
+</code></pre>
+<h3 id="-code-tree-measure-----gt--m--code-"><code>Tree#measure() -&gt; m</code></h3><p>Returns the measure of the tree.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">if ( tree.measure() &gt; 1 ) ...</code>
+</code></pre>
+<h3 id="-code-tree-empty-----gt--boolean--code-"><code>Tree#empty() -&gt; Boolean</code></h3><p>Returns <code>true</code> if the tree is empty, <code>false</code> otherwise.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">return tree.empty() ? &apos;empty&apos; : &apos;not empty&apos; ;</code>
+</code></pre>
+<h3 id="-code-tree-head-----gt--x--code-"><code>Tree#head() -&gt; x</code></h3><p>Returns the left-most value in the tree.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">let head = tree.head() ; // &apos;a&apos;</code>
+</code></pre>
+<h3 id="-code-tree-last-----gt--x--code-"><code>Tree#last() -&gt; x</code></h3><p>Returns the right-most value in the tree.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">let last = tree.last() ; // &apos;b&apos;</code>
+</code></pre>
+<h3 id="-code-tree-push-x----gt--tree--code-"><code>Tree#push(x) -&gt; Tree</code></h3><p>Returns a new tree with an additional value as the new right-most value.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">tree = tree.cons(&apos;k&apos;);</code>
+</code></pre>
+<h3 id="-code-tree-cons-x----gt--tree--code-"><code>Tree#cons(x) -&gt; Tree</code></h3><p>Returns a new tree with an additional value as the new left-most value.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">tree = tree.cons(&apos;g&apos;);</code>
+</code></pre>
+<h3 id="-code-tree-init-----gt--tree--code-"><code>Tree#init() -&gt; Tree</code></h3><p>Returns a new tree without the right-most element.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">while ( ! tree.empty() ) tree = tree.init() ;</code>
+</code></pre>
+<h3 id="-code-tree-tail-----gt--tree--code-"><code>Tree#tail() -&gt; Tree</code></h3><p>Returns a new tree without the left-most element.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">while ( ! tree.empty() ) tree = tree.tail() ;</code>
+</code></pre>
+<h3 id="-code-tree-append-iterable----gt--tree--code-"><code>Tree#append(Iterable) -&gt; Tree</code></h3><p>Equivalent to applying <code>push</code> to each value of the iterable in order.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">tree.append( &apos;www&apos; ) ;</code>
+</code></pre>
+<h3 id="-code-tree-prepend-iterable----gt--tree--code-"><code>Tree#prepend(Iterable) -&gt; Tree</code></h3><p>Equivalent to applying <code>cons</code> to each value of the iterable in reverse order.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">tree.prepend( &apos;xyz&apos; ) ;</code>
+</code></pre>
+<h3 id="-code-tree-concat-tree----gt--tree--code-"><code>Tree#concat(Tree) -&gt; Tree</code></h3><p>Returns the concatenation of two trees.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">tree = tree.concat( tree );</code>
+</code></pre>
+<h3 id="-code-tree-symbol-iterator------gt--iterable--code-"><code>Tree[Symbol.iterator]() -&gt; Iterable</code></h3><p>Returns an iterator on the values of the tree in left-to-right order.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">for ( const x of tree ) console.log( x ) ;</code>
+</code></pre>
+<h3 id="-code-tree-splittree-function--m----gt----tree---x---tree----code-"><code>Tree#splitTree(Function, m) -&gt; [ Tree , x , Tree ]</code></h3><p>Split the tree into a left tree, a middle value, and a right tree according to
+a predicate on the measure of the tree <strong>increased by a constant measure <code>m</code></strong>.
+The predicate must be monotone, false then true, on prefixes of the values in
 left-to-right order. The middle value <code>x</code> is the item for which the predicate
 switches from false to true.</p>
-<pre><code><code class="source-code prettyprint">let [ left , right ] = tree.split( measure =&gt; measure &gt; 1 , 1 ) ;</code>
-</code></pre><h3 id="-code-tree-split-function----gt----tree---tree----code-"><code>Tree#split(Function) -&gt; [ Tree , Tree ]</code></h3><p>Split the tree into a left tree and a right tree according to a predicate on
+<pre><code class="lang-js"><code class="source-code prettyprint">let [ left , right ] = tree.split( measure =&gt; measure &gt; 1 , 1 ) ;</code>
+</code></pre>
+<h3 id="-code-tree-split-function----gt----tree---tree----code-"><code>Tree#split(Function) -&gt; [ Tree , Tree ]</code></h3><p>Split the tree into a left tree and a right tree according to a predicate on
 the measure of the tree. The predicate must be monotone, false then true, on
 prefixes of the values in left-to-right order. The left-most value of the right
 tree is the item for which the predicate switches from false to true.</p>
-<pre><code><code class="source-code prettyprint">let [ left , right ] = tree.split( measure =&gt; measure &gt; 2 ) ;</code>
-</code></pre><h3 id="-code-tree-takeuntil-function----gt--tree--code-"><code>Tree#takeUntil(Function) -&gt; Tree</code></h3><p>Returns the left tree of <code>Tree#split</code>.</p>
-<pre><code><code class="source-code prettyprint">let left = tree.takeUntil( measure =&gt; measure &gt; 2 ) ;</code>
-</code></pre><h3 id="-code-tree-dropuntil-function----gt--tree--code-"><code>Tree#dropUntil(Function) -&gt; Tree</code></h3><p>Returns the right tree of <code>Tree#split</code>.</p>
-<pre><code><code class="source-code prettyprint">let right = tree.dropUntil( measure =&gt; measure &gt; 2 ) ;</code>
-</code></pre><h3 id="-code-tree-force-----gt--tree--code-"><code>Tree#force() -&gt; Tree</code></h3><p>For performance purposes, some of the operations are implemented lazily.
-This method will force the (shallow) evaluation of the tree.</p>
-<pre><code><code class="source-code prettyprint">tree = tree.force();</code>
-</code></pre><h2 id="references">References</h2><ul>
+<pre><code class="lang-js"><code class="source-code prettyprint">let [ left , right ] = tree.split( measure =&gt; measure &gt; 2 ) ;</code>
+</code></pre>
+<h3 id="-code-tree-takeuntil-function----gt--tree--code-"><code>Tree#takeUntil(Function) -&gt; Tree</code></h3><p>Returns the left tree of <code>Tree#split</code>.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">let left = tree.takeUntil( measure =&gt; measure &gt; 2 ) ;</code>
+</code></pre>
+<h3 id="-code-tree-dropuntil-function----gt--tree--code-"><code>Tree#dropUntil(Function) -&gt; Tree</code></h3><p>Returns the right tree of <code>Tree#split</code>.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">let right = tree.dropUntil( measure =&gt; measure &gt; 2 ) ;</code>
+</code></pre>
+<h2 id="references">References</h2><ul>
 <li><a href="http://staff.city.ac.uk/~ross/papers/FingerTree.pdf">Hinze and Paterson</a></li>
 <li><a href="https://github.com/kachayev/fn.py/blob/master/fn/immutable/finger.py">An (incomplete) implementation in Python</a></li>
 <li><a href="https://github.com/qiao/fingertree.js">A (buggy) previous JavaScript implementation</a></li>

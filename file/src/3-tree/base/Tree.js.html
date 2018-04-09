@@ -72,24 +72,101 @@
 <div class="content" data-ice="content"><h1 data-ice="title">src/3-tree/base/Tree.js</h1>
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import { append , prepend } from &apos;../../0-core&apos; ;
 
+/**
+ * Base class for all implementations.
+ */
 export function Tree ( ) { }
 
+/**
+ * For performance purposes, some of the operations are implemented lazily.
+ * This method will force the (shallow) evaluation of this tree. This is an
+ * implementation detail and need not be used by the user directly.
+ *
+ * @returns {Tree} The shallow evaluated tree.
+ */
 Tree.prototype.force = function ( ) {
 	return this ;
 } ;
 
-Tree.prototype.takeUntil = function ( p ) {
-	return this.split( p )[0] ;
+/**
+ * Returns a tree that contains a prefix of this tree&apos;s values left-to-right list.
+ * The prefix is defined by containing all values for which the
+ * input predicate evaluates to `false` on the measure
+ * of the prefix ending with that value. The input predicate must be monotone
+ * (`false` then `true`).
+ *
+ * @example
+ * // returns &apos;ab&apos;
+ * import { from } from &apos;@aureooms/js-fingertree&apos; ;
+ * import { Measures : { SIZE } } from &apos;@aureooms/js-measure&apos; ;
+ * let tree = from( SIZE , &apos;abc&apos; ) ;
+ * tree = tree.takeUntil( measure =&gt; measure &gt; 2 ) ;
+ * [ ...tree ].join(&apos;&apos;) ;
+ *
+ * @param {Function} predicate The input measure predicate (monotone).
+ *
+ * @returns {Tree} The output tree.
+ */
+Tree.prototype.takeUntil = function ( predicate ) {
+	return this.split( predicate )[0] ;
 } ;
 
-Tree.prototype.dropUntil = function ( p ) {
-	return this.split( p )[1] ;
+/**
+ * Returns a tree that contains a suffix of this tree&apos;s values left-to-right
+ * list. The suffix is defined by containing all values for which the input
+ * predicate evaluates to `true` on the measure of the prefix ending with that
+ * value. The input predicate must be monotone (`false` then `true`).
+ *
+ * @example
+ * // returns &apos;c&apos;
+ * import { from } from &apos;@aureooms/js-fingertree&apos; ;
+ * import { Measures : { SIZE } } from &apos;@aureooms/js-measure&apos; ;
+ * let tree = from( SIZE , &apos;abc&apos; ) ;
+ * tree = tree.dropUntil( measure =&gt; measure &gt; 2 ) ;
+ * [ ...tree ].join(&apos;&apos;) ;
+ *
+ * @param {Function} predicate The input measure predicate (monotone).
+ *
+ * @returns {Tree} The output tree.
+ */
+Tree.prototype.dropUntil = function ( predicate ) {
+	return this.split( predicate )[1] ;
 } ;
 
+/**
+ * Returns a tree that contains all values of this tree in-order followed by
+ * all values of the input iterable in-order.
+ *
+ * @example
+ * // returns &apos;abc123&apos;
+ * import { from } from &apos;@aureooms/js-fingertree&apos; ;
+ * import { Measures : { SIZE } } from &apos;@aureooms/js-measure&apos; ;
+ * let tree = from( SIZE , &apos;abc&apos; ).append(&apos;123&apos;) ;
+ * [ ...tree ].join(&apos;&apos;) ;
+ *
+ * @param {Iterable} iterable The input iterable.
+ *
+ * @returns {Tree} The output tree.
+ */
 Tree.prototype.append = function ( iterable ) {
 	return append( this , iterable ) ;
 } ;
 
+/**
+ * Returns a tree that contains all values of the input iterable in-order
+ * followed by all values of this tree in-order.
+ *
+ * @example
+ * // returns &apos;123abc&apos;
+ * import { from } from &apos;@aureooms/js-fingertree&apos; ;
+ * import { Measures : { SIZE } } from &apos;@aureooms/js-measure&apos; ;
+ * let tree = from( SIZE , &apos;abc&apos; ).prepend(&apos;123&apos;) ;
+ * [ ...tree ].join(&apos;&apos;) ;
+ *
+ * @param {Iterable} iterable The input iterable.
+ *
+ * @returns {Tree} The output tree.
+ */
 Tree.prototype.prepend = function ( iterable ) {
 	return prepend( this , iterable ) ;
 } ;
