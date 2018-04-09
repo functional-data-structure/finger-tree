@@ -1,7 +1,7 @@
 {
   "name": "@aureooms/js-fingertree",
   "description": "Finger Trees for JavaScript",
-  "version": "4.0.4",
+  "version": "4.0.5",
   "author": "Aurélien Ooms <aurelien.ooms@gmail.com>",
   "ava": {
     "require": [
