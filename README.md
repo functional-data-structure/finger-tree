@@ -189,8 +189,8 @@ for ( const x of tree ) console.log( x ) ;
 ### `Tree#splitTree(Function, m) -> [ Tree , x , Tree ]`
 
 Split the tree into a left tree, a middle value, and a right tree according to
-a predicate on the measure of the tree __increased by a constant `c`__. The
-predicate must be monotone, false then true, on prefixes of the values in
+a predicate on the measure of the tree __increased by a constant measure `m`__.
+The predicate must be monotone, false then true, on prefixes of the values in
 left-to-right order. The middle value `x` is the item for which the predicate
 switches from false to true.
 
