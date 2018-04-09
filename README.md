@@ -29,8 +29,12 @@ The data structure is
 [fully persistent](https://en.wikipedia.org/wiki/Persistent_data_structure#Fully_persistent):
 All methods are pure functions that do not modify their object. 
 
-The code needs a ES2015+ polyfill to work (`regeneratorRuntime`), for example
-[babel-polyfill](https://babeljs.io/docs/usage/polyfill).
+> The [parent project](https://github.com/aureooms/js-persistent) shows how
+> specialized persistent data structures can be build on top of those methods.
+
+> The code needs a ES2015+ polyfill to work (`regeneratorRuntime`), for example
+> [babel-polyfill](https://babeljs.io/docs/usage/polyfill).
+
 ```js
 import 'babel-polyfill' ;
 ```
@@ -68,6 +72,14 @@ No surprises here:
 
 ```js
 import { from , empty } from '@aureooms/js-fingertree' ;
+```
+
+### `empty(Measure) -> Tree`
+
+Create an empty fingertree from a measure object.
+
+```js
+let tree = empty( counter ) ;
 ```
 
 ### `from(Measure, Iterable) -> Tree`
