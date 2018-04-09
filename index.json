@@ -5697,7 +5697,7 @@
     "__docId__": 248,
     "kind": "file",
     "name": "src/4-lazy/1-delay.js",
-    "content": "import { Lazy } from '.' ;\n\n/**\n * Wraps a tree-returning function with a tree proxy that will shallow evaluate\n * as soon as a method is called on it.\n *\n * @param Function thunk The function that evaluates to the underlying tree.\n * @returns {Tree} The lazy tree.\n */\nexport function delay ( thunk ) {\n\treturn new Lazy( thunk ) ;\n}\n",
+    "content": "import { Lazy } from '.' ;\n\n/**\n * Wraps a tree-returning function with a tree proxy that will shallow evaluate\n * as soon as a method is called on it.\n *\n * @param {Function} thunk The function that evaluates to the underlying tree.\n * @returns {Tree} The lazy tree.\n */\nexport function delay ( thunk ) {\n\treturn new Lazy( thunk ) ;\n}\n",
     "static": true,
     "longname": "/home/aureooms/dev/js/js-fingertree/src/4-lazy/1-delay.js",
     "access": "public",
@@ -5729,12 +5729,12 @@
       {
         "nullable": null,
         "types": [
-          "*"
+          "Function"
         ],
         "spread": false,
         "optional": false,
-        "name": "Function",
-        "description": "thunk The function that evaluates to the underlying tree."
+        "name": "thunk",
+        "description": "The function that evaluates to the underlying tree."
       }
     ],
     "return": {

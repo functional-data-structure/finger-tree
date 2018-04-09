@@ -1,7 +1,7 @@
 {
   "type": "File",
   "start": 0,
-  "end": 334,
+  "end": 336,
   "loc": {
     "start": {
       "line": 1,
@@ -15,7 +15,7 @@
   "program": {
     "type": "Program",
     "start": 0,
-    "end": 334,
+    "end": 336,
     "loc": {
       "start": {
         "line": 1,
@@ -116,9 +116,9 @@
         "trailingComments": [
           {
             "type": "CommentBlock",
-            "value": "*\n * Wraps a tree-returning function with a tree proxy that will shallow evaluate\n * as soon as a method is called on it.\n *\n * @param Function thunk The function that evaluates to the underlying tree.\n * @returns {Tree} The lazy tree.\n ",
+            "value": "*\n * Wraps a tree-returning function with a tree proxy that will shallow evaluate\n * as soon as a method is called on it.\n *\n * @param {Function} thunk The function that evaluates to the underlying tree.\n * @returns {Tree} The lazy tree.\n ",
             "start": 28,
-            "end": 269,
+            "end": 271,
             "loc": {
               "start": {
                 "line": 3,
@@ -134,8 +134,8 @@
       },
       {
         "type": "ExportNamedDeclaration",
-        "start": 270,
-        "end": 333,
+        "start": 272,
+        "end": 335,
         "loc": {
           "start": {
             "line": 10,
@@ -150,8 +150,8 @@
         "source": null,
         "declaration": {
           "type": "FunctionDeclaration",
-          "start": 277,
-          "end": 333,
+          "start": 279,
+          "end": 335,
           "loc": {
             "start": {
               "line": 10,
@@ -164,8 +164,8 @@
           },
           "id": {
             "type": "Identifier",
-            "start": 286,
-            "end": 291,
+            "start": 288,
+            "end": 293,
             "loc": {
               "start": {
                 "line": 10,
@@ -186,8 +186,8 @@
           "params": [
             {
               "type": "Identifier",
-              "start": 294,
-              "end": 299,
+              "start": 296,
+              "end": 301,
               "loc": {
                 "start": {
                   "line": 10,
@@ -204,8 +204,8 @@
           ],
           "body": {
             "type": "BlockStatement",
-            "start": 302,
-            "end": 333,
+            "start": 304,
+            "end": 335,
             "loc": {
               "start": {
                 "line": 10,
@@ -219,8 +219,8 @@
             "body": [
               {
                 "type": "ReturnStatement",
-                "start": 305,
-                "end": 331,
+                "start": 307,
+                "end": 333,
                 "loc": {
                   "start": {
                     "line": 11,
@@ -233,8 +233,8 @@
                 },
                 "argument": {
                   "type": "NewExpression",
-                  "start": 312,
-                  "end": 329,
+                  "start": 314,
+                  "end": 331,
                   "loc": {
                     "start": {
                       "line": 11,
@@ -247,8 +247,8 @@
                   },
                   "callee": {
                     "type": "Identifier",
-                    "start": 316,
-                    "end": 320,
+                    "start": 318,
+                    "end": 322,
                     "loc": {
                       "start": {
                         "line": 11,
@@ -265,8 +265,8 @@
                   "arguments": [
                     {
                       "type": "Identifier",
-                      "start": 322,
-                      "end": 327,
+                      "start": 324,
+                      "end": 329,
                       "loc": {
                         "start": {
                           "line": 11,
@@ -289,9 +289,9 @@
           "leadingComments": [
             {
               "type": "CommentBlock",
-              "value": "*\n * Wraps a tree-returning function with a tree proxy that will shallow evaluate\n * as soon as a method is called on it.\n *\n * @param Function thunk The function that evaluates to the underlying tree.\n * @returns {Tree} The lazy tree.\n ",
+              "value": "*\n * Wraps a tree-returning function with a tree proxy that will shallow evaluate\n * as soon as a method is called on it.\n *\n * @param {Function} thunk The function that evaluates to the underlying tree.\n * @returns {Tree} The lazy tree.\n ",
               "start": 28,
-              "end": 269,
+              "end": 271,
               "loc": {
                 "start": {
                   "line": 3,
@@ -309,9 +309,9 @@
         "leadingComments": [
           {
             "type": "CommentBlock",
-            "value": "*\n * Wraps a tree-returning function with a tree proxy that will shallow evaluate\n * as soon as a method is called on it.\n *\n * @param Function thunk The function that evaluates to the underlying tree.\n * @returns {Tree} The lazy tree.\n ",
+            "value": "*\n * Wraps a tree-returning function with a tree proxy that will shallow evaluate\n * as soon as a method is called on it.\n *\n * @param {Function} thunk The function that evaluates to the underlying tree.\n * @returns {Tree} The lazy tree.\n ",
             "start": 28,
-            "end": 269,
+            "end": 271,
             "loc": {
               "start": {
                 "line": 3,
@@ -331,9 +331,9 @@
   "comments": [
     {
       "type": "CommentBlock",
-      "value": "*\n * Wraps a tree-returning function with a tree proxy that will shallow evaluate\n * as soon as a method is called on it.\n *\n * @param Function thunk The function that evaluates to the underlying tree.\n * @returns {Tree} The lazy tree.\n ",
+      "value": "*\n * Wraps a tree-returning function with a tree proxy that will shallow evaluate\n * as soon as a method is called on it.\n *\n * @param {Function} thunk The function that evaluates to the underlying tree.\n * @returns {Tree} The lazy tree.\n ",
       "start": 28,
-      "end": 269,
+      "end": 271,
       "loc": {
         "start": {
           "line": 3,
@@ -532,9 +532,9 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n * Wraps a tree-returning function with a tree proxy that will shallow evaluate\n * as soon as a method is called on it.\n *\n * @param Function thunk The function that evaluates to the underlying tree.\n * @returns {Tree} The lazy tree.\n ",
+      "value": "*\n * Wraps a tree-returning function with a tree proxy that will shallow evaluate\n * as soon as a method is called on it.\n *\n * @param {Function} thunk The function that evaluates to the underlying tree.\n * @returns {Tree} The lazy tree.\n ",
       "start": 28,
-      "end": 269,
+      "end": 271,
       "loc": {
         "start": {
           "line": 3,
@@ -561,8 +561,8 @@
         "updateContext": null
       },
       "value": "export",
-      "start": 270,
-      "end": 276,
+      "start": 272,
+      "end": 278,
       "loc": {
         "start": {
           "line": 10,
@@ -588,8 +588,8 @@
         "binop": null
       },
       "value": "function",
-      "start": 277,
-      "end": 285,
+      "start": 279,
+      "end": 287,
       "loc": {
         "start": {
           "line": 10,
@@ -614,8 +614,8 @@
         "binop": null
       },
       "value": "delay",
-      "start": 286,
-      "end": 291,
+      "start": 288,
+      "end": 293,
       "loc": {
         "start": {
           "line": 10,
@@ -639,8 +639,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 292,
-      "end": 293,
+      "start": 294,
+      "end": 295,
       "loc": {
         "start": {
           "line": 10,
@@ -665,8 +665,8 @@
         "binop": null
       },
       "value": "thunk",
-      "start": 294,
-      "end": 299,
+      "start": 296,
+      "end": 301,
       "loc": {
         "start": {
           "line": 10,
@@ -690,8 +690,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 300,
-      "end": 301,
+      "start": 302,
+      "end": 303,
       "loc": {
         "start": {
           "line": 10,
@@ -715,8 +715,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 302,
-      "end": 303,
+      "start": 304,
+      "end": 305,
       "loc": {
         "start": {
           "line": 10,
@@ -743,8 +743,8 @@
         "updateContext": null
       },
       "value": "return",
-      "start": 305,
-      "end": 311,
+      "start": 307,
+      "end": 313,
       "loc": {
         "start": {
           "line": 11,
@@ -771,8 +771,8 @@
         "updateContext": null
       },
       "value": "new",
-      "start": 312,
-      "end": 315,
+      "start": 314,
+      "end": 317,
       "loc": {
         "start": {
           "line": 11,
@@ -797,8 +797,8 @@
         "binop": null
       },
       "value": "Lazy",
-      "start": 316,
-      "end": 320,
+      "start": 318,
+      "end": 322,
       "loc": {
         "start": {
           "line": 11,
@@ -822,8 +822,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 320,
-      "end": 321,
+      "start": 322,
+      "end": 323,
       "loc": {
         "start": {
           "line": 11,
@@ -848,8 +848,8 @@
         "binop": null
       },
       "value": "thunk",
-      "start": 322,
-      "end": 327,
+      "start": 324,
+      "end": 329,
       "loc": {
         "start": {
           "line": 11,
@@ -873,8 +873,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 328,
-      "end": 329,
+      "start": 330,
+      "end": 331,
       "loc": {
         "start": {
           "line": 11,
@@ -899,8 +899,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 330,
-      "end": 331,
+      "start": 332,
+      "end": 333,
       "loc": {
         "start": {
           "line": 11,
@@ -924,8 +924,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 332,
-      "end": 333,
+      "start": 334,
+      "end": 335,
       "loc": {
         "start": {
           "line": 12,
@@ -950,8 +950,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 334,
-      "end": 334,
+      "start": 336,
+      "end": 336,
       "loc": {
         "start": {
           "line": 13,
