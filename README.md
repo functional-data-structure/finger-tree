@@ -11,15 +11,19 @@ Parent is [@aureooms/js-persistent](https://github.com/aureooms/js-persistent).
                       | Single x
                       | Deep ( Digit x ) ( FingerTree ( Node x ) ) ( Digit x )
 
-[![License](https://img.shields.io/github/license/aureooms/js-fingertree.svg?style=flat)](https://raw.githubusercontent.com/aureooms/js-fingertree/master/LICENSE)
-[![NPM version](https://img.shields.io/npm/v/@aureooms/js-fingertree.svg?style=flat)](https://www.npmjs.org/package/@aureooms/js-fingertree)
-[![Build Status](https://img.shields.io/travis/aureooms/js-fingertree.svg?style=flat)](https://travis-ci.org/aureooms/js-fingertree)
-[![Coverage Status](https://img.shields.io/coveralls/aureooms/js-fingertree.svg?style=flat)](https://coveralls.io/r/aureooms/js-fingertree)
-[![Dependencies Status](https://img.shields.io/david/aureooms/js-fingertree.svg?style=flat)](https://david-dm.org/aureooms/js-fingertree#info=dependencies)
-[![devDependencies Status](https://img.shields.io/david/dev/aureooms/js-fingertree.svg?style=flat)](https://david-dm.org/aureooms/js-fingertree#info=devDependencies)
-[![Code Climate](https://img.shields.io/codeclimate/github/aureooms/js-fingertree.svg?style=flat)](https://codeclimate.com/github/aureooms/js-fingertree)
-[![NPM downloads per month](https://img.shields.io/npm/dm/@aureooms/js-fingertree.svg?style=flat)](https://www.npmjs.org/package/@aureooms/js-fingertree)
-[![GitHub issues](https://img.shields.io/github/issues/aureooms/js-fingertree.svg?style=flat)](https://github.com/aureooms/js-fingertree/issues)
+[![License](https://img.shields.io/github/license/aureooms/js-fingertree.svg)](https://raw.githubusercontent.com/aureooms/js-fingertree/master/LICENSE)
+[![Version](https://img.shields.io/npm/v/@aureooms/js-fingertree.svg)](https://www.npmjs.org/package/@aureooms/js-fingertree)
+[![Build](https://img.shields.io/travis/aureooms/js-fingertree/master.svg)](https://travis-ci.org/aureooms/js-fingertree/branches)
+[![Dependencies](https://img.shields.io/david/aureooms/js-fingertree.svg)](https://david-dm.org/aureooms/js-fingertree)
+[![Dev dependencies](https://img.shields.io/david/dev/aureooms/js-fingertree.svg)](https://david-dm.org/aureooms/js-fingertree?type=dev)
+[![GitHub issues](https://img.shields.io/github/issues/aureooms/js-fingertree.svg)](https://github.com/aureooms/js-fingertree/issues)
+[![Downloads](https://img.shields.io/npm/dm/@aureooms/js-fingertree.svg)](https://www.npmjs.org/package/@aureooms/js-fingertree)
+
+[![Code issues](https://img.shields.io/codeclimate/issues/aureooms/js-fingertree.svg)](https://codeclimate.com/github/aureooms/js-fingertree/issues)
+[![Code maintainability](https://img.shields.io/codeclimate/maintainability/github/aureooms/js-fingertree.svg)](https://codeclimate.com/github/aureooms/js-fingertree/trends/churn)
+[![Code coverage (cov)](https://img.shields.io/codecov/c/github/aureooms/js-fingertree.svg)](https://codecov.io/gh/aureooms/js-fingertree)
+[![Code coverage (clim)](https://img.shields.io/codeclimate/coverage-letter/aureooms/js-fingertree.svg)](https://codeclimate.com/github/aureooms/js-fingertree/trends/test_coverage_new_code)
+[![Code technical debt](https://img.shields.io/codeclimate/tech-debt/aureooms/js-fingertree.svg)](https://codeclimate.com/github/aureooms/js-fingertree/trends/technical_debt)
 [![Documentation](https://aureooms.github.io/js-fingertree/badge.svg)](https://aureooms.github.io/js-fingertree/source.html)
 
 
