@@ -1,4 +1,4 @@
-export * from './_fast' ;
-export * from './concatenate' ;
-export * from './measure' ;
-export * from './split' ;
+export * from './_fast';
+export * from './concatenate';
+export * from './measure';
+export * from './split';

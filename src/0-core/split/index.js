@@ -1,3 +1,3 @@
-export * from './Split' ;
-export * from './deepL' ;
-export * from './deepR' ;
+export * from './Split';
+export * from './deepL';
+export * from './deepR';

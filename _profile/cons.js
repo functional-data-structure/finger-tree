@@ -1,30 +1,36 @@
 console.time('prepare');
-require( 'babel-polyfill' ) ;
-var ArgumentParser = require( 'argparse' ).ArgumentParser ;
-var itertools = require( '@aureooms/js-itertools' ) ;
-var empty = require('..').empty ;
-var COUNTER = {
-	plus : function ( a , b ) { return a + b ; } ,
-	measure : function ( x ) { return 1 ; } ,
-	zero : function ( ) { return 0 ; } ,
-} ;
+require('@babel/polyfill');
+const ArgumentParser = require('argparse').ArgumentParser;
+const itertools = require('@aureooms/js-itertools');
+const empty = require('..').empty;
+const COUNTER = {
+	plus(a, b) {
+		return a + b;
+	},
+	measure(x) {
+		return 1;
+	},
+	zero() {
+		return 0;
+	}
+};
 
-var parser = new ArgumentParser( ) ;
-parser.addArgument( [ 'M' ] , { defaultValue : 1000 , nargs : '?' } ) ;
-parser.addArgument( [ '-N' ] , { defaultValue : 1000 } ) ;
-var args = parser.parseArgs( ) ;
-var M = args.M ;
-var N = args.N ;
+const parser = new ArgumentParser();
+parser.addArgument(['M'], {defaultValue: 1000, nargs: '?'});
+parser.addArgument(['-N'], {defaultValue: 1000});
+const args = parser.parseArgs();
+const M = args.M;
+const N = args.N;
 
-console.log( 'number of operations:' , M * N ) ;
+console.log('number of operations:', M * N);
 
-var t = empty( COUNTER ) ;
+const t = empty(COUNTER);
 console.timeEnd('prepare');
 
-console.time( 'cons' ) ;
-for ( var k = 0 ; k < N ; ++k ) {
-	var x = t ;
-	for ( var i = 0 ; i < M ; ++i ) x = x.cons( ) ;
+console.time('cons');
+for (let k = 0; k < N; ++k) {
+	let x = t;
+	for (let i = 0; i < M; ++i) x = x.cons();
 }
-console.timeEnd( 'cons' ) ;
 
+console.timeEnd('cons');

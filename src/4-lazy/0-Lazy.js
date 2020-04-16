@@ -1,64 +1,65 @@
-import { Tree } from '../3-tree/base/Tree' ;
+import {Tree} from '../3-tree/base/Tree';
 
-export function Lazy ( thunk ) {
-	this.tree = null ;
-	this.thunk = thunk ;
+export function Lazy(thunk) {
+	this.tree = null;
+	this.thunk = thunk;
 }
 
-Lazy.prototype = new Tree( ) ;
+Lazy.prototype = new Tree();
 
-Lazy.prototype.force = function ( ) {
-	if ( this.tree === null ) {
-		this.tree = this.thunk( ) ;
-		this.thunk = null ;
+Lazy.prototype.force = function () {
+	if (this.tree === null) {
+		this.tree = this.thunk();
+		this.thunk = null;
 	}
-	return this.tree ;
-} ;
 
-Lazy.prototype.empty = function ( ) {
-	return this.force( ).empty( ) ;
-} ;
+	return this.tree;
+};
 
-Lazy.prototype.measure = function ( ) {
-	return this.force( ).measure( ) ;
-} ;
+Lazy.prototype.empty = function () {
+	return this.force().empty();
+};
 
-Lazy.prototype.head = function ( ) {
-	return this.force( ).head( ) ;
-} ;
+Lazy.prototype.measure = function () {
+	return this.force().measure();
+};
 
-Lazy.prototype.last = function ( ) {
-	return this.force( ).last( ) ;
-} ;
+Lazy.prototype.head = function () {
+	return this.force().head();
+};
 
-Lazy.prototype.cons = function ( value ) {
-	return this.force( ).cons( value ) ;
-} ;
+Lazy.prototype.last = function () {
+	return this.force().last();
+};
 
-Lazy.prototype.push = function ( value ) {
-	return this.force( ).push( value ) ;
-} ;
+Lazy.prototype.cons = function (value) {
+	return this.force().cons(value);
+};
 
-Lazy.prototype.tail = function ( ) {
-	return this.force( ).tail( ) ;
-} ;
+Lazy.prototype.push = function (value) {
+	return this.force().push(value);
+};
 
-Lazy.prototype.init = function ( ) {
-	return this.force( ).init( ) ;
-} ;
+Lazy.prototype.tail = function () {
+	return this.force().tail();
+};
 
-Lazy.prototype.splitTree = function ( p , i ) {
-	return this.force( ).splitTree( p , i ) ;
-} ;
+Lazy.prototype.init = function () {
+	return this.force().init();
+};
 
-Lazy.prototype.split = function ( p ) {
-	return this.force( ).split( p ) ;
-} ;
+Lazy.prototype.splitTree = function (p, i) {
+	return this.force().splitTree(p, i);
+};
 
-Lazy.prototype.concat = function ( other ) {
-	return this.force( ).concat( other ) ;
-} ;
+Lazy.prototype.split = function (p) {
+	return this.force().split(p);
+};
 
-Lazy.prototype[Symbol.iterator] = function ( ) {
-	return this.force( )[Symbol.iterator]( ) ;
-} ;
+Lazy.prototype.concat = function (other) {
+	return this.force().concat(other);
+};
+
+Lazy.prototype[Symbol.iterator] = function () {
+	return this.force()[Symbol.iterator]();
+};

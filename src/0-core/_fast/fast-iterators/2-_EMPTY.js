@@ -1,3 +1,3 @@
-import { _EmptyGenerator } from '.' ;
+import {_EmptyGenerator} from '.';
 
-export const _EMPTY = new _EmptyGenerator( ) ;
+export const _EMPTY = new _EmptyGenerator();

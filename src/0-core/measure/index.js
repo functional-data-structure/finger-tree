@@ -1,2 +1,2 @@
-export * from './CachedMeasure' ;
-export * from './cache' ;
+export * from './CachedMeasure';
+export * from './cache';

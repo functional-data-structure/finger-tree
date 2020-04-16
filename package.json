@@ -46,7 +46,8 @@
     "fingertree": "0.1.7",
     "microtime": "3.0.0",
     "np": "6.2.1",
-    "nyc": "15.0.1"
+    "nyc": "15.0.1",
+    "xo": "^0.29.1"
   },
   "files": [
     "lib"
@@ -75,6 +76,36 @@
     "esdoc": "esdoc",
     "prepare": "npm run build",
     "release": "np",
-    "test": "ava"
+    "test": "xo && ava"
+  },
+  "xo": {
+    "prettier": true,
+    "ignore": [
+      "lib",
+      "doc"
+    ],
+    "plugins": [
+      "unicorn"
+    ],
+    "rules": {
+      "camelcase": "off",
+      "no-unused-vars": "off",
+      "unicorn/filename-case": "off"
+    },
+    "overrides": [
+      {
+        "files": "_benchmark/*.js",
+        "rules": {
+          "import/no-unassigned-import": "off",
+          "no-undef": "off"
+        }
+      },
+      {
+        "files": "_profile/*.js",
+        "rules": {
+          "import/no-unassigned-import": "off"
+        }
+      }
+    ]
   }
 }

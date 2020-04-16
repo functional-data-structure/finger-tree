@@ -1,9 +1,7 @@
-export function _prepend ( tree , list ) {
+export function _prepend(tree, list) {
+	let i = list.length;
 
-	let i = list.length ;
+	while (i--) tree = tree.cons(list[i]);
 
-	while ( i-- ) tree = tree.cons( list[i] ) ;
-
-	return tree ;
-
+	return tree;
 }

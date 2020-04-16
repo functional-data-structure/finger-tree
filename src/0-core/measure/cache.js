@@ -1,5 +1,5 @@
-import { CachedMeasure } from '.' ;
+import {CachedMeasure} from '.';
 
-export function cache ( M ) {
-	return M instanceof CachedMeasure ? M : new CachedMeasure( M ) ;
+export function cache(M) {
+	return M instanceof CachedMeasure ? M : new CachedMeasure(M);
 }

@@ -1,9 +1,9 @@
-import { append , prepend } from '../../0-core' ;
+import {append, prepend} from '../../0-core';
 
 /**
  * Base class for all implementations.
  */
-export function Tree ( ) { }
+export function Tree() {}
 
 /**
  * For performance purposes, some of the operations are implemented lazily.
@@ -12,9 +12,9 @@ export function Tree ( ) { }
  *
  * @returns {Tree} The shallow evaluated tree.
  */
-Tree.prototype.force = function ( ) {
-	return this ;
-} ;
+Tree.prototype.force = function () {
+	return this;
+};
 
 /**
  * Returns a tree that contains a prefix of this tree's values left-to-right list.
@@ -35,9 +35,9 @@ Tree.prototype.force = function ( ) {
  *
  * @returns {Tree} The output tree.
  */
-Tree.prototype.takeUntil = function ( predicate ) {
-	return this.split( predicate )[0] ;
-} ;
+Tree.prototype.takeUntil = function (predicate) {
+	return this.split(predicate)[0];
+};
 
 /**
  * Returns a tree that contains a suffix of this tree's values left-to-right
@@ -57,9 +57,9 @@ Tree.prototype.takeUntil = function ( predicate ) {
  *
  * @returns {Tree} The output tree.
  */
-Tree.prototype.dropUntil = function ( predicate ) {
-	return this.split( predicate )[1] ;
-} ;
+Tree.prototype.dropUntil = function (predicate) {
+	return this.split(predicate)[1];
+};
 
 /**
  * Returns a tree that contains all values of this tree in-order followed by
@@ -76,9 +76,9 @@ Tree.prototype.dropUntil = function ( predicate ) {
  *
  * @returns {Tree} The output tree.
  */
-Tree.prototype.append = function ( iterable ) {
-	return append( this , iterable ) ;
-} ;
+Tree.prototype.append = function (iterable) {
+	return append(this, iterable);
+};
 
 /**
  * Returns a tree that contains all values of the input iterable in-order
@@ -95,6 +95,6 @@ Tree.prototype.append = function ( iterable ) {
  *
  * @returns {Tree} The output tree.
  */
-Tree.prototype.prepend = function ( iterable ) {
-	return prepend( this , iterable ) ;
-} ;
+Tree.prototype.prepend = function (iterable) {
+	return prepend(this, iterable);
+};

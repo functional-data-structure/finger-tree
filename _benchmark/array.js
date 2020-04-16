@@ -1,34 +1,39 @@
+let t;
+let i;
+const length = 100000;
 
-var t, i, len = 100000;
-
-console.log('number of operations: ', len);
+console.log('number of operations:', length);
 
 console.time('total');
 console.time('cons');
-t = [ ] ;
-for (i = 0; i < len; ++i) {
-  t.unshift( i ) ;
+t = [];
+for (i = 0; i < length; ++i) {
+	t.unshift(i);
 }
+
 console.timeEnd('cons');
 
 console.time('tail');
-for (i = 0; i < len; ++i) {
-  t.shift( ) ;
+for (i = 0; i < length; ++i) {
+	t.shift();
 }
+
 console.timeEnd('tail');
 
 console.time('push');
-t = [ ] ;
-for (i = 0; i < len; ++i) {
-  t.push( i ) ;
+t = [];
+for (i = 0; i < length; ++i) {
+	t.push(i);
 }
+
 console.timeEnd('push');
 
 console.log('split: no time since you cannot splice an array more than once');
 
 console.time('init');
-for (i = 0; i < len; ++i) {
-  t.pop( ) ;
+for (i = 0; i < length; ++i) {
+	t.pop();
 }
+
 console.timeEnd('init');
 console.timeEnd('total');
