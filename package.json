@@ -4,9 +4,6 @@
   "version": "4.0.6",
   "author": "Aurélien Ooms <aurelien.ooms@gmail.com>",
   "ava": {
-    "sources": [
-      "src/**/*"
-    ],
     "files": [
       "test/src/**/*"
     ],
@@ -39,7 +36,7 @@
     "@babel/preset-env": "7.9.5",
     "@babel/register": "7.9.0",
     "argparse": "1.0.10",
-    "ava": "2.4.0",
+    "ava": "3.7.0",
     "benchmark": "2.1.4",
     "coveralls": "3.0.11",
     "esdoc": "1.1.0",
@@ -48,8 +45,8 @@
     "esdoc-standard-plugin": "1.0.0",
     "fingertree": "0.1.7",
     "microtime": "3.0.0",
-    "np": "5.2.1",
-    "nyc": "14.1.1"
+    "np": "6.2.1",
+    "nyc": "15.0.1"
   },
   "files": [
     "lib"
