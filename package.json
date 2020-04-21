@@ -39,7 +39,7 @@
     "argparse": "1.0.10",
     "ava": "3.7.1",
     "benchmark": "2.1.4",
-    "coveralls": "3.0.12",
+    "coveralls": "3.0.13",
     "esdoc": "1.1.0",
     "esdoc-inject-script-plugin": "1.0.0",
     "esdoc-inject-style-plugin": "1.0.0",
