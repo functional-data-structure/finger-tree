@@ -37,7 +37,7 @@
     "@babel/preset-env": "7.9.5",
     "@babel/register": "7.9.0",
     "argparse": "1.0.10",
-    "ava": "3.7.1",
+    "ava": "3.8.0",
     "benchmark": "2.1.4",
     "coveralls": "3.1.0",
     "esdoc": "1.1.0",
