@@ -46,7 +46,7 @@
     "esdoc-standard-plugin": "1.0.0",
     "fingertree": "0.1.7",
     "microtime": "3.0.0",
-    "np": "6.2.3",
+    "np": "6.2.4",
     "nyc": "15.1.0",
     "xo": "0.32.0"
   },
