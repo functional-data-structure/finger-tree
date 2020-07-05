@@ -28,7 +28,7 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "@aureooms/js-itertools": "3.4.0",
+    "@aureooms/js-itertools": "4.0.0",
     "@aureooms/js-measure": "1.0.3",
     "@aureooms/js-predicate": "2.0.2",
     "@babel/cli": "7.10.4",
