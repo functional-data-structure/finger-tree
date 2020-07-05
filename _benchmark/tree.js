@@ -1,4 +1,4 @@
-require('@babel/polyfill');
+require('regenerator-runtime/runtime');
 const itertools = require('@aureooms/js-itertools');
 const fingertree = require('..');
 const empty = fingertree.empty;

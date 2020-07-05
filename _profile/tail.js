@@ -1,5 +1,5 @@
 console.time('prepare');
-require('@babel/polyfill');
+require('regenerator-runtime/runtime');
 const ArgumentParser = require('argparse').ArgumentParser;
 const itertools = require('@aureooms/js-itertools');
 const empty = require('..').empty;

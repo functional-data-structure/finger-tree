@@ -36,11 +36,11 @@ All methods are pure functions that do not modify their object.
 > The [parent project](https://github.com/aureooms/js-persistent) shows how
 > specialized persistent data structures can be build on top of those methods.
 
-> The code needs a ES2015+ polyfill to work (`regeneratorRuntime`), for example
-> [babel-polyfill](https://babeljs.io/docs/usage/polyfill).
+> The code requires `regeneratorRuntime` to be defined, for instance by importing
+> [regenerator-runtime/runtime](https://www.npmjs.com/package/regenerator-runtime).
 
 ```js
-import 'babel-polyfill' ;
+import 'regenerator-runtime/runtime.js' ;
 ```
 
 ### Definition of a `Tree`

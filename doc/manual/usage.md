@@ -1,11 +1,11 @@
 # Usage
 
-The code needs a ES2015+ polyfill to work, for example
-[babel-polyfill](https://babeljs.io/docs/usage/polyfill).
+The code requires `regeneratorRuntime` to be defined, for instance by importing
+[regenerator-runtime/runtime](https://www.npmjs.com/package/regenerator-runtime).
 ```js
-require( 'babel-polyfill' ) ;
+require( 'regenerator-runtime/runtime' );
 // or
-import 'babel-polyfill' ;
+import 'regenerator-runtime/runtime.js' ;
 ```
 
 Then
