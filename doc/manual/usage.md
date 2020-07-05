@@ -1,7 +1,9 @@
 # Usage
 
-The code requires `regeneratorRuntime` to be defined, for instance by importing
-[regenerator-runtime/runtime](https://www.npmjs.com/package/regenerator-runtime).
+> :warning: The code requires `regeneratorRuntime` to be defined, for instance by importing
+> [regenerator-runtime/runtime](https://www.npmjs.com/package/regenerator-runtime).
+
+First, require the polyfill at the entry point of your application
 ```js
 require( 'regenerator-runtime/runtime' );
 // or

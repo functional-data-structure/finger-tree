@@ -36,10 +36,13 @@ All methods are pure functions that do not modify their object.
 > The [parent project](https://github.com/aureooms/js-persistent) shows how
 > specialized persistent data structures can be build on top of those methods.
 
-> The code requires `regeneratorRuntime` to be defined, for instance by importing
+> :warning: The code requires `regeneratorRuntime` to be defined, for instance by importing
 > [regenerator-runtime/runtime](https://www.npmjs.com/package/regenerator-runtime).
 
+First, require the polyfill at the entry point of your application
 ```js
+require( 'regenerator-runtime/runtime' );
+// or
 import 'regenerator-runtime/runtime.js' ;
 ```
 
