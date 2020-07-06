@@ -1,5 +1,4 @@
 let t;
-let _t;
 let i;
 const length = 100000;
 
@@ -29,7 +28,7 @@ for (i = 0; i < length; ++i) {
 
 console.timeEnd('push');
 
-_t = t;
+const _t = t;
 
 console.time('init');
 for (i = 0; i < length; ++i) {
