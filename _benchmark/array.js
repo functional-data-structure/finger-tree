@@ -28,12 +28,12 @@ for (i = 0; i < length; ++i) {
 
 console.timeEnd('push');
 
-console.log('split: no time since you cannot splice an array more than once');
-
 console.time('init');
 for (i = 0; i < length; ++i) {
 	t.pop();
 }
 
 console.timeEnd('init');
+
+console.log('split: no time since you cannot splice an array more than once');
 console.timeEnd('total');

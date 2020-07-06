@@ -1,4 +1,5 @@
 let t;
+let _t;
 let i;
 const length = 100000;
 
@@ -28,13 +29,7 @@ for (i = 0; i < length; ++i) {
 
 console.timeEnd('push');
 
-console.time('split');
-for (i = 0; i < length; ++i) {
-	t.slice(0, i);
-	t.slice(i);
-}
-
-console.timeEnd('split');
+_t = t;
 
 console.time('init');
 for (i = 0; i < length; ++i) {
@@ -42,4 +37,13 @@ for (i = 0; i < length; ++i) {
 }
 
 console.timeEnd('init');
+
+console.time('split');
+for (i = 0; i < length; ++i) {
+	_t.slice(0, i);
+	_t.slice(i);
+}
+
+console.timeEnd('split');
+
 console.timeEnd('total');
