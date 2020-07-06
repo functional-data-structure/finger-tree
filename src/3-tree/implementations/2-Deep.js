@@ -6,12 +6,16 @@ import {
 	_from_small_list,
 	_deepL,
 	_deepR,
+	CachedMeasure,
 	Split
 } from '../../0-core';
 import {One, Two, Four} from '../../1-digit';
-import {delay} from '../../4-lazy';
+import {delay, Lazy} from '../../4-lazy';
+
+import assert from 'assert';
 
 export function Deep(M, left, middle, right) {
+	assert(middle instanceof Lazy || middle.M instanceof CachedMeasure);
 	this.M = M;
 	this.left = left;
 	this.middle = middle;

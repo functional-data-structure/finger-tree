@@ -41,7 +41,3 @@ Node2.prototype.push = function (value) {
 Node2.prototype.cons = function (value) {
 	throw new Error('trying to call cons of Node2');
 };
-
-export function node2(M, a, b) {
-	return new Node2(M.plus(M.measure(a), M.measure(b)), a, b);
-}
