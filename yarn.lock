@@ -1556,17 +1556,17 @@ babel-plugin-espower@^3.0.0:
     espurify "^1.6.0"
     estraverse "^4.1.1"
 
-babel-plugin-transform-remove-console@^6.9.4:
+babel-plugin-transform-remove-console@6.9.4:
   version "6.9.4"
   resolved "https://registry.yarnpkg.com/babel-plugin-transform-remove-console/-/babel-plugin-transform-remove-console-6.9.4.tgz#b980360c067384e24b357a588d807d3c83527780"
   integrity sha1-uYA2DAZzhOJLNXpYjYB9PINSd4A=
 
-babel-plugin-unassert@^3.0.1:
+babel-plugin-unassert@3.0.1:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/babel-plugin-unassert/-/babel-plugin-unassert-3.0.1.tgz#cba17c38249a0bb26a72eb3793e0b24e29fcb7cd"
   integrity sha512-dJvXKECYExv+GGieSm6jNe1H+HRa6hH/qPZWOoUfAN+cO6GbnC9fCbwHeJs0XZ2UqcEtJLpJCMs8q0pUEMI0fw==
 
-babel-preset-power-assert@^3.0.0:
+babel-preset-power-assert@3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/babel-preset-power-assert/-/babel-preset-power-assert-3.0.0.tgz#3ceba576d57eb3f1b2e5e1865277539d9dc6570d"
   integrity sha512-StkhBJsKdLemlsujCWjuHjjd/h+u7L2bgb/9/YsgBj1FBnE0BUthyaY8Xdpiqthf3NUudhd8BJMZFjGtXVKE6A==
@@ -6537,7 +6537,7 @@ power-assert-util-string-width@^1.2.0:
   dependencies:
     eastasianwidth "^0.2.0"
 
-power-assert@^1.6.1:
+power-assert@1.6.1:
   version "1.6.1"
   resolved "https://registry.yarnpkg.com/power-assert/-/power-assert-1.6.1.tgz#b28cbc02ae808afd1431d0cd5093a39ac5a5b1fe"
   integrity sha512-VWkkZV6Y+W8qLX/PtJu2Ur2jDPIs0a5vbP0TpKeybNcIXmT4vcKoVkyTp5lnQvTpY/DxacAZ4RZisHRHLJcAZQ==
@@ -6805,15 +6805,15 @@ regenerate@^1.4.0:
   resolved "https://registry.yarnpkg.com/regenerate/-/regenerate-1.4.1.tgz#cad92ad8e6b591773485fbe05a485caf4f457e6f"
   integrity sha512-j2+C8+NtXQgEKWk49MMP5P/u2GhnahTtVkRIHr5R5lVRlbKvmQ+oS+A5aLKWp2ma5VkT8sh6v+v4hbH0YHR66A==
 
+regenerator-runtime@0.13.5, regenerator-runtime@^0.13.4:
+  version "0.13.5"
+  resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.13.5.tgz#d878a1d094b4306d10b9096484b33ebd55e26697"
+  integrity sha512-ZS5w8CpKFinUzOwW3c83oPeVXoNsrLsaCoLtJvAClH135j/R77RuymhiSErhm2lKcwSCIpmvIWSbDkIfAqKQlA==
+
 regenerator-runtime@^0.11.0:
   version "0.11.1"
   resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.11.1.tgz#be05ad7f9bf7d22e056f9726cee5017fbf19e2e9"
   integrity sha512-MguG95oij0fC3QV3URf4V2SDYGJhJnJGqvIIgdECeODCT98wSWDAJ94SSuVpYQUoTcGUIL6L4yNB7j1DFFHSBg==
-
-regenerator-runtime@^0.13.4, regenerator-runtime@^0.13.5:
-  version "0.13.5"
-  resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.13.5.tgz#d878a1d094b4306d10b9096484b33ebd55e26697"
-  integrity sha512-ZS5w8CpKFinUzOwW3c83oPeVXoNsrLsaCoLtJvAClH135j/R77RuymhiSErhm2lKcwSCIpmvIWSbDkIfAqKQlA==
 
 regenerator-transform@^0.14.2:
   version "0.14.5"
