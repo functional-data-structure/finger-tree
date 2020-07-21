@@ -100,7 +100,7 @@
     "np": "6.3.2",
     "nyc": "15.1.0",
     "power-assert": "1.6.1",
-    "regenerator-runtime": "0.13.5",
+    "regenerator-runtime": "0.13.6",
     "xo": "0.32.1"
   },
   "files": [
