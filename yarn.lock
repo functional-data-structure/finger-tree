@@ -2,25 +2,25 @@
 # yarn lockfile v1
 
 
-"@aureooms/js-collections-deque@^4.0.0":
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/@aureooms/js-collections-deque/-/js-collections-deque-4.0.0.tgz#cb6ff3070f4413023622db817da261f91e42aef0"
-  integrity sha512-+dI0PSkshl0vKmeyfzWM5Xtfopu4XYIrlqKKq3emjyuCi1DCO9SaPIgKblMDjl9WttmJhTYsunNyPYula5woAw==
+"@aureooms/js-collections-deque@^4.0.1":
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/@aureooms/js-collections-deque/-/js-collections-deque-4.0.1.tgz#bd8b827cdb597d061525c380dd704e338c77bd5f"
+  integrity sha512-dktRVLyep0sUKpqgtG/JseA232KMdlu9t9ePq2wHcng1dZ3+63qW2C+FlKXBktrT1dU92DDxIL6PqnV97kHA1Q==
   dependencies:
-    "@aureooms/js-error" "^4.0.0"
+    "@aureooms/js-error" "^4.0.1"
 
-"@aureooms/js-error@^4.0.0":
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/@aureooms/js-error/-/js-error-4.0.0.tgz#cea0a145f5290f443911b3d1890d7254a18eeb9b"
-  integrity sha512-omwmz82cPxqRnorZ8tqeIcPj1QcJnCsMiVYcwOh/QfUXhJ+DmiBPgWOm5WWAQvQzYVKe0/k7+s2ie+UoRJagjA==
+"@aureooms/js-error@^4.0.1":
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/@aureooms/js-error/-/js-error-4.0.1.tgz#be2740b3f31a337e0828930c9b70d38113b4dd77"
+  integrity sha512-zsgs6wmnRsKljlusewYiBaFBM/hIJp43b7OwE9ybpLEL4wfXjGP17cJTTAY8gpzALVFwEA5/flxIK0I6gJJLHQ==
 
-"@aureooms/js-itertools@4.0.0":
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/@aureooms/js-itertools/-/js-itertools-4.0.0.tgz#2f7247b4a89202606bb54a731753590625b4b185"
-  integrity sha512-QhCT+RDUbWPL7h3RA7LcXdC1IQdR3Bfl0Re0ClDxem7DUnRbHuL4Nlwgo3UoqaRBE8OI4RpBw+hXVVqVg14J9Q==
+"@aureooms/js-itertools@4.0.1":
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/@aureooms/js-itertools/-/js-itertools-4.0.1.tgz#6968eb71456daa042af0b8682100d59f397f7f91"
+  integrity sha512-cNaSF+5bgRGUXWBlWzSLjo0t12MHmkr1qCIxCvB4d3D5C7GPG0SH35efMOrv1VkHrLXuTqAbdnNu/iy2i26w5w==
   dependencies:
-    "@aureooms/js-collections-deque" "^4.0.0"
-    "@aureooms/js-error" "^4.0.0"
+    "@aureooms/js-collections-deque" "^4.0.1"
+    "@aureooms/js-error" "^4.0.1"
 
 "@aureooms/js-measure@1.0.3":
   version "1.0.3"
