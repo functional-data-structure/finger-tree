@@ -84,7 +84,7 @@
     "@babel/core": "7.11.4",
     "@babel/preset-env": "7.11.0",
     "@babel/register": "7.10.5",
-    "argparse": "2.0.0",
+    "argparse": "2.0.1",
     "ava": "3.12.1",
     "babel-plugin-transform-remove-console": "6.9.4",
     "babel-plugin-unassert": "3.0.1",
