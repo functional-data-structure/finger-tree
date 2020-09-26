@@ -127,14 +127,15 @@
   "scripts": {
     "build": "babel --delete-dir-on-start --env-name production src -d lib",
     "cover": "nyc --reporter=lcov npm test",
+    "dev": "npm run lint -- --fix && npm run cover -- -- -st --fail-fast",
     "esdoc": "esdoc",
+    "lint": "xo",
     "prepare": "npm run build",
     "release": "np",
     "test": "ava",
-    "lint": "xo",
-    "dev": "npm run lint -- --fix && npm run cover -- -- -st --fail-fast",
     "travis": "npm run lint && npm run cover"
   },
+  "sideEffects": false,
   "xo": {
     "prettier": true,
     "ignore": [
@@ -164,6 +165,5 @@
         }
       }
     ]
-  },
-  "sideEffects": false
+  }
 }
