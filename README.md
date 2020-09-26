@@ -20,11 +20,11 @@ Parent is [@aureooms/js-persistent](https://github.com/aureooms/js-persistent).
 [![Downloads](https://img.shields.io/npm/dm/@aureooms/js-fingertree.svg)](https://www.npmjs.org/package/@aureooms/js-fingertree)
 
 [![Code issues](https://img.shields.io/codeclimate/issues/aureooms/js-fingertree.svg)](https://codeclimate.com/github/aureooms/js-fingertree/issues)
-[![Code maintainability](https://img.shields.io/codeclimate/maintainability/github/aureooms/js-fingertree.svg)](https://codeclimate.com/github/aureooms/js-fingertree/trends/churn)
-[![Code coverage (cov)](https://img.shields.io/codecov/c/github/aureooms/js-fingertree.svg)](https://codecov.io/gh/aureooms/js-fingertree)
-[![Code coverage (clim)](https://img.shields.io/codeclimate/coverage-letter/aureooms/js-fingertree.svg)](https://codeclimate.com/github/aureooms/js-fingertree/trends/test_coverage_new_code)
+[![Code maintainability](https://img.shields.io/codeclimate/maintainability/aureooms/js-fingertree.svg)](https://codeclimate.com/github/aureooms/js-fingertree/trends/churn)
+[![Code coverage (cov)](https://img.shields.io/codecov/c/gh/aureooms/js-fingertree/master.svg)](https://codecov.io/gh/aureooms/js-fingertree)
 [![Code technical debt](https://img.shields.io/codeclimate/tech-debt/aureooms/js-fingertree.svg)](https://codeclimate.com/github/aureooms/js-fingertree/trends/technical_debt)
 [![Documentation](https://aureooms.github.io/js-fingertree/badge.svg)](https://aureooms.github.io/js-fingertree/source.html)
+[![Package size](https://img.shields.io/bundlephobia/minzip/@aureooms/js-fingertree)](https://bundlephobia.com/result?p=@aureooms/js-fingertree)
 
 
 ## API reference
