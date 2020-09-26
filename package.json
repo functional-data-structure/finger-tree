@@ -130,7 +130,8 @@
     "esdoc": "esdoc",
     "prepare": "npm run build",
     "release": "np",
-    "test": "xo && ava"
+    "test": "ava",
+    "lint": "xo"
   },
   "xo": {
     "prettier": true,
