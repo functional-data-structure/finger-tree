@@ -175,7 +175,7 @@ test('FingerTree', (t) => {
 	);
 
 	const _N = 1000;
-	const __N = (_N / 2) | 0;
+	const __N = Math.floor(_N / 2);
 	const J = from(COUNTER, range(_N));
 	t.deepEqual(
 		list(map(list, J.split(gt(__N)))),
