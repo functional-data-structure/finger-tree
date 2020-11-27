@@ -47,7 +47,7 @@ Parent is [@aureooms/js-persistent](https://github.com/aureooms/js-persistent).
     * [`Tree#last() -> x`](#treelast---x)
     * [`Tree#init() -> Tree`](#treeinit---tree)
     * [`Tree#tail() -> Tree`](#treetail---tree)
-  * [:brick: Add elements](#brick-add-elements)
+  * [:salt: Add elements](#salt-add-elements)
     * [`Tree#push(x) -> Tree`](#treepushx---tree)
     * [`Tree#cons(x) -> Tree`](#treeconsx---tree)
     * [`Tree#append(Iterable) -> Tree`](#treeappenditerable---tree)
@@ -199,7 +199,7 @@ Returns a new tree without the left-most element.
 while ( ! tree.empty() ) tree = tree.tail() ;
 ```
 
-### :brick: Add elements
+### :salt: Add elements
 
 #### `Tree#push(x) -> Tree`
 
