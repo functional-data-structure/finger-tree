@@ -1,7 +1,9 @@
-[@aureooms/js-fingertree](https://aureooms.github.io/js-fingertree)
+:cactus: [@aureooms/js-fingertree](https://aureooms.github.io/js-fingertree)
 ==
 
-<img src="https://cdn.rawgit.com/aureooms/js-fingertree/main/media/sketch.svg" width="864">
+<p align="center">
+<img src="https://cdn.rawgit.com/aureooms/js-fingertree/main/media/sketch.svg" width="400">
+</p>
 
 Finger trees for JavaScript.
 See [docs](https://aureooms.github.io/js-fingertree).
@@ -27,7 +29,44 @@ Parent is [@aureooms/js-persistent](https://github.com/aureooms/js-persistent).
 [![Package size](https://img.shields.io/bundlephobia/minzip/@aureooms/js-fingertree)](https://bundlephobia.com/result?p=@aureooms/js-fingertree)
 
 
-## API reference
+<!-- vim-markdown-toc GFM -->
+
+* [:woman_teacher: API reference](#woman_teacher-api-reference)
+  * [:cactus: Definition of a `Tree`](#cactus-definition-of-a-tree)
+  * [:straight_ruler: Definition of a `Measure`](#straight_ruler-definition-of-a-measure)
+    * [Example of a `Measure`](#example-of-a-measure)
+  * [:package: How to `import`](#package-how-to-import)
+  * [:baby: How to create a `Tree`](#baby-how-to-create-a-tree)
+    * [`empty(Measure) -> Tree`](#emptymeasure---tree)
+    * [`from(Measure, Iterable) -> Tree`](#frommeasure-iterable---tree)
+  * [:question: Predicates](#question-predicates)
+    * [`Tree#measure() -> m`](#treemeasure---m)
+    * [`Tree#empty() -> Boolean`](#treeempty---boolean)
+  * [:pizza: Slice](#pizza-slice)
+    * [`Tree#head() -> x`](#treehead---x)
+    * [`Tree#last() -> x`](#treelast---x)
+    * [`Tree#init() -> Tree`](#treeinit---tree)
+    * [`Tree#tail() -> Tree`](#treetail---tree)
+  * [:brick: Add elements](#brick-add-elements)
+    * [`Tree#push(x) -> Tree`](#treepushx---tree)
+    * [`Tree#cons(x) -> Tree`](#treeconsx---tree)
+    * [`Tree#append(Iterable) -> Tree`](#treeappenditerable---tree)
+    * [`Tree#prepend(Iterable) -> Tree`](#treeprependiterable---tree)
+  * [:last_quarter_moon: Merge](#last_quarter_moon-merge)
+    * [`Tree#concat(Tree) -> Tree`](#treeconcattree---tree)
+  * [:broken_heart: Split](#broken_heart-split)
+    * [`Tree#splitTree(Function, m) -> [ Tree , x , Tree ]`](#treesplittreefunction-m----tree--x--tree-)
+    * [`Tree#split(Function) -> [ Tree , Tree ]`](#treesplitfunction----tree--tree-)
+    * [`Tree#takeUntil(Function) -> Tree`](#treetakeuntilfunction---tree)
+    * [`Tree#dropUntil(Function) -> Tree`](#treedropuntilfunction---tree)
+  * [:flying_saucer: Visit](#flying_saucer-visit)
+    * [`TreeSymbol.iterator -> Iterable`](#treesymboliterator---iterable)
+* [:scroll: References](#scroll-references)
+* [:link: Links](#link-links)
+
+<!-- vim-markdown-toc -->
+
+## :woman_teacher: API reference
 
 The data structure is
 [fully persistent](https://en.wikipedia.org/wiki/Persistent_data_structure#Fully_persistent):
@@ -36,23 +75,13 @@ All methods are pure functions that do not modify their object.
 > The [parent project](https://github.com/aureooms/js-persistent) shows how
 > specialized persistent data structures can be build on top of those methods.
 
-> :warning: The code requires `regeneratorRuntime` to be defined, for instance by importing
-> [regenerator-runtime/runtime](https://www.npmjs.com/package/regenerator-runtime).
-
-First, require the polyfill at the entry point of your application
-```js
-require( 'regenerator-runtime/runtime' );
-// or
-import 'regenerator-runtime/runtime.js' ;
-```
-
-### Definition of a `Tree`
+### :cactus: Definition of a `Tree`
 
     data Tree x = Empty
                 | Single x
                 | Deep ( Digit x ) ( Tree ( Node x ) ) ( Digit x )
 
-### Definition of a `Measure`
+### :straight_ruler: Definition of a `Measure`
 
     Measure = (
       plus = ( x , x ) -> m
@@ -60,7 +89,7 @@ import 'regenerator-runtime/runtime.js' ;
       zero = ( ) => m
     )
 
-### Example of a `Measure`
+#### Example of a `Measure`
 
 The following measure will compute the size of each subtree.
 
@@ -72,31 +101,55 @@ const counter = {
 } ;
 ```
 
-### How to `import`
+See also
+[@aureooms/js-measure](https://aureooms.github.io/js-measure/file/src/1-api/1-Measures.js.html)
+for more examples of measures and see
+[@aureooms/js-persistent](https://github.com/aureooms/js-persistent)
+for examples of data structures that can be build on top of this abstraction.
 
-No surprises here:
+
+### :package: How to `import`
+
+> :warning: The code requires `regeneratorRuntime` to be defined, for instance by importing
+> [regenerator-runtime/runtime](https://www.npmjs.com/package/regenerator-runtime).
+
+First, require the polyfill at the entry point of your application:
+```js
+require( 'regenerator-runtime/runtime' ) ;
+// or
+import 'regenerator-runtime/runtime.js' ;
+```
+
+Then require what you need from the exported object, for instance the two main
+API functions `from` and `empty`:
 
 ```js
+const { from , empty } = require( '@aureooms/js-fingertree' ) ;
+// or
 import { from , empty } from '@aureooms/js-fingertree' ;
 ```
 
-### `empty(Measure) -> Tree`
+### :baby: How to create a `Tree`
 
-Create an empty fingertree from a measure object.
+#### `empty(Measure) -> Tree`
+
+Create an empty tree from [a measure object](#example-of-a-measure).
 
 ```js
 let tree = empty( counter ) ;
 ```
 
-### `from(Measure, Iterable) -> Tree`
+#### `from(Measure, Iterable) -> Tree`
 
-Create a fingertree from a measure object and an iterable.
+Create a tree from a measure object and an iterable.
 
 ```js
 let tree = from( counter , 'abc' ) ;
 ```
 
-### `Tree#measure() -> m`
+### :question: Predicates
+
+#### `Tree#measure() -> m`
 
 Returns the measure of the tree.
 
@@ -104,7 +157,7 @@ Returns the measure of the tree.
 if ( tree.measure() > 1 ) ...
 ```
 
-### `Tree#empty() -> Boolean`
+#### `Tree#empty() -> Boolean`
 
 Returns `true` if the tree is empty, `false` otherwise.
 
@@ -112,7 +165,9 @@ Returns `true` if the tree is empty, `false` otherwise.
 return tree.empty() ? 'empty' : 'not empty' ;
 ```
 
-### `Tree#head() -> x`
+### :pizza: Slice
+
+#### `Tree#head() -> x`
 
 Returns the left-most value in the tree.
 
@@ -120,7 +175,7 @@ Returns the left-most value in the tree.
 let head = tree.head() ; // 'a'
 ```
 
-### `Tree#last() -> x`
+#### `Tree#last() -> x`
 
 Returns the right-most value in the tree.
 
@@ -128,23 +183,7 @@ Returns the right-most value in the tree.
 let last = tree.last() ; // 'b'
 ```
 
-### `Tree#push(x) -> Tree`
-
-Returns a new tree with an additional value as the new right-most value.
-
-```js
-tree = tree.cons('k');
-```
-
-### `Tree#cons(x) -> Tree`
-
-Returns a new tree with an additional value as the new left-most value.
-
-```js
-tree = tree.cons('g');
-```
-
-### `Tree#init() -> Tree`
+#### `Tree#init() -> Tree`
 
 Returns a new tree without the right-most element.
 
@@ -152,7 +191,7 @@ Returns a new tree without the right-most element.
 while ( ! tree.empty() ) tree = tree.init() ;
 ```
 
-### `Tree#tail() -> Tree`
+#### `Tree#tail() -> Tree`
 
 Returns a new tree without the left-most element.
 
@@ -160,7 +199,25 @@ Returns a new tree without the left-most element.
 while ( ! tree.empty() ) tree = tree.tail() ;
 ```
 
-### `Tree#append(Iterable) -> Tree`
+### :brick: Add elements
+
+#### `Tree#push(x) -> Tree`
+
+Returns a new tree with an additional value as the new right-most value.
+
+```js
+tree = tree.cons('k');
+```
+
+#### `Tree#cons(x) -> Tree`
+
+Returns a new tree with an additional value as the new left-most value.
+
+```js
+tree = tree.cons('g');
+```
+
+#### `Tree#append(Iterable) -> Tree`
 
 Equivalent to applying `push` to each value of the iterable in order.
 
@@ -168,7 +225,7 @@ Equivalent to applying `push` to each value of the iterable in order.
 tree.append( 'www' ) ;
 ```
 
-### `Tree#prepend(Iterable) -> Tree`
+#### `Tree#prepend(Iterable) -> Tree`
 
 Equivalent to applying `cons` to each value of the iterable in reverse order.
 
@@ -176,7 +233,9 @@ Equivalent to applying `cons` to each value of the iterable in reverse order.
 tree.prepend( 'xyz' ) ;
 ```
 
-### `Tree#concat(Tree) -> Tree`
+### :last_quarter_moon: Merge
+
+#### `Tree#concat(Tree) -> Tree`
 
 Returns the concatenation of two trees.
 
@@ -184,38 +243,36 @@ Returns the concatenation of two trees.
 tree = tree.concat( tree );
 ```
 
-### `Tree[Symbol.iterator]() -> Iterable`
 
-Returns an iterator on the values of the tree in left-to-right order.
+### :broken_heart: Split
 
-```js
-for ( const x of tree ) console.log( x ) ;
-```
+The following methods allow you to efficiently split a tree at the element
+where the measure crosses a given threshold.
 
-### `Tree#splitTree(Function, m) -> [ Tree , x , Tree ]`
+#### `Tree#splitTree(Function, m) -> [ Tree , x , Tree ]`
 
 Split the tree into a left tree, a middle value, and a right tree according to
 a predicate on the measure of the tree __increased by a constant measure `m`__.
 The predicate must be monotone, false then true, on prefixes of the values in
-left-to-right order. The middle value `x` is the item for which the predicate
+left-to-right order. The middle value `x` is the element for which the predicate
 switches from false to true.
 
 ```js
 let [ left , right ] = tree.split( measure => measure > 1 , 1 ) ;
 ```
 
-### `Tree#split(Function) -> [ Tree , Tree ]`
+#### `Tree#split(Function) -> [ Tree , Tree ]`
 
 Split the tree into a left tree and a right tree according to a predicate on
 the measure of the tree. The predicate must be monotone, false then true, on
 prefixes of the values in left-to-right order. The left-most value of the right
-tree is the item for which the predicate switches from false to true.
+tree is the element for which the predicate switches from false to true.
 
 ```js
 let [ left , right ] = tree.split( measure => measure > 2 ) ;
 ```
 
-### `Tree#takeUntil(Function) -> Tree`
+#### `Tree#takeUntil(Function) -> Tree`
 
 Returns the left tree of `Tree#split`.
 
@@ -223,7 +280,7 @@ Returns the left tree of `Tree#split`.
 let left = tree.takeUntil( measure => measure > 2 ) ;
 ```
 
-### `Tree#dropUntil(Function) -> Tree`
+#### `Tree#dropUntil(Function) -> Tree`
 
 Returns the right tree of `Tree#split`.
 
@@ -231,9 +288,23 @@ Returns the right tree of `Tree#split`.
 let right = tree.dropUntil( measure => measure > 2 ) ;
 ```
 
-## References
+
+### :flying_saucer: Visit
+
+#### `Tree[Symbol.iterator]() -> Iterable`
+
+Returns an iterator on the values of the tree in left-to-right order.
+
+```js
+for ( const x of tree ) console.log( x ) ;
+```
+
+
+## :scroll: References
 
   - [Hinze and Paterson](http://staff.city.ac.uk/~ross/papers/FingerTree.pdf)
+
+## :link: Links
   - [An (incomplete) implementation in Python](https://github.com/kachayev/fn.py/blob/main/fn/immutable/finger.py)
   - [A (buggy) previous JavaScript implementation](https://github.com/qiao/fingertree.js)
   - [A coffeescript implementation](https://github.com/zot/Leisure/blob/main/src/lib/fingertree.coffee)
