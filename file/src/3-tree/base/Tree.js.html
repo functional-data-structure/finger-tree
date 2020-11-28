@@ -8,7 +8,7 @@
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
   <script src="script/manual.js"></script>
-<link rel="stylesheet" href="./inject/css/0-style.css"><script src="./inject/script/0-header.js"></script><meta name="description" content="Finger Trees for JavaScript"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="aureooms/js-fingertree"><meta property="twitter:description" content="Finger Trees for JavaScript"></head>
+<script src="./inject/script/0-header.js"></script><link rel="stylesheet" href="./inject/css/0-style.css"><meta name="description" content="Finger Trees for JavaScript"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="aureooms/js-fingertree"><meta property="twitter:description" content="Finger Trees for JavaScript"></head>
 <body class="layout-container" data-ice="rootContainer">
 
 <header>
@@ -24,7 +24,7 @@
   </span>
     <ul class="search-result"></ul>
   </div>
-<a style="position:relative; top:3px;" href="https://github.com/aureooms/js-fingertree.git"><img width="20px" src="./image/github.png"></a></header>
+<a style="position:relative; top:3px;" href="https://github.com/aureooms/js-fingertree"><img width="20px" src="./image/github.png"></a></header>
 
 <nav class="navigation" data-ice="nav"><div>
   <ul>
@@ -56,8 +56,8 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Three">Three</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Four">Four</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#2-node">2-node</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Node2">Node2</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-node2">node2</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Node3">Node3</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-node2">node2</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-node3">node3</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#3-tree-base">3-tree/base</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Tree">Tree</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#3-tree-implementations">3-tree/implementations</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Empty">Empty</a></span></span></li>
@@ -70,12 +70,12 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/3-tree/base/Tree.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import { append , prepend } from &apos;../../0-core&apos; ;
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import {append, prepend} from &apos;../../0-core&apos;;
 
 /**
  * Base class for all implementations.
  */
-export function Tree ( ) { }
+export function Tree() {}
 
 /**
  * For performance purposes, some of the operations are implemented lazily.
@@ -84,9 +84,9 @@ export function Tree ( ) { }
  *
  * @returns {Tree} The shallow evaluated tree.
  */
-Tree.prototype.force = function ( ) {
-	return this ;
-} ;
+Tree.prototype.force = function () {
+	return this;
+};
 
 /**
  * Returns a tree that contains a prefix of this tree&apos;s values left-to-right list.
@@ -107,9 +107,9 @@ Tree.prototype.force = function ( ) {
  *
  * @returns {Tree} The output tree.
  */
-Tree.prototype.takeUntil = function ( predicate ) {
-	return this.split( predicate )[0] ;
-} ;
+Tree.prototype.takeUntil = function (predicate) {
+	return this.split(predicate)[0];
+};
 
 /**
  * Returns a tree that contains a suffix of this tree&apos;s values left-to-right
@@ -129,9 +129,9 @@ Tree.prototype.takeUntil = function ( predicate ) {
  *
  * @returns {Tree} The output tree.
  */
-Tree.prototype.dropUntil = function ( predicate ) {
-	return this.split( predicate )[1] ;
-} ;
+Tree.prototype.dropUntil = function (predicate) {
+	return this.split(predicate)[1];
+};
 
 /**
  * Returns a tree that contains all values of this tree in-order followed by
@@ -148,9 +148,9 @@ Tree.prototype.dropUntil = function ( predicate ) {
  *
  * @returns {Tree} The output tree.
  */
-Tree.prototype.append = function ( iterable ) {
-	return append( this , iterable ) ;
-} ;
+Tree.prototype.append = function (iterable) {
+	return append(this, iterable);
+};
 
 /**
  * Returns a tree that contains all values of the input iterable in-order
@@ -167,15 +167,15 @@ Tree.prototype.append = function ( iterable ) {
  *
  * @returns {Tree} The output tree.
  */
-Tree.prototype.prepend = function ( iterable ) {
-	return prepend( this , iterable ) ;
-} ;
+Tree.prototype.prepend = function (iterable) {
+	return prepend(this, iterable);
+};
 </code></pre>
 
 </div>
 
 <footer class="footer">
-  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.0.4)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.1.0)</span><img src="./image/esdoc-logo-mini-black.png"></a>
 </footer>
 
 <script src="script/search_index.js"></script>

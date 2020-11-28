@@ -8,7 +8,7 @@
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
   <script src="script/manual.js"></script>
-<link rel="stylesheet" href="./inject/css/0-style.css"><script src="./inject/script/0-header.js"></script><meta name="description" content="Finger Trees for JavaScript"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="aureooms/js-fingertree"><meta property="twitter:description" content="Finger Trees for JavaScript"></head>
+<script src="./inject/script/0-header.js"></script><link rel="stylesheet" href="./inject/css/0-style.css"><meta name="description" content="Finger Trees for JavaScript"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="aureooms/js-fingertree"><meta property="twitter:description" content="Finger Trees for JavaScript"></head>
 <body class="layout-container" data-ice="rootContainer">
 
 <header>
@@ -24,7 +24,7 @@
   </span>
     <ul class="search-result"></ul>
   </div>
-<a style="position:relative; top:3px;" href="https://github.com/aureooms/js-fingertree.git"><img width="20px" src="./image/github.png"></a></header>
+<a style="position:relative; top:3px;" href="https://github.com/aureooms/js-fingertree"><img width="20px" src="./image/github.png"></a></header>
 
 <nav class="navigation" data-ice="nav"><div>
   <ul>
@@ -56,8 +56,8 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Three">Three</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Four">Four</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#2-node">2-node</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Node2">Node2</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-node2">node2</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Node3">Node3</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-node2">node2</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-node3">node3</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#3-tree-base">3-tree/base</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Tree">Tree</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#3-tree-implementations">3-tree/implementations</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Empty">Empty</a></span></span></li>
@@ -340,7 +340,7 @@
           
           
           
-          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-Single">Single</a></span></span><span class="code" data-ice="signature">(M: <span>*</span>, element: <span>*</span>)</span>
+          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-Single">Single</a></span></span><span class="code" data-ice="signature">(M: <span>*</span>, value: <span>*</span>)</span>
         </p>
       </div>
       <div>
@@ -1139,11 +1139,11 @@ as soon as a method is called on it.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/3-tree/implementations/2-Deep.js.html#lineNumber7">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/3-tree/implementations/2-Deep.js.html#lineNumber17">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {Deep} from &apos;<span><a href="file/src/3-tree/implementations/2-Deep.js.html#lineNumber7">@aureooms/js-fingertree/src/3-tree/implementations/2-Deep.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {Deep} from &apos;<span><a href="file/src/3-tree/implementations/2-Deep.js.html#lineNumber17">@aureooms/js-fingertree/src/3-tree/implementations/2-Deep.js</a></span>&apos;</code></pre></div>
   
   
   
@@ -1657,7 +1657,7 @@ as soon as a method is called on it.</p>
     
     
     
-    <span class="code" data-ice="name">Single</span><span class="code" data-ice="signature">(M: <span>*</span>, element: <span>*</span>)</span>
+    <span class="code" data-ice="name">Single</span><span class="code" data-ice="signature">(M: <span>*</span>, value: <span>*</span>)</span>
     <span class="right-info">
       
       
@@ -1687,7 +1687,7 @@ as soon as a method is called on it.</p>
       <td data-ice="description"></td>
     </tr>
 <tr data-ice="property" data-depth="0">
-      <td data-ice="name" class="code" data-depth="0">element</td>
+      <td data-ice="name" class="code" data-depth="0">value</td>
       <td data-ice="type" class="code"><span>*</span></td>
       <td data-ice="appendix"></td>
       <td data-ice="description"></td>
@@ -2597,11 +2597,11 @@ as soon as a method is called on it.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/2-node/2-Node2.js.html#lineNumber46">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/2-node/node2.js.html#lineNumber7">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {node2} from &apos;<span><a href="file/src/2-node/2-Node2.js.html#lineNumber46">@aureooms/js-fingertree/src/2-node/2-Node2.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {node2} from &apos;<span><a href="file/src/2-node/node2.js.html#lineNumber7">@aureooms/js-fingertree/src/2-node/node2.js</a></span>&apos;</code></pre></div>
   
   
   
@@ -2680,11 +2680,11 @@ as soon as a method is called on it.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/2-node/3-Node3.js.html#lineNumber47">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/2-node/node3.js.html#lineNumber7">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {node3} from &apos;<span><a href="file/src/2-node/3-Node3.js.html#lineNumber47">@aureooms/js-fingertree/src/2-node/3-Node3.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {node3} from &apos;<span><a href="file/src/2-node/node3.js.html#lineNumber7">@aureooms/js-fingertree/src/2-node/node3.js</a></span>&apos;</code></pre></div>
   
   
   
@@ -2846,11 +2846,11 @@ as soon as a method is called on it.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/0-core/concatenate/prepend.js.html#lineNumber4">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/0-core/concatenate/prepend.js.html#lineNumber3">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {prepend} from &apos;<span><a href="file/src/0-core/concatenate/prepend.js.html#lineNumber4">@aureooms/js-fingertree/src/0-core/concatenate/prepend.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {prepend} from &apos;<span><a href="file/src/0-core/concatenate/prepend.js.html#lineNumber3">@aureooms/js-fingertree/src/0-core/concatenate/prepend.js</a></span>&apos;</code></pre></div>
   
   
   
@@ -3371,11 +3371,11 @@ as soon as a method is called on it.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/0-core/_fast/_from_digit.js.html#lineNumber4">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/0-core/_fast/_from_digit.js.html#lineNumber5">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {_from_digit} from &apos;<span><a href="file/src/0-core/_fast/_from_digit.js.html#lineNumber4">@aureooms/js-fingertree/src/0-core/_fast/_from_digit.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {_from_digit} from &apos;<span><a href="file/src/0-core/_fast/_from_digit.js.html#lineNumber5">@aureooms/js-fingertree/src/0-core/_fast/_from_digit.js</a></span>&apos;</code></pre></div>
   
   
   
@@ -3448,11 +3448,11 @@ as soon as a method is called on it.</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/0-core/_fast/_from_small_list.js.html#lineNumber4">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/0-core/_fast/_from_small_list.js.html#lineNumber5">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {_from_small_list} from &apos;<span><a href="file/src/0-core/_fast/_from_small_list.js.html#lineNumber4">@aureooms/js-fingertree/src/0-core/_fast/_from_small_list.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {_from_small_list} from &apos;<span><a href="file/src/0-core/_fast/_from_small_list.js.html#lineNumber5">@aureooms/js-fingertree/src/0-core/_fast/_from_small_list.js</a></span>&apos;</code></pre></div>
   
   
   
@@ -3594,7 +3594,7 @@ as soon as a method is called on it.</p>
 </div>
 
 <footer class="footer">
-  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.0.4)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.1.0)</span><img src="./image/esdoc-logo-mini-black.png"></a>
 </footer>
 
 <script src="script/search_index.js"></script>

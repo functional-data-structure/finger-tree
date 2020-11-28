@@ -1,7 +1,7 @@
 {
   "type": "File",
   "start": 0,
-  "end": 172,
+  "end": 176,
   "loc": {
     "start": {
       "line": 1,
@@ -15,7 +15,7 @@
   "program": {
     "type": "Program",
     "start": 0,
-    "end": 172,
+    "end": 176,
     "loc": {
       "start": {
         "line": 1,
@@ -30,8 +30,8 @@
     "body": [
       {
         "type": "ExportAllDeclaration",
-        "start": 146,
-        "end": 171,
+        "start": 151,
+        "end": 175,
         "loc": {
           "start": {
             "line": 6,
@@ -39,13 +39,13 @@
           },
           "end": {
             "line": 6,
-            "column": 25
+            "column": 24
           }
         },
         "source": {
           "type": "StringLiteral",
-          "start": 160,
-          "end": 169,
+          "start": 165,
+          "end": 174,
           "loc": {
             "start": {
               "line": 6,
@@ -66,9 +66,9 @@
         "leadingComments": [
           {
             "type": "CommentLine",
-            "value": "export * from './0-core' ;",
+            "value": " Export * from './0-core' ;",
             "start": 0,
-            "end": 28,
+            "end": 29,
             "loc": {
               "start": {
                 "line": 1,
@@ -76,31 +76,31 @@
               },
               "end": {
                 "line": 1,
-                "column": 28
-              }
-            }
-          },
-          {
-            "type": "CommentLine",
-            "value": "export * from './1-digit' ;",
-            "start": 29,
-            "end": 58,
-            "loc": {
-              "start": {
-                "line": 2,
-                "column": 0
-              },
-              "end": {
-                "line": 2,
                 "column": 29
               }
             }
           },
           {
             "type": "CommentLine",
-            "value": "export * from './2-node' ;",
-            "start": 59,
-            "end": 87,
+            "value": " export * from './1-digit' ;",
+            "start": 30,
+            "end": 60,
+            "loc": {
+              "start": {
+                "line": 2,
+                "column": 0
+              },
+              "end": {
+                "line": 2,
+                "column": 30
+              }
+            }
+          },
+          {
+            "type": "CommentLine",
+            "value": " export * from './2-node' ;",
+            "start": 61,
+            "end": 90,
             "loc": {
               "start": {
                 "line": 3,
@@ -108,15 +108,15 @@
               },
               "end": {
                 "line": 3,
-                "column": 28
+                "column": 29
               }
             }
           },
           {
             "type": "CommentLine",
-            "value": "export * from './3-tree' ;",
-            "start": 88,
-            "end": 116,
+            "value": " export * from './3-tree' ;",
+            "start": 91,
+            "end": 120,
             "loc": {
               "start": {
                 "line": 4,
@@ -124,15 +124,15 @@
               },
               "end": {
                 "line": 4,
-                "column": 28
+                "column": 29
               }
             }
           },
           {
             "type": "CommentLine",
-            "value": "export * from './4-lazy' ;",
-            "start": 117,
-            "end": 145,
+            "value": " export * from './4-lazy' ;",
+            "start": 121,
+            "end": 150,
             "loc": {
               "start": {
                 "line": 5,
@@ -140,7 +140,7 @@
               },
               "end": {
                 "line": 5,
-                "column": 28
+                "column": 29
               }
             }
           }
@@ -152,9 +152,9 @@
   "comments": [
     {
       "type": "CommentLine",
-      "value": "export * from './0-core' ;",
+      "value": " Export * from './0-core' ;",
       "start": 0,
-      "end": 28,
+      "end": 29,
       "loc": {
         "start": {
           "line": 1,
@@ -162,31 +162,31 @@
         },
         "end": {
           "line": 1,
-          "column": 28
-        }
-      }
-    },
-    {
-      "type": "CommentLine",
-      "value": "export * from './1-digit' ;",
-      "start": 29,
-      "end": 58,
-      "loc": {
-        "start": {
-          "line": 2,
-          "column": 0
-        },
-        "end": {
-          "line": 2,
           "column": 29
         }
       }
     },
     {
       "type": "CommentLine",
-      "value": "export * from './2-node' ;",
-      "start": 59,
-      "end": 87,
+      "value": " export * from './1-digit' ;",
+      "start": 30,
+      "end": 60,
+      "loc": {
+        "start": {
+          "line": 2,
+          "column": 0
+        },
+        "end": {
+          "line": 2,
+          "column": 30
+        }
+      }
+    },
+    {
+      "type": "CommentLine",
+      "value": " export * from './2-node' ;",
+      "start": 61,
+      "end": 90,
       "loc": {
         "start": {
           "line": 3,
@@ -194,15 +194,15 @@
         },
         "end": {
           "line": 3,
-          "column": 28
+          "column": 29
         }
       }
     },
     {
       "type": "CommentLine",
-      "value": "export * from './3-tree' ;",
-      "start": 88,
-      "end": 116,
+      "value": " export * from './3-tree' ;",
+      "start": 91,
+      "end": 120,
       "loc": {
         "start": {
           "line": 4,
@@ -210,15 +210,15 @@
         },
         "end": {
           "line": 4,
-          "column": 28
+          "column": 29
         }
       }
     },
     {
       "type": "CommentLine",
-      "value": "export * from './4-lazy' ;",
-      "start": 117,
-      "end": 145,
+      "value": " export * from './4-lazy' ;",
+      "start": 121,
+      "end": 150,
       "loc": {
         "start": {
           "line": 5,
@@ -226,7 +226,7 @@
         },
         "end": {
           "line": 5,
-          "column": 28
+          "column": 29
         }
       }
     }
@@ -234,9 +234,9 @@
   "tokens": [
     {
       "type": "CommentLine",
-      "value": "export * from './0-core' ;",
+      "value": " Export * from './0-core' ;",
       "start": 0,
-      "end": 28,
+      "end": 29,
       "loc": {
         "start": {
           "line": 1,
@@ -244,31 +244,31 @@
         },
         "end": {
           "line": 1,
-          "column": 28
-        }
-      }
-    },
-    {
-      "type": "CommentLine",
-      "value": "export * from './1-digit' ;",
-      "start": 29,
-      "end": 58,
-      "loc": {
-        "start": {
-          "line": 2,
-          "column": 0
-        },
-        "end": {
-          "line": 2,
           "column": 29
         }
       }
     },
     {
       "type": "CommentLine",
-      "value": "export * from './2-node' ;",
-      "start": 59,
-      "end": 87,
+      "value": " export * from './1-digit' ;",
+      "start": 30,
+      "end": 60,
+      "loc": {
+        "start": {
+          "line": 2,
+          "column": 0
+        },
+        "end": {
+          "line": 2,
+          "column": 30
+        }
+      }
+    },
+    {
+      "type": "CommentLine",
+      "value": " export * from './2-node' ;",
+      "start": 61,
+      "end": 90,
       "loc": {
         "start": {
           "line": 3,
@@ -276,15 +276,15 @@
         },
         "end": {
           "line": 3,
-          "column": 28
+          "column": 29
         }
       }
     },
     {
       "type": "CommentLine",
-      "value": "export * from './3-tree' ;",
-      "start": 88,
-      "end": 116,
+      "value": " export * from './3-tree' ;",
+      "start": 91,
+      "end": 120,
       "loc": {
         "start": {
           "line": 4,
@@ -292,15 +292,15 @@
         },
         "end": {
           "line": 4,
-          "column": 28
+          "column": 29
         }
       }
     },
     {
       "type": "CommentLine",
-      "value": "export * from './4-lazy' ;",
-      "start": 117,
-      "end": 145,
+      "value": " export * from './4-lazy' ;",
+      "start": 121,
+      "end": 150,
       "loc": {
         "start": {
           "line": 5,
@@ -308,7 +308,7 @@
         },
         "end": {
           "line": 5,
-          "column": 28
+          "column": 29
         }
       }
     },
@@ -327,8 +327,8 @@
         "updateContext": null
       },
       "value": "export",
-      "start": 146,
-      "end": 152,
+      "start": 151,
+      "end": 157,
       "loc": {
         "start": {
           "line": 6,
@@ -354,8 +354,8 @@
         "updateContext": null
       },
       "value": "*",
-      "start": 153,
-      "end": 154,
+      "start": 158,
+      "end": 159,
       "loc": {
         "start": {
           "line": 6,
@@ -380,8 +380,8 @@
         "binop": null
       },
       "value": "from",
-      "start": 155,
-      "end": 159,
+      "start": 160,
+      "end": 164,
       "loc": {
         "start": {
           "line": 6,
@@ -407,8 +407,8 @@
         "updateContext": null
       },
       "value": "./5-api",
-      "start": 160,
-      "end": 169,
+      "start": 165,
+      "end": 174,
       "loc": {
         "start": {
           "line": 6,
@@ -433,16 +433,16 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 170,
-      "end": 171,
+      "start": 174,
+      "end": 175,
       "loc": {
         "start": {
           "line": 6,
-          "column": 24
+          "column": 23
         },
         "end": {
           "line": 6,
-          "column": 25
+          "column": 24
         }
       }
     },
@@ -459,8 +459,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 172,
-      "end": 172,
+      "start": 176,
+      "end": 176,
       "loc": {
         "start": {
           "line": 7,

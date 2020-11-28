@@ -1,7 +1,7 @@
 {
   "type": "File",
   "start": 0,
-  "end": 336,
+  "end": 327,
   "loc": {
     "start": {
       "line": 1,
@@ -15,7 +15,7 @@
   "program": {
     "type": "Program",
     "start": 0,
-    "end": 336,
+    "end": 327,
     "loc": {
       "start": {
         "line": 1,
@@ -31,7 +31,7 @@
       {
         "type": "ImportDeclaration",
         "start": 0,
-        "end": 26,
+        "end": 23,
         "loc": {
           "start": {
             "line": 1,
@@ -39,36 +39,36 @@
           },
           "end": {
             "line": 1,
-            "column": 26
+            "column": 23
           }
         },
         "specifiers": [
           {
             "type": "ImportSpecifier",
-            "start": 9,
-            "end": 13,
+            "start": 8,
+            "end": 12,
             "loc": {
               "start": {
                 "line": 1,
-                "column": 9
+                "column": 8
               },
               "end": {
                 "line": 1,
-                "column": 13
+                "column": 12
               }
             },
             "imported": {
               "type": "Identifier",
-              "start": 9,
-              "end": 13,
+              "start": 8,
+              "end": 12,
               "loc": {
                 "start": {
                   "line": 1,
-                  "column": 9
+                  "column": 8
                 },
                 "end": {
                   "line": 1,
-                  "column": 13
+                  "column": 12
                 },
                 "identifierName": "Lazy"
               },
@@ -76,16 +76,16 @@
             },
             "local": {
               "type": "Identifier",
-              "start": 9,
-              "end": 13,
+              "start": 8,
+              "end": 12,
               "loc": {
                 "start": {
                   "line": 1,
-                  "column": 9
+                  "column": 8
                 },
                 "end": {
                   "line": 1,
-                  "column": 13
+                  "column": 12
                 },
                 "identifierName": "Lazy"
               },
@@ -95,16 +95,16 @@
         ],
         "source": {
           "type": "StringLiteral",
-          "start": 21,
-          "end": 24,
+          "start": 19,
+          "end": 22,
           "loc": {
             "start": {
               "line": 1,
-              "column": 21
+              "column": 19
             },
             "end": {
               "line": 1,
-              "column": 24
+              "column": 22
             }
           },
           "extra": {
@@ -117,8 +117,8 @@
           {
             "type": "CommentBlock",
             "value": "*\n * Wraps a tree-returning function with a tree proxy that will shallow evaluate\n * as soon as a method is called on it.\n *\n * @param {Function} thunk The function that evaluates to the underlying tree.\n * @returns {Tree} The lazy tree.\n ",
-            "start": 28,
-            "end": 271,
+            "start": 25,
+            "end": 268,
             "loc": {
               "start": {
                 "line": 3,
@@ -134,8 +134,8 @@
       },
       {
         "type": "ExportNamedDeclaration",
-        "start": 272,
-        "end": 335,
+        "start": 269,
+        "end": 326,
         "loc": {
           "start": {
             "line": 10,
@@ -150,8 +150,8 @@
         "source": null,
         "declaration": {
           "type": "FunctionDeclaration",
-          "start": 279,
-          "end": 335,
+          "start": 276,
+          "end": 326,
           "loc": {
             "start": {
               "line": 10,
@@ -164,8 +164,8 @@
           },
           "id": {
             "type": "Identifier",
-            "start": 288,
-            "end": 293,
+            "start": 285,
+            "end": 290,
             "loc": {
               "start": {
                 "line": 10,
@@ -186,16 +186,16 @@
           "params": [
             {
               "type": "Identifier",
-              "start": 296,
-              "end": 301,
+              "start": 291,
+              "end": 296,
               "loc": {
                 "start": {
                   "line": 10,
-                  "column": 24
+                  "column": 22
                 },
                 "end": {
                   "line": 10,
-                  "column": 29
+                  "column": 27
                 },
                 "identifierName": "thunk"
               },
@@ -204,12 +204,12 @@
           ],
           "body": {
             "type": "BlockStatement",
-            "start": 304,
-            "end": 335,
+            "start": 298,
+            "end": 326,
             "loc": {
               "start": {
                 "line": 10,
-                "column": 32
+                "column": 29
               },
               "end": {
                 "line": 12,
@@ -219,8 +219,8 @@
             "body": [
               {
                 "type": "ReturnStatement",
-                "start": 307,
-                "end": 333,
+                "start": 301,
+                "end": 324,
                 "loc": {
                   "start": {
                     "line": 11,
@@ -228,13 +228,13 @@
                   },
                   "end": {
                     "line": 11,
-                    "column": 27
+                    "column": 24
                   }
                 },
                 "argument": {
                   "type": "NewExpression",
-                  "start": 314,
-                  "end": 331,
+                  "start": 308,
+                  "end": 323,
                   "loc": {
                     "start": {
                       "line": 11,
@@ -242,13 +242,13 @@
                     },
                     "end": {
                       "line": 11,
-                      "column": 25
+                      "column": 23
                     }
                   },
                   "callee": {
                     "type": "Identifier",
-                    "start": 318,
-                    "end": 322,
+                    "start": 312,
+                    "end": 316,
                     "loc": {
                       "start": {
                         "line": 11,
@@ -265,16 +265,16 @@
                   "arguments": [
                     {
                       "type": "Identifier",
-                      "start": 324,
-                      "end": 329,
+                      "start": 317,
+                      "end": 322,
                       "loc": {
                         "start": {
                           "line": 11,
-                          "column": 18
+                          "column": 17
                         },
                         "end": {
                           "line": 11,
-                          "column": 23
+                          "column": 22
                         },
                         "identifierName": "thunk"
                       },
@@ -290,8 +290,8 @@
             {
               "type": "CommentBlock",
               "value": "*\n * Wraps a tree-returning function with a tree proxy that will shallow evaluate\n * as soon as a method is called on it.\n *\n * @param {Function} thunk The function that evaluates to the underlying tree.\n * @returns {Tree} The lazy tree.\n ",
-              "start": 28,
-              "end": 271,
+              "start": 25,
+              "end": 268,
               "loc": {
                 "start": {
                   "line": 3,
@@ -310,8 +310,8 @@
           {
             "type": "CommentBlock",
             "value": "*\n * Wraps a tree-returning function with a tree proxy that will shallow evaluate\n * as soon as a method is called on it.\n *\n * @param {Function} thunk The function that evaluates to the underlying tree.\n * @returns {Tree} The lazy tree.\n ",
-            "start": 28,
-            "end": 271,
+            "start": 25,
+            "end": 268,
             "loc": {
               "start": {
                 "line": 3,
@@ -332,8 +332,8 @@
     {
       "type": "CommentBlock",
       "value": "*\n * Wraps a tree-returning function with a tree proxy that will shallow evaluate\n * as soon as a method is called on it.\n *\n * @param {Function} thunk The function that evaluates to the underlying tree.\n * @returns {Tree} The lazy tree.\n ",
-      "start": 28,
-      "end": 271,
+      "start": 25,
+      "end": 268,
       "loc": {
         "start": {
           "line": 3,
@@ -413,16 +413,16 @@
         "binop": null
       },
       "value": "Lazy",
-      "start": 9,
-      "end": 13,
+      "start": 8,
+      "end": 12,
       "loc": {
         "start": {
           "line": 1,
-          "column": 9
+          "column": 8
         },
         "end": {
           "line": 1,
-          "column": 13
+          "column": 12
         }
       }
     },
@@ -438,16 +438,16 @@
         "postfix": false,
         "binop": null
       },
-      "start": 14,
-      "end": 15,
+      "start": 12,
+      "end": 13,
       "loc": {
         "start": {
           "line": 1,
-          "column": 14
+          "column": 12
         },
         "end": {
           "line": 1,
-          "column": 15
+          "column": 13
         }
       }
     },
@@ -464,16 +464,16 @@
         "binop": null
       },
       "value": "from",
-      "start": 16,
-      "end": 20,
+      "start": 14,
+      "end": 18,
       "loc": {
         "start": {
           "line": 1,
-          "column": 16
+          "column": 14
         },
         "end": {
           "line": 1,
-          "column": 20
+          "column": 18
         }
       }
     },
@@ -491,16 +491,16 @@
         "updateContext": null
       },
       "value": ".",
-      "start": 21,
-      "end": 24,
+      "start": 19,
+      "end": 22,
       "loc": {
         "start": {
           "line": 1,
-          "column": 21
+          "column": 19
         },
         "end": {
           "line": 1,
-          "column": 24
+          "column": 22
         }
       }
     },
@@ -517,24 +517,24 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 25,
-      "end": 26,
+      "start": 22,
+      "end": 23,
       "loc": {
         "start": {
           "line": 1,
-          "column": 25
+          "column": 22
         },
         "end": {
           "line": 1,
-          "column": 26
+          "column": 23
         }
       }
     },
     {
       "type": "CommentBlock",
       "value": "*\n * Wraps a tree-returning function with a tree proxy that will shallow evaluate\n * as soon as a method is called on it.\n *\n * @param {Function} thunk The function that evaluates to the underlying tree.\n * @returns {Tree} The lazy tree.\n ",
-      "start": 28,
-      "end": 271,
+      "start": 25,
+      "end": 268,
       "loc": {
         "start": {
           "line": 3,
@@ -561,8 +561,8 @@
         "updateContext": null
       },
       "value": "export",
-      "start": 272,
-      "end": 278,
+      "start": 269,
+      "end": 275,
       "loc": {
         "start": {
           "line": 10,
@@ -588,8 +588,8 @@
         "binop": null
       },
       "value": "function",
-      "start": 279,
-      "end": 287,
+      "start": 276,
+      "end": 284,
       "loc": {
         "start": {
           "line": 10,
@@ -614,8 +614,8 @@
         "binop": null
       },
       "value": "delay",
-      "start": 288,
-      "end": 293,
+      "start": 285,
+      "end": 290,
       "loc": {
         "start": {
           "line": 10,
@@ -639,16 +639,16 @@
         "postfix": false,
         "binop": null
       },
-      "start": 294,
-      "end": 295,
+      "start": 290,
+      "end": 291,
       "loc": {
         "start": {
           "line": 10,
-          "column": 22
+          "column": 21
         },
         "end": {
           "line": 10,
-          "column": 23
+          "column": 22
         }
       }
     },
@@ -665,16 +665,16 @@
         "binop": null
       },
       "value": "thunk",
-      "start": 296,
-      "end": 301,
+      "start": 291,
+      "end": 296,
       "loc": {
         "start": {
           "line": 10,
-          "column": 24
+          "column": 22
         },
         "end": {
           "line": 10,
-          "column": 29
+          "column": 27
         }
       }
     },
@@ -690,16 +690,16 @@
         "postfix": false,
         "binop": null
       },
-      "start": 302,
-      "end": 303,
+      "start": 296,
+      "end": 297,
       "loc": {
         "start": {
           "line": 10,
-          "column": 30
+          "column": 27
         },
         "end": {
           "line": 10,
-          "column": 31
+          "column": 28
         }
       }
     },
@@ -715,16 +715,16 @@
         "postfix": false,
         "binop": null
       },
-      "start": 304,
-      "end": 305,
+      "start": 298,
+      "end": 299,
       "loc": {
         "start": {
           "line": 10,
-          "column": 32
+          "column": 29
         },
         "end": {
           "line": 10,
-          "column": 33
+          "column": 30
         }
       }
     },
@@ -743,8 +743,8 @@
         "updateContext": null
       },
       "value": "return",
-      "start": 307,
-      "end": 313,
+      "start": 301,
+      "end": 307,
       "loc": {
         "start": {
           "line": 11,
@@ -771,8 +771,8 @@
         "updateContext": null
       },
       "value": "new",
-      "start": 314,
-      "end": 317,
+      "start": 308,
+      "end": 311,
       "loc": {
         "start": {
           "line": 11,
@@ -797,8 +797,8 @@
         "binop": null
       },
       "value": "Lazy",
-      "start": 318,
-      "end": 322,
+      "start": 312,
+      "end": 316,
       "loc": {
         "start": {
           "line": 11,
@@ -822,8 +822,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 322,
-      "end": 323,
+      "start": 316,
+      "end": 317,
       "loc": {
         "start": {
           "line": 11,
@@ -848,16 +848,16 @@
         "binop": null
       },
       "value": "thunk",
-      "start": 324,
-      "end": 329,
+      "start": 317,
+      "end": 322,
       "loc": {
         "start": {
           "line": 11,
-          "column": 18
+          "column": 17
         },
         "end": {
           "line": 11,
-          "column": 23
+          "column": 22
         }
       }
     },
@@ -873,16 +873,16 @@
         "postfix": false,
         "binop": null
       },
-      "start": 330,
-      "end": 331,
+      "start": 322,
+      "end": 323,
       "loc": {
         "start": {
           "line": 11,
-          "column": 24
+          "column": 22
         },
         "end": {
           "line": 11,
-          "column": 25
+          "column": 23
         }
       }
     },
@@ -899,16 +899,16 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 332,
-      "end": 333,
+      "start": 323,
+      "end": 324,
       "loc": {
         "start": {
           "line": 11,
-          "column": 26
+          "column": 23
         },
         "end": {
           "line": 11,
-          "column": 27
+          "column": 24
         }
       }
     },
@@ -924,8 +924,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 334,
-      "end": 335,
+      "start": 325,
+      "end": 326,
       "loc": {
         "start": {
           "line": 12,
@@ -950,8 +950,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 336,
-      "end": 336,
+      "start": 327,
+      "end": 327,
       "loc": {
         "start": {
           "line": 13,

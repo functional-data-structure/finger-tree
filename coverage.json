@@ -42,14 +42,14 @@
       "expectCount": 1,
       "actualCount": 0,
       "undocumentLines": [
-        4
+        5
       ]
     },
     "src/0-core/_fast/_from_small_list.js": {
       "expectCount": 1,
       "actualCount": 0,
       "undocumentLines": [
-        4
+        5
       ]
     },
     "src/0-core/_fast/_prepend.js": {
@@ -106,7 +106,7 @@
       "expectCount": 1,
       "actualCount": 0,
       "undocumentLines": [
-        4
+        3
       ]
     },
     "src/0-core/measure/CachedMeasure.js": {
@@ -167,7 +167,7 @@
         37,
         41,
         52,
-        62
+        60
       ]
     },
     "src/1-digit/2-Two.js": {
@@ -183,8 +183,8 @@
         34,
         38,
         42,
-        55,
-        65
+        57,
+        69
       ]
     },
     "src/1-digit/3-Three.js": {
@@ -193,15 +193,15 @@
       "undocumentLines": [
         5,
         14,
-        25,
-        29,
-        33,
-        37,
-        41,
-        45,
-        49,
-        64,
-        74
+        23,
+        27,
+        31,
+        35,
+        39,
+        43,
+        47,
+        62,
+        79
       ]
     },
     "src/1-digit/4-Four.js": {
@@ -210,19 +210,19 @@
       "undocumentLines": [
         5,
         15,
-        29,
-        33,
-        37,
-        41,
-        45,
-        49,
-        53,
-        70,
-        80
+        24,
+        28,
+        32,
+        36,
+        40,
+        44,
+        48,
+        65,
+        86
       ]
     },
     "src/2-node/2-Node2.js": {
-      "expectCount": 11,
+      "expectCount": 10,
       "actualCount": 0,
       "undocumentLines": [
         3,
@@ -234,12 +234,11 @@
         29,
         33,
         37,
-        41,
-        46
+        41
       ]
     },
     "src/2-node/3-Node3.js": {
-      "expectCount": 11,
+      "expectCount": 10,
       "actualCount": 0,
       "undocumentLines": [
         3,
@@ -251,8 +250,21 @@
         30,
         34,
         38,
-        42,
-        47
+        42
+      ]
+    },
+    "src/2-node/node2.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        7
+      ]
+    },
+    "src/2-node/node3.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        7
       ]
     },
     "src/3-tree/base/Tree.js": {
@@ -300,18 +312,18 @@
       "expectCount": 13,
       "actualCount": 1,
       "undocumentLines": [
-        7,
         17,
-        37,
+        28,
         41,
         45,
         49,
-        65,
-        80,
-        96,
-        112,
-        118,
-        167
+        53,
+        70,
+        87,
+        100,
+        113,
+        117,
+        165
       ]
     },
     "src/4-lazy/0-Lazy.js": {
@@ -320,18 +332,18 @@
       "undocumentLines": [
         3,
         10,
-        18,
-        22,
-        26,
-        30,
-        34,
-        38,
-        42,
-        46,
-        50,
-        54,
-        58,
-        62
+        19,
+        23,
+        27,
+        31,
+        35,
+        39,
+        43,
+        47,
+        51,
+        55,
+        59,
+        63
       ]
     },
     "src/4-lazy/1-delay.js": {

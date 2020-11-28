@@ -1,7 +1,7 @@
 {
   "type": "File",
   "start": 0,
-  "end": 3121,
+  "end": 3085,
   "loc": {
     "start": {
       "line": 1,
@@ -15,7 +15,7 @@
   "program": {
     "type": "Program",
     "start": 0,
-    "end": 3121,
+    "end": 3085,
     "loc": {
       "start": {
         "line": 1,
@@ -31,7 +31,7 @@
       {
         "type": "ImportDeclaration",
         "start": 0,
-        "end": 49,
+        "end": 45,
         "loc": {
           "start": {
             "line": 1,
@@ -39,36 +39,36 @@
           },
           "end": {
             "line": 1,
-            "column": 49
+            "column": 45
           }
         },
         "specifiers": [
           {
             "type": "ImportSpecifier",
-            "start": 9,
-            "end": 15,
+            "start": 8,
+            "end": 14,
             "loc": {
               "start": {
                 "line": 1,
-                "column": 9
+                "column": 8
               },
               "end": {
                 "line": 1,
-                "column": 15
+                "column": 14
               }
             },
             "imported": {
               "type": "Identifier",
-              "start": 9,
-              "end": 15,
+              "start": 8,
+              "end": 14,
               "loc": {
                 "start": {
                   "line": 1,
-                  "column": 9
+                  "column": 8
                 },
                 "end": {
                   "line": 1,
-                  "column": 15
+                  "column": 14
                 },
                 "identifierName": "append"
               },
@@ -76,16 +76,16 @@
             },
             "local": {
               "type": "Identifier",
-              "start": 9,
-              "end": 15,
+              "start": 8,
+              "end": 14,
               "loc": {
                 "start": {
                   "line": 1,
-                  "column": 9
+                  "column": 8
                 },
                 "end": {
                   "line": 1,
-                  "column": 15
+                  "column": 14
                 },
                 "identifierName": "append"
               },
@@ -94,30 +94,30 @@
           },
           {
             "type": "ImportSpecifier",
-            "start": 18,
-            "end": 25,
+            "start": 16,
+            "end": 23,
             "loc": {
               "start": {
                 "line": 1,
-                "column": 18
+                "column": 16
               },
               "end": {
                 "line": 1,
-                "column": 25
+                "column": 23
               }
             },
             "imported": {
               "type": "Identifier",
-              "start": 18,
-              "end": 25,
+              "start": 16,
+              "end": 23,
               "loc": {
                 "start": {
                   "line": 1,
-                  "column": 18
+                  "column": 16
                 },
                 "end": {
                   "line": 1,
-                  "column": 25
+                  "column": 23
                 },
                 "identifierName": "prepend"
               },
@@ -125,16 +125,16 @@
             },
             "local": {
               "type": "Identifier",
-              "start": 18,
-              "end": 25,
+              "start": 16,
+              "end": 23,
               "loc": {
                 "start": {
                   "line": 1,
-                  "column": 18
+                  "column": 16
                 },
                 "end": {
                   "line": 1,
-                  "column": 25
+                  "column": 23
                 },
                 "identifierName": "prepend"
               },
@@ -144,16 +144,16 @@
         ],
         "source": {
           "type": "StringLiteral",
-          "start": 33,
-          "end": 47,
+          "start": 30,
+          "end": 44,
           "loc": {
             "start": {
               "line": 1,
-              "column": 33
+              "column": 30
             },
             "end": {
               "line": 1,
-              "column": 47
+              "column": 44
             }
           },
           "extra": {
@@ -166,8 +166,8 @@
           {
             "type": "CommentBlock",
             "value": "*\n * Base class for all implementations.\n ",
-            "start": 51,
-            "end": 97,
+            "start": 47,
+            "end": 93,
             "loc": {
               "start": {
                 "line": 3,
@@ -183,8 +183,8 @@
       },
       {
         "type": "ExportNamedDeclaration",
-        "start": 98,
-        "end": 126,
+        "start": 94,
+        "end": 119,
         "loc": {
           "start": {
             "line": 6,
@@ -192,15 +192,15 @@
           },
           "end": {
             "line": 6,
-            "column": 28
+            "column": 25
           }
         },
         "specifiers": [],
         "source": null,
         "declaration": {
           "type": "FunctionDeclaration",
-          "start": 105,
-          "end": 126,
+          "start": 101,
+          "end": 119,
           "loc": {
             "start": {
               "line": 6,
@@ -208,13 +208,13 @@
             },
             "end": {
               "line": 6,
-              "column": 28
+              "column": 25
             }
           },
           "id": {
             "type": "Identifier",
-            "start": 114,
-            "end": 118,
+            "start": 110,
+            "end": 114,
             "loc": {
               "start": {
                 "line": 6,
@@ -235,16 +235,16 @@
           "params": [],
           "body": {
             "type": "BlockStatement",
-            "start": 123,
-            "end": 126,
+            "start": 117,
+            "end": 119,
             "loc": {
               "start": {
                 "line": 6,
-                "column": 25
+                "column": 23
               },
               "end": {
                 "line": 6,
-                "column": 28
+                "column": 25
               }
             },
             "body": [],
@@ -256,8 +256,8 @@
             {
               "type": "CommentBlock",
               "value": "*\n * Base class for all implementations.\n ",
-              "start": 51,
-              "end": 97,
+              "start": 47,
+              "end": 93,
               "loc": {
                 "start": {
                   "line": 3,
@@ -274,8 +274,8 @@
             {
               "type": "CommentBlock",
               "value": "*\n * For performance purposes, some of the operations are implemented lazily.\n * This method will force the (shallow) evaluation of this tree. This is an\n * implementation detail and need not be used by the user directly.\n *\n * @returns {Tree} The shallow evaluated tree.\n ",
-              "start": 128,
-              "end": 405,
+              "start": 121,
+              "end": 398,
               "loc": {
                 "start": {
                   "line": 8,
@@ -293,8 +293,8 @@
           {
             "type": "CommentBlock",
             "value": "*\n * Base class for all implementations.\n ",
-            "start": 51,
-            "end": 97,
+            "start": 47,
+            "end": 93,
             "loc": {
               "start": {
                 "line": 3,
@@ -311,8 +311,8 @@
           {
             "type": "CommentBlock",
             "value": "*\n * For performance purposes, some of the operations are implemented lazily.\n * This method will force the (shallow) evaluation of this tree. This is an\n * implementation detail and need not be used by the user directly.\n *\n * @returns {Tree} The shallow evaluated tree.\n ",
-            "start": 128,
-            "end": 405,
+            "start": 121,
+            "end": 398,
             "loc": {
               "start": {
                 "line": 8,
@@ -328,8 +328,8 @@
       },
       {
         "type": "ExpressionStatement",
-        "start": 406,
-        "end": 462,
+        "start": 399,
+        "end": 452,
         "loc": {
           "start": {
             "line": 15,
@@ -337,13 +337,13 @@
           },
           "end": {
             "line": 17,
-            "column": 3
+            "column": 2
           }
         },
         "expression": {
           "type": "AssignmentExpression",
-          "start": 406,
-          "end": 460,
+          "start": 399,
+          "end": 451,
           "loc": {
             "start": {
               "line": 15,
@@ -357,8 +357,8 @@
           "operator": "=",
           "left": {
             "type": "MemberExpression",
-            "start": 406,
-            "end": 426,
+            "start": 399,
+            "end": 419,
             "loc": {
               "start": {
                 "line": 15,
@@ -371,8 +371,8 @@
             },
             "object": {
               "type": "MemberExpression",
-              "start": 406,
-              "end": 420,
+              "start": 399,
+              "end": 413,
               "loc": {
                 "start": {
                   "line": 15,
@@ -385,8 +385,8 @@
               },
               "object": {
                 "type": "Identifier",
-                "start": 406,
-                "end": 410,
+                "start": 399,
+                "end": 403,
                 "loc": {
                   "start": {
                     "line": 15,
@@ -403,8 +403,8 @@
               },
               "property": {
                 "type": "Identifier",
-                "start": 411,
-                "end": 420,
+                "start": 404,
+                "end": 413,
                 "loc": {
                   "start": {
                     "line": 15,
@@ -423,8 +423,8 @@
             },
             "property": {
               "type": "Identifier",
-              "start": 421,
-              "end": 426,
+              "start": 414,
+              "end": 419,
               "loc": {
                 "start": {
                   "line": 15,
@@ -443,8 +443,8 @@
           },
           "right": {
             "type": "FunctionExpression",
-            "start": 429,
-            "end": 460,
+            "start": 422,
+            "end": 451,
             "loc": {
               "start": {
                 "line": 15,
@@ -457,8 +457,8 @@
             },
             "id": {
               "type": "Identifier",
-              "start": 421,
-              "end": 426,
+              "start": 414,
+              "end": 419,
               "loc": {
                 "start": {
                   "line": 15,
@@ -478,12 +478,12 @@
             "params": [],
             "body": {
               "type": "BlockStatement",
-              "start": 442,
-              "end": 460,
+              "start": 434,
+              "end": 451,
               "loc": {
                 "start": {
                   "line": 15,
-                  "column": 36
+                  "column": 35
                 },
                 "end": {
                   "line": 17,
@@ -493,8 +493,8 @@
               "body": [
                 {
                   "type": "ReturnStatement",
-                  "start": 445,
-                  "end": 458,
+                  "start": 437,
+                  "end": 449,
                   "loc": {
                     "start": {
                       "line": 16,
@@ -502,13 +502,13 @@
                     },
                     "end": {
                       "line": 16,
-                      "column": 14
+                      "column": 13
                     }
                   },
                   "argument": {
                     "type": "ThisExpression",
-                    "start": 452,
-                    "end": 456,
+                    "start": 444,
+                    "end": 448,
                     "loc": {
                       "start": {
                         "line": 16,
@@ -531,8 +531,8 @@
           {
             "type": "CommentBlock",
             "value": "*\n * For performance purposes, some of the operations are implemented lazily.\n * This method will force the (shallow) evaluation of this tree. This is an\n * implementation detail and need not be used by the user directly.\n *\n * @returns {Tree} The shallow evaluated tree.\n ",
-            "start": 128,
-            "end": 405,
+            "start": 121,
+            "end": 398,
             "loc": {
               "start": {
                 "line": 8,
@@ -549,8 +549,8 @@
           {
             "type": "CommentBlock",
             "value": "*\n * Returns a tree that contains a prefix of this tree's values left-to-right list.\n * The prefix is defined by containing all values for which the\n * input predicate evaluates to `false` on the measure\n * of the prefix ending with that value. The input predicate must be monotone\n * (`false` then `true`).\n *\n * @example\n * // returns 'ab'\n * import { from } from '@aureooms/js-fingertree' ;\n * import { Measures : { SIZE } } from '@aureooms/js-measure' ;\n * let tree = from( SIZE , 'abc' ) ;\n * tree = tree.takeUntil( measure => measure > 2 ) ;\n * [ ...tree ].join('') ;\n *\n * @param {Function} predicate The input measure predicate (monotone).\n *\n * @returns {Tree} The output tree.\n ",
-            "start": 464,
-            "end": 1156,
+            "start": 454,
+            "end": 1146,
             "loc": {
               "start": {
                 "line": 19,
@@ -566,8 +566,8 @@
       },
       {
         "type": "ExpressionStatement",
-        "start": 1157,
-        "end": 1249,
+        "start": 1147,
+        "end": 1233,
         "loc": {
           "start": {
             "line": 38,
@@ -575,13 +575,13 @@
           },
           "end": {
             "line": 40,
-            "column": 3
+            "column": 2
           }
         },
         "expression": {
           "type": "AssignmentExpression",
-          "start": 1157,
-          "end": 1247,
+          "start": 1147,
+          "end": 1232,
           "loc": {
             "start": {
               "line": 38,
@@ -595,8 +595,8 @@
           "operator": "=",
           "left": {
             "type": "MemberExpression",
-            "start": 1157,
-            "end": 1181,
+            "start": 1147,
+            "end": 1171,
             "loc": {
               "start": {
                 "line": 38,
@@ -609,8 +609,8 @@
             },
             "object": {
               "type": "MemberExpression",
-              "start": 1157,
-              "end": 1171,
+              "start": 1147,
+              "end": 1161,
               "loc": {
                 "start": {
                   "line": 38,
@@ -623,8 +623,8 @@
               },
               "object": {
                 "type": "Identifier",
-                "start": 1157,
-                "end": 1161,
+                "start": 1147,
+                "end": 1151,
                 "loc": {
                   "start": {
                     "line": 38,
@@ -641,8 +641,8 @@
               },
               "property": {
                 "type": "Identifier",
-                "start": 1162,
-                "end": 1171,
+                "start": 1152,
+                "end": 1161,
                 "loc": {
                   "start": {
                     "line": 38,
@@ -661,8 +661,8 @@
             },
             "property": {
               "type": "Identifier",
-              "start": 1172,
-              "end": 1181,
+              "start": 1162,
+              "end": 1171,
               "loc": {
                 "start": {
                   "line": 38,
@@ -681,8 +681,8 @@
           },
           "right": {
             "type": "FunctionExpression",
-            "start": 1184,
-            "end": 1247,
+            "start": 1174,
+            "end": 1232,
             "loc": {
               "start": {
                 "line": 38,
@@ -695,8 +695,8 @@
             },
             "id": {
               "type": "Identifier",
-              "start": 1172,
-              "end": 1181,
+              "start": 1162,
+              "end": 1171,
               "loc": {
                 "start": {
                   "line": 38,
@@ -716,16 +716,16 @@
             "params": [
               {
                 "type": "Identifier",
-                "start": 1195,
-                "end": 1204,
+                "start": 1184,
+                "end": 1193,
                 "loc": {
                   "start": {
                     "line": 38,
-                    "column": 38
+                    "column": 37
                   },
                   "end": {
                     "line": 38,
-                    "column": 47
+                    "column": 46
                   },
                   "identifierName": "predicate"
                 },
@@ -734,12 +734,12 @@
             ],
             "body": {
               "type": "BlockStatement",
-              "start": 1207,
-              "end": 1247,
+              "start": 1195,
+              "end": 1232,
               "loc": {
                 "start": {
                   "line": 38,
-                  "column": 50
+                  "column": 48
                 },
                 "end": {
                   "line": 40,
@@ -749,8 +749,8 @@
               "body": [
                 {
                   "type": "ReturnStatement",
-                  "start": 1210,
-                  "end": 1245,
+                  "start": 1198,
+                  "end": 1230,
                   "loc": {
                     "start": {
                       "line": 39,
@@ -758,13 +758,13 @@
                     },
                     "end": {
                       "line": 39,
-                      "column": 36
+                      "column": 33
                     }
                   },
                   "argument": {
                     "type": "MemberExpression",
-                    "start": 1217,
-                    "end": 1243,
+                    "start": 1205,
+                    "end": 1229,
                     "loc": {
                       "start": {
                         "line": 39,
@@ -772,13 +772,13 @@
                       },
                       "end": {
                         "line": 39,
-                        "column": 34
+                        "column": 32
                       }
                     },
                     "object": {
                       "type": "CallExpression",
-                      "start": 1217,
-                      "end": 1240,
+                      "start": 1205,
+                      "end": 1226,
                       "loc": {
                         "start": {
                           "line": 39,
@@ -786,13 +786,13 @@
                         },
                         "end": {
                           "line": 39,
-                          "column": 31
+                          "column": 29
                         }
                       },
                       "callee": {
                         "type": "MemberExpression",
-                        "start": 1217,
-                        "end": 1227,
+                        "start": 1205,
+                        "end": 1215,
                         "loc": {
                           "start": {
                             "line": 39,
@@ -805,8 +805,8 @@
                         },
                         "object": {
                           "type": "ThisExpression",
-                          "start": 1217,
-                          "end": 1221,
+                          "start": 1205,
+                          "end": 1209,
                           "loc": {
                             "start": {
                               "line": 39,
@@ -820,8 +820,8 @@
                         },
                         "property": {
                           "type": "Identifier",
-                          "start": 1222,
-                          "end": 1227,
+                          "start": 1210,
+                          "end": 1215,
                           "loc": {
                             "start": {
                               "line": 39,
@@ -840,16 +840,16 @@
                       "arguments": [
                         {
                           "type": "Identifier",
-                          "start": 1229,
-                          "end": 1238,
+                          "start": 1216,
+                          "end": 1225,
                           "loc": {
                             "start": {
                               "line": 39,
-                              "column": 20
+                              "column": 19
                             },
                             "end": {
                               "line": 39,
-                              "column": 29
+                              "column": 28
                             },
                             "identifierName": "predicate"
                           },
@@ -859,16 +859,16 @@
                     },
                     "property": {
                       "type": "NumericLiteral",
-                      "start": 1241,
-                      "end": 1242,
+                      "start": 1227,
+                      "end": 1228,
                       "loc": {
                         "start": {
                           "line": 39,
-                          "column": 32
+                          "column": 30
                         },
                         "end": {
                           "line": 39,
-                          "column": 33
+                          "column": 31
                         }
                       },
                       "extra": {
@@ -890,8 +890,8 @@
           {
             "type": "CommentBlock",
             "value": "*\n * Returns a tree that contains a prefix of this tree's values left-to-right list.\n * The prefix is defined by containing all values for which the\n * input predicate evaluates to `false` on the measure\n * of the prefix ending with that value. The input predicate must be monotone\n * (`false` then `true`).\n *\n * @example\n * // returns 'ab'\n * import { from } from '@aureooms/js-fingertree' ;\n * import { Measures : { SIZE } } from '@aureooms/js-measure' ;\n * let tree = from( SIZE , 'abc' ) ;\n * tree = tree.takeUntil( measure => measure > 2 ) ;\n * [ ...tree ].join('') ;\n *\n * @param {Function} predicate The input measure predicate (monotone).\n *\n * @returns {Tree} The output tree.\n ",
-            "start": 464,
-            "end": 1156,
+            "start": 454,
+            "end": 1146,
             "loc": {
               "start": {
                 "line": 19,
@@ -908,8 +908,8 @@
           {
             "type": "CommentBlock",
             "value": "*\n * Returns a tree that contains a suffix of this tree's values left-to-right\n * list. The suffix is defined by containing all values for which the input\n * predicate evaluates to `true` on the measure of the prefix ending with that\n * value. The input predicate must be monotone (`false` then `true`).\n *\n * @example\n * // returns 'c'\n * import { from } from '@aureooms/js-fingertree' ;\n * import { Measures : { SIZE } } from '@aureooms/js-measure' ;\n * let tree = from( SIZE , 'abc' ) ;\n * tree = tree.dropUntil( measure => measure > 2 ) ;\n * [ ...tree ].join('') ;\n *\n * @param {Function} predicate The input measure predicate (monotone).\n *\n * @returns {Tree} The output tree.\n ",
-            "start": 1251,
-            "end": 1938,
+            "start": 1235,
+            "end": 1922,
             "loc": {
               "start": {
                 "line": 42,
@@ -925,8 +925,8 @@
       },
       {
         "type": "ExpressionStatement",
-        "start": 1939,
-        "end": 2031,
+        "start": 1923,
+        "end": 2009,
         "loc": {
           "start": {
             "line": 60,
@@ -934,13 +934,13 @@
           },
           "end": {
             "line": 62,
-            "column": 3
+            "column": 2
           }
         },
         "expression": {
           "type": "AssignmentExpression",
-          "start": 1939,
-          "end": 2029,
+          "start": 1923,
+          "end": 2008,
           "loc": {
             "start": {
               "line": 60,
@@ -954,8 +954,8 @@
           "operator": "=",
           "left": {
             "type": "MemberExpression",
-            "start": 1939,
-            "end": 1963,
+            "start": 1923,
+            "end": 1947,
             "loc": {
               "start": {
                 "line": 60,
@@ -968,8 +968,8 @@
             },
             "object": {
               "type": "MemberExpression",
-              "start": 1939,
-              "end": 1953,
+              "start": 1923,
+              "end": 1937,
               "loc": {
                 "start": {
                   "line": 60,
@@ -982,8 +982,8 @@
               },
               "object": {
                 "type": "Identifier",
-                "start": 1939,
-                "end": 1943,
+                "start": 1923,
+                "end": 1927,
                 "loc": {
                   "start": {
                     "line": 60,
@@ -1000,8 +1000,8 @@
               },
               "property": {
                 "type": "Identifier",
-                "start": 1944,
-                "end": 1953,
+                "start": 1928,
+                "end": 1937,
                 "loc": {
                   "start": {
                     "line": 60,
@@ -1020,8 +1020,8 @@
             },
             "property": {
               "type": "Identifier",
-              "start": 1954,
-              "end": 1963,
+              "start": 1938,
+              "end": 1947,
               "loc": {
                 "start": {
                   "line": 60,
@@ -1040,8 +1040,8 @@
           },
           "right": {
             "type": "FunctionExpression",
-            "start": 1966,
-            "end": 2029,
+            "start": 1950,
+            "end": 2008,
             "loc": {
               "start": {
                 "line": 60,
@@ -1054,8 +1054,8 @@
             },
             "id": {
               "type": "Identifier",
-              "start": 1954,
-              "end": 1963,
+              "start": 1938,
+              "end": 1947,
               "loc": {
                 "start": {
                   "line": 60,
@@ -1075,16 +1075,16 @@
             "params": [
               {
                 "type": "Identifier",
-                "start": 1977,
-                "end": 1986,
+                "start": 1960,
+                "end": 1969,
                 "loc": {
                   "start": {
                     "line": 60,
-                    "column": 38
+                    "column": 37
                   },
                   "end": {
                     "line": 60,
-                    "column": 47
+                    "column": 46
                   },
                   "identifierName": "predicate"
                 },
@@ -1093,12 +1093,12 @@
             ],
             "body": {
               "type": "BlockStatement",
-              "start": 1989,
-              "end": 2029,
+              "start": 1971,
+              "end": 2008,
               "loc": {
                 "start": {
                   "line": 60,
-                  "column": 50
+                  "column": 48
                 },
                 "end": {
                   "line": 62,
@@ -1108,8 +1108,8 @@
               "body": [
                 {
                   "type": "ReturnStatement",
-                  "start": 1992,
-                  "end": 2027,
+                  "start": 1974,
+                  "end": 2006,
                   "loc": {
                     "start": {
                       "line": 61,
@@ -1117,13 +1117,13 @@
                     },
                     "end": {
                       "line": 61,
-                      "column": 36
+                      "column": 33
                     }
                   },
                   "argument": {
                     "type": "MemberExpression",
-                    "start": 1999,
-                    "end": 2025,
+                    "start": 1981,
+                    "end": 2005,
                     "loc": {
                       "start": {
                         "line": 61,
@@ -1131,13 +1131,13 @@
                       },
                       "end": {
                         "line": 61,
-                        "column": 34
+                        "column": 32
                       }
                     },
                     "object": {
                       "type": "CallExpression",
-                      "start": 1999,
-                      "end": 2022,
+                      "start": 1981,
+                      "end": 2002,
                       "loc": {
                         "start": {
                           "line": 61,
@@ -1145,13 +1145,13 @@
                         },
                         "end": {
                           "line": 61,
-                          "column": 31
+                          "column": 29
                         }
                       },
                       "callee": {
                         "type": "MemberExpression",
-                        "start": 1999,
-                        "end": 2009,
+                        "start": 1981,
+                        "end": 1991,
                         "loc": {
                           "start": {
                             "line": 61,
@@ -1164,8 +1164,8 @@
                         },
                         "object": {
                           "type": "ThisExpression",
-                          "start": 1999,
-                          "end": 2003,
+                          "start": 1981,
+                          "end": 1985,
                           "loc": {
                             "start": {
                               "line": 61,
@@ -1179,8 +1179,8 @@
                         },
                         "property": {
                           "type": "Identifier",
-                          "start": 2004,
-                          "end": 2009,
+                          "start": 1986,
+                          "end": 1991,
                           "loc": {
                             "start": {
                               "line": 61,
@@ -1199,16 +1199,16 @@
                       "arguments": [
                         {
                           "type": "Identifier",
-                          "start": 2011,
-                          "end": 2020,
+                          "start": 1992,
+                          "end": 2001,
                           "loc": {
                             "start": {
                               "line": 61,
-                              "column": 20
+                              "column": 19
                             },
                             "end": {
                               "line": 61,
-                              "column": 29
+                              "column": 28
                             },
                             "identifierName": "predicate"
                           },
@@ -1218,16 +1218,16 @@
                     },
                     "property": {
                       "type": "NumericLiteral",
-                      "start": 2023,
-                      "end": 2024,
+                      "start": 2003,
+                      "end": 2004,
                       "loc": {
                         "start": {
                           "line": 61,
-                          "column": 32
+                          "column": 30
                         },
                         "end": {
                           "line": 61,
-                          "column": 33
+                          "column": 31
                         }
                       },
                       "extra": {
@@ -1249,8 +1249,8 @@
           {
             "type": "CommentBlock",
             "value": "*\n * Returns a tree that contains a suffix of this tree's values left-to-right\n * list. The suffix is defined by containing all values for which the input\n * predicate evaluates to `true` on the measure of the prefix ending with that\n * value. The input predicate must be monotone (`false` then `true`).\n *\n * @example\n * // returns 'c'\n * import { from } from '@aureooms/js-fingertree' ;\n * import { Measures : { SIZE } } from '@aureooms/js-measure' ;\n * let tree = from( SIZE , 'abc' ) ;\n * tree = tree.dropUntil( measure => measure > 2 ) ;\n * [ ...tree ].join('') ;\n *\n * @param {Function} predicate The input measure predicate (monotone).\n *\n * @returns {Tree} The output tree.\n ",
-            "start": 1251,
-            "end": 1938,
+            "start": 1235,
+            "end": 1922,
             "loc": {
               "start": {
                 "line": 42,
@@ -1267,8 +1267,8 @@
           {
             "type": "CommentBlock",
             "value": "*\n * Returns a tree that contains all values of this tree in-order followed by\n * all values of the input iterable in-order.\n *\n * @example\n * // returns 'abc123'\n * import { from } from '@aureooms/js-fingertree' ;\n * import { Measures : { SIZE } } from '@aureooms/js-measure' ;\n * let tree = from( SIZE , 'abc' ).append('123') ;\n * [ ...tree ].join('') ;\n *\n * @param {Iterable} iterable The input iterable.\n *\n * @returns {Tree} The output tree.\n ",
-            "start": 2033,
-            "end": 2486,
+            "start": 2011,
+            "end": 2464,
             "loc": {
               "start": {
                 "line": 64,
@@ -1284,8 +1284,8 @@
       },
       {
         "type": "ExpressionStatement",
-        "start": 2487,
-        "end": 2574,
+        "start": 2465,
+        "end": 2545,
         "loc": {
           "start": {
             "line": 79,
@@ -1293,13 +1293,13 @@
           },
           "end": {
             "line": 81,
-            "column": 3
+            "column": 2
           }
         },
         "expression": {
           "type": "AssignmentExpression",
-          "start": 2487,
-          "end": 2572,
+          "start": 2465,
+          "end": 2544,
           "loc": {
             "start": {
               "line": 79,
@@ -1313,8 +1313,8 @@
           "operator": "=",
           "left": {
             "type": "MemberExpression",
-            "start": 2487,
-            "end": 2508,
+            "start": 2465,
+            "end": 2486,
             "loc": {
               "start": {
                 "line": 79,
@@ -1327,8 +1327,8 @@
             },
             "object": {
               "type": "MemberExpression",
-              "start": 2487,
-              "end": 2501,
+              "start": 2465,
+              "end": 2479,
               "loc": {
                 "start": {
                   "line": 79,
@@ -1341,8 +1341,8 @@
               },
               "object": {
                 "type": "Identifier",
-                "start": 2487,
-                "end": 2491,
+                "start": 2465,
+                "end": 2469,
                 "loc": {
                   "start": {
                     "line": 79,
@@ -1359,8 +1359,8 @@
               },
               "property": {
                 "type": "Identifier",
-                "start": 2492,
-                "end": 2501,
+                "start": 2470,
+                "end": 2479,
                 "loc": {
                   "start": {
                     "line": 79,
@@ -1379,8 +1379,8 @@
             },
             "property": {
               "type": "Identifier",
-              "start": 2502,
-              "end": 2508,
+              "start": 2480,
+              "end": 2486,
               "loc": {
                 "start": {
                   "line": 79,
@@ -1399,8 +1399,8 @@
           },
           "right": {
             "type": "FunctionExpression",
-            "start": 2511,
-            "end": 2572,
+            "start": 2489,
+            "end": 2544,
             "loc": {
               "start": {
                 "line": 79,
@@ -1413,8 +1413,8 @@
             },
             "id": {
               "type": "Identifier",
-              "start": 2502,
-              "end": 2508,
+              "start": 2480,
+              "end": 2486,
               "loc": {
                 "start": {
                   "line": 79,
@@ -1434,16 +1434,16 @@
             "params": [
               {
                 "type": "Identifier",
-                "start": 2522,
-                "end": 2530,
+                "start": 2499,
+                "end": 2507,
                 "loc": {
                   "start": {
                     "line": 79,
-                    "column": 35
+                    "column": 34
                   },
                   "end": {
                     "line": 79,
-                    "column": 43
+                    "column": 42
                   },
                   "identifierName": "iterable"
                 },
@@ -1452,12 +1452,12 @@
             ],
             "body": {
               "type": "BlockStatement",
-              "start": 2533,
-              "end": 2572,
+              "start": 2509,
+              "end": 2544,
               "loc": {
                 "start": {
                   "line": 79,
-                  "column": 46
+                  "column": 44
                 },
                 "end": {
                   "line": 81,
@@ -1467,8 +1467,8 @@
               "body": [
                 {
                   "type": "ReturnStatement",
-                  "start": 2536,
-                  "end": 2570,
+                  "start": 2512,
+                  "end": 2542,
                   "loc": {
                     "start": {
                       "line": 80,
@@ -1476,13 +1476,13 @@
                     },
                     "end": {
                       "line": 80,
-                      "column": 35
+                      "column": 31
                     }
                   },
                   "argument": {
                     "type": "CallExpression",
-                    "start": 2543,
-                    "end": 2568,
+                    "start": 2519,
+                    "end": 2541,
                     "loc": {
                       "start": {
                         "line": 80,
@@ -1490,13 +1490,13 @@
                       },
                       "end": {
                         "line": 80,
-                        "column": 33
+                        "column": 30
                       }
                     },
                     "callee": {
                       "type": "Identifier",
-                      "start": 2543,
-                      "end": 2549,
+                      "start": 2519,
+                      "end": 2525,
                       "loc": {
                         "start": {
                           "line": 80,
@@ -1513,31 +1513,31 @@
                     "arguments": [
                       {
                         "type": "ThisExpression",
-                        "start": 2551,
-                        "end": 2555,
+                        "start": 2526,
+                        "end": 2530,
                         "loc": {
                           "start": {
                             "line": 80,
-                            "column": 16
+                            "column": 15
                           },
                           "end": {
                             "line": 80,
-                            "column": 20
+                            "column": 19
                           }
                         }
                       },
                       {
                         "type": "Identifier",
-                        "start": 2558,
-                        "end": 2566,
+                        "start": 2532,
+                        "end": 2540,
                         "loc": {
                           "start": {
                             "line": 80,
-                            "column": 23
+                            "column": 21
                           },
                           "end": {
                             "line": 80,
-                            "column": 31
+                            "column": 29
                           },
                           "identifierName": "iterable"
                         },
@@ -1556,8 +1556,8 @@
           {
             "type": "CommentBlock",
             "value": "*\n * Returns a tree that contains all values of this tree in-order followed by\n * all values of the input iterable in-order.\n *\n * @example\n * // returns 'abc123'\n * import { from } from '@aureooms/js-fingertree' ;\n * import { Measures : { SIZE } } from '@aureooms/js-measure' ;\n * let tree = from( SIZE , 'abc' ).append('123') ;\n * [ ...tree ].join('') ;\n *\n * @param {Iterable} iterable The input iterable.\n *\n * @returns {Tree} The output tree.\n ",
-            "start": 2033,
-            "end": 2486,
+            "start": 2011,
+            "end": 2464,
             "loc": {
               "start": {
                 "line": 64,
@@ -1574,8 +1574,8 @@
           {
             "type": "CommentBlock",
             "value": "*\n * Returns a tree that contains all values of the input iterable in-order\n * followed by all values of this tree in-order.\n *\n * @example\n * // returns '123abc'\n * import { from } from '@aureooms/js-fingertree' ;\n * import { Measures : { SIZE } } from '@aureooms/js-measure' ;\n * let tree = from( SIZE , 'abc' ).prepend('123') ;\n * [ ...tree ].join('') ;\n *\n * @param {Iterable} iterable The input iterable.\n *\n * @returns {Tree} The output tree.\n ",
-            "start": 2576,
-            "end": 3030,
+            "start": 2547,
+            "end": 3001,
             "loc": {
               "start": {
                 "line": 83,
@@ -1591,8 +1591,8 @@
       },
       {
         "type": "ExpressionStatement",
-        "start": 3031,
-        "end": 3120,
+        "start": 3002,
+        "end": 3084,
         "loc": {
           "start": {
             "line": 98,
@@ -1600,13 +1600,13 @@
           },
           "end": {
             "line": 100,
-            "column": 3
+            "column": 2
           }
         },
         "expression": {
           "type": "AssignmentExpression",
-          "start": 3031,
-          "end": 3118,
+          "start": 3002,
+          "end": 3083,
           "loc": {
             "start": {
               "line": 98,
@@ -1620,8 +1620,8 @@
           "operator": "=",
           "left": {
             "type": "MemberExpression",
-            "start": 3031,
-            "end": 3053,
+            "start": 3002,
+            "end": 3024,
             "loc": {
               "start": {
                 "line": 98,
@@ -1634,8 +1634,8 @@
             },
             "object": {
               "type": "MemberExpression",
-              "start": 3031,
-              "end": 3045,
+              "start": 3002,
+              "end": 3016,
               "loc": {
                 "start": {
                   "line": 98,
@@ -1648,8 +1648,8 @@
               },
               "object": {
                 "type": "Identifier",
-                "start": 3031,
-                "end": 3035,
+                "start": 3002,
+                "end": 3006,
                 "loc": {
                   "start": {
                     "line": 98,
@@ -1666,8 +1666,8 @@
               },
               "property": {
                 "type": "Identifier",
-                "start": 3036,
-                "end": 3045,
+                "start": 3007,
+                "end": 3016,
                 "loc": {
                   "start": {
                     "line": 98,
@@ -1686,8 +1686,8 @@
             },
             "property": {
               "type": "Identifier",
-              "start": 3046,
-              "end": 3053,
+              "start": 3017,
+              "end": 3024,
               "loc": {
                 "start": {
                   "line": 98,
@@ -1706,8 +1706,8 @@
           },
           "right": {
             "type": "FunctionExpression",
-            "start": 3056,
-            "end": 3118,
+            "start": 3027,
+            "end": 3083,
             "loc": {
               "start": {
                 "line": 98,
@@ -1720,8 +1720,8 @@
             },
             "id": {
               "type": "Identifier",
-              "start": 3046,
-              "end": 3053,
+              "start": 3017,
+              "end": 3024,
               "loc": {
                 "start": {
                   "line": 98,
@@ -1741,16 +1741,16 @@
             "params": [
               {
                 "type": "Identifier",
-                "start": 3067,
-                "end": 3075,
+                "start": 3037,
+                "end": 3045,
                 "loc": {
                   "start": {
                     "line": 98,
-                    "column": 36
+                    "column": 35
                   },
                   "end": {
                     "line": 98,
-                    "column": 44
+                    "column": 43
                   },
                   "identifierName": "iterable"
                 },
@@ -1759,12 +1759,12 @@
             ],
             "body": {
               "type": "BlockStatement",
-              "start": 3078,
-              "end": 3118,
+              "start": 3047,
+              "end": 3083,
               "loc": {
                 "start": {
                   "line": 98,
-                  "column": 47
+                  "column": 45
                 },
                 "end": {
                   "line": 100,
@@ -1774,8 +1774,8 @@
               "body": [
                 {
                   "type": "ReturnStatement",
-                  "start": 3081,
-                  "end": 3116,
+                  "start": 3050,
+                  "end": 3081,
                   "loc": {
                     "start": {
                       "line": 99,
@@ -1783,13 +1783,13 @@
                     },
                     "end": {
                       "line": 99,
-                      "column": 36
+                      "column": 32
                     }
                   },
                   "argument": {
                     "type": "CallExpression",
-                    "start": 3088,
-                    "end": 3114,
+                    "start": 3057,
+                    "end": 3080,
                     "loc": {
                       "start": {
                         "line": 99,
@@ -1797,13 +1797,13 @@
                       },
                       "end": {
                         "line": 99,
-                        "column": 34
+                        "column": 31
                       }
                     },
                     "callee": {
                       "type": "Identifier",
-                      "start": 3088,
-                      "end": 3095,
+                      "start": 3057,
+                      "end": 3064,
                       "loc": {
                         "start": {
                           "line": 99,
@@ -1820,31 +1820,31 @@
                     "arguments": [
                       {
                         "type": "ThisExpression",
-                        "start": 3097,
-                        "end": 3101,
+                        "start": 3065,
+                        "end": 3069,
                         "loc": {
                           "start": {
                             "line": 99,
-                            "column": 17
+                            "column": 16
                           },
                           "end": {
                             "line": 99,
-                            "column": 21
+                            "column": 20
                           }
                         }
                       },
                       {
                         "type": "Identifier",
-                        "start": 3104,
-                        "end": 3112,
+                        "start": 3071,
+                        "end": 3079,
                         "loc": {
                           "start": {
                             "line": 99,
-                            "column": 24
+                            "column": 22
                           },
                           "end": {
                             "line": 99,
-                            "column": 32
+                            "column": 30
                           },
                           "identifierName": "iterable"
                         },
@@ -1863,8 +1863,8 @@
           {
             "type": "CommentBlock",
             "value": "*\n * Returns a tree that contains all values of the input iterable in-order\n * followed by all values of this tree in-order.\n *\n * @example\n * // returns '123abc'\n * import { from } from '@aureooms/js-fingertree' ;\n * import { Measures : { SIZE } } from '@aureooms/js-measure' ;\n * let tree = from( SIZE , 'abc' ).prepend('123') ;\n * [ ...tree ].join('') ;\n *\n * @param {Iterable} iterable The input iterable.\n *\n * @returns {Tree} The output tree.\n ",
-            "start": 2576,
-            "end": 3030,
+            "start": 2547,
+            "end": 3001,
             "loc": {
               "start": {
                 "line": 83,
@@ -1885,8 +1885,8 @@
     {
       "type": "CommentBlock",
       "value": "*\n * Base class for all implementations.\n ",
-      "start": 51,
-      "end": 97,
+      "start": 47,
+      "end": 93,
       "loc": {
         "start": {
           "line": 3,
@@ -1901,8 +1901,8 @@
     {
       "type": "CommentBlock",
       "value": "*\n * For performance purposes, some of the operations are implemented lazily.\n * This method will force the (shallow) evaluation of this tree. This is an\n * implementation detail and need not be used by the user directly.\n *\n * @returns {Tree} The shallow evaluated tree.\n ",
-      "start": 128,
-      "end": 405,
+      "start": 121,
+      "end": 398,
       "loc": {
         "start": {
           "line": 8,
@@ -1917,8 +1917,8 @@
     {
       "type": "CommentBlock",
       "value": "*\n * Returns a tree that contains a prefix of this tree's values left-to-right list.\n * The prefix is defined by containing all values for which the\n * input predicate evaluates to `false` on the measure\n * of the prefix ending with that value. The input predicate must be monotone\n * (`false` then `true`).\n *\n * @example\n * // returns 'ab'\n * import { from } from '@aureooms/js-fingertree' ;\n * import { Measures : { SIZE } } from '@aureooms/js-measure' ;\n * let tree = from( SIZE , 'abc' ) ;\n * tree = tree.takeUntil( measure => measure > 2 ) ;\n * [ ...tree ].join('') ;\n *\n * @param {Function} predicate The input measure predicate (monotone).\n *\n * @returns {Tree} The output tree.\n ",
-      "start": 464,
-      "end": 1156,
+      "start": 454,
+      "end": 1146,
       "loc": {
         "start": {
           "line": 19,
@@ -1933,8 +1933,8 @@
     {
       "type": "CommentBlock",
       "value": "*\n * Returns a tree that contains a suffix of this tree's values left-to-right\n * list. The suffix is defined by containing all values for which the input\n * predicate evaluates to `true` on the measure of the prefix ending with that\n * value. The input predicate must be monotone (`false` then `true`).\n *\n * @example\n * // returns 'c'\n * import { from } from '@aureooms/js-fingertree' ;\n * import { Measures : { SIZE } } from '@aureooms/js-measure' ;\n * let tree = from( SIZE , 'abc' ) ;\n * tree = tree.dropUntil( measure => measure > 2 ) ;\n * [ ...tree ].join('') ;\n *\n * @param {Function} predicate The input measure predicate (monotone).\n *\n * @returns {Tree} The output tree.\n ",
-      "start": 1251,
-      "end": 1938,
+      "start": 1235,
+      "end": 1922,
       "loc": {
         "start": {
           "line": 42,
@@ -1949,8 +1949,8 @@
     {
       "type": "CommentBlock",
       "value": "*\n * Returns a tree that contains all values of this tree in-order followed by\n * all values of the input iterable in-order.\n *\n * @example\n * // returns 'abc123'\n * import { from } from '@aureooms/js-fingertree' ;\n * import { Measures : { SIZE } } from '@aureooms/js-measure' ;\n * let tree = from( SIZE , 'abc' ).append('123') ;\n * [ ...tree ].join('') ;\n *\n * @param {Iterable} iterable The input iterable.\n *\n * @returns {Tree} The output tree.\n ",
-      "start": 2033,
-      "end": 2486,
+      "start": 2011,
+      "end": 2464,
       "loc": {
         "start": {
           "line": 64,
@@ -1965,8 +1965,8 @@
     {
       "type": "CommentBlock",
       "value": "*\n * Returns a tree that contains all values of the input iterable in-order\n * followed by all values of this tree in-order.\n *\n * @example\n * // returns '123abc'\n * import { from } from '@aureooms/js-fingertree' ;\n * import { Measures : { SIZE } } from '@aureooms/js-measure' ;\n * let tree = from( SIZE , 'abc' ).prepend('123') ;\n * [ ...tree ].join('') ;\n *\n * @param {Iterable} iterable The input iterable.\n *\n * @returns {Tree} The output tree.\n ",
-      "start": 2576,
-      "end": 3030,
+      "start": 2547,
+      "end": 3001,
       "loc": {
         "start": {
           "line": 83,
@@ -2046,16 +2046,16 @@
         "binop": null
       },
       "value": "append",
-      "start": 9,
-      "end": 15,
+      "start": 8,
+      "end": 14,
       "loc": {
         "start": {
           "line": 1,
-          "column": 9
+          "column": 8
         },
         "end": {
           "line": 1,
-          "column": 15
+          "column": 14
         }
       }
     },
@@ -2072,16 +2072,16 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 16,
-      "end": 17,
+      "start": 14,
+      "end": 15,
       "loc": {
         "start": {
           "line": 1,
-          "column": 16
+          "column": 14
         },
         "end": {
           "line": 1,
-          "column": 17
+          "column": 15
         }
       }
     },
@@ -2098,16 +2098,16 @@
         "binop": null
       },
       "value": "prepend",
-      "start": 18,
-      "end": 25,
+      "start": 16,
+      "end": 23,
       "loc": {
         "start": {
           "line": 1,
-          "column": 18
+          "column": 16
         },
         "end": {
           "line": 1,
-          "column": 25
+          "column": 23
         }
       }
     },
@@ -2123,16 +2123,16 @@
         "postfix": false,
         "binop": null
       },
-      "start": 26,
-      "end": 27,
+      "start": 23,
+      "end": 24,
       "loc": {
         "start": {
           "line": 1,
-          "column": 26
+          "column": 23
         },
         "end": {
           "line": 1,
-          "column": 27
+          "column": 24
         }
       }
     },
@@ -2149,16 +2149,16 @@
         "binop": null
       },
       "value": "from",
-      "start": 28,
-      "end": 32,
+      "start": 25,
+      "end": 29,
       "loc": {
         "start": {
           "line": 1,
-          "column": 28
+          "column": 25
         },
         "end": {
           "line": 1,
-          "column": 32
+          "column": 29
         }
       }
     },
@@ -2176,16 +2176,16 @@
         "updateContext": null
       },
       "value": "../../0-core",
-      "start": 33,
-      "end": 47,
+      "start": 30,
+      "end": 44,
       "loc": {
         "start": {
           "line": 1,
-          "column": 33
+          "column": 30
         },
         "end": {
           "line": 1,
-          "column": 47
+          "column": 44
         }
       }
     },
@@ -2202,24 +2202,24 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 48,
-      "end": 49,
+      "start": 44,
+      "end": 45,
       "loc": {
         "start": {
           "line": 1,
-          "column": 48
+          "column": 44
         },
         "end": {
           "line": 1,
-          "column": 49
+          "column": 45
         }
       }
     },
     {
       "type": "CommentBlock",
       "value": "*\n * Base class for all implementations.\n ",
-      "start": 51,
-      "end": 97,
+      "start": 47,
+      "end": 93,
       "loc": {
         "start": {
           "line": 3,
@@ -2246,8 +2246,8 @@
         "updateContext": null
       },
       "value": "export",
-      "start": 98,
-      "end": 104,
+      "start": 94,
+      "end": 100,
       "loc": {
         "start": {
           "line": 6,
@@ -2273,8 +2273,8 @@
         "binop": null
       },
       "value": "function",
-      "start": 105,
-      "end": 113,
+      "start": 101,
+      "end": 109,
       "loc": {
         "start": {
           "line": 6,
@@ -2299,8 +2299,8 @@
         "binop": null
       },
       "value": "Tree",
-      "start": 114,
-      "end": 118,
+      "start": 110,
+      "end": 114,
       "loc": {
         "start": {
           "line": 6,
@@ -2324,16 +2324,16 @@
         "postfix": false,
         "binop": null
       },
-      "start": 119,
-      "end": 120,
+      "start": 114,
+      "end": 115,
       "loc": {
         "start": {
           "line": 6,
-          "column": 21
+          "column": 20
         },
         "end": {
           "line": 6,
-          "column": 22
+          "column": 21
         }
       }
     },
@@ -2349,16 +2349,16 @@
         "postfix": false,
         "binop": null
       },
-      "start": 121,
-      "end": 122,
+      "start": 115,
+      "end": 116,
       "loc": {
         "start": {
           "line": 6,
-          "column": 23
+          "column": 21
         },
         "end": {
           "line": 6,
-          "column": 24
+          "column": 22
         }
       }
     },
@@ -2374,16 +2374,16 @@
         "postfix": false,
         "binop": null
       },
-      "start": 123,
-      "end": 124,
+      "start": 117,
+      "end": 118,
       "loc": {
         "start": {
           "line": 6,
-          "column": 25
+          "column": 23
         },
         "end": {
           "line": 6,
-          "column": 26
+          "column": 24
         }
       }
     },
@@ -2399,24 +2399,24 @@
         "postfix": false,
         "binop": null
       },
-      "start": 125,
-      "end": 126,
+      "start": 118,
+      "end": 119,
       "loc": {
         "start": {
           "line": 6,
-          "column": 27
+          "column": 24
         },
         "end": {
           "line": 6,
-          "column": 28
+          "column": 25
         }
       }
     },
     {
       "type": "CommentBlock",
       "value": "*\n * For performance purposes, some of the operations are implemented lazily.\n * This method will force the (shallow) evaluation of this tree. This is an\n * implementation detail and need not be used by the user directly.\n *\n * @returns {Tree} The shallow evaluated tree.\n ",
-      "start": 128,
-      "end": 405,
+      "start": 121,
+      "end": 398,
       "loc": {
         "start": {
           "line": 8,
@@ -2441,8 +2441,8 @@
         "binop": null
       },
       "value": "Tree",
-      "start": 406,
-      "end": 410,
+      "start": 399,
+      "end": 403,
       "loc": {
         "start": {
           "line": 15,
@@ -2467,8 +2467,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 410,
-      "end": 411,
+      "start": 403,
+      "end": 404,
       "loc": {
         "start": {
           "line": 15,
@@ -2493,8 +2493,8 @@
         "binop": null
       },
       "value": "prototype",
-      "start": 411,
-      "end": 420,
+      "start": 404,
+      "end": 413,
       "loc": {
         "start": {
           "line": 15,
@@ -2519,8 +2519,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 420,
-      "end": 421,
+      "start": 413,
+      "end": 414,
       "loc": {
         "start": {
           "line": 15,
@@ -2545,8 +2545,8 @@
         "binop": null
       },
       "value": "force",
-      "start": 421,
-      "end": 426,
+      "start": 414,
+      "end": 419,
       "loc": {
         "start": {
           "line": 15,
@@ -2572,8 +2572,8 @@
         "updateContext": null
       },
       "value": "=",
-      "start": 427,
-      "end": 428,
+      "start": 420,
+      "end": 421,
       "loc": {
         "start": {
           "line": 15,
@@ -2599,8 +2599,8 @@
         "binop": null
       },
       "value": "function",
-      "start": 429,
-      "end": 437,
+      "start": 422,
+      "end": 430,
       "loc": {
         "start": {
           "line": 15,
@@ -2624,8 +2624,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 438,
-      "end": 439,
+      "start": 431,
+      "end": 432,
       "loc": {
         "start": {
           "line": 15,
@@ -2649,16 +2649,16 @@
         "postfix": false,
         "binop": null
       },
-      "start": 440,
-      "end": 441,
+      "start": 432,
+      "end": 433,
       "loc": {
         "start": {
           "line": 15,
-          "column": 34
+          "column": 33
         },
         "end": {
           "line": 15,
-          "column": 35
+          "column": 34
         }
       }
     },
@@ -2674,16 +2674,16 @@
         "postfix": false,
         "binop": null
       },
-      "start": 442,
-      "end": 443,
+      "start": 434,
+      "end": 435,
       "loc": {
         "start": {
           "line": 15,
-          "column": 36
+          "column": 35
         },
         "end": {
           "line": 15,
-          "column": 37
+          "column": 36
         }
       }
     },
@@ -2702,8 +2702,8 @@
         "updateContext": null
       },
       "value": "return",
-      "start": 445,
-      "end": 451,
+      "start": 437,
+      "end": 443,
       "loc": {
         "start": {
           "line": 16,
@@ -2730,8 +2730,8 @@
         "updateContext": null
       },
       "value": "this",
-      "start": 452,
-      "end": 456,
+      "start": 444,
+      "end": 448,
       "loc": {
         "start": {
           "line": 16,
@@ -2756,16 +2756,16 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 457,
-      "end": 458,
+      "start": 448,
+      "end": 449,
       "loc": {
         "start": {
           "line": 16,
-          "column": 13
+          "column": 12
         },
         "end": {
           "line": 16,
-          "column": 14
+          "column": 13
         }
       }
     },
@@ -2781,8 +2781,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 459,
-      "end": 460,
+      "start": 450,
+      "end": 451,
       "loc": {
         "start": {
           "line": 17,
@@ -2807,24 +2807,24 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 461,
-      "end": 462,
+      "start": 451,
+      "end": 452,
       "loc": {
         "start": {
           "line": 17,
-          "column": 2
+          "column": 1
         },
         "end": {
           "line": 17,
-          "column": 3
+          "column": 2
         }
       }
     },
     {
       "type": "CommentBlock",
       "value": "*\n * Returns a tree that contains a prefix of this tree's values left-to-right list.\n * The prefix is defined by containing all values for which the\n * input predicate evaluates to `false` on the measure\n * of the prefix ending with that value. The input predicate must be monotone\n * (`false` then `true`).\n *\n * @example\n * // returns 'ab'\n * import { from } from '@aureooms/js-fingertree' ;\n * import { Measures : { SIZE } } from '@aureooms/js-measure' ;\n * let tree = from( SIZE , 'abc' ) ;\n * tree = tree.takeUntil( measure => measure > 2 ) ;\n * [ ...tree ].join('') ;\n *\n * @param {Function} predicate The input measure predicate (monotone).\n *\n * @returns {Tree} The output tree.\n ",
-      "start": 464,
-      "end": 1156,
+      "start": 454,
+      "end": 1146,
       "loc": {
         "start": {
           "line": 19,
@@ -2849,8 +2849,8 @@
         "binop": null
       },
       "value": "Tree",
-      "start": 1157,
-      "end": 1161,
+      "start": 1147,
+      "end": 1151,
       "loc": {
         "start": {
           "line": 38,
@@ -2875,8 +2875,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 1161,
-      "end": 1162,
+      "start": 1151,
+      "end": 1152,
       "loc": {
         "start": {
           "line": 38,
@@ -2901,8 +2901,8 @@
         "binop": null
       },
       "value": "prototype",
-      "start": 1162,
-      "end": 1171,
+      "start": 1152,
+      "end": 1161,
       "loc": {
         "start": {
           "line": 38,
@@ -2927,8 +2927,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 1171,
-      "end": 1172,
+      "start": 1161,
+      "end": 1162,
       "loc": {
         "start": {
           "line": 38,
@@ -2953,8 +2953,8 @@
         "binop": null
       },
       "value": "takeUntil",
-      "start": 1172,
-      "end": 1181,
+      "start": 1162,
+      "end": 1171,
       "loc": {
         "start": {
           "line": 38,
@@ -2980,8 +2980,8 @@
         "updateContext": null
       },
       "value": "=",
-      "start": 1182,
-      "end": 1183,
+      "start": 1172,
+      "end": 1173,
       "loc": {
         "start": {
           "line": 38,
@@ -3007,8 +3007,8 @@
         "binop": null
       },
       "value": "function",
-      "start": 1184,
-      "end": 1192,
+      "start": 1174,
+      "end": 1182,
       "loc": {
         "start": {
           "line": 38,
@@ -3032,8 +3032,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 1193,
-      "end": 1194,
+      "start": 1183,
+      "end": 1184,
       "loc": {
         "start": {
           "line": 38,
@@ -3058,16 +3058,16 @@
         "binop": null
       },
       "value": "predicate",
-      "start": 1195,
-      "end": 1204,
+      "start": 1184,
+      "end": 1193,
       "loc": {
         "start": {
           "line": 38,
-          "column": 38
+          "column": 37
         },
         "end": {
           "line": 38,
-          "column": 47
+          "column": 46
         }
       }
     },
@@ -3083,16 +3083,16 @@
         "postfix": false,
         "binop": null
       },
-      "start": 1205,
-      "end": 1206,
+      "start": 1193,
+      "end": 1194,
       "loc": {
         "start": {
           "line": 38,
-          "column": 48
+          "column": 46
         },
         "end": {
           "line": 38,
-          "column": 49
+          "column": 47
         }
       }
     },
@@ -3108,16 +3108,16 @@
         "postfix": false,
         "binop": null
       },
-      "start": 1207,
-      "end": 1208,
+      "start": 1195,
+      "end": 1196,
       "loc": {
         "start": {
           "line": 38,
-          "column": 50
+          "column": 48
         },
         "end": {
           "line": 38,
-          "column": 51
+          "column": 49
         }
       }
     },
@@ -3136,8 +3136,8 @@
         "updateContext": null
       },
       "value": "return",
-      "start": 1210,
-      "end": 1216,
+      "start": 1198,
+      "end": 1204,
       "loc": {
         "start": {
           "line": 39,
@@ -3164,8 +3164,8 @@
         "updateContext": null
       },
       "value": "this",
-      "start": 1217,
-      "end": 1221,
+      "start": 1205,
+      "end": 1209,
       "loc": {
         "start": {
           "line": 39,
@@ -3190,8 +3190,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 1221,
-      "end": 1222,
+      "start": 1209,
+      "end": 1210,
       "loc": {
         "start": {
           "line": 39,
@@ -3216,8 +3216,8 @@
         "binop": null
       },
       "value": "split",
-      "start": 1222,
-      "end": 1227,
+      "start": 1210,
+      "end": 1215,
       "loc": {
         "start": {
           "line": 39,
@@ -3241,8 +3241,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 1227,
-      "end": 1228,
+      "start": 1215,
+      "end": 1216,
       "loc": {
         "start": {
           "line": 39,
@@ -3267,16 +3267,16 @@
         "binop": null
       },
       "value": "predicate",
-      "start": 1229,
-      "end": 1238,
+      "start": 1216,
+      "end": 1225,
       "loc": {
         "start": {
           "line": 39,
-          "column": 20
+          "column": 19
         },
         "end": {
           "line": 39,
-          "column": 29
+          "column": 28
         }
       }
     },
@@ -3292,16 +3292,16 @@
         "postfix": false,
         "binop": null
       },
-      "start": 1239,
-      "end": 1240,
+      "start": 1225,
+      "end": 1226,
       "loc": {
         "start": {
           "line": 39,
-          "column": 30
+          "column": 28
         },
         "end": {
           "line": 39,
-          "column": 31
+          "column": 29
         }
       }
     },
@@ -3318,16 +3318,16 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 1240,
-      "end": 1241,
+      "start": 1226,
+      "end": 1227,
       "loc": {
         "start": {
           "line": 39,
-          "column": 31
+          "column": 29
         },
         "end": {
           "line": 39,
-          "column": 32
+          "column": 30
         }
       }
     },
@@ -3345,16 +3345,16 @@
         "updateContext": null
       },
       "value": 0,
-      "start": 1241,
-      "end": 1242,
+      "start": 1227,
+      "end": 1228,
       "loc": {
         "start": {
           "line": 39,
-          "column": 32
+          "column": 30
         },
         "end": {
           "line": 39,
-          "column": 33
+          "column": 31
         }
       }
     },
@@ -3371,16 +3371,16 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 1242,
-      "end": 1243,
+      "start": 1228,
+      "end": 1229,
       "loc": {
         "start": {
           "line": 39,
-          "column": 33
+          "column": 31
         },
         "end": {
           "line": 39,
-          "column": 34
+          "column": 32
         }
       }
     },
@@ -3397,16 +3397,16 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 1244,
-      "end": 1245,
+      "start": 1229,
+      "end": 1230,
       "loc": {
         "start": {
           "line": 39,
-          "column": 35
+          "column": 32
         },
         "end": {
           "line": 39,
-          "column": 36
+          "column": 33
         }
       }
     },
@@ -3422,8 +3422,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 1246,
-      "end": 1247,
+      "start": 1231,
+      "end": 1232,
       "loc": {
         "start": {
           "line": 40,
@@ -3448,24 +3448,24 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 1248,
-      "end": 1249,
+      "start": 1232,
+      "end": 1233,
       "loc": {
         "start": {
           "line": 40,
-          "column": 2
+          "column": 1
         },
         "end": {
           "line": 40,
-          "column": 3
+          "column": 2
         }
       }
     },
     {
       "type": "CommentBlock",
       "value": "*\n * Returns a tree that contains a suffix of this tree's values left-to-right\n * list. The suffix is defined by containing all values for which the input\n * predicate evaluates to `true` on the measure of the prefix ending with that\n * value. The input predicate must be monotone (`false` then `true`).\n *\n * @example\n * // returns 'c'\n * import { from } from '@aureooms/js-fingertree' ;\n * import { Measures : { SIZE } } from '@aureooms/js-measure' ;\n * let tree = from( SIZE , 'abc' ) ;\n * tree = tree.dropUntil( measure => measure > 2 ) ;\n * [ ...tree ].join('') ;\n *\n * @param {Function} predicate The input measure predicate (monotone).\n *\n * @returns {Tree} The output tree.\n ",
-      "start": 1251,
-      "end": 1938,
+      "start": 1235,
+      "end": 1922,
       "loc": {
         "start": {
           "line": 42,
@@ -3490,8 +3490,8 @@
         "binop": null
       },
       "value": "Tree",
-      "start": 1939,
-      "end": 1943,
+      "start": 1923,
+      "end": 1927,
       "loc": {
         "start": {
           "line": 60,
@@ -3516,8 +3516,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 1943,
-      "end": 1944,
+      "start": 1927,
+      "end": 1928,
       "loc": {
         "start": {
           "line": 60,
@@ -3542,8 +3542,8 @@
         "binop": null
       },
       "value": "prototype",
-      "start": 1944,
-      "end": 1953,
+      "start": 1928,
+      "end": 1937,
       "loc": {
         "start": {
           "line": 60,
@@ -3568,8 +3568,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 1953,
-      "end": 1954,
+      "start": 1937,
+      "end": 1938,
       "loc": {
         "start": {
           "line": 60,
@@ -3594,8 +3594,8 @@
         "binop": null
       },
       "value": "dropUntil",
-      "start": 1954,
-      "end": 1963,
+      "start": 1938,
+      "end": 1947,
       "loc": {
         "start": {
           "line": 60,
@@ -3621,8 +3621,8 @@
         "updateContext": null
       },
       "value": "=",
-      "start": 1964,
-      "end": 1965,
+      "start": 1948,
+      "end": 1949,
       "loc": {
         "start": {
           "line": 60,
@@ -3648,8 +3648,8 @@
         "binop": null
       },
       "value": "function",
-      "start": 1966,
-      "end": 1974,
+      "start": 1950,
+      "end": 1958,
       "loc": {
         "start": {
           "line": 60,
@@ -3673,8 +3673,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 1975,
-      "end": 1976,
+      "start": 1959,
+      "end": 1960,
       "loc": {
         "start": {
           "line": 60,
@@ -3699,16 +3699,16 @@
         "binop": null
       },
       "value": "predicate",
-      "start": 1977,
-      "end": 1986,
+      "start": 1960,
+      "end": 1969,
       "loc": {
         "start": {
           "line": 60,
-          "column": 38
+          "column": 37
         },
         "end": {
           "line": 60,
-          "column": 47
+          "column": 46
         }
       }
     },
@@ -3724,16 +3724,16 @@
         "postfix": false,
         "binop": null
       },
-      "start": 1987,
-      "end": 1988,
+      "start": 1969,
+      "end": 1970,
       "loc": {
         "start": {
           "line": 60,
-          "column": 48
+          "column": 46
         },
         "end": {
           "line": 60,
-          "column": 49
+          "column": 47
         }
       }
     },
@@ -3749,16 +3749,16 @@
         "postfix": false,
         "binop": null
       },
-      "start": 1989,
-      "end": 1990,
+      "start": 1971,
+      "end": 1972,
       "loc": {
         "start": {
           "line": 60,
-          "column": 50
+          "column": 48
         },
         "end": {
           "line": 60,
-          "column": 51
+          "column": 49
         }
       }
     },
@@ -3777,8 +3777,8 @@
         "updateContext": null
       },
       "value": "return",
-      "start": 1992,
-      "end": 1998,
+      "start": 1974,
+      "end": 1980,
       "loc": {
         "start": {
           "line": 61,
@@ -3805,8 +3805,8 @@
         "updateContext": null
       },
       "value": "this",
-      "start": 1999,
-      "end": 2003,
+      "start": 1981,
+      "end": 1985,
       "loc": {
         "start": {
           "line": 61,
@@ -3831,8 +3831,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 2003,
-      "end": 2004,
+      "start": 1985,
+      "end": 1986,
       "loc": {
         "start": {
           "line": 61,
@@ -3857,8 +3857,8 @@
         "binop": null
       },
       "value": "split",
-      "start": 2004,
-      "end": 2009,
+      "start": 1986,
+      "end": 1991,
       "loc": {
         "start": {
           "line": 61,
@@ -3882,8 +3882,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 2009,
-      "end": 2010,
+      "start": 1991,
+      "end": 1992,
       "loc": {
         "start": {
           "line": 61,
@@ -3908,16 +3908,16 @@
         "binop": null
       },
       "value": "predicate",
-      "start": 2011,
-      "end": 2020,
+      "start": 1992,
+      "end": 2001,
       "loc": {
         "start": {
           "line": 61,
-          "column": 20
+          "column": 19
         },
         "end": {
           "line": 61,
-          "column": 29
+          "column": 28
         }
       }
     },
@@ -3933,16 +3933,16 @@
         "postfix": false,
         "binop": null
       },
-      "start": 2021,
-      "end": 2022,
+      "start": 2001,
+      "end": 2002,
       "loc": {
         "start": {
           "line": 61,
-          "column": 30
+          "column": 28
         },
         "end": {
           "line": 61,
-          "column": 31
+          "column": 29
         }
       }
     },
@@ -3959,16 +3959,16 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 2022,
-      "end": 2023,
+      "start": 2002,
+      "end": 2003,
       "loc": {
         "start": {
           "line": 61,
-          "column": 31
+          "column": 29
         },
         "end": {
           "line": 61,
-          "column": 32
+          "column": 30
         }
       }
     },
@@ -3986,16 +3986,16 @@
         "updateContext": null
       },
       "value": 1,
-      "start": 2023,
-      "end": 2024,
+      "start": 2003,
+      "end": 2004,
       "loc": {
         "start": {
           "line": 61,
-          "column": 32
+          "column": 30
         },
         "end": {
           "line": 61,
-          "column": 33
+          "column": 31
         }
       }
     },
@@ -4012,16 +4012,16 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 2024,
-      "end": 2025,
+      "start": 2004,
+      "end": 2005,
       "loc": {
         "start": {
           "line": 61,
-          "column": 33
+          "column": 31
         },
         "end": {
           "line": 61,
-          "column": 34
+          "column": 32
         }
       }
     },
@@ -4038,16 +4038,16 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 2026,
-      "end": 2027,
+      "start": 2005,
+      "end": 2006,
       "loc": {
         "start": {
           "line": 61,
-          "column": 35
+          "column": 32
         },
         "end": {
           "line": 61,
-          "column": 36
+          "column": 33
         }
       }
     },
@@ -4063,8 +4063,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 2028,
-      "end": 2029,
+      "start": 2007,
+      "end": 2008,
       "loc": {
         "start": {
           "line": 62,
@@ -4089,24 +4089,24 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 2030,
-      "end": 2031,
+      "start": 2008,
+      "end": 2009,
       "loc": {
         "start": {
           "line": 62,
-          "column": 2
+          "column": 1
         },
         "end": {
           "line": 62,
-          "column": 3
+          "column": 2
         }
       }
     },
     {
       "type": "CommentBlock",
       "value": "*\n * Returns a tree that contains all values of this tree in-order followed by\n * all values of the input iterable in-order.\n *\n * @example\n * // returns 'abc123'\n * import { from } from '@aureooms/js-fingertree' ;\n * import { Measures : { SIZE } } from '@aureooms/js-measure' ;\n * let tree = from( SIZE , 'abc' ).append('123') ;\n * [ ...tree ].join('') ;\n *\n * @param {Iterable} iterable The input iterable.\n *\n * @returns {Tree} The output tree.\n ",
-      "start": 2033,
-      "end": 2486,
+      "start": 2011,
+      "end": 2464,
       "loc": {
         "start": {
           "line": 64,
@@ -4131,8 +4131,8 @@
         "binop": null
       },
       "value": "Tree",
-      "start": 2487,
-      "end": 2491,
+      "start": 2465,
+      "end": 2469,
       "loc": {
         "start": {
           "line": 79,
@@ -4157,8 +4157,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 2491,
-      "end": 2492,
+      "start": 2469,
+      "end": 2470,
       "loc": {
         "start": {
           "line": 79,
@@ -4183,8 +4183,8 @@
         "binop": null
       },
       "value": "prototype",
-      "start": 2492,
-      "end": 2501,
+      "start": 2470,
+      "end": 2479,
       "loc": {
         "start": {
           "line": 79,
@@ -4209,8 +4209,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 2501,
-      "end": 2502,
+      "start": 2479,
+      "end": 2480,
       "loc": {
         "start": {
           "line": 79,
@@ -4235,8 +4235,8 @@
         "binop": null
       },
       "value": "append",
-      "start": 2502,
-      "end": 2508,
+      "start": 2480,
+      "end": 2486,
       "loc": {
         "start": {
           "line": 79,
@@ -4262,8 +4262,8 @@
         "updateContext": null
       },
       "value": "=",
-      "start": 2509,
-      "end": 2510,
+      "start": 2487,
+      "end": 2488,
       "loc": {
         "start": {
           "line": 79,
@@ -4289,8 +4289,8 @@
         "binop": null
       },
       "value": "function",
-      "start": 2511,
-      "end": 2519,
+      "start": 2489,
+      "end": 2497,
       "loc": {
         "start": {
           "line": 79,
@@ -4314,8 +4314,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 2520,
-      "end": 2521,
+      "start": 2498,
+      "end": 2499,
       "loc": {
         "start": {
           "line": 79,
@@ -4340,16 +4340,16 @@
         "binop": null
       },
       "value": "iterable",
-      "start": 2522,
-      "end": 2530,
+      "start": 2499,
+      "end": 2507,
       "loc": {
         "start": {
           "line": 79,
-          "column": 35
+          "column": 34
         },
         "end": {
           "line": 79,
-          "column": 43
+          "column": 42
         }
       }
     },
@@ -4365,16 +4365,16 @@
         "postfix": false,
         "binop": null
       },
-      "start": 2531,
-      "end": 2532,
+      "start": 2507,
+      "end": 2508,
       "loc": {
         "start": {
           "line": 79,
-          "column": 44
+          "column": 42
         },
         "end": {
           "line": 79,
-          "column": 45
+          "column": 43
         }
       }
     },
@@ -4390,16 +4390,16 @@
         "postfix": false,
         "binop": null
       },
-      "start": 2533,
-      "end": 2534,
+      "start": 2509,
+      "end": 2510,
       "loc": {
         "start": {
           "line": 79,
-          "column": 46
+          "column": 44
         },
         "end": {
           "line": 79,
-          "column": 47
+          "column": 45
         }
       }
     },
@@ -4418,8 +4418,8 @@
         "updateContext": null
       },
       "value": "return",
-      "start": 2536,
-      "end": 2542,
+      "start": 2512,
+      "end": 2518,
       "loc": {
         "start": {
           "line": 80,
@@ -4444,8 +4444,8 @@
         "binop": null
       },
       "value": "append",
-      "start": 2543,
-      "end": 2549,
+      "start": 2519,
+      "end": 2525,
       "loc": {
         "start": {
           "line": 80,
@@ -4469,8 +4469,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 2549,
-      "end": 2550,
+      "start": 2525,
+      "end": 2526,
       "loc": {
         "start": {
           "line": 80,
@@ -4497,16 +4497,16 @@
         "updateContext": null
       },
       "value": "this",
-      "start": 2551,
-      "end": 2555,
+      "start": 2526,
+      "end": 2530,
       "loc": {
         "start": {
           "line": 80,
-          "column": 16
+          "column": 15
         },
         "end": {
           "line": 80,
-          "column": 20
+          "column": 19
         }
       }
     },
@@ -4523,16 +4523,16 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 2556,
-      "end": 2557,
+      "start": 2530,
+      "end": 2531,
       "loc": {
         "start": {
           "line": 80,
-          "column": 21
+          "column": 19
         },
         "end": {
           "line": 80,
-          "column": 22
+          "column": 20
         }
       }
     },
@@ -4549,16 +4549,16 @@
         "binop": null
       },
       "value": "iterable",
-      "start": 2558,
-      "end": 2566,
+      "start": 2532,
+      "end": 2540,
       "loc": {
         "start": {
           "line": 80,
-          "column": 23
+          "column": 21
         },
         "end": {
           "line": 80,
-          "column": 31
+          "column": 29
         }
       }
     },
@@ -4574,16 +4574,16 @@
         "postfix": false,
         "binop": null
       },
-      "start": 2567,
-      "end": 2568,
+      "start": 2540,
+      "end": 2541,
       "loc": {
         "start": {
           "line": 80,
-          "column": 32
+          "column": 29
         },
         "end": {
           "line": 80,
-          "column": 33
+          "column": 30
         }
       }
     },
@@ -4600,16 +4600,16 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 2569,
-      "end": 2570,
+      "start": 2541,
+      "end": 2542,
       "loc": {
         "start": {
           "line": 80,
-          "column": 34
+          "column": 30
         },
         "end": {
           "line": 80,
-          "column": 35
+          "column": 31
         }
       }
     },
@@ -4625,8 +4625,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 2571,
-      "end": 2572,
+      "start": 2543,
+      "end": 2544,
       "loc": {
         "start": {
           "line": 81,
@@ -4651,24 +4651,24 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 2573,
-      "end": 2574,
+      "start": 2544,
+      "end": 2545,
       "loc": {
         "start": {
           "line": 81,
-          "column": 2
+          "column": 1
         },
         "end": {
           "line": 81,
-          "column": 3
+          "column": 2
         }
       }
     },
     {
       "type": "CommentBlock",
       "value": "*\n * Returns a tree that contains all values of the input iterable in-order\n * followed by all values of this tree in-order.\n *\n * @example\n * // returns '123abc'\n * import { from } from '@aureooms/js-fingertree' ;\n * import { Measures : { SIZE } } from '@aureooms/js-measure' ;\n * let tree = from( SIZE , 'abc' ).prepend('123') ;\n * [ ...tree ].join('') ;\n *\n * @param {Iterable} iterable The input iterable.\n *\n * @returns {Tree} The output tree.\n ",
-      "start": 2576,
-      "end": 3030,
+      "start": 2547,
+      "end": 3001,
       "loc": {
         "start": {
           "line": 83,
@@ -4693,8 +4693,8 @@
         "binop": null
       },
       "value": "Tree",
-      "start": 3031,
-      "end": 3035,
+      "start": 3002,
+      "end": 3006,
       "loc": {
         "start": {
           "line": 98,
@@ -4719,8 +4719,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 3035,
-      "end": 3036,
+      "start": 3006,
+      "end": 3007,
       "loc": {
         "start": {
           "line": 98,
@@ -4745,8 +4745,8 @@
         "binop": null
       },
       "value": "prototype",
-      "start": 3036,
-      "end": 3045,
+      "start": 3007,
+      "end": 3016,
       "loc": {
         "start": {
           "line": 98,
@@ -4771,8 +4771,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 3045,
-      "end": 3046,
+      "start": 3016,
+      "end": 3017,
       "loc": {
         "start": {
           "line": 98,
@@ -4797,8 +4797,8 @@
         "binop": null
       },
       "value": "prepend",
-      "start": 3046,
-      "end": 3053,
+      "start": 3017,
+      "end": 3024,
       "loc": {
         "start": {
           "line": 98,
@@ -4824,8 +4824,8 @@
         "updateContext": null
       },
       "value": "=",
-      "start": 3054,
-      "end": 3055,
+      "start": 3025,
+      "end": 3026,
       "loc": {
         "start": {
           "line": 98,
@@ -4851,8 +4851,8 @@
         "binop": null
       },
       "value": "function",
-      "start": 3056,
-      "end": 3064,
+      "start": 3027,
+      "end": 3035,
       "loc": {
         "start": {
           "line": 98,
@@ -4876,8 +4876,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 3065,
-      "end": 3066,
+      "start": 3036,
+      "end": 3037,
       "loc": {
         "start": {
           "line": 98,
@@ -4902,16 +4902,16 @@
         "binop": null
       },
       "value": "iterable",
-      "start": 3067,
-      "end": 3075,
+      "start": 3037,
+      "end": 3045,
       "loc": {
         "start": {
           "line": 98,
-          "column": 36
+          "column": 35
         },
         "end": {
           "line": 98,
-          "column": 44
+          "column": 43
         }
       }
     },
@@ -4927,16 +4927,16 @@
         "postfix": false,
         "binop": null
       },
-      "start": 3076,
-      "end": 3077,
+      "start": 3045,
+      "end": 3046,
       "loc": {
         "start": {
           "line": 98,
-          "column": 45
+          "column": 43
         },
         "end": {
           "line": 98,
-          "column": 46
+          "column": 44
         }
       }
     },
@@ -4952,16 +4952,16 @@
         "postfix": false,
         "binop": null
       },
-      "start": 3078,
-      "end": 3079,
+      "start": 3047,
+      "end": 3048,
       "loc": {
         "start": {
           "line": 98,
-          "column": 47
+          "column": 45
         },
         "end": {
           "line": 98,
-          "column": 48
+          "column": 46
         }
       }
     },
@@ -4980,8 +4980,8 @@
         "updateContext": null
       },
       "value": "return",
-      "start": 3081,
-      "end": 3087,
+      "start": 3050,
+      "end": 3056,
       "loc": {
         "start": {
           "line": 99,
@@ -5006,8 +5006,8 @@
         "binop": null
       },
       "value": "prepend",
-      "start": 3088,
-      "end": 3095,
+      "start": 3057,
+      "end": 3064,
       "loc": {
         "start": {
           "line": 99,
@@ -5031,8 +5031,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 3095,
-      "end": 3096,
+      "start": 3064,
+      "end": 3065,
       "loc": {
         "start": {
           "line": 99,
@@ -5059,16 +5059,16 @@
         "updateContext": null
       },
       "value": "this",
-      "start": 3097,
-      "end": 3101,
+      "start": 3065,
+      "end": 3069,
       "loc": {
         "start": {
           "line": 99,
-          "column": 17
+          "column": 16
         },
         "end": {
           "line": 99,
-          "column": 21
+          "column": 20
         }
       }
     },
@@ -5085,16 +5085,16 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 3102,
-      "end": 3103,
+      "start": 3069,
+      "end": 3070,
       "loc": {
         "start": {
           "line": 99,
-          "column": 22
+          "column": 20
         },
         "end": {
           "line": 99,
-          "column": 23
+          "column": 21
         }
       }
     },
@@ -5111,16 +5111,16 @@
         "binop": null
       },
       "value": "iterable",
-      "start": 3104,
-      "end": 3112,
+      "start": 3071,
+      "end": 3079,
       "loc": {
         "start": {
           "line": 99,
-          "column": 24
+          "column": 22
         },
         "end": {
           "line": 99,
-          "column": 32
+          "column": 30
         }
       }
     },
@@ -5136,16 +5136,16 @@
         "postfix": false,
         "binop": null
       },
-      "start": 3113,
-      "end": 3114,
+      "start": 3079,
+      "end": 3080,
       "loc": {
         "start": {
           "line": 99,
-          "column": 33
+          "column": 30
         },
         "end": {
           "line": 99,
-          "column": 34
+          "column": 31
         }
       }
     },
@@ -5162,16 +5162,16 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 3115,
-      "end": 3116,
+      "start": 3080,
+      "end": 3081,
       "loc": {
         "start": {
           "line": 99,
-          "column": 35
+          "column": 31
         },
         "end": {
           "line": 99,
-          "column": 36
+          "column": 32
         }
       }
     },
@@ -5187,8 +5187,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 3117,
-      "end": 3118,
+      "start": 3082,
+      "end": 3083,
       "loc": {
         "start": {
           "line": 100,
@@ -5213,16 +5213,16 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 3119,
-      "end": 3120,
+      "start": 3083,
+      "end": 3084,
       "loc": {
         "start": {
           "line": 100,
-          "column": 2
+          "column": 1
         },
         "end": {
           "line": 100,
-          "column": 3
+          "column": 2
         }
       }
     },
@@ -5239,8 +5239,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 3121,
-      "end": 3121,
+      "start": 3085,
+      "end": 3085,
       "loc": {
         "start": {
           "line": 101,

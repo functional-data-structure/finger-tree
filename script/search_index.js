@@ -192,15 +192,15 @@ window.esdocSearchIndex = [
     "function"
   ],
   [
-    "@aureooms/js-fingertree/src/2-node/2-node2.js~node2",
+    "@aureooms/js-fingertree/src/2-node/node2.js~node2",
     "function/index.html#static-function-node2",
-    "<span>node2</span> <span class=\"search-result-import-path\">@aureooms/js-fingertree/src/2-node/2-Node2.js</span>",
+    "<span>node2</span> <span class=\"search-result-import-path\">@aureooms/js-fingertree/src/2-node/node2.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-fingertree/src/2-node/3-node3.js~node3",
+    "@aureooms/js-fingertree/src/2-node/node3.js~node3",
     "function/index.html#static-function-node3",
-    "<span>node3</span> <span class=\"search-result-import-path\">@aureooms/js-fingertree/src/2-node/3-Node3.js</span>",
+    "<span>node3</span> <span class=\"search-result-import-path\">@aureooms/js-fingertree/src/2-node/node3.js</span>",
     "function"
   ],
   [
@@ -705,6 +705,18 @@ window.esdocSearchIndex = [
     "src/2-node/index.js",
     "file/src/2-node/index.js.html",
     "src/2-node/index.js",
+    "file"
+  ],
+  [
+    "src/2-node/node2.js",
+    "file/src/2-node/node2.js.html",
+    "src/2-node/node2.js",
+    "file"
+  ],
+  [
+    "src/2-node/node3.js",
+    "file/src/2-node/node3.js.html",
+    "src/2-node/node3.js",
     "file"
   ],
   [

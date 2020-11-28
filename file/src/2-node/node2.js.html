@@ -2,8 +2,8 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <base data-ice="baseUrl" href="../../../../">
-  <title data-ice="title">src/0-core/_fast/_prepend.js | aureooms/js-fingertree</title>
+  <base data-ice="baseUrl" href="../../../">
+  <title data-ice="title">src/2-node/node2.js | aureooms/js-fingertree</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
@@ -69,13 +69,21 @@
 </div>
 </nav>
 
-<div class="content" data-ice="content"><h1 data-ice="title">src/0-core/_fast/_prepend.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">export function _prepend(tree, list) {
-	let i = list.length;
+<div class="content" data-ice="content"><h1 data-ice="title">src/2-node/node2.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import assert from &apos;assert&apos;;
 
-	while (i--) tree = tree.cons(list[i]);
+import {CachedMeasure} from &apos;../0-core&apos;;
+import {Node2} from &apos;./2-Node2&apos;;
+import {Node3} from &apos;./3-Node3&apos;;
 
-	return tree;
+export function node2(M, a, b) {
+	assert(
+		!(a instanceof Node2 || a instanceof Node3) || M instanceof CachedMeasure
+	);
+	assert(
+		a instanceof Node2 || a instanceof Node3 || !(M instanceof CachedMeasure)
+	);
+	return new Node2(M.plus(M.measure(a), M.measure(b)), a, b);
 }
 </code></pre>
 

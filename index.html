@@ -8,7 +8,7 @@
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
   <script src="script/manual.js"></script>
-<link rel="stylesheet" href="./inject/css/0-style.css"><script src="./inject/script/0-header.js"></script><meta name="description" content="Finger Trees for JavaScript"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="aureooms/js-fingertree"><meta property="twitter:description" content="Finger Trees for JavaScript"></head>
+<script src="./inject/script/0-header.js"></script><link rel="stylesheet" href="./inject/css/0-style.css"><meta name="description" content="Finger Trees for JavaScript"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="aureooms/js-fingertree"><meta property="twitter:description" content="Finger Trees for JavaScript"></head>
 <body class="layout-container" data-ice="rootContainer">
 
 <header>
@@ -24,7 +24,7 @@
   </span>
     <ul class="search-result"></ul>
   </div>
-<a style="position:relative; top:3px;" href="https://github.com/aureooms/js-fingertree.git"><img width="20px" src="./image/github.png"></a></header>
+<a style="position:relative; top:3px;" href="https://github.com/aureooms/js-fingertree"><img width="20px" src="./image/github.png"></a></header>
 
 <nav class="navigation" data-ice="nav"><div>
   <ul>
@@ -56,8 +56,8 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Three">Three</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Four">Four</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#2-node">2-node</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Node2">Node2</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-node2">node2</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Node3">Node3</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-node2">node2</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-node3">node3</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#3-tree-base">3-tree/base</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Tree">Tree</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#3-tree-implementations">3-tree/implementations</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Empty">Empty</a></span></span></li>
@@ -69,124 +69,204 @@
 </div>
 </nav>
 
-<div class="content" data-ice="content"><div data-ice="index" class="github-markdown"><h1 id="-a-href--http---aureooms-github-io-js-fingertree---aureooms-js-fingertree--a-"><a href="http://aureooms.github.io/js-fingertree">@aureooms/js-fingertree</a></h1><p><img src="https://cdn.rawgit.com/aureooms/js-fingertree/master/media/sketch.svg" width="864"></p>
+<div class="content" data-ice="content"><div data-ice="index" class="github-markdown"><h1 id="-cactus---a-href--https---aureooms-github-io-js-fingertree---aureooms-js-fingertree--a-">:cactus: <a href="https://aureooms.github.io/js-fingertree">@aureooms/js-fingertree</a></h1><p></p><p>
+<img src="https://cdn.rawgit.com/aureooms/js-fingertree/main/media/sketch.svg" width="400">
+</p>
+
+<p></p>
 <p>Finger trees for JavaScript.
-See <a href="http://aureooms.github.io/js-fingertree">docs</a>.
+See <a href="https://aureooms.github.io/js-fingertree">docs</a>.
 Parent is <a href="https://github.com/aureooms/js-persistent">@aureooms/js-persistent</a>.</p>
 <pre><code><code class="source-code prettyprint">data FingerTree x = Empty
                   | Single x
                   | Deep ( Digit x ) ( FingerTree ( Node x ) ) ( Digit x )</code>
-</code></pre><p><a href="https://raw.githubusercontent.com/aureooms/js-fingertree/master/LICENSE"><img src="https://img.shields.io/github/license/aureooms/js-fingertree.svg?style=flat" alt="License"></a>
-<a href="https://www.npmjs.org/package/@aureooms/js-fingertree"><img src="https://img.shields.io/npm/v/@aureooms/js-fingertree.svg?style=flat" alt="NPM version"></a>
-<a href="https://travis-ci.org/aureooms/js-fingertree"><img src="https://img.shields.io/travis/aureooms/js-fingertree.svg?style=flat" alt="Build Status"></a>
-<a href="https://coveralls.io/r/aureooms/js-fingertree"><img src="https://img.shields.io/coveralls/aureooms/js-fingertree.svg?style=flat" alt="Coverage Status"></a>
-<a href="https://david-dm.org/aureooms/js-fingertree#info=dependencies"><img src="https://img.shields.io/david/aureooms/js-fingertree.svg?style=flat" alt="Dependencies Status"></a>
-<a href="https://david-dm.org/aureooms/js-fingertree#info=devDependencies"><img src="https://img.shields.io/david/dev/aureooms/js-fingertree.svg?style=flat" alt="devDependencies Status"></a>
-<a href="https://codeclimate.com/github/aureooms/js-fingertree"><img src="https://img.shields.io/codeclimate/github/aureooms/js-fingertree.svg?style=flat" alt="Code Climate"></a>
-<a href="https://www.npmjs.org/package/@aureooms/js-fingertree"><img src="https://img.shields.io/npm/dm/@aureooms/js-fingertree.svg?style=flat" alt="NPM downloads per month"></a>
-<a href="https://github.com/aureooms/js-fingertree/issues"><img src="https://img.shields.io/github/issues/aureooms/js-fingertree.svg?style=flat" alt="GitHub issues"></a>
-<a href="https://aureooms.github.io/js-fingertree/source.html"><img src="https://aureooms.github.io/js-fingertree/badge.svg" alt="Documentation"></a></p>
-<h2 id="api-reference">API reference</h2><p>The data structure is
+</code></pre><p><a href="https://raw.githubusercontent.com/aureooms/js-fingertree/main/LICENSE"><img src="https://img.shields.io/github/license/aureooms/js-fingertree.svg" alt="License"></a>
+<a href="https://www.npmjs.org/package/@aureooms/js-fingertree"><img src="https://img.shields.io/npm/v/@aureooms/js-fingertree.svg" alt="Version"></a>
+<a href="https://travis-ci.org/aureooms/js-fingertree/branches"><img src="https://img.shields.io/travis/aureooms/js-fingertree/main.svg" alt="Build"></a>
+<a href="https://david-dm.org/aureooms/js-fingertree"><img src="https://img.shields.io/david/aureooms/js-fingertree.svg" alt="Dependencies"></a>
+<a href="https://david-dm.org/aureooms/js-fingertree?type=dev"><img src="https://img.shields.io/david/dev/aureooms/js-fingertree.svg" alt="Dev dependencies"></a>
+<a href="https://github.com/aureooms/js-fingertree/issues"><img src="https://img.shields.io/github/issues/aureooms/js-fingertree.svg" alt="GitHub issues"></a>
+<a href="https://www.npmjs.org/package/@aureooms/js-fingertree"><img src="https://img.shields.io/npm/dm/@aureooms/js-fingertree.svg" alt="Downloads"></a></p>
+<p><a href="https://codeclimate.com/github/aureooms/js-fingertree/issues"><img src="https://img.shields.io/codeclimate/issues/aureooms/js-fingertree.svg" alt="Code issues"></a>
+<a href="https://codeclimate.com/github/aureooms/js-fingertree/trends/churn"><img src="https://img.shields.io/codeclimate/maintainability/aureooms/js-fingertree.svg" alt="Code maintainability"></a>
+<a href="https://codecov.io/gh/aureooms/js-fingertree"><img src="https://img.shields.io/codecov/c/gh/aureooms/js-fingertree/main.svg" alt="Code coverage (cov)"></a>
+<a href="https://codeclimate.com/github/aureooms/js-fingertree/trends/technical_debt"><img src="https://img.shields.io/codeclimate/tech-debt/aureooms/js-fingertree.svg" alt="Code technical debt"></a>
+<a href="https://aureooms.github.io/js-fingertree/source.html"><img src="https://aureooms.github.io/js-fingertree/badge.svg" alt="Documentation"></a>
+<a href="https://bundlephobia.com/result?p=@aureooms/js-fingertree"><img src="https://img.shields.io/bundlephobia/minzip/@aureooms/js-fingertree" alt="Package size"></a></p>
+<p><!-- vim-markdown-toc GFM -->
+</p>
+<ul>
+<li><a href="#woman_teacher-api-reference">:woman_teacher: API reference</a><ul>
+<li><a href="#cactus-definition-of-a-tree">:cactus: Definition of a <code>Tree</code></a></li>
+<li><a href="#straight_ruler-definition-of-a-measure">:straight_ruler: Definition of a <code>Measure</code></a><ul>
+<li><a href="#example-of-a-measure">Example of a <code>Measure</code></a></li>
+</ul>
+</li>
+<li><a href="#package-how-to-import">:package: How to <code>import</code></a></li>
+<li><a href="#baby-how-to-create-a-tree">:baby: How to create a <code>Tree</code></a><ul>
+<li><a href="#emptymeasure---tree"><code>empty(Measure) -&gt; Tree</code></a></li>
+<li><a href="#frommeasure-iterable---tree"><code>from(Measure, Iterable) -&gt; Tree</code></a></li>
+</ul>
+</li>
+<li><a href="#question-predicates">:question: Predicates</a><ul>
+<li><a href="#treemeasure---m"><code>Tree#measure() -&gt; m</code></a></li>
+<li><a href="#treeempty---boolean"><code>Tree#empty() -&gt; Boolean</code></a></li>
+</ul>
+</li>
+<li><a href="#salt-add-values">:salt: Add values</a><ul>
+<li><a href="#treepushx---tree"><code>Tree#push(x) -&gt; Tree</code></a></li>
+<li><a href="#treeconsx---tree"><code>Tree#cons(x) -&gt; Tree</code></a></li>
+<li><a href="#treeappenditerable---tree"><code>Tree#append(Iterable) -&gt; Tree</code></a></li>
+<li><a href="#treeprependiterable---tree"><code>Tree#prepend(Iterable) -&gt; Tree</code></a></li>
+</ul>
+</li>
+<li><a href="#pizza-slice">:pizza: Slice</a><ul>
+<li><a href="#treehead---x"><code>Tree#head() -&gt; x</code></a></li>
+<li><a href="#treelast---x"><code>Tree#last() -&gt; x</code></a></li>
+<li><a href="#treeinit---tree"><code>Tree#init() -&gt; Tree</code></a></li>
+<li><a href="#treetail---tree"><code>Tree#tail() -&gt; Tree</code></a></li>
+</ul>
+</li>
+<li><a href="#last_quarter_moon-merge">:last_quarter_moon: Merge</a><ul>
+<li><a href="#treeconcattree---tree"><code>Tree#concat(Tree) -&gt; Tree</code></a></li>
+</ul>
+</li>
+<li><a href="#broken_heart-split">:broken_heart: Split</a><ul>
+<li><a href="#treesplittreefunction-m----tree--x--tree-"><code>Tree#splitTree(Function, m) -&gt; [ Tree , x , Tree ]</code></a></li>
+<li><a href="#treesplitfunction----tree--tree-"><code>Tree#split(Function) -&gt; [ Tree , Tree ]</code></a></li>
+<li><a href="#treetakeuntilfunction---tree"><code>Tree#takeUntil(Function) -&gt; Tree</code></a></li>
+<li><a href="#treedropuntilfunction---tree"><code>Tree#dropUntil(Function) -&gt; Tree</code></a></li>
+</ul>
+</li>
+<li><a href="#flying_saucer-visit">:flying_saucer: Visit</a><ul>
+<li><a href="#treesymboliterator---iterable"><code>TreeSymbol.iterator -&gt; Iterable</code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#scroll-references">:scroll: References</a></li>
+<li><a href="#link-links">:link: Links</a></li>
+</ul>
+<p><!-- vim-markdown-toc -->
+</p>
+<h2 id="-woman-teacher--api-reference">:woman_teacher: API reference</h2><p>The data structure is
 <a href="https://en.wikipedia.org/wiki/Persistent_data_structure#Fully_persistent">fully persistent</a>:
 All methods are pure functions that do not modify their object. </p>
 <blockquote>
 <p>The <a href="https://github.com/aureooms/js-persistent">parent project</a> shows how
 specialized persistent data structures can be build on top of those methods.</p>
-<p>The code needs a ES2015+ polyfill to work (<code>regeneratorRuntime</code>), for example
-<a href="https://babeljs.io/docs/usage/polyfill">babel-polyfill</a>.</p>
 </blockquote>
-<pre><code class="lang-js"><code class="source-code prettyprint">import &apos;babel-polyfill&apos; ;</code>
-</code></pre>
-<h3 id="definition-of-a--code-tree--code-">Definition of a <code>Tree</code></h3><pre><code><code class="source-code prettyprint">data Tree x = Empty
+<h3 id="-cactus--definition-of-a--code-tree--code-">:cactus: Definition of a <code>Tree</code></h3><pre><code><code class="source-code prettyprint">data Tree x = Empty
             | Single x
             | Deep ( Digit x ) ( Tree ( Node x ) ) ( Digit x )</code>
-</code></pre><h3 id="definition-of-a--code-measure--code-">Definition of a <code>Measure</code></h3><pre><code><code class="source-code prettyprint">Measure = (
+</code></pre><h3 id="-straight-ruler--definition-of-a--code-measure--code-">:straight_ruler: Definition of a <code>Measure</code></h3><pre><code><code class="source-code prettyprint">Measure = (
   plus = ( x , x ) -&gt; m
   measure = x -&gt; m
   zero = ( ) =&gt; m
 )</code>
-</code></pre><h3 id="example-of-a--code-measure--code-">Example of a <code>Measure</code></h3><p>The following measure will compute the size of each subtree.</p>
+</code></pre><h4 id="example-of-a--code-measure--code-">Example of a <code>Measure</code></h4><p>The following measure will compute the size of each subtree.</p>
 <pre><code class="lang-js"><code class="source-code prettyprint">const counter = {
   plus : ( x , y ) =&gt; x + y ,
   measure : x =&gt; 1 ,
   zero : ( ) =&gt; 0 ,
 } ;</code>
 </code></pre>
-<h3 id="how-to--code-import--code-">How to <code>import</code></h3><p>No surprises here:</p>
-<pre><code class="lang-js"><code class="source-code prettyprint">import { from , empty } from &apos;@aureooms/js-fingertree&apos; ;</code>
+<p>See also
+<a href="https://aureooms.github.io/js-measure/file/src/1-api/1-Measures.js.html">@aureooms/js-measure</a>
+for more examples of measures and see
+<a href="https://github.com/aureooms/js-persistent">@aureooms/js-persistent</a>
+for examples of data structures that can be build on top of this abstraction.</p>
+<h3 id="-package--how-to--code-import--code-">:package: How to <code>import</code></h3><blockquote>
+<p>:warning: The code requires <code>regeneratorRuntime</code> to be defined, for instance by importing
+<a href="https://www.npmjs.com/package/regenerator-runtime">regenerator-runtime/runtime</a>.</p>
+</blockquote>
+<p>First, require the polyfill at the entry point of your application:</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">require( &apos;regenerator-runtime/runtime&apos; ) ;
+// or
+import &apos;regenerator-runtime/runtime.js&apos; ;</code>
 </code></pre>
-<h3 id="-code-empty-measure----gt--tree--code-"><code>empty(Measure) -&gt; Tree</code></h3><p>Create an empty fingertree from a measure object.</p>
+<p>Then require what you need from the exported object, for instance the two main
+API functions <code>from</code> and <code>empty</code>:</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">const { from , empty } = require( &apos;@aureooms/js-fingertree&apos; ) ;
+// or
+import { from , empty } from &apos;@aureooms/js-fingertree&apos; ;</code>
+</code></pre>
+<h3 id="-baby--how-to-create-a--code-tree--code-">:baby: How to create a <code>Tree</code></h3><h4 id="-code-empty-measure----gt--tree--code-"><code>empty(Measure) -&gt; Tree</code></h4><p>Create an empty tree from <a href="#example-of-a-measure">a measure object</a>.</p>
 <pre><code class="lang-js"><code class="source-code prettyprint">let tree = empty( counter ) ;</code>
 </code></pre>
-<h3 id="-code-from-measure--iterable----gt--tree--code-"><code>from(Measure, Iterable) -&gt; Tree</code></h3><p>Create a fingertree from a measure object and an iterable.</p>
+<h4 id="-code-from-measure--iterable----gt--tree--code-"><code>from(Measure, Iterable) -&gt; Tree</code></h4><p>Create a tree from a measure object and an iterable.</p>
 <pre><code class="lang-js"><code class="source-code prettyprint">let tree = from( counter , &apos;abc&apos; ) ;</code>
 </code></pre>
-<h3 id="-code-tree-measure-----gt--m--code-"><code>Tree#measure() -&gt; m</code></h3><p>Returns the measure of the tree.</p>
+<h3 id="-question--predicates">:question: Predicates</h3><h4 id="-code-tree-measure-----gt--m--code-"><code>Tree#measure() -&gt; m</code></h4><p>Returns the measure of the tree.</p>
 <pre><code class="lang-js"><code class="source-code prettyprint">if ( tree.measure() &gt; 1 ) ...</code>
 </code></pre>
-<h3 id="-code-tree-empty-----gt--boolean--code-"><code>Tree#empty() -&gt; Boolean</code></h3><p>Returns <code>true</code> if the tree is empty, <code>false</code> otherwise.</p>
+<h4 id="-code-tree-empty-----gt--boolean--code-"><code>Tree#empty() -&gt; Boolean</code></h4><p>Returns <code>true</code> if the tree is empty, <code>false</code> otherwise.</p>
 <pre><code class="lang-js"><code class="source-code prettyprint">return tree.empty() ? &apos;empty&apos; : &apos;not empty&apos; ;</code>
 </code></pre>
-<h3 id="-code-tree-head-----gt--x--code-"><code>Tree#head() -&gt; x</code></h3><p>Returns the left-most value in the tree.</p>
-<pre><code class="lang-js"><code class="source-code prettyprint">let head = tree.head() ; // &apos;a&apos;</code>
-</code></pre>
-<h3 id="-code-tree-last-----gt--x--code-"><code>Tree#last() -&gt; x</code></h3><p>Returns the right-most value in the tree.</p>
-<pre><code class="lang-js"><code class="source-code prettyprint">let last = tree.last() ; // &apos;b&apos;</code>
-</code></pre>
-<h3 id="-code-tree-push-x----gt--tree--code-"><code>Tree#push(x) -&gt; Tree</code></h3><p>Returns a new tree with an additional value as the new right-most value.</p>
+<h3 id="-salt--add-values">:salt: Add values</h3><h4 id="-code-tree-push-x----gt--tree--code-"><code>Tree#push(x) -&gt; Tree</code></h4><p>Returns a new tree with an additional value as the new right-most value.</p>
 <pre><code class="lang-js"><code class="source-code prettyprint">tree = tree.cons(&apos;k&apos;);</code>
 </code></pre>
-<h3 id="-code-tree-cons-x----gt--tree--code-"><code>Tree#cons(x) -&gt; Tree</code></h3><p>Returns a new tree with an additional value as the new left-most value.</p>
+<h4 id="-code-tree-cons-x----gt--tree--code-"><code>Tree#cons(x) -&gt; Tree</code></h4><p>Returns a new tree with an additional value as the new left-most value.</p>
 <pre><code class="lang-js"><code class="source-code prettyprint">tree = tree.cons(&apos;g&apos;);</code>
 </code></pre>
-<h3 id="-code-tree-init-----gt--tree--code-"><code>Tree#init() -&gt; Tree</code></h3><p>Returns a new tree without the right-most element.</p>
-<pre><code class="lang-js"><code class="source-code prettyprint">while ( ! tree.empty() ) tree = tree.init() ;</code>
-</code></pre>
-<h3 id="-code-tree-tail-----gt--tree--code-"><code>Tree#tail() -&gt; Tree</code></h3><p>Returns a new tree without the left-most element.</p>
-<pre><code class="lang-js"><code class="source-code prettyprint">while ( ! tree.empty() ) tree = tree.tail() ;</code>
-</code></pre>
-<h3 id="-code-tree-append-iterable----gt--tree--code-"><code>Tree#append(Iterable) -&gt; Tree</code></h3><p>Equivalent to applying <code>push</code> to each value of the iterable in order.</p>
+<h4 id="-code-tree-append-iterable----gt--tree--code-"><code>Tree#append(Iterable) -&gt; Tree</code></h4><p>Equivalent to applying <code>push</code> to each value of the iterable in order.</p>
 <pre><code class="lang-js"><code class="source-code prettyprint">tree.append( &apos;www&apos; ) ;</code>
 </code></pre>
-<h3 id="-code-tree-prepend-iterable----gt--tree--code-"><code>Tree#prepend(Iterable) -&gt; Tree</code></h3><p>Equivalent to applying <code>cons</code> to each value of the iterable in reverse order.</p>
+<h4 id="-code-tree-prepend-iterable----gt--tree--code-"><code>Tree#prepend(Iterable) -&gt; Tree</code></h4><p>Equivalent to applying <code>cons</code> to each value of the iterable in reverse order.</p>
 <pre><code class="lang-js"><code class="source-code prettyprint">tree.prepend( &apos;xyz&apos; ) ;</code>
 </code></pre>
-<h3 id="-code-tree-concat-tree----gt--tree--code-"><code>Tree#concat(Tree) -&gt; Tree</code></h3><p>Returns the concatenation of two trees.</p>
+<h3 id="-pizza--slice">:pizza: Slice</h3><h4 id="-code-tree-head-----gt--x--code-"><code>Tree#head() -&gt; x</code></h4><p>Returns the left-most value in the tree.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">let head = tree.head() ; // &apos;a&apos;</code>
+</code></pre>
+<h4 id="-code-tree-last-----gt--x--code-"><code>Tree#last() -&gt; x</code></h4><p>Returns the right-most value in the tree.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">let last = tree.last() ; // &apos;b&apos;</code>
+</code></pre>
+<h4 id="-code-tree-init-----gt--tree--code-"><code>Tree#init() -&gt; Tree</code></h4><p>Returns a new tree without the right-most value.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">while ( ! tree.empty() ) tree = tree.init() ;</code>
+</code></pre>
+<h4 id="-code-tree-tail-----gt--tree--code-"><code>Tree#tail() -&gt; Tree</code></h4><p>Returns a new tree without the left-most value.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">while ( ! tree.empty() ) tree = tree.tail() ;</code>
+</code></pre>
+<h3 id="-last-quarter-moon--merge">:last_quarter_moon: Merge</h3><h4 id="-code-tree-concat-tree----gt--tree--code-"><code>Tree#concat(Tree) -&gt; Tree</code></h4><p>Returns the concatenation of two trees.</p>
 <pre><code class="lang-js"><code class="source-code prettyprint">tree = tree.concat( tree );</code>
 </code></pre>
-<h3 id="-code-tree-symbol-iterator------gt--iterable--code-"><code>Tree[Symbol.iterator]() -&gt; Iterable</code></h3><p>Returns an iterator on the values of the tree in left-to-right order.</p>
-<pre><code class="lang-js"><code class="source-code prettyprint">for ( const x of tree ) console.log( x ) ;</code>
-</code></pre>
-<h3 id="-code-tree-splittree-function--m----gt----tree---x---tree----code-"><code>Tree#splitTree(Function, m) -&gt; [ Tree , x , Tree ]</code></h3><p>Split the tree into a left tree, a middle value, and a right tree according to
+<h3 id="-broken-heart--split">:broken_heart: Split</h3><p>The following methods allow you to efficiently split a tree at the value
+where the measure crosses a given threshold.</p>
+<h4 id="-code-tree-splittree-function--m----gt----tree---x---tree----code-"><code>Tree#splitTree(Function, m) -&gt; [ Tree , x , Tree ]</code></h4><p>Split the tree into a left tree, a middle value, and a right tree according to
 a predicate on the measure of the tree <strong>increased by a constant measure <code>m</code></strong>.
 The predicate must be monotone, false then true, on prefixes of the values in
-left-to-right order. The middle value <code>x</code> is the item for which the predicate
+left-to-right order. The middle value <code>x</code> is the value for which the predicate
 switches from false to true.</p>
 <pre><code class="lang-js"><code class="source-code prettyprint">let [ left , right ] = tree.split( measure =&gt; measure &gt; 1 , 1 ) ;</code>
 </code></pre>
-<h3 id="-code-tree-split-function----gt----tree---tree----code-"><code>Tree#split(Function) -&gt; [ Tree , Tree ]</code></h3><p>Split the tree into a left tree and a right tree according to a predicate on
+<h4 id="-code-tree-split-function----gt----tree---tree----code-"><code>Tree#split(Function) -&gt; [ Tree , Tree ]</code></h4><p>Split the tree into a left tree and a right tree according to a predicate on
 the measure of the tree. The predicate must be monotone, false then true, on
 prefixes of the values in left-to-right order. The left-most value of the right
-tree is the item for which the predicate switches from false to true.</p>
+tree is the value for which the predicate switches from false to true.</p>
 <pre><code class="lang-js"><code class="source-code prettyprint">let [ left , right ] = tree.split( measure =&gt; measure &gt; 2 ) ;</code>
 </code></pre>
-<h3 id="-code-tree-takeuntil-function----gt--tree--code-"><code>Tree#takeUntil(Function) -&gt; Tree</code></h3><p>Returns the left tree of <code>Tree#split</code>.</p>
+<h4 id="-code-tree-takeuntil-function----gt--tree--code-"><code>Tree#takeUntil(Function) -&gt; Tree</code></h4><p>Returns the left tree of <code>Tree#split</code>.</p>
 <pre><code class="lang-js"><code class="source-code prettyprint">let left = tree.takeUntil( measure =&gt; measure &gt; 2 ) ;</code>
 </code></pre>
-<h3 id="-code-tree-dropuntil-function----gt--tree--code-"><code>Tree#dropUntil(Function) -&gt; Tree</code></h3><p>Returns the right tree of <code>Tree#split</code>.</p>
+<h4 id="-code-tree-dropuntil-function----gt--tree--code-"><code>Tree#dropUntil(Function) -&gt; Tree</code></h4><p>Returns the right tree of <code>Tree#split</code>.</p>
 <pre><code class="lang-js"><code class="source-code prettyprint">let right = tree.dropUntil( measure =&gt; measure &gt; 2 ) ;</code>
 </code></pre>
-<h2 id="references">References</h2><ul>
+<h3 id="-flying-saucer--visit">:flying_saucer: Visit</h3><h4 id="-code-tree-symbol-iterator------gt--iterable--code-"><code>Tree[Symbol.iterator]() -&gt; Iterable</code></h4><p>Returns an iterator on the values of the tree in left-to-right order.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">for ( const x of tree ) console.log( x ) ;</code>
+</code></pre>
+<h2 id="-scroll--references">:scroll: References</h2><ul>
 <li><a href="http://staff.city.ac.uk/~ross/papers/FingerTree.pdf">Hinze and Paterson</a></li>
-<li><a href="https://github.com/kachayev/fn.py/blob/master/fn/immutable/finger.py">An (incomplete) implementation in Python</a></li>
+</ul>
+<h2 id="-link--links">:link: Links</h2><ul>
+<li><a href="https://github.com/kachayev/fn.py/blob/main/fn/immutable/finger.py">An (incomplete) implementation in Python</a></li>
 <li><a href="https://github.com/qiao/fingertree.js">A (buggy) previous JavaScript implementation</a></li>
-<li><a href="https://github.com/zot/Leisure/blob/master/src/lib/fingertree.coffee">A coffeescript implementation</a></li>
+<li><a href="https://github.com/zot/Leisure/blob/main/src/lib/fingertree.coffee">A coffeescript implementation</a></li>
 </ul>
 </div>
 </div>
 
 <footer class="footer">
-  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.0.4)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.1.0)</span><img src="./image/esdoc-logo-mini-black.png"></a>
 </footer>
 
 <script src="script/search_index.js"></script>

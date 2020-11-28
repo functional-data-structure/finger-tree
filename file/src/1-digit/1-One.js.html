@@ -8,7 +8,7 @@
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
   <script src="script/manual.js"></script>
-<link rel="stylesheet" href="./inject/css/0-style.css"><script src="./inject/script/0-header.js"></script><meta name="description" content="Finger Trees for JavaScript"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="aureooms/js-fingertree"><meta property="twitter:description" content="Finger Trees for JavaScript"></head>
+<script src="./inject/script/0-header.js"></script><link rel="stylesheet" href="./inject/css/0-style.css"><meta name="description" content="Finger Trees for JavaScript"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="aureooms/js-fingertree"><meta property="twitter:description" content="Finger Trees for JavaScript"></head>
 <body class="layout-container" data-ice="rootContainer">
 
 <header>
@@ -24,7 +24,7 @@
   </span>
     <ul class="search-result"></ul>
   </div>
-<a style="position:relative; top:3px;" href="https://github.com/aureooms/js-fingertree.git"><img width="20px" src="./image/github.png"></a></header>
+<a style="position:relative; top:3px;" href="https://github.com/aureooms/js-fingertree"><img width="20px" src="./image/github.png"></a></header>
 
 <nav class="navigation" data-ice="nav"><div>
   <ul>
@@ -56,8 +56,8 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Three">Three</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Four">Four</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#2-node">2-node</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Node2">Node2</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-node2">node2</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Node3">Node3</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-node2">node2</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-node3">node3</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#3-tree-base">3-tree/base</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Tree">Tree</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#3-tree-implementations">3-tree/implementations</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Empty">Empty</a></span></span></li>
@@ -70,76 +70,74 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/1-digit/1-One.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import { Digit , Two , Three } from &apos;.&apos; ;
-import { node2 , node3 } from &apos;../2-node&apos; ;
-import { Split } from &apos;../0-core&apos; ;
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import {Digit, Two, Three} from &apos;.&apos;;
+import {node2, node3} from &apos;../2-node&apos;;
+import {Split} from &apos;../0-core&apos;;
 
-export function One ( a ) {
-	this.a = a ;
-	this.v = null ;
+export function One(a) {
+	this.a = a;
+	this.v = null;
 }
 
-One.prototype = new Digit( ) ;
+One.prototype = new Digit();
 
-One.prototype.measure = function ( M ) {
-	if ( this.v === null ) this.v = M.measure( this.a ) ;
-	return this.v ;
-} ;
+One.prototype.measure = function (M) {
+	if (this.v === null) this.v = M.measure(this.a);
+	return this.v;
+};
 
-One.prototype.head = function ( ) {
-	return this.a ;
-} ;
+One.prototype.head = function () {
+	return this.a;
+};
 
-One.prototype.last = function ( ) {
-	return this.a ;
-} ;
+One.prototype.last = function () {
+	return this.a;
+};
 
-One.prototype.init = function ( ) {
-	throw new Error( &quot;cannot call init on digit One&quot; ) ;
-} ;
+One.prototype.init = function () {
+	throw new Error(&apos;cannot call init on digit One&apos;);
+};
 
-One.prototype.tail = function ( ) {
-	throw new Error( &quot;cannot call tail on digit One&quot; ) ;
-} ;
+One.prototype.tail = function () {
+	throw new Error(&apos;cannot call tail on digit One&apos;);
+};
 
-One.prototype.push = function ( value ) {
-	return new Two( this.a , value ) ;
-} ;
+One.prototype.push = function (value) {
+	return new Two(this.a, value);
+};
 
-One.prototype.cons = function ( value ) {
-	return new Two( value , this.a ) ;
-} ;
+One.prototype.cons = function (value) {
+	return new Two(value, this.a);
+};
 
-One.prototype.node = function ( M ) {
-	throw new Error( &quot;cannot convert One to node&quot; ) ;
-} ;
+One.prototype.node = function (M) {
+	throw new Error(&apos;cannot convert One to node&apos;);
+};
 
 /**
  * It is assumed that p(|this|) is true.
  */
-One.prototype.splitDigit = function ( p , i , M ) {
-	return new Split( [ ] , this.a , [ ] ) ;
-} ;
+One.prototype.splitDigit = function (p, i, M) {
+	return new Split([], this.a, []);
+};
 
-One.prototype._nodes = function ( M , other ) {
-	if ( other instanceof One )
-		return [ node2( M , this.a , other.a ) ] ;
-	if ( other instanceof Two )
-		return [ node3( M , this.a , other.a , other.b ) ] ;
-	if ( other instanceof Three )
-		return [ node2( M , this.a , other.a ) , node2( M , other.b , other.c ) ] ;
-	return [ node3( M , this.a , other.a , other.b ) , node2( M , other.c , other.d ) ] ;
-} ;
+One.prototype._nodes = function (M, other) {
+	if (other instanceof One) return [node2(M, this.a, other.a)];
+	if (other instanceof Two) return [node3(M, this.a, other.a, other.b)];
+	if (other instanceof Three)
+		return [node2(M, this.a, other.a), node2(M, other.b, other.c)];
+	return [node3(M, this.a, other.a, other.b), node2(M, other.c, other.d)];
+};
 
-One.prototype._list = function ( ) {
-	return [ this.a ] ;
-} ;
+One.prototype._list = function () {
+	return [this.a];
+};
 </code></pre>
 
 </div>
 
 <footer class="footer">
-  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.0.4)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.1.0)</span><img src="./image/esdoc-logo-mini-black.png"></a>
 </footer>
 
 <script src="script/search_index.js"></script>

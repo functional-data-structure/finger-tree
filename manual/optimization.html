@@ -8,7 +8,7 @@
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
   <script src="script/manual.js"></script>
-<link rel="stylesheet" href="./inject/css/0-style.css"><script src="./inject/script/0-header.js"></script><meta name="description" content="Finger Trees for JavaScript"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="aureooms/js-fingertree"><meta property="twitter:description" content="Finger Trees for JavaScript"></head>
+<script src="./inject/script/0-header.js"></script><link rel="stylesheet" href="./inject/css/0-style.css"><meta name="description" content="Finger Trees for JavaScript"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="aureooms/js-fingertree"><meta property="twitter:description" content="Finger Trees for JavaScript"></head>
 <body class="layout-container manual-root" data-ice="rootContainer">
 
 <header>
@@ -24,7 +24,7 @@
   </span>
     <ul class="search-result"></ul>
   </div>
-<a style="position:relative; top:3px;" href="https://github.com/aureooms/js-fingertree.git"><img width="20px" src="./image/github.png"></a></header>
+<a style="position:relative; top:3px;" href="https://github.com/aureooms/js-fingertree"><img width="20px" src="./image/github.png"></a></header>
 
 <nav class="navigation" data-ice="nav"><div class="manual-toc-root">
   
@@ -81,14 +81,14 @@ V8 optimization inhibitors, or anything else...</em></p>
 <p>What the benchmark code does is, in order:</p>
 <ul>
 <li>build an empty tree <code>T</code></li>
-<li>add 100000 elements to the beginning of <code>T</code></li>
-<li>remove those 100000 elements by popping the first element of <code>T</code> 100000 times</li>
-<li>add 100000 elements to the end of <code>T</code></li>
+<li>add 100000 values to the beginning of <code>T</code></li>
+<li>remove those 100000 values by popping the first value of <code>T</code> 100000 times</li>
+<li>add 100000 values to the end of <code>T</code></li>
 <li>split <code>T</code> at all 100000 positions, one after the other</li>
-<li>remove the 100000 elements of <code>T</code> by popping the last element 100000 times</li>
+<li>remove the 100000 values of <code>T</code> by popping the last value 100000 times</li>
 </ul>
 <p>Here are the first running times I measured for this implementation. It is not
-difficult to see that the implementation is not fast at all. 100000 elements is
+difficult to see that the implementation is not fast at all. 100000 values is
 not that much right?</p>
 <pre><code class="lang-sh"><code class="source-code prettyprint">$ node benchmark/tree.js
 number of operations:  100000
@@ -98,11 +98,11 @@ push: 8581ms
 split: 144243ms
 init: 6896ms</code>
 </code></pre>
-<p>However most of the motivation for those optimization steps came from applying
+<p>Most of the motivation for those optimization steps came from applying
 the same benchmark to
 <a href="https://github.com/qiao/fingertree.js">another JavaScript implementation</a>
-(actually, I copied the benchmark from Joe&apos;s repository). This made it obvious
-that my implementation was performing badly.</p>
+(actually, I initially copied the benchmark from Joe&apos;s repository).
+This made it obvious that my implementation was performing badly.</p>
 <pre><code class="lang-sh"><code class="source-code prettyprint">$ node ../fingertree.js/benchmark/benchmark.js
 number of operations:  100000
 cons: 155ms
@@ -114,7 +114,7 @@ init: 141ms</code>
 <h2 id="first-implementation-of-lazy-evaluation-of-subtrees">First implementation of lazy evaluation of subtrees</h2><blockquote>
 <p>f0ca58169a32140a8617625466f15489a3549124</p>
 </blockquote>
-<p>A Deep instance posseses a subtree which in some cases is not accessed at all
+<p>A Deep instance possesses a subtree which in some cases is not accessed at all
 during the whole lifetime of its parent. So why build it? The idea is to delay
 the construction of the object, which might be expensive, to a later point in
 time using a proxy: a finger tree look-alike object that will construct the
@@ -137,8 +137,8 @@ there are some nastier things to change.</p>
 structure defined as:</p>
 <pre><code class="lang-js"><code class="source-code prettyprint">class Measured {
 
-    constructor ( element , v ) {
-        this.element = element ;
+    constructor ( value , v ) {
+        this.value = value ;
         this.v = v ;
     }
 
@@ -148,23 +148,22 @@ structure defined as:</p>
 
 }</code>
 </code></pre>
-<p>where <code>v</code> is the value returned by <code>Measure.measure( element )</code>. This wrapping
-allowed to give the same interface to elements, nodes, digits and trees with
+<p>where <code>v</code> is the measure returned by <code>Measure.measure( value )</code>. This wrapping
+allowed to give the same interface to values, nodes, digits and trees with
 respect to computing measures. This approach has at least 2 problems:</p>
 <ul>
 <li>It introduces one additional level of indirection by wrapping all values.</li>
-<li>The way it was implemented here caches measures for all elements. This might not
+<li>The way it was implemented here caches measures for all values. This might not
 be a good thing in settings where measures are big objects. Moreover, this
-is in contradiction with the <em>lazy way</em> of functional programming
-paradigms.</li>
+is in contradiction with the <em>lazy way</em> of functional programming paradigms.</li>
 </ul>
 <p>However, there is a simpler way to solve the <em>common interface</em> problem. Indeed,
-the elements contained in the digits of the root tree can be measured
+the values contained in the digits of the root tree can be measured
 with the Measure object left unchanged, and starting from the subtree of the
 root level we just need a modified Measure object that uses the interface of
 Node2 and Node3 to compute the node measures. Never will digits contain objects
 of different types, so patching the Measure object this way suffices, there is
-no need to give the same interface to nodes and elements.</p>
+no need to give the same interface to nodes and values.</p>
 <p>Here are the measurements after the change:</p>
 <pre><code class="lang-sh"><code class="source-code prettyprint">$ node benchmark/tree.js
 number of operations:  100000
@@ -178,7 +177,7 @@ init: 6657ms</code>
 <h2 id="removing-iterator-loops-and-bindings-for-fixed-size-sequences">Removing iterator loops and bindings for fixed size sequences</h2><blockquote>
 <p>28f6ee08d33e2cb2b9d0e5cae69948a7013bc0b7</p>
 </blockquote>
-<p>At some point I decided to use a better tool than intuition to progress:
+<p>At this point I decided to use a better tool than intuition to progress:
 profiling. This change is the first where I guided the pruning by looking at
 the output of <code>node --prof benchmark/tree.js</code> using <code>node-tick-processor</code>
 from the <a href="https://www.npmjs.com/package/tick">tick</a> package.</p>
@@ -186,7 +185,7 @@ from the <a href="https://www.npmjs.com/package/tick">tick</a> package.</p>
 <pre><code class="lang-js"><code class="source-code prettyprint">reduce( M.plus.bind( M ) , map( M.measure.bind( M ) , digit ) , M.zero( ) ) ;</code>
 </code></pre>
 <p>However, since all four digit types are hard-coded has classes One, Two, Three
-and Four we could as well give a custom implementation of the measure( ) method
+and Four we could as well give a custom implementation of the <code>measure( )</code> method
 to each digit type. For type Two for example, we have:</p>
 <pre><code class="lang-js"><code class="source-code prettyprint">class Two {
 
@@ -214,8 +213,8 @@ split method...</p>
 <h2 id="removing-loops--part-ii">Removing loops: part II</h2><blockquote>
 <p>5b0af102240b3f0cfda7001f6b108a9811594c7a</p>
 </blockquote>
-<p>It turns out I didn&apos;t remove all occurences of this generic digit measurement
-method. Here are the running times after removing occurences of this method
+<p>It turns out I didn&apos;t remove all occurrences of this generic digit measurement
+method. Here are the running times after removing occurrences of this method
 from <code>Deep.splitTree</code>.</p>
 <pre><code class="lang-js"><code class="source-code prettyprint">$ node benchmark/tree.js
 number of operations:  100000
@@ -231,7 +230,7 @@ init: 396ms</code>
 726354a3bd0591d767fb658d206680a6a74d2fbb</p>
 </blockquote>
 <p>These two commits introduce specialized procedures for building trees from
-small lists and digits. These are really small trees, i.e. 0 to 4 elements, so
+small lists and digits. These are really small trees, i.e. 0 to 4 values, so
 why use the generic <code>from_iterable</code> constructor?</p>
 <pre><code class="lang-js"><code class="source-code prettyprint">$ node benchmark/tree.js
 number of operations:  100000
@@ -278,7 +277,7 @@ init: 148ms</code>
 </div>
 
 <footer class="footer">
-  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.0.4)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.1.0)</span><img src="./image/esdoc-logo-mini-black.png"></a>
 </footer>
 
 <script src="script/search_index.js"></script>
