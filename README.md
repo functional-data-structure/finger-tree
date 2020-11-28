@@ -42,16 +42,16 @@ Parent is [@aureooms/js-persistent](https://github.com/aureooms/js-persistent).
   * [:question: Predicates](#question-predicates)
     * [`Tree#measure() -> m`](#treemeasure---m)
     * [`Tree#empty() -> Boolean`](#treeempty---boolean)
-  * [:pizza: Slice](#pizza-slice)
-    * [`Tree#head() -> x`](#treehead---x)
-    * [`Tree#last() -> x`](#treelast---x)
-    * [`Tree#init() -> Tree`](#treeinit---tree)
-    * [`Tree#tail() -> Tree`](#treetail---tree)
   * [:salt: Add values](#salt-add-values)
     * [`Tree#push(x) -> Tree`](#treepushx---tree)
     * [`Tree#cons(x) -> Tree`](#treeconsx---tree)
     * [`Tree#append(Iterable) -> Tree`](#treeappenditerable---tree)
     * [`Tree#prepend(Iterable) -> Tree`](#treeprependiterable---tree)
+  * [:pizza: Slice](#pizza-slice)
+    * [`Tree#head() -> x`](#treehead---x)
+    * [`Tree#last() -> x`](#treelast---x)
+    * [`Tree#init() -> Tree`](#treeinit---tree)
+    * [`Tree#tail() -> Tree`](#treetail---tree)
   * [:last_quarter_moon: Merge](#last_quarter_moon-merge)
     * [`Tree#concat(Tree) -> Tree`](#treeconcattree---tree)
   * [:broken_heart: Split](#broken_heart-split)
@@ -75,11 +75,13 @@ All methods are pure functions that do not modify their object.
 > The [parent project](https://github.com/aureooms/js-persistent) shows how
 > specialized persistent data structures can be build on top of those methods.
 
+
 ### :cactus: Definition of a `Tree`
 
     data Tree x = Empty
                 | Single x
                 | Deep ( Digit x ) ( Tree ( Node x ) ) ( Digit x )
+
 
 ### :straight_ruler: Definition of a `Measure`
 
@@ -129,6 +131,7 @@ const { from , empty } = require( '@aureooms/js-fingertree' ) ;
 import { from , empty } from '@aureooms/js-fingertree' ;
 ```
 
+
 ### :baby: How to create a `Tree`
 
 #### `empty(Measure) -> Tree`
@@ -147,6 +150,7 @@ Create a tree from a measure object and an iterable.
 let tree = from( counter , 'abc' ) ;
 ```
 
+
 ### :question: Predicates
 
 #### `Tree#measure() -> m`
@@ -164,6 +168,42 @@ Returns `true` if the tree is empty, `false` otherwise.
 ```js
 return tree.empty() ? 'empty' : 'not empty' ;
 ```
+
+
+### :salt: Add values
+
+#### `Tree#push(x) -> Tree`
+
+Returns a new tree with an additional value as the new right-most value.
+
+```js
+tree = tree.cons('k');
+```
+
+#### `Tree#cons(x) -> Tree`
+
+Returns a new tree with an additional value as the new left-most value.
+
+```js
+tree = tree.cons('g');
+```
+
+#### `Tree#append(Iterable) -> Tree`
+
+Equivalent to applying `push` to each value of the iterable in order.
+
+```js
+tree.append( 'www' ) ;
+```
+
+#### `Tree#prepend(Iterable) -> Tree`
+
+Equivalent to applying `cons` to each value of the iterable in reverse order.
+
+```js
+tree.prepend( 'xyz' ) ;
+```
+
 
 ### :pizza: Slice
 
@@ -199,39 +239,6 @@ Returns a new tree without the left-most value.
 while ( ! tree.empty() ) tree = tree.tail() ;
 ```
 
-### :salt: Add values
-
-#### `Tree#push(x) -> Tree`
-
-Returns a new tree with an additional value as the new right-most value.
-
-```js
-tree = tree.cons('k');
-```
-
-#### `Tree#cons(x) -> Tree`
-
-Returns a new tree with an additional value as the new left-most value.
-
-```js
-tree = tree.cons('g');
-```
-
-#### `Tree#append(Iterable) -> Tree`
-
-Equivalent to applying `push` to each value of the iterable in order.
-
-```js
-tree.append( 'www' ) ;
-```
-
-#### `Tree#prepend(Iterable) -> Tree`
-
-Equivalent to applying `cons` to each value of the iterable in reverse order.
-
-```js
-tree.prepend( 'xyz' ) ;
-```
 
 ### :last_quarter_moon: Merge
 
