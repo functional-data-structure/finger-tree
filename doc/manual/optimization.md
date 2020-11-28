@@ -12,14 +12,14 @@ V8 optimization inhibitors, or anything else..._
 What the benchmark code does is, in order:
 
   - build an empty tree `T`
-  - add 100000 elements to the beginning of `T`
-  - remove those 100000 elements by popping the first element of `T` 100000 times
-  - add 100000 elements to the end of `T`
+  - add 100000 values to the beginning of `T`
+  - remove those 100000 values by popping the first value of `T` 100000 times
+  - add 100000 values to the end of `T`
   - split `T` at all 100000 positions, one after the other
-  - remove the 100000 elements of `T` by popping the last element 100000 times
+  - remove the 100000 values of `T` by popping the last value 100000 times
 
 Here are the first running times I measured for this implementation. It is not
-difficult to see that the implementation is not fast at all. 100000 elements is
+difficult to see that the implementation is not fast at all. 100000 values is
 not that much right?
 
 ```sh
@@ -32,11 +32,11 @@ split: 144243ms
 init: 6896ms
 ```
 
-However most of the motivation for those optimization steps came from applying
+Most of the motivation for those optimization steps came from applying
 the same benchmark to
 [another JavaScript implementation](https://github.com/qiao/fingertree.js)
-(actually, I copied the benchmark from Joe's repository). This made it obvious
-that my implementation was performing badly.
+(actually, I initially copied the benchmark from Joe's repository).
+This made it obvious that my implementation was performing badly.
 
 ```sh
 $ node ../fingertree.js/benchmark/benchmark.js
@@ -51,7 +51,7 @@ init: 141ms
 ## First implementation of lazy evaluation of subtrees
 > f0ca58169a32140a8617625466f15489a3549124
 
-A Deep instance posseses a subtree which in some cases is not accessed at all
+A Deep instance possesses a subtree which in some cases is not accessed at all
 during the whole lifetime of its parent. So why build it? The idea is to delay
 the construction of the object, which might be expensive, to a later point in
 time using a proxy: a finger tree look-alike object that will construct the
@@ -80,8 +80,8 @@ structure defined as:
 ```js
 class Measured {
 
-	constructor ( element , v ) {
-		this.element = element ;
+	constructor ( value , v ) {
+		this.value = value ;
 		this.v = v ;
 	}
 
@@ -92,23 +92,22 @@ class Measured {
 }
 ```
 
-where `v` is the value returned by `Measure.measure( element )`. This wrapping
-allowed to give the same interface to elements, nodes, digits and trees with
+where `v` is the measure returned by `Measure.measure( value )`. This wrapping
+allowed to give the same interface to values, nodes, digits and trees with
 respect to computing measures. This approach has at least 2 problems:
 
   - It introduces one additional level of indirection by wrapping all values.
-  - The way it was implemented here caches measures for all elements. This might not
+  - The way it was implemented here caches measures for all values. This might not
     be a good thing in settings where measures are big objects. Moreover, this
-    is in contradiction with the *lazy way* of functional programming
-	paradigms.
+    is in contradiction with the *lazy way* of functional programming paradigms.
 
 However, there is a simpler way to solve the *common interface* problem. Indeed,
-the elements contained in the digits of the root tree can be measured
+the values contained in the digits of the root tree can be measured
 with the Measure object left unchanged, and starting from the subtree of the
 root level we just need a modified Measure object that uses the interface of
 Node2 and Node3 to compute the node measures. Never will digits contain objects
 of different types, so patching the Measure object this way suffices, there is
-no need to give the same interface to nodes and elements.
+no need to give the same interface to nodes and values.
 
 Here are the measurements after the change:
 
@@ -127,7 +126,7 @@ Mostly noise for the moment. There must be something else to fix...
 ## Removing iterator loops and bindings for fixed size sequences
 > 28f6ee08d33e2cb2b9d0e5cae69948a7013bc0b7
 
-At some point I decided to use a better tool than intuition to progress:
+At this point I decided to use a better tool than intuition to progress:
 profiling. This change is the first where I guided the pruning by looking at
 the output of `node --prof benchmark/tree.js` using `node-tick-processor`
 from the [tick](https://www.npmjs.com/package/tick) package.
@@ -139,7 +138,7 @@ reduce( M.plus.bind( M ) , map( M.measure.bind( M ) , digit ) , M.zero( ) ) ;
 ```
 
 However, since all four digit types are hard-coded has classes One, Two, Three
-and Four we could as well give a custom implementation of the measure( ) method
+and Four we could as well give a custom implementation of the `measure( )` method
 to each digit type. For type Two for example, we have:
 
 ```js
@@ -174,8 +173,8 @@ split method...
 ## Removing loops: part II
 > 5b0af102240b3f0cfda7001f6b108a9811594c7a
 
-It turns out I didn't remove all occurences of this generic digit measurement
-method. Here are the running times after removing occurences of this method
+It turns out I didn't remove all occurrences of this generic digit measurement
+method. Here are the running times after removing occurrences of this method
 from `Deep.splitTree`.
 
 ```js
@@ -195,7 +194,7 @@ Better.
 > 726354a3bd0591d767fb658d206680a6a74d2fbb
 
 These two commits introduce specialized procedures for building trees from
-small lists and digits. These are really small trees, i.e. 0 to 4 elements, so
+small lists and digits. These are really small trees, i.e. 0 to 4 values, so
 why use the generic `from_iterable` constructor?
 
 ```js
