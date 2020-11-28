@@ -3,10 +3,10 @@ import {Empty, Deep} from '.';
 import {_EMPTY, cache, Split} from '../../0-core';
 import {One} from '../../1-digit';
 
-export function Single(M, element) {
+export function Single(M, value) {
 	this.M = M;
-	this.element = element;
-	this.v = M.measure(element);
+	this.a = value;
+	this.v = M.measure(value);
 }
 
 Single.prototype = new Tree();
@@ -20,11 +20,11 @@ Single.prototype.empty = function () {
 };
 
 Single.prototype.head = function () {
-	return this.element;
+	return this.a;
 };
 
 Single.prototype.last = function () {
-	return this.element;
+	return this.a;
 };
 
 Single.prototype.tail = function () {
@@ -40,32 +40,32 @@ Single.prototype.cons = function (value) {
 		this.M,
 		new One(value),
 		new Empty(cache(this.M)),
-		new One(this.element)
+		new One(this.a)
 	);
 };
 
 Single.prototype.push = function (value) {
 	return new Deep(
 		this.M,
-		new One(this.element),
+		new One(this.a),
 		new Empty(cache(this.M)),
 		new One(value)
 	);
 };
 
 Single.prototype.concat = function (other) {
-	return other.cons(this.element);
+	return other.cons(this.a);
 };
 
 Single.prototype[Symbol.iterator] = function* () {
-	yield this.element;
+	yield this.a;
 };
 
 /**
  * It is assumed that p(|this|) is true.
  */
 Single.prototype.splitTree = function (p, i) {
-	return new Split(new Empty(this.M), this.element, new Empty(this.M));
+	return new Split(new Empty(this.M), this.a, new Empty(this.M));
 };
 
 Single.prototype.split = function (p) {
