@@ -47,7 +47,7 @@ Parent is [@aureooms/js-persistent](https://github.com/aureooms/js-persistent).
     * [`Tree#last() -> x`](#treelast---x)
     * [`Tree#init() -> Tree`](#treeinit---tree)
     * [`Tree#tail() -> Tree`](#treetail---tree)
-  * [:salt: Add elements](#salt-add-elements)
+  * [:salt: Add values](#salt-add-values)
     * [`Tree#push(x) -> Tree`](#treepushx---tree)
     * [`Tree#cons(x) -> Tree`](#treeconsx---tree)
     * [`Tree#append(Iterable) -> Tree`](#treeappenditerable---tree)
@@ -185,7 +185,7 @@ let last = tree.last() ; // 'b'
 
 #### `Tree#init() -> Tree`
 
-Returns a new tree without the right-most element.
+Returns a new tree without the right-most value.
 
 ```js
 while ( ! tree.empty() ) tree = tree.init() ;
@@ -193,13 +193,13 @@ while ( ! tree.empty() ) tree = tree.init() ;
 
 #### `Tree#tail() -> Tree`
 
-Returns a new tree without the left-most element.
+Returns a new tree without the left-most value.
 
 ```js
 while ( ! tree.empty() ) tree = tree.tail() ;
 ```
 
-### :salt: Add elements
+### :salt: Add values
 
 #### `Tree#push(x) -> Tree`
 
@@ -246,7 +246,7 @@ tree = tree.concat( tree );
 
 ### :broken_heart: Split
 
-The following methods allow you to efficiently split a tree at the element
+The following methods allow you to efficiently split a tree at the value
 where the measure crosses a given threshold.
 
 #### `Tree#splitTree(Function, m) -> [ Tree , x , Tree ]`
@@ -254,7 +254,7 @@ where the measure crosses a given threshold.
 Split the tree into a left tree, a middle value, and a right tree according to
 a predicate on the measure of the tree __increased by a constant measure `m`__.
 The predicate must be monotone, false then true, on prefixes of the values in
-left-to-right order. The middle value `x` is the element for which the predicate
+left-to-right order. The middle value `x` is the value for which the predicate
 switches from false to true.
 
 ```js
@@ -266,7 +266,7 @@ let [ left , right ] = tree.split( measure => measure > 1 , 1 ) ;
 Split the tree into a left tree and a right tree according to a predicate on
 the measure of the tree. The predicate must be monotone, false then true, on
 prefixes of the values in left-to-right order. The left-most value of the right
-tree is the element for which the predicate switches from false to true.
+tree is the value for which the predicate switches from false to true.
 
 ```js
 let [ left , right ] = tree.split( measure => measure > 2 ) ;
