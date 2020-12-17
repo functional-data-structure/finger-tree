@@ -312,6 +312,7 @@ for ( const x of tree ) console.log( x ) ;
   - [*Finger trees: a simple general-purpose data structure* -- Hinze and Paterson](http://staff.city.ac.uk/~ross/papers/FingerTree.pdf)
 
 ## :link: Links
-  - [An (incomplete) implementation in Python](https://github.com/kachayev/fn.py/blob/main/fn/immutable/finger.py)
-  - [A (buggy) previous JavaScript implementation](https://github.com/qiao/fingertree.js)
-  - [A coffeescript implementation](https://github.com/zot/Leisure/blob/main/src/lib/fingertree.coffee)
+
+  - [A coffeescript implementation with ZLIB licensing](https://github.com/zot/Leisure/blob/master/src/lib/fingertree.coffee) (:white_check_mark: the implementation appears to be correct)
+  - [An implementation in Python](https://github.com/kachayev/fn.py/blob/master/fn/immutable/finger.py) (:warning: the implementation is missing [splitting functionality](#broken_heart-split))
+  - [A JavaScript implementation with MIT licensing](https://github.com/qiao/fingertree.js) (:rotating_light: [the implementation is incorrect](https://github.com/qiao/fingertree.js/issues/7))
