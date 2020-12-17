@@ -265,7 +265,7 @@ left-to-right order. The middle value `x` is the value for which the predicate
 switches from false to true.
 
 ```js
-let [ left , right ] = tree.split( measure => measure > 1 , 1 ) ;
+let [ left , middle , right ] = tree.splitTree( measure => measure > 1 , 1 ) ;
 ```
 
 #### `Tree#split(Function) -> [ Tree , Tree ]`
