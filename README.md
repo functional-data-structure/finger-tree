@@ -177,7 +177,7 @@ return tree.empty() ? 'empty' : 'not empty' ;
 Returns a new tree with an additional value as the new right-most value.
 
 ```js
-tree = tree.cons('k');
+tree = tree.push('k');
 ```
 
 #### `Tree#cons(x) -> Tree`
