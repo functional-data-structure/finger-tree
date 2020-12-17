@@ -309,7 +309,7 @@ for ( const x of tree ) console.log( x ) ;
 
 ## :scroll: References
 
-  - [Hinze and Paterson](http://staff.city.ac.uk/~ross/papers/FingerTree.pdf)
+  - [*Finger trees: a simple general-purpose data structure* -- Hinze and Paterson](http://staff.city.ac.uk/~ross/papers/FingerTree.pdf)
 
 ## :link: Links
   - [An (incomplete) implementation in Python](https://github.com/kachayev/fn.py/blob/main/fn/immutable/finger.py)
