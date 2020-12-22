@@ -30,7 +30,7 @@ console.timeEnd('prepare');
 console.time('split');
 for (let k = 0; k < N; ++k)
 	for (let i = 0; i < M; ++i)
-		t.split(function (m) {
+		t.split((m) => {
 			return m > i;
 		});
 console.timeEnd('split');

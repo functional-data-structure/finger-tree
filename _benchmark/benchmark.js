@@ -37,33 +37,33 @@ const Benchmark = require('benchmark');
 // PUSH
 
 const PUSH = new Benchmark.Suite()
-	.on('start', function () {
+	.on('start', () => {
 		console.log('\nPUSH\n==\n');
 	})
-	.add('Array#push', function () {
+	.add('Array#push', () => {
 		const a = [];
 		const _M = M;
 		for (let i = 0; i < _M; ++i) a.push(i);
 	})
-	.add('fingertree#addLast', function () {
+	.add('fingertree#addLast', () => {
 		let t = fromArray([]);
 		const _M = M;
 		for (let i = 0; i < _M; ++i) t = t.addLast(i);
 	})
-	.add('@aureooms/js-fingertree#push', function () {
+	.add('@aureooms/js-fingertree#push', () => {
 		let t = empty(COUNTER);
 		const _M = M;
 		for (let i = 0; i < _M; ++i) t = t.push(i);
 	});
 
 if (M <= 1000)
-	PUSH.add('Mock#push', function () {
+	PUSH.add('Mock#push', () => {
 		let m = [];
 		const _M = M;
 		for (let i = 0; i < _M; ++i) m = m.concat([i]);
 	});
 
-PUSH.on('cycle', function (event) {
+PUSH.on('cycle', (event) => {
 	console.log(String(event.target));
 })
 	.on('complete', function () {
@@ -73,34 +73,34 @@ PUSH.on('cycle', function (event) {
 
 // CONS
 
-const CONS = new Benchmark.Suite().on('start', function () {
+const CONS = new Benchmark.Suite().on('start', () => {
 	console.log('\nCONS\n==\n');
 });
 
 if (M <= 10000)
-	CONS.add('Array#unshift', function () {
+	CONS.add('Array#unshift', () => {
 		const a = [];
 		const _M = M;
 		for (let i = 0; i < _M; ++i) a.unshift(i);
 	});
 
-CONS.add('fingertree#addFirst', function () {
+CONS.add('fingertree#addFirst', () => {
 	let t = fromArray([]);
 	const _M = M;
 	for (let i = 0; i < _M; ++i) t = t.addFirst(i);
-}).add('@aureooms/js-fingertree#cons', function () {
+}).add('@aureooms/js-fingertree#cons', () => {
 	let t = empty(COUNTER);
 	const _M = M;
 	for (let i = 0; i < _M; ++i) t = t.cons(i);
 });
 if (M <= 1000)
-	CONS.add('Mock#cons', function () {
+	CONS.add('Mock#cons', () => {
 		let m = [];
 		const _M = M;
 		for (let i = 0; i < _M; ++i) m = [i].concat(m);
 	});
 
-CONS.on('cycle', function (event) {
+CONS.on('cycle', (event) => {
 	console.log(String(event.target));
 })
 	.on('complete', function () {
@@ -122,12 +122,12 @@ const setup = function () {
 };
 
 const INIT = new Benchmark.Suite()
-	.on('start', function () {
+	.on('start', () => {
 		console.log('\nINIT\n==\n');
 	})
 	.add(
 		'Array#pop',
-		function () {
+		() => {
 			const _a = a.slice();
 			for (let i = 0; i < _M; ++i) _a.pop();
 		},
@@ -135,7 +135,7 @@ const INIT = new Benchmark.Suite()
 	)
 	.add(
 		'fingertree#removeLast',
-		function () {
+		() => {
 			let _t = qt;
 			for (let i = 0; i < _M; ++i) _t = _t.removeLast();
 		},
@@ -143,7 +143,7 @@ const INIT = new Benchmark.Suite()
 	)
 	.add(
 		'@aureooms/js-fingertree#init',
-		function () {
+		() => {
 			let _t = at;
 			for (let i = 0; i < _M; ++i) _t = _t.init();
 		},
@@ -153,17 +153,17 @@ const INIT = new Benchmark.Suite()
 if (M <= 1000)
 	INIT.add(
 		'Mock#init',
-		function () {
+		() => {
 			let _m = a;
 			for (let i = 0; i < _M; ++i) _m = _m.slice(0, -1);
 		},
 		{setup}
 	);
 
-INIT.on('cycle', function (event) {
+INIT.on('cycle', (event) => {
 	console.log(String(event.target));
 })
-	.on('error', function (event) {
+	.on('error', (event) => {
 		console.dir(event);
 	})
 	.on('complete', function () {
@@ -173,14 +173,14 @@ INIT.on('cycle', function (event) {
 
 // TAIL
 
-const TAIL = new Benchmark.Suite().on('start', function () {
+const TAIL = new Benchmark.Suite().on('start', () => {
 	console.log('\nTAIL\n==\n');
 });
 
 if (M <= 10000)
 	TAIL.add(
 		'Array#shift',
-		function () {
+		() => {
 			const _a = a.slice();
 			for (let i = 0; i < _M; ++i) _a.shift();
 		},
@@ -189,14 +189,14 @@ if (M <= 10000)
 
 TAIL.add(
 	'fingertree#removeLast',
-	function () {
+	() => {
 		let _t = qt;
 		for (let i = 0; i < _M; ++i) _t = _t.removeFirst();
 	},
 	{setup}
 ).add(
 	'@aureooms/js-fingertree#init',
-	function () {
+	() => {
 		let _t = at;
 		for (let i = 0; i < _M; ++i) _t = _t.tail();
 	},
@@ -206,17 +206,17 @@ TAIL.add(
 if (M <= 1000)
 	TAIL.add(
 		'Mock#init',
-		function () {
+		() => {
 			let _m = a;
 			for (let i = 0; i < _M; ++i) _m = _m.slice(1);
 		},
 		{setup}
 	);
 
-TAIL.on('cycle', function (event) {
+TAIL.on('cycle', (event) => {
 	console.log(String(event.target));
 })
-	.on('error', function (event) {
+	.on('error', (event) => {
 		console.dir(event);
 	})
 	.on('complete', function () {
@@ -227,12 +227,12 @@ TAIL.on('cycle', function (event) {
 // APPEND
 
 const APPEND = new Benchmark.Suite()
-	.on('start', function () {
+	.on('start', () => {
 		console.log('\nAPPEND\n==\n');
 	})
 	.add(
 		'@aureooms/js-fingertree#append',
-		function () {
+		() => {
 			at.append(range(M));
 		},
 		{setup}
@@ -241,13 +241,13 @@ const APPEND = new Benchmark.Suite()
 if (M <= 1000)
 	APPEND.add(
 		'Mock#append',
-		function () {
+		() => {
 			a.concat(Array.from(range(M)));
 		},
 		{setup}
 	);
 
-APPEND.on('cycle', function (event) {
+APPEND.on('cycle', (event) => {
 	console.log(String(event.target));
 })
 	.on('complete', function () {
@@ -258,12 +258,12 @@ APPEND.on('cycle', function (event) {
 // PREPEND
 
 const PREPEND = new Benchmark.Suite()
-	.on('start', function () {
+	.on('start', () => {
 		console.log('\nPREPEND\n==\n');
 	})
 	.add(
 		'@aureooms/js-fingertree#prepend',
-		function () {
+		() => {
 			at.prepend(range(M));
 		},
 		{setup}
@@ -272,13 +272,13 @@ const PREPEND = new Benchmark.Suite()
 if (M <= 1000)
 	PREPEND.add(
 		'Mock#prepend',
-		function () {
+		() => {
 			Array.from(range(M)).concat(a);
 		},
 		{setup}
 	);
 
-PREPEND.on('cycle', function (event) {
+PREPEND.on('cycle', (event) => {
 	console.log(String(event.target));
 })
 	.on('complete', function () {
@@ -289,19 +289,19 @@ PREPEND.on('cycle', function (event) {
 // FROM
 
 new Benchmark.Suite()
-	.on('start', function () {
+	.on('start', () => {
 		console.log('\nFROM\n==\n');
 	})
-	.add('fingertree.fromArray', function () {
+	.add('fingertree.fromArray', () => {
 		fromArray(Array.from(range(M)));
 	})
-	.add('@aureooms/js-fingertree.from', function () {
+	.add('@aureooms/js-fingertree.from', () => {
 		from(COUNTER, range(M));
 	})
-	.add('Mock.from', function () {
+	.add('Mock.from', () => {
 		Array.from(range(M));
 	})
-	.on('cycle', function (event) {
+	.on('cycle', (event) => {
 		console.log(String(event.target));
 	})
 	.on('complete', function () {
@@ -312,16 +312,16 @@ new Benchmark.Suite()
 // SPLIT
 
 const SPLIT = new Benchmark.Suite()
-	.on('start', function () {
+	.on('start', () => {
 		console.log('\nSPLIT\n==\n');
 	})
 	.add(
 		'fingertree#split',
-		function () {
+		() => {
 			const _M = M;
 			const _qt = qt;
 			for (let i = 0; i < _M; ++i)
-				_qt.split(function (m) {
+				_qt.split((m) => {
 					return m > i;
 				});
 		},
@@ -329,11 +329,11 @@ const SPLIT = new Benchmark.Suite()
 	)
 	.add(
 		'@aureooms/js-fingertree#split',
-		function () {
+		() => {
 			const _M = M;
 			const _at = at;
 			for (let i = 0; i < _M; ++i)
-				_at.split(function (m) {
+				_at.split((m) => {
 					return m > i;
 				});
 		},
@@ -343,7 +343,7 @@ const SPLIT = new Benchmark.Suite()
 if (M < 1000)
 	SPLIT.add(
 		'Mock#split',
-		function () {
+		() => {
 			const _M = M;
 			const _a = a;
 			for (let i = 0; i < _M; ++i) {
@@ -354,7 +354,7 @@ if (M < 1000)
 		{setup}
 	);
 
-SPLIT.on('cycle', function (event) {
+SPLIT.on('cycle', (event) => {
 	console.log(String(event.target));
 })
 	.on('complete', function () {
@@ -365,14 +365,14 @@ SPLIT.on('cycle', function (event) {
 // CONCAT
 
 new Benchmark.Suite()
-	.on('start', function () {
+	.on('start', () => {
 		console.log('\nCONCAT\n==\n');
 	})
 	// I had to put this version first because the second uses a lot of memory.
 	// This is probably because qiao/fingetree.js keeps references of used thunks.
 	.add(
 		'@aureooms/js-fingertree#concat',
-		function () {
+		() => {
 			const _M = M;
 			const _s = splits;
 			for (let i = 0; i < _M; ++i) _s[i][0].concat(_s[i][1]);
@@ -383,7 +383,7 @@ new Benchmark.Suite()
 				const splits = [];
 				for (let i = 0; i < M; ++i) {
 					splits.push(
-						t.split(function (m) {
+						t.split((m) => {
 							return m > i;
 						})
 					);
@@ -396,7 +396,7 @@ new Benchmark.Suite()
 	)
 	.add(
 		'fingertree#concat',
-		function () {
+		() => {
 			const _M = M;
 			const _s = splits;
 			for (let i = 0; i < _M; ++i) _s[i][0].concat(_s[i][1]);
@@ -407,7 +407,7 @@ new Benchmark.Suite()
 				const splits = [];
 				for (let i = 0; i < M; ++i) {
 					splits.push(
-						t.split(function (m) {
+						t.split((m) => {
 							return m > i;
 						})
 					);
@@ -418,7 +418,7 @@ new Benchmark.Suite()
 			}
 		}
 	)
-	.on('cycle', function (event) {
+	.on('cycle', (event) => {
 		console.log(String(event.target));
 	})
 	.on('complete', function () {

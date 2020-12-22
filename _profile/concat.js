@@ -29,7 +29,7 @@ const t = empty(COUNTER).append(itertools.range(M));
 const splits = [];
 for (let j = 0; j < M; ++j)
 	splits.push(
-		t.split(function (m) {
+		t.split((m) => {
 			return m > j;
 		})
 	);

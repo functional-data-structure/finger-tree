@@ -64,7 +64,7 @@ console.timeEnd('append');
 
 console.time('split');
 for (i = 0; i < length; ++i) {
-	t.split(function (m) {
+	t.split((m) => {
 		return m > i;
 	});
 }
@@ -76,7 +76,7 @@ const time = Number(new Date()) - start;
 const splits = [];
 for (i = 0; i < length; ++i) {
 	splits.push(
-		t.split(function (m) {
+		t.split((m) => {
 			return m > i;
 		})
 	);

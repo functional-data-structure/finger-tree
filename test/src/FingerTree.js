@@ -14,10 +14,10 @@ test('FingerTree', (t) => {
 
 	const N = 10;
 
-	list(range(N)).forEach(function (value) {
+	list(range(N)).forEach((value) => {
 		T = T.push(value);
 	});
-	list(range(N)).forEach(function (value) {
+	list(range(N)).forEach((value) => {
 		T = T.cons(value);
 	});
 
@@ -29,7 +29,7 @@ test('FingerTree', (t) => {
 
 	let U = from(COUNTER, range(N));
 
-	list(range(N)).forEach(function () {
+	list(range(N)).forEach(() => {
 		U = U.push(T.head());
 		T = T.tail();
 	});
