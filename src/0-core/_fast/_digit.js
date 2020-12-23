@@ -1,20 +1,24 @@
 import {One, Two, Three} from '../../1-digit';
 
+import assert from 'assert';
+
+/**
+ * Creates a Digit from as small list.
+ *
+ * It should never be called on length 4 lists since it is only called
+ * on results of splitDigit which outputs lists of length at most 3.
+ *
+ * @param {Array} list A list of length 1, 2, or 3.
+ * @return {Digit} A digit containing the elements of list in order.
+ */
 export function _digit(list) {
+	assert(Number.isInteger(list.length) && list.length >= 1 && list.length <= 3);
 	switch (list.length) {
 		case 1:
 			return new One(list[0]);
 		case 2:
 			return new Two(list[0], list[1]);
-		case 3:
-			return new Three(list[0], list[1], list[2]);
-		// Potential optimization by commenting out this section
-		// and defaulting for case 3
-		case 4:
-			throw new Error(
-				'_digit(.) should never be called on length 4 lists since it is only called on results of splitDigit which outputs lists of length at most 3'
-			);
 		default:
-			throw new Error(`cannot make digit for length ${list.length}`);
+			return new Three(list[0], list[1], list[2]);
 	}
 }
