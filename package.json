@@ -1,7 +1,7 @@
 {
   "name": "@aureooms/js-fingertree",
   "description": "Finger Trees for JavaScript",
-  "version": "5.0.0",
+  "version": "5.0.1",
   "author": "Aurélien Ooms <aurelien.ooms@gmail.com>",
   "ava": {
     "timeout": "1m",
