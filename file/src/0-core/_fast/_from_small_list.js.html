@@ -74,7 +74,10 @@
 import {One, Two} from &apos;../../1-digit&apos;;
 import {cache} from &apos;../measure&apos;;
 
+import assert from &apos;assert&apos;;
+
 export function _from_small_list(M, list) {
+	assert(Number.isInteger(list.length) &amp;&amp; list.length &gt;= 0 &amp;&amp; list.length &lt;= 3);
 	switch (list.length) {
 		case 0:
 			return new Empty(M);
@@ -87,15 +90,13 @@ export function _from_small_list(M, list) {
 				new Empty(cache(M)),
 				new One(list[1])
 			);
-		case 3:
+		default:
 			return new Deep(
 				M,
 				new Two(list[0], list[1]),
 				new Empty(cache(M)),
 				new One(list[2])
 			);
-		default:
-			throw new Error(&apos;second argument has wrong length&apos;);
 	}
 }
 </code></pre>

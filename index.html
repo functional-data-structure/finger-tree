@@ -204,7 +204,7 @@ import { from , empty } from &apos;@aureooms/js-fingertree&apos; ;</code>
 <pre><code class="lang-js"><code class="source-code prettyprint">return tree.empty() ? &apos;empty&apos; : &apos;not empty&apos; ;</code>
 </code></pre>
 <h3 id="-salt--add-values">:salt: Add values</h3><h4 id="-code-tree-push-x----gt--tree--code-"><code>Tree#push(x) -&gt; Tree</code></h4><p>Returns a new tree with an additional value as the new right-most value.</p>
-<pre><code class="lang-js"><code class="source-code prettyprint">tree = tree.cons(&apos;k&apos;);</code>
+<pre><code class="lang-js"><code class="source-code prettyprint">tree = tree.push(&apos;k&apos;);</code>
 </code></pre>
 <h4 id="-code-tree-cons-x----gt--tree--code-"><code>Tree#cons(x) -&gt; Tree</code></h4><p>Returns a new tree with an additional value as the new left-most value.</p>
 <pre><code class="lang-js"><code class="source-code prettyprint">tree = tree.cons(&apos;g&apos;);</code>
@@ -237,7 +237,7 @@ a predicate on the measure of the tree <strong>increased by a constant measure <
 The predicate must be monotone, false then true, on prefixes of the values in
 left-to-right order. The middle value <code>x</code> is the value for which the predicate
 switches from false to true.</p>
-<pre><code class="lang-js"><code class="source-code prettyprint">let [ left , right ] = tree.split( measure =&gt; measure &gt; 1 , 1 ) ;</code>
+<pre><code class="lang-js"><code class="source-code prettyprint">let [ left , middle , right ] = tree.splitTree( measure =&gt; measure &gt; 1 , 1 ) ;</code>
 </code></pre>
 <h4 id="-code-tree-split-function----gt----tree---tree----code-"><code>Tree#split(Function) -&gt; [ Tree , Tree ]</code></h4><p>Split the tree into a left tree and a right tree according to a predicate on
 the measure of the tree. The predicate must be monotone, false then true, on
@@ -255,12 +255,12 @@ tree is the value for which the predicate switches from false to true.</p>
 <pre><code class="lang-js"><code class="source-code prettyprint">for ( const x of tree ) console.log( x ) ;</code>
 </code></pre>
 <h2 id="-scroll--references">:scroll: References</h2><ul>
-<li><a href="http://staff.city.ac.uk/~ross/papers/FingerTree.pdf">Hinze and Paterson</a></li>
+<li><a href="http://staff.city.ac.uk/~ross/papers/FingerTree.pdf"><em>Finger trees: a simple general-purpose data structure</em> -- Hinze and Paterson</a></li>
 </ul>
 <h2 id="-link--links">:link: Links</h2><ul>
-<li><a href="https://github.com/kachayev/fn.py/blob/main/fn/immutable/finger.py">An (incomplete) implementation in Python</a></li>
-<li><a href="https://github.com/qiao/fingertree.js">A (buggy) previous JavaScript implementation</a></li>
-<li><a href="https://github.com/zot/Leisure/blob/main/src/lib/fingertree.coffee">A coffeescript implementation</a></li>
+<li><a href="https://github.com/zot/Leisure/blob/master/src/lib/fingertree.coffee">A coffeescript implementation with ZLIB licensing</a> (:white_check_mark: the implementation appears to be correct)</li>
+<li><a href="https://github.com/kachayev/fn.py/blob/master/fn/immutable/finger.py">An implementation in Python</a> (:warning: the implementation is missing <a href="#broken_heart-split">splitting functionality</a>)</li>
+<li><a href="https://github.com/qiao/fingertree.js">A JavaScript implementation with MIT licensing</a> (:rotating_light: <a href="https://github.com/qiao/fingertree.js/issues/7">the implementation is incorrect</a>)</li>
 </ul>
 </div>
 </div>

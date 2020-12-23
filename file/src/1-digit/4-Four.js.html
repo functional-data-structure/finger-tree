@@ -74,6 +74,8 @@
 import {node2, node3} from &apos;../2-node&apos;;
 import {Split} from &apos;../0-core&apos;;
 
+import assert from &apos;assert&apos;;
+
 export function Four(a, b, c, d) {
 	this.a = a;
 	this.b = b;
@@ -122,9 +124,10 @@ Four.prototype.node = function (M) {
 };
 
 /**
- * It is assumed that p(|this|) is true.
+ * It is assumed that p(i+|this|) is true.
  */
 Four.prototype.splitDigit = function (p, i, M) {
+	assert(p(M.plus(i, this.measure(M)))); // /!\ Potential Heisenbug generator.
 	i = M.plus(i, M.measure(this.a));
 	if (p(i)) return new Split([], this.a, [this.b, this.c, this.d]);
 	i = M.plus(i, M.measure(this.b));
@@ -148,6 +151,7 @@ Four.prototype._nodes = function (M, other) {
 			node2(M, this.d, other.a),
 			node2(M, other.b, other.c)
 		];
+	assert(other instanceof Four);
 	return [
 		node3(M, this.a, this.b, this.c),
 		node3(M, this.d, other.a, other.b),

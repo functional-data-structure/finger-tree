@@ -72,22 +72,26 @@
 <div class="content" data-ice="content"><h1 data-ice="title">src/0-core/_fast/_digit.js</h1>
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import {One, Two, Three} from &apos;../../1-digit&apos;;
 
+import assert from &apos;assert&apos;;
+
+/**
+ * Creates a Digit from as small list.
+ *
+ * It should never be called on length 4 lists since it is only called
+ * on results of splitDigit which outputs lists of length at most 3.
+ *
+ * @param {Array} list A list of length 1, 2, or 3.
+ * @return {Digit} A digit containing the elements of list in order.
+ */
 export function _digit(list) {
+	assert(Number.isInteger(list.length) &amp;&amp; list.length &gt;= 1 &amp;&amp; list.length &lt;= 3);
 	switch (list.length) {
 		case 1:
 			return new One(list[0]);
 		case 2:
 			return new Two(list[0], list[1]);
-		case 3:
-			return new Three(list[0], list[1], list[2]);
-		// Potential optimization by commenting out this section
-		// and defaulting for case 3
-		case 4:
-			throw new Error(
-				&apos;_digit(.) should never be called on length 4 lists since it is only called on results of splitDigit which outputs lists of length at most 3&apos;
-			);
 		default:
-			throw new Error(`cannot make digit for length ${list.length}`);
+			return new Three(list[0], list[1], list[2]);
 	}
 }
 </code></pre>

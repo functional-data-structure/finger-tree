@@ -193,9 +193,11 @@ Deep.prototype[Symbol.iterator] = function* () {
 };
 
 /**
- * It is assumed that p(|this|) is true.
+ * It is assumed that p(i+|this|) is true.
  */
 Deep.prototype.splitTree = function (p, i) {
+	assert(p(this.M.plus(i, this.measure())));
+
 	const {left, middle, right, M} = this;
 
 	// See if the split point is inside the left tree

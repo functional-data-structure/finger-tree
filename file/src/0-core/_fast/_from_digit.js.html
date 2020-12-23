@@ -74,20 +74,14 @@
 import {Empty, Single, Deep} from &apos;../../3-tree&apos;;
 import {cache} from &apos;../measure&apos;;
 
+import assert from &apos;assert&apos;;
+
 export function _from_digit(M, digit) {
 	if (digit instanceof One) return new Single(M, digit.a);
-	if (digit instanceof Two || digit instanceof Three || digit instanceof Four) {
-		return new Deep(
-			M,
-			digit.init(),
-			new Empty(cache(M)),
-			new One(digit.last())
-		);
-	}
-
-	// Potential optimization by commenting out this section
-	// and remove the second test above
-	throw new Error(&apos;second argument is not a Digit&apos;);
+	assert(
+		digit instanceof Two || digit instanceof Three || digit instanceof Four
+	);
+	return new Deep(M, digit.init(), new Empty(cache(M)), new One(digit.last()));
 }
 </code></pre>
 
