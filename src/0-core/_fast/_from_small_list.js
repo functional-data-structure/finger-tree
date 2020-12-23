@@ -2,7 +2,10 @@ import {Empty, Single, Deep} from '../../3-tree';
 import {One, Two} from '../../1-digit';
 import {cache} from '../measure';
 
+import assert from 'assert';
+
 export function _from_small_list(M, list) {
+	assert(Number.isInteger(list.length) && list.length >= 0 && list.length <= 3);
 	switch (list.length) {
 		case 0:
 			return new Empty(M);
@@ -15,14 +18,12 @@ export function _from_small_list(M, list) {
 				new Empty(cache(M)),
 				new One(list[1])
 			);
-		case 3:
+		default:
 			return new Deep(
 				M,
 				new Two(list[0], list[1]),
 				new Empty(cache(M)),
 				new One(list[2])
 			);
-		default:
-			throw new Error('second argument has wrong length');
 	}
 }
