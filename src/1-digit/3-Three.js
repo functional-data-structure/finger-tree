@@ -2,6 +2,8 @@ import {Digit, One, Two, Four} from '.';
 import {node2, node3} from '../2-node';
 import {Split} from '../0-core';
 
+import assert from 'assert';
+
 export function Three(a, b, c) {
 	this.a = a;
 	this.b = b;
@@ -49,9 +51,10 @@ Three.prototype.node = function (M) {
 };
 
 /**
- * It is assumed that p(|this|) is true.
+ * It is assumed that p(i+|this|) is true.
  */
 Three.prototype.splitDigit = function (p, i, M) {
+	assert(p(M.plus(i, this.measure(M)))); // /!\ Potential Heisenbug generator.
 	i = M.plus(i, M.measure(this.a));
 	if (p(i)) return new Split([], this.a, [this.b, this.c]);
 	i = M.plus(i, M.measure(this.b));
@@ -69,6 +72,7 @@ Three.prototype._nodes = function (M, other) {
 			node3(M, this.a, this.b, this.c),
 			node3(M, other.a, other.b, other.c)
 		];
+	assert(other instanceof Four);
 	return [
 		node3(M, this.a, this.b, this.c),
 		node2(M, other.a, other.b),
