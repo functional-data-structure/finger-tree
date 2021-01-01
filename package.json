@@ -85,7 +85,7 @@
     "@babel/preset-env": "7.12.11",
     "@babel/register": "7.12.10",
     "argparse": "2.0.1",
-    "ava": "3.14.0",
+    "ava": "3.15.0",
     "babel-plugin-transform-remove-console": "6.9.4",
     "babel-plugin-unassert": "3.0.1",
     "babel-preset-power-assert": "3.0.0",
