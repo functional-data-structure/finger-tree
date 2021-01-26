@@ -147,7 +147,6 @@
     ],
     "rules": {
       "camelcase": "off",
-      "no-unused-vars": "off",
       "unicorn/filename-case": "off"
     },
     "overrides": [

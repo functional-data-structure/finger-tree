@@ -35,10 +35,10 @@ Node3.prototype.tail = function () {
 	throw new Error('trying to call tail of Node3');
 };
 
-Node3.prototype.push = function (value) {
+Node3.prototype.push = function (_value) {
 	throw new Error('trying to call push of Node3');
 };
 
-Node3.prototype.cons = function (value) {
+Node3.prototype.cons = function (_value) {
 	throw new Error('trying to call cons of Node3');
 };

@@ -1,13 +1,12 @@
 console.time('prepare');
 require('regenerator-runtime/runtime');
 const ArgumentParser = require('argparse').ArgumentParser;
-const itertools = require('@aureooms/js-itertools');
 const empty = require('..').empty;
 const COUNTER = {
 	plus(a, b) {
 		return a + b;
 	},
-	measure(x) {
+	measure(_x) {
 		return 1;
 	},
 	zero() {

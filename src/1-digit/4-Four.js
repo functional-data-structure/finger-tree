@@ -39,15 +39,15 @@ Four.prototype.tail = function () {
 	return new Three(this.b, this.c, this.d);
 };
 
-Four.prototype.push = function (value) {
+Four.prototype.push = function (_value) {
 	throw new Error('cannot push digit Four');
 };
 
-Four.prototype.cons = function (value) {
+Four.prototype.cons = function (_value) {
 	throw new Error('cannot cons digit Four');
 };
 
-Four.prototype.node = function (M) {
+Four.prototype.node = function (_M) {
 	throw new Error('cannot convert Four to node');
 };
 

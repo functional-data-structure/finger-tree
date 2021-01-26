@@ -1,6 +1,6 @@
 import {Tree} from '../base';
 import {Empty, Deep} from '.';
-import {_EMPTY, cache, Split} from '../../0-core';
+import {cache, Split} from '../../0-core';
 import {One} from '../../1-digit';
 
 export function Single(M, value) {
@@ -62,9 +62,9 @@ Single.prototype[Symbol.iterator] = function* () {
 };
 
 /**
- * It is assumed that p(|this|) is true.
+ * It is assumed that p(i+|this|) is true.
  */
-Single.prototype.splitTree = function (p, i) {
+Single.prototype.splitTree = function (_p, _i) {
 	return new Split(new Empty(this.M), this.a, new Empty(this.M));
 };
 

@@ -40,7 +40,7 @@ One.prototype.cons = function (value) {
 	return new Two(value, this.a);
 };
 
-One.prototype.node = function (M) {
+One.prototype.node = function (_M) {
 	throw new Error('cannot convert One to node');
 };
 

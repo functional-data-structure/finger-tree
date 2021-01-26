@@ -3,11 +3,9 @@ import test from 'ava';
 import {Measures} from '@aureooms/js-measure';
 const {COUNTER} = Measures;
 
-import {map, list, chain, range, reversed} from '@aureooms/js-itertools';
+import {list} from '@aureooms/js-itertools';
 
-import {gt} from '@aureooms/js-predicate';
-
-import {empty, from} from '../../src';
+import {from} from '../../src';
 
 function set(tree, index, value) {
 	if (index < 0 || index >= tree.measure())

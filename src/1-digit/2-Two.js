@@ -41,7 +41,7 @@ Two.prototype.cons = function (value) {
 	return new Three(value, this.a, this.b);
 };
 
-Two.prototype.node = function (M) {
+Two.prototype.node = function (_M) {
 	throw new Error(
 		'Two should never be converted to Node2 with current implementation'
 	);

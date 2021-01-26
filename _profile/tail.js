@@ -7,7 +7,7 @@ const COUNTER = {
 	plus(a, b) {
 		return a + b;
 	},
-	measure(x) {
+	measure(_x) {
 		return 1;
 	},
 	zero() {

@@ -50,12 +50,12 @@ Empty.prototype[Symbol.iterator] = function () {
 };
 
 /**
- * It is assumed that p(|this|) is true.
+ * It is assumed that p(i+|this|) is true.
  */
-Empty.prototype.splitTree = function (p, i) {
+Empty.prototype.splitTree = function (_p, _i) {
 	throw new Error('splitTree not implemented in Empty');
 };
 
-Empty.prototype.split = function (p) {
+Empty.prototype.split = function (_p) {
 	return [this, this];
 };
