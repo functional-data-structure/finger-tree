@@ -313,6 +313,6 @@ for ( const x of tree ) console.log( x ) ;
 
 ## :link: Links
 
-  - [A coffeescript implementation with ZLIB licensing](https://github.com/zot/Leisure/blob/master/src/lib/fingertree.coffee) (:white_check_mark: the implementation appears to be correct)
+  - [A coffeescript implementation with ZLIB licensing](https://github.com/zot/Leisure/blob/master/src/lib/fingertree.coffee) (:white_check_mark: the implementation is correct)
   - [An implementation in Python with Apache licensing](https://github.com/kachayev/fn.py/blob/master/fn/immutable/finger.py) (:warning: the implementation is missing [splitting functionality](#broken_heart-split))
   - [A JavaScript implementation with MIT licensing](https://github.com/qiao/fingertree.js) (:rotating_light: [the implementation is incorrect](https://github.com/qiao/fingertree.js/issues/7))
