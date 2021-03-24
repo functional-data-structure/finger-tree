@@ -27,10 +27,10 @@
   resolved "https://registry.yarnpkg.com/@aureooms/js-measure/-/js-measure-1.0.3.tgz#bc772fbe4ad14ed82ad7323e610003b54075555e"
   integrity sha1-vHcvvkrRTtgq1zI+YQADtUB1VV4=
 
-"@aureooms/js-predicate@2.0.2":
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/@aureooms/js-predicate/-/js-predicate-2.0.2.tgz#0c09bfbd6616fdb9c2b8f9b894201e8807e810d9"
-  integrity sha1-DAm/vWYW/bnCuPm4lCAeiAfoENk=
+"@aureooms/js-predicate@3.0.1":
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/@aureooms/js-predicate/-/js-predicate-3.0.1.tgz#25c4c21d2f7632139ca43b1f42e00125053596cb"
+  integrity sha512-ZpWiJgBDpPqvu1ZOFruF9+CbhiXgdIwDD0XJ2Rjkj5aOJUbyJWtKe5WiywaQdGxhZonTn08Yq8mJ8JovCWwwLQ==
 
 "@babel/cli@7.13.10":
   version "7.13.10"
