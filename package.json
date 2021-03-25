@@ -135,7 +135,8 @@
     "release": "np",
     "test": "ava",
     "travis": "npm run lint && npm run cover",
-    "lint-config-and-fix": "fixpack || fixpack"
+    "lint-config-and-fix": "fixpack || fixpack",
+    "lint-config": "fixpack --dryRun"
   },
   "sideEffects": false,
   "xo": {
