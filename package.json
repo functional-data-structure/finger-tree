@@ -1,7 +1,7 @@
 {
   "name": "@aureooms/js-fingertree",
   "description": "Finger Trees for JavaScript",
-  "version": "5.0.2",
+  "version": "6.0.0",
   "license": "AGPL-3.0",
   "author": "Aurélien Ooms <aurelien.ooms@gmail.com>",
   "homepage": "https://aureooms.github.io/js-fingertree",
