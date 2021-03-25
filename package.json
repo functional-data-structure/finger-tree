@@ -55,6 +55,7 @@
     "lint-config-and-fix": "fixpack || fixpack",
     "postinstall": "npm run install-hooks",
     "postpublish": "pinst --enable",
+    "precommit": "lint-staged",
     "prepare": "npm run build",
     "prepublishOnly": "pinst --disable",
     "release": "np --message ':hatching_chick: release: Bumping to v%s.'",
@@ -86,6 +87,7 @@
     "fingertree": "0.1.7",
     "fixpack": "4.0.0",
     "husky": "5.2.0",
+    "lint-staged": "10.5.4",
     "microbundle": "0.13.0",
     "microtime": "3.0.0",
     "np": "7.4.0",
@@ -185,6 +187,14 @@
         ]
       }
     }
+  },
+  "lint-staged": {
+    "*.js": [
+      "npm run lint-and-fix"
+    ],
+    "package.json": [
+      "npm run lint-config-and-fix"
+    ]
   },
   "prettier": {
     "trailingComma": "all"
