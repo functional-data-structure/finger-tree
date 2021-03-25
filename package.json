@@ -57,7 +57,7 @@
     "postpublish": "pinst --enable",
     "prepare": "npm run build",
     "prepublishOnly": "pinst --disable",
-    "release": "np",
+    "release": "np --message ':hatching_chick: release: Bumping to v%s.'",
     "test": "ava",
     "travis": "npm run lint && npm run cover"
   },
