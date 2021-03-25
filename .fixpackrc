@@ -1,0 +1,72 @@
+{
+  "files": [
+    "package.json"
+  ],
+  "quiet": false,
+  "required": [
+    "name",
+    "version"
+  ],
+  "requiredOnPrivate": [],
+  "sortToTop": [
+    "name",
+    "description",
+    "version",
+    "license",
+    "author",
+    "homepage",
+    "repository",
+    "bugs",
+    "keywords",
+    "sideEffects",
+    "type",
+    "source",
+    "main",
+    "module",
+    "umd:main",
+    "unpkg",
+    "exports",
+    "files",
+    "scripts",
+    "bundledDependencies",
+    "dependencies",
+    "optionalDependencies",
+    "peerDependencies",
+    "peerDependenciesMeta",
+    "devDependencies"
+  ],
+  "sortedSubItems": [
+    "keywords",
+    "exports",
+    "files",
+    "scripts",
+    "bundledDependencies",
+    "dependencies",
+    "optionalDependencies",
+    "peerDependencies",
+    "peerDependenciesMeta",
+    "devDependencies"
+  ],
+  "warn": [
+    "description",
+    "author",
+    "repository",
+    "keywords",
+    "main",
+    "bugs",
+    "homepage",
+    "license",
+    "files"
+  ],
+  "warnOnPrivate": [
+    "name",
+    "version",
+    "description",
+    "main"
+  ],
+  "dryRun": false,
+  "wipe": false,
+  "indent": null,
+  "newLine": null,
+  "finalNewLine": null
+}
