@@ -147,7 +147,9 @@
     ],
     "rules": {
       "camelcase": "off",
-      "unicorn/filename-case": "off"
+      "unicorn/filename-case": "off",
+      "unicorn/explicit-length-check": "off",
+      "unicorn/no-array-push-push": "off"
     },
     "overrides": [
       {

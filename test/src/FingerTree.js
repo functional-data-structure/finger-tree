@@ -14,12 +14,8 @@ test('FingerTree', (t) => {
 
 	const N = 10;
 
-	list(range(N)).forEach((value) => {
-		T = T.push(value);
-	});
-	list(range(N)).forEach((value) => {
-		T = T.cons(value);
-	});
+	for (const value of range(N)) T = T.push(value);
+	for (const value of range(N)) T = T.cons(value);
 
 	t.deepEqual(
 		list(T),
@@ -29,10 +25,11 @@ test('FingerTree', (t) => {
 
 	let U = from(COUNTER, range(N));
 
-	list(range(N)).forEach(() => {
+	// eslint-disable-next-line no-unused-vars
+	for (const _ of range(N)) {
 		U = U.push(T.head());
 		T = T.tail();
-	});
+	}
 
 	t.deepEqual(
 		list(U),

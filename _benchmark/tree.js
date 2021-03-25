@@ -20,7 +20,7 @@ let t;
 let i;
 const length = 100000;
 
-let start = Number(new Date());
+let start = Date.now();
 
 console.log('number of operations:', length);
 
@@ -71,7 +71,7 @@ for (i = 0; i < length; ++i) {
 
 console.timeEnd('split');
 
-const time = Number(new Date()) - start;
+const time = Date.now() - start;
 
 const splits = [];
 for (i = 0; i < length; ++i) {
@@ -82,7 +82,7 @@ for (i = 0; i < length; ++i) {
 	);
 }
 
-start = Number(new Date()) - time;
+start = Date.now() - time;
 
 console.time('concat');
 for (i = 0; i < length; ++i) {
@@ -92,4 +92,4 @@ for (i = 0; i < length; ++i) {
 console.timeEnd('concat');
 
 splits.splice(0);
-console.log('total:', Number(new Date()) - start + 'ms');
+console.log('total:', Date.now() - start + 'ms');
