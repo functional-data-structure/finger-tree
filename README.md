@@ -60,7 +60,8 @@ Parent is [@aureooms/js-persistent](https://github.com/aureooms/js-persistent).
     * [`Tree#takeUntil(Function) -> Tree`](#treetakeuntilfunction---tree)
     * [`Tree#dropUntil(Function) -> Tree`](#treedropuntilfunction---tree)
   * [:flying_saucer: Visit](#flying_saucer-visit)
-    * [`TreeSymbol.iterator -> Iterable`](#treesymboliterator---iterable)
+    * [`Tree[Symbol.iterator]() -> Iterable`](#treesymboliterator---iterable)
+    * [`Tree#reversed() -> Iterable`](#treereversed---iterable)
 * [:scroll: References](#scroll-references)
 * [:link: Links](#link-links)
 
@@ -304,6 +305,14 @@ Returns an iterator on the values of the tree in left-to-right order.
 
 ```js
 for ( const x of tree ) console.log( x ) ;
+```
+
+#### `Tree#reversed() -> Iterable`
+
+Returns an iterator on the values of the tree in right-to-left order.
+
+```js
+for ( const x of tree.reversed() ) console.log( x ) ;
 ```
 
 

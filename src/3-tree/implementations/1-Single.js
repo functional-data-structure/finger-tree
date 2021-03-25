@@ -57,9 +57,11 @@ Single.prototype.concat = function (other) {
 	return other.cons(this.a);
 };
 
-Single.prototype[Symbol.iterator] = function* () {
-	yield this.a;
-};
+Single.prototype[Symbol.iterator] =
+	// eslint-disable-next-line no-multi-assign
+	Single.prototype.reversed = function* () {
+		yield this.a;
+	};
 
 /**
  * It is assumed that p(i+|this|) is true.

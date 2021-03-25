@@ -63,3 +63,7 @@ Lazy.prototype.concat = function (other) {
 Lazy.prototype[Symbol.iterator] = function () {
 	return this.force()[Symbol.iterator]();
 };
+
+Lazy.prototype.reversed = function () {
+	return this.force().reversed();
+};

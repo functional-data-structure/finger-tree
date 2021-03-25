@@ -10,6 +10,10 @@ Node2.prototype[Symbol.iterator] = function () {
 	return [this.a, this.b][Symbol.iterator]();
 };
 
+Node2.prototype.reversed = function () {
+	return [this.b, this.a][Symbol.iterator]();
+};
+
 Node2.prototype.measure = function () {
 	return this.v;
 };

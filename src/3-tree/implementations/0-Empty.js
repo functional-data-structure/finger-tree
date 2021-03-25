@@ -49,6 +49,8 @@ Empty.prototype[Symbol.iterator] = function () {
 	return _EMPTY;
 };
 
+Empty.prototype.reversed = function* () {};
+
 /**
  * It is assumed that p(i+|this|) is true.
  */

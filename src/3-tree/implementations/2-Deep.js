@@ -120,6 +120,12 @@ Deep.prototype[Symbol.iterator] = function* () {
 	yield* this.right;
 };
 
+Deep.prototype.reversed = function* () {
+	yield* this.right.reversed();
+	for (const node of this.middle.reversed()) yield* node.reversed();
+	yield* this.left.reversed();
+};
+
 /**
  * It is assumed that p(i+|this|) is true.
  */
