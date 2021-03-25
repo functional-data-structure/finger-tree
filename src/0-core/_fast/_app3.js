@@ -1,6 +1,6 @@
-import {Empty, Single, Deep} from '../../3-tree';
-import {delay} from '../../4-lazy';
-import {app3} from '../concatenate';
+import {Empty, Single, Deep} from "../../3-tree/index.js";
+import {delay} from "../../4-lazy/index.js";
+import {app3} from "../concatenate/index.js";
 
 export function _app3(A, B) {
 	B = B.force();

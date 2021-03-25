@@ -5,7 +5,7 @@ const {COUNTER} = Measures;
 
 import {gt} from '@aureooms/js-predicate';
 
-import {empty} from '../../src';
+import {empty} from "../../src/index.js";
 
 test('head', (t) => {
 	t.throws(() => empty(COUNTER).head(), {message: /cannot/});

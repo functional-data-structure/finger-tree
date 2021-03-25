@@ -1,5 +1,5 @@
 import {Empty} from './index.js';
-import {Tree} from '../base';
+import {Tree} from "../base/index.js";
 import {
 	_app3,
 	_from_digit,
@@ -8,9 +8,9 @@ import {
 	_deepR,
 	CachedMeasure,
 	Split
-} from '../../0-core';
-import {One, Two, Four} from '../../1-digit';
-import {delay, Lazy} from '../../4-lazy';
+} from "../../0-core/index.js";
+import {One, Two, Four} from "../../1-digit/index.js";
+import {delay, Lazy} from "../../4-lazy/index.js";
 
 import assert from 'assert';
 

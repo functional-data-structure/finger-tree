@@ -1,3 +1,3 @@
-export * from './Split';
-export * from './deepL';
-export * from './deepR';
+export * from "./Split.js";
+export * from "./deepL.js";
+export * from "./deepR.js";

@@ -1,4 +1,4 @@
-import {node2, node3} from '../../2-node';
+import {node2, node3} from "../../2-node/index.js";
 
 export function nodes(M, list) {
 	const out = [];

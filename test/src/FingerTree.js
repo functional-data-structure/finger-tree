@@ -7,7 +7,7 @@ import {map, list, chain, range, reversed} from '@aureooms/js-itertools';
 
 import {gt} from '@aureooms/js-predicate';
 
-import {empty, from} from '../../src';
+import {empty, from} from "../../src/index.js";
 
 test('FingerTree', (t) => {
 	let T = empty(COUNTER);

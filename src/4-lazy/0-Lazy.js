@@ -1,4 +1,4 @@
-import {Tree} from '../3-tree/base/Tree';
+import {Tree} from "../3-tree/base/Tree.js";
 
 export function Lazy(thunk) {
 	this.tree = null;

@@ -1,2 +1,2 @@
-export * from './0-Lazy';
-export * from './1-delay';
+export * from "./0-Lazy.js";
+export * from "./1-delay.js";

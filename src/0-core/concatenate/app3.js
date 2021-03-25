@@ -1,6 +1,6 @@
-import {Empty, Single, Deep} from '../../3-tree';
-import {delay} from '../../4-lazy';
-import {_prepend, _append} from '../_fast';
+import {Empty, Single, Deep} from "../../3-tree/index.js";
+import {delay} from "../../4-lazy/index.js";
+import {_prepend, _append} from "../_fast/index.js";
 
 export function app3(A, list, B) {
 	A = A.force();

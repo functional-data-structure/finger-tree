@@ -1,6 +1,6 @@
-import {One, Two, Three, Four} from '../../1-digit';
-import {Empty, Single, Deep} from '../../3-tree';
-import {cache} from '../measure';
+import {One, Two, Three, Four} from "../../1-digit/index.js";
+import {Empty, Single, Deep} from "../../3-tree/index.js";
+import {cache} from "../measure/index.js";
 
 import assert from 'assert';
 

@@ -1,6 +1,6 @@
 import {Digit, Two, Three} from './index.js';
-import {node2, node3} from '../2-node';
-import {Split} from '../0-core';
+import {node2, node3} from "../2-node/index.js";
+import {Split} from "../0-core/index.js";
 
 import assert from 'assert';
 

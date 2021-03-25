@@ -1,4 +1,4 @@
-import {One, Two, Three} from '../../1-digit';
+import {One, Two, Three} from "../../1-digit/index.js";
 
 import assert from 'assert';
 
