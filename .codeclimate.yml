@@ -2,5 +2,5 @@ exclude_patterns:
   - _benchmark/**
   - _profile/**
   - doc/**
-  - lib/**
+  - dist/**
   - test/**
