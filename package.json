@@ -134,7 +134,8 @@
     "prepare": "npm run build",
     "release": "np",
     "test": "ava",
-    "travis": "npm run lint && npm run cover"
+    "travis": "npm run lint && npm run cover",
+    "lint-config-and-fix": "fixpack || fixpack"
   },
   "sideEffects": false,
   "xo": {
