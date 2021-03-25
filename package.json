@@ -30,6 +30,7 @@
   ],
   "scripts": {
     "build": "babel --delete-dir-on-start --env-name production src -d lib",
+    "build-docs": "esdoc",
     "cover": "c8 --all --src src --reporter=lcov npm test",
     "dev": "npm run lint -- --fix && npm run cover -- -- -st --fail-fast",
     "esdoc": "esdoc",
