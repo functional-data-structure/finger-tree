@@ -71,14 +71,14 @@
     "xo": "0.38.2"
   },
   "ava": {
-    "timeout": "1m",
     "files": [
       "test/src/**/*"
     ],
     "require": [
       "regenerator-runtime/runtime",
       "@babel/register"
-    ]
+    ],
+    "timeout": "1m"
   },
   "babel": {
     "presets": [
