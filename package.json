@@ -30,7 +30,7 @@
   ],
   "scripts": {
     "build": "babel --delete-dir-on-start --env-name production src -d lib",
-    "cover": "nyc --reporter=lcov npm test",
+    "cover": "c8 --all --src src --reporter=lcov npm test",
     "dev": "npm run lint -- --fix && npm run cover -- -- -st --fail-fast",
     "esdoc": "esdoc",
     "lint": "xo",
@@ -56,6 +56,7 @@
     "babel-plugin-unassert": "3.0.1",
     "babel-preset-power-assert": "3.0.0",
     "benchmark": "2.1.4",
+    "c8": "7.6.0",
     "coveralls": "3.1.0",
     "esdoc": "1.1.0",
     "esdoc-inject-script-plugin": "1.0.0",
@@ -65,7 +66,6 @@
     "fixpack": "4.0.0",
     "microtime": "3.0.0",
     "np": "7.4.0",
-    "nyc": "15.1.0",
     "power-assert": "1.6.1",
     "regenerator-runtime": "0.13.7",
     "xo": "0.38.2"
