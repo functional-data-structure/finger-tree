@@ -33,7 +33,6 @@
     "build-docs": "esdoc",
     "cover": "c8 --all --src src --reporter=lcov npm test",
     "dev": "npm run lint -- --fix && npm run cover -- -- -st --fail-fast",
-    "esdoc": "esdoc",
     "lint": "xo",
     "lint-config": "fixpack --dryRun",
     "lint-config-and-fix": "fixpack || fixpack",
