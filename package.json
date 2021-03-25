@@ -50,6 +50,7 @@
     "dev": "npm run lint -- --fix && npm run cover -- -- -st --fail-fast",
     "install-hooks": "husky install",
     "lint": "xo",
+    "lint-and-fix": "npm run lint -- --fix",
     "lint-config": "fixpack --dryRun",
     "lint-config-and-fix": "fixpack || fixpack",
     "postinstall": "npm run install-hooks",
