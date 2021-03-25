@@ -1,7 +1,7 @@
 {
   "type": "File",
   "start": 0,
-  "end": 130,
+  "end": 145,
   "loc": {
     "start": {
       "line": 1,
@@ -15,7 +15,7 @@
   "program": {
     "type": "Program",
     "start": 0,
-    "end": 130,
+    "end": 145,
     "loc": {
       "start": {
         "line": 1,
@@ -31,7 +31,7 @@
       {
         "type": "ExportAllDeclaration",
         "start": 0,
-        "end": 26,
+        "end": 29,
         "loc": {
           "start": {
             "line": 1,
@@ -39,13 +39,13 @@
           },
           "end": {
             "line": 1,
-            "column": 26
+            "column": 29
           }
         },
         "source": {
           "type": "StringLiteral",
           "start": 14,
-          "end": 25,
+          "end": 28,
           "loc": {
             "start": {
               "line": 1,
@@ -53,20 +53,20 @@
             },
             "end": {
               "line": 1,
-              "column": 25
+              "column": 28
             }
           },
           "extra": {
-            "rawValue": "./0-Digit",
-            "raw": "'./0-Digit'"
+            "rawValue": "./0-Digit.js",
+            "raw": "'./0-Digit.js'"
           },
-          "value": "./0-Digit"
+          "value": "./0-Digit.js"
         }
       },
       {
         "type": "ExportAllDeclaration",
-        "start": 27,
-        "end": 51,
+        "start": 30,
+        "end": 57,
         "loc": {
           "start": {
             "line": 2,
@@ -74,13 +74,13 @@
           },
           "end": {
             "line": 2,
-            "column": 24
+            "column": 27
           }
         },
         "source": {
           "type": "StringLiteral",
-          "start": 41,
-          "end": 50,
+          "start": 44,
+          "end": 56,
           "loc": {
             "start": {
               "line": 2,
@@ -88,20 +88,20 @@
             },
             "end": {
               "line": 2,
-              "column": 23
+              "column": 26
             }
           },
           "extra": {
-            "rawValue": "./1-One",
-            "raw": "'./1-One'"
+            "rawValue": "./1-One.js",
+            "raw": "'./1-One.js'"
           },
-          "value": "./1-One"
+          "value": "./1-One.js"
         }
       },
       {
         "type": "ExportAllDeclaration",
-        "start": 52,
-        "end": 76,
+        "start": 58,
+        "end": 85,
         "loc": {
           "start": {
             "line": 3,
@@ -109,13 +109,13 @@
           },
           "end": {
             "line": 3,
-            "column": 24
+            "column": 27
           }
         },
         "source": {
           "type": "StringLiteral",
-          "start": 66,
-          "end": 75,
+          "start": 72,
+          "end": 84,
           "loc": {
             "start": {
               "line": 3,
@@ -123,20 +123,20 @@
             },
             "end": {
               "line": 3,
-              "column": 23
+              "column": 26
             }
           },
           "extra": {
-            "rawValue": "./2-Two",
-            "raw": "'./2-Two'"
+            "rawValue": "./2-Two.js",
+            "raw": "'./2-Two.js'"
           },
-          "value": "./2-Two"
+          "value": "./2-Two.js"
         }
       },
       {
         "type": "ExportAllDeclaration",
-        "start": 77,
-        "end": 103,
+        "start": 86,
+        "end": 115,
         "loc": {
           "start": {
             "line": 4,
@@ -144,13 +144,13 @@
           },
           "end": {
             "line": 4,
-            "column": 26
+            "column": 29
           }
         },
         "source": {
           "type": "StringLiteral",
-          "start": 91,
-          "end": 102,
+          "start": 100,
+          "end": 114,
           "loc": {
             "start": {
               "line": 4,
@@ -158,20 +158,20 @@
             },
             "end": {
               "line": 4,
-              "column": 25
+              "column": 28
             }
           },
           "extra": {
-            "rawValue": "./3-Three",
-            "raw": "'./3-Three'"
+            "rawValue": "./3-Three.js",
+            "raw": "'./3-Three.js'"
           },
-          "value": "./3-Three"
+          "value": "./3-Three.js"
         }
       },
       {
         "type": "ExportAllDeclaration",
-        "start": 104,
-        "end": 129,
+        "start": 116,
+        "end": 144,
         "loc": {
           "start": {
             "line": 5,
@@ -179,13 +179,13 @@
           },
           "end": {
             "line": 5,
-            "column": 25
+            "column": 28
           }
         },
         "source": {
           "type": "StringLiteral",
-          "start": 118,
-          "end": 128,
+          "start": 130,
+          "end": 143,
           "loc": {
             "start": {
               "line": 5,
@@ -193,14 +193,14 @@
             },
             "end": {
               "line": 5,
-              "column": 24
+              "column": 27
             }
           },
           "extra": {
-            "rawValue": "./4-Four",
-            "raw": "'./4-Four'"
+            "rawValue": "./4-Four.js",
+            "raw": "'./4-Four.js'"
           },
-          "value": "./4-Four"
+          "value": "./4-Four.js"
         }
       }
     ],
@@ -302,9 +302,9 @@
         "binop": null,
         "updateContext": null
       },
-      "value": "./0-Digit",
+      "value": "./0-Digit.js",
       "start": 14,
-      "end": 25,
+      "end": 28,
       "loc": {
         "start": {
           "line": 1,
@@ -312,7 +312,7 @@
         },
         "end": {
           "line": 1,
-          "column": 25
+          "column": 28
         }
       }
     },
@@ -329,129 +329,129 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 25,
-      "end": 26,
+      "start": 28,
+      "end": 29,
       "loc": {
         "start": {
           "line": 1,
-          "column": 25
+          "column": 28
         },
         "end": {
           "line": 1,
+          "column": 29
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "export",
+        "keyword": "export",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "export",
+      "start": 30,
+      "end": 36,
+      "loc": {
+        "start": {
+          "line": 2,
+          "column": 0
+        },
+        "end": {
+          "line": 2,
+          "column": 6
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "*",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": 10,
+        "updateContext": null
+      },
+      "value": "*",
+      "start": 37,
+      "end": 38,
+      "loc": {
+        "start": {
+          "line": 2,
+          "column": 7
+        },
+        "end": {
+          "line": 2,
+          "column": 8
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "from",
+      "start": 39,
+      "end": 43,
+      "loc": {
+        "start": {
+          "line": 2,
+          "column": 9
+        },
+        "end": {
+          "line": 2,
+          "column": 13
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "string",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "./1-One.js",
+      "start": 44,
+      "end": 56,
+      "loc": {
+        "start": {
+          "line": 2,
+          "column": 14
+        },
+        "end": {
+          "line": 2,
           "column": 26
         }
       }
     },
     {
       "type": {
-        "label": "export",
-        "keyword": "export",
-        "beforeExpr": false,
-        "startsExpr": false,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null,
-        "updateContext": null
-      },
-      "value": "export",
-      "start": 27,
-      "end": 33,
-      "loc": {
-        "start": {
-          "line": 2,
-          "column": 0
-        },
-        "end": {
-          "line": 2,
-          "column": 6
-        }
-      }
-    },
-    {
-      "type": {
-        "label": "*",
-        "beforeExpr": true,
-        "startsExpr": false,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": 10,
-        "updateContext": null
-      },
-      "value": "*",
-      "start": 34,
-      "end": 35,
-      "loc": {
-        "start": {
-          "line": 2,
-          "column": 7
-        },
-        "end": {
-          "line": 2,
-          "column": 8
-        }
-      }
-    },
-    {
-      "type": {
-        "label": "name",
-        "beforeExpr": false,
-        "startsExpr": true,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null
-      },
-      "value": "from",
-      "start": 36,
-      "end": 40,
-      "loc": {
-        "start": {
-          "line": 2,
-          "column": 9
-        },
-        "end": {
-          "line": 2,
-          "column": 13
-        }
-      }
-    },
-    {
-      "type": {
-        "label": "string",
-        "beforeExpr": false,
-        "startsExpr": true,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null,
-        "updateContext": null
-      },
-      "value": "./1-One",
-      "start": 41,
-      "end": 50,
-      "loc": {
-        "start": {
-          "line": 2,
-          "column": 14
-        },
-        "end": {
-          "line": 2,
-          "column": 23
-        }
-      }
-    },
-    {
-      "type": {
         "label": ";",
         "beforeExpr": true,
         "startsExpr": false,
@@ -463,16 +463,16 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 50,
-      "end": 51,
+      "start": 56,
+      "end": 57,
       "loc": {
         "start": {
           "line": 2,
-          "column": 23
+          "column": 26
         },
         "end": {
           "line": 2,
-          "column": 24
+          "column": 27
         }
       }
     },
@@ -491,8 +491,8 @@
         "updateContext": null
       },
       "value": "export",
-      "start": 52,
-      "end": 58,
+      "start": 58,
+      "end": 64,
       "loc": {
         "start": {
           "line": 3,
@@ -518,8 +518,8 @@
         "updateContext": null
       },
       "value": "*",
-      "start": 59,
-      "end": 60,
+      "start": 65,
+      "end": 66,
       "loc": {
         "start": {
           "line": 3,
@@ -544,8 +544,8 @@
         "binop": null
       },
       "value": "from",
-      "start": 61,
-      "end": 65,
+      "start": 67,
+      "end": 71,
       "loc": {
         "start": {
           "line": 3,
@@ -570,9 +570,9 @@
         "binop": null,
         "updateContext": null
       },
-      "value": "./2-Two",
-      "start": 66,
-      "end": 75,
+      "value": "./2-Two.js",
+      "start": 72,
+      "end": 84,
       "loc": {
         "start": {
           "line": 3,
@@ -580,7 +580,7 @@
         },
         "end": {
           "line": 3,
-          "column": 23
+          "column": 26
         }
       }
     },
@@ -597,65 +597,65 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 75,
-      "end": 76,
-      "loc": {
-        "start": {
-          "line": 3,
-          "column": 23
-        },
-        "end": {
-          "line": 3,
-          "column": 24
-        }
-      }
-    },
-    {
-      "type": {
-        "label": "export",
-        "keyword": "export",
-        "beforeExpr": false,
-        "startsExpr": false,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null,
-        "updateContext": null
-      },
-      "value": "export",
-      "start": 77,
-      "end": 83,
-      "loc": {
-        "start": {
-          "line": 4,
-          "column": 0
-        },
-        "end": {
-          "line": 4,
-          "column": 6
-        }
-      }
-    },
-    {
-      "type": {
-        "label": "*",
-        "beforeExpr": true,
-        "startsExpr": false,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": 10,
-        "updateContext": null
-      },
-      "value": "*",
       "start": 84,
       "end": 85,
       "loc": {
         "start": {
+          "line": 3,
+          "column": 26
+        },
+        "end": {
+          "line": 3,
+          "column": 27
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "export",
+        "keyword": "export",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "export",
+      "start": 86,
+      "end": 92,
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 0
+        },
+        "end": {
+          "line": 4,
+          "column": 6
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "*",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": 10,
+        "updateContext": null
+      },
+      "value": "*",
+      "start": 93,
+      "end": 94,
+      "loc": {
+        "start": {
           "line": 4,
           "column": 7
         },
@@ -678,8 +678,8 @@
         "binop": null
       },
       "value": "from",
-      "start": 86,
-      "end": 90,
+      "start": 95,
+      "end": 99,
       "loc": {
         "start": {
           "line": 4,
@@ -704,9 +704,9 @@
         "binop": null,
         "updateContext": null
       },
-      "value": "./3-Three",
-      "start": 91,
-      "end": 102,
+      "value": "./3-Three.js",
+      "start": 100,
+      "end": 114,
       "loc": {
         "start": {
           "line": 4,
@@ -714,7 +714,7 @@
         },
         "end": {
           "line": 4,
-          "column": 25
+          "column": 28
         }
       }
     },
@@ -731,16 +731,16 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 102,
-      "end": 103,
+      "start": 114,
+      "end": 115,
       "loc": {
         "start": {
           "line": 4,
-          "column": 25
+          "column": 28
         },
         "end": {
           "line": 4,
-          "column": 26
+          "column": 29
         }
       }
     },
@@ -759,8 +759,8 @@
         "updateContext": null
       },
       "value": "export",
-      "start": 104,
-      "end": 110,
+      "start": 116,
+      "end": 122,
       "loc": {
         "start": {
           "line": 5,
@@ -786,8 +786,8 @@
         "updateContext": null
       },
       "value": "*",
-      "start": 111,
-      "end": 112,
+      "start": 123,
+      "end": 124,
       "loc": {
         "start": {
           "line": 5,
@@ -812,8 +812,8 @@
         "binop": null
       },
       "value": "from",
-      "start": 113,
-      "end": 117,
+      "start": 125,
+      "end": 129,
       "loc": {
         "start": {
           "line": 5,
@@ -838,9 +838,9 @@
         "binop": null,
         "updateContext": null
       },
-      "value": "./4-Four",
-      "start": 118,
-      "end": 128,
+      "value": "./4-Four.js",
+      "start": 130,
+      "end": 143,
       "loc": {
         "start": {
           "line": 5,
@@ -848,7 +848,7 @@
         },
         "end": {
           "line": 5,
-          "column": 24
+          "column": 27
         }
       }
     },
@@ -865,16 +865,16 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 128,
-      "end": 129,
+      "start": 143,
+      "end": 144,
       "loc": {
         "start": {
           "line": 5,
-          "column": 24
+          "column": 27
         },
         "end": {
           "line": 5,
-          "column": 25
+          "column": 28
         }
       }
     },
@@ -891,8 +891,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 130,
-      "end": 130,
+      "start": 145,
+      "end": 145,
       "loc": {
         "start": {
           "line": 6,

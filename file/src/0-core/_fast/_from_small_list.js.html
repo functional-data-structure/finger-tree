@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <base data-ice="baseUrl" href="../../../../">
-  <title data-ice="title">src/0-core/_fast/_from_small_list.js | aureooms/js-fingertree</title>
+  <title data-ice="title">src/0-core/_fast/_from_small_list.js | @aureooms/js-fingertree</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
   <script src="script/manual.js"></script>
-<script src="./inject/script/0-header.js"></script><link rel="stylesheet" href="./inject/css/0-style.css"><meta name="description" content="Finger Trees for JavaScript"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="aureooms/js-fingertree"><meta property="twitter:description" content="Finger Trees for JavaScript"></head>
+<link rel="stylesheet" href="./inject/css/0-style.css"><script src="./inject/script/0-header.js"></script><meta name="description" content="Finger Trees for JavaScript"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="@aureooms/js-fingertree"><meta property="twitter:description" content="Finger Trees for JavaScript"></head>
 <body class="layout-container" data-ice="rootContainer">
 
 <header>
@@ -70,9 +70,9 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/0-core/_fast/_from_small_list.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import {Empty, Single, Deep} from &apos;../../3-tree&apos;;
-import {One, Two} from &apos;../../1-digit&apos;;
-import {cache} from &apos;../measure&apos;;
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import {Empty, Single, Deep} from &apos;../../3-tree/index.js&apos;;
+import {One, Two} from &apos;../../1-digit/index.js&apos;;
+import {cache} from &apos;../measure/index.js&apos;;
 
 import assert from &apos;assert&apos;;
 
@@ -88,14 +88,14 @@ export function _from_small_list(M, list) {
 				M,
 				new One(list[0]),
 				new Empty(cache(M)),
-				new One(list[1])
+				new One(list[1]),
 			);
 		default:
 			return new Deep(
 				M,
 				new Two(list[0], list[1]),
 				new Empty(cache(M)),
-				new One(list[2])
+				new One(list[2]),
 			);
 	}
 }

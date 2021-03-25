@@ -1,7 +1,7 @@
 {
   "type": "File",
   "start": 0,
-  "end": 75,
+  "end": 84,
   "loc": {
     "start": {
       "line": 1,
@@ -15,7 +15,7 @@
   "program": {
     "type": "Program",
     "start": 0,
-    "end": 75,
+    "end": 84,
     "loc": {
       "start": {
         "line": 1,
@@ -31,7 +31,7 @@
       {
         "type": "ExportAllDeclaration",
         "start": 0,
-        "end": 24,
+        "end": 27,
         "loc": {
           "start": {
             "line": 1,
@@ -39,13 +39,13 @@
           },
           "end": {
             "line": 1,
-            "column": 24
+            "column": 27
           }
         },
         "source": {
           "type": "StringLiteral",
           "start": 14,
-          "end": 23,
+          "end": 26,
           "loc": {
             "start": {
               "line": 1,
@@ -53,20 +53,20 @@
             },
             "end": {
               "line": 1,
-              "column": 23
+              "column": 26
             }
           },
           "extra": {
-            "rawValue": "./Split",
-            "raw": "'./Split'"
+            "rawValue": "./Split.js",
+            "raw": "'./Split.js'"
           },
-          "value": "./Split"
+          "value": "./Split.js"
         }
       },
       {
         "type": "ExportAllDeclaration",
-        "start": 25,
-        "end": 49,
+        "start": 28,
+        "end": 55,
         "loc": {
           "start": {
             "line": 2,
@@ -74,13 +74,13 @@
           },
           "end": {
             "line": 2,
-            "column": 24
+            "column": 27
           }
         },
         "source": {
           "type": "StringLiteral",
-          "start": 39,
-          "end": 48,
+          "start": 42,
+          "end": 54,
           "loc": {
             "start": {
               "line": 2,
@@ -88,20 +88,20 @@
             },
             "end": {
               "line": 2,
-              "column": 23
+              "column": 26
             }
           },
           "extra": {
-            "rawValue": "./deepL",
-            "raw": "'./deepL'"
+            "rawValue": "./deepL.js",
+            "raw": "'./deepL.js'"
           },
-          "value": "./deepL"
+          "value": "./deepL.js"
         }
       },
       {
         "type": "ExportAllDeclaration",
-        "start": 50,
-        "end": 74,
+        "start": 56,
+        "end": 83,
         "loc": {
           "start": {
             "line": 3,
@@ -109,13 +109,13 @@
           },
           "end": {
             "line": 3,
-            "column": 24
+            "column": 27
           }
         },
         "source": {
           "type": "StringLiteral",
-          "start": 64,
-          "end": 73,
+          "start": 70,
+          "end": 82,
           "loc": {
             "start": {
               "line": 3,
@@ -123,14 +123,14 @@
             },
             "end": {
               "line": 3,
-              "column": 23
+              "column": 26
             }
           },
           "extra": {
-            "rawValue": "./deepR",
-            "raw": "'./deepR'"
+            "rawValue": "./deepR.js",
+            "raw": "'./deepR.js'"
           },
-          "value": "./deepR"
+          "value": "./deepR.js"
         }
       }
     ],
@@ -232,9 +232,9 @@
         "binop": null,
         "updateContext": null
       },
-      "value": "./Split",
+      "value": "./Split.js",
       "start": 14,
-      "end": 23,
+      "end": 26,
       "loc": {
         "start": {
           "line": 1,
@@ -242,7 +242,7 @@
         },
         "end": {
           "line": 1,
-          "column": 23
+          "column": 26
         }
       }
     },
@@ -259,16 +259,16 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 23,
-      "end": 24,
+      "start": 26,
+      "end": 27,
       "loc": {
         "start": {
           "line": 1,
-          "column": 23
+          "column": 26
         },
         "end": {
           "line": 1,
-          "column": 24
+          "column": 27
         }
       }
     },
@@ -287,8 +287,8 @@
         "updateContext": null
       },
       "value": "export",
-      "start": 25,
-      "end": 31,
+      "start": 28,
+      "end": 34,
       "loc": {
         "start": {
           "line": 2,
@@ -314,8 +314,8 @@
         "updateContext": null
       },
       "value": "*",
-      "start": 32,
-      "end": 33,
+      "start": 35,
+      "end": 36,
       "loc": {
         "start": {
           "line": 2,
@@ -340,8 +340,8 @@
         "binop": null
       },
       "value": "from",
-      "start": 34,
-      "end": 38,
+      "start": 37,
+      "end": 41,
       "loc": {
         "start": {
           "line": 2,
@@ -366,9 +366,9 @@
         "binop": null,
         "updateContext": null
       },
-      "value": "./deepL",
-      "start": 39,
-      "end": 48,
+      "value": "./deepL.js",
+      "start": 42,
+      "end": 54,
       "loc": {
         "start": {
           "line": 2,
@@ -376,7 +376,7 @@
         },
         "end": {
           "line": 2,
-          "column": 23
+          "column": 26
         }
       }
     },
@@ -393,16 +393,16 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 48,
-      "end": 49,
+      "start": 54,
+      "end": 55,
       "loc": {
         "start": {
           "line": 2,
-          "column": 23
+          "column": 26
         },
         "end": {
           "line": 2,
-          "column": 24
+          "column": 27
         }
       }
     },
@@ -421,8 +421,8 @@
         "updateContext": null
       },
       "value": "export",
-      "start": 50,
-      "end": 56,
+      "start": 56,
+      "end": 62,
       "loc": {
         "start": {
           "line": 3,
@@ -448,8 +448,8 @@
         "updateContext": null
       },
       "value": "*",
-      "start": 57,
-      "end": 58,
+      "start": 63,
+      "end": 64,
       "loc": {
         "start": {
           "line": 3,
@@ -474,8 +474,8 @@
         "binop": null
       },
       "value": "from",
-      "start": 59,
-      "end": 63,
+      "start": 65,
+      "end": 69,
       "loc": {
         "start": {
           "line": 3,
@@ -500,9 +500,9 @@
         "binop": null,
         "updateContext": null
       },
-      "value": "./deepR",
-      "start": 64,
-      "end": 73,
+      "value": "./deepR.js",
+      "start": 70,
+      "end": 82,
       "loc": {
         "start": {
           "line": 3,
@@ -510,7 +510,7 @@
         },
         "end": {
           "line": 3,
-          "column": 23
+          "column": 26
         }
       }
     },
@@ -527,16 +527,16 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 73,
-      "end": 74,
+      "start": 82,
+      "end": 83,
       "loc": {
         "start": {
           "line": 3,
-          "column": 23
+          "column": 26
         },
         "end": {
           "line": 3,
-          "column": 24
+          "column": 27
         }
       }
     },
@@ -553,8 +553,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 75,
-      "end": 75,
+      "start": 84,
+      "end": 84,
       "loc": {
         "start": {
           "line": 4,

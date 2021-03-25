@@ -1,6 +1,6 @@
 {
-  "coverage": "10.69%",
-  "expectCount": 159,
+  "coverage": "10.36%",
+  "expectCount": 164,
   "actualCount": 17,
   "files": {
     "src/0-core/_fast/_app3.js": {
@@ -142,13 +142,14 @@
       "undocumentLines": []
     },
     "src/1-digit/0-Digit.js": {
-      "expectCount": 4,
+      "expectCount": 5,
       "actualCount": 0,
       "undocumentLines": [
         3,
         5,
         9,
-        13
+        13,
+        17
       ]
     },
     "src/1-digit/1-One.js": {
@@ -220,7 +221,7 @@
       ]
     },
     "src/2-node/2-Node2.js": {
-      "expectCount": 10,
+      "expectCount": 11,
       "actualCount": 0,
       "undocumentLines": [
         3,
@@ -232,11 +233,12 @@
         29,
         33,
         37,
-        41
+        41,
+        45
       ]
     },
     "src/2-node/3-Node3.js": {
-      "expectCount": 10,
+      "expectCount": 11,
       "actualCount": 0,
       "undocumentLines": [
         3,
@@ -248,7 +250,8 @@
         30,
         34,
         38,
-        42
+        42,
+        46
       ]
     },
     "src/2-node/node2.js": {
@@ -271,7 +274,7 @@
       "undocumentLines": []
     },
     "src/3-tree/implementations/0-Empty.js": {
-      "expectCount": 13,
+      "expectCount": 14,
       "actualCount": 1,
       "undocumentLines": [
         5,
@@ -285,11 +288,12 @@
         40,
         44,
         48,
-        59
+        52,
+        61
       ]
     },
     "src/3-tree/implementations/1-Single.js": {
-      "expectCount": 13,
+      "expectCount": 12,
       "actualCount": 1,
       "undocumentLines": [
         6,
@@ -302,12 +306,11 @@
         38,
         47,
         56,
-        60,
-        71
+        73
       ]
     },
     "src/3-tree/implementations/2-Deep.js": {
-      "expectCount": 13,
+      "expectCount": 14,
       "actualCount": 1,
       "undocumentLines": [
         17,
@@ -321,11 +324,12 @@
         100,
         113,
         117,
-        167
+        123,
+        173
       ]
     },
     "src/4-lazy/0-Lazy.js": {
-      "expectCount": 14,
+      "expectCount": 15,
       "actualCount": 0,
       "undocumentLines": [
         3,
@@ -341,7 +345,8 @@
         51,
         55,
         59,
-        63
+        63,
+        67
       ]
     },
     "src/4-lazy/1-delay.js": {

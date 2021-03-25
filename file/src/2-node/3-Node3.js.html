@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <base data-ice="baseUrl" href="../../../">
-  <title data-ice="title">src/2-node/3-Node3.js | aureooms/js-fingertree</title>
+  <title data-ice="title">src/2-node/3-Node3.js | @aureooms/js-fingertree</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
   <script src="script/manual.js"></script>
-<script src="./inject/script/0-header.js"></script><link rel="stylesheet" href="./inject/css/0-style.css"><meta name="description" content="Finger Trees for JavaScript"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="aureooms/js-fingertree"><meta property="twitter:description" content="Finger Trees for JavaScript"></head>
+<link rel="stylesheet" href="./inject/css/0-style.css"><script src="./inject/script/0-header.js"></script><meta name="description" content="Finger Trees for JavaScript"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="@aureooms/js-fingertree"><meta property="twitter:description" content="Finger Trees for JavaScript"></head>
 <body class="layout-container" data-ice="rootContainer">
 
 <header>
@@ -70,7 +70,7 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/2-node/3-Node3.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import {Three} from &apos;../1-digit&apos;;
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import {Three} from &apos;../1-digit/index.js&apos;;
 
 export function Node3(v, a, b, c) {
 	this.v = v;
@@ -81,6 +81,10 @@ export function Node3(v, a, b, c) {
 
 Node3.prototype[Symbol.iterator] = function () {
 	return [this.a, this.b, this.c][Symbol.iterator]();
+};
+
+Node3.prototype.reversed = function () {
+	return [this.c, this.b, this.a][Symbol.iterator]();
 };
 
 Node3.prototype.measure = function () {
@@ -107,11 +111,11 @@ Node3.prototype.tail = function () {
 	throw new Error(&apos;trying to call tail of Node3&apos;);
 };
 
-Node3.prototype.push = function (value) {
+Node3.prototype.push = function (_value) {
 	throw new Error(&apos;trying to call push of Node3&apos;);
 };
 
-Node3.prototype.cons = function (value) {
+Node3.prototype.cons = function (_value) {
 	throw new Error(&apos;trying to call cons of Node3&apos;);
 };
 </code></pre>

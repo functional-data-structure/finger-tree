@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <base data-ice="baseUrl">
-  <title data-ice="title">Home | aureooms/js-fingertree</title>
+  <title data-ice="title">Home | @aureooms/js-fingertree</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
   <script src="script/manual.js"></script>
-<script src="./inject/script/0-header.js"></script><link rel="stylesheet" href="./inject/css/0-style.css"><meta name="description" content="Finger Trees for JavaScript"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="aureooms/js-fingertree"><meta property="twitter:description" content="Finger Trees for JavaScript"></head>
+<link rel="stylesheet" href="./inject/css/0-style.css"><script src="./inject/script/0-header.js"></script><meta name="description" content="Finger Trees for JavaScript"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="@aureooms/js-fingertree"><meta property="twitter:description" content="Finger Trees for JavaScript"></head>
 <body class="layout-container" data-ice="rootContainer">
 
 <header>
@@ -82,7 +82,7 @@ Parent is <a href="https://github.com/aureooms/js-persistent">@aureooms/js-persi
                   | Deep ( Digit x ) ( FingerTree ( Node x ) ) ( Digit x )</code>
 </code></pre><p><a href="https://raw.githubusercontent.com/aureooms/js-fingertree/main/LICENSE"><img src="https://img.shields.io/github/license/aureooms/js-fingertree.svg" alt="License"></a>
 <a href="https://www.npmjs.org/package/@aureooms/js-fingertree"><img src="https://img.shields.io/npm/v/@aureooms/js-fingertree.svg" alt="Version"></a>
-<a href="https://travis-ci.org/aureooms/js-fingertree/branches"><img src="https://img.shields.io/travis/aureooms/js-fingertree/main.svg" alt="Build"></a>
+<a href="https://travis-ci.com/aureooms/js-fingertree/branches"><img src="https://img.shields.io/travis/aureooms/js-fingertree/main.svg" alt="Build"></a>
 <a href="https://david-dm.org/aureooms/js-fingertree"><img src="https://img.shields.io/david/aureooms/js-fingertree.svg" alt="Dependencies"></a>
 <a href="https://david-dm.org/aureooms/js-fingertree?type=dev"><img src="https://img.shields.io/david/dev/aureooms/js-fingertree.svg" alt="Dev dependencies"></a>
 <a href="https://github.com/aureooms/js-fingertree/issues"><img src="https://img.shields.io/github/issues/aureooms/js-fingertree.svg" alt="GitHub issues"></a>
@@ -110,7 +110,7 @@ Parent is <a href="https://github.com/aureooms/js-persistent">@aureooms/js-persi
 </li>
 <li><a href="#question-predicates">:question: Predicates</a><ul>
 <li><a href="#treemeasure---m"><code>Tree#measure() -&gt; m</code></a></li>
-<li><a href="#treeempty---boolean"><code>Tree#empty() -&gt; Boolean</code></a></li>
+<li><a href="#treeisempty---boolean"><code>Tree#isEmpty() -&gt; Boolean</code></a></li>
 </ul>
 </li>
 <li><a href="#salt-add-values">:salt: Add values</a><ul>
@@ -139,7 +139,8 @@ Parent is <a href="https://github.com/aureooms/js-persistent">@aureooms/js-persi
 </ul>
 </li>
 <li><a href="#flying_saucer-visit">:flying_saucer: Visit</a><ul>
-<li><a href="#treesymboliterator---iterable"><code>TreeSymbol.iterator -&gt; Iterable</code></a></li>
+<li><a href="#treesymboliterator---iterable"><code>Tree[Symbol.iterator]() -&gt; Iterable</code></a></li>
+<li><a href="#treereversed---iterable"><code>Tree#reversed() -&gt; Iterable</code></a></li>
 </ul>
 </li>
 </ul>
@@ -200,8 +201,8 @@ import { from , empty } from &apos;@aureooms/js-fingertree&apos; ;</code>
 <h3 id="-question--predicates">:question: Predicates</h3><h4 id="-code-tree-measure-----gt--m--code-"><code>Tree#measure() -&gt; m</code></h4><p>Returns the measure of the tree.</p>
 <pre><code class="lang-js"><code class="source-code prettyprint">if ( tree.measure() &gt; 1 ) ...</code>
 </code></pre>
-<h4 id="-code-tree-empty-----gt--boolean--code-"><code>Tree#empty() -&gt; Boolean</code></h4><p>Returns <code>true</code> if the tree is empty, <code>false</code> otherwise.</p>
-<pre><code class="lang-js"><code class="source-code prettyprint">return tree.empty() ? &apos;empty&apos; : &apos;not empty&apos; ;</code>
+<h4 id="-code-tree-isempty-----gt--boolean--code-"><code>Tree#isEmpty() -&gt; Boolean</code></h4><p>Returns <code>true</code> if the tree is empty, <code>false</code> otherwise.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">return tree.isEmpty() ? &apos;empty&apos; : &apos;not empty&apos; ;</code>
 </code></pre>
 <h3 id="-salt--add-values">:salt: Add values</h3><h4 id="-code-tree-push-x----gt--tree--code-"><code>Tree#push(x) -&gt; Tree</code></h4><p>Returns a new tree with an additional value as the new right-most value.</p>
 <pre><code class="lang-js"><code class="source-code prettyprint">tree = tree.push(&apos;k&apos;);</code>
@@ -222,10 +223,10 @@ import { from , empty } from &apos;@aureooms/js-fingertree&apos; ;</code>
 <pre><code class="lang-js"><code class="source-code prettyprint">let last = tree.last() ; // &apos;b&apos;</code>
 </code></pre>
 <h4 id="-code-tree-init-----gt--tree--code-"><code>Tree#init() -&gt; Tree</code></h4><p>Returns a new tree without the right-most value.</p>
-<pre><code class="lang-js"><code class="source-code prettyprint">while ( ! tree.empty() ) tree = tree.init() ;</code>
+<pre><code class="lang-js"><code class="source-code prettyprint">while ( ! tree.isEmpty() ) tree = tree.init() ;</code>
 </code></pre>
 <h4 id="-code-tree-tail-----gt--tree--code-"><code>Tree#tail() -&gt; Tree</code></h4><p>Returns a new tree without the left-most value.</p>
-<pre><code class="lang-js"><code class="source-code prettyprint">while ( ! tree.empty() ) tree = tree.tail() ;</code>
+<pre><code class="lang-js"><code class="source-code prettyprint">while ( ! tree.isEmpty() ) tree = tree.tail() ;</code>
 </code></pre>
 <h3 id="-last-quarter-moon--merge">:last_quarter_moon: Merge</h3><h4 id="-code-tree-concat-tree----gt--tree--code-"><code>Tree#concat(Tree) -&gt; Tree</code></h4><p>Returns the concatenation of two trees.</p>
 <pre><code class="lang-js"><code class="source-code prettyprint">tree = tree.concat( tree );</code>
@@ -254,12 +255,15 @@ tree is the value for which the predicate switches from false to true.</p>
 <h3 id="-flying-saucer--visit">:flying_saucer: Visit</h3><h4 id="-code-tree-symbol-iterator------gt--iterable--code-"><code>Tree[Symbol.iterator]() -&gt; Iterable</code></h4><p>Returns an iterator on the values of the tree in left-to-right order.</p>
 <pre><code class="lang-js"><code class="source-code prettyprint">for ( const x of tree ) console.log( x ) ;</code>
 </code></pre>
+<h4 id="-code-tree-reversed-----gt--iterable--code-"><code>Tree#reversed() -&gt; Iterable</code></h4><p>Returns an iterator on the values of the tree in right-to-left order.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">for ( const x of tree.reversed() ) console.log( x ) ;</code>
+</code></pre>
 <h2 id="-scroll--references">:scroll: References</h2><ul>
 <li><a href="http://staff.city.ac.uk/~ross/papers/FingerTree.pdf"><em>Finger trees: a simple general-purpose data structure</em> -- Hinze and Paterson</a></li>
 </ul>
 <h2 id="-link--links">:link: Links</h2><ul>
-<li><a href="https://github.com/zot/Leisure/blob/master/src/lib/fingertree.coffee">A coffeescript implementation with ZLIB licensing</a> (:white_check_mark: the implementation appears to be correct)</li>
-<li><a href="https://github.com/kachayev/fn.py/blob/master/fn/immutable/finger.py">An implementation in Python</a> (:warning: the implementation is missing <a href="#broken_heart-split">splitting functionality</a>)</li>
+<li><a href="https://github.com/zot/Leisure/blob/master/src/lib/fingertree.coffee">A coffeescript implementation with ZLIB licensing</a> (:white_check_mark: the implementation is correct)</li>
+<li><a href="https://github.com/kachayev/fn.py/blob/master/fn/immutable/finger.py">An implementation in Python with Apache licensing</a> (:warning: the implementation is missing <a href="#broken_heart-split">splitting functionality</a>)</li>
 <li><a href="https://github.com/qiao/fingertree.js">A JavaScript implementation with MIT licensing</a> (:rotating_light: <a href="https://github.com/qiao/fingertree.js/issues/7">the implementation is incorrect</a>)</li>
 </ul>
 </div>

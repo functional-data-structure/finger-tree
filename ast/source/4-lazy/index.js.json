@@ -1,7 +1,7 @@
 {
   "type": "File",
   "start": 0,
-  "end": 53,
+  "end": 59,
   "loc": {
     "start": {
       "line": 1,
@@ -15,7 +15,7 @@
   "program": {
     "type": "Program",
     "start": 0,
-    "end": 53,
+    "end": 59,
     "loc": {
       "start": {
         "line": 1,
@@ -31,7 +31,7 @@
       {
         "type": "ExportAllDeclaration",
         "start": 0,
-        "end": 25,
+        "end": 28,
         "loc": {
           "start": {
             "line": 1,
@@ -39,13 +39,13 @@
           },
           "end": {
             "line": 1,
-            "column": 25
+            "column": 28
           }
         },
         "source": {
           "type": "StringLiteral",
           "start": 14,
-          "end": 24,
+          "end": 27,
           "loc": {
             "start": {
               "line": 1,
@@ -53,20 +53,20 @@
             },
             "end": {
               "line": 1,
-              "column": 24
+              "column": 27
             }
           },
           "extra": {
-            "rawValue": "./0-Lazy",
-            "raw": "'./0-Lazy'"
+            "rawValue": "./0-Lazy.js",
+            "raw": "'./0-Lazy.js'"
           },
-          "value": "./0-Lazy"
+          "value": "./0-Lazy.js"
         }
       },
       {
         "type": "ExportAllDeclaration",
-        "start": 26,
-        "end": 52,
+        "start": 29,
+        "end": 58,
         "loc": {
           "start": {
             "line": 2,
@@ -74,13 +74,13 @@
           },
           "end": {
             "line": 2,
-            "column": 26
+            "column": 29
           }
         },
         "source": {
           "type": "StringLiteral",
-          "start": 40,
-          "end": 51,
+          "start": 43,
+          "end": 57,
           "loc": {
             "start": {
               "line": 2,
@@ -88,14 +88,14 @@
             },
             "end": {
               "line": 2,
-              "column": 25
+              "column": 28
             }
           },
           "extra": {
-            "rawValue": "./1-delay",
-            "raw": "'./1-delay'"
+            "rawValue": "./1-delay.js",
+            "raw": "'./1-delay.js'"
           },
-          "value": "./1-delay"
+          "value": "./1-delay.js"
         }
       }
     ],
@@ -197,9 +197,9 @@
         "binop": null,
         "updateContext": null
       },
-      "value": "./0-Lazy",
+      "value": "./0-Lazy.js",
       "start": 14,
-      "end": 24,
+      "end": 27,
       "loc": {
         "start": {
           "line": 1,
@@ -207,7 +207,7 @@
         },
         "end": {
           "line": 1,
-          "column": 24
+          "column": 27
         }
       }
     },
@@ -224,16 +224,16 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 24,
-      "end": 25,
+      "start": 27,
+      "end": 28,
       "loc": {
         "start": {
           "line": 1,
-          "column": 24
+          "column": 27
         },
         "end": {
           "line": 1,
-          "column": 25
+          "column": 28
         }
       }
     },
@@ -252,8 +252,8 @@
         "updateContext": null
       },
       "value": "export",
-      "start": 26,
-      "end": 32,
+      "start": 29,
+      "end": 35,
       "loc": {
         "start": {
           "line": 2,
@@ -279,8 +279,8 @@
         "updateContext": null
       },
       "value": "*",
-      "start": 33,
-      "end": 34,
+      "start": 36,
+      "end": 37,
       "loc": {
         "start": {
           "line": 2,
@@ -305,8 +305,8 @@
         "binop": null
       },
       "value": "from",
-      "start": 35,
-      "end": 39,
+      "start": 38,
+      "end": 42,
       "loc": {
         "start": {
           "line": 2,
@@ -331,9 +331,9 @@
         "binop": null,
         "updateContext": null
       },
-      "value": "./1-delay",
-      "start": 40,
-      "end": 51,
+      "value": "./1-delay.js",
+      "start": 43,
+      "end": 57,
       "loc": {
         "start": {
           "line": 2,
@@ -341,7 +341,7 @@
         },
         "end": {
           "line": 2,
-          "column": 25
+          "column": 28
         }
       }
     },
@@ -358,16 +358,16 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 51,
-      "end": 52,
+      "start": 57,
+      "end": 58,
       "loc": {
         "start": {
           "line": 2,
-          "column": 25
+          "column": 28
         },
         "end": {
           "line": 2,
-          "column": 26
+          "column": 29
         }
       }
     },
@@ -384,8 +384,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 53,
-      "end": 53,
+      "start": 59,
+      "end": 59,
       "loc": {
         "start": {
           "line": 3,

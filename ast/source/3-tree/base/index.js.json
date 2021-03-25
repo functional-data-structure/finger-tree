@@ -1,7 +1,7 @@
 {
   "type": "File",
   "start": 0,
-  "end": 24,
+  "end": 27,
   "loc": {
     "start": {
       "line": 1,
@@ -15,7 +15,7 @@
   "program": {
     "type": "Program",
     "start": 0,
-    "end": 24,
+    "end": 27,
     "loc": {
       "start": {
         "line": 1,
@@ -31,7 +31,7 @@
       {
         "type": "ExportAllDeclaration",
         "start": 0,
-        "end": 23,
+        "end": 26,
         "loc": {
           "start": {
             "line": 1,
@@ -39,13 +39,13 @@
           },
           "end": {
             "line": 1,
-            "column": 23
+            "column": 26
           }
         },
         "source": {
           "type": "StringLiteral",
           "start": 14,
-          "end": 22,
+          "end": 25,
           "loc": {
             "start": {
               "line": 1,
@@ -53,14 +53,14 @@
             },
             "end": {
               "line": 1,
-              "column": 22
+              "column": 25
             }
           },
           "extra": {
-            "rawValue": "./Tree",
-            "raw": "'./Tree'"
+            "rawValue": "./Tree.js",
+            "raw": "'./Tree.js'"
           },
-          "value": "./Tree"
+          "value": "./Tree.js"
         }
       }
     ],
@@ -162,9 +162,9 @@
         "binop": null,
         "updateContext": null
       },
-      "value": "./Tree",
+      "value": "./Tree.js",
       "start": 14,
-      "end": 22,
+      "end": 25,
       "loc": {
         "start": {
           "line": 1,
@@ -172,7 +172,7 @@
         },
         "end": {
           "line": 1,
-          "column": 22
+          "column": 25
         }
       }
     },
@@ -189,16 +189,16 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 22,
-      "end": 23,
+      "start": 25,
+      "end": 26,
       "loc": {
         "start": {
           "line": 1,
-          "column": 22
+          "column": 25
         },
         "end": {
           "line": 1,
-          "column": 23
+          "column": 26
         }
       }
     },
@@ -215,8 +215,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 24,
-      "end": 24,
+      "start": 27,
+      "end": 27,
       "loc": {
         "start": {
           "line": 2,

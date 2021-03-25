@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <base data-ice="baseUrl" href="../../../../">
-  <title data-ice="title">src/3-tree/implementations/2-Deep.js | aureooms/js-fingertree</title>
+  <title data-ice="title">src/3-tree/implementations/2-Deep.js | @aureooms/js-fingertree</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
   <script src="script/manual.js"></script>
-<script src="./inject/script/0-header.js"></script><link rel="stylesheet" href="./inject/css/0-style.css"><meta name="description" content="Finger Trees for JavaScript"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="aureooms/js-fingertree"><meta property="twitter:description" content="Finger Trees for JavaScript"></head>
+<link rel="stylesheet" href="./inject/css/0-style.css"><script src="./inject/script/0-header.js"></script><meta name="description" content="Finger Trees for JavaScript"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="@aureooms/js-fingertree"><meta property="twitter:description" content="Finger Trees for JavaScript"></head>
 <body class="layout-container" data-ice="rootContainer">
 
 <header>
@@ -70,8 +70,8 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/3-tree/implementations/2-Deep.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import {Empty} from &apos;.&apos;;
-import {Tree} from &apos;../base&apos;;
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import {Empty} from &apos;./index.js&apos;;
+import {Tree} from &apos;../base/index.js&apos;;
 import {
 	_app3,
 	_from_digit,
@@ -79,10 +79,10 @@ import {
 	_deepL,
 	_deepR,
 	CachedMeasure,
-	Split
-} from &apos;../../0-core&apos;;
-import {One, Two, Four} from &apos;../../1-digit&apos;;
-import {delay, Lazy} from &apos;../../4-lazy&apos;;
+	Split,
+} from &apos;../../0-core/index.js&apos;;
+import {One, Two, Four} from &apos;../../1-digit/index.js&apos;;
+import {delay, Lazy} from &apos;../../4-lazy/index.js&apos;;
 
 import assert from &apos;assert&apos;;
 
@@ -103,14 +103,14 @@ Deep.prototype.measure = function () {
 
 		this.v = M.plus(
 			this.left.measure(M),
-			M.plus(this.middle.measure(), this.right.measure(M))
+			M.plus(this.middle.measure(), this.right.measure(M)),
 		);
 	}
 
 	return this.v;
 };
 
-Deep.prototype.empty = function () {
+Deep.prototype.isEmpty = function () {
 	return false;
 };
 
@@ -124,7 +124,7 @@ Deep.prototype.last = function () {
 
 Deep.prototype.tail = function () {
 	if (this.left instanceof One) {
-		if (this.middle.empty()) {
+		if (this.middle.isEmpty()) {
 			return _from_digit(this.M, this.right);
 		}
 
@@ -132,7 +132,7 @@ Deep.prototype.tail = function () {
 			this.M,
 			this.middle.head().digit(),
 			delay(() =&gt; this.middle.tail()),
-			this.right
+			this.right,
 		);
 	}
 
@@ -141,7 +141,7 @@ Deep.prototype.tail = function () {
 
 Deep.prototype.init = function () {
 	if (this.right instanceof One) {
-		if (this.middle.empty()) {
+		if (this.middle.isEmpty()) {
 			return _from_digit(this.M, this.left);
 		}
 
@@ -149,7 +149,7 @@ Deep.prototype.init = function () {
 			this.M,
 			this.left,
 			delay(() =&gt; this.middle.init()),
-			this.middle.last().digit()
+			this.middle.last().digit(),
 		);
 	}
 
@@ -162,7 +162,7 @@ Deep.prototype.cons = function (value) {
 			this.M,
 			new Two(value, this.left.head()),
 			this.middle.cons(this.left.tail().node(this.M)),
-			this.right
+			this.right,
 		);
 	}
 
@@ -175,7 +175,7 @@ Deep.prototype.push = function (value) {
 			this.M,
 			this.left,
 			this.middle.push(this.right.init().node(this.M)),
-			new Two(this.right.last(), value)
+			new Two(this.right.last(), value),
 		);
 	}
 
@@ -190,6 +190,12 @@ Deep.prototype[Symbol.iterator] = function* () {
 	yield* this.left;
 	for (const node of this.middle) yield* node;
 	yield* this.right;
+};
+
+Deep.prototype.reversed = function* () {
+	yield* this.right.reversed();
+	for (const node of this.middle.reversed()) yield* node.reversed();
+	yield* this.left.reversed();
 };
 
 /**
@@ -207,7 +213,7 @@ Deep.prototype.splitTree = function (p, i) {
 		return new Split(
 			_from_small_list(M, split.left),
 			split.middle,
-			_deepL(M, split.right, middle, right)
+			_deepL(M, split.right, middle, right),
 		);
 	}
 
@@ -223,7 +229,7 @@ Deep.prototype.splitTree = function (p, i) {
 		return new Split(
 			_deepR(M, left, midSplit.left, split.left),
 			split.middle,
-			_deepL(M, split.right, midSplit.right, right)
+			_deepL(M, split.right, midSplit.right, right),
 		);
 	}
 
@@ -232,7 +238,7 @@ Deep.prototype.splitTree = function (p, i) {
 	return new Split(
 		_deepR(M, left, middle, split.left),
 		split.middle,
-		_from_small_list(M, split.right)
+		_from_small_list(M, split.right),
 	);
 };
 

@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <base data-ice="baseUrl" href="../../../">
-  <title data-ice="title">src/1-digit/2-Two.js | aureooms/js-fingertree</title>
+  <title data-ice="title">src/1-digit/2-Two.js | @aureooms/js-fingertree</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
   <script src="script/manual.js"></script>
-<script src="./inject/script/0-header.js"></script><link rel="stylesheet" href="./inject/css/0-style.css"><meta name="description" content="Finger Trees for JavaScript"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="aureooms/js-fingertree"><meta property="twitter:description" content="Finger Trees for JavaScript"></head>
+<link rel="stylesheet" href="./inject/css/0-style.css"><script src="./inject/script/0-header.js"></script><meta name="description" content="Finger Trees for JavaScript"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="@aureooms/js-fingertree"><meta property="twitter:description" content="Finger Trees for JavaScript"></head>
 <body class="layout-container" data-ice="rootContainer">
 
 <header>
@@ -70,9 +70,9 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/1-digit/2-Two.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import {Digit, One, Three} from &apos;.&apos;;
-import {node2, node3} from &apos;../2-node&apos;;
-import {Split} from &apos;../0-core&apos;;
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import {Digit, One, Three} from &apos;./index.js&apos;;
+import {node2, node3} from &apos;../2-node/index.js&apos;;
+import {Split} from &apos;../0-core/index.js&apos;;
 
 import assert from &apos;assert&apos;;
 
@@ -113,9 +113,9 @@ Two.prototype.cons = function (value) {
 	return new Three(value, this.a, this.b);
 };
 
-Two.prototype.node = function (M) {
+Two.prototype.node = function (_M) {
 	throw new Error(
-		&apos;Two should never be converted to Node2 with current implementation&apos;
+		&apos;Two should never be converted to Node2 with current implementation&apos;,
 	);
 };
 
@@ -138,7 +138,7 @@ Two.prototype._nodes = function (M, other) {
 	assert(other instanceof Digit);
 	return [
 		node3(M, this.a, this.b, other.a),
-		node3(M, other.b, other.c, other.d)
+		node3(M, other.b, other.c, other.d),
 	];
 };
 

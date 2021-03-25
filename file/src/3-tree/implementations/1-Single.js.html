@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <base data-ice="baseUrl" href="../../../../">
-  <title data-ice="title">src/3-tree/implementations/1-Single.js | aureooms/js-fingertree</title>
+  <title data-ice="title">src/3-tree/implementations/1-Single.js | @aureooms/js-fingertree</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
   <script src="script/manual.js"></script>
-<script src="./inject/script/0-header.js"></script><link rel="stylesheet" href="./inject/css/0-style.css"><meta name="description" content="Finger Trees for JavaScript"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="aureooms/js-fingertree"><meta property="twitter:description" content="Finger Trees for JavaScript"></head>
+<link rel="stylesheet" href="./inject/css/0-style.css"><script src="./inject/script/0-header.js"></script><meta name="description" content="Finger Trees for JavaScript"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="@aureooms/js-fingertree"><meta property="twitter:description" content="Finger Trees for JavaScript"></head>
 <body class="layout-container" data-ice="rootContainer">
 
 <header>
@@ -70,10 +70,10 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/3-tree/implementations/1-Single.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import {Tree} from &apos;../base&apos;;
-import {Empty, Deep} from &apos;.&apos;;
-import {_EMPTY, cache, Split} from &apos;../../0-core&apos;;
-import {One} from &apos;../../1-digit&apos;;
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import {Tree} from &apos;../base/index.js&apos;;
+import {Empty, Deep} from &apos;./index.js&apos;;
+import {cache, Split} from &apos;../../0-core/index.js&apos;;
+import {One} from &apos;../../1-digit/index.js&apos;;
 
 export function Single(M, value) {
 	this.M = M;
@@ -87,7 +87,7 @@ Single.prototype.measure = function () {
 	return this.v;
 };
 
-Single.prototype.empty = function () {
+Single.prototype.isEmpty = function () {
 	return false;
 };
 
@@ -112,7 +112,7 @@ Single.prototype.cons = function (value) {
 		this.M,
 		new One(value),
 		new Empty(cache(this.M)),
-		new One(this.a)
+		new One(this.a),
 	);
 };
 
@@ -121,7 +121,7 @@ Single.prototype.push = function (value) {
 		this.M,
 		new One(this.a),
 		new Empty(cache(this.M)),
-		new One(value)
+		new One(value),
 	);
 };
 
@@ -129,14 +129,16 @@ Single.prototype.concat = function (other) {
 	return other.cons(this.a);
 };
 
-Single.prototype[Symbol.iterator] = function* () {
-	yield this.a;
-};
+Single.prototype[Symbol.iterator] =
+	// eslint-disable-next-line no-multi-assign
+	Single.prototype.reversed = function* () {
+		yield this.a;
+	};
 
 /**
- * It is assumed that p(|this|) is true.
+ * It is assumed that p(i+|this|) is true.
  */
-Single.prototype.splitTree = function (p, i) {
+Single.prototype.splitTree = function (_p, _i) {
 	return new Split(new Empty(this.M), this.a, new Empty(this.M));
 };
 
