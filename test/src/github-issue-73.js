@@ -5,7 +5,7 @@ const {COUNTER} = Measures;
 
 import {list} from '@aureooms/js-itertools';
 
-import {from} from "../../src/index.js";
+import {from} from '../../src/index.js';
 
 function set(tree, index, value) {
 	if (index < 0 || index >= tree.measure())

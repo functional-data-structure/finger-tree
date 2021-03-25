@@ -1,6 +1,6 @@
 import {Digit, One, Two, Three} from './index.js';
-import {node2, node3} from "../2-node/index.js";
-import {Split} from "../0-core/index.js";
+import {node2, node3} from '../2-node/index.js';
+import {Split} from '../0-core/index.js';
 
 import assert from 'assert';
 
@@ -18,7 +18,7 @@ Four.prototype.measure = function (M) {
 	if (this.v === null)
 		this.v = M.plus(
 			M.measure(this.a),
-			M.plus(M.measure(this.b), M.plus(M.measure(this.c), M.measure(this.d)))
+			M.plus(M.measure(this.b), M.plus(M.measure(this.c), M.measure(this.d))),
 		);
 	return this.v;
 };
@@ -71,19 +71,19 @@ Four.prototype._nodes = function (M, other) {
 	if (other instanceof Two)
 		return [
 			node3(M, this.a, this.b, this.c),
-			node3(M, this.d, other.a, other.b)
+			node3(M, this.d, other.a, other.b),
 		];
 	if (other instanceof Three)
 		return [
 			node3(M, this.a, this.b, this.c),
 			node2(M, this.d, other.a),
-			node2(M, other.b, other.c)
+			node2(M, other.b, other.c),
 		];
 	assert(other instanceof Four);
 	return [
 		node3(M, this.a, this.b, this.c),
 		node3(M, this.d, other.a, other.b),
-		node2(M, other.c, other.d)
+		node2(M, other.c, other.d),
 	];
 };
 

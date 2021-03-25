@@ -1,6 +1,6 @@
-import {Empty, Single, Deep} from "../../3-tree/index.js";
-import {One, Two} from "../../1-digit/index.js";
-import {cache} from "../measure/index.js";
+import {Empty, Single, Deep} from '../../3-tree/index.js';
+import {One, Two} from '../../1-digit/index.js';
+import {cache} from '../measure/index.js';
 
 import assert from 'assert';
 
@@ -16,14 +16,14 @@ export function _from_small_list(M, list) {
 				M,
 				new One(list[0]),
 				new Empty(cache(M)),
-				new One(list[1])
+				new One(list[1]),
 			);
 		default:
 			return new Deep(
 				M,
 				new Two(list[0], list[1]),
 				new Empty(cache(M)),
-				new One(list[2])
+				new One(list[2]),
 			);
 	}
 }

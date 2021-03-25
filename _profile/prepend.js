@@ -12,7 +12,7 @@ const COUNTER = {
 	},
 	zero() {
 		return 0;
-	}
+	},
 };
 
 const parser = new ArgumentParser();

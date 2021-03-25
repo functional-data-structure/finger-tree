@@ -1,5 +1,5 @@
 import {Empty} from './index.js';
-import {Tree} from "../base/index.js";
+import {Tree} from '../base/index.js';
 import {
 	_app3,
 	_from_digit,
@@ -7,10 +7,10 @@ import {
 	_deepL,
 	_deepR,
 	CachedMeasure,
-	Split
-} from "../../0-core/index.js";
-import {One, Two, Four} from "../../1-digit/index.js";
-import {delay, Lazy} from "../../4-lazy/index.js";
+	Split,
+} from '../../0-core/index.js';
+import {One, Two, Four} from '../../1-digit/index.js';
+import {delay, Lazy} from '../../4-lazy/index.js';
 
 import assert from 'assert';
 
@@ -31,7 +31,7 @@ Deep.prototype.measure = function () {
 
 		this.v = M.plus(
 			this.left.measure(M),
-			M.plus(this.middle.measure(), this.right.measure(M))
+			M.plus(this.middle.measure(), this.right.measure(M)),
 		);
 	}
 
@@ -60,7 +60,7 @@ Deep.prototype.tail = function () {
 			this.M,
 			this.middle.head().digit(),
 			delay(() => this.middle.tail()),
-			this.right
+			this.right,
 		);
 	}
 
@@ -77,7 +77,7 @@ Deep.prototype.init = function () {
 			this.M,
 			this.left,
 			delay(() => this.middle.init()),
-			this.middle.last().digit()
+			this.middle.last().digit(),
 		);
 	}
 
@@ -90,7 +90,7 @@ Deep.prototype.cons = function (value) {
 			this.M,
 			new Two(value, this.left.head()),
 			this.middle.cons(this.left.tail().node(this.M)),
-			this.right
+			this.right,
 		);
 	}
 
@@ -103,7 +103,7 @@ Deep.prototype.push = function (value) {
 			this.M,
 			this.left,
 			this.middle.push(this.right.init().node(this.M)),
-			new Two(this.right.last(), value)
+			new Two(this.right.last(), value),
 		);
 	}
 
@@ -135,7 +135,7 @@ Deep.prototype.splitTree = function (p, i) {
 		return new Split(
 			_from_small_list(M, split.left),
 			split.middle,
-			_deepL(M, split.right, middle, right)
+			_deepL(M, split.right, middle, right),
 		);
 	}
 
@@ -151,7 +151,7 @@ Deep.prototype.splitTree = function (p, i) {
 		return new Split(
 			_deepR(M, left, midSplit.left, split.left),
 			split.middle,
-			_deepL(M, split.right, midSplit.right, right)
+			_deepL(M, split.right, midSplit.right, right),
 		);
 	}
 
@@ -160,7 +160,7 @@ Deep.prototype.splitTree = function (p, i) {
 	return new Split(
 		_deepR(M, left, middle, split.left),
 		split.middle,
-		_from_small_list(M, split.right)
+		_from_small_list(M, split.right),
 	);
 };
 

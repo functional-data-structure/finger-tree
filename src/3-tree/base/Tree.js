@@ -1,4 +1,4 @@
-import {append, prepend} from "../../0-core/index.js";
+import {append, prepend} from '../../0-core/index.js';
 
 /**
  * Base class for all implementations.

@@ -12,7 +12,7 @@ const COUNTER = {
 	},
 	zero() {
 		return 0;
-	}
+	},
 };
 
 const parser = new ArgumentParser();
@@ -31,7 +31,7 @@ for (let j = 0; j < M; ++j)
 	splits.push(
 		t.split((m) => {
 			return m > j;
-		})
+		}),
 	);
 console.timeEnd('prepare');
 

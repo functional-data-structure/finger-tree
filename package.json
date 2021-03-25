@@ -213,6 +213,12 @@
         "rules": {
           "import/no-unassigned-import": "off"
         }
+      },
+      {
+        "files": [
+          "doc/**"
+        ],
+        "env": "browser"
       }
     ]
   }

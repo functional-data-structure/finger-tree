@@ -17,7 +17,7 @@ const COUNTER = {
 	},
 	zero() {
 		return 0;
-	}
+	},
 };
 
 const ArgumentParser = require('argparse').ArgumentParser;
@@ -131,7 +131,7 @@ const INIT = new Benchmark.Suite()
 			const _a = a.slice();
 			for (let i = 0; i < _M; ++i) _a.pop();
 		},
-		{setup}
+		{setup},
 	)
 	.add(
 		'fingertree#removeLast',
@@ -139,7 +139,7 @@ const INIT = new Benchmark.Suite()
 			let _t = qt;
 			for (let i = 0; i < _M; ++i) _t = _t.removeLast();
 		},
-		{setup}
+		{setup},
 	)
 	.add(
 		'@aureooms/js-fingertree#init',
@@ -147,7 +147,7 @@ const INIT = new Benchmark.Suite()
 			let _t = at;
 			for (let i = 0; i < _M; ++i) _t = _t.init();
 		},
-		{setup}
+		{setup},
 	);
 
 if (M <= 1000)
@@ -157,7 +157,7 @@ if (M <= 1000)
 			let _m = a;
 			for (let i = 0; i < _M; ++i) _m = _m.slice(0, -1);
 		},
-		{setup}
+		{setup},
 	);
 
 INIT.on('cycle', (event) => {
@@ -184,7 +184,7 @@ if (M <= 10000)
 			const _a = a.slice();
 			for (let i = 0; i < _M; ++i) _a.shift();
 		},
-		{setup}
+		{setup},
 	);
 
 TAIL.add(
@@ -193,14 +193,14 @@ TAIL.add(
 		let _t = qt;
 		for (let i = 0; i < _M; ++i) _t = _t.removeFirst();
 	},
-	{setup}
+	{setup},
 ).add(
 	'@aureooms/js-fingertree#init',
 	() => {
 		let _t = at;
 		for (let i = 0; i < _M; ++i) _t = _t.tail();
 	},
-	{setup}
+	{setup},
 );
 
 if (M <= 1000)
@@ -210,7 +210,7 @@ if (M <= 1000)
 			let _m = a;
 			for (let i = 0; i < _M; ++i) _m = _m.slice(1);
 		},
-		{setup}
+		{setup},
 	);
 
 TAIL.on('cycle', (event) => {
@@ -235,7 +235,7 @@ const APPEND = new Benchmark.Suite()
 		() => {
 			at.append(range(M));
 		},
-		{setup}
+		{setup},
 	);
 
 if (M <= 1000)
@@ -244,7 +244,7 @@ if (M <= 1000)
 		() => {
 			a.concat(Array.from(range(M)));
 		},
-		{setup}
+		{setup},
 	);
 
 APPEND.on('cycle', (event) => {
@@ -266,7 +266,7 @@ const PREPEND = new Benchmark.Suite()
 		() => {
 			at.prepend(range(M));
 		},
-		{setup}
+		{setup},
 	);
 
 if (M <= 1000)
@@ -275,7 +275,7 @@ if (M <= 1000)
 		() => {
 			Array.from(range(M)).concat(a);
 		},
-		{setup}
+		{setup},
 	);
 
 PREPEND.on('cycle', (event) => {
@@ -325,7 +325,7 @@ const SPLIT = new Benchmark.Suite()
 					return m > i;
 				});
 		},
-		{setup}
+		{setup},
 	)
 	.add(
 		'@aureooms/js-fingertree#split',
@@ -337,7 +337,7 @@ const SPLIT = new Benchmark.Suite()
 					return m > i;
 				});
 		},
-		{setup}
+		{setup},
 	);
 
 if (M < 1000)
@@ -351,7 +351,7 @@ if (M < 1000)
 				_a.slice(i);
 			}
 		},
-		{setup}
+		{setup},
 	);
 
 SPLIT.on('cycle', (event) => {
@@ -385,14 +385,14 @@ new Benchmark.Suite()
 					splits.push(
 						t.split((m) => {
 							return m > i;
-						})
+						}),
 					);
 				}
 			},
 			teardown() {
 				splits.splice(0);
-			}
-		}
+			},
+		},
 	)
 	.add(
 		'fingertree#concat',
@@ -409,14 +409,14 @@ new Benchmark.Suite()
 					splits.push(
 						t.split((m) => {
 							return m > i;
-						})
+						}),
 					);
 				}
 			},
 			teardown() {
 				splits.splice(0);
-			}
-		}
+			},
+		},
 	)
 	.on('cycle', (event) => {
 		console.log(String(event.target));

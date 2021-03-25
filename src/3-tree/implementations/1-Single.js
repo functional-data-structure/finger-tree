@@ -1,7 +1,7 @@
-import {Tree} from "../base/index.js";
+import {Tree} from '../base/index.js';
 import {Empty, Deep} from './index.js';
-import {cache, Split} from "../../0-core/index.js";
-import {One} from "../../1-digit/index.js";
+import {cache, Split} from '../../0-core/index.js';
+import {One} from '../../1-digit/index.js';
 
 export function Single(M, value) {
 	this.M = M;
@@ -40,7 +40,7 @@ Single.prototype.cons = function (value) {
 		this.M,
 		new One(value),
 		new Empty(cache(this.M)),
-		new One(this.a)
+		new One(this.a),
 	);
 };
 
@@ -49,7 +49,7 @@ Single.prototype.push = function (value) {
 		this.M,
 		new One(this.a),
 		new Empty(cache(this.M)),
-		new One(value)
+		new One(value),
 	);
 };
 

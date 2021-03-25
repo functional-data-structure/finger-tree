@@ -1,6 +1,6 @@
-import {Deep} from "../../3-tree/index.js";
-import {delay} from "../../4-lazy/index.js";
-import {_from_digit, _digit} from "../_fast/index.js";
+import {Deep} from '../../3-tree/index.js';
+import {delay} from '../../4-lazy/index.js';
+import {_from_digit, _digit} from '../_fast/index.js';
 
 /**
  * @param {Measure} M
@@ -16,7 +16,7 @@ export function deepL(M, left, middle, right) {
 			M,
 			middle.head().digit(),
 			delay(() => middle.tail()),
-			right
+			right,
 		);
 	}
 

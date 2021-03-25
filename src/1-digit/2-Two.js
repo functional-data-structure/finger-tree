@@ -1,6 +1,6 @@
 import {Digit, One, Three} from './index.js';
-import {node2, node3} from "../2-node/index.js";
-import {Split} from "../0-core/index.js";
+import {node2, node3} from '../2-node/index.js';
+import {Split} from '../0-core/index.js';
 
 import assert from 'assert';
 
@@ -43,7 +43,7 @@ Two.prototype.cons = function (value) {
 
 Two.prototype.node = function (_M) {
 	throw new Error(
-		'Two should never be converted to Node2 with current implementation'
+		'Two should never be converted to Node2 with current implementation',
 	);
 };
 
@@ -66,7 +66,7 @@ Two.prototype._nodes = function (M, other) {
 	assert(other instanceof Digit);
 	return [
 		node3(M, this.a, this.b, other.a),
-		node3(M, other.b, other.c, other.d)
+		node3(M, other.b, other.c, other.d),
 	];
 };
 

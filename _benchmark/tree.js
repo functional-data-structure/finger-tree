@@ -13,7 +13,7 @@ const COUNTER = {
 	},
 	zero() {
 		return 0;
-	}
+	},
 };
 
 let t;
@@ -78,7 +78,7 @@ for (i = 0; i < length; ++i) {
 	splits.push(
 		t.split((m) => {
 			return m > i;
-		})
+		}),
 	);
 }
 

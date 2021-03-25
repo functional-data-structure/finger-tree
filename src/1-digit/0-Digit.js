@@ -1,4 +1,4 @@
-import {nodes} from "../0-core/index.js";
+import {nodes} from '../0-core/index.js';
 
 export function Digit() {}
 

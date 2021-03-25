@@ -1,6 +1,6 @@
-import {Empty, Single, Deep} from "../../3-tree/index.js";
-import {delay} from "../../4-lazy/index.js";
-import {_prepend, _append} from "../_fast/index.js";
+import {Empty, Single, Deep} from '../../3-tree/index.js';
+import {delay} from '../../4-lazy/index.js';
+import {_prepend, _append} from '../_fast/index.js';
 
 export function app3(A, list, B) {
 	A = A.force();
@@ -16,8 +16,8 @@ export function app3(A, list, B) {
 		A.M,
 		A.left,
 		delay(() =>
-			app3(A.middle, A.right._nodes_with_list(A.M, list, B.left), B.middle)
+			app3(A.middle, A.right._nodes_with_list(A.M, list, B.left), B.middle),
 		),
-		B.right
+		B.right,
 	);
 }

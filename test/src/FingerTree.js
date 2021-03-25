@@ -7,7 +7,7 @@ import {map, list, chain, range, reversed} from '@aureooms/js-itertools';
 
 import {gt} from '@aureooms/js-predicate';
 
-import {empty, from} from "../../src/index.js";
+import {empty, from} from '../../src/index.js';
 
 test('FingerTree', (t) => {
 	let T = empty(COUNTER);
@@ -20,7 +20,7 @@ test('FingerTree', (t) => {
 	t.deepEqual(
 		list(T),
 		list(chain([reversed(range(N)), range(N)])),
-		'check T 9..00..9'
+		'check T 9..00..9',
 	);
 
 	let U = from(COUNTER, range(N));
@@ -34,14 +34,14 @@ test('FingerTree', (t) => {
 	t.deepEqual(
 		list(U),
 		list(chain([range(N), reversed(range(N))])),
-		'check U 0..99..0'
+		'check U 0..99..0',
 	);
 	t.deepEqual(list(T), list(range(N)), 'check T 0..9');
 
 	t.deepEqual(
 		list(U.concat(T)),
 		list(chain([range(N), reversed(range(N)), range(N)])),
-		'concat U T 0..99..00..9'
+		'concat U T 0..99..00..9',
 	);
 
 	t.is(U.measure(), 2 * N);
@@ -120,47 +120,47 @@ test('FingerTree', (t) => {
 	t.deepEqual(
 		list(map(list, F.split(gt(0)))),
 		[list(''), list('abcdefgh')],
-		'split ' + 0
+		'split ' + 0,
 	);
 	t.deepEqual(
 		list(map(list, F.split(gt(1)))),
 		[list('a'), list('bcdefgh')],
-		'split ' + 1
+		'split ' + 1,
 	);
 	t.deepEqual(
 		list(map(list, F.split(gt(2)))),
 		[list('ab'), list('cdefgh')],
-		'split ' + 2
+		'split ' + 2,
 	);
 	t.deepEqual(
 		list(map(list, F.split(gt(3)))),
 		[list('abc'), list('defgh')],
-		'split ' + 3
+		'split ' + 3,
 	);
 	t.deepEqual(
 		list(map(list, F.split(gt(4)))),
 		[list('abcd'), list('efgh')],
-		'split ' + 4
+		'split ' + 4,
 	);
 	t.deepEqual(
 		list(map(list, F.split(gt(5)))),
 		[list('abcde'), list('fgh')],
-		'split ' + 5
+		'split ' + 5,
 	);
 	t.deepEqual(
 		list(map(list, F.split(gt(6)))),
 		[list('abcdef'), list('gh')],
-		'split ' + 6
+		'split ' + 6,
 	);
 	t.deepEqual(
 		list(map(list, F.split(gt(7)))),
 		[list('abcdefg'), list('h')],
-		'split ' + 7
+		'split ' + 7,
 	);
 	t.deepEqual(
 		list(map(list, F.split(gt(8)))),
 		[list('abcdefgh'), list('')],
-		'split ' + 8
+		'split ' + 8,
 	);
 
 	const split = F.splitTree(gt(4), COUNTER.zero());
@@ -168,7 +168,7 @@ test('FingerTree', (t) => {
 	t.deepEqual(
 		[list(split.left), split.middle, list(split.right)],
 		[list('abcd'), 'e', list('fgh')],
-		'splitTree'
+		'splitTree',
 	);
 
 	const _N = 1000;
@@ -177,85 +177,85 @@ test('FingerTree', (t) => {
 	t.deepEqual(
 		list(map(list, J.split(gt(__N)))),
 		[list(range(__N)), list(range(__N, _N))],
-		'split 1000'
+		'split 1000',
 	);
 
 	t.deepEqual(list(J.takeUntil(gt(__N))), list(range(__N)), 'takeUntil 1000');
 	t.deepEqual(
 		list(J.dropUntil(gt(__N))),
 		list(range(__N, _N)),
-		'dropUntil 1000'
+		'dropUntil 1000',
 	);
 
 	t.deepEqual(
 		list(map(list, from(COUNTER, '').split(gt(0)))),
 		[[], []],
-		'split empty'
+		'split empty',
 	);
 	t.deepEqual(
 		list(map(list, from(COUNTER, 'a').split(gt(0)))),
 		[[], ['a']],
-		'split single 0'
+		'split single 0',
 	);
 	t.deepEqual(
 		list(map(list, from(COUNTER, 'a').split(gt(1)))),
 		[['a'], []],
-		'split single 1'
+		'split single 1',
 	);
 
 	// Provoke split of digit One
 	t.deepEqual(
 		list(map(list, from(COUNTER, 'a').append('bcde').split(gt(0)))),
 		[list(''), list('abcde')],
-		'One.splitDigit 0'
+		'One.splitDigit 0',
 	);
 	// Provoke split of digit Two
 	t.deepEqual(
 		list(map(list, from(COUNTER, 'b').append('cde').prepend('a').split(gt(0)))),
 		[list(''), list('abcde')],
-		'Two.splitDigit 0'
+		'Two.splitDigit 0',
 	);
 	t.deepEqual(
 		list(map(list, from(COUNTER, 'b').append('cde').prepend('a').split(gt(1)))),
 		[list('a'), list('bcde')],
-		'Two.splitDigit 1'
+		'Two.splitDigit 1',
 	);
 	// Provoke split of digit Three
 	t.deepEqual(
 		list(map(list, from(COUNTER, 'c').append('de').prepend('ab').split(gt(0)))),
 		[list(''), list('abcde')],
-		'Three.splitDigit 0'
+		'Three.splitDigit 0',
 	);
 	t.deepEqual(
 		list(map(list, from(COUNTER, 'c').append('de').prepend('ab').split(gt(1)))),
 		[list('a'), list('bcde')],
-		'Three.splitDigit 1'
+		'Three.splitDigit 1',
 	);
 	t.deepEqual(
 		list(map(list, from(COUNTER, 'c').append('de').prepend('ab').split(gt(2)))),
 		[list('ab'), list('cde')],
-		'Three.splitDigit 2'
+		'Three.splitDigit 2',
 	);
 	// Provoke split of digit Four
 	t.deepEqual(
 		list(map(list, from(COUNTER, 'd').append('e').prepend('abc').split(gt(0)))),
 		[list(''), list('abcde')],
-		'Four.splitDigit 0'
+		'Four.splitDigit 0',
 	);
 	t.deepEqual(
 		list(map(list, from(COUNTER, 'd').append('e').prepend('abc').split(gt(1)))),
 		[list('a'), list('bcde')],
-		'Four.splitDigit 1'
+		'Four.splitDigit 1',
 	);
 	t.deepEqual(
 		list(map(list, from(COUNTER, 'd').append('e').prepend('abc').split(gt(2)))),
 		[list('ab'), list('cde')],
-		'Four.splitDigit 2'
+		'Four.splitDigit 2',
 	);
 	t.deepEqual(
 		list(map(list, from(COUNTER, 'd').append('e').prepend('abc').split(gt(3)))),
 		[list('abc'), list('de')],
-		'Four.splitDigit 3'
+		'Four.splitDigit 3',
 	);
 
 	// Provoke head / last on digits

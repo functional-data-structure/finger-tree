@@ -1,6 +1,6 @@
-import {Empty, Single, Deep} from "../../3-tree/index.js";
-import {delay} from "../../4-lazy/index.js";
-import {app3} from "../concatenate/index.js";
+import {Empty, Single, Deep} from '../../3-tree/index.js';
+import {delay} from '../../4-lazy/index.js';
+import {app3} from '../concatenate/index.js';
 
 export function _app3(A, B) {
 	B = B.force();
@@ -13,6 +13,6 @@ export function _app3(A, B) {
 		A.M,
 		A.left,
 		delay(() => app3(A.middle, A.right._nodes(A.M, B.left), B.middle)),
-		B.right
+		B.right,
 	);
 }
