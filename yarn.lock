@@ -14,10 +14,10 @@
   resolved "https://registry.yarnpkg.com/@aureooms/js-error/-/js-error-5.0.2.tgz#dc2ad2fc2b10365581c32c28222daccc5c3c9600"
   integrity sha512-HLO95kmZ1nJV5qo8Xq7czHVskFGPkM3l60JFgdTnpvCH6P6lkyWDBplaDB9gI5cPvcRIZDs1HeAHhAlHR/jBxw==
 
-"@aureooms/js-itertools@5.0.2":
-  version "5.0.2"
-  resolved "https://registry.yarnpkg.com/@aureooms/js-itertools/-/js-itertools-5.0.2.tgz#d3da95e219e069aed4483cc9dcd7e73970ce83db"
-  integrity sha512-FXCeJh0qRUdo2pJyEruN5rOQcelTZpfoC0e0dZPu+kziyhnkeG+LuTYMRBDJnH/XJ4zTGPmKKtahtVeTFG17mA==
+"@aureooms/js-itertools@5.1.0":
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/@aureooms/js-itertools/-/js-itertools-5.1.0.tgz#bb90a237baab78eeaef177376ac762fc43b9d485"
+  integrity sha512-HC5Rl89Vc99lcp2HBtZVYpmr1Esjm4gDyBD4V8ATNB5zBMtJ2+Jd145UsvgIqHPg7z4RbX1G0XNW6pM4rB6Uuw==
   dependencies:
     "@aureooms/js-collections-deque" "^6.0.1"
     "@aureooms/js-error" "^5.0.2"
