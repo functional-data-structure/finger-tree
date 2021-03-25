@@ -92,7 +92,15 @@
   },
   "babel": {
     "presets": [
-      "@babel/preset-env"
+      [
+        "@babel/preset-env",
+        {
+          "targets": [
+            "defaults",
+            "maintained node versions"
+          ]
+        }
+      ]
     ],
     "env": {
       "test": {
