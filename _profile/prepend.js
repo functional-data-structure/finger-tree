@@ -16,9 +16,9 @@ const COUNTER = {
 };
 
 const parser = new ArgumentParser();
-parser.addArgument(['M'], {defaultValue: 1000, nargs: '?'});
-parser.addArgument(['-N'], {defaultValue: 1000});
-const args = parser.parseArgs();
+parser.add_argument('M', {default: 1000, nargs: '?'});
+parser.add_argument('-N', {default: 1000});
+const args = parser.parse_args();
 const M = args.M;
 const N = args.N;
 
