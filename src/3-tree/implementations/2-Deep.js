@@ -1,4 +1,4 @@
-import {Empty} from '.';
+import {Empty} from './index.js';
 import {Tree} from '../base';
 import {
 	_app3,

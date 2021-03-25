@@ -1,5 +1,5 @@
 import {Tree} from '../base';
-import {Empty, Deep} from '.';
+import {Empty, Deep} from './index.js';
 import {cache, Split} from '../../0-core';
 import {One} from '../../1-digit';
 

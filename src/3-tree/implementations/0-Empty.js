@@ -1,5 +1,5 @@
 import {Tree} from '../base';
-import {Single} from '.';
+import {Single} from './index.js';
 import {_EMPTY} from '../../0-core';
 
 export function Empty(M) {

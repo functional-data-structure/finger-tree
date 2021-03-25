@@ -1,4 +1,4 @@
-import {Lazy} from '.';
+import {Lazy} from './index.js';
 
 /**
  * Wraps a tree-returning function with a tree proxy that will shallow evaluate

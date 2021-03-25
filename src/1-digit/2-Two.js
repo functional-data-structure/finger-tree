@@ -1,4 +1,4 @@
-import {Digit, One, Three} from '.';
+import {Digit, One, Three} from './index.js';
 import {node2, node3} from '../2-node';
 import {Split} from '../0-core';
 
