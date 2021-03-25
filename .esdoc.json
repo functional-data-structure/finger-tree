@@ -6,24 +6,6 @@
   "package": "./package.json",
   "plugins": [
     {
-      "name": "esdoc-inject-script-plugin",
-      "option": {
-        "enable": true,
-        "scripts": [
-          "./doc/scripts/header.js"
-        ]
-      }
-    },
-    {
-      "name": "esdoc-inject-style-plugin",
-      "option": {
-        "enable": true,
-        "styles": [
-          "./doc/css/style.css"
-        ]
-      }
-    },
-    {
       "name": "esdoc-standard-plugin",
       "option": {
         "accessor": {
@@ -50,6 +32,24 @@
             "./doc/manual/optimization.md"
           ]
         }
+      }
+    },
+    {
+      "name": "esdoc-inject-style-plugin",
+      "option": {
+        "enable": true,
+        "styles": [
+          "./doc/css/style.css"
+        ]
+      }
+    },
+    {
+      "name": "esdoc-inject-script-plugin",
+      "option": {
+        "enable": true,
+        "scripts": [
+          "./doc/scripts/header.js"
+        ]
       }
     }
   ]
