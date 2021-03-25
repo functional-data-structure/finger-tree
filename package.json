@@ -191,10 +191,6 @@
   },
   "xo": {
     "prettier": true,
-    "ignores": [
-      "lib",
-      "doc"
-    ],
     "plugins": [
       "unicorn"
     ],
