@@ -15,7 +15,7 @@ Single.prototype.measure = function () {
 	return this.v;
 };
 
-Single.prototype.empty = function () {
+Single.prototype.isEmpty = function () {
 	return false;
 };
 

@@ -65,14 +65,14 @@ test('FingerTree', (t) => {
 		.concat(V4)
 		.concat(EMPTY);
 
-	t.true(EMPTY.empty());
-	t.true(!V.empty());
-	t.true(V1.tail().empty());
-	t.true(V1.init().empty());
-	t.true(V4.tail().empty());
-	t.true(V4.init().empty());
-	t.true(EMPTY.tail().empty());
-	t.true(EMPTY.init().empty());
+	t.true(EMPTY.isEmpty());
+	t.true(!V.isEmpty());
+	t.true(V1.tail().isEmpty());
+	t.true(V1.init().isEmpty());
+	t.true(V4.tail().isEmpty());
+	t.true(V4.init().isEmpty());
+	t.true(EMPTY.tail().isEmpty());
+	t.true(EMPTY.init().isEmpty());
 	t.is(V.measure(), M);
 	t.is(V.head(), 0);
 	t.is(V.last(), M - 1);

@@ -41,7 +41,7 @@ Parent is [@aureooms/js-persistent](https://github.com/aureooms/js-persistent).
     * [`from(Measure, Iterable) -> Tree`](#frommeasure-iterable---tree)
   * [:question: Predicates](#question-predicates)
     * [`Tree#measure() -> m`](#treemeasure---m)
-    * [`Tree#empty() -> Boolean`](#treeempty---boolean)
+    * [`Tree#isEmpty() -> Boolean`](#treeisempty---boolean)
   * [:salt: Add values](#salt-add-values)
     * [`Tree#push(x) -> Tree`](#treepushx---tree)
     * [`Tree#cons(x) -> Tree`](#treeconsx---tree)
@@ -161,12 +161,12 @@ Returns the measure of the tree.
 if ( tree.measure() > 1 ) ...
 ```
 
-#### `Tree#empty() -> Boolean`
+#### `Tree#isEmpty() -> Boolean`
 
 Returns `true` if the tree is empty, `false` otherwise.
 
 ```js
-return tree.empty() ? 'empty' : 'not empty' ;
+return tree.isEmpty() ? 'empty' : 'not empty' ;
 ```
 
 
@@ -228,7 +228,7 @@ let last = tree.last() ; // 'b'
 Returns a new tree without the right-most value.
 
 ```js
-while ( ! tree.empty() ) tree = tree.init() ;
+while ( ! tree.isEmpty() ) tree = tree.init() ;
 ```
 
 #### `Tree#tail() -> Tree`
@@ -236,7 +236,7 @@ while ( ! tree.empty() ) tree = tree.init() ;
 Returns a new tree without the left-most value.
 
 ```js
-while ( ! tree.empty() ) tree = tree.tail() ;
+while ( ! tree.isEmpty() ) tree = tree.tail() ;
 ```
 
 

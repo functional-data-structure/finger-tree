@@ -13,7 +13,7 @@ Empty.prototype.measure = function () {
 	return this.v;
 };
 
-Empty.prototype.empty = function () {
+Empty.prototype.isEmpty = function () {
 	return true;
 };
 

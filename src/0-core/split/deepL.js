@@ -10,7 +10,7 @@ import {_from_digit, _digit} from '../_fast/index.js';
  */
 export function deepL(M, left, middle, right) {
 	if (left.length === 0) {
-		if (middle.empty()) return _from_digit(M, right);
+		if (middle.isEmpty()) return _from_digit(M, right);
 
 		return new Deep(
 			M,

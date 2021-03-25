@@ -16,8 +16,8 @@ Lazy.prototype.force = function () {
 	return this.tree;
 };
 
-Lazy.prototype.empty = function () {
-	return this.force().empty();
+Lazy.prototype.isEmpty = function () {
+	return this.force().isEmpty();
 };
 
 Lazy.prototype.measure = function () {

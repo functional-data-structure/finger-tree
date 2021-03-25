@@ -38,7 +38,7 @@ Deep.prototype.measure = function () {
 	return this.v;
 };
 
-Deep.prototype.empty = function () {
+Deep.prototype.isEmpty = function () {
 	return false;
 };
 
@@ -52,7 +52,7 @@ Deep.prototype.last = function () {
 
 Deep.prototype.tail = function () {
 	if (this.left instanceof One) {
-		if (this.middle.empty()) {
+		if (this.middle.isEmpty()) {
 			return _from_digit(this.M, this.right);
 		}
 
@@ -69,7 +69,7 @@ Deep.prototype.tail = function () {
 
 Deep.prototype.init = function () {
 	if (this.right instanceof One) {
-		if (this.middle.empty()) {
+		if (this.middle.isEmpty()) {
 			return _from_digit(this.M, this.left);
 		}
 
