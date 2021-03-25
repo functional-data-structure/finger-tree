@@ -154,7 +154,8 @@
           ]
         ],
         "sourceMaps": "inline"
-      }
+      },
+      "debug": {}
     }
   },
   "xo": {
