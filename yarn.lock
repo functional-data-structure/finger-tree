@@ -22,10 +22,10 @@
     "@aureooms/js-collections-deque" "^6.0.1"
     "@aureooms/js-error" "^5.0.2"
 
-"@aureooms/js-measure@2.0.0":
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/@aureooms/js-measure/-/js-measure-2.0.0.tgz#6bb5d377da4914fe774818dc1a2a3f7e983e7b79"
-  integrity sha512-/K1THGg8yQz9bQNBuELGzLTV0ApFYczHp9AD2xznFiQotMI1vG4ScqBNVJAYRbyA06oSQYEoMqtQwtSCVPdfJA==
+"@aureooms/js-measure@2.0.1":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@aureooms/js-measure/-/js-measure-2.0.1.tgz#bd346a93bd2d4a07aa396e73e1ebc38f397aa73e"
+  integrity sha512-Uq/m32HDHDydX2Pi9a+wfS22rIdn8C3xY8RrH9HQ3pOqcKty5dNFO323b9H3edyCnS64rMCo1IvWA0fno3FRUQ==
 
 "@aureooms/js-predicate@3.0.1":
   version "3.0.1"
