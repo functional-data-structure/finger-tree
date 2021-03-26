@@ -15,7 +15,7 @@ Parent is [@aureooms/js-persistent](https://github.com/aureooms/js-persistent).
 
 [![License](https://img.shields.io/github/license/aureooms/js-fingertree.svg)](https://raw.githubusercontent.com/aureooms/js-fingertree/main/LICENSE)
 [![Version](https://img.shields.io/npm/v/@aureooms/js-fingertree.svg)](https://www.npmjs.org/package/@aureooms/js-fingertree)
-[![Build](https://img.shields.io/travis/aureooms/js-fingertree/main.svg)](https://travis-ci.com/aureooms/js-fingertree/branches)
+[![Tests](https://img.shields.io/github/workflow/status/aureooms/js-fingertree/ci:test?event=push&label=tests)](https://github.com/aureooms/js-fingertree/actions/workflows/ci:test.yml?query=branch:main)
 [![Dependencies](https://img.shields.io/david/aureooms/js-fingertree.svg)](https://david-dm.org/aureooms/js-fingertree)
 [![Dev dependencies](https://img.shields.io/david/dev/aureooms/js-fingertree.svg)](https://david-dm.org/aureooms/js-fingertree?type=dev)
 [![GitHub issues](https://img.shields.io/github/issues/aureooms/js-fingertree.svg)](https://github.com/aureooms/js-fingertree/issues)

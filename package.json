@@ -44,6 +44,7 @@
     "build": "NODE_ENV=production microbundle",
     "build-docs": "esdoc",
     "build-gh-pages": "npm run build-docs",
+    "ci:test": "npm run lint-config && npm run lint && npm run cover",
     "commit-msg": "commitlint --edit",
     "cover": "c8 --all --src src --reporter=lcov npm test",
     "debug": "NODE_ENV=debug npm run test -- -st --fail-fast",
@@ -59,8 +60,7 @@
     "prepare": "npm run build",
     "prepublishOnly": "pinst --disable",
     "release": "np --message ':hatching_chick: release: Bumping to v%s.'",
-    "test": "ava",
-    "travis": "npm run lint-config && npm run lint && npm run cover"
+    "test": "ava"
   },
   "dependencies": {},
   "devDependencies": {
