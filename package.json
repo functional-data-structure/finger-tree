@@ -90,7 +90,7 @@
     "lint-staged": "10.5.4",
     "microbundle": "0.13.0",
     "microtime": "3.0.0",
-    "np": "7.4.0",
+    "np": "7.5.0",
     "pinst": "2.1.6",
     "power-assert": "1.6.1",
     "regenerator-runtime": "0.13.7",
