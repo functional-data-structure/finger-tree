@@ -2,29 +2,29 @@
 ==
 
 <p align="center">
-<img src="https://cdn.rawgit.com/aureooms/js-fingertree/main/media/sketch.svg" width="400">
+<img src="https://cdn.rawgit.com/make-github-pseudonymous-again/js-fingertree/main/media/sketch.svg" width="400">
 </p>
 
 Finger trees for JavaScript.
 See [docs](https://make-github-pseudonymous-again.github.io/js-fingertree).
-Parent is [@aureooms/js-persistent](https://github.com/aureooms/js-persistent).
+Parent is [@aureooms/js-persistent](https://github.com/make-github-pseudonymous-again/js-persistent).
 
     data FingerTree x = Empty
                       | Single x
                       | Deep ( Digit x ) ( FingerTree ( Node x ) ) ( Digit x )
 
-[![License](https://img.shields.io/github/license/aureooms/js-fingertree.svg)](https://raw.githubusercontent.com/aureooms/js-fingertree/main/LICENSE)
+[![License](https://img.shields.io/github/license/make-github-pseudonymous-again/js-fingertree.svg)](https://raw.githubusercontent.com/make-github-pseudonymous-again/js-fingertree/main/LICENSE)
 [![Version](https://img.shields.io/npm/v/@aureooms/js-fingertree.svg)](https://www.npmjs.org/package/@aureooms/js-fingertree)
-[![Tests](https://img.shields.io/github/workflow/status/aureooms/js-fingertree/ci:test?event=push&label=tests)](https://github.com/aureooms/js-fingertree/actions/workflows/ci:test.yml?query=branch:main)
-[![Dependencies](https://img.shields.io/david/aureooms/js-fingertree.svg)](https://david-dm.org/aureooms/js-fingertree)
-[![Dev dependencies](https://img.shields.io/david/dev/aureooms/js-fingertree.svg)](https://david-dm.org/aureooms/js-fingertree?type=dev)
-[![GitHub issues](https://img.shields.io/github/issues/aureooms/js-fingertree.svg)](https://github.com/aureooms/js-fingertree/issues)
+[![Tests](https://img.shields.io/github/workflow/status/make-github-pseudonymous-again/js-fingertree/ci:test?event=push&label=tests)](https://github.com/make-github-pseudonymous-again/js-fingertree/actions/workflows/ci:test.yml?query=branch:main)
+[![Dependencies](https://img.shields.io/david/make-github-pseudonymous-again/js-fingertree.svg)](https://david-dm.org/make-github-pseudonymous-again/js-fingertree)
+[![Dev dependencies](https://img.shields.io/david/dev/make-github-pseudonymous-again/js-fingertree.svg)](https://david-dm.org/make-github-pseudonymous-again/js-fingertree?type=dev)
+[![GitHub issues](https://img.shields.io/github/issues/make-github-pseudonymous-again/js-fingertree.svg)](https://github.com/make-github-pseudonymous-again/js-fingertree/issues)
 [![Downloads](https://img.shields.io/npm/dm/@aureooms/js-fingertree.svg)](https://www.npmjs.org/package/@aureooms/js-fingertree)
 
-[![Code issues](https://img.shields.io/codeclimate/issues/aureooms/js-fingertree.svg)](https://codeclimate.com/github/aureooms/js-fingertree/issues)
-[![Code maintainability](https://img.shields.io/codeclimate/maintainability/aureooms/js-fingertree.svg)](https://codeclimate.com/github/aureooms/js-fingertree/trends/churn)
-[![Code coverage (cov)](https://img.shields.io/codecov/c/gh/aureooms/js-fingertree/main.svg)](https://codecov.io/gh/aureooms/js-fingertree)
-[![Code technical debt](https://img.shields.io/codeclimate/tech-debt/aureooms/js-fingertree.svg)](https://codeclimate.com/github/aureooms/js-fingertree/trends/technical_debt)
+[![Code issues](https://img.shields.io/codeclimate/issues/make-github-pseudonymous-again/js-fingertree.svg)](https://codeclimate.com/github/make-github-pseudonymous-again/js-fingertree/issues)
+[![Code maintainability](https://img.shields.io/codeclimate/maintainability/make-github-pseudonymous-again/js-fingertree.svg)](https://codeclimate.com/github/make-github-pseudonymous-again/js-fingertree/trends/churn)
+[![Code coverage (cov)](https://img.shields.io/codecov/c/gh/make-github-pseudonymous-again/js-fingertree/main.svg)](https://codecov.io/gh/make-github-pseudonymous-again/js-fingertree)
+[![Code technical debt](https://img.shields.io/codeclimate/tech-debt/make-github-pseudonymous-again/js-fingertree.svg)](https://codeclimate.com/github/make-github-pseudonymous-again/js-fingertree/trends/technical_debt)
 [![Documentation](https://make-github-pseudonymous-again.github.io/js-fingertree/badge.svg)](https://make-github-pseudonymous-again.github.io/js-fingertree/source.html)
 [![Package size](https://img.shields.io/bundlephobia/minzip/@aureooms/js-fingertree)](https://bundlephobia.com/result?p=@aureooms/js-fingertree)
 
@@ -73,7 +73,7 @@ The data structure is
 [fully persistent](https://en.wikipedia.org/wiki/Persistent_data_structure#Fully_persistent):
 All methods are pure functions that do not modify their object. 
 
-> The [parent project](https://github.com/aureooms/js-persistent) shows how
+> The [parent project](https://github.com/make-github-pseudonymous-again/js-persistent) shows how
 > specialized persistent data structures can be build on top of those methods.
 
 
@@ -107,7 +107,7 @@ const counter = {
 See also
 [@aureooms/js-measure](https://make-github-pseudonymous-again.github.io/js-measure/file/src/1-api/1-Measures.js.html)
 for more examples of measures and see
-[@aureooms/js-persistent](https://github.com/aureooms/js-persistent)
+[@aureooms/js-persistent](https://github.com/make-github-pseudonymous-again/js-persistent)
 for examples of data structures that can be build on top of this abstraction.
 
 

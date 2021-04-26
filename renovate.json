@@ -1,5 +1,5 @@
 {
   "extends": [
-    "github>aureooms/renovate-config-js-library"
+    "github>make-github-pseudonymous-again/renovate-config-js-library"
   ]
 }
