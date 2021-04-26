@@ -217,18 +217,18 @@ However, looking at the profiler output you will see:
 
 ```sh
 $ node-tick-processor isolate-0x2af4cf0-v8.log | grep '3:24'
-    146    2.3%    2.4%  LazyCompile: *get /home/aureooms/sandbox/js-fingertree/js/dist/fingertree.js:3:24
-    278  100.0%          LazyCompile: *get /home/aureooms/sandbox/js-fingertree/js/dist/fingertree.js:3:24
-      6  100.0%            LazyCompile: *get /home/aureooms/sandbox/js-fingertree/js/dist/fingertree.js:3:24
-    165  100.0%          LazyCompile: *get /home/aureooms/sandbox/js-fingertree/js/dist/fingertree.js:3:24
-     97   99.0%        LazyCompile: *get /home/aureooms/sandbox/js-fingertree/js/dist/fingertree.js:3:24
-    127   98.4%          LazyCompile: *get /home/aureooms/sandbox/js-fingertree/js/dist/fingertree.js:3:24
-    163  100.0%          LazyCompile: *get /home/aureooms/sandbox/js-fingertree/js/dist/fingertree.js:3:24
-    146    2.3%  LazyCompile: *get /home/aureooms/sandbox/js-fingertree/js/dist/fingertree.js:3:24
-    138  100.0%          LazyCompile: *get /home/aureooms/sandbox/js-fingertree/js/dist/fingertree.js:3:24
-     58  100.0%          LazyCompile: *get /home/aureooms/sandbox/js-fingertree/js/dist/fingertree.js:3:24
-    129  100.0%      LazyCompile: *get /home/aureooms/sandbox/js-fingertree/js/dist/fingertree.js:3:24
-      3    2.3%    LazyCompile: *get /home/aureooms/sandbox/js-fingertree/js/dist/fingertree.js:3:24
+    146    2.3%    2.4%  LazyCompile: *get ~/sandbox/js-fingertree/js/dist/fingertree.js:3:24
+    278  100.0%          LazyCompile: *get ~/sandbox/js-fingertree/js/dist/fingertree.js:3:24
+      6  100.0%            LazyCompile: *get ~/sandbox/js-fingertree/js/dist/fingertree.js:3:24
+    165  100.0%          LazyCompile: *get ~/sandbox/js-fingertree/js/dist/fingertree.js:3:24
+     97   99.0%        LazyCompile: *get ~/sandbox/js-fingertree/js/dist/fingertree.js:3:24
+    127   98.4%          LazyCompile: *get ~/sandbox/js-fingertree/js/dist/fingertree.js:3:24
+    163  100.0%          LazyCompile: *get ~/sandbox/js-fingertree/js/dist/fingertree.js:3:24
+    146    2.3%  LazyCompile: *get ~/sandbox/js-fingertree/js/dist/fingertree.js:3:24
+    138  100.0%          LazyCompile: *get ~/sandbox/js-fingertree/js/dist/fingertree.js:3:24
+     58  100.0%          LazyCompile: *get ~/sandbox/js-fingertree/js/dist/fingertree.js:3:24
+    129  100.0%      LazyCompile: *get ~/sandbox/js-fingertree/js/dist/fingertree.js:3:24
+      3    2.3%    LazyCompile: *get ~/sandbox/js-fingertree/js/dist/fingertree.js:3:24
 ```
 
 I didn't analyze much but it has to do with the way classes are handled by
