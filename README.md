@@ -1,4 +1,4 @@
-:cactus: [@aureooms/js-fingertree](https://aureooms.github.io/js-fingertree)
+:cactus: [@aureooms/js-fingertree](https://make-github-pseudonymous-again.github.io/js-fingertree)
 ==
 
 <p align="center">
@@ -6,7 +6,7 @@
 </p>
 
 Finger trees for JavaScript.
-See [docs](https://aureooms.github.io/js-fingertree).
+See [docs](https://make-github-pseudonymous-again.github.io/js-fingertree).
 Parent is [@aureooms/js-persistent](https://github.com/aureooms/js-persistent).
 
     data FingerTree x = Empty
@@ -25,7 +25,7 @@ Parent is [@aureooms/js-persistent](https://github.com/aureooms/js-persistent).
 [![Code maintainability](https://img.shields.io/codeclimate/maintainability/aureooms/js-fingertree.svg)](https://codeclimate.com/github/aureooms/js-fingertree/trends/churn)
 [![Code coverage (cov)](https://img.shields.io/codecov/c/gh/aureooms/js-fingertree/main.svg)](https://codecov.io/gh/aureooms/js-fingertree)
 [![Code technical debt](https://img.shields.io/codeclimate/tech-debt/aureooms/js-fingertree.svg)](https://codeclimate.com/github/aureooms/js-fingertree/trends/technical_debt)
-[![Documentation](https://aureooms.github.io/js-fingertree/badge.svg)](https://aureooms.github.io/js-fingertree/source.html)
+[![Documentation](https://make-github-pseudonymous-again.github.io/js-fingertree/badge.svg)](https://make-github-pseudonymous-again.github.io/js-fingertree/source.html)
 [![Package size](https://img.shields.io/bundlephobia/minzip/@aureooms/js-fingertree)](https://bundlephobia.com/result?p=@aureooms/js-fingertree)
 
 
@@ -105,7 +105,7 @@ const counter = {
 ```
 
 See also
-[@aureooms/js-measure](https://aureooms.github.io/js-measure/file/src/1-api/1-Measures.js.html)
+[@aureooms/js-measure](https://make-github-pseudonymous-again.github.io/js-measure/file/src/1-api/1-Measures.js.html)
 for more examples of measures and see
 [@aureooms/js-persistent](https://github.com/aureooms/js-persistent)
 for examples of data structures that can be build on top of this abstraction.
