@@ -75,7 +75,7 @@
     "argparse": "2.0.1",
     "ava": "3.15.0",
     "babel-plugin-transform-remove-console": "6.9.4",
-    "babel-plugin-unassert": "3.0.1",
+    "babel-plugin-unassert": "3.1.0",
     "babel-preset-power-assert": "3.0.0",
     "benchmark": "2.1.4",
     "c8": "7.7.2",

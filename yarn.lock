@@ -2325,10 +2325,10 @@ babel-plugin-transform-replace-expressions@^0.2.0:
   dependencies:
     "@babel/parser" "^7.3.3"
 
-babel-plugin-unassert@3.0.1:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/babel-plugin-unassert/-/babel-plugin-unassert-3.0.1.tgz#cba17c38249a0bb26a72eb3793e0b24e29fcb7cd"
-  integrity sha512-dJvXKECYExv+GGieSm6jNe1H+HRa6hH/qPZWOoUfAN+cO6GbnC9fCbwHeJs0XZ2UqcEtJLpJCMs8q0pUEMI0fw==
+babel-plugin-unassert@3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/babel-plugin-unassert/-/babel-plugin-unassert-3.1.0.tgz#e87b02117bb3e223c3a0e00d270dcade19c9437d"
+  integrity sha512-T9RY/981s2OA3EIF6q+V8Y6l27DNyo8dEBtCsi9vKRC4PGmTzU0dAG+yROGWpq4RVPgE74omcbuef3xDrQwwsg==
 
 babel-preset-power-assert@3.0.0:
   version "3.0.0"
