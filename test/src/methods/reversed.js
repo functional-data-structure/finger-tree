@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import {Measures} from '@aureooms/js-measure';
+import {Measures} from '@functional-abstraction/measure';
 
 import {list} from '@iterable-iterator/list';
 import {range} from '@iterable-iterator/range';

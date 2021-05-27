@@ -105,7 +105,7 @@ const counter = {
 ```
 
 See also
-[@aureooms/js-measure](https://make-github-pseudonymous-again.github.io/js-measure/file/src/1-api/1-Measures.js.html)
+[@functional-abstraction/measure](https://functional-abstraction.github.io/measure/file/src/1-api/1-Measures.js.html)
 for more examples of measures and see
 [@aureooms/js-persistent](https://github.com/make-github-pseudonymous-again/js-persistent)
 for examples of data structures that can be build on top of this abstraction.

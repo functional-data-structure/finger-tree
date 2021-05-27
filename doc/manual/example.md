@@ -1,7 +1,7 @@
 # Example
 
 ```js
-import { Measures } from '@aureooms/js-measure' ;
+import { Measures } from '@functional-abstraction/measure' ;
 import { gt } from '@functional-abstraction/predicate' ;
 
 const { COUNTER } = Measures ;

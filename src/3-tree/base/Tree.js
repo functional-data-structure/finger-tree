@@ -26,7 +26,7 @@ Tree.prototype.force = function () {
  * @example
  * // returns 'ab'
  * import { from } from '@functional-data-structure/finger-tree' ;
- * import { Measures : { SIZE } } from '@aureooms/js-measure' ;
+ * import { Measures : { SIZE } } from '@functional-abstraction/measure' ;
  * let tree = from( SIZE , 'abc' ) ;
  * tree = tree.takeUntil( measure => measure > 2 ) ;
  * [ ...tree ].join('') ;
@@ -48,7 +48,7 @@ Tree.prototype.takeUntil = function (predicate) {
  * @example
  * // returns 'c'
  * import { from } from '@functional-data-structure/finger-tree' ;
- * import { Measures : { SIZE } } from '@aureooms/js-measure' ;
+ * import { Measures : { SIZE } } from '@functional-abstraction/measure' ;
  * let tree = from( SIZE , 'abc' ) ;
  * tree = tree.dropUntil( measure => measure > 2 ) ;
  * [ ...tree ].join('') ;
@@ -68,7 +68,7 @@ Tree.prototype.dropUntil = function (predicate) {
  * @example
  * // returns 'abc123'
  * import { from } from '@functional-data-structure/finger-tree' ;
- * import { Measures : { SIZE } } from '@aureooms/js-measure' ;
+ * import { Measures : { SIZE } } from '@functional-abstraction/measure' ;
  * let tree = from( SIZE , 'abc' ).append('123') ;
  * [ ...tree ].join('') ;
  *
@@ -87,7 +87,7 @@ Tree.prototype.append = function (iterable) {
  * @example
  * // returns '123abc'
  * import { from } from '@functional-data-structure/finger-tree' ;
- * import { Measures : { SIZE } } from '@aureooms/js-measure' ;
+ * import { Measures : { SIZE } } from '@functional-abstraction/measure' ;
  * let tree = from( SIZE , 'abc' ).prepend('123') ;
  * [ ...tree ].join('') ;
  *
