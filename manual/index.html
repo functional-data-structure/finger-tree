@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <base data-ice="baseUrl" href="../">
-  <title data-ice="title">Manual | @aureooms/js-fingertree</title>
+  <title data-ice="title">Manual | @functional-data-structure/finger-tree</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
   <script src="script/manual.js"></script>
-<link rel="stylesheet" href="./inject/css/0-style.css"><script src="./inject/script/0-header.js"></script><meta name="description" content="Finger Trees for JavaScript"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="@aureooms/js-fingertree"><meta property="twitter:description" content="Finger Trees for JavaScript"></head>
+<link rel="stylesheet" href="./inject/css/0-style.css"><script src="./inject/script/0-header.js"></script><meta name="description" content="Finger Trees for JavaScript"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="@functional-data-structure/finger-tree"><meta property="twitter:description" content="Finger Trees for JavaScript"></head>
 <body class="layout-container manual-root manual-index" data-ice="rootContainer">
 
 <header>
@@ -24,7 +24,7 @@
   </span>
     <ul class="search-result"></ul>
   </div>
-<a style="position:relative; top:3px;" href="https://github.com/aureooms/js-fingertree"><img width="20px" src="./image/github.png"></a></header>
+<a style="position:relative; top:3px;" href="https://github.com/functional-data-structure/finger-tree"><img width="20px" src="./image/github.png"></a></header>
 
 <nav class="navigation" data-ice="nav"><div class="manual-toc-root">
   
@@ -88,8 +88,8 @@
       <div class="manual-card">
         <div data-ice="card"><h1>Installation</h1><p>Can be managed using
 <a href="http://jspm.io">jspm</a>
-or <a href="https://github.com/npm/npm">npm</a>.</p><h3>jspm</h3><pre><code class="lang-terminal"><code class="source-code prettyprint">jspm install npm:@aureooms/js-fingertree</code>
-</code></pre><h3>npm</h3><pre><code class="lang-terminal"><code class="source-code prettyprint">npm install @aureooms/js-fingertree --save</code>
+or <a href="https://github.com/npm/npm">npm</a>.</p><h3>jspm</h3><pre><code class="lang-terminal"><code class="source-code prettyprint">jspm install npm:@functional-data-structure/finger-tree</code>
+</code></pre><h3>npm</h3><pre><code class="lang-terminal"><code class="source-code prettyprint">npm install @functional-data-structure/finger-tree --save</code>
 </code></pre></div>
         <a data-ice="link" href="manual/installation.html"></a>
       </div>
@@ -102,21 +102,21 @@ or <a href="https://github.com/npm/npm">npm</a>.</p><h3>jspm</h3><pre><code clas
 </blockquote><p>First, require the polyfill at the entry point of your application</p><pre><code class="lang-js"><code class="source-code prettyprint">require( &apos;regenerator-runtime/runtime&apos; );
 // or
 import &apos;regenerator-runtime/runtime.js&apos; ;</code>
-</code></pre><p>Then</p><pre><code class="lang-js"><code class="source-code prettyprint">const fingertree = require( &apos;@aureooms/js-fingertree&apos; ) ;
+</code></pre><p>Then</p><pre><code class="lang-js"><code class="source-code prettyprint">const fingertree = require( &apos;@functional-data-structure/finger-tree&apos; ) ;
 // or
-import fingertree from &apos;@aureooms/js-fingertree&apos; ;</code>
+import fingertree from &apos;@functional-data-structure/finger-tree&apos; ;</code>
 </code></pre></div>
         <a data-ice="link" href="manual/usage.html"></a>
       </div>
     </div>
 <div class="manual-card-wrap" data-ice="cards">
       <div class="manual-card">
-        <div data-ice="card"><h1>Example</h1><pre><code class="lang-js"><code class="source-code prettyprint">import { Measures } from &apos;@aureooms/js-measure&apos; ;
-import { gt } from &apos;@aureooms/js-predicate&apos; ;
+        <div data-ice="card"><h1>Example</h1><pre><code class="lang-js"><code class="source-code prettyprint">import { Measures } from &apos;@functional-abstraction/measure&apos; ;
+import { gt } from &apos;@functional-abstraction/predicate&apos; ;
 
 const { COUNTER } = Measures ;
 
-import { empty , from } from &apos;@aureooms/js-fingertree&apos; ;
+import { empty , from } from &apos;@functional-data-structure/finger-tree&apos; ;
 
 let t = from( COUNTER , &apos;abc&apos; ) ;
 // OR
@@ -272,18 +272,18 @@ init: 408ms</code>
 <p>295011e3293b3dd2fe1edc80bdf1a14ca6d4dcca</p>
 </blockquote><p>This is a big one. I started writing this library with es6 syntax in mind.
 However, looking at the profiler output you will see:</p><pre><code class="lang-sh"><code class="source-code prettyprint">$ node-tick-processor isolate-0x2af4cf0-v8.log | grep &apos;3:24&apos;
-    146    2.3%    2.4%  LazyCompile: *get /home/aureooms/sandbox/js-fingertree/js/dist/fingertree.js:3:24
-    278  100.0%          LazyCompile: *get /home/aureooms/sandbox/js-fingertree/js/dist/fingertree.js:3:24
-      6  100.0%            LazyCompile: *get /home/aureooms/sandbox/js-fingertree/js/dist/fingertree.js:3:24
-    165  100.0%          LazyCompile: *get /home/aureooms/sandbox/js-fingertree/js/dist/fingertree.js:3:24
-     97   99.0%        LazyCompile: *get /home/aureooms/sandbox/js-fingertree/js/dist/fingertree.js:3:24
-    127   98.4%          LazyCompile: *get /home/aureooms/sandbox/js-fingertree/js/dist/fingertree.js:3:24
-    163  100.0%          LazyCompile: *get /home/aureooms/sandbox/js-fingertree/js/dist/fingertree.js:3:24
-    146    2.3%  LazyCompile: *get /home/aureooms/sandbox/js-fingertree/js/dist/fingertree.js:3:24
-    138  100.0%          LazyCompile: *get /home/aureooms/sandbox/js-fingertree/js/dist/fingertree.js:3:24
-     58  100.0%          LazyCompile: *get /home/aureooms/sandbox/js-fingertree/js/dist/fingertree.js:3:24
-    129  100.0%      LazyCompile: *get /home/aureooms/sandbox/js-fingertree/js/dist/fingertree.js:3:24
-      3    2.3%    LazyCompile: *get /home/aureooms/sandbox/js-fingertree/js/dist/fingertree.js:3:24</code>
+    146    2.3%    2.4%  LazyCompile: *get ~/sandbox/finger-tree/js/dist/fingertree.js:3:24
+    278  100.0%          LazyCompile: *get ~/sandbox/finger-tree/js/dist/fingertree.js:3:24
+      6  100.0%            LazyCompile: *get ~/sandbox/finger-tree/js/dist/fingertree.js:3:24
+    165  100.0%          LazyCompile: *get ~/sandbox/finger-tree/js/dist/fingertree.js:3:24
+     97   99.0%        LazyCompile: *get ~/sandbox/finger-tree/js/dist/fingertree.js:3:24
+    127   98.4%          LazyCompile: *get ~/sandbox/finger-tree/js/dist/fingertree.js:3:24
+    163  100.0%          LazyCompile: *get ~/sandbox/finger-tree/js/dist/fingertree.js:3:24
+    146    2.3%  LazyCompile: *get ~/sandbox/finger-tree/js/dist/fingertree.js:3:24
+    138  100.0%          LazyCompile: *get ~/sandbox/finger-tree/js/dist/fingertree.js:3:24
+     58  100.0%          LazyCompile: *get ~/sandbox/finger-tree/js/dist/fingertree.js:3:24
+    129  100.0%      LazyCompile: *get ~/sandbox/finger-tree/js/dist/fingertree.js:3:24
+      3    2.3%    LazyCompile: *get ~/sandbox/finger-tree/js/dist/fingertree.js:3:24</code>
 </code></pre><p>I didn&apos;t analyze much but it has to do with the way classes are handled by
 babel.</p><p>Ok so I just threw the es6 classes and replaced them with plain old prototypes.
 Hereunder are the new running times:</p><pre><code class="lang-sh"><code class="source-code prettyprint">$ node benchmark/tree.js

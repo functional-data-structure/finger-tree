@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <base data-ice="baseUrl" href="../../../../">
-  <title data-ice="title">src/0-core/_fast/_from_small_list.js | @aureooms/js-fingertree</title>
+  <title data-ice="title">src/0-core/_fast/_from_small_list.js | @functional-data-structure/finger-tree</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
   <script src="script/manual.js"></script>
-<link rel="stylesheet" href="./inject/css/0-style.css"><script src="./inject/script/0-header.js"></script><meta name="description" content="Finger Trees for JavaScript"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="@aureooms/js-fingertree"><meta property="twitter:description" content="Finger Trees for JavaScript"></head>
+<link rel="stylesheet" href="./inject/css/0-style.css"><script src="./inject/script/0-header.js"></script><meta name="description" content="Finger Trees for JavaScript"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="@functional-data-structure/finger-tree"><meta property="twitter:description" content="Finger Trees for JavaScript"></head>
 <body class="layout-container" data-ice="rootContainer">
 
 <header>
@@ -24,7 +24,7 @@
   </span>
     <ul class="search-result"></ul>
   </div>
-<a style="position:relative; top:3px;" href="https://github.com/aureooms/js-fingertree"><img width="20px" src="./image/github.png"></a></header>
+<a style="position:relative; top:3px;" href="https://github.com/functional-data-structure/finger-tree"><img width="20px" src="./image/github.png"></a></header>
 
 <nav class="navigation" data-ice="nav"><div>
   <ul>
@@ -70,11 +70,10 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/0-core/_fast/_from_small_list.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import {Empty, Single, Deep} from &apos;../../3-tree/index.js&apos;;
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import assert from &apos;assert&apos;;
+import {Empty, Single, Deep} from &apos;../../3-tree/index.js&apos;;
 import {One, Two} from &apos;../../1-digit/index.js&apos;;
 import {cache} from &apos;../measure/index.js&apos;;
-
-import assert from &apos;assert&apos;;
 
 export function _from_small_list(M, list) {
 	assert(Number.isInteger(list.length) &amp;&amp; list.length &gt;= 0 &amp;&amp; list.length &lt;= 3);

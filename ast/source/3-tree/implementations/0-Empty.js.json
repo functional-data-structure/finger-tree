@@ -117,7 +117,7 @@
       {
         "type": "ImportDeclaration",
         "start": 39,
-        "end": 73,
+        "end": 84,
         "loc": {
           "start": {
             "line": 2,
@@ -125,7 +125,7 @@
           },
           "end": {
             "line": 2,
-            "column": 34
+            "column": 45
           }
         },
         "specifiers": [
@@ -156,9 +156,9 @@
                   "line": 2,
                   "column": 14
                 },
-                "identifierName": "Single"
+                "identifierName": "_EMPTY"
               },
-              "name": "Single"
+              "name": "_EMPTY"
             },
             "local": {
               "type": "Identifier",
@@ -173,16 +173,16 @@
                   "line": 2,
                   "column": 14
                 },
-                "identifierName": "Single"
+                "identifierName": "_EMPTY"
               },
-              "name": "Single"
+              "name": "_EMPTY"
             }
           }
         ],
         "source": {
           "type": "StringLiteral",
           "start": 60,
-          "end": 72,
+          "end": 83,
           "loc": {
             "start": {
               "line": 2,
@@ -190,19 +190,19 @@
             },
             "end": {
               "line": 2,
-              "column": 33
+              "column": 44
             }
           },
           "extra": {
-            "rawValue": "./index.js",
-            "raw": "'./index.js'"
+            "rawValue": "../../0-core/index.js",
+            "raw": "'../../0-core/index.js'"
           },
-          "value": "./index.js"
+          "value": "../../0-core/index.js"
         }
       },
       {
         "type": "ImportDeclaration",
-        "start": 74,
+        "start": 85,
         "end": 119,
         "loc": {
           "start": {
@@ -211,14 +211,14 @@
           },
           "end": {
             "line": 3,
-            "column": 45
+            "column": 34
           }
         },
         "specifiers": [
           {
             "type": "ImportSpecifier",
-            "start": 82,
-            "end": 88,
+            "start": 93,
+            "end": 99,
             "loc": {
               "start": {
                 "line": 3,
@@ -231,8 +231,8 @@
             },
             "imported": {
               "type": "Identifier",
-              "start": 82,
-              "end": 88,
+              "start": 93,
+              "end": 99,
               "loc": {
                 "start": {
                   "line": 3,
@@ -242,14 +242,14 @@
                   "line": 3,
                   "column": 14
                 },
-                "identifierName": "_EMPTY"
+                "identifierName": "Single"
               },
-              "name": "_EMPTY"
+              "name": "Single"
             },
             "local": {
               "type": "Identifier",
-              "start": 82,
-              "end": 88,
+              "start": 93,
+              "end": 99,
               "loc": {
                 "start": {
                   "line": 3,
@@ -259,15 +259,15 @@
                   "line": 3,
                   "column": 14
                 },
-                "identifierName": "_EMPTY"
+                "identifierName": "Single"
               },
-              "name": "_EMPTY"
+              "name": "Single"
             }
           }
         ],
         "source": {
           "type": "StringLiteral",
-          "start": 95,
+          "start": 106,
           "end": 118,
           "loc": {
             "start": {
@@ -276,14 +276,14 @@
             },
             "end": {
               "line": 3,
-              "column": 44
+              "column": 33
             }
           },
           "extra": {
-            "rawValue": "../../0-core/index.js",
-            "raw": "'../../0-core/index.js'"
+            "rawValue": "./index.js",
+            "raw": "'./index.js'"
           },
-          "value": "../../0-core/index.js"
+          "value": "./index.js"
         }
       },
       {
@@ -4113,7 +4113,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "Single",
+      "value": "_EMPTY",
       "start": 47,
       "end": 53,
       "loc": {
@@ -4191,9 +4191,9 @@
         "binop": null,
         "updateContext": null
       },
-      "value": "./index.js",
+      "value": "../../0-core/index.js",
       "start": 60,
-      "end": 72,
+      "end": 83,
       "loc": {
         "start": {
           "line": 2,
@@ -4201,7 +4201,7 @@
         },
         "end": {
           "line": 2,
-          "column": 33
+          "column": 44
         }
       }
     },
@@ -4218,16 +4218,16 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 72,
-      "end": 73,
+      "start": 83,
+      "end": 84,
       "loc": {
         "start": {
           "line": 2,
-          "column": 33
+          "column": 44
         },
         "end": {
           "line": 2,
-          "column": 34
+          "column": 45
         }
       }
     },
@@ -4246,8 +4246,8 @@
         "updateContext": null
       },
       "value": "import",
-      "start": 74,
-      "end": 80,
+      "start": 85,
+      "end": 91,
       "loc": {
         "start": {
           "line": 3,
@@ -4271,8 +4271,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 81,
-      "end": 82,
+      "start": 92,
+      "end": 93,
       "loc": {
         "start": {
           "line": 3,
@@ -4296,9 +4296,9 @@
         "postfix": false,
         "binop": null
       },
-      "value": "_EMPTY",
-      "start": 82,
-      "end": 88,
+      "value": "Single",
+      "start": 93,
+      "end": 99,
       "loc": {
         "start": {
           "line": 3,
@@ -4322,8 +4322,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 88,
-      "end": 89,
+      "start": 99,
+      "end": 100,
       "loc": {
         "start": {
           "line": 3,
@@ -4348,8 +4348,8 @@
         "binop": null
       },
       "value": "from",
-      "start": 90,
-      "end": 94,
+      "start": 101,
+      "end": 105,
       "loc": {
         "start": {
           "line": 3,
@@ -4374,8 +4374,8 @@
         "binop": null,
         "updateContext": null
       },
-      "value": "../../0-core/index.js",
-      "start": 95,
+      "value": "./index.js",
+      "start": 106,
       "end": 118,
       "loc": {
         "start": {
@@ -4384,7 +4384,7 @@
         },
         "end": {
           "line": 3,
-          "column": 44
+          "column": 33
         }
       }
     },
@@ -4406,11 +4406,11 @@
       "loc": {
         "start": {
           "line": 3,
-          "column": 44
+          "column": 33
         },
         "end": {
           "line": 3,
-          "column": 45
+          "column": 34
         }
       }
     },

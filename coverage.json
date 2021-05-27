@@ -40,14 +40,14 @@
       "expectCount": 1,
       "actualCount": 0,
       "undocumentLines": [
-        7
+        6
       ]
     },
     "src/0-core/_fast/_from_small_list.js": {
       "expectCount": 1,
       "actualCount": 0,
       "undocumentLines": [
-        7
+        6
       ]
     },
     "src/0-core/_fast/_prepend.js": {
@@ -156,7 +156,24 @@
       "expectCount": 12,
       "actualCount": 1,
       "undocumentLines": [
-        7,
+        6,
+        13,
+        18,
+        22,
+        26,
+        30,
+        34,
+        38,
+        42,
+        54,
+        63
+      ]
+    },
+    "src/1-digit/2-Two.js": {
+      "expectCount": 12,
+      "actualCount": 1,
+      "undocumentLines": [
+        6,
         14,
         19,
         23,
@@ -165,32 +182,32 @@
         35,
         39,
         43,
-        55,
-        64
-      ]
-    },
-    "src/1-digit/2-Two.js": {
-      "expectCount": 12,
-      "actualCount": 1,
-      "undocumentLines": [
-        7,
-        15,
-        20,
-        24,
-        28,
-        32,
-        36,
-        40,
-        44,
-        60,
-        73
+        59,
+        72
       ]
     },
     "src/1-digit/3-Three.js": {
       "expectCount": 12,
       "actualCount": 1,
       "undocumentLines": [
-        7,
+        6,
+        15,
+        24,
+        28,
+        32,
+        36,
+        40,
+        44,
+        48,
+        64,
+        82
+      ]
+    },
+    "src/1-digit/4-Four.js": {
+      "expectCount": 12,
+      "actualCount": 1,
+      "undocumentLines": [
+        6,
         16,
         25,
         29,
@@ -199,25 +216,8 @@
         41,
         45,
         49,
-        65,
-        83
-      ]
-    },
-    "src/1-digit/4-Four.js": {
-      "expectCount": 12,
-      "actualCount": 1,
-      "undocumentLines": [
-        7,
-        17,
-        26,
-        30,
-        34,
-        38,
-        42,
-        46,
-        50,
-        68,
-        90
+        67,
+        89
       ]
     },
     "src/2-node/2-Node2.js": {
@@ -313,19 +313,19 @@
       "expectCount": 14,
       "actualCount": 1,
       "undocumentLines": [
-        17,
-        28,
-        41,
-        45,
-        49,
-        53,
-        70,
-        87,
-        100,
-        113,
-        117,
-        123,
-        173
+        16,
+        27,
+        40,
+        44,
+        48,
+        52,
+        69,
+        86,
+        99,
+        112,
+        116,
+        122,
+        172
       ]
     },
     "src/4-lazy/0-Lazy.js": {

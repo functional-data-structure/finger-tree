@@ -1,218 +1,218 @@
 window.esdocSearchIndex = [
   [
-    "@aureooms/js-fingertree/src/0-core/measure/cachedmeasure.js~cachedmeasure",
+    "@functional-data-structure/finger-tree/src/0-core/measure/cachedmeasure.js~cachedmeasure",
     "function/index.html#static-function-CachedMeasure",
-    "<span>CachedMeasure</span> <span class=\"search-result-import-path\">@aureooms/js-fingertree/src/0-core/measure/CachedMeasure.js</span>",
+    "<span>CachedMeasure</span> <span class=\"search-result-import-path\">@functional-data-structure/finger-tree/src/0-core/measure/CachedMeasure.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-fingertree/src/3-tree/implementations/2-deep.js~deep",
+    "@functional-data-structure/finger-tree/src/3-tree/implementations/2-deep.js~deep",
     "function/index.html#static-function-Deep",
-    "<span>Deep</span> <span class=\"search-result-import-path\">@aureooms/js-fingertree/src/3-tree/implementations/2-Deep.js</span>",
+    "<span>Deep</span> <span class=\"search-result-import-path\">@functional-data-structure/finger-tree/src/3-tree/implementations/2-Deep.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-fingertree/src/1-digit/0-digit.js~digit",
+    "@functional-data-structure/finger-tree/src/1-digit/0-digit.js~digit",
     "function/index.html#static-function-Digit",
-    "<span>Digit</span> <span class=\"search-result-import-path\">@aureooms/js-fingertree/src/1-digit/0-Digit.js</span>",
+    "<span>Digit</span> <span class=\"search-result-import-path\">@functional-data-structure/finger-tree/src/1-digit/0-Digit.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-fingertree/src/3-tree/implementations/0-empty.js~empty",
+    "@functional-data-structure/finger-tree/src/3-tree/implementations/0-empty.js~empty",
     "function/index.html#static-function-Empty",
-    "<span>Empty</span> <span class=\"search-result-import-path\">@aureooms/js-fingertree/src/3-tree/implementations/0-Empty.js</span>",
+    "<span>Empty</span> <span class=\"search-result-import-path\">@functional-data-structure/finger-tree/src/3-tree/implementations/0-Empty.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-fingertree/src/1-digit/4-four.js~four",
+    "@functional-data-structure/finger-tree/src/1-digit/4-four.js~four",
     "function/index.html#static-function-Four",
-    "<span>Four</span> <span class=\"search-result-import-path\">@aureooms/js-fingertree/src/1-digit/4-Four.js</span>",
+    "<span>Four</span> <span class=\"search-result-import-path\">@functional-data-structure/finger-tree/src/1-digit/4-Four.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-fingertree/src/4-lazy/0-lazy.js~lazy",
+    "@functional-data-structure/finger-tree/src/4-lazy/0-lazy.js~lazy",
     "function/index.html#static-function-Lazy",
-    "<span>Lazy</span> <span class=\"search-result-import-path\">@aureooms/js-fingertree/src/4-lazy/0-Lazy.js</span>",
+    "<span>Lazy</span> <span class=\"search-result-import-path\">@functional-data-structure/finger-tree/src/4-lazy/0-Lazy.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-fingertree/src/2-node/2-node2.js~node2",
+    "@functional-data-structure/finger-tree/src/2-node/2-node2.js~node2",
     "function/index.html#static-function-Node2",
-    "<span>Node2</span> <span class=\"search-result-import-path\">@aureooms/js-fingertree/src/2-node/2-Node2.js</span>",
+    "<span>Node2</span> <span class=\"search-result-import-path\">@functional-data-structure/finger-tree/src/2-node/2-Node2.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-fingertree/src/2-node/3-node3.js~node3",
+    "@functional-data-structure/finger-tree/src/2-node/3-node3.js~node3",
     "function/index.html#static-function-Node3",
-    "<span>Node3</span> <span class=\"search-result-import-path\">@aureooms/js-fingertree/src/2-node/3-Node3.js</span>",
+    "<span>Node3</span> <span class=\"search-result-import-path\">@functional-data-structure/finger-tree/src/2-node/3-Node3.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-fingertree/src/1-digit/1-one.js~one",
+    "@functional-data-structure/finger-tree/src/1-digit/1-one.js~one",
     "function/index.html#static-function-One",
-    "<span>One</span> <span class=\"search-result-import-path\">@aureooms/js-fingertree/src/1-digit/1-One.js</span>",
+    "<span>One</span> <span class=\"search-result-import-path\">@functional-data-structure/finger-tree/src/1-digit/1-One.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-fingertree/src/3-tree/implementations/1-single.js~single",
+    "@functional-data-structure/finger-tree/src/3-tree/implementations/1-single.js~single",
     "function/index.html#static-function-Single",
-    "<span>Single</span> <span class=\"search-result-import-path\">@aureooms/js-fingertree/src/3-tree/implementations/1-Single.js</span>",
+    "<span>Single</span> <span class=\"search-result-import-path\">@functional-data-structure/finger-tree/src/3-tree/implementations/1-Single.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-fingertree/src/0-core/split/split.js~split",
+    "@functional-data-structure/finger-tree/src/0-core/split/split.js~split",
     "function/index.html#static-function-Split",
-    "<span>Split</span> <span class=\"search-result-import-path\">@aureooms/js-fingertree/src/0-core/split/Split.js</span>",
+    "<span>Split</span> <span class=\"search-result-import-path\">@functional-data-structure/finger-tree/src/0-core/split/Split.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-fingertree/src/1-digit/3-three.js~three",
+    "@functional-data-structure/finger-tree/src/1-digit/3-three.js~three",
     "function/index.html#static-function-Three",
-    "<span>Three</span> <span class=\"search-result-import-path\">@aureooms/js-fingertree/src/1-digit/3-Three.js</span>",
+    "<span>Three</span> <span class=\"search-result-import-path\">@functional-data-structure/finger-tree/src/1-digit/3-Three.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-fingertree/src/3-tree/base/tree.js~tree",
+    "@functional-data-structure/finger-tree/src/3-tree/base/tree.js~tree",
     "function/index.html#static-function-Tree",
-    "<span>Tree</span> <span class=\"search-result-import-path\">@aureooms/js-fingertree/src/3-tree/base/Tree.js</span>",
+    "<span>Tree</span> <span class=\"search-result-import-path\">@functional-data-structure/finger-tree/src/3-tree/base/Tree.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-fingertree/src/1-digit/2-two.js~two",
+    "@functional-data-structure/finger-tree/src/1-digit/2-two.js~two",
     "function/index.html#static-function-Two",
-    "<span>Two</span> <span class=\"search-result-import-path\">@aureooms/js-fingertree/src/1-digit/2-Two.js</span>",
+    "<span>Two</span> <span class=\"search-result-import-path\">@functional-data-structure/finger-tree/src/1-digit/2-Two.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-fingertree/src/0-core/_fast/fast-iterators/2-_empty.js~_empty",
+    "@functional-data-structure/finger-tree/src/0-core/_fast/fast-iterators/2-_empty.js~_empty",
     "variable/index.html#static-variable-_EMPTY",
-    "<span>_EMPTY</span> <span class=\"search-result-import-path\">@aureooms/js-fingertree/src/0-core/_fast/fast-iterators/2-_EMPTY.js</span>",
+    "<span>_EMPTY</span> <span class=\"search-result-import-path\">@functional-data-structure/finger-tree/src/0-core/_fast/fast-iterators/2-_EMPTY.js</span>",
     "variable"
   ],
   [
-    "@aureooms/js-fingertree/src/0-core/_fast/fast-iterators/1-_emptygenerator.js~_emptygenerator",
+    "@functional-data-structure/finger-tree/src/0-core/_fast/fast-iterators/1-_emptygenerator.js~_emptygenerator",
     "function/index.html#static-function-_EmptyGenerator",
-    "<span>_EmptyGenerator</span> <span class=\"search-result-import-path\">@aureooms/js-fingertree/src/0-core/_fast/fast-iterators/1-_EmptyGenerator.js</span>",
+    "<span>_EmptyGenerator</span> <span class=\"search-result-import-path\">@functional-data-structure/finger-tree/src/0-core/_fast/fast-iterators/1-_EmptyGenerator.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-fingertree/src/0-core/_fast/_app3.js~_app3",
+    "@functional-data-structure/finger-tree/src/0-core/_fast/_app3.js~_app3",
     "function/index.html#static-function-_app3",
-    "<span>_app3</span> <span class=\"search-result-import-path\">@aureooms/js-fingertree/src/0-core/_fast/_app3.js</span>",
+    "<span>_app3</span> <span class=\"search-result-import-path\">@functional-data-structure/finger-tree/src/0-core/_fast/_app3.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-fingertree/src/0-core/_fast/_append.js~_append",
+    "@functional-data-structure/finger-tree/src/0-core/_fast/_append.js~_append",
     "function/index.html#static-function-_append",
-    "<span>_append</span> <span class=\"search-result-import-path\">@aureooms/js-fingertree/src/0-core/_fast/_append.js</span>",
+    "<span>_append</span> <span class=\"search-result-import-path\">@functional-data-structure/finger-tree/src/0-core/_fast/_append.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-fingertree/src/0-core/_fast/_deepl.js~_deepl",
+    "@functional-data-structure/finger-tree/src/0-core/_fast/_deepl.js~_deepl",
     "function/index.html#static-function-_deepL",
-    "<span>_deepL</span> <span class=\"search-result-import-path\">@aureooms/js-fingertree/src/0-core/_fast/_deepL.js</span>",
+    "<span>_deepL</span> <span class=\"search-result-import-path\">@functional-data-structure/finger-tree/src/0-core/_fast/_deepL.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-fingertree/src/0-core/_fast/_deepr.js~_deepr",
+    "@functional-data-structure/finger-tree/src/0-core/_fast/_deepr.js~_deepr",
     "function/index.html#static-function-_deepR",
-    "<span>_deepR</span> <span class=\"search-result-import-path\">@aureooms/js-fingertree/src/0-core/_fast/_deepR.js</span>",
+    "<span>_deepR</span> <span class=\"search-result-import-path\">@functional-data-structure/finger-tree/src/0-core/_fast/_deepR.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-fingertree/src/0-core/_fast/_digit.js~_digit",
+    "@functional-data-structure/finger-tree/src/0-core/_fast/_digit.js~_digit",
     "function/index.html#static-function-_digit",
-    "<span>_digit</span> <span class=\"search-result-import-path\">@aureooms/js-fingertree/src/0-core/_fast/_digit.js</span>",
+    "<span>_digit</span> <span class=\"search-result-import-path\">@functional-data-structure/finger-tree/src/0-core/_fast/_digit.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-fingertree/src/0-core/_fast/_from_digit.js~_from_digit",
+    "@functional-data-structure/finger-tree/src/0-core/_fast/_from_digit.js~_from_digit",
     "function/index.html#static-function-_from_digit",
-    "<span>_from_digit</span> <span class=\"search-result-import-path\">@aureooms/js-fingertree/src/0-core/_fast/_from_digit.js</span>",
+    "<span>_from_digit</span> <span class=\"search-result-import-path\">@functional-data-structure/finger-tree/src/0-core/_fast/_from_digit.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-fingertree/src/0-core/_fast/_from_small_list.js~_from_small_list",
+    "@functional-data-structure/finger-tree/src/0-core/_fast/_from_small_list.js~_from_small_list",
     "function/index.html#static-function-_from_small_list",
-    "<span>_from_small_list</span> <span class=\"search-result-import-path\">@aureooms/js-fingertree/src/0-core/_fast/_from_small_list.js</span>",
+    "<span>_from_small_list</span> <span class=\"search-result-import-path\">@functional-data-structure/finger-tree/src/0-core/_fast/_from_small_list.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-fingertree/src/0-core/_fast/_prepend.js~_prepend",
+    "@functional-data-structure/finger-tree/src/0-core/_fast/_prepend.js~_prepend",
     "function/index.html#static-function-_prepend",
-    "<span>_prepend</span> <span class=\"search-result-import-path\">@aureooms/js-fingertree/src/0-core/_fast/_prepend.js</span>",
+    "<span>_prepend</span> <span class=\"search-result-import-path\">@functional-data-structure/finger-tree/src/0-core/_fast/_prepend.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-fingertree/src/0-core/concatenate/app3.js~app3",
+    "@functional-data-structure/finger-tree/src/0-core/concatenate/app3.js~app3",
     "function/index.html#static-function-app3",
-    "<span>app3</span> <span class=\"search-result-import-path\">@aureooms/js-fingertree/src/0-core/concatenate/app3.js</span>",
+    "<span>app3</span> <span class=\"search-result-import-path\">@functional-data-structure/finger-tree/src/0-core/concatenate/app3.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-fingertree/src/0-core/concatenate/append.js~append",
+    "@functional-data-structure/finger-tree/src/0-core/concatenate/append.js~append",
     "function/index.html#static-function-append",
-    "<span>append</span> <span class=\"search-result-import-path\">@aureooms/js-fingertree/src/0-core/concatenate/append.js</span>",
+    "<span>append</span> <span class=\"search-result-import-path\">@functional-data-structure/finger-tree/src/0-core/concatenate/append.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-fingertree/src/0-core/measure/cache.js~cache",
+    "@functional-data-structure/finger-tree/src/0-core/measure/cache.js~cache",
     "function/index.html#static-function-cache",
-    "<span>cache</span> <span class=\"search-result-import-path\">@aureooms/js-fingertree/src/0-core/measure/cache.js</span>",
+    "<span>cache</span> <span class=\"search-result-import-path\">@functional-data-structure/finger-tree/src/0-core/measure/cache.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-fingertree/src/0-core/split/deepl.js~deepl",
+    "@functional-data-structure/finger-tree/src/0-core/split/deepl.js~deepl",
     "function/index.html#static-function-deepL",
-    "<span>deepL</span> <span class=\"search-result-import-path\">@aureooms/js-fingertree/src/0-core/split/deepL.js</span>",
+    "<span>deepL</span> <span class=\"search-result-import-path\">@functional-data-structure/finger-tree/src/0-core/split/deepL.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-fingertree/src/0-core/split/deepr.js~deepr",
+    "@functional-data-structure/finger-tree/src/0-core/split/deepr.js~deepr",
     "function/index.html#static-function-deepR",
-    "<span>deepR</span> <span class=\"search-result-import-path\">@aureooms/js-fingertree/src/0-core/split/deepR.js</span>",
+    "<span>deepR</span> <span class=\"search-result-import-path\">@functional-data-structure/finger-tree/src/0-core/split/deepR.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-fingertree/src/4-lazy/1-delay.js~delay",
+    "@functional-data-structure/finger-tree/src/4-lazy/1-delay.js~delay",
     "function/index.html#static-function-delay",
-    "<span>delay</span> <span class=\"search-result-import-path\">@aureooms/js-fingertree/src/4-lazy/1-delay.js</span>",
+    "<span>delay</span> <span class=\"search-result-import-path\">@functional-data-structure/finger-tree/src/4-lazy/1-delay.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-fingertree/src/5-api.js~empty",
+    "@functional-data-structure/finger-tree/src/5-api.js~empty",
     "function/index.html#static-function-empty",
-    "<span>empty</span> <span class=\"search-result-import-path\">@aureooms/js-fingertree/src/5-api.js</span>",
+    "<span>empty</span> <span class=\"search-result-import-path\">@functional-data-structure/finger-tree/src/5-api.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-fingertree/src/0-core/concatenate/from.js~from",
+    "@functional-data-structure/finger-tree/src/0-core/concatenate/from.js~from",
     "function/index.html#static-function-from",
-    "<span>from</span> <span class=\"search-result-import-path\">@aureooms/js-fingertree/src/0-core/concatenate/from.js</span>",
+    "<span>from</span> <span class=\"search-result-import-path\">@functional-data-structure/finger-tree/src/0-core/concatenate/from.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-fingertree/src/2-node/node2.js~node2",
+    "@functional-data-structure/finger-tree/src/2-node/node2.js~node2",
     "function/index.html#static-function-node2",
-    "<span>node2</span> <span class=\"search-result-import-path\">@aureooms/js-fingertree/src/2-node/node2.js</span>",
+    "<span>node2</span> <span class=\"search-result-import-path\">@functional-data-structure/finger-tree/src/2-node/node2.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-fingertree/src/2-node/node3.js~node3",
+    "@functional-data-structure/finger-tree/src/2-node/node3.js~node3",
     "function/index.html#static-function-node3",
-    "<span>node3</span> <span class=\"search-result-import-path\">@aureooms/js-fingertree/src/2-node/node3.js</span>",
+    "<span>node3</span> <span class=\"search-result-import-path\">@functional-data-structure/finger-tree/src/2-node/node3.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-fingertree/src/0-core/concatenate/nodes.js~nodes",
+    "@functional-data-structure/finger-tree/src/0-core/concatenate/nodes.js~nodes",
     "function/index.html#static-function-nodes",
-    "<span>nodes</span> <span class=\"search-result-import-path\">@aureooms/js-fingertree/src/0-core/concatenate/nodes.js</span>",
+    "<span>nodes</span> <span class=\"search-result-import-path\">@functional-data-structure/finger-tree/src/0-core/concatenate/nodes.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-fingertree/src/0-core/concatenate/prepend.js~prepend",
+    "@functional-data-structure/finger-tree/src/0-core/concatenate/prepend.js~prepend",
     "function/index.html#static-function-prepend",
-    "<span>prepend</span> <span class=\"search-result-import-path\">@aureooms/js-fingertree/src/0-core/concatenate/prepend.js</span>",
+    "<span>prepend</span> <span class=\"search-result-import-path\">@functional-data-structure/finger-tree/src/0-core/concatenate/prepend.js</span>",
     "function"
   ],
   [
