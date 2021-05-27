@@ -1,11 +1,15 @@
 require('regenerator-runtime/runtime');
 
+const ArgumentParser = require('argparse').ArgumentParser;
+const Benchmark = require('benchmark');
+
 const itertools = require('@aureooms/js-itertools');
 
 const qiao_fingertree = require('fingertree');
+const fds_finger_tree = require('..');
 const fromArray = qiao_fingertree.fromArray;
-const empty = aureooms_fingertree.empty;
-const from = aureooms_fingertree.from;
+const empty = fds_finger_tree.empty;
+const from = fds_finger_tree.from;
 
 const COUNTER = {
 	plus(a, b) {
@@ -19,7 +23,6 @@ const COUNTER = {
 	},
 };
 
-const ArgumentParser = require('argparse').ArgumentParser;
 const parser = new ArgumentParser();
 parser.addArgument(['M']);
 const args = parser.parseArgs();
@@ -30,9 +33,6 @@ global.fromArray = fromArray;
 global.empty = empty;
 global.from = from;
 global.range = itertools.range;
-
-const Benchmark = require('benchmark');
-const aureooms_fingertree = require('..');
 
 // PUSH
 
@@ -50,7 +50,7 @@ const PUSH = new Benchmark.Suite()
 		const _M = M;
 		for (let i = 0; i < _M; ++i) t = t.addLast(i);
 	})
-	.add('@aureooms/js-fingertree#push', () => {
+	.add('@functional-data-structure/finger-tree#push', () => {
 		let t = empty(COUNTER);
 		const _M = M;
 		for (let i = 0; i < _M; ++i) t = t.push(i);
@@ -88,7 +88,7 @@ CONS.add('fingertree#addFirst', () => {
 	let t = fromArray([]);
 	const _M = M;
 	for (let i = 0; i < _M; ++i) t = t.addFirst(i);
-}).add('@aureooms/js-fingertree#cons', () => {
+}).add('@functional-data-structure/finger-tree#cons', () => {
 	let t = empty(COUNTER);
 	const _M = M;
 	for (let i = 0; i < _M; ++i) t = t.cons(i);
@@ -142,7 +142,7 @@ const INIT = new Benchmark.Suite()
 		{setup},
 	)
 	.add(
-		'@aureooms/js-fingertree#init',
+		'@functional-data-structure/finger-tree#init',
 		() => {
 			let _t = at;
 			for (let i = 0; i < _M; ++i) _t = _t.init();
@@ -195,7 +195,7 @@ TAIL.add(
 	},
 	{setup},
 ).add(
-	'@aureooms/js-fingertree#init',
+	'@functional-data-structure/finger-tree#init',
 	() => {
 		let _t = at;
 		for (let i = 0; i < _M; ++i) _t = _t.tail();
@@ -231,7 +231,7 @@ const APPEND = new Benchmark.Suite()
 		console.log('\nAPPEND\n==\n');
 	})
 	.add(
-		'@aureooms/js-fingertree#append',
+		'@functional-data-structure/finger-tree#append',
 		() => {
 			at.append(range(M));
 		},
@@ -262,7 +262,7 @@ const PREPEND = new Benchmark.Suite()
 		console.log('\nPREPEND\n==\n');
 	})
 	.add(
-		'@aureooms/js-fingertree#prepend',
+		'@functional-data-structure/finger-tree#prepend',
 		() => {
 			at.prepend(range(M));
 		},
@@ -295,7 +295,7 @@ new Benchmark.Suite()
 	.add('fingertree.fromArray', () => {
 		fromArray(Array.from(range(M)));
 	})
-	.add('@aureooms/js-fingertree.from', () => {
+	.add('@functional-data-structure/finger-tree.from', () => {
 		from(COUNTER, range(M));
 	})
 	.add('Mock.from', () => {
@@ -328,7 +328,7 @@ const SPLIT = new Benchmark.Suite()
 		{setup},
 	)
 	.add(
-		'@aureooms/js-fingertree#split',
+		'@functional-data-structure/finger-tree#split',
 		() => {
 			const _M = M;
 			const _at = at;
@@ -371,7 +371,7 @@ new Benchmark.Suite()
 	// I had to put this version first because the second uses a lot of memory.
 	// This is probably because qiao/fingetree.js keeps references of used thunks.
 	.add(
-		'@aureooms/js-fingertree#concat',
+		'@functional-data-structure/finger-tree#concat',
 		() => {
 			const _M = M;
 			const _s = splits;

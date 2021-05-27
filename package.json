@@ -1,16 +1,16 @@
 {
-  "name": "@aureooms/js-fingertree",
+  "name": "@functional-data-structure/finger-tree",
   "description": "Finger Trees for JavaScript",
   "version": "6.0.0",
   "license": "AGPL-3.0",
-  "author": "Aurélien Ooms <aurelien.ooms@gmail.com>",
-  "homepage": "https://make-github-pseudonymous-again.github.io/js-fingertree",
+  "author": "make-github-pseudonymous-again",
+  "homepage": "https://functional-data-structure.github.io/finger-tree",
   "repository": {
     "type": "git",
-    "url": "https://github.com/make-github-pseudonymous-again/js-fingertree"
+    "url": "https://github.com/functional-data-structure/finger-tree"
   },
   "bugs": {
-    "url": "https://github.com/make-github-pseudonymous-again/js-fingertree/issues"
+    "url": "https://github.com/functional-data-structure/finger-tree/issues"
   },
   "keywords": [
     "data",

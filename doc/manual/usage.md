@@ -12,7 +12,7 @@ import 'regenerator-runtime/runtime.js' ;
 
 Then
 ```js
-const fingertree = require( '@aureooms/js-fingertree' ) ;
+const fingertree = require( '@functional-data-structure/finger-tree' ) ;
 // or
-import fingertree from '@aureooms/js-fingertree' ;
+import fingertree from '@functional-data-structure/finger-tree' ;
 ```

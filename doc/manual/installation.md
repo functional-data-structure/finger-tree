@@ -6,10 +6,10 @@ or [npm](https://github.com/npm/npm).
 
 ### jspm
 ```terminal
-jspm install npm:@aureooms/js-fingertree
+jspm install npm:@functional-data-structure/finger-tree
 ```
 
 ### npm
 ```terminal
-npm install @aureooms/js-fingertree --save
+npm install @functional-data-structure/finger-tree --save
 ```

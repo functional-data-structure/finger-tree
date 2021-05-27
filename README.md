@@ -1,32 +1,32 @@
-:cactus: [@aureooms/js-fingertree](https://make-github-pseudonymous-again.github.io/js-fingertree)
+:cactus: [@functional-data-structure/finger-tree](https://functional-data-structure.github.io/finger-tree)
 ==
 
 <p align="center">
-<img src="https://cdn.rawgit.com/make-github-pseudonymous-again/js-fingertree/main/media/sketch.svg" width="400">
+<img src="https://cdn.rawgit.com/functional-data-structure/finger-tree/main/media/sketch.svg" width="400">
 </p>
 
 Finger trees for JavaScript.
-See [docs](https://make-github-pseudonymous-again.github.io/js-fingertree).
+See [docs](https://functional-data-structure.github.io/finger-tree).
 Parent is [@aureooms/js-persistent](https://github.com/make-github-pseudonymous-again/js-persistent).
 
     data FingerTree x = Empty
                       | Single x
                       | Deep ( Digit x ) ( FingerTree ( Node x ) ) ( Digit x )
 
-[![License](https://img.shields.io/github/license/make-github-pseudonymous-again/js-fingertree.svg)](https://raw.githubusercontent.com/make-github-pseudonymous-again/js-fingertree/main/LICENSE)
-[![Version](https://img.shields.io/npm/v/@aureooms/js-fingertree.svg)](https://www.npmjs.org/package/@aureooms/js-fingertree)
-[![Tests](https://img.shields.io/github/workflow/status/make-github-pseudonymous-again/js-fingertree/ci:test?event=push&label=tests)](https://github.com/make-github-pseudonymous-again/js-fingertree/actions/workflows/ci:test.yml?query=branch:main)
-[![Dependencies](https://img.shields.io/david/make-github-pseudonymous-again/js-fingertree.svg)](https://david-dm.org/make-github-pseudonymous-again/js-fingertree)
-[![Dev dependencies](https://img.shields.io/david/dev/make-github-pseudonymous-again/js-fingertree.svg)](https://david-dm.org/make-github-pseudonymous-again/js-fingertree?type=dev)
-[![GitHub issues](https://img.shields.io/github/issues/make-github-pseudonymous-again/js-fingertree.svg)](https://github.com/make-github-pseudonymous-again/js-fingertree/issues)
-[![Downloads](https://img.shields.io/npm/dm/@aureooms/js-fingertree.svg)](https://www.npmjs.org/package/@aureooms/js-fingertree)
+[![License](https://img.shields.io/github/license/functional-data-structure/finger-tree.svg)](https://raw.githubusercontent.com/functional-data-structure/finger-tree/main/LICENSE)
+[![Version](https://img.shields.io/npm/v/@functional-data-structure/finger-tree.svg)](https://www.npmjs.org/package/@functional-data-structure/finger-tree)
+[![Tests](https://img.shields.io/github/workflow/status/functional-data-structure/finger-tree/ci:test?event=push&label=tests)](https://github.com/functional-data-structure/finger-tree/actions/workflows/ci:test.yml?query=branch:main)
+[![Dependencies](https://img.shields.io/david/functional-data-structure/finger-tree.svg)](https://david-dm.org/functional-data-structure/finger-tree)
+[![Dev dependencies](https://img.shields.io/david/dev/functional-data-structure/finger-tree.svg)](https://david-dm.org/functional-data-structure/finger-tree?type=dev)
+[![GitHub issues](https://img.shields.io/github/issues/functional-data-structure/finger-tree.svg)](https://github.com/functional-data-structure/finger-tree/issues)
+[![Downloads](https://img.shields.io/npm/dm/@functional-data-structure/finger-tree.svg)](https://www.npmjs.org/package/@functional-data-structure/finger-tree)
 
-[![Code issues](https://img.shields.io/codeclimate/issues/make-github-pseudonymous-again/js-fingertree.svg)](https://codeclimate.com/github/make-github-pseudonymous-again/js-fingertree/issues)
-[![Code maintainability](https://img.shields.io/codeclimate/maintainability/make-github-pseudonymous-again/js-fingertree.svg)](https://codeclimate.com/github/make-github-pseudonymous-again/js-fingertree/trends/churn)
-[![Code coverage (cov)](https://img.shields.io/codecov/c/gh/make-github-pseudonymous-again/js-fingertree/main.svg)](https://codecov.io/gh/make-github-pseudonymous-again/js-fingertree)
-[![Code technical debt](https://img.shields.io/codeclimate/tech-debt/make-github-pseudonymous-again/js-fingertree.svg)](https://codeclimate.com/github/make-github-pseudonymous-again/js-fingertree/trends/technical_debt)
-[![Documentation](https://make-github-pseudonymous-again.github.io/js-fingertree/badge.svg)](https://make-github-pseudonymous-again.github.io/js-fingertree/source.html)
-[![Package size](https://img.shields.io/bundlephobia/minzip/@aureooms/js-fingertree)](https://bundlephobia.com/result?p=@aureooms/js-fingertree)
+[![Code issues](https://img.shields.io/codeclimate/issues/functional-data-structure/finger-tree.svg)](https://codeclimate.com/github/functional-data-structure/finger-tree/issues)
+[![Code maintainability](https://img.shields.io/codeclimate/maintainability/functional-data-structure/finger-tree.svg)](https://codeclimate.com/github/functional-data-structure/finger-tree/trends/churn)
+[![Code coverage (cov)](https://img.shields.io/codecov/c/gh/functional-data-structure/finger-tree/main.svg)](https://codecov.io/gh/functional-data-structure/finger-tree)
+[![Code technical debt](https://img.shields.io/codeclimate/tech-debt/functional-data-structure/finger-tree.svg)](https://codeclimate.com/github/functional-data-structure/finger-tree/trends/technical_debt)
+[![Documentation](https://functional-data-structure.github.io/finger-tree/badge.svg)](https://functional-data-structure.github.io/finger-tree/source.html)
+[![Package size](https://img.shields.io/bundlephobia/minzip/@functional-data-structure/finger-tree)](https://bundlephobia.com/result?p=@functional-data-structure/finger-tree)
 
 
 <!-- vim-markdown-toc GFM -->
@@ -127,9 +127,9 @@ Then require what you need from the exported object, for instance the two main
 API functions `from` and `empty`:
 
 ```js
-const { from , empty } = require( '@aureooms/js-fingertree' ) ;
+const { from , empty } = require( '@functional-data-structure/finger-tree' ) ;
 // or
-import { from , empty } from '@aureooms/js-fingertree' ;
+import { from , empty } from '@functional-data-structure/finger-tree' ;
 ```
 
 

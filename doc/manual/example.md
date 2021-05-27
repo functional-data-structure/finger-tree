@@ -6,7 +6,7 @@ import { gt } from '@aureooms/js-predicate' ;
 
 const { COUNTER } = Measures ;
 
-import { empty , from } from '@aureooms/js-fingertree' ;
+import { empty , from } from '@functional-data-structure/finger-tree' ;
 
 let t = from( COUNTER , 'abc' ) ;
 // OR

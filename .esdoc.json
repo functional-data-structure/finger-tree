@@ -17,7 +17,7 @@
           "autoPrivate": true
         },
         "brand": {
-          "title": "@aureooms/js-fingertree"
+          "title": "@functional-data-structure/finger-tree"
         },
         "test": {
           "type": "ava",

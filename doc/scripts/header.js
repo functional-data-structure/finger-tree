@@ -10,7 +10,7 @@ const domReady = function (callback) {
 domReady(() => {
 	const projectname = document.createElement('a');
 	projectname.classList.add('project-name');
-	projectname.text = 'aureooms/js-fingertree';
+	projectname.text = 'functional-data-structure/finger-tree';
 	projectname.href = './index.html';
 
 	const header = document.querySelector('header');
@@ -18,7 +18,7 @@ domReady(() => {
 
 	const testlink = document.querySelector('header > a[data-ice="testLink"]');
 	testlink.href =
-		'https://coveralls.io/github/make-github-pseudonymous-again/js-fingertree';
+		'https://coveralls.io/github/functional-data-structure/finger-tree';
 	testlink.target = '_BLANK';
 
 	const searchBox = document.querySelector('.search-box');
