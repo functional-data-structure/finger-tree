@@ -7,7 +7,7 @@
 
 Finger trees for JavaScript.
 See [docs](https://functional-data-structure.github.io/finger-tree).
-Parent is [@aureooms/js-persistent](https://github.com/make-github-pseudonymous-again/js-persistent).
+Parent is [@functional-data-structure/persistent](https://github.com/functional-data-structure/persistent).
 
     data FingerTree x = Empty
                       | Single x
@@ -73,7 +73,7 @@ The data structure is
 [fully persistent](https://en.wikipedia.org/wiki/Persistent_data_structure#Fully_persistent):
 All methods are pure functions that do not modify their object. 
 
-> The [parent project](https://github.com/make-github-pseudonymous-again/js-persistent) shows how
+> The [parent project](https://github.com/functional-data-structure/persistent) shows how
 > specialized persistent data structures can be build on top of those methods.
 
 
@@ -107,7 +107,7 @@ const counter = {
 See also
 [@functional-abstraction/measure](https://functional-abstraction.github.io/measure/file/src/1-api/1-Measures.js.html)
 for more examples of measures and see
-[@aureooms/js-persistent](https://github.com/make-github-pseudonymous-again/js-persistent)
+[@functional-data-structure/persistent](https://github.com/functional-data-structure/persistent)
 for examples of data structures that can be build on top of this abstraction.
 
 
