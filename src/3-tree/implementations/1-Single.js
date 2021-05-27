@@ -1,7 +1,7 @@
 import {Tree} from '../base/index.js';
-import {Empty, Deep} from './index.js';
 import {cache, Split} from '../../0-core/index.js';
 import {One} from '../../1-digit/index.js';
+import {Empty, Deep} from './index.js';
 
 export function Single(M, value) {
 	this.M = M;

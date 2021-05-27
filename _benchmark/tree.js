@@ -18,7 +18,7 @@ const COUNTER = {
 
 let t;
 let i;
-const length = 100000;
+const length = 100_000;
 
 let start = Date.now();
 

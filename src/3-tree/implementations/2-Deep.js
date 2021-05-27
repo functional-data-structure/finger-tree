@@ -1,4 +1,4 @@
-import {Empty} from './index.js';
+import assert from 'assert';
 import {Tree} from '../base/index.js';
 import {
 	_app3,
@@ -11,8 +11,7 @@ import {
 } from '../../0-core/index.js';
 import {One, Two, Four} from '../../1-digit/index.js';
 import {delay, Lazy} from '../../4-lazy/index.js';
-
-import assert from 'assert';
+import {Empty} from './index.js';
 
 export function Deep(M, left, middle, right) {
 	assert(middle instanceof Lazy || middle.M instanceof CachedMeasure);

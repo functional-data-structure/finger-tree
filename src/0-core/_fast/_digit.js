@@ -1,6 +1,5 @@
-import {One, Two, Three} from '../../1-digit/index.js';
-
 import assert from 'assert';
+import {One, Two, Three} from '../../1-digit/index.js';
 
 /**
  * Creates a Digit from as small list.

@@ -1,13 +1,13 @@
 import test from 'ava';
 
 import {Measures} from '@aureooms/js-measure';
-const {COUNTER} = Measures;
 
 import {map, list, chain, range, reversed} from '@aureooms/js-itertools';
 
 import {gt} from '@aureooms/js-predicate';
 
 import {empty, from} from '../../src/index.js';
+const {COUNTER} = Measures;
 
 test('FingerTree', (t) => {
 	let T = empty(COUNTER);
@@ -120,47 +120,47 @@ test('FingerTree', (t) => {
 	t.deepEqual(
 		list(map(list, F.split(gt(0)))),
 		[list(''), list('abcdefgh')],
-		'split ' + 0,
+		'split 0',
 	);
 	t.deepEqual(
 		list(map(list, F.split(gt(1)))),
 		[list('a'), list('bcdefgh')],
-		'split ' + 1,
+		'split 1',
 	);
 	t.deepEqual(
 		list(map(list, F.split(gt(2)))),
 		[list('ab'), list('cdefgh')],
-		'split ' + 2,
+		'split 2',
 	);
 	t.deepEqual(
 		list(map(list, F.split(gt(3)))),
 		[list('abc'), list('defgh')],
-		'split ' + 3,
+		'split 3',
 	);
 	t.deepEqual(
 		list(map(list, F.split(gt(4)))),
 		[list('abcd'), list('efgh')],
-		'split ' + 4,
+		'split 4',
 	);
 	t.deepEqual(
 		list(map(list, F.split(gt(5)))),
 		[list('abcde'), list('fgh')],
-		'split ' + 5,
+		'split 5',
 	);
 	t.deepEqual(
 		list(map(list, F.split(gt(6)))),
 		[list('abcdef'), list('gh')],
-		'split ' + 6,
+		'split 6',
 	);
 	t.deepEqual(
 		list(map(list, F.split(gt(7)))),
 		[list('abcdefg'), list('h')],
-		'split ' + 7,
+		'split 7',
 	);
 	t.deepEqual(
 		list(map(list, F.split(gt(8)))),
 		[list('abcdefgh'), list('')],
-		'split ' + 8,
+		'split 8',
 	);
 
 	const split = F.splitTree(gt(4), COUNTER.zero());
@@ -269,7 +269,7 @@ test('FingerTree', (t) => {
 	t.is(from(COUNTER, 'a').append('bcdx').last(), 'x', 'Four.last');
 
 	// Provoke several corner cases
-	Z = from(COUNTER, range(10000));
+	Z = from(COUNTER, range(10_000));
 
 	const x = Z.split(gt(5000));
 

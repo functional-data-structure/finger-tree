@@ -1,11 +1,11 @@
 import test from 'ava';
 
 import {Measures} from '@aureooms/js-measure';
-const {COUNTER} = Measures;
 
 import {list, range, tee, reversed} from '@aureooms/js-itertools';
 
 import {from} from '../../../src/index.js';
+const {COUNTER} = Measures;
 
 const macro = (t, iterable) => {
 	const [copy1, copy2] = tee(iterable, 2);
@@ -25,4 +25,4 @@ test(macro, '724');
 test(macro, 'abcd');
 test('range(9)', macro, range(9));
 test('range(1000)', macro, range(1000));
-test('range(100000)', macro, range(100000));
+test('range(100000)', macro, range(100_000));

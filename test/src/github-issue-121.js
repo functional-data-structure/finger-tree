@@ -1,11 +1,11 @@
 import test from 'ava';
 
 import {Measures} from '@aureooms/js-measure';
-const {COUNTER} = Measures;
 
 import {gt} from '@aureooms/js-predicate';
 
 import {from} from '../../src/index.js';
+const {COUNTER} = Measures;
 
 test('Cover Lazy#split', (t) => {
 	const T = from(COUNTER, 'abcde');

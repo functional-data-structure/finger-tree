@@ -1,11 +1,11 @@
 import test from 'ava';
 
 import {Measures} from '@aureooms/js-measure';
-const {COUNTER} = Measures;
 
 import {gt} from '@aureooms/js-predicate';
 
 import {empty} from '../../src/index.js';
+const {COUNTER} = Measures;
 
 test('head', (t) => {
 	t.throws(() => empty(COUNTER).head(), {message: /cannot/});

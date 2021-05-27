@@ -1,8 +1,7 @@
+import assert from 'assert';
 import {Empty, Single, Deep} from '../../3-tree/index.js';
 import {One, Two} from '../../1-digit/index.js';
 import {cache} from '../measure/index.js';
-
-import assert from 'assert';
 
 export function _from_small_list(M, list) {
 	assert(Number.isInteger(list.length) && list.length >= 0 && list.length <= 3);

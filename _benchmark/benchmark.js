@@ -4,7 +4,6 @@ const itertools = require('@aureooms/js-itertools');
 
 const qiao_fingertree = require('fingertree');
 const fromArray = qiao_fingertree.fromArray;
-const aureooms_fingertree = require('..');
 const empty = aureooms_fingertree.empty;
 const from = aureooms_fingertree.from;
 
@@ -33,6 +32,7 @@ global.from = from;
 global.range = itertools.range;
 
 const Benchmark = require('benchmark');
+const aureooms_fingertree = require('..');
 
 // PUSH
 
@@ -77,7 +77,7 @@ const CONS = new Benchmark.Suite().on('start', () => {
 	console.log('\nCONS\n==\n');
 });
 
-if (M <= 10000)
+if (M <= 10_000)
 	CONS.add('Array#unshift', () => {
 		const a = [];
 		const _M = M;
@@ -177,7 +177,7 @@ const TAIL = new Benchmark.Suite().on('start', () => {
 	console.log('\nTAIL\n==\n');
 });
 
-if (M <= 10000)
+if (M <= 10_000)
 	TAIL.add(
 		'Array#shift',
 		() => {

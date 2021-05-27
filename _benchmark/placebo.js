@@ -1,6 +1,6 @@
 let t;
 let i;
-const length = 100000;
+const length = 100_000;
 
 console.log('number of operations:', length);
 
