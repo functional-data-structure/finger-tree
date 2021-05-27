@@ -1,7 +1,7 @@
 {
   "name": "@functional-data-structure/finger-tree",
   "description": "Finger Trees for JavaScript",
-  "version": "6.0.0",
+  "version": "7.0.0",
   "license": "AGPL-3.0",
   "author": "make-github-pseudonymous-again",
   "homepage": "https://functional-data-structure.github.io/finger-tree",
