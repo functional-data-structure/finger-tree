@@ -2,7 +2,11 @@ import test from 'ava';
 
 import {Measures} from '@aureooms/js-measure';
 
-import {map, list, chain, range, reversed} from '@aureooms/js-itertools';
+import {map} from '@iterable-iterator/map';
+import {list} from '@iterable-iterator/list';
+import {_chain as chain} from '@iterable-iterator/chain';
+import {range} from '@iterable-iterator/range';
+import {reversed} from '@iterable-iterator/reversed';
 
 import {gt} from '@aureooms/js-predicate';
 

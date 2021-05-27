@@ -2,7 +2,7 @@ import test from 'ava';
 
 import {Measures} from '@aureooms/js-measure';
 
-import {range} from '@aureooms/js-itertools';
+import {range} from '@iterable-iterator/range';
 
 import {empty, from} from '../../../src/index.js';
 const {COUNTER} = Measures;

@@ -1,5 +1,5 @@
 require('regenerator-runtime/runtime');
-const itertools = require('@aureooms/js-itertools');
+const range = require('@iterable-iterator/range').range;
 const fingertree = require('..');
 const empty = fingertree.empty;
 const from = fingertree.from;
@@ -56,10 +56,10 @@ for (i = 0; i < length; ++i) {
 console.timeEnd('init');
 
 console.time('prepend');
-t = empty(COUNTER).prepend(itertools.range(length));
+t = empty(COUNTER).prepend(range(length));
 console.timeEnd('prepend');
 console.time('append');
-t = empty(COUNTER).append(itertools.range(length));
+t = empty(COUNTER).append(range(length));
 console.timeEnd('append');
 
 console.time('split');

@@ -3,7 +3,7 @@ require('regenerator-runtime/runtime');
 const ArgumentParser = require('argparse').ArgumentParser;
 const Benchmark = require('benchmark');
 
-const itertools = require('@aureooms/js-itertools');
+const range = require('@iterable-iterator/range').range;
 
 const qiao_fingertree = require('fingertree');
 const fds_finger_tree = require('..');
@@ -32,7 +32,7 @@ global.COUNTER = COUNTER;
 global.fromArray = fromArray;
 global.empty = empty;
 global.from = from;
-global.range = itertools.range;
+global.range = range;
 
 // PUSH
 

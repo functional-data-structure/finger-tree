@@ -2,7 +2,10 @@ import test from 'ava';
 
 import {Measures} from '@aureooms/js-measure';
 
-import {list, range, tee, reversed} from '@aureooms/js-itertools';
+import {list} from '@iterable-iterator/list';
+import {range} from '@iterable-iterator/range';
+import {tee} from '@iterable-iterator/tee';
+import {reversed} from '@iterable-iterator/reversed';
 
 import {from} from '../../../src/index.js';
 const {COUNTER} = Measures;

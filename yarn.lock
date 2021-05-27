@@ -2,26 +2,6 @@
 # yarn lockfile v1
 
 
-"@aureooms/js-collections-deque@^7.0.0":
-  version "7.0.0"
-  resolved "https://registry.yarnpkg.com/@aureooms/js-collections-deque/-/js-collections-deque-7.0.0.tgz#ff03a4901c956d277fa9d6a149104dc65c85f9ae"
-  integrity sha512-zWtMs1sTLGHBtKrjhJ4hZKcG54o4VSthCYn6sLA7pJeOc1FSEwKFyCaJq/BuSjY7rmhNVklTGhENjLyTl7ESVA==
-  dependencies:
-    "@aureooms/js-error" "^5.0.3"
-
-"@aureooms/js-error@^5.0.3":
-  version "5.0.3"
-  resolved "https://registry.yarnpkg.com/@aureooms/js-error/-/js-error-5.0.3.tgz#e4cb52e3525028e4725a5886663a67a0749abf6b"
-  integrity sha512-hGLMr9UIgPubX72V7vS69N8toMoK52emuA9jV/EOleK4m7HUF0HjdssNXZytd+udyY3996CBre89MOgTEn0Udw==
-
-"@aureooms/js-itertools@5.1.1":
-  version "5.1.1"
-  resolved "https://registry.yarnpkg.com/@aureooms/js-itertools/-/js-itertools-5.1.1.tgz#cebca2e4ccfcbbfbb447f60a90a86dac8f457166"
-  integrity sha512-WP+/gtDOJeYSa1ICRSUKtJNQs+2emU25eBnR1G+HPko5m8vbzdFBo1iHbl1IHfRDOyMn40oMvpYovC1Fh6VJwA==
-  dependencies:
-    "@aureooms/js-collections-deque" "^7.0.0"
-    "@aureooms/js-error" "^5.0.3"
-
 "@aureooms/js-measure@2.0.1":
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/@aureooms/js-measure/-/js-measure-2.0.1.tgz#bd346a93bd2d4a07aa396e73e1ebc38f397aa73e"
@@ -1158,6 +1138,13 @@
   dependencies:
     arrify "^1.0.1"
 
+"@data-structure/deque@^8.0.0":
+  version "8.0.0"
+  resolved "https://registry.yarnpkg.com/@data-structure/deque/-/deque-8.0.0.tgz#79e865b747b7d63e1b05861efe8183fad2e39c20"
+  integrity sha512-/LmJyugrdyFndrGDbecbM0d9vHTIAPUWXVA9aRvexKiID9u/GQITOZj74efKc507MyTEHjVAgBwR0MXgJL8EhA==
+  dependencies:
+    "@failure-abstraction/error" "^5.0.3"
+
 "@eslint/eslintrc@^0.4.1":
   version "0.4.1"
   resolved "https://registry.yarnpkg.com/@eslint/eslintrc/-/eslintrc-0.4.1.tgz#442763b88cecbe3ee0ec7ca6d6dd6168550cbf14"
@@ -1173,10 +1160,60 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
+"@failure-abstraction/error@^5.0.3":
+  version "5.0.5"
+  resolved "https://registry.yarnpkg.com/@failure-abstraction/error/-/error-5.0.5.tgz#0cf54ae8f76a025a8df015acd958192fb29a5e9a"
+  integrity sha512-1wYCScLBgVzSrXWDNg6KqZPCTtrbduDIxGGx3OXfGXQgWusFC8vdgKL6XLycAgsv3FRx8jardWQGYnEHUCccQQ==
+
 "@istanbuljs/schema@^0.1.2":
   version "0.1.3"
   resolved "https://registry.yarnpkg.com/@istanbuljs/schema/-/schema-0.1.3.tgz#e45e384e4b8ec16bce2fd903af78450f6bf7ec98"
   integrity sha512-ZXRY4jNvVgSVQ8DL3LTcakaAtXwTVUxE81hslsyD2AtoXW/wVob10HkOJ1X/pAlcI7D+2YoZKg5do8G/w6RYgA==
+
+"@iterable-iterator/chain@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@iterable-iterator/chain/-/chain-1.0.0.tgz#38d15e7bad373af2dea0651f07252770823fcf08"
+  integrity sha512-2XjhgDtg5fnSUTlWrkdCWg5viYe8ZPkD/GntMBBh2Us8bV7mrDHUO1uvBLy3z+BidJNp5PL8kExNsFyzB7s5xw==
+
+"@iterable-iterator/iter@^0.0.2":
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/@iterable-iterator/iter/-/iter-0.0.2.tgz#7129988de2071ffb747632bd0190c0db579a5b69"
+  integrity sha512-+q2BxI+awes71qm4M5zLXaJK7GUy1Tbt5K7YKTU3Yl8DgCdQxeHBbkAIxXAv49BoS2eLx5cLXHdpX6ybzvA2XQ==
+
+"@iterable-iterator/list@^0.0.2":
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/@iterable-iterator/list/-/list-0.0.2.tgz#6289761d3ada6bb88f0c92683367ea960f310869"
+  integrity sha512-103Wwqx0x8neIFjm0GVR7cmEcv29Eg7F4lX72sr9L6FzMH9lp50ejfroAdbdMT37TWq2KVNo1eEWXtFo9hBybw==
+
+"@iterable-iterator/map@^0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@iterable-iterator/map/-/map-0.0.1.tgz#13dd222dd384d934741d96197c0d963c5678760d"
+  integrity sha512-uB9ndHoHIditj/0+WiyZou2NqEi7yHESkL0pSC6LfVRPQcwfRUrtzd9+P002Zu8/bdm7xSYZCgTl6SIpjJxORw==
+
+"@iterable-iterator/map@^0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@iterable-iterator/map/-/map-0.1.0.tgz#abccfff2fd3cfde9505566563eb15dae4209bfb0"
+  integrity sha512-Qx6GvjGqqhk4zxOrP1Q18tvMyr5CPdDRtxSlzkTabFdREy4fLc3nddZBoheD3RovWvaRDmQstt76ETIspDJkcQ==
+
+"@iterable-iterator/range@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@iterable-iterator/range/-/range-1.0.0.tgz#5b3255710e3e0d174a82e38024dc2af3c1aeee25"
+  integrity sha512-rFgziHtzWs/Zl1c5SfkAbUZzXvqvyeMtjsrwdkvXFQ1FCCXmzFjaMOKpr++wFuoV83XzZuiJ6lyHNEd3CSIyTg==
+
+"@iterable-iterator/reversed@^0.0.2":
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/@iterable-iterator/reversed/-/reversed-0.0.2.tgz#a8f0e5338d6eeba75a2f596aeae0347edcc0607a"
+  integrity sha512-RtvSHRBvdm4gzgfkA+6R1TrgPK5JfqN7yKqxLpkfedf2ajiJ3YFTfUAGmTY/ud9fBPwxdt9Js9HT8oXGRw2COQ==
+
+"@iterable-iterator/tee@^0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@iterable-iterator/tee/-/tee-0.0.1.tgz#f82c7e4e9721f9309c0553ef278599088893e0ea"
+  integrity sha512-ijfh2PsiKxwpzJzzm/rrH2c1U60mqalCGr5aoFPSyPedSw8qEDScXuicFBCU9OSxN4VsKIdNCEl5xIBufD/Zqw==
+  dependencies:
+    "@data-structure/deque" "^8.0.0"
+    "@iterable-iterator/iter" "^0.0.2"
+    "@iterable-iterator/list" "^0.0.2"
+    "@iterable-iterator/map" "^0.0.1"
 
 "@js-library/commitlint-config@0.0.4":
   version "0.0.4"

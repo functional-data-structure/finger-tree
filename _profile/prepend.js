@@ -1,7 +1,7 @@
 console.time('prepare');
 require('regenerator-runtime/runtime');
 const ArgumentParser = require('argparse').ArgumentParser;
-const itertools = require('@aureooms/js-itertools');
+const range = require('@iterable-iterator/range').range;
 const empty = require('..').empty;
 const COUNTER = {
 	plus(a, b) {
@@ -28,5 +28,5 @@ const t = empty(COUNTER);
 console.timeEnd('prepare');
 
 console.time('prepend');
-for (let k = 0; k < N; ++k) t.prepend(itertools.range(M));
+for (let k = 0; k < N; ++k) t.prepend(range(M));
 console.timeEnd('prepend');

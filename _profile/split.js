@@ -1,7 +1,7 @@
 console.time('prepare');
 require('regenerator-runtime/runtime');
 const ArgumentParser = require('argparse').ArgumentParser;
-const itertools = require('@aureooms/js-itertools');
+const range = require('@iterable-iterator/range').range;
 const empty = require('..').empty;
 const COUNTER = {
 	plus(a, b) {
@@ -24,7 +24,7 @@ const N = args.N;
 
 console.log('number of operations:', M * N);
 
-const t = empty(COUNTER).append(itertools.range(M));
+const t = empty(COUNTER).append(range(M));
 console.timeEnd('prepare');
 
 console.time('split');
