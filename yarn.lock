@@ -7,11 +7,6 @@
   resolved "https://registry.yarnpkg.com/@aureooms/js-measure/-/js-measure-2.0.1.tgz#bd346a93bd2d4a07aa396e73e1ebc38f397aa73e"
   integrity sha512-Uq/m32HDHDydX2Pi9a+wfS22rIdn8C3xY8RrH9HQ3pOqcKty5dNFO323b9H3edyCnS64rMCo1IvWA0fno3FRUQ==
 
-"@aureooms/js-predicate@3.0.1":
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/@aureooms/js-predicate/-/js-predicate-3.0.1.tgz#25c4c21d2f7632139ca43b1f42e00125053596cb"
-  integrity sha512-ZpWiJgBDpPqvu1ZOFruF9+CbhiXgdIwDD0XJ2Rjkj5aOJUbyJWtKe5WiywaQdGxhZonTn08Yq8mJ8JovCWwwLQ==
-
 "@babel/code-frame@7.12.11":
   version "7.12.11"
   resolved "https://registry.yarnpkg.com/@babel/code-frame/-/code-frame-7.12.11.tgz#f4ad435aa263db935b8f10f2c552d23fb716a63f"
@@ -1164,6 +1159,11 @@
   version "5.0.5"
   resolved "https://registry.yarnpkg.com/@failure-abstraction/error/-/error-5.0.5.tgz#0cf54ae8f76a025a8df015acd958192fb29a5e9a"
   integrity sha512-1wYCScLBgVzSrXWDNg6KqZPCTtrbduDIxGGx3OXfGXQgWusFC8vdgKL6XLycAgsv3FRx8jardWQGYnEHUCccQQ==
+
+"@functional-abstraction/predicate@^3.0.2":
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/@functional-abstraction/predicate/-/predicate-3.0.2.tgz#b54022b29c51124a34621b9579635ad0bc463a38"
+  integrity sha512-aQO7fL0myzoUsJzPo2Qeesr10OxRntMBblUuK98PwGqbug/uljjMOKeg+TZOJ9jU0mkbzgjJZzb84gJ8UjOYOg==
 
 "@istanbuljs/schema@^0.1.2":
   version "0.1.3"

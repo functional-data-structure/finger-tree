@@ -8,7 +8,7 @@ import {_chain as chain} from '@iterable-iterator/chain';
 import {range} from '@iterable-iterator/range';
 import {reversed} from '@iterable-iterator/reversed';
 
-import {gt} from '@aureooms/js-predicate';
+import {gt} from '@functional-abstraction/predicate';
 
 import {empty, from} from '../../src/index.js';
 const {COUNTER} = Measures;

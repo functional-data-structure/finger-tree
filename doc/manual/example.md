@@ -2,7 +2,7 @@
 
 ```js
 import { Measures } from '@aureooms/js-measure' ;
-import { gt } from '@aureooms/js-predicate' ;
+import { gt } from '@functional-abstraction/predicate' ;
 
 const { COUNTER } = Measures ;
 

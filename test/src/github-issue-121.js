@@ -2,7 +2,7 @@ import test from 'ava';
 
 import {Measures} from '@aureooms/js-measure';
 
-import {gt} from '@aureooms/js-predicate';
+import {gt} from '@functional-abstraction/predicate';
 
 import {from} from '../../src/index.js';
 const {COUNTER} = Measures;
