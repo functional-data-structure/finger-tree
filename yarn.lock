@@ -9639,10 +9639,10 @@ xdg-basedir@^4.0.0:
   resolved "https://registry.yarnpkg.com/xml-name-validator/-/xml-name-validator-2.0.1.tgz#4d8b8f1eccd3419aa362061becef515e1e559635"
   integrity sha1-TYuPHszTQZqjYgYb7O9RXh5VljU=
 
-xo@0.40.1:
-  version "0.40.1"
-  resolved "https://registry.yarnpkg.com/xo/-/xo-0.40.1.tgz#5f9d7ca80d0f99b4d744b30987b92686a233b724"
-  integrity sha512-cle9DGwXjiL/Xu4KU2uajBLaNgi1K97BWO2sRJwAodWSRSdDFgLWdVCGCYQWCvRx/PI9yDaMM/KIng3U3yYPdQ==
+xo@0.40.2:
+  version "0.40.2"
+  resolved "https://registry.yarnpkg.com/xo/-/xo-0.40.2.tgz#68a8bed647cddb750fe75edecc2dbe866ddad803"
+  integrity sha512-luBFj3WAhE2EJKainO+lLPFF7aKvlRUdBZbn1iZuMeioPXaVqqcsb/Nbn0+l0sAcDwhJL6Wa1GFHFja6JAiTOw==
   dependencies:
     "@eslint/eslintrc" "^0.4.1"
     "@typescript-eslint/eslint-plugin" "^4.22.0"
