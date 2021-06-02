@@ -128,8 +128,7 @@ Mostly noise for the moment. There must be something else to fix...
 
 At this point I decided to use a better tool than intuition to progress:
 profiling. This change is the first where I guided the pruning by looking at
-the output of `node --prof benchmark/tree.js` using `node-tick-processor`
-from the [tick](https://www.npmjs.com/package/tick) package.
+the output of `node --prof benchmark/tree.js` using `node --prof-process`.
 
 Before this change, digit measures where computed using the idiom
 
@@ -216,7 +215,7 @@ This is a big one. I started writing this library with es6 syntax in mind.
 However, looking at the profiler output you will see:
 
 ```sh
-$ node-tick-processor isolate-0x2af4cf0-v8.log | grep '3:24'
+$ node --prof-process (exa -snew isolate-*.log | tail -1) | grep '3:24'
     146    2.3%    2.4%  LazyCompile: *get ~/sandbox/finger-tree/js/dist/fingertree.js:3:24
     278  100.0%          LazyCompile: *get ~/sandbox/finger-tree/js/dist/fingertree.js:3:24
       6  100.0%            LazyCompile: *get ~/sandbox/finger-tree/js/dist/fingertree.js:3:24
