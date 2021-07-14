@@ -1927,10 +1927,10 @@
   resolved "https://registry.yarnpkg.com/@functional-abstraction/measure/-/measure-3.0.0.tgz#b1c83e11ff37201962bc2d2f2001bb7fd64068ab"
   integrity sha512-1PUGb317QGA7CXQodL5cYVfiF2AqmDGBQ0NWvwJJbE4BOEJGniqJ7Y0vLVLUqA9A7LDYxEbt+JsKPrcOdWUM4w==
 
-"@functional-abstraction/predicate@3.0.2":
-  version "3.0.2"
-  resolved "https://registry.yarnpkg.com/@functional-abstraction/predicate/-/predicate-3.0.2.tgz#b54022b29c51124a34621b9579635ad0bc463a38"
-  integrity sha512-aQO7fL0myzoUsJzPo2Qeesr10OxRntMBblUuK98PwGqbug/uljjMOKeg+TZOJ9jU0mkbzgjJZzb84gJ8UjOYOg==
+"@functional-abstraction/predicate@4.0.0":
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/@functional-abstraction/predicate/-/predicate-4.0.0.tgz#a0a89f570d607fe213e2666826182618026a3c9a"
+  integrity sha512-rWADhlPVxopUyKzv+T7lGmnJBqvIT3Mn2pnrfftE5m8UNDuYiAqO5p/xCsyBcs3a/XLUcXKVugmPowaTpvM4VA==
 
 "@istanbuljs/schema@^0.1.2":
   version "0.1.3"

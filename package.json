@@ -69,7 +69,7 @@
     "@babel/register": "7.14.5",
     "@commitlint/cli": "12.1.4",
     "@functional-abstraction/measure": "3.0.0",
-    "@functional-abstraction/predicate": "3.0.2",
+    "@functional-abstraction/predicate": "4.0.0",
     "@iterable-iterator/chain": "1.0.0",
     "@iterable-iterator/list": "0.0.2",
     "@iterable-iterator/map": "0.1.0",
