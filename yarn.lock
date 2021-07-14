@@ -1937,10 +1937,10 @@
   resolved "https://registry.yarnpkg.com/@istanbuljs/schema/-/schema-0.1.3.tgz#e45e384e4b8ec16bce2fd903af78450f6bf7ec98"
   integrity sha512-ZXRY4jNvVgSVQ8DL3LTcakaAtXwTVUxE81hslsyD2AtoXW/wVob10HkOJ1X/pAlcI7D+2YoZKg5do8G/w6RYgA==
 
-"@iterable-iterator/chain@1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@iterable-iterator/chain/-/chain-1.0.0.tgz#38d15e7bad373af2dea0651f07252770823fcf08"
-  integrity sha512-2XjhgDtg5fnSUTlWrkdCWg5viYe8ZPkD/GntMBBh2Us8bV7mrDHUO1uvBLy3z+BidJNp5PL8kExNsFyzB7s5xw==
+"@iterable-iterator/chain@2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@iterable-iterator/chain/-/chain-2.0.0.tgz#85aa6ebfbef9a69e7fce10c8e7da0ec635550bf1"
+  integrity sha512-JuVZzpM0DSI31kvCyM6lbPkA4CYcsvw+HWUC+ZPQFIdsJuoaEwuHmIMgHkZYO/FOPL4MlwkJGX5hKK3R4pTWug==
 
 "@iterable-iterator/iter@^0.0.2":
   version "0.0.2"
