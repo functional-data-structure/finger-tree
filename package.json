@@ -70,7 +70,7 @@
     "@commitlint/cli": "12.1.4",
     "@functional-abstraction/measure": "3.0.0",
     "@functional-abstraction/predicate": "4.0.0",
-    "@iterable-iterator/chain": "2.0.0",
+    "@iterable-iterator/chain": "2.0.1",
     "@iterable-iterator/list": "1.0.1",
     "@iterable-iterator/map": "1.0.1",
     "@iterable-iterator/range": "2.0.1",
