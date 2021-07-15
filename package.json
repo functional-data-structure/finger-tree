@@ -72,7 +72,7 @@
     "@functional-abstraction/predicate": "4.0.0",
     "@iterable-iterator/chain": "2.0.0",
     "@iterable-iterator/list": "1.0.1",
-    "@iterable-iterator/map": "0.1.0",
+    "@iterable-iterator/map": "1.0.1",
     "@iterable-iterator/range": "1.0.0",
     "@iterable-iterator/reversed": "1.0.0",
     "@iterable-iterator/tee": "0.0.1",
