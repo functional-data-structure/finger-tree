@@ -1957,10 +1957,10 @@
   resolved "https://registry.yarnpkg.com/@iterable-iterator/list/-/list-0.0.2.tgz#6289761d3ada6bb88f0c92683367ea960f310869"
   integrity sha512-103Wwqx0x8neIFjm0GVR7cmEcv29Eg7F4lX72sr9L6FzMH9lp50ejfroAdbdMT37TWq2KVNo1eEWXtFo9hBybw==
 
-"@iterable-iterator/map@0.1.0":
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/@iterable-iterator/map/-/map-0.1.0.tgz#abccfff2fd3cfde9505566563eb15dae4209bfb0"
-  integrity sha512-Qx6GvjGqqhk4zxOrP1Q18tvMyr5CPdDRtxSlzkTabFdREy4fLc3nddZBoheD3RovWvaRDmQstt76ETIspDJkcQ==
+"@iterable-iterator/map@1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@iterable-iterator/map/-/map-1.0.1.tgz#7e4d82cb86877bf487e075347fde990ed21844da"
+  integrity sha512-lUvX8/OCYRdof3eZii8ntJUvqW1MlL2ESkIcQj3cagajKVfBIBj058wE4ScrzQl6U2udMva/n2NwP70smdfZ+g==
 
 "@iterable-iterator/map@^0.0.1":
   version "0.0.1"
