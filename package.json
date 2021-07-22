@@ -98,7 +98,7 @@
     "np": "7.5.0",
     "pinst": "2.1.6",
     "power-assert": "1.6.1",
-    "regenerator-runtime": "0.13.7",
+    "regenerator-runtime": "0.13.9",
     "xo": "0.40.3"
   },
   "ava": {
