@@ -92,7 +92,7 @@
     "fingertree": "0.1.7",
     "fixpack": "4.0.0",
     "husky": "7.0.1",
-    "lint-staged": "11.0.1",
+    "lint-staged": "11.1.0",
     "microbundle": "0.13.3",
     "microtime": "3.0.0",
     "np": "7.5.0",
