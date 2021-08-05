@@ -47,7 +47,7 @@
     "build-gh-pages": "npm run build-docs",
     "ci:test": "npm run lint-config && npm run lint && npm run cover",
     "commit-msg": "commitlint --edit",
-    "cover": "c8 --all --src src --reporter=lcov npm test",
+    "cover": "NODE_ENV=cover c8 --all --src src --reporter=lcov npm test",
     "debug": "NODE_ENV=debug npm run test -- -st --fail-fast",
     "dev": "npm run lint-config-and-fix && npm run lint-and-fix && npm run cover -- -- -st --fail-fast",
     "install-hooks": "husky install",
