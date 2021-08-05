@@ -18,7 +18,7 @@ domReady(() => {
 
 	const testlink = document.querySelector('header > a[data-ice="testLink"]');
 	testlink.href =
-		'https://coveralls.io/github/functional-data-structure/finger-tree';
+		'https://app.codecov.io/gh/functional-data-structure/finger-tree';
 	testlink.target = '_BLANK';
 
 	const searchBox = document.querySelector('.search-box');
