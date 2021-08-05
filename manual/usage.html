@@ -76,12 +76,12 @@
 <a href="https://www.npmjs.com/package/regenerator-runtime">regenerator-runtime/runtime</a>.</p>
 </blockquote>
 <p>First, require the polyfill at the entry point of your application</p>
-<pre><code class="lang-js"><code class="source-code prettyprint">require( &apos;regenerator-runtime/runtime&apos; );
+<pre><code class="lang-js"><code class="source-code prettyprint">await import( &apos;regenerator-runtime/runtime.js&apos; );
 // or
 import &apos;regenerator-runtime/runtime.js&apos; ;</code>
 </code></pre>
 <p>Then</p>
-<pre><code class="lang-js"><code class="source-code prettyprint">const fingertree = require( &apos;@functional-data-structure/finger-tree&apos; ) ;
+<pre><code class="lang-js"><code class="source-code prettyprint">const fingertree = await import( &apos;@functional-data-structure/finger-tree&apos; ) ;
 // or
 import fingertree from &apos;@functional-data-structure/finger-tree&apos; ;</code>
 </code></pre>

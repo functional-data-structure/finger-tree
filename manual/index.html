@@ -99,10 +99,10 @@ or <a href="https://github.com/npm/npm">npm</a>.</p><h3>jspm</h3><pre><code clas
         <div data-ice="card"><h1>Usage</h1><blockquote>
 <p>:warning: The code requires <code>regeneratorRuntime</code> to be defined, for instance by importing
 <a href="https://www.npmjs.com/package/regenerator-runtime">regenerator-runtime/runtime</a>.</p>
-</blockquote><p>First, require the polyfill at the entry point of your application</p><pre><code class="lang-js"><code class="source-code prettyprint">require( &apos;regenerator-runtime/runtime&apos; );
+</blockquote><p>First, require the polyfill at the entry point of your application</p><pre><code class="lang-js"><code class="source-code prettyprint">await import( &apos;regenerator-runtime/runtime.js&apos; );
 // or
 import &apos;regenerator-runtime/runtime.js&apos; ;</code>
-</code></pre><p>Then</p><pre><code class="lang-js"><code class="source-code prettyprint">const fingertree = require( &apos;@functional-data-structure/finger-tree&apos; ) ;
+</code></pre><p>Then</p><pre><code class="lang-js"><code class="source-code prettyprint">const fingertree = await import( &apos;@functional-data-structure/finger-tree&apos; ) ;
 // or
 import fingertree from &apos;@functional-data-structure/finger-tree&apos; ;</code>
 </code></pre></div>
@@ -222,8 +222,7 @@ init: 6657ms</code>
 <p>28f6ee08d33e2cb2b9d0e5cae69948a7013bc0b7</p>
 </blockquote><p>At this point I decided to use a better tool than intuition to progress:
 profiling. This change is the first where I guided the pruning by looking at
-the output of <code>node --prof benchmark/tree.js</code> using <code>node-tick-processor</code>
-from the <a href="https://www.npmjs.com/package/tick">tick</a> package.</p><p>Before this change, digit measures where computed using the idiom</p><pre><code class="lang-js"><code class="source-code prettyprint">reduce( M.plus.bind( M ) , map( M.measure.bind( M ) , digit ) , M.zero( ) ) ;</code>
+the output of <code>node --prof benchmark/tree.js</code> using <code>node --prof-process</code>.</p><p>Before this change, digit measures where computed using the idiom</p><pre><code class="lang-js"><code class="source-code prettyprint">reduce( M.plus.bind( M ) , map( M.measure.bind( M ) , digit ) , M.zero( ) ) ;</code>
 </code></pre><p>However, since all four digit types are hard-coded has classes One, Two, Three
 and Four we could as well give a custom implementation of the <code>measure( )</code> method
 to each digit type. For type Two for example, we have:</p><pre><code class="lang-js"><code class="source-code prettyprint">class Two {
@@ -271,7 +270,7 @@ init: 408ms</code>
 </code></pre><p>Here again a big improvement on the split method.</p><h2>Dropping some of the es6 syntax</h2><blockquote>
 <p>295011e3293b3dd2fe1edc80bdf1a14ca6d4dcca</p>
 </blockquote><p>This is a big one. I started writing this library with es6 syntax in mind.
-However, looking at the profiler output you will see:</p><pre><code class="lang-sh"><code class="source-code prettyprint">$ node-tick-processor isolate-0x2af4cf0-v8.log | grep &apos;3:24&apos;
+However, looking at the profiler output you will see:</p><pre><code class="lang-sh"><code class="source-code prettyprint">$ node --prof-process (exa -snew isolate-*.log | tail -1) | grep &apos;3:24&apos;
     146    2.3%    2.4%  LazyCompile: *get ~/sandbox/finger-tree/js/dist/fingertree.js:3:24
     278  100.0%          LazyCompile: *get ~/sandbox/finger-tree/js/dist/fingertree.js:3:24
       6  100.0%            LazyCompile: *get ~/sandbox/finger-tree/js/dist/fingertree.js:3:24

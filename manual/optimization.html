@@ -179,8 +179,7 @@ init: 6657ms</code>
 </blockquote>
 <p>At this point I decided to use a better tool than intuition to progress:
 profiling. This change is the first where I guided the pruning by looking at
-the output of <code>node --prof benchmark/tree.js</code> using <code>node-tick-processor</code>
-from the <a href="https://www.npmjs.com/package/tick">tick</a> package.</p>
+the output of <code>node --prof benchmark/tree.js</code> using <code>node --prof-process</code>.</p>
 <p>Before this change, digit measures where computed using the idiom</p>
 <pre><code class="lang-js"><code class="source-code prettyprint">reduce( M.plus.bind( M ) , map( M.measure.bind( M ) , digit ) , M.zero( ) ) ;</code>
 </code></pre>
@@ -246,7 +245,7 @@ init: 408ms</code>
 </blockquote>
 <p>This is a big one. I started writing this library with es6 syntax in mind.
 However, looking at the profiler output you will see:</p>
-<pre><code class="lang-sh"><code class="source-code prettyprint">$ node-tick-processor isolate-0x2af4cf0-v8.log | grep &apos;3:24&apos;
+<pre><code class="lang-sh"><code class="source-code prettyprint">$ node --prof-process (exa -snew isolate-*.log | tail -1) | grep &apos;3:24&apos;
     146    2.3%    2.4%  LazyCompile: *get ~/sandbox/finger-tree/js/dist/fingertree.js:3:24
     278  100.0%          LazyCompile: *get ~/sandbox/finger-tree/js/dist/fingertree.js:3:24
       6  100.0%            LazyCompile: *get ~/sandbox/finger-tree/js/dist/fingertree.js:3:24
