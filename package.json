@@ -27,6 +27,7 @@
   "source": "src/index.js",
   "main": "dist/index.cjs",
   "module": "dist/index.module.js",
+  "esmodule": "dist/index.modern.js",
   "umd:main": "dist/index.umd.js",
   "unpkg": "dist/index.umd.js",
   "exports": {
