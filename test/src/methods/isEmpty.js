@@ -5,6 +5,7 @@ import {Measures} from '@functional-abstraction/measure';
 import {range} from '@iterable-iterator/range';
 
 import {empty, from} from '../../../src/index.js';
+
 const {COUNTER} = Measures;
 
 test('empty(COUNTER) is empty', (t) => {

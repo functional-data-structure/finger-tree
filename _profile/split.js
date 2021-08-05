@@ -3,6 +3,7 @@ require('regenerator-runtime/runtime');
 const ArgumentParser = require('argparse').ArgumentParser;
 const range = require('@iterable-iterator/range').range;
 const empty = require('..').empty;
+
 const COUNTER = {
 	plus(a, b) {
 		return a + b;
@@ -28,9 +29,5 @@ const t = empty(COUNTER).append(range(M));
 console.timeEnd('prepare');
 
 console.time('split');
-for (let k = 0; k < N; ++k)
-	for (let i = 0; i < M; ++i)
-		t.split((m) => {
-			return m > i;
-		});
+for (let k = 0; k < N; ++k) for (let i = 0; i < M; ++i) t.split((m) => m > i);
 console.timeEnd('split');

@@ -5,6 +5,7 @@ import {Measures} from '@functional-abstraction/measure';
 import {gt} from '@functional-abstraction/predicate';
 
 import {empty} from '../../src/index.js';
+
 const {COUNTER} = Measures;
 
 test('head', (t) => {

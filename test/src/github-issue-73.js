@@ -5,6 +5,7 @@ import {Measures} from '@functional-abstraction/measure';
 import {list} from '@iterable-iterator/list';
 
 import {from} from '../../src/index.js';
+
 const {COUNTER} = Measures;
 
 function set(tree, index, value) {

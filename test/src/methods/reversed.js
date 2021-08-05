@@ -8,6 +8,7 @@ import {tee} from '@iterable-iterator/tee';
 import {reversed} from '@iterable-iterator/reversed';
 
 import {from} from '../../../src/index.js';
+
 const {COUNTER} = Measures;
 
 const macro = (t, iterable) => {

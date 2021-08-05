@@ -7,6 +7,7 @@ const range = require('@iterable-iterator/range').range;
 
 const qiao_fingertree = require('fingertree');
 const fds_finger_tree = require('..');
+
 const fromArray = qiao_fingertree.fromArray;
 const empty = fds_finger_tree.empty;
 const from = fds_finger_tree.from;
@@ -320,10 +321,7 @@ const SPLIT = new Benchmark.Suite()
 		() => {
 			const _M = M;
 			const _qt = qt;
-			for (let i = 0; i < _M; ++i)
-				_qt.split((m) => {
-					return m > i;
-				});
+			for (let i = 0; i < _M; ++i) _qt.split((m) => m > i);
 		},
 		{setup},
 	)
@@ -332,10 +330,7 @@ const SPLIT = new Benchmark.Suite()
 		() => {
 			const _M = M;
 			const _at = at;
-			for (let i = 0; i < _M; ++i)
-				_at.split((m) => {
-					return m > i;
-				});
+			for (let i = 0; i < _M; ++i) _at.split((m) => m > i);
 		},
 		{setup},
 	);
@@ -382,11 +377,7 @@ new Benchmark.Suite()
 				const t = from(COUNTER, range(M));
 				const splits = [];
 				for (let i = 0; i < M; ++i) {
-					splits.push(
-						t.split((m) => {
-							return m > i;
-						}),
-					);
+					splits.push(t.split((m) => m > i));
 				}
 			},
 			teardown() {
@@ -406,11 +397,7 @@ new Benchmark.Suite()
 				const t = fromArray(Array.from(range(M)));
 				const splits = [];
 				for (let i = 0; i < M; ++i) {
-					splits.push(
-						t.split((m) => {
-							return m > i;
-						}),
-					);
+					splits.push(t.split((m) => m > i));
 				}
 			},
 			teardown() {

@@ -2,6 +2,7 @@ console.time('prepare');
 require('regenerator-runtime/runtime');
 const ArgumentParser = require('argparse').ArgumentParser;
 const empty = require('..').empty;
+
 const COUNTER = {
 	plus(a, b) {
 		return a + b;

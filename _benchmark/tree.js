@@ -1,6 +1,7 @@
 require('regenerator-runtime/runtime');
 const range = require('@iterable-iterator/range').range;
 const fingertree = require('..');
+
 const empty = fingertree.empty;
 const from = fingertree.from;
 
@@ -64,9 +65,7 @@ console.timeEnd('append');
 
 console.time('split');
 for (i = 0; i < length; ++i) {
-	t.split((m) => {
-		return m > i;
-	});
+	t.split((m) => m > i);
 }
 
 console.timeEnd('split');
@@ -75,11 +74,7 @@ const time = Date.now() - start;
 
 const splits = [];
 for (i = 0; i < length; ++i) {
-	splits.push(
-		t.split((m) => {
-			return m > i;
-		}),
-	);
+	splits.push(t.split((m) => m > i));
 }
 
 start = Date.now() - time;

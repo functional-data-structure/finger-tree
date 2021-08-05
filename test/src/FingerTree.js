@@ -11,6 +11,7 @@ import {reversed} from '@iterable-iterator/reversed';
 import {gt} from '@functional-abstraction/predicate';
 
 import {empty, from} from '../../src/index.js';
+
 const {COUNTER} = Measures;
 
 test('FingerTree', (t) => {

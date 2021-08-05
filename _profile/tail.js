@@ -3,6 +3,7 @@ require('regenerator-runtime/runtime');
 const ArgumentParser = require('argparse').ArgumentParser;
 const range = require('@iterable-iterator/range').range;
 const empty = require('..').empty;
+
 const COUNTER = {
 	plus(a, b) {
 		return a + b;
