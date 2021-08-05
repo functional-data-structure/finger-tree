@@ -1544,10 +1544,10 @@
   resolved "https://registry.yarnpkg.com/@failure-abstraction/error/-/error-6.0.1.tgz#ab6929395c7ed3ec74d86db2976e74e31f9569e2"
   integrity sha512-KvIHhvwfrgbUduQbk55WRDGL2XcXjDLwleId+pSnK7mUUIY7zMGMy3N+ouDcOFymme48tKDlarKsYj5mEEd3fg==
 
-"@functional-abstraction/measure@3.0.0":
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/@functional-abstraction/measure/-/measure-3.0.0.tgz#b1c83e11ff37201962bc2d2f2001bb7fd64068ab"
-  integrity sha512-1PUGb317QGA7CXQodL5cYVfiF2AqmDGBQ0NWvwJJbE4BOEJGniqJ7Y0vLVLUqA9A7LDYxEbt+JsKPrcOdWUM4w==
+"@functional-abstraction/measure@4.0.0":
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/@functional-abstraction/measure/-/measure-4.0.0.tgz#cc64ff39bec8833589dba4dc0cdb60514469f95f"
+  integrity sha512-yaspvUo/2H0NGjrc8hmhM10MojEXvzzcsNycr5+VFtjEBmK2ImtZ++832R3YhcL6WgbNJEhnaveCW3LFtTqNqw==
 
 "@functional-abstraction/predicate@4.0.0":
   version "4.0.0"

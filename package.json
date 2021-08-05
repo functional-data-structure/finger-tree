@@ -68,7 +68,7 @@
     "@babel/preset-env": "7.15.0",
     "@babel/register": "7.14.5",
     "@commitlint/cli": "13.1.0",
-    "@functional-abstraction/measure": "3.0.0",
+    "@functional-abstraction/measure": "4.0.0",
     "@functional-abstraction/predicate": "4.0.0",
     "@iterable-iterator/chain": "2.0.1",
     "@iterable-iterator/list": "1.0.1",
