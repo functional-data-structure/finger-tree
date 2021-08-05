@@ -118,9 +118,18 @@
       [
         "@babel/preset-env",
         {
-          "targets": [
-            "defaults",
-            "maintained node versions"
+          "targets": "current node"
+        }
+      ]
+    ],
+    "plugins": [
+      [
+        "transform-remove-console",
+        {
+          "exclude": [
+            "log",
+            "error",
+            "warn"
           ]
         }
       ]
@@ -128,23 +137,6 @@
     "env": {
       "debug": {
         "presets": [
-          [
-            "@babel/preset-env",
-            {
-              "targets": "current node"
-            }
-          ],
-          "babel-preset-power-assert"
-        ]
-      },
-      "test": {
-        "presets": [
-          [
-            "@babel/preset-env",
-            {
-              "targets": "current node"
-            }
-          ],
           "babel-preset-power-assert"
         ],
         "plugins": [
@@ -152,68 +144,54 @@
             "transform-remove-console",
             {
               "exclude": [
+                "debug",
                 "log",
                 "error",
                 "warn"
               ]
             }
           ]
+        ]
+      },
+      "test": {
+        "presets": [
+          "babel-preset-power-assert"
         ]
       },
       "cover": {
         "sourceMaps": "both",
         "presets": [
-          [
-            "@babel/preset-env",
-            {
-              "targets": "current node"
-            }
-          ],
           "babel-preset-power-assert"
-        ],
-        "plugins": [
-          [
-            "transform-remove-console",
-            {
-              "exclude": [
-                "log",
-                "error",
-                "warn"
-              ]
-            }
-          ]
         ]
       },
       "development": {
         "presets": [
-          "babel-preset-power-assert"
-        ],
-        "plugins": [
           [
-            "transform-remove-console",
+            "@babel/preset-env",
             {
-              "exclude": [
-                "log",
-                "error",
-                "warn"
+              "targets": [
+                "defaults",
+                "maintained node versions"
               ]
             }
-          ]
+          ],
+          "babel-preset-power-assert"
         ]
       },
       "production": {
-        "plugins": [
-          "babel-plugin-unassert",
+        "presets": [
           [
-            "transform-remove-console",
+            "@babel/preset-env",
             {
-              "exclude": [
-                "log",
-                "error",
-                "warn"
+              "targets": [
+                "defaults",
+                "maintained node versions"
               ]
             }
           ]
+        ],
+        "plugins": [
+          "babel-plugin-unassert"
         ]
       }
     }
