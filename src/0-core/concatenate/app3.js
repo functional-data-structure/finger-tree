@@ -1,8 +1,13 @@
-import {Empty, Single, Deep} from '../../3-tree/index.js';
+import assert from 'assert';
+
+import {Tree, Empty, Single, Deep} from '../../3-tree/index.js';
 import {delay} from '../../4-lazy/index.js';
 import {_prepend, _append} from '../_fast/index.js';
 
 export function app3(A, list, B) {
+	assert(A instanceof Tree);
+	assert(B instanceof Tree);
+
 	A = A.force();
 	B = B.force();
 

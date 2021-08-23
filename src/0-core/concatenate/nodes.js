@@ -1,6 +1,9 @@
+import assert from 'assert';
+
 import {node2, node3} from '../../2-node/index.js';
 
 export function nodes(M, list) {
+	assert(list.length >= 3 && list.length <= 12);
 	const out = [];
 
 	const n = list.length;

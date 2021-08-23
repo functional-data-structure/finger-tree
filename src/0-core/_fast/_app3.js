@@ -1,8 +1,12 @@
+import assert from 'assert';
+
 import {Empty, Single, Deep} from '../../3-tree/index.js';
 import {delay} from '../../4-lazy/index.js';
 import {app3} from '../concatenate/index.js';
 
 export function _app3(A, B) {
+	assert(A instanceof Deep);
+
 	B = B.force();
 
 	if (B instanceof Empty) return A;
