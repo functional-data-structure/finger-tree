@@ -11,6 +11,7 @@ import {
 import {One, Two, Four} from '../../1-digit/index.js';
 import {delay, Lazy} from '../../4-lazy/index.js';
 import _prepend_small_list from '../../0-core/_fast/_prepend_small_list.js';
+import _fill_right from '../../0-core/_fast/_fill_right.js';
 import {Empty} from './index.js';
 
 export function Deep(M, left, middle, right) {
@@ -107,6 +108,22 @@ Deep.prototype.push = function (value) {
 	}
 
 	return new Deep(this.M, this.left, this.middle, this.right.push(value));
+};
+
+Deep.prototype.append = function (iterable) {
+	const it = iterable[Symbol.iterator]();
+
+	let event = it.next();
+	if (event.done) return this;
+	const a = event.value;
+
+	event = it.next();
+	if (event.done) return this.push(a);
+	const b = event.value;
+
+	const middle = this.middle.push(this.right._nodes(this.M, new One(a)));
+
+	return _fill_right(this.M, this.left, middle, b, it);
 };
 
 Deep.prototype.concat = function (other) {

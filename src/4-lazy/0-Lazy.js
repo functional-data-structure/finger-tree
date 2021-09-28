@@ -56,6 +56,10 @@ Lazy.prototype.split = function (p) {
 	return this.force().split(p);
 };
 
+Lazy.prototype.append = function (iterable) {
+	return this.force().append(iterable);
+};
+
 Lazy.prototype.concat = function (other) {
 	return this.force().concat(other);
 };
