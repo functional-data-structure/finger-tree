@@ -1,6 +1,9 @@
+import assert from 'assert';
 import {Tree} from '../base/index.js';
 import {cache, Split} from '../../0-core/index.js';
 import {One} from '../../1-digit/index.js';
+import _append_small_list from '../../0-core/_fast/_append_small_list.js';
+import {_from_medium_list} from '../../0-core/_fast/_from_medium_list.js';
 import {Empty, Deep} from './index.js';
 
 export function Single(M, value) {
@@ -74,4 +77,27 @@ Single.prototype.split = function (p) {
 	return p(this.measure())
 		? [new Empty(this.M), this]
 		: [this, new Empty(this.M)];
+};
+
+Single.prototype._concat_with_deep = function (other) {
+	assert(other instanceof Deep);
+	return other.push(this.a);
+};
+
+Single.prototype._app3 = function (list, other) {
+	assert(other instanceof Tree);
+	return other._app3_with_single(list, this.a);
+};
+
+Single.prototype._app3_with_empty = function (list) {
+	return _from_medium_list(this.M, list).push(this.a);
+};
+
+Single.prototype._app3_with_single = function (list, value) {
+	return _from_medium_list(this.M, list).push(this.a).cons(value);
+};
+
+Single.prototype._app3_with_deep = function (list, other) {
+	assert(other instanceof Deep);
+	return _append_small_list(other, list).push(this.a);
 };

@@ -68,6 +68,7 @@
   "dependencies": {},
   "devDependencies": {
     "@babel/core": "7.15.5",
+    "@babel/eslint-parser": "^7.15.7",
     "@babel/preset-env": "7.15.4",
     "@babel/register": "7.15.3",
     "@commitlint/cli": "13.1.0",
@@ -77,27 +78,24 @@
     "@iterable-iterator/list": "1.0.1",
     "@iterable-iterator/map": "1.0.1",
     "@iterable-iterator/range": "2.1.0",
+    "@iterable-iterator/reduce": "^1.0.1",
     "@iterable-iterator/repeat": "1.0.1",
     "@iterable-iterator/reversed": "1.0.0",
     "@iterable-iterator/tee": "1.0.0",
     "@js-library/commitlint-config": "0.0.4",
-    "argparse": "2.0.1",
     "ava": "3.15.0",
     "babel-plugin-transform-remove-console": "6.9.4",
     "babel-plugin-unassert": "3.1.0",
     "babel-preset-power-assert": "3.0.0",
-    "benchmark": "2.1.4",
     "c8": "7.8.0",
     "esdoc": "1.1.0",
     "esdoc-inject-script-plugin": "1.0.0",
     "esdoc-inject-style-plugin": "1.0.0",
     "esdoc-standard-plugin": "1.0.0",
-    "fingertree": "0.1.7",
     "fixpack": "4.0.0",
     "husky": "7.0.2",
     "lint-staged": "11.1.2",
     "microbundle": "0.13.1",
-    "microtime": "3.0.0",
     "np": "7.5.0",
     "pinst": "2.1.6",
     "power-assert": "1.6.1",
@@ -210,6 +208,10 @@
     "trailingComma": "all"
   },
   "xo": {
+    "parser": "@babel/eslint-parser",
+    "parserOptions": {
+      "requireConfigFile": false
+    },
     "prettier": true,
     "plugins": [
       "unicorn"
@@ -219,6 +221,7 @@
       "unicorn/filename-case": "off",
       "unicorn/explicit-length-check": "off",
       "unicorn/no-array-push-push": "off",
+      "unicorn/prefer-math-trunc": "off",
       "unicorn/prefer-node-protocol": "off",
       "unicorn/prefer-module": "off"
     },
@@ -226,6 +229,7 @@
       {
         "files": "_benchmark/*.js",
         "rules": {
+          "unicorn/no-array-callback-reference": "off",
           "import/no-unassigned-import": "off",
           "no-undef": "off"
         }

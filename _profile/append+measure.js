@@ -19,6 +19,6 @@ const t = empty(COUNTER);
 console.timeEnd('prepare');
 
 const r = range(M);
-console.time('append');
-for (let k = 0; k < N; ++k) t.append(r);
-console.timeEnd('append');
+console.time('append+measure');
+for (let k = 0; k < N; ++k) t.append(r).measure();
+console.timeEnd('append+measure');

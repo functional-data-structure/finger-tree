@@ -1,0 +1,12 @@
+{
+  "type": "module",
+  "scripts": {
+    "build-cmd": "babel --delete-dir-on-start",
+    "build:profile": "yarn build-cmd --env-name profile --out-dir dist/profile ../src",
+    "profile": "sh profile.sh"
+  },
+  "dependencies": {
+    "@iterable-iterator/range": "^2.1.0",
+    "argparse": "^2.0.1"
+  }
+}
