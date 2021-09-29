@@ -81,11 +81,9 @@ One.prototype._nodes_with_list = function (M, list, other) {
 
 One.prototype._nodes_with_list_and_one = function (M, list, other) {
 	assert(other instanceof One);
-	assert(Number.isInteger(list.length) && list.length >= 0 && list.length <= 4);
+	assert(Number.isInteger(list.length) && list.length >= 1 && list.length <= 4);
 	// eslint-disable-next-line default-case
 	switch (list.length) {
-		case 0:
-			return [node2(M, other.a, this.a)];
 		case 1:
 			return [node3(M, other.a, list[0], this.a)];
 		case 2:
@@ -102,11 +100,9 @@ One.prototype._nodes_with_list_and_one = function (M, list, other) {
 
 One.prototype._nodes_with_list_and_two = function (M, list, other) {
 	assert(other instanceof Two);
-	assert(Number.isInteger(list.length) && list.length >= 0 && list.length <= 4);
+	assert(Number.isInteger(list.length) && list.length >= 1 && list.length <= 4);
 	// eslint-disable-next-line default-case
 	switch (list.length) {
-		case 0:
-			return [node3(M, other.a, other.b, this.a)];
 		case 1:
 			return [other.node(M), node2(M, list[0], this.a)];
 		case 2:
@@ -127,11 +123,9 @@ One.prototype._nodes_with_list_and_two = function (M, list, other) {
 
 One.prototype._nodes_with_list_and_three = function (M, list, other) {
 	assert(other instanceof Three);
-	assert(Number.isInteger(list.length) && list.length >= 0 && list.length <= 4);
+	assert(Number.isInteger(list.length) && list.length >= 1 && list.length <= 4);
 	// eslint-disable-next-line default-case
 	switch (list.length) {
-		case 0:
-			return [node2(M, other.a, other.b), node2(M, other.c, this.a)];
 		case 1:
 			return [other.node(M), node2(M, list[0], this.a)];
 		case 2:
@@ -153,11 +147,9 @@ One.prototype._nodes_with_list_and_three = function (M, list, other) {
 
 One.prototype._nodes_with_list_and_four = function (M, list, other) {
 	assert(other instanceof Four);
-	assert(Number.isInteger(list.length) && list.length >= 0 && list.length <= 4);
+	assert(Number.isInteger(list.length) && list.length >= 1 && list.length <= 4);
 	// eslint-disable-next-line default-case
 	switch (list.length) {
-		case 0:
-			return [node3(M, other.a, other.b, other.c), node2(M, other.d, this.a)];
 		case 1:
 			return [
 				node3(M, other.a, other.b, other.c),

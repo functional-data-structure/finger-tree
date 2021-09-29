@@ -1,7 +1,10 @@
 import {map} from '@iterable-iterator/map';
 import {reduce} from '@iterable-iterator/reduce';
+import {reversed} from '@iterable-iterator/reversed';
 
 import {Measures} from '@functional-abstraction/measure';
+
+import {empty} from '../../src/index.js';
 
 export const ABSTRACT_COUNTER = Measures.COUNTER;
 
@@ -32,3 +35,18 @@ export const measureToString = (M) => {
 };
 
 export const iterableToString = (iterable) => iterable.toString();
+
+export const fromToString = (measure, iterable) =>
+	`from(${measureToString(measure)}, ${iterableToString(iterable)})`;
+
+export const fromLeft = (M, iterable) => {
+	let tree = empty(M);
+	for (const x of iterable) tree = tree.push(x);
+	return tree;
+};
+
+export const fromRight = (M, iterable) => {
+	let tree = empty(M);
+	for (const x of reversed(iterable)) tree = tree.cons(x);
+	return tree;
+};

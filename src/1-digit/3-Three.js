@@ -91,11 +91,9 @@ Three.prototype._nodes_with_list = function (M, list, other) {
 
 Three.prototype._nodes_with_list_and_one = function (M, list, other) {
 	assert(other instanceof One);
-	assert(list.length <= 4);
+	assert(Number.isInteger(list.length) && list.length >= 1 && list.length <= 4);
 	// eslint-disable-next-line default-case
 	switch (list.length) {
-		case 0:
-			return [node2(M, other.a, this.a), node2(M, this.b, this.c)];
 		case 1:
 			return [node2(M, other.a, list[0]), this.node(M)];
 		case 2:
@@ -117,11 +115,9 @@ Three.prototype._nodes_with_list_and_one = function (M, list, other) {
 
 Three.prototype._nodes_with_list_and_two = function (M, list, other) {
 	assert(other instanceof Two);
-	assert(Number.isInteger(list.length) && list.length >= 0 && list.length <= 4);
+	assert(Number.isInteger(list.length) && list.length >= 1 && list.length <= 4);
 	// eslint-disable-next-line default-case
 	switch (list.length) {
-		case 0:
-			return [other.node(M), this.node(M)];
 		case 1:
 			return [node3(M, other.a, other.b, list[0]), this.node(M)];
 		case 2:
@@ -139,11 +135,9 @@ Three.prototype._nodes_with_list_and_two = function (M, list, other) {
 
 Three.prototype._nodes_with_list_and_three = function (M, list, other) {
 	assert(other instanceof Three);
-	assert(Number.isInteger(list.length) && list.length >= 0 && list.length <= 4);
+	assert(Number.isInteger(list.length) && list.length >= 1 && list.length <= 4);
 	// eslint-disable-next-line default-case
 	switch (list.length) {
-		case 0:
-			return [other.node(M), this.node(M)];
 		case 1:
 			return [
 				node2(M, other.a, other.b),
@@ -166,15 +160,9 @@ Three.prototype._nodes_with_list_and_three = function (M, list, other) {
 
 Three.prototype._nodes_with_list_and_four = function (M, list, other) {
 	assert(other instanceof Four);
-	assert(Number.isInteger(list.length) && list.length >= 0 && list.length <= 4);
+	assert(Number.isInteger(list.length) && list.length >= 1 && list.length <= 4);
 	// eslint-disable-next-line default-case
 	switch (list.length) {
-		case 0:
-			return [
-				node2(M, other.a, other.b),
-				node2(M, other.c, other.d),
-				this.node(M),
-			];
 		case 1:
 			return [
 				node2(M, other.a, other.b),

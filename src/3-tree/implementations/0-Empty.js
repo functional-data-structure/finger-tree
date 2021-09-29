@@ -4,6 +4,7 @@ import {_EMPTY} from '../../0-core/index.js';
 import {_from_medium_list} from '../../0-core/_fast/_from_medium_list.js';
 import _append_small_list from '../../0-core/_fast/_append_small_list.js';
 import _from_by_filling from '../../0-core/_fast/_from_by_filling.js';
+import isSameMeasure from '../../_debug/isSameMeasure.js';
 import {Single, Deep} from './index.js';
 
 export function Empty(M) {
@@ -50,6 +51,7 @@ Empty.prototype.append = function (iterable) {
 };
 
 Empty.prototype.concat = function (other) {
+	assert(other instanceof Tree);
 	return other;
 };
 
@@ -72,6 +74,7 @@ Empty.prototype.split = function (_p) {
 
 Empty.prototype._concat_with_deep = function (other) {
 	assert(other instanceof Deep);
+	assert(isSameMeasure(other.M, this.M));
 	return other;
 };
 
@@ -90,5 +93,6 @@ Empty.prototype._app3_with_single = function (list, value) {
 
 Empty.prototype._app3_with_deep = function (list, other) {
 	assert(other instanceof Deep);
+	assert(isSameMeasure(other.M, this.M));
 	return _append_small_list(other, list);
 };
