@@ -36,9 +36,6 @@ export default function _fill_right(M, left, middle, x1, iterator) {
 	let event;
 	let x2;
 	let x3;
-	let y1;
-	let y2;
-	let y3;
 	for (;;) {
 		event = iterator.next();
 		if (event.done) return new Deep(M, left, middle, new One(x1));
@@ -50,22 +47,7 @@ export default function _fill_right(M, left, middle, x1, iterator) {
 
 		event = iterator.next();
 		if (event.done) return new Deep(M, left, middle, new Three(x1, x2, x3));
-		y1 = event.value;
-
 		middle = middle.push(node3(M, x1, x2, x3));
-
-		event = iterator.next();
-		if (event.done) return new Deep(M, left, middle, new One(y1));
-		y2 = event.value;
-
-		event = iterator.next();
-		if (event.done) return new Deep(M, left, middle, new Two(y1, y2));
-		y3 = event.value;
-
-		event = iterator.next();
-		if (event.done) return new Deep(M, left, middle, new Three(y1, y2, y3));
 		x1 = event.value;
-
-		middle = middle.push(node3(M, y1, y2, y3));
 	}
 }
