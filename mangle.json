@@ -4,6 +4,10 @@
       "properties": {
         "regex": "^_[^_]"
       }
+    },
+    "compress": {
+      "inline": false,
+      "reduce_funcs": false
     }
   },
   "props": {
