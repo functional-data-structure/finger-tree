@@ -1,13 +1,6 @@
 import assert from 'assert';
 import {Tree} from '../base/index.js';
-import {
-	_from_digit,
-	_from_small_list,
-	_deepL,
-	_deepR,
-	CachedMeasure,
-	Split,
-} from '../../0-core/index.js';
+import {_deepL, _deepR, CachedMeasure, Split} from '../../0-core/index.js';
 import {One, Two, Three, Four} from '../../1-digit/index.js';
 import {delay, Lazy} from '../../4-lazy/index.js';
 import _prepend_small_list from '../../0-core/_fast/_prepend_small_list.js';
@@ -74,7 +67,7 @@ Deep.prototype.last = function () {
 Deep.prototype.tail = function () {
 	if (this._left instanceof One) {
 		if (this._middle.isEmpty()) {
-			return _from_digit(this.M, this._right);
+			return this._right._tree(this.M);
 		}
 
 		return new Deep(
@@ -91,7 +84,7 @@ Deep.prototype.tail = function () {
 Deep.prototype.init = function () {
 	if (this._right instanceof One) {
 		if (this._middle.isEmpty()) {
-			return _from_digit(this.M, this._left);
+			return this._left._tree(this.M);
 		}
 
 		return new Deep(
@@ -181,7 +174,7 @@ Deep.prototype.splitTree = function (p, i) {
 	if (p(leftMeasure)) {
 		const split = _left._splitDigit(p, i, M);
 		return new Split(
-			_from_small_list(M, split._left),
+			split._left === null ? new Empty(M) : split._left._tree(M),
 			split._middle,
 			_deepL(M, split._right, _middle, _right),
 		);
@@ -208,7 +201,7 @@ Deep.prototype.splitTree = function (p, i) {
 	return new Split(
 		_deepR(M, _left, _middle, split._left),
 		split._middle,
-		_from_small_list(M, split._right),
+		split._right === null ? new Empty(M) : split._right._tree(M),
 	);
 };
 

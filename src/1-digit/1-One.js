@@ -1,6 +1,7 @@
 import assert from 'assert';
 import {node2, node3} from '../2-node/index.js';
-import {Split} from '../0-core/index.js';
+import {DigitSplit} from '../0-core/split/DigitSplit.js';
+import {Single} from '../3-tree/implementations/1-Single.js';
 import {Digit, Two, Three, Four} from './index.js';
 
 export function One(a) {
@@ -43,12 +44,16 @@ One.prototype._node = function (_M) {
 	throw new Error('cannot convert One to node');
 };
 
+One.prototype._tree = function (M) {
+	return new Single(M, this.a);
+};
+
 /**
  * It is assumed that p(i+|this|) is true.
  */
 One.prototype._splitDigit = function (p, i, M) {
 	assert(p(M.plus(i, this.measure(M)))); // /!\ Potential Heisenbug generator.
-	return new Split([], this.a, []);
+	return new DigitSplit(null, this.a, null);
 };
 
 One.prototype._nodes = function (M, other) {

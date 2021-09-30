@@ -1,6 +1,9 @@
 import assert from 'assert';
+import {cache} from '../0-core/measure/cache.js';
+import {DigitSplit} from '../0-core/split/DigitSplit.js';
 import {node2, node3} from '../2-node/index.js';
-import {Split} from '../0-core/index.js';
+import {Empty} from '../3-tree/implementations/0-Empty.js';
+import {Deep} from '../3-tree/implementations/2-Deep.js';
 import {Digit, One, Two, Three} from './index.js';
 
 export function Four(a, b, c, d) {
@@ -50,18 +53,30 @@ Four.prototype._node = function (_M) {
 	throw new Error('cannot convert Four to node');
 };
 
+Four.prototype._tree = function (M) {
+	return new Deep(
+		M,
+		new Two(this.a, this.b),
+		new Empty(cache(M)),
+		new Two(this.c, this.d),
+	);
+};
+
 /**
  * It is assumed that p(i+|this|) is true.
  */
 Four.prototype._splitDigit = function (p, i, M) {
 	assert(p(M.plus(i, this.measure(M)))); // /!\ Potential Heisenbug generator.
 	i = M.plus(i, M.measure(this.a));
-	if (p(i)) return new Split([], this.a, [this.b, this.c, this.d]);
+	if (p(i))
+		return new DigitSplit(null, this.a, new Three(this.b, this.c, this.d));
 	i = M.plus(i, M.measure(this.b));
-	if (p(i)) return new Split([this.a], this.b, [this.c, this.d]);
+	if (p(i))
+		return new DigitSplit(new One(this.a), this.b, new Two(this.c, this.d));
 	i = M.plus(i, M.measure(this.c));
-	if (p(i)) return new Split([this.a, this.b], this.c, [this.d]);
-	return new Split([this.a, this.b, this.c], this.d, []);
+	if (p(i))
+		return new DigitSplit(new Two(this.a, this.b), this.c, new One(this.d));
+	return new DigitSplit(new Three(this.a, this.b, this.c), this.d, null);
 };
 
 Four.prototype._nodes = function (M, other) {
