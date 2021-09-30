@@ -1,6 +1,9 @@
 import assert from 'assert';
 import {Node2, node2, node3} from '../2-node/index.js';
-import {Split} from '../0-core/index.js';
+import {DigitSplit} from '../0-core/split/DigitSplit.js';
+import {Empty} from '../3-tree/implementations/0-Empty.js';
+import {cache} from '../0-core/measure/cache.js';
+import {Deep} from '../3-tree/implementations/2-Deep.js';
 import {Digit, One, Three, Four} from './index.js';
 
 export function Two(a, b) {
@@ -44,14 +47,18 @@ Two.prototype._node = function (M) {
 	return new Node2(this.measure(M), this.a, this.b);
 };
 
+Two.prototype._tree = function (M) {
+	return new Deep(M, new One(this.a), new Empty(cache(M)), new One(this.b));
+};
+
 /**
  * It is assumed that p(i+|this|) is true.
  */
 Two.prototype._splitDigit = function (p, i, M) {
 	assert(p(M.plus(i, this.measure(M)))); // /!\ Potential Heisenbug generator.
 	i = M.plus(i, M.measure(this.a));
-	if (p(i)) return new Split([], this.a, [this.b]);
-	return new Split([this.a], this.b, []);
+	if (p(i)) return new DigitSplit(null, this.a, new One(this.b));
+	return new DigitSplit(new One(this.a), this.b, null);
 };
 
 Two.prototype._nodes = function (M, other) {

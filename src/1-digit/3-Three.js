@@ -1,6 +1,9 @@
 import assert from 'assert';
 import {node2, Node3, node3} from '../2-node/index.js';
-import {Split} from '../0-core/index.js';
+import {DigitSplit} from '../0-core/split/DigitSplit.js';
+import {Empty} from '../3-tree/implementations/0-Empty.js';
+import {cache} from '../0-core/measure/cache.js';
+import {Deep} from '../3-tree/implementations/2-Deep.js';
 import {Digit, One, Two, Four} from './index.js';
 
 export function Three(a, b, c) {
@@ -49,16 +52,25 @@ Three.prototype._node = function (M) {
 	return new Node3(this.measure(M), this.a, this.b, this.c);
 };
 
+Three.prototype._tree = function (M) {
+	return new Deep(
+		M,
+		new Two(this.a, this.b),
+		new Empty(cache(M)),
+		new One(this.c),
+	);
+};
+
 /**
  * It is assumed that p(i+|this|) is true.
  */
 Three.prototype._splitDigit = function (p, i, M) {
 	assert(p(M.plus(i, this.measure(M)))); // /!\ Potential Heisenbug generator.
 	i = M.plus(i, M.measure(this.a));
-	if (p(i)) return new Split([], this.a, [this.b, this.c]);
+	if (p(i)) return new DigitSplit(null, this.a, new Two(this.b, this.c));
 	i = M.plus(i, M.measure(this.b));
-	if (p(i)) return new Split([this.a], this.b, [this.c]);
-	return new Split([this.a, this.b], this.c, []);
+	if (p(i)) return new DigitSplit(new One(this.a), this.b, new One(this.c));
+	return new DigitSplit(new Two(this.a, this.b), this.c, null);
 };
 
 Three.prototype._nodes = function (M, other) {

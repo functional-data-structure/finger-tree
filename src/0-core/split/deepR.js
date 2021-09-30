@@ -1,16 +1,22 @@
-import {Deep} from '../../3-tree/index.js';
+import assert from 'assert';
+
+import {Digit} from '../../1-digit/0-Digit.js';
+import {Deep, Tree} from '../../3-tree/index.js';
 import {delay} from '../../4-lazy/index.js';
-import {_from_digit, _digit} from '../_fast/index.js';
 
 /**
- * @param {Measure} M
+ * @param {any} M
  * @param {Digit} left
- * @param {FingerTree} middle
- * @param {Array} right
+ * @param {Tree} middle
+ * @param {Digit|null} right
  */
 export function deepR(M, left, middle, right) {
-	if (right.length === 0) {
-		if (middle.isEmpty()) return _from_digit(M, left);
+	assert(left instanceof Digit);
+	assert(middle instanceof Tree);
+	assert(right === null || right instanceof Digit);
+
+	if (right === null) {
+		if (middle.isEmpty()) return left._tree(M);
 
 		return new Deep(
 			M,
@@ -20,5 +26,5 @@ export function deepR(M, left, middle, right) {
 		);
 	}
 
-	return new Deep(M, left, middle, _digit(right));
+	return new Deep(M, left, middle, right);
 }
