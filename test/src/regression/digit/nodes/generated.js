@@ -5,12 +5,13 @@ import {product} from '@set-theory/cartesian-product';
 
 import {
 	ABSTRACT_COUNTER as COUNTER,
-	fromToString as f,
-	fromRight,
 	fromLeft,
+	fromRight,
+	fromLeftToString as fl,
+	fromRightToString as fr,
 } from '../../../_fixtures.js';
 
-const cover = (t, M, A, B) => {
+const flfr = (t, M, A, B) => {
 	const left = fromLeft(M, A);
 	const right = fromRight(M, B);
 	const tree = left.concat(right);
@@ -19,8 +20,24 @@ const cover = (t, M, A, B) => {
 	t.deepEqual(Array.from(tree), expected);
 };
 
-cover.title = (title, M, A, B) => title ?? `${f(M, A)}.concat(${f(M, B)})`;
+flfr.title = (title, M, A, B) => title ?? `${fl(M, A)}.concat(${fr(M, B)})`;
+
+const flifrt = (t, M, A, B) => {
+	const left = fromLeft(M, A).init();
+	const right = fromRight(M, B).tail();
+	const tree = left.concat(right);
+	const expected = Array.from(A).slice(0, -1).concat(Array.from(B).slice(1));
+	t.is(tree.measure(), expected.length);
+	t.deepEqual(Array.from(tree), expected);
+};
+
+flifrt.title = (title, M, A, B) =>
+	title ?? `${fl(M, A)}.init().concat(${fr(M, B)}.tail())`;
 
 for (const [m, n] of product([range(62)], 2)) {
-	test(cover, COUNTER, range(m), range(n));
+	test(flfr, COUNTER, range(m), range(n));
+}
+
+for (const [m, n] of product([range(19)], 2)) {
+	test(flifrt, COUNTER, range(m), range(n));
 }

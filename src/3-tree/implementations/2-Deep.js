@@ -8,15 +8,34 @@ import {
 	CachedMeasure,
 	Split,
 } from '../../0-core/index.js';
-import {One, Two, Four} from '../../1-digit/index.js';
+import {One, Two, Three, Four} from '../../1-digit/index.js';
 import {delay, Lazy} from '../../4-lazy/index.js';
 import _prepend_small_list from '../../0-core/_fast/_prepend_small_list.js';
 import _fill_right from '../../0-core/_fast/_fill_right.js';
 import isSameMeasure from '../../_debug/isSameMeasure.js';
 import _append_small_list from '../../0-core/_fast/_append_small_list.js';
-import {Empty} from './index.js';
+import {Empty} from './0-Empty.js';
+import {Single} from './1-Single.js';
 
 export function Deep(M, left, middle, right) {
+	assert(
+		left instanceof One ||
+			left instanceof Two ||
+			left instanceof Three ||
+			left instanceof Four,
+	);
+	assert(
+		middle instanceof Empty ||
+			middle instanceof Single ||
+			middle instanceof Deep ||
+			middle instanceof Lazy,
+	);
+	assert(
+		right instanceof One ||
+			right instanceof Two ||
+			right instanceof Three ||
+			right instanceof Four,
+	);
 	assert(middle instanceof Lazy || middle.M instanceof CachedMeasure);
 	this.M = M;
 	this.left = left;

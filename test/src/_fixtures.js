@@ -39,6 +39,12 @@ export const iterableToString = (iterable) => iterable.toString();
 export const fromToString = (measure, iterable) =>
 	`from(${measureToString(measure)}, ${iterableToString(iterable)})`;
 
+export const fromLeftToString = (measure, iterable) =>
+	`fromLeft(${measureToString(measure)}, ${iterableToString(iterable)})`;
+
+export const fromRightToString = (measure, iterable) =>
+	`fromRight(${measureToString(measure)}, ${iterableToString(iterable)})`;
+
 export const fromLeft = (M, iterable) => {
 	let tree = empty(M);
 	for (const x of iterable) tree = tree.push(x);
