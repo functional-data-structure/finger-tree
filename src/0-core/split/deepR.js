@@ -16,7 +16,7 @@ export function deepR(M, left, middle, right) {
 			M,
 			left,
 			delay(() => middle.init()),
-			middle.last().digit(),
+			middle.last()._digit(),
 		);
 	}
 

@@ -45,14 +45,14 @@ Three.prototype.cons = function (value) {
 	return new Four(value, this.a, this.b, this.c);
 };
 
-Three.prototype.node = function (M) {
+Three.prototype._node = function (M) {
 	return new Node3(this.measure(M), this.a, this.b, this.c);
 };
 
 /**
  * It is assumed that p(i+|this|) is true.
  */
-Three.prototype.splitDigit = function (p, i, M) {
+Three.prototype._splitDigit = function (p, i, M) {
 	assert(p(M.plus(i, this.measure(M)))); // /!\ Potential Heisenbug generator.
 	i = M.plus(i, M.measure(this.a));
 	if (p(i)) return new Split([], this.a, [this.b, this.c]);
@@ -72,17 +72,21 @@ Three.prototype._nodes_with_one = function (M, other) {
 
 Three.prototype._nodes_with_two = function (M, other) {
 	assert(other instanceof Two);
-	return [other.node(M), this.node(M)];
+	return [other._node(M), this._node(M)];
 };
 
 Three.prototype._nodes_with_three = function (M, other) {
 	assert(other instanceof Three);
-	return [other.node(M), this.node(M)];
+	return [other._node(M), this._node(M)];
 };
 
 Three.prototype._nodes_with_four = function (M, other) {
 	assert(other instanceof Four);
-	return [node2(M, other.a, other.b), node2(M, other.c, other.d), this.node(M)];
+	return [
+		node2(M, other.a, other.b),
+		node2(M, other.c, other.d),
+		this._node(M),
+	];
 };
 
 Three.prototype._nodes_with_list = function (M, list, other) {
@@ -95,20 +99,20 @@ Three.prototype._nodes_with_list_and_one = function (M, list, other) {
 	// eslint-disable-next-line default-case
 	switch (list.length) {
 		case 1:
-			return [node2(M, other.a, list[0]), this.node(M)];
+			return [node2(M, other.a, list[0]), this._node(M)];
 		case 2:
-			return [node3(M, other.a, list[0], list[1]), this.node(M)];
+			return [node3(M, other.a, list[0], list[1]), this._node(M)];
 		case 3:
 			return [
 				node2(M, other.a, list[0]),
 				node2(M, list[1], list[2]),
-				this.node(M),
+				this._node(M),
 			];
 		case 4:
 			return [
 				node3(M, other.a, list[0], list[1]),
 				node2(M, list[2], list[3]),
-				this.node(M),
+				this._node(M),
 			];
 	}
 };
@@ -119,16 +123,20 @@ Three.prototype._nodes_with_list_and_two = function (M, list, other) {
 	// eslint-disable-next-line default-case
 	switch (list.length) {
 		case 1:
-			return [node3(M, other.a, other.b, list[0]), this.node(M)];
+			return [node3(M, other.a, other.b, list[0]), this._node(M)];
 		case 2:
-			return [other.node(M), node2(M, list[0], list[1]), this.node(M)];
+			return [other._node(M), node2(M, list[0], list[1]), this._node(M)];
 		case 3:
-			return [other.node(M), node3(M, list[0], list[1], list[2]), this.node(M)];
+			return [
+				other._node(M),
+				node3(M, list[0], list[1], list[2]),
+				this._node(M),
+			];
 		case 4:
 			return [
 				node3(M, other.a, other.b, list[0]),
 				node3(M, list[1], list[2], list[3]),
-				this.node(M),
+				this._node(M),
 			];
 	}
 };
@@ -142,18 +150,22 @@ Three.prototype._nodes_with_list_and_three = function (M, list, other) {
 			return [
 				node2(M, other.a, other.b),
 				node2(M, other.c, list[0]),
-				this.node(M),
+				this._node(M),
 			];
 		case 2:
-			return [other.node(M), node2(M, list[0], list[1]), this.node(M)];
+			return [other._node(M), node2(M, list[0], list[1]), this._node(M)];
 		case 3:
-			return [other.node(M), node3(M, list[0], list[1], list[2]), this.node(M)];
+			return [
+				other._node(M),
+				node3(M, list[0], list[1], list[2]),
+				this._node(M),
+			];
 		case 4:
 			return [
-				other.node(M),
+				other._node(M),
 				node2(M, list[0], list[1]),
 				node2(M, list[2], list[3]),
-				this.node(M),
+				this._node(M),
 			];
 	}
 };
@@ -167,27 +179,27 @@ Three.prototype._nodes_with_list_and_four = function (M, list, other) {
 			return [
 				node2(M, other.a, other.b),
 				node3(M, other.c, other.d, list[0]),
-				this.node(M),
+				this._node(M),
 			];
 		case 2:
 			return [
 				node3(M, other.a, other.b, other.c),
 				node3(M, other.d, list[0], list[1]),
-				this.node(M),
+				this._node(M),
 			];
 		case 3:
 			return [
 				node2(M, other.a, other.b),
 				node2(M, other.c, other.d),
 				node3(M, list[0], list[1], list[2]),
-				this.node(M),
+				this._node(M),
 			];
 		case 4:
 			return [
 				node3(M, other.a, other.b, other.c),
 				node2(M, other.d, list[0]),
 				node3(M, list[1], list[2], list[3]),
-				this.node(M),
+				this._node(M),
 			];
 	}
 };

@@ -12,7 +12,7 @@ export function Tree() {}
  *
  * @returns {Tree} The shallow evaluated tree.
  */
-Tree.prototype.force = function () {
+Tree.prototype._force = function () {
 	return this;
 };
 

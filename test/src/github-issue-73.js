@@ -14,7 +14,7 @@ function set(tree, index, value) {
 
 	const split = tree.splitTree((m) => m > index, tree.M.zero());
 
-	return split.left.push(value).concat(split.right);
+	return split._left.push(value).concat(split._right);
 }
 
 test('github issue #73', (t) => {

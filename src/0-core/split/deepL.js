@@ -14,7 +14,7 @@ export function deepL(M, left, middle, right) {
 
 		return new Deep(
 			M,
-			middle.head().digit(),
+			middle.head()._digit(),
 			delay(() => middle.tail()),
 			right,
 		);

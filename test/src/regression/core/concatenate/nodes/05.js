@@ -25,9 +25,9 @@ test('cover', (t) => {
 	B = B.push(x); // (x, ([xxx], (), [xxx]), xxx)
 
 	t.is(
-		B.middle.right.measure(COUNTER) +
-			B.right._nodes(COUNTER, A.left).length +
-			A.middle.left.measure(COUNTER),
+		B._middle._right.measure(COUNTER) +
+			B._right._nodes(COUNTER, A._left).length +
+			A._middle._left.measure(COUNTER),
 		5,
 	);
 

@@ -16,16 +16,16 @@ test('cover', (t) => {
 	for (const i of range(65)) B = B.push(i);
 	// (1, (3, (45), 12), 4)
 
-	const M = B.middle.M;
+	const M = B._middle.M;
 
 	t.is(
-		[...B.middle.middle.right].length +
-			B.middle.right._nodes_with_list(
+		[...B._middle._middle._right].length +
+			B._middle._right._nodes_with_list(
 				M,
-				B.right._nodes(COUNTER, A.left),
-				A.middle.left,
+				B._right._nodes(COUNTER, A._left),
+				A._middle._left,
 			).length +
-			[...A.middle.middle.left].length,
+			[...A._middle._middle._left].length,
 		12,
 	);
 

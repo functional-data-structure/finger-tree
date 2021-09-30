@@ -18,6 +18,6 @@ Node2.prototype.measure = function () {
 	return this.v;
 };
 
-Node2.prototype.digit = function () {
+Node2.prototype._digit = function () {
 	return new Two(this.a, this.b);
 };

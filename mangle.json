@@ -1,0 +1,20 @@
+{
+  "minify": {
+    "mangle": {
+      "properties": {
+        "regex": "^_[^_]"
+      }
+    }
+  },
+  "props": {
+    "props": {
+      "$_left": "l",
+      "$_middle": "m",
+      "$_right": "r",
+      "$_tree": "t",
+      "$_thunk": "f",
+      "$_node": "n",
+      "$_digit": "d"
+    }
+  }
+}
