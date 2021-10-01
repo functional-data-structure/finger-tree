@@ -1,3 +1,5 @@
+import assert from 'assert';
+
 import 'regenerator-runtime/runtime.js';
 import {ArgumentParser} from 'argparse';
 
@@ -10,7 +12,7 @@ import {
 	iterableToString,
 } from '../test/src/_fixtures.js';
 
-import {dist, dependency} from './_fixtures.js';
+import {dist, dependency, object} from './_fixtures.js';
 
 const parser = new ArgumentParser();
 parser.add_argument('filter');
@@ -21,6 +23,7 @@ const cjs = dist('cjs');
 const module = dist('module.js');
 const modern = dist('modern.js');
 const list = dependency('list');
+const array = object('Array', Array);
 
 const suite = new Benchtable('Tree Construction', {isTransposed: false});
 
@@ -79,6 +82,18 @@ const append = makeFn({
 	},
 });
 
+const push = makeFn({
+	name: 'push',
+	build: ({exports}) => {
+		const {empty} = exports;
+		return (measure, iterable) => {
+			let l = empty(measure);
+			for (const x of iterable) l = l.push(x);
+			return l;
+		};
+	},
+});
+
 const prepend = makeFn({
 	name: 'prepend',
 	build: ({exports}) => {
@@ -96,7 +111,7 @@ const listFrom = makeFn({
 });
 
 const listAppend = makeFn({
-	name: 'append',
+	name: 'push',
 	build: ({exports}) => {
 		const {empty, append} = exports;
 		return (_measure, iterable) => {
@@ -107,18 +122,35 @@ const listAppend = makeFn({
 	},
 });
 
+const arrayPush = makeFn({
+	name: 'push',
+	build: ({exports}) => {
+		assert(exports === Array);
+		return (_measure, iterable) => {
+			const l = [];
+			for (const x of iterable) l.push(x);
+			return l;
+		};
+	},
+});
+
 await add(cjs, from);
 await add(cjs, append);
 await add(cjs, prepend);
+await add(cjs, push);
 await add(module, from);
 await add(module, append);
 await add(module, prepend);
+await add(module, push);
 await add(modern, from);
 await add(modern, append);
 await add(modern, prepend);
+await add(modern, push);
 
 await add(list, listFrom);
 await add(list, listAppend);
+await add(array, listFrom);
+await add(array, arrayPush);
 
 const addTitle = (input) => {
 	const {measure, iterable} = input;
