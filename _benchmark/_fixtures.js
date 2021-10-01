@@ -1,4 +1,5 @@
 import fs from 'fs';
+import process from 'process';
 
 export function packageInfo(packageName) {
 	const file = `node_modules/${packageName}/package.json`;
@@ -43,6 +44,17 @@ export const dependency = (name) => ({
 		return {
 			name,
 			version,
+			exports,
+		};
+	},
+});
+
+export const object = (name, exports) => ({
+	name,
+	async load() {
+		return {
+			name,
+			version: process.version,
 			exports,
 		};
 	},
