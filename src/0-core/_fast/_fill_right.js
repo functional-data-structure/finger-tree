@@ -47,7 +47,7 @@ export default function _fill_right(M, left, middle, x1, iterator) {
 
 		event = iterator.next();
 		if (event.done) return new Deep(M, left, middle, new Three(x1, x2, x3));
-		middle = middle.push(node3(M, x1, x2, x3));
+		middle = middle._UNSAFE_push(node3(M, x1, x2, x3));
 		x1 = event.value;
 	}
 }

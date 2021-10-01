@@ -112,16 +112,11 @@ Deep.prototype.cons = function (value) {
 };
 
 Deep.prototype.push = function (value) {
-	if (this._right instanceof Four) {
-		return new Deep(
-			this.M,
-			this._left,
-			this._middle.push(this._right.init()._node(this.M)),
-			new Two(this._right.last(), value),
-		);
-	}
+	return this._right._isolated_push(this, value);
+};
 
-	return new Deep(this.M, this._left, this._middle, this._right.push(value));
+Deep.prototype._UNSAFE_push = function (value) {
+	return this._right._UNSAFE_push(this, value);
 };
 
 Deep.prototype.append = function (iterable) {
@@ -139,7 +134,9 @@ Deep.prototype.append = function (iterable) {
 	const middle = _append_small_list(
 		this._middle,
 		this._right._nodes(this.M, new One(a)),
-	);
+	)._copy_spine();
+	// TODO _copy_spine should return a MutableDeep type on the spine
+	// TODO then _fill_right should only accept Empty, Single, or MutableDeep
 
 	return _fill_right(this.M, this._left, middle, b, it);
 };
@@ -223,6 +220,10 @@ Deep.prototype._concat_with_deep = function (other) {
 		other._middle._app3(other._right._nodes(this.M, this._left), this._middle),
 		this._right,
 	);
+};
+
+Deep.prototype._copy_spine = function () {
+	return new Deep(this.M, this._left, this._middle._copy_spine(), this._right);
 };
 
 Deep.prototype._app3 = function (list, other) {

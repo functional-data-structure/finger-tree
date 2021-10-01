@@ -2,6 +2,7 @@ import assert from 'assert';
 import {node2, node3} from '../2-node/index.js';
 import {DigitSplit} from '../0-core/split/DigitSplit.js';
 import {Single} from '../3-tree/implementations/1-Single.js';
+import {Deep} from '../3-tree/implementations/2-Deep.js';
 import {Digit, Two, Three, Four} from './index.js';
 
 export function One(a) {
@@ -183,4 +184,15 @@ One.prototype._nodes_with_list_and_four = function (M, list, other) {
 
 One.prototype._list = function () {
 	return [this.a];
+};
+
+One.prototype._isolated_push = function (parent, value) {
+	assert(parent._right === this);
+	return new Deep(parent.M, parent._left, parent._middle, this.push(value));
+};
+
+One.prototype._UNSAFE_push = function (parent, value) {
+	assert(parent._right === this);
+	parent._right = this.push(value);
+	return parent;
 };

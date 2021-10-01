@@ -207,3 +207,14 @@ Two.prototype._nodes_with_list_and_four = function (M, list, other) {
 Two.prototype._list = function () {
 	return [this.a, this.b];
 };
+
+Two.prototype._isolated_push = function (parent, value) {
+	assert(parent._right === this);
+	return new Deep(parent.M, parent._left, parent._middle, this.push(value));
+};
+
+Two.prototype._UNSAFE_push = function (parent, value) {
+	assert(parent._right === this);
+	parent._right = this.push(value);
+	return parent;
+};

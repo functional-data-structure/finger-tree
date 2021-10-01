@@ -219,3 +219,17 @@ Three.prototype._nodes_with_list_and_four = function (M, list, other) {
 Three.prototype._list = function () {
 	return [this.a, this.b, this.c];
 };
+
+Three.prototype._isolated_push = function (parent, value) {
+	assert(parent._right === this);
+	return new Deep(parent.M, parent._left, parent._middle, this.push(value));
+};
+
+Three.prototype._UNSAFE_push = function (parent, value) {
+	assert(parent._right === this);
+	parent._middle = parent._middle._UNSAFE_push(this._node(parent.M));
+	// NOTE the following is dangerous if alternating push and init
+	parent._right = new One(value);
+	// TODO maybe final output can be fixed
+	return parent;
+};
