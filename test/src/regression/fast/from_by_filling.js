@@ -25,6 +25,6 @@ const macro = (t, M, iterable) => {
 macro.title = (title, M, iterable) =>
 	title ?? `empty(${measureToString(M)}).append(${iterableToString(iterable)})`;
 
-for (const i of range(10)) {
+for (const i of range(30)) {
 	test(macro, COUNTER, range(i));
 }
