@@ -49,14 +49,16 @@ Single.prototype.cons = function (value) {
 	);
 };
 
-Single.prototype.push = function (value) {
-	return new Deep(
-		this.M,
-		new One(this.a),
-		new Empty(cache(this.M)),
-		new One(value),
-	);
-};
+Single.prototype._UNSAFE_push =
+	// eslint-disable-next-line no-multi-assign
+	Single.prototype.push = function (value) {
+		return new Deep(
+			this.M,
+			new One(this.a),
+			new Empty(cache(this.M)),
+			new One(value),
+		);
+	};
 
 Single.prototype.append = function (iterable) {
 	const it = iterable[Symbol.iterator]();
@@ -93,6 +95,10 @@ Single.prototype.split = function (p) {
 	return p(this.measure())
 		? [new Empty(this.M), this]
 		: [this, new Empty(this.M)];
+};
+
+Single.prototype._copy_spine = function () {
+	return this;
 };
 
 Single.prototype._concat_with_deep = function (other) {

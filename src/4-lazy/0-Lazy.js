@@ -40,6 +40,10 @@ Lazy.prototype.push = function (value) {
 	return this._force().push(value);
 };
 
+Lazy.prototype._UNSAFE_push = function (value) {
+	return this._force()._UNSAFE_push(value);
+};
+
 Lazy.prototype.tail = function () {
 	return this._force().tail();
 };

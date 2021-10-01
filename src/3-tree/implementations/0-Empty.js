@@ -38,9 +38,11 @@ Empty.prototype.init = function () {
 	return this;
 };
 
-Empty.prototype.push = function (value) {
-	return new Single(this.M, value);
-};
+Empty.prototype._UNSAFE_push =
+	// eslint-disable-next-line no-multi-assign
+	Empty.prototype.push = function (value) {
+		return new Single(this.M, value);
+	};
 
 Empty.prototype.cons = function (value) {
 	return new Single(this.M, value);
@@ -70,6 +72,10 @@ Empty.prototype.splitTree = function (_p, _i) {
 
 Empty.prototype.split = function (_p) {
 	return [this, this];
+};
+
+Empty.prototype._copy_spine = function () {
+	return this;
 };
 
 Empty.prototype._concat_with_deep = function (other) {

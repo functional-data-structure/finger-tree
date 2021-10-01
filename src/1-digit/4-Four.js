@@ -251,3 +251,20 @@ Four.prototype._nodes_with_list_and_four = function (M, list, other) {
 Four.prototype._list = function () {
 	return [this.a, this.b, this.c, this.d];
 };
+
+Four.prototype._isolated_push = function (parent, value) {
+	assert(parent._right === this);
+	return new Deep(
+		parent.M,
+		parent._left,
+		parent._middle.push(this.init()._node(parent.M)),
+		new Two(this.last(), value),
+	);
+};
+
+Four.prototype._UNSAFE_push = function (parent, value) {
+	assert(parent._right === this);
+	parent._middle = parent._middle._UNSAFE_push(this.init()._node(parent.M));
+	parent._right = new Two(this.last(), value);
+	return parent;
+};
