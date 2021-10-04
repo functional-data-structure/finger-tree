@@ -1,32 +1,20 @@
-require('regenerator-runtime/runtime');
+import 'regenerator-runtime/runtime.js';
 
-const ArgumentParser = require('argparse').ArgumentParser;
-const Benchmark = require('benchmark');
+import {ArgumentParser} from 'argparse';
+import Benchmark from 'benchmark';
 
-const range = require('@iterable-iterator/range').range;
+import {range} from '@iterable-iterator/range';
 
-const qiao_fingertree = require('fingertree');
-const fds_finger_tree = require('..');
+import qiao_fingertree from 'fingertree';
+import {empty, from} from '../dist/index.modern.js';
+
+import {FAST_COUNTER as COUNTER} from '../test/src/_fixtures.js';
 
 const fromArray = qiao_fingertree.fromArray;
-const empty = fds_finger_tree.empty;
-const from = fds_finger_tree.from;
-
-const COUNTER = {
-	plus(a, b) {
-		return a + b;
-	},
-	measure(_x) {
-		return 1;
-	},
-	zero() {
-		return 0;
-	},
-};
 
 const parser = new ArgumentParser();
-parser.addArgument(['M']);
-const args = parser.parseArgs();
+parser.add_argument(['M']);
+const args = parser.parse_args();
 
 global.M = args.M;
 global.COUNTER = COUNTER;
