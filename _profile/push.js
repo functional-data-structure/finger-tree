@@ -1,19 +1,9 @@
-console.time('prepare');
-require('regenerator-runtime/runtime');
-const ArgumentParser = require('argparse').ArgumentParser;
-const empty = require('..').empty;
+import 'regenerator-runtime/runtime.js';
+import {ArgumentParser} from 'argparse';
+import {FAST_COUNTER as COUNTER} from '../test/src/_fixtures.js';
+import {empty} from './dist/profile/index.js';
 
-const COUNTER = {
-	plus(a, b) {
-		return a + b;
-	},
-	measure(_x) {
-		return 1;
-	},
-	zero() {
-		return 0;
-	},
-};
+console.time('prepare');
 
 const parser = new ArgumentParser();
 parser.add_argument('M', {default: 1000, nargs: '?'});
@@ -30,7 +20,7 @@ console.timeEnd('prepare');
 console.time('push');
 for (let k = 0; k < N; ++k) {
 	let x = t;
-	for (let i = 0; i < M; ++i) x = x.push();
+	for (let i = 0; i < M; ++i) x = x.push(i);
 }
 
 console.timeEnd('push');
