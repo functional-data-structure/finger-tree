@@ -11,9 +11,11 @@ import {
 	fromRightToString as fr,
 } from '../../../_fixtures.js';
 
+import {empty} from '../../../../../src/index.js';
+
 const flfr = (t, M, A, B) => {
-	const left = fromLeft(M, A);
-	const right = fromRight(M, B);
+	const left = fromLeft(empty(M), A);
+	const right = fromRight(empty(M), B);
 	const tree = left.concat(right);
 	const expected = Array.from(A).concat(Array.from(B));
 	t.is(tree.measure(), expected.length);
@@ -23,8 +25,8 @@ const flfr = (t, M, A, B) => {
 flfr.title = (title, M, A, B) => title ?? `${fl(M, A)}.concat(${fr(M, B)})`;
 
 const flifrt = (t, M, A, B) => {
-	const left = fromLeft(M, A).init();
-	const right = fromRight(M, B).tail();
+	const left = fromLeft(empty(M), A).init();
+	const right = fromRight(empty(M), B).tail();
 	const tree = left.concat(right);
 	const expected = Array.from(A).slice(0, -1).concat(Array.from(B).slice(1));
 	t.is(tree.measure(), expected.length);
