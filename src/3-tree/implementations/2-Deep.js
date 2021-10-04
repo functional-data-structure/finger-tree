@@ -4,9 +4,7 @@ import {deepL, deepR, CachedMeasure, Split} from '../../0-core/index.js';
 import {One, Two, Three, Four} from '../../1-digit/index.js';
 import Lazy from '../../4-lazy/Lazy.js';
 import _prepend_small_list from '../../0-core/_fast/_prepend_small_list.js';
-import _fill_right from '../../0-core/_fast/_fill_right.js';
 import isSameMeasure from '../../_debug/isSameMeasure.js';
-import _append_small_list from '../../0-core/_fast/_append_small_list.js';
 import _from_by_filling from '../../0-core/_fast/_from_by_filling.js';
 import empty from '../../5-api/empty.js';
 import delayApp3RecurseStep from '../../4-lazy/delayApp3RecurseStep.js';
@@ -92,25 +90,7 @@ Deep.prototype.prepend = function (iterable) {
 };
 
 Deep.prototype.append = function (iterable) {
-	const it = iterable[Symbol.iterator]();
-
-	let event = it.next();
-	if (event.done) return this;
-	const a = event.value;
-
-	event = it.next();
-	if (event.done) return this.push(a);
-	const b = event.value;
-
-	// TODO simplify
-	const middle = _append_small_list(
-		this._middle,
-		this._right._nodes(this.M, new One(a)),
-	)._copy_spine();
-	// TODO _copy_spine should return a MutableDeep type on the spine
-	// TODO then _fill_right should only accept Empty, Single, or MutableDeep
-
-	return _fill_right(this.M, this._left, middle, b, it);
+	return this.concat(_from_by_filling(this.M, iterable));
 };
 
 Deep.prototype.concat = function (other) {
