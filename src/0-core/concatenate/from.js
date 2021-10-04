@@ -1,5 +1,5 @@
-import {_from_iterable} from '../_fast/_from_iterable.js';
+import _from_by_filling from '../_fast/_from_by_filling.js';
 
 export function from(M, iterable) {
-	return _from_iterable(M, iterable);
+	return _from_by_filling(M, iterable);
 }
