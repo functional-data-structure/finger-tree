@@ -1,5 +1,5 @@
 import assert from 'assert';
-import {Node2, node2, node3} from '../2-node/index.js';
+import {node2, node3} from '../2-node/index.js';
 import {DigitSplit} from '../0-core/split/DigitSplit.js';
 import {Empty} from '../3-tree/implementations/0-Empty.js';
 import {cache} from '../0-core/measure/cache.js';
@@ -44,7 +44,12 @@ Two.prototype.cons = function (value) {
 };
 
 Two.prototype._node = function (M) {
-	return new Node2(this.measure(M), this.a, this.b);
+	this.measure(M);
+	return this;
+};
+
+Two.prototype._digit = function () {
+	return this;
 };
 
 Two.prototype._tree = function (M) {
