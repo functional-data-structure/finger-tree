@@ -19,5 +19,9 @@ const t = from(COUNTER, range(M));
 console.timeEnd('prepare');
 
 console.time('split');
-for (let k = 0; k < N; ++k) for (let i = 0; i < M; ++i) t.split((m) => m > i);
+for (let k = 0; k < N; ++k) {
+	// eslint-disable-next-line no-unused-vars
+	for (const _x of t);
+}
+
 console.timeEnd('split');

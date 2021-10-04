@@ -2,6 +2,11 @@
 # yarn lockfile v1
 
 
+"@iterable-iterator/consume@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@iterable-iterator/consume/-/consume-1.0.1.tgz#abbe00af0d48542eb8e240f698e85fd4ba9b28b0"
+  integrity sha512-KVJufzV8/gOnYqrtO4CFdGZopJ5kkUBhzHcbU0iToOv5aTl0igxnsRzCaDSxUgO4q0mDbf9WEfjz4K39cl1iNA==
+
 "@iterable-iterator/range@^2.1.0":
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/@iterable-iterator/range/-/range-2.1.0.tgz#d7cfeee165c612f460c9ea1854a250f4788f1226"

@@ -4,6 +4,7 @@ import {ArgumentParser} from 'argparse';
 import Benchtable from 'benchtable';
 
 import {range} from '@iterable-iterator/range';
+import {exhaust} from '@iterable-iterator/consume';
 
 import {
 	FAST_COUNTER as COUNTER,
@@ -103,6 +104,16 @@ const fds_finger_tree = {
 					for (let i = 0; i < _n; ++i) _s[i][0].concat(_s[i][1]);
 				},
 			},
+			iterator: {
+				run: () => {
+					exhaust(at[Symbol.iterator]());
+				},
+			},
+			reversed: {
+				run: () => {
+					exhaust(at.reversed());
+				},
+			},
 		},
 	}),
 };
@@ -125,6 +136,8 @@ await add(modern, fds_finger_tree, 'append');
 await add(modern, fds_finger_tree, 'prepend');
 await add(modern, fds_finger_tree, 'split');
 await add(modern, fds_finger_tree, 'concat');
+await add(modern, fds_finger_tree, 'iterator');
+await add(modern, fds_finger_tree, 'reversed');
 
 suite.addInput(`(${measureToString(measure)}, ${n})`, []);
 

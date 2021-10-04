@@ -4,6 +4,7 @@
     "bench": "node main.js"
   },
   "dependencies": {
+    "@iterable-iterator/consume": "^1.0.1",
     "@iterable-iterator/range": "^2.1.0",
     "argparse": "^2.0.1",
     "benchmark": "^2.1.4",
