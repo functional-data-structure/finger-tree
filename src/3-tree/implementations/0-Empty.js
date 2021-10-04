@@ -48,9 +48,11 @@ Empty.prototype.cons = function (value) {
 	return new Single(this.M, value);
 };
 
-Empty.prototype.append = function (iterable) {
-	return _from_by_filling(this.M, iterable);
-};
+Empty.prototype.prepend =
+	// eslint-disable-next-line no-multi-assign
+	Empty.prototype.append = function (iterable) {
+		return _from_by_filling(this.M, iterable);
+	};
 
 Empty.prototype.concat = function (other) {
 	assert(other instanceof Tree);

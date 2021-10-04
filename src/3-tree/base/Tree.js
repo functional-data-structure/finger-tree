@@ -1,5 +1,3 @@
-import {prepend} from '../../0-core/index.js';
-
 /**
  * Base class for all implementations.
  */
@@ -95,6 +93,6 @@ Tree.prototype.dropUntil = function (predicate) {
  *
  * @returns {Tree} The output tree.
  */
-Tree.prototype.prepend = function (iterable) {
-	return prepend(this, iterable);
-};
+// Tree.prototype.prepend = function (iterable) {
+// return prepend(this, iterable);
+// };

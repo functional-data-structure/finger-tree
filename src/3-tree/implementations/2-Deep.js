@@ -7,6 +7,7 @@ import _prepend_small_list from '../../0-core/_fast/_prepend_small_list.js';
 import _fill_right from '../../0-core/_fast/_fill_right.js';
 import isSameMeasure from '../../_debug/isSameMeasure.js';
 import _append_small_list from '../../0-core/_fast/_append_small_list.js';
+import _from_by_filling from '../../0-core/_fast/_from_by_filling.js';
 import {Empty} from './0-Empty.js';
 import {Single} from './1-Single.js';
 
@@ -117,6 +118,10 @@ Deep.prototype.push = function (value) {
 
 Deep.prototype._UNSAFE_push = function (value) {
 	return this._right._UNSAFE_push(this, value);
+};
+
+Deep.prototype.prepend = function (iterable) {
+	return _from_by_filling(this.M, iterable).concat(this);
 };
 
 Deep.prototype.append = function (iterable) {
