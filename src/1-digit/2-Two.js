@@ -96,7 +96,13 @@ Two.prototype._nodes_with_list_and_one = function (M, list, other) {
 	assert(other instanceof One);
 	assert(Number.isInteger(list.length) && list.length >= 1 && list.length <= 4);
 	// eslint-disable-next-line default-case
-	switch (list.length) {
+	switch (list.length & 0b11) {
+		case 0:
+			return [
+				node2(M, other.a, list[0]),
+				node3(M, list[1], list[2], list[3]),
+				this._node(M),
+			];
 		case 1:
 			return [node2(M, other.a, list[0]), this._node(M)];
 		case 2:
@@ -107,12 +113,6 @@ Two.prototype._nodes_with_list_and_one = function (M, list, other) {
 				node2(M, list[1], list[2]),
 				this._node(M),
 			];
-		case 4:
-			return [
-				node2(M, other.a, list[0]),
-				node3(M, list[1], list[2], list[3]),
-				this._node(M),
-			];
 	}
 };
 
@@ -120,7 +120,13 @@ Two.prototype._nodes_with_list_and_two = function (M, list, other) {
 	assert(other instanceof Two);
 	assert(Number.isInteger(list.length) && list.length >= 1 && list.length <= 4);
 	// eslint-disable-next-line default-case
-	switch (list.length) {
+	switch (list.length & 0b11) {
+		case 0:
+			return [
+				node3(M, other.a, other.b, list[0]),
+				node2(M, list[1], list[2]),
+				node3(M, list[3], this.a, this.b),
+			];
 		case 1:
 			return [node3(M, other.a, other.b, list[0]), node2(M, this.a, this.b)];
 		case 2:
@@ -131,12 +137,6 @@ Two.prototype._nodes_with_list_and_two = function (M, list, other) {
 				node3(M, list[0], list[1], list[2]),
 				node2(M, this.a, this.b),
 			];
-		case 4:
-			return [
-				node3(M, other.a, other.b, list[0]),
-				node2(M, list[1], list[2]),
-				node3(M, list[3], this.a, this.b),
-			];
 	}
 };
 
@@ -144,7 +144,13 @@ Two.prototype._nodes_with_list_and_three = function (M, list, other) {
 	assert(other instanceof Three);
 	assert(Number.isInteger(list.length) && list.length >= 1 && list.length <= 4);
 	// eslint-disable-next-line default-case
-	switch (list.length) {
+	switch (list.length & 0b11) {
+		case 0:
+			return [
+				node3(M, other.a, other.b, other.c),
+				node3(M, list[0], list[1], list[2]),
+				node3(M, list[3], this.a, this.b),
+			];
 		case 1:
 			return [
 				node3(M, other.a, other.b, other.c),
@@ -162,12 +168,6 @@ Two.prototype._nodes_with_list_and_three = function (M, list, other) {
 				node2(M, list[0], list[1]),
 				node3(M, list[2], this.a, this.b),
 			];
-		case 4:
-			return [
-				node3(M, other.a, other.b, other.c),
-				node3(M, list[0], list[1], list[2]),
-				node3(M, list[3], this.a, this.b),
-			];
 	}
 };
 
@@ -175,7 +175,14 @@ Two.prototype._nodes_with_list_and_four = function (M, list, other) {
 	assert(other instanceof Four);
 	assert(Number.isInteger(list.length) && list.length >= 1 && list.length <= 4);
 	// eslint-disable-next-line default-case
-	switch (list.length) {
+	switch (list.length & 0b11) {
+		case 0:
+			return [
+				node2(M, other.a, other.b),
+				node3(M, other.c, other.d, list[0]),
+				node3(M, list[1], list[2], list[3]),
+				node2(M, this.a, this.b),
+			];
 		case 1:
 			return [
 				node2(M, other.a, other.b),
@@ -193,13 +200,6 @@ Two.prototype._nodes_with_list_and_four = function (M, list, other) {
 				node3(M, other.a, other.b, other.c),
 				node3(M, other.d, list[0], list[1]),
 				node3(M, list[2], this.a, this.b),
-			];
-		case 4:
-			return [
-				node2(M, other.a, other.b),
-				node3(M, other.c, other.d, list[0]),
-				node3(M, list[1], list[2], list[3]),
-				node2(M, this.a, this.b),
 			];
 	}
 };
