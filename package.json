@@ -228,6 +228,7 @@
       {
         "files": "_benchmark/*.js",
         "rules": {
+          "unicorn/no-array-callback-reference": "off",
           "import/no-unassigned-import": "off",
           "no-undef": "off"
         }
