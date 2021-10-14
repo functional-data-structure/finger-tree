@@ -1,4 +1,4 @@
-import {append, prepend} from '../../0-core/index.js';
+import {prepend} from '../../0-core/index.js';
 
 /**
  * Base class for all implementations.
@@ -76,9 +76,9 @@ Tree.prototype.dropUntil = function (predicate) {
  *
  * @returns {Tree} The output tree.
  */
-Tree.prototype.append = function (iterable) {
-	return append(this, iterable);
-};
+// Tree.prototype.append = function (iterable) {
+// return append(this, iterable);
+// };
 
 /**
  * Returns a tree that contains all values of the input iterable in-order

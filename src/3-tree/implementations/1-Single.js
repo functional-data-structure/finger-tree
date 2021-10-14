@@ -4,6 +4,7 @@ import {cache, Split} from '../../0-core/index.js';
 import {One} from '../../1-digit/index.js';
 import _append_small_list from '../../0-core/_fast/_append_small_list.js';
 import {_from_medium_list} from '../../0-core/_fast/_from_medium_list.js';
+import _fill_right from '../../0-core/_fast/_fill_right.js';
 import {Empty, Deep} from './index.js';
 
 export function Single(M, value) {
@@ -54,6 +55,19 @@ Single.prototype.push = function (value) {
 		new Empty(cache(this.M)),
 		new One(value),
 	);
+};
+
+Single.prototype.append = function (iterable) {
+	const it = iterable[Symbol.iterator]();
+
+	const event = it.next();
+	if (event.done) return this;
+	const x1 = event.value;
+
+	const left = new One(this.a);
+	const middle = new Empty(cache(this.M));
+
+	return _fill_right(this.M, left, middle, x1, it);
 };
 
 Single.prototype.concat = function (other) {

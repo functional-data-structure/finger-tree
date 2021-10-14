@@ -3,6 +3,7 @@ import {Tree} from '../base/index.js';
 import {_EMPTY} from '../../0-core/index.js';
 import {_from_medium_list} from '../../0-core/_fast/_from_medium_list.js';
 import _append_small_list from '../../0-core/_fast/_append_small_list.js';
+import _from_by_filling from '../../0-core/_fast/_from_by_filling.js';
 import {Single, Deep} from './index.js';
 
 export function Empty(M) {
@@ -42,6 +43,10 @@ Empty.prototype.push = function (value) {
 
 Empty.prototype.cons = function (value) {
 	return new Single(this.M, value);
+};
+
+Empty.prototype.append = function (iterable) {
+	return _from_by_filling(this.M, iterable);
 };
 
 Empty.prototype.concat = function (other) {
