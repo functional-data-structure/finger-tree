@@ -4,7 +4,7 @@ import {DigitSplit} from '../0-core/split/DigitSplit.js';
 import empty from '../5-api/empty.js';
 import {cache} from '../0-core/measure/cache.js';
 import {Deep} from '../3-tree/implementations/2-Deep.js';
-import {Digit, One, Two, Four} from './index.js';
+import {One, Two, Four} from './index.js';
 
 export function Three(a, b, c) {
 	this.a = a;
@@ -12,8 +12,6 @@ export function Three(a, b, c) {
 	this.c = c;
 	this.v = null;
 }
-
-Three.prototype = new Digit();
 
 Three.prototype.measure = function (M) {
 	if (this.v === null)

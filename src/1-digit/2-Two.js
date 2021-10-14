@@ -4,15 +4,13 @@ import {DigitSplit} from '../0-core/split/DigitSplit.js';
 import empty from '../5-api/empty.js';
 import {cache} from '../0-core/measure/cache.js';
 import {Deep} from '../3-tree/implementations/2-Deep.js';
-import {Digit, One, Three, Four} from './index.js';
+import {One, Three, Four} from './index.js';
 
 export function Two(a, b) {
 	this.a = a;
 	this.b = b;
 	this.v = null;
 }
-
-Two.prototype = new Digit();
 
 Two.prototype.measure = function (M) {
 	if (this.v === null) this.v = M.plus(M.measure(this.a), M.measure(this.b));

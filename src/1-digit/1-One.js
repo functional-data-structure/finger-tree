@@ -5,14 +5,12 @@ import {Single} from '../3-tree/implementations/1-Single.js';
 import {Deep} from '../3-tree/implementations/2-Deep.js';
 import delayTail from '../4-lazy/delayTail.js';
 import delayInit from '../4-lazy/delayInit.js';
-import {Digit, Two, Three, Four} from './index.js';
+import {Two, Three, Four} from './index.js';
 
 export function One(a) {
 	this.a = a;
 	this.v = null;
 }
-
-One.prototype = new Digit();
 
 One.prototype.measure = function (M) {
 	if (this.v === null) this.v = M.measure(this.a);
