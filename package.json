@@ -78,6 +78,7 @@
     "@iterable-iterator/list": "1.0.1",
     "@iterable-iterator/map": "1.0.1",
     "@iterable-iterator/range": "2.1.0",
+    "@iterable-iterator/reduce": "^1.0.1",
     "@iterable-iterator/repeat": "1.0.1",
     "@iterable-iterator/reversed": "1.0.0",
     "@iterable-iterator/tee": "2.0.0",
