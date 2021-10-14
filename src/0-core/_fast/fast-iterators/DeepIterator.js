@@ -29,32 +29,30 @@ DeepIterator.prototype.next = function () {
 		// eslint-disable-next-line default-case
 		switch (this._direction) {
 			case DOWNWARD:
-				this._tree._middle = this._tree._middle._force();
-				if (this._tree._middle instanceof Deep) {
-					this._treeStack.push(this._tree);
-					this._tree = this._tree._middle;
-					this._downwardStep();
+				// eslint-disable-next-line no-case-declarations
+				const tree = this._treeStack.pop()._force();
+				if (tree instanceof Deep) {
+					this._downwardStep(tree);
 					++this._currentLevel;
-					this._level = this._stack.map(() => this._currentLevel);
+					this._treeStack.push(tree, tree._middle);
 					break;
 				} else {
+					assert(this._treeStack.length >= 1);
 					this._direction = UPWARD;
-					if (this._tree._middle instanceof Single) {
-						this._stack = [this._tree._middle.a];
-						this._level = [this._currentLevel + 1];
+					if (tree instanceof Single) {
+						this._stack.push(tree.a);
+						this._level.push(this._currentLevel);
 						break;
 					}
 
-					assert(this._tree._middle instanceof Empty);
+					assert(tree instanceof Empty);
 				}
 
 			case UPWARD:
-				if (this._currentLevel === -1) return {done: true};
-				assert(this._tree instanceof Deep);
+				if (this._currentLevel === 0) return {done: true};
+				assert(this._treeStack[this._treeStack.length - 1] instanceof Deep);
+				--this._currentLevel;
 				this._upwardStep();
-				this._level = this._stack.map(() => this._currentLevel);
-
-				this._tree = --this._currentLevel === -1 ? null : this._treeStack.pop();
 		}
 		/* eslint-enable no-fallthrough */
 	}

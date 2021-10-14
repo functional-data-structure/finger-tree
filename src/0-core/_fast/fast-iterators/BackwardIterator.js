@@ -11,22 +11,21 @@ import DeepIterator, {DOWNWARD} from './DeepIterator.js';
  */
 export default function BackwardIterator(tree) {
 	assert(tree instanceof Deep);
-	this._stack = tree._right._list();
-	this._level = this._stack.map(() => 0);
-	this._tree = tree;
+	this._stack = [];
+	this._level = [];
 	this._direction = DOWNWARD;
 	this._currentLevel = 0;
-	this._treeStack = [];
+	this._treeStack = [tree];
 }
 
 BackwardIterator.prototype = new DeepIterator();
 
-BackwardIterator.prototype._downwardStep = function () {
-	this._stack = this._tree._right._list();
+BackwardIterator.prototype._downwardStep = function (tree) {
+	tree._right._backward(this);
 };
 
 BackwardIterator.prototype._upwardStep = function () {
-	this._stack = this._tree._left._list();
+	this._treeStack.pop()._left._backward(this);
 };
 
 BackwardIterator.prototype._traverse = function (level, x) {

@@ -284,3 +284,27 @@ Four.prototype._isolated_tail = function (parent) {
 	assert(parent._left === this);
 	return new Deep(parent.M, this.tail(), parent._middle, parent._right);
 };
+
+Four.prototype._forward = function (iterator) {
+	assert(iterator._stack.length === 0);
+	assert(iterator._level.length === 0);
+	iterator._stack.push(this.d, this.c, this.b, this.a);
+	iterator._level.push(
+		iterator._currentLevel,
+		iterator._currentLevel,
+		iterator._currentLevel,
+		iterator._currentLevel,
+	);
+};
+
+Four.prototype._backward = function (iterator) {
+	assert(iterator._stack.length === 0);
+	assert(iterator._level.length === 0);
+	iterator._stack.push(this.a, this.b, this.c, this.d);
+	iterator._level.push(
+		iterator._currentLevel,
+		iterator._currentLevel,
+		iterator._currentLevel,
+		iterator._currentLevel,
+	);
+};

@@ -231,3 +231,12 @@ One.prototype._isolated_tail = function (parent) {
 		parent._right,
 	);
 };
+
+One.prototype._backward =
+	// eslint-disable-next-line no-multi-assign
+	One.prototype._forward = function (iterator) {
+		assert(iterator._stack.length === 0);
+		assert(iterator._level.length === 0);
+		iterator._stack.push(this.a);
+		iterator._level.push(iterator._currentLevel);
+	};

@@ -233,3 +233,17 @@ Two.prototype._isolated_tail = function (parent) {
 	assert(parent._left === this);
 	return new Deep(parent.M, this.tail(), parent._middle, parent._right);
 };
+
+Two.prototype._forward = function (iterator) {
+	assert(iterator._stack.length === 0);
+	assert(iterator._level.length === 0);
+	iterator._stack.push(this.b, this.a);
+	iterator._level.push(iterator._currentLevel, iterator._currentLevel);
+};
+
+Two.prototype._backward = function (iterator) {
+	assert(iterator._stack.length === 0);
+	assert(iterator._level.length === 0);
+	iterator._stack.push(this.a, this.b);
+	iterator._level.push(iterator._currentLevel, iterator._currentLevel);
+};
