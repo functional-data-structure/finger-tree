@@ -14,3 +14,15 @@ Node3.prototype.measure = function () {
 Node3.prototype._digit = function () {
 	return new Three(this.a, this.b, this.c);
 };
+
+Node3.prototype._forward = function (level, iterator) {
+	iterator._level.push(level, level);
+	iterator._stack.push(this.c, this.b);
+	return this.a;
+};
+
+Node3.prototype._backward = function (level, iterator) {
+	iterator._level.push(level, level);
+	iterator._stack.push(this.a, this.b);
+	return this.c;
+};

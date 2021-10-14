@@ -29,14 +29,7 @@ ForwardIterator.prototype._upwardStep = function () {
 };
 
 ForwardIterator.prototype._traverse = function (level, x) {
-	if (x instanceof Node3) {
-		this._level.push(level, level);
-		this._stack.push(x.c, x.b);
-		return x.a;
-	}
-
-	assert(x instanceof Node2);
-	this._level.push(level);
-	this._stack.push(x.b);
-	return x.a;
+	assert(Number.isInteger(level) && level >= 0);
+	assert(x instanceof Node2 || x instanceof Node3);
+	return x._forward(level, this);
 };

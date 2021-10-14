@@ -29,14 +29,7 @@ BackwardIterator.prototype._upwardStep = function () {
 };
 
 BackwardIterator.prototype._traverse = function (level, x) {
-	if (x instanceof Node3) {
-		this._level.push(level, level);
-		this._stack.push(x.a, x.b);
-		return x.c;
-	}
-
-	assert(x instanceof Node2);
-	this._level.push(level);
-	this._stack.push(x.a);
-	return x.b;
+	assert(Number.isInteger(level) && level >= 0);
+	assert(x instanceof Node2 || x instanceof Node3);
+	return x._backward(level, this);
 };
