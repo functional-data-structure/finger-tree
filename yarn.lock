@@ -1137,6 +1137,13 @@
   resolved "https://registry.yarnpkg.com/@data-structure-algebra/singly-linked-list/-/singly-linked-list-0.0.1.tgz#4360458718d92dc569cfc40c91df99c42ae2f4a3"
   integrity sha512-FuerF4/f8HZ99KE0zLzZs1dyHjgbugo6EhcVHkbHPNSIAQdzZkfUoGch4N/l+i5SU1ziW8BmsnYkKnFxCsWoNQ==
 
+"@data-structure/deque@^9.0.0":
+  version "9.0.1"
+  resolved "https://registry.yarnpkg.com/@data-structure/deque/-/deque-9.0.1.tgz#756f8a80d5bc3fe2be18a5739d051493397a6367"
+  integrity sha512-/LSOEPmWGZ10OiKfje06GNDM/fzbY1ZfXyvZKr+/a79ZTlGoTwsQW1uPvtmQDtBzs2h2VbPjHho4zNSP5YH0Zg==
+  dependencies:
+    "@failure-abstraction/error" "^6.0.1"
+
 "@endemolshinegroup/cosmiconfig-typescript-loader@^3.0.2":
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/@endemolshinegroup/cosmiconfig-typescript-loader/-/cosmiconfig-typescript-loader-3.0.2.tgz#eea4635828dde372838b0909693ebd9aafeec22d"
@@ -1201,27 +1208,32 @@
   resolved "https://registry.yarnpkg.com/@iterable-iterator/chain/-/chain-2.0.1.tgz#b02068df99408ac94c446f895b4e985eb0cd1938"
   integrity sha512-mWd0nx1knSaJ6kcysBFtjcQd18iBaDgY0Rlr6crcBg11cMwVRkjaz56w2gBTe6No9JmoYOwsXxPNWpAeF7eAoA==
 
-"@iterable-iterator/count@^1.0.1":
+"@iterable-iterator/count@^1.0.0", "@iterable-iterator/count@^1.0.1":
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/@iterable-iterator/count/-/count-1.0.1.tgz#37c13ff5cb43528280fcf0c2c0791475ebff4cf2"
   integrity sha512-nLBcrNownYvXgye2CVnQvTjZ5d3C2b/5nrySDvQ9/7ej5pGSfkvYvIl4xcZcocViwIa49p6/72nkcDC1xkvpJg==
+
+"@iterable-iterator/cycle@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@iterable-iterator/cycle/-/cycle-1.0.0.tgz#1cdb2e4a72c54e351145b23af31b4a1bb2919e0d"
+  integrity sha512-mJevpq7it2NEQ44c24Do2tg6O/Mvzpyo5ydHpqhT1+R1/VTc21Spw6bKio87Fnfz5fdCJ5pQQY+Ey2gdj8b3hw==
 
 "@iterable-iterator/iter@^1.0.1":
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/@iterable-iterator/iter/-/iter-1.0.1.tgz#11149acef0d28b689e0b998dc478113eda81871d"
   integrity sha512-/C/Ciq69we9C0wvqx0rOdnpXAoSW+UnyIV/ZQrUYDzmtguvUQ4HjiIPcU2Csdh705VS6TMkUhoaBHIGh44V3OA==
 
-"@iterable-iterator/list@1.0.1", "@iterable-iterator/list@^1.0.1":
+"@iterable-iterator/list@1.0.1", "@iterable-iterator/list@^1.0.0", "@iterable-iterator/list@^1.0.1":
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/@iterable-iterator/list/-/list-1.0.1.tgz#e84fd841d7d58c2ad6d0c026f0612c8228dc97f5"
   integrity sha512-234a2cf0a0YhD1Ofb3F0xSjXDkqDK1xCiLnXoMUt/DWAt/odAvJToaxEFMemiKlAUvqF6E8MSi2v2UvlIOpBUA==
 
-"@iterable-iterator/map@1.0.1", "@iterable-iterator/map@^1.0.1":
+"@iterable-iterator/map@1.0.1", "@iterable-iterator/map@^1.0.0", "@iterable-iterator/map@^1.0.1":
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/@iterable-iterator/map/-/map-1.0.1.tgz#7e4d82cb86877bf487e075347fde990ed21844da"
   integrity sha512-lUvX8/OCYRdof3eZii8ntJUvqW1MlL2ESkIcQj3cagajKVfBIBj058wE4ScrzQl6U2udMva/n2NwP70smdfZ+g==
 
-"@iterable-iterator/next@^2.0.1":
+"@iterable-iterator/next@^2.0.0", "@iterable-iterator/next@^2.0.1":
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/@iterable-iterator/next/-/next-2.0.1.tgz#b58a7471984cd1165e3b93e3fea646f4137b370f"
   integrity sha512-D4E5JSH7xFEQqmJI8XMaotest1L1RM6wJssEDFRva81oZNZwPYmTlKErPZZVLnrZU/wTflEVwrImxUacoIZK3Q==
@@ -1245,7 +1257,7 @@
   resolved "https://registry.yarnpkg.com/@iterable-iterator/repeat/-/repeat-1.0.1.tgz#7724b993a80c014483c4f0d37c503ee460ac7b6d"
   integrity sha512-xwkIHYQNvxQvA8nMYrev41iCmokXosojMpHEfME8Q8ubzEQlsYS8rSqiydgMYPu/lPg1MyYRVzWazFDAShTwtg==
 
-"@iterable-iterator/reversed@1.0.0":
+"@iterable-iterator/reversed@1.0.0", "@iterable-iterator/reversed@^1.0.0":
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@iterable-iterator/reversed/-/reversed-1.0.0.tgz#6e656396b4453e4650c081d571fa4ba7ab3134e8"
   integrity sha512-nCy0OINBy6h1dcj75twbIW0oA5KhJ7Aweif/8kdUdAR86e5gb/byedt0LL72cjHB75VRbQY06f9WxZc8d7uPYA==
@@ -1361,6 +1373,20 @@
   integrity sha512-c/qwwcHyafOQuVQJj0IlBjf5yYgBI7YPJ77k4fOJYesb41jio65eaJODRUmfYKhTOFBrIZ66kgvGPlNbjuoRdQ==
   dependencies:
     any-observable "^0.3.0"
+
+"@set-theory/cartesian-product@^2.0.1":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@set-theory/cartesian-product/-/cartesian-product-2.0.1.tgz#5b80994ae53e4c80e369c78cb369845de18d229c"
+  integrity sha512-ifjwAGPY52Dvmtm1jQV+6jEdHlKg9nMCnogb96YtbckUN9uESDK8slMRy0nQHFGf61i1kjVNGKMzOrGzFZJZkw==
+  dependencies:
+    "@data-structure/deque" "^9.0.0"
+    "@iterable-iterator/count" "^1.0.0"
+    "@iterable-iterator/cycle" "^1.0.0"
+    "@iterable-iterator/iter" "^1.0.1"
+    "@iterable-iterator/list" "^1.0.0"
+    "@iterable-iterator/map" "^1.0.0"
+    "@iterable-iterator/next" "^2.0.0"
+    "@iterable-iterator/reversed" "^1.0.0"
 
 "@sindresorhus/is@^0.14.0":
   version "0.14.0"
