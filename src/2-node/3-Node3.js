@@ -1,4 +1,4 @@
-import {Three} from '../1-digit/index.js';
+import {Three} from '../1-digit/3-Three.js';
 
 export function Node3(v, a, b, c) {
 	this.v = v;

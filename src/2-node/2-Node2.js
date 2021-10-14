@@ -1,4 +1,4 @@
-import {Two} from '../1-digit/index.js';
+import {Two} from '../1-digit/2-Two.js';
 
 export function Node2(v, a, b) {
 	this.v = v;
