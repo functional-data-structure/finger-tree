@@ -15,8 +15,10 @@ import {dist} from './_fixtures.js';
 
 const parser = new ArgumentParser();
 parser.add_argument('M');
+parser.add_argument('filter');
 const args = parser.parse_args();
 
+const filter = new RegExp(args.filter, 'i');
 global.range = range;
 global.n = args.M;
 global.measure = COUNTER;
@@ -119,7 +121,8 @@ const fds_finger_tree = {
 };
 
 const add = async (module, api, method) => {
-	// If (!filter.test(module.name)) return;
+	if (!filter.test(module.name)) return;
+	if (!filter.test(method)) return;
 	const {title, methods} = await api.compile(module);
 
 	suite.addFunction(`${title} #${method}`, methods[method].run, {
