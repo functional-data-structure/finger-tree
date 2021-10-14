@@ -1,7 +1,6 @@
 import assert from 'assert';
 import {Tree} from '../base/index.js';
 import {
-	_app3,
 	_from_digit,
 	_from_small_list,
 	_deepL,
@@ -11,6 +10,7 @@ import {
 } from '../../0-core/index.js';
 import {One, Two, Four} from '../../1-digit/index.js';
 import {delay, Lazy} from '../../4-lazy/index.js';
+import _prepend_small_list from '../../0-core/_fast/_prepend_small_list.js';
 import {Empty} from './index.js';
 
 export function Deep(M, left, middle, right) {
@@ -110,7 +110,7 @@ Deep.prototype.push = function (value) {
 };
 
 Deep.prototype.concat = function (other) {
-	return _app3(this, other);
+	return other._concat_with_deep(this);
 };
 
 Deep.prototype[Symbol.iterator] = function* () {
@@ -176,4 +176,40 @@ Deep.prototype.split = function (p) {
 	}
 
 	return [this, new Empty(this.M)];
+};
+
+Deep.prototype._concat_with_deep = function (other) {
+	assert(other instanceof Deep);
+	return new Deep(
+		this.M,
+		other.left,
+		other.middle._app3(other.right._nodes(this.M, this.left), this.middle),
+		this.right,
+	);
+};
+
+Deep.prototype._app3 = function (list, other) {
+	assert(other instanceof Tree);
+	return other._app3_with_deep(list, this);
+};
+
+Deep.prototype._app3_with_empty = function (list) {
+	return _prepend_small_list(this, list);
+};
+
+Deep.prototype._app3_with_single = function (list, value) {
+	return _prepend_small_list(this, list).cons(value);
+};
+
+Deep.prototype._app3_with_deep = function (list, other) {
+	assert(other instanceof Deep);
+	return new Deep(
+		this.M,
+		other.left,
+		other.middle._app3(
+			other.right._nodes_with_list(this.M, list, this.left),
+			this.middle,
+		),
+		this.right,
+	);
 };

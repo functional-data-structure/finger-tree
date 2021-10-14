@@ -67,3 +67,23 @@ Lazy.prototype[Symbol.iterator] = function () {
 Lazy.prototype.reversed = function () {
 	return this.force().reversed();
 };
+
+Lazy.prototype._concat_with_deep = function (other) {
+	return this.force()._concat_with_deep(other);
+};
+
+Lazy.prototype._app3 = function (list, other) {
+	return this.force()._app3(list, other);
+};
+
+Lazy.prototype._app3_with_empty = function (list) {
+	return this.force()._app3_with_empty(list);
+};
+
+Lazy.prototype._app3_with_single = function (list, value) {
+	return this.force()._app3_with_single(list, value);
+};
+
+Lazy.prototype._app3_with_deep = function (list, other) {
+	return this.force()._app3_with_deep(list, other);
+};
