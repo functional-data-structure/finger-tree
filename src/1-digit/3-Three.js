@@ -1,5 +1,5 @@
 import assert from 'assert';
-import {node2, node3} from '../2-node/index.js';
+import {node2, Node3, node3} from '../2-node/index.js';
 import {Split} from '../0-core/index.js';
 import {Digit, One, Two, Four} from './index.js';
 
@@ -46,7 +46,7 @@ Three.prototype.cons = function (value) {
 };
 
 Three.prototype.node = function (M) {
-	return node3(M, this.a, this.b, this.c);
+	return new Node3(this.measure(M), this.a, this.b, this.c);
 };
 
 /**
