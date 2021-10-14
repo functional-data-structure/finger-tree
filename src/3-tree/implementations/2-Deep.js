@@ -12,6 +12,7 @@ import {One, Two, Four} from '../../1-digit/index.js';
 import {delay, Lazy} from '../../4-lazy/index.js';
 import _prepend_small_list from '../../0-core/_fast/_prepend_small_list.js';
 import _fill_right from '../../0-core/_fast/_fill_right.js';
+import isSameMeasure from '../../_debug/isSameMeasure.js';
 import _append_small_list from '../../0-core/_fast/_append_small_list.js';
 import {Empty} from './index.js';
 
@@ -132,6 +133,7 @@ Deep.prototype.append = function (iterable) {
 };
 
 Deep.prototype.concat = function (other) {
+	assert(other instanceof Tree);
 	return other._concat_with_deep(this);
 };
 
@@ -202,6 +204,7 @@ Deep.prototype.split = function (p) {
 
 Deep.prototype._concat_with_deep = function (other) {
 	assert(other instanceof Deep);
+	assert(isSameMeasure(other.M, this.M));
 	return new Deep(
 		this.M,
 		other.left,
@@ -225,6 +228,7 @@ Deep.prototype._app3_with_single = function (list, value) {
 
 Deep.prototype._app3_with_deep = function (list, other) {
 	assert(other instanceof Deep);
+	assert(isSameMeasure(other.M, this.M));
 	return new Deep(
 		this.M,
 		other.left,

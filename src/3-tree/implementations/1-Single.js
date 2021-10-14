@@ -5,6 +5,7 @@ import {One} from '../../1-digit/index.js';
 import _append_small_list from '../../0-core/_fast/_append_small_list.js';
 import {_from_medium_list} from '../../0-core/_fast/_from_medium_list.js';
 import _fill_right from '../../0-core/_fast/_fill_right.js';
+import isSameMeasure from '../../_debug/isSameMeasure.js';
 import {Empty, Deep} from './index.js';
 
 export function Single(M, value) {
@@ -71,6 +72,7 @@ Single.prototype.append = function (iterable) {
 };
 
 Single.prototype.concat = function (other) {
+	assert(other instanceof Tree);
 	return other.cons(this.a);
 };
 
@@ -95,6 +97,7 @@ Single.prototype.split = function (p) {
 
 Single.prototype._concat_with_deep = function (other) {
 	assert(other instanceof Deep);
+	assert(isSameMeasure(other.M, this.M));
 	return other.push(this.a);
 };
 
@@ -113,5 +116,6 @@ Single.prototype._app3_with_single = function (list, value) {
 
 Single.prototype._app3_with_deep = function (list, other) {
 	assert(other instanceof Deep);
+	assert(isSameMeasure(other.M, this.M));
 	return _append_small_list(other, list).push(this.a);
 };
