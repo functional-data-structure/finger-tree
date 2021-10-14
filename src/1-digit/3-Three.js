@@ -226,7 +226,7 @@ Three.prototype._isolated_push = function (parent, value) {
 Three.prototype._UNSAFE_push = function (parent, value) {
 	assert(parent._right === this);
 	parent._middle = parent._middle._UNSAFE_push(this._node(parent.M));
-	// NOTE the following is dangerous if alternating push and init
+	// NOTE the following is dangerous if alternating _UNSAFE_push and init
 	parent._right = new One(value);
 	// TODO maybe final output can be fixed
 	return parent;
