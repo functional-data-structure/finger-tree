@@ -1,5 +1,5 @@
 import assert from 'assert';
-import {node2, node3} from '../2-node/index.js';
+import {Node2, node2, node3} from '../2-node/index.js';
 import {Split} from '../0-core/index.js';
 import {Digit, One, Three} from './index.js';
 
@@ -40,10 +40,8 @@ Two.prototype.cons = function (value) {
 	return new Three(value, this.a, this.b);
 };
 
-Two.prototype.node = function (_M) {
-	throw new Error(
-		'Two should never be converted to Node2 with current implementation',
-	);
+Two.prototype.node = function (M) {
+	return new Node2(this.measure(M), this.a, this.b);
 };
 
 /**
