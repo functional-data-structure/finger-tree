@@ -95,11 +95,7 @@ Four.prototype._nodes_with_two = function (M, other) {
 
 Four.prototype._nodes_with_three = function (M, other) {
 	assert(other instanceof Three);
-	return [
-		node3(M, other.a, other.b, other.c),
-		node2(M, this.a, this.b),
-		node2(M, this.c, this.d),
-	];
+	return [other._node(M), node2(M, this.a, this.b), node2(M, this.c, this.d)];
 };
 
 Four.prototype._nodes_with_four = function (M, other) {
