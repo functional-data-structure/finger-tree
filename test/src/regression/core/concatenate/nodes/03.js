@@ -3,7 +3,14 @@ import test from 'ava';
 import {Measures} from '@functional-abstraction/measure';
 import {nrepeat} from '@iterable-iterator/repeat';
 
-import {empty} from '../../../../../../src/index.js';
+import {
+	empty,
+	leftDigit,
+	middleTree,
+	rightDigit,
+	nodes,
+	digitSize,
+} from '../../../../../../src/index.js';
 
 const {COUNTER} = Measures;
 
@@ -23,9 +30,9 @@ test('cover', (t) => {
 	B = B.push(x); // (x, ([xxx], (), [xxx]), xx)
 
 	t.is(
-		A.middle.right.measure(COUNTER) +
-			A.right._nodes(COUNTER, B.left).length +
-			B.middle.left.measure(COUNTER),
+		digitSize(rightDigit(middleTree(A))) +
+			nodes(COUNTER, rightDigit(A), leftDigit(B)).length +
+			digitSize(leftDigit(middleTree(B))),
 		3,
 	);
 

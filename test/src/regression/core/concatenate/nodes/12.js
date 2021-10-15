@@ -3,7 +3,16 @@ import test from 'ava';
 import {Measures} from '@functional-abstraction/measure';
 import {range} from '@iterable-iterator/range';
 
-import {empty} from '../../../../../../src/index.js';
+import {
+	empty,
+	leftDigit,
+	middleTree,
+	rightDigit,
+	embeddedMeasure,
+	nodes,
+	nodesWithList,
+	digitSize,
+} from '../../../../../../src/index.js';
 
 const {COUNTER} = Measures;
 
@@ -16,16 +25,20 @@ test('cover', (t) => {
 	for (const i of range(65)) B = B.push(i);
 	// (1, (3, (45), 12), 4)
 
-	const M = B.middle.M;
+	const M = COUNTER;
+	const Am = middleTree(A);
+	const Bm = middleTree(B);
+	const cM = embeddedMeasure(Bm);
+	const Al = leftDigit(A);
+	const Br = rightDigit(B);
+	const Amm = middleTree(Am);
+	const Bmm = middleTree(Bm);
 
 	t.is(
-		[...B.middle.middle.right].length +
-			B.middle.right._nodes_with_list(
-				M,
-				B.right._nodes(COUNTER, A.left),
-				A.middle.left,
-			).length +
-			[...A.middle.middle.left].length,
+		digitSize(rightDigit(Bmm)) +
+			nodesWithList(cM, rightDigit(Bm), nodes(M, Br, Al), leftDigit(Am))
+				.length +
+			digitSize(leftDigit(Amm)),
 		12,
 	);
 
