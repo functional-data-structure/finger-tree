@@ -91,10 +91,6 @@ Single.prototype.split = function (p) {
 	return p(this.measure()) ? [empty(this.M), this] : [this, empty(this.M)];
 };
 
-Single.prototype._copy_spine = function () {
-	return this;
-};
-
 Single.prototype._concat_with_deep = function (other) {
 	assert(other instanceof Deep);
 	assert(isSameMeasure(other.M, this.M));

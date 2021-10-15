@@ -176,10 +176,6 @@ Deep.prototype._concat_with_deep = function (other) {
 	);
 };
 
-Deep.prototype._copy_spine = function () {
-	return new Deep(this.M, this._left, this._middle._copy_spine(), this._right);
-};
-
 Deep.prototype._app3 = function (list, other) {
 	assert(other instanceof Tree);
 	return other._app3_with_deep(list, this);
