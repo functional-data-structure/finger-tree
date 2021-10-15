@@ -18,10 +18,10 @@ console.log('number of operations:', M * N);
 const t = from(COUNTER, range(M));
 console.timeEnd('prepare');
 
-console.time('split');
+console.time('iterator');
 for (let k = 0; k < N; ++k) {
 	// eslint-disable-next-line no-unused-vars
 	for (const _x of t);
 }
 
-console.timeEnd('split');
+console.timeEnd('iterator');
