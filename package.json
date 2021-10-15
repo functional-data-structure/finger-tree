@@ -220,9 +220,11 @@
     ],
     "rules": {
       "camelcase": "off",
+      "no-bitwise": "off",
       "unicorn/filename-case": "off",
       "unicorn/explicit-length-check": "off",
       "unicorn/no-array-push-push": "off",
+      "unicorn/prefer-math-trunc": "off",
       "unicorn/prefer-node-protocol": "off",
       "unicorn/prefer-module": "off"
     },

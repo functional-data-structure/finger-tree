@@ -1,6 +1,12 @@
-// Export * from './0-core' ;
-// export * from './1-digit' ;
-// export * from './2-node' ;
-// export * from './3-tree' ;
-// export * from './4-lazy' ;
-export * from './5-api.js';
+export {default as empty} from './5-api/empty.js';
+export {default as from} from './5-api/from.js';
+export {default as rightTree} from './5-api/rightTree.js';
+export {default as leftTree} from './5-api/leftTree.js';
+export {default as middleElement} from './5-api/middleElement.js';
+export {default as digitSize} from './5-api/digitSize.js';
+export {default as rightDigit} from './5-api/rightDigit.js';
+export {default as nodesWithList} from './5-api/nodesWithList.js';
+export {default as nodes} from './5-api/nodes.js';
+export {default as middleTree} from './5-api/middleTree.js';
+export {default as leftDigit} from './5-api/leftDigit.js';
+export {default as embeddedMeasure} from './5-api/embeddedMeasure.js';

@@ -6,7 +6,8 @@ import _append_small_list from '../../0-core/_fast/_append_small_list.js';
 import {_from_medium_list} from '../../0-core/_fast/_from_medium_list.js';
 import isSameMeasure from '../../_debug/isSameMeasure.js';
 import _from_by_filling from '../../0-core/_fast/_from_by_filling.js';
-import {Empty, Deep} from './index.js';
+import empty from '../../5-api/empty.js';
+import {Deep} from './index.js';
 
 export function Single(M, value) {
 	this.M = M;
@@ -33,18 +34,18 @@ Single.prototype.last = function () {
 };
 
 Single.prototype.tail = function () {
-	return new Empty(this.M);
+	return empty(this.M);
 };
 
 Single.prototype.init = function () {
-	return new Empty(this.M);
+	return empty(this.M);
 };
 
 Single.prototype.cons = function (value) {
 	return new Deep(
 		this.M,
 		new One(value),
-		new Empty(cache(this.M)),
+		empty(cache(this.M)),
 		new One(this.a),
 	);
 };
@@ -55,7 +56,7 @@ Single.prototype._UNSAFE_push =
 		return new Deep(
 			this.M,
 			new One(this.a),
-			new Empty(cache(this.M)),
+			empty(cache(this.M)),
 			new One(value),
 		);
 	};
@@ -83,13 +84,11 @@ Single.prototype[Symbol.iterator] =
  * It is assumed that p(i+|this|) is true.
  */
 Single.prototype.splitTree = function (_p, _i) {
-	return new Split(new Empty(this.M), this.a, new Empty(this.M));
+	return new Split(empty(this.M), this.a, empty(this.M));
 };
 
 Single.prototype.split = function (p) {
-	return p(this.measure())
-		? [new Empty(this.M), this]
-		: [this, new Empty(this.M)];
+	return p(this.measure()) ? [empty(this.M), this] : [this, empty(this.M)];
 };
 
 Single.prototype._copy_spine = function () {

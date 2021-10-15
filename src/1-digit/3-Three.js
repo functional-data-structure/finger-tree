@@ -1,7 +1,7 @@
 import assert from 'assert';
 import {node2, Node3, node3} from '../2-node/index.js';
 import {DigitSplit} from '../0-core/split/DigitSplit.js';
-import {Empty} from '../3-tree/implementations/0-Empty.js';
+import empty from '../5-api/empty.js';
 import {cache} from '../0-core/measure/cache.js';
 import {Deep} from '../3-tree/implementations/2-Deep.js';
 import {Digit, One, Two, Four} from './index.js';
@@ -53,12 +53,7 @@ Three.prototype._node = function (M) {
 };
 
 Three.prototype._tree = function (M) {
-	return new Deep(
-		M,
-		new Two(this.a, this.b),
-		new Empty(cache(M)),
-		new One(this.c),
-	);
+	return new Deep(M, new Two(this.a, this.b), empty(cache(M)), new One(this.c));
 };
 
 /**
@@ -220,6 +215,11 @@ Three.prototype._list = function () {
 	return [this.a, this.b, this.c];
 };
 
+Three.prototype._isolated_cons = function (parent, value) {
+	assert(parent._left === this);
+	return new Deep(parent.M, this.cons(value), parent._middle, parent._right);
+};
+
 Three.prototype._isolated_push = function (parent, value) {
 	assert(parent._right === this);
 	return new Deep(parent.M, parent._left, parent._middle, this.push(value));
@@ -232,4 +232,14 @@ Three.prototype._UNSAFE_push = function (parent, value) {
 	parent._right = new One(value);
 	// TODO maybe final output can be fixed
 	return parent;
+};
+
+Three.prototype._isolated_init = function (parent) {
+	assert(parent._right === this);
+	return new Deep(parent.M, parent._left, parent._middle, this.init());
+};
+
+Three.prototype._isolated_tail = function (parent) {
+	assert(parent._left === this);
+	return new Deep(parent.M, this.tail(), parent._middle, parent._right);
 };

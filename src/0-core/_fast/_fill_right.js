@@ -8,7 +8,7 @@ import {node3} from '../../2-node/node3.js';
 import {Empty} from '../../3-tree/implementations/0-Empty.js';
 import {Single} from '../../3-tree/implementations/1-Single.js';
 import {Deep} from '../../3-tree/implementations/2-Deep.js';
-import {Lazy} from '../../4-lazy/0-Lazy.js';
+import Lazy from '../../4-lazy/Lazy.js';
 
 /**
  * _fill_right.

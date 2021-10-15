@@ -3,6 +3,8 @@ import {node2, node3} from '../2-node/index.js';
 import {DigitSplit} from '../0-core/split/DigitSplit.js';
 import {Single} from '../3-tree/implementations/1-Single.js';
 import {Deep} from '../3-tree/implementations/2-Deep.js';
+import delayTail from '../4-lazy/delayTail.js';
+import delayInit from '../4-lazy/delayInit.js';
 import {Digit, Two, Three, Four} from './index.js';
 
 export function One(a) {
@@ -186,6 +188,11 @@ One.prototype._list = function () {
 	return [this.a];
 };
 
+One.prototype._isolated_cons = function (parent, value) {
+	assert(parent._left === this);
+	return new Deep(parent.M, this.cons(value), parent._middle, parent._right);
+};
+
 One.prototype._isolated_push = function (parent, value) {
 	assert(parent._right === this);
 	return new Deep(parent.M, parent._left, parent._middle, this.push(value));
@@ -195,4 +202,32 @@ One.prototype._UNSAFE_push = function (parent, value) {
 	assert(parent._right === this);
 	parent._right = this.push(value);
 	return parent;
+};
+
+One.prototype._isolated_init = function (parent) {
+	assert(parent._right === this);
+	if (parent._middle.isEmpty()) {
+		return parent._left._tree(parent.M);
+	}
+
+	return new Deep(
+		parent.M,
+		parent._left,
+		delayInit(parent._middle),
+		parent._middle.last()._digit(),
+	);
+};
+
+One.prototype._isolated_tail = function (parent) {
+	assert(parent._left === this);
+	if (parent._middle.isEmpty()) {
+		return parent._right._tree(parent.M);
+	}
+
+	return new Deep(
+		parent.M,
+		parent._middle.head()._digit(),
+		delayTail(parent._middle),
+		parent._right,
+	);
 };

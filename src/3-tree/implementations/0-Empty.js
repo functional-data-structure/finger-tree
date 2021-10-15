@@ -1,10 +1,10 @@
 import assert from 'assert';
 import {Tree} from '../base/index.js';
-import {_EMPTY} from '../../0-core/index.js';
 import {_from_medium_list} from '../../0-core/_fast/_from_medium_list.js';
 import _append_small_list from '../../0-core/_fast/_append_small_list.js';
 import _from_by_filling from '../../0-core/_fast/_from_by_filling.js';
 import isSameMeasure from '../../_debug/isSameMeasure.js';
+import {_EMPTY} from '../../0-core/_fast/fast-iterators/2-_EMPTY.js';
 import {Single, Deep} from './index.js';
 
 export function Empty(M) {

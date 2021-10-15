@@ -2,7 +2,7 @@ import assert from 'assert';
 import {cache} from '../0-core/measure/cache.js';
 import {DigitSplit} from '../0-core/split/DigitSplit.js';
 import {node2, node3} from '../2-node/index.js';
-import {Empty} from '../3-tree/implementations/0-Empty.js';
+import empty from '../5-api/empty.js';
 import {Deep} from '../3-tree/implementations/2-Deep.js';
 import {Digit, One, Two, Three} from './index.js';
 
@@ -57,7 +57,7 @@ Four.prototype._tree = function (M) {
 	return new Deep(
 		M,
 		new Two(this.a, this.b),
-		new Empty(cache(M)),
+		empty(cache(M)),
 		new Two(this.c, this.d),
 	);
 };
@@ -252,13 +252,23 @@ Four.prototype._list = function () {
 	return [this.a, this.b, this.c, this.d];
 };
 
+Four.prototype._isolated_cons = function (parent, value) {
+	assert(parent._left === this);
+	return new Deep(
+		parent.M,
+		new Two(value, this.a),
+		parent._middle.cons(node3(parent.M, this.b, this.c, this.d)),
+		parent._right,
+	);
+};
+
 Four.prototype._isolated_push = function (parent, value) {
 	assert(parent._right === this);
 	return new Deep(
 		parent.M,
 		parent._left,
-		parent._middle.push(this.init()._node(parent.M)),
-		new Two(this.last(), value),
+		parent._middle.push(node3(parent.M, this.a, this.b, this.c)),
+		new Two(this.d, value),
 	);
 };
 
@@ -267,4 +277,14 @@ Four.prototype._UNSAFE_push = function (parent, value) {
 	parent._middle = parent._middle._UNSAFE_push(this.init()._node(parent.M));
 	parent._right = new Two(this.last(), value);
 	return parent;
+};
+
+Four.prototype._isolated_init = function (parent) {
+	assert(parent._right === this);
+	return new Deep(parent.M, parent._left, parent._middle, this.init());
+};
+
+Four.prototype._isolated_tail = function (parent) {
+	assert(parent._left === this);
+	return new Deep(parent.M, this.tail(), parent._middle, parent._right);
 };

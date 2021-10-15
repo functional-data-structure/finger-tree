@@ -1,13 +1,15 @@
 import assert from 'assert';
 import {Tree} from '../base/index.js';
-import {_deepL, _deepR, CachedMeasure, Split} from '../../0-core/index.js';
+import {deepL, deepR, CachedMeasure, Split} from '../../0-core/index.js';
 import {One, Two, Three, Four} from '../../1-digit/index.js';
-import {delay, Lazy} from '../../4-lazy/index.js';
+import Lazy from '../../4-lazy/Lazy.js';
 import _prepend_small_list from '../../0-core/_fast/_prepend_small_list.js';
 import _fill_right from '../../0-core/_fast/_fill_right.js';
 import isSameMeasure from '../../_debug/isSameMeasure.js';
 import _append_small_list from '../../0-core/_fast/_append_small_list.js';
 import _from_by_filling from '../../0-core/_fast/_from_by_filling.js';
+import empty from '../../5-api/empty.js';
+import delayApp3RecurseStep from '../../4-lazy/delayApp3RecurseStep.js';
 import {Empty} from './0-Empty.js';
 import {Single} from './1-Single.js';
 
@@ -66,50 +68,15 @@ Deep.prototype.last = function () {
 };
 
 Deep.prototype.tail = function () {
-	if (this._left instanceof One) {
-		if (this._middle.isEmpty()) {
-			return this._right._tree(this.M);
-		}
-
-		return new Deep(
-			this.M,
-			this._middle.head()._digit(),
-			delay(() => this._middle.tail()),
-			this._right,
-		);
-	}
-
-	return new Deep(this.M, this._left.tail(), this._middle, this._right);
+	return this._left._isolated_tail(this);
 };
 
 Deep.prototype.init = function () {
-	if (this._right instanceof One) {
-		if (this._middle.isEmpty()) {
-			return this._left._tree(this.M);
-		}
-
-		return new Deep(
-			this.M,
-			this._left,
-			delay(() => this._middle.init()),
-			this._middle.last()._digit(),
-		);
-	}
-
-	return new Deep(this.M, this._left, this._middle, this._right.init());
+	return this._right._isolated_init(this);
 };
 
 Deep.prototype.cons = function (value) {
-	if (this._left instanceof Four) {
-		return new Deep(
-			this.M,
-			new Two(value, this._left.head()),
-			this._middle.cons(this._left.tail()._node(this.M)),
-			this._right,
-		);
-	}
-
-	return new Deep(this.M, this._left.cons(value), this._middle, this._right);
+	return this._left._isolated_cons(this, value);
 };
 
 Deep.prototype.push = function (value) {
@@ -169,41 +136,43 @@ Deep.prototype.reversed = function* () {
 Deep.prototype.splitTree = function (p, i) {
 	assert(p(this.M.plus(i, this.measure())));
 
-	const {_left, _middle, _right, M} = this;
-
-	// See if the split point is inside the left tree
-	const leftMeasure = M.plus(i, _left.measure(M));
+	// See if the split point is inside the left digit
+	const leftMeasure = this.M.plus(i, this._left.measure(this.M));
 	if (p(leftMeasure)) {
-		const split = _left._splitDigit(p, i, M);
+		const split = this._left._splitDigit(p, i, this.M);
 		return new Split(
-			split._left === null ? new Empty(M) : split._left._tree(M),
+			split._left === null ? empty(this.M) : split._left._tree(this.M),
 			split._middle,
-			_deepL(M, split._right, _middle, _right),
+			deepL(this.M, split._right, this._middle, this._right),
 		);
 	}
 
 	// See if the split point is inside the middle tree
-	const midMeasure = M.plus(leftMeasure, _middle.measure());
+	const midMeasure = this.M.plus(leftMeasure, this._middle.measure());
 
 	if (p(midMeasure)) {
-		const midSplit = _middle.splitTree(p, leftMeasure);
+		const midSplit = this._middle.splitTree(p, leftMeasure);
 		// Midsplit._middle is a Node since middle is a Tree ( Node a )
 		const split = midSplit._middle
 			._digit()
-			._splitDigit(p, M.plus(leftMeasure, midSplit._left.measure()), M);
+			._splitDigit(
+				p,
+				this.M.plus(leftMeasure, midSplit._left.measure()),
+				this.M,
+			);
 		return new Split(
-			_deepR(M, _left, midSplit._left, split._left),
+			deepR(this.M, this._left, midSplit._left, split._left),
 			split._middle,
-			_deepL(M, split._right, midSplit._right, _right),
+			deepL(this.M, split._right, midSplit._right, this._right),
 		);
 	}
 
-	// The split point is in the right tree
-	const split = _right._splitDigit(p, midMeasure, M);
+	// The split point is in the right digit
+	const split = this._right._splitDigit(p, midMeasure, this.M);
 	return new Split(
-		_deepR(M, _left, _middle, split._left),
+		deepR(this.M, this._left, this._middle, split._left),
 		split._middle,
-		split._right === null ? new Empty(M) : split._right._tree(M),
+		split._right === null ? empty(this.M) : split._right._tree(this.M),
 	);
 };
 
@@ -213,7 +182,7 @@ Deep.prototype.split = function (p) {
 		return [split._left, split._right.cons(split._middle)];
 	}
 
-	return [this, new Empty(this.M)];
+	return [this, empty(this.M)];
 };
 
 Deep.prototype._concat_with_deep = function (other) {
@@ -250,10 +219,7 @@ Deep.prototype._app3_with_deep = function (list, other) {
 	return new Deep(
 		this.M,
 		other._left,
-		other._middle._app3(
-			other._right._nodes_with_list(this.M, list, this._left),
-			this._middle,
-		),
+		delayApp3RecurseStep(other, list, this),
 		this._right,
 	);
 };

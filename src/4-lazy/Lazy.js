@@ -1,20 +1,8 @@
 import {Tree} from '../3-tree/base/Tree.js';
 
-export function Lazy(thunk) {
-	this._tree = null;
-	this._thunk = thunk;
-}
+export default function Lazy() {}
 
 Lazy.prototype = new Tree();
-
-Lazy.prototype._force = function () {
-	if (this._tree === null) {
-		this._tree = this._thunk();
-		this._thunk = null;
-	}
-
-	return this._tree;
-};
 
 Lazy.prototype.isEmpty = function () {
 	return this._force().isEmpty();
