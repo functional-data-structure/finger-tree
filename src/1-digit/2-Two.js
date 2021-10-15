@@ -40,14 +40,14 @@ Two.prototype.cons = function (value) {
 	return new Three(value, this.a, this.b);
 };
 
-Two.prototype.node = function (M) {
+Two.prototype._node = function (M) {
 	return new Node2(this.measure(M), this.a, this.b);
 };
 
 /**
  * It is assumed that p(i+|this|) is true.
  */
-Two.prototype.splitDigit = function (p, i, M) {
+Two.prototype._splitDigit = function (p, i, M) {
 	assert(p(M.plus(i, this.measure(M)))); // /!\ Potential Heisenbug generator.
 	i = M.plus(i, M.measure(this.a));
 	if (p(i)) return new Split([], this.a, [this.b]);
@@ -91,20 +91,20 @@ Two.prototype._nodes_with_list_and_one = function (M, list, other) {
 	// eslint-disable-next-line default-case
 	switch (list.length) {
 		case 1:
-			return [node2(M, other.a, list[0]), this.node(M)];
+			return [node2(M, other.a, list[0]), this._node(M)];
 		case 2:
-			return [node3(M, other.a, list[0], list[1]), this.node(M)];
+			return [node3(M, other.a, list[0], list[1]), this._node(M)];
 		case 3:
 			return [
 				node2(M, other.a, list[0]),
 				node2(M, list[1], list[2]),
-				this.node(M),
+				this._node(M),
 			];
 		case 4:
 			return [
 				node2(M, other.a, list[0]),
 				node3(M, list[1], list[2], list[3]),
-				this.node(M),
+				this._node(M),
 			];
 	}
 };
@@ -117,7 +117,7 @@ Two.prototype._nodes_with_list_and_two = function (M, list, other) {
 		case 1:
 			return [node3(M, other.a, other.b, list[0]), node2(M, this.a, this.b)];
 		case 2:
-			return [other.node(M), node2(M, list[0], list[1]), this.node(M)];
+			return [other._node(M), node2(M, list[0], list[1]), this._node(M)];
 		case 3:
 			return [
 				node2(M, other.a, other.b),

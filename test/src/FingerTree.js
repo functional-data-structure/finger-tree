@@ -218,55 +218,55 @@ test('FingerTree', (t) => {
 	t.deepEqual(
 		list(map(list, from(COUNTER, 'a').append('bcde').split(gt(0)))),
 		[list(''), list('abcde')],
-		'One.splitDigit 0',
+		'One._splitDigit 0',
 	);
 	// Provoke split of digit Two
 	t.deepEqual(
 		list(map(list, from(COUNTER, 'b').append('cde').prepend('a').split(gt(0)))),
 		[list(''), list('abcde')],
-		'Two.splitDigit 0',
+		'Two._splitDigit 0',
 	);
 	t.deepEqual(
 		list(map(list, from(COUNTER, 'b').append('cde').prepend('a').split(gt(1)))),
 		[list('a'), list('bcde')],
-		'Two.splitDigit 1',
+		'Two._splitDigit 1',
 	);
 	// Provoke split of digit Three
 	t.deepEqual(
 		list(map(list, from(COUNTER, 'c').append('de').prepend('ab').split(gt(0)))),
 		[list(''), list('abcde')],
-		'Three.splitDigit 0',
+		'Three._splitDigit 0',
 	);
 	t.deepEqual(
 		list(map(list, from(COUNTER, 'c').append('de').prepend('ab').split(gt(1)))),
 		[list('a'), list('bcde')],
-		'Three.splitDigit 1',
+		'Three._splitDigit 1',
 	);
 	t.deepEqual(
 		list(map(list, from(COUNTER, 'c').append('de').prepend('ab').split(gt(2)))),
 		[list('ab'), list('cde')],
-		'Three.splitDigit 2',
+		'Three._splitDigit 2',
 	);
 	// Provoke split of digit Four
 	t.deepEqual(
 		list(map(list, from(COUNTER, 'd').append('e').prepend('abc').split(gt(0)))),
 		[list(''), list('abcde')],
-		'Four.splitDigit 0',
+		'Four._splitDigit 0',
 	);
 	t.deepEqual(
 		list(map(list, from(COUNTER, 'd').append('e').prepend('abc').split(gt(1)))),
 		[list('a'), list('bcde')],
-		'Four.splitDigit 1',
+		'Four._splitDigit 1',
 	);
 	t.deepEqual(
 		list(map(list, from(COUNTER, 'd').append('e').prepend('abc').split(gt(2)))),
 		[list('ab'), list('cde')],
-		'Four.splitDigit 2',
+		'Four._splitDigit 2',
 	);
 	t.deepEqual(
 		list(map(list, from(COUNTER, 'd').append('e').prepend('abc').split(gt(3)))),
 		[list('abc'), list('de')],
-		'Four.splitDigit 3',
+		'Four._splitDigit 3',
 	);
 
 	// Provoke head / last on digits

@@ -19,6 +19,6 @@ Node3.prototype.measure = function () {
 	return this.v;
 };
 
-Node3.prototype.digit = function () {
+Node3.prototype._digit = function () {
 	return new Three(this.a, this.b, this.c);
 };

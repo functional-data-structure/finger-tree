@@ -46,14 +46,14 @@ Four.prototype.cons = function (_value) {
 	throw new Error('cannot cons digit Four');
 };
 
-Four.prototype.node = function (_M) {
+Four.prototype._node = function (_M) {
 	throw new Error('cannot convert Four to node');
 };
 
 /**
  * It is assumed that p(i+|this|) is true.
  */
-Four.prototype.splitDigit = function (p, i, M) {
+Four.prototype._splitDigit = function (p, i, M) {
 	assert(p(M.plus(i, this.measure(M)))); // /!\ Potential Heisenbug generator.
 	i = M.plus(i, M.measure(this.a));
 	if (p(i)) return new Split([], this.a, [this.b, this.c, this.d]);
@@ -138,13 +138,13 @@ Four.prototype._nodes_with_list_and_two = function (M, list, other) {
 	switch (list.length) {
 		case 1:
 			return [
-				other.node(M),
+				other._node(M),
 				node3(M, list[0], this.a, this.b),
 				node2(M, this.c, this.d),
 			];
 		case 2:
 			return [
-				other.node(M),
+				other._node(M),
 				node3(M, list[0], list[1], this.a),
 				node3(M, this.b, this.c, this.d),
 			];
@@ -156,7 +156,7 @@ Four.prototype._nodes_with_list_and_two = function (M, list, other) {
 			];
 		case 4:
 			return [
-				other.node(M),
+				other._node(M),
 				node3(M, list[0], list[1], list[2]),
 				node3(M, list[3], this.a, this.b),
 				node2(M, this.c, this.d),
@@ -171,26 +171,26 @@ Four.prototype._nodes_with_list_and_three = function (M, list, other) {
 	switch (list.length) {
 		case 1:
 			return [
-				other.node(M),
+				other._node(M),
 				node2(M, list[0], this.a),
 				node3(M, this.b, this.c, this.d),
 			];
 		case 2:
 			return [
-				other.node(M),
+				other._node(M),
 				node3(M, list[0], list[1], this.a),
 				node3(M, this.b, this.c, this.d),
 			];
 		case 3:
 			return [
-				other.node(M),
+				other._node(M),
 				node2(M, list[0], list[1]),
 				node2(M, list[2], this.a),
 				node3(M, this.b, this.c, this.d),
 			];
 		case 4:
 			return [
-				other.node(M),
+				other._node(M),
 				node2(M, list[0], list[1]),
 				node3(M, list[2], list[3], this.a),
 				node3(M, this.b, this.c, this.d),

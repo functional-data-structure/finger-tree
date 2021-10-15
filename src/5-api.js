@@ -13,37 +13,37 @@ export {from} from './0-core/index.js';
 
 export const leftTree = (treeSplit) => {
 	assert(treeSplit instanceof Split);
-	return treeSplit.left;
+	return treeSplit._left;
 };
 
 export const rightTree = (treeSplit) => {
 	assert(treeSplit instanceof Split);
-	return treeSplit.right;
+	return treeSplit._right;
 };
 
 export const middleElement = (treeSplit) => {
 	assert(treeSplit instanceof Split);
-	return treeSplit.middle;
+	return treeSplit._middle;
 };
 
 export const leftDigit = (tree) => {
 	assert(tree instanceof Deep);
-	return tree.left;
+	return tree._left;
 };
 
 export const rightDigit = (tree) => {
 	assert(tree instanceof Deep);
-	return tree.right;
+	return tree._right;
 };
 
 export const middleTree = (tree) => {
 	assert(tree instanceof Deep);
-	return tree.middle;
+	return tree._middle;
 };
 
 export const embeddedMeasure = (tree) => {
 	assert(tree instanceof Tree);
-	return tree.force().M;
+	return tree._force().M;
 };
 
 export const nodes = (M, left, right) => {
