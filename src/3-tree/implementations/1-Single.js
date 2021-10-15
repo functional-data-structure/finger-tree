@@ -76,8 +76,8 @@ Single.prototype.concat = function (other) {
 
 Single.prototype[Symbol.iterator] =
 	// eslint-disable-next-line no-multi-assign
-	Single.prototype.reversed = function* () {
-		yield this.a;
+	Single.prototype.reversed = function () {
+		return [this.a][Symbol.iterator]();
 	};
 
 /**

@@ -8,6 +8,8 @@ import isSameMeasure from '../../_debug/isSameMeasure.js';
 import _from_by_filling from '../../0-core/_fast/_from_by_filling.js';
 import empty from '../../5-api/empty.js';
 import delayApp3RecurseStep from '../../4-lazy/delayApp3RecurseStep.js';
+import ForwardIterator from '../../0-core/_fast/fast-iterators/ForwardIterator.js';
+import BackwardIterator from '../../0-core/_fast/fast-iterators/BackwardIterator.js';
 import {Empty} from './0-Empty.js';
 import {Single} from './1-Single.js';
 
@@ -98,16 +100,12 @@ Deep.prototype.concat = function (other) {
 	return other._concat_with_deep(this);
 };
 
-Deep.prototype[Symbol.iterator] = function* () {
-	yield* this._left;
-	for (const node of this._middle) yield* node;
-	yield* this._right;
+Deep.prototype[Symbol.iterator] = function () {
+	return new ForwardIterator(this);
 };
 
-Deep.prototype.reversed = function* () {
-	yield* this._right.reversed();
-	for (const node of this._middle.reversed()) yield* node.reversed();
-	yield* this._left.reversed();
+Deep.prototype.reversed = function () {
+	return new BackwardIterator(this);
 };
 
 /**

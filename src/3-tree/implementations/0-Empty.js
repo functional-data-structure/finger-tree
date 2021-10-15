@@ -59,11 +59,11 @@ Empty.prototype.concat = function (other) {
 	return other;
 };
 
-Empty.prototype[Symbol.iterator] = function () {
-	return _EMPTY;
-};
-
-Empty.prototype.reversed = function* () {};
+Empty.prototype[Symbol.iterator] =
+	// eslint-disable-next-line no-multi-assign
+	Empty.prototype.reversed = function () {
+		return _EMPTY;
+	};
 
 /**
  * It is assumed that p(i+|this|) is true.
