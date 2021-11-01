@@ -70,7 +70,7 @@
     "@babel/core": "7.16.0",
     "@babel/preset-env": "7.16.0",
     "@babel/register": "7.16.0",
-    "@commitlint/cli": "13.2.1",
+    "@commitlint/cli": "14.1.0",
     "@functional-abstraction/measure": "4.0.0",
     "@functional-abstraction/predicate": "4.0.0",
     "@iterable-iterator/chain": "2.0.1",
