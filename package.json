@@ -102,7 +102,7 @@
     "pinst": "2.1.6",
     "power-assert": "1.6.1",
     "regenerator-runtime": "0.13.9",
-    "xo": "0.46.4"
+    "xo": "0.47.0"
   },
   "ava": {
     "files": [
