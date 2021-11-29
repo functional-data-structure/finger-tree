@@ -1,20 +1,10 @@
-console.time('prepare');
-require('regenerator-runtime/runtime');
-const ArgumentParser = require('argparse').ArgumentParser;
-const range = require('@iterable-iterator/range').range;
-const empty = require('..').empty;
+import 'regenerator-runtime/runtime.js';
+import {ArgumentParser} from 'argparse';
+import {range} from '@iterable-iterator/range';
+import {FAST_COUNTER as COUNTER} from '../test/src/_fixtures.js';
+import {empty} from './dist/profile/index.js';
 
-const COUNTER = {
-	plus(a, b) {
-		return a + b;
-	},
-	measure(_x) {
-		return 1;
-	},
-	zero() {
-		return 0;
-	},
-};
+console.time('prepare');
 
 const parser = new ArgumentParser();
 parser.add_argument('M', {default: 1000, nargs: '?'});
@@ -28,6 +18,7 @@ console.log('number of operations:', M * N);
 const t = empty(COUNTER);
 console.timeEnd('prepare');
 
+const r = range(M);
 console.time('append');
-for (let k = 0; k < N; ++k) t.append(range(M));
+for (let k = 0; k < N; ++k) t.append(r);
 console.timeEnd('append');

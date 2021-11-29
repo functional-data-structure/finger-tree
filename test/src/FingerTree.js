@@ -10,7 +10,13 @@ import {reversed} from '@iterable-iterator/reversed';
 
 import {gt} from '@functional-abstraction/predicate';
 
-import {empty, from} from '../../src/index.js';
+import {
+	empty,
+	from,
+	leftTree,
+	middleElement,
+	rightTree,
+} from '../../src/index.js';
 
 const {COUNTER} = Measures;
 
@@ -171,7 +177,7 @@ test('FingerTree', (t) => {
 	const split = F.splitTree(gt(4), COUNTER.zero());
 
 	t.deepEqual(
-		[list(split.left), split.middle, list(split.right)],
+		[list(leftTree(split)), middleElement(split), list(rightTree(split))],
 		[list('abcd'), 'e', list('fgh')],
 		'splitTree',
 	);
