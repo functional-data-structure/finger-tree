@@ -1,5 +1,5 @@
-import {Empty} from '../../3-tree/index.js';
+import _from_by_filling from '../_fast/_from_by_filling.js';
 
 export function from(M, iterable) {
-	return new Empty(M).append(iterable);
+	return _from_by_filling(M, iterable);
 }

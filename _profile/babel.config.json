@@ -1,0 +1,33 @@
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "bugfixes": true,
+        "modules": false,
+        "targets": {
+          "esmodules": true
+        }
+      }
+    ]
+  ],
+  "plugins": [
+    [
+      "transform-remove-console",
+      {
+        "exclude": [
+          "log",
+          "error",
+          "warn"
+        ]
+      }
+    ]
+  ],
+  "env": {
+    "profile": {
+      "plugins": [
+        "babel-plugin-unassert"
+      ]
+    }
+  }
+}

@@ -1,24 +1,42 @@
 import assert from 'assert';
 import {Tree} from '../base/index.js';
-import {
-	_app3,
-	_from_digit,
-	_from_small_list,
-	_deepL,
-	_deepR,
-	CachedMeasure,
-	Split,
-} from '../../0-core/index.js';
-import {One, Two, Four} from '../../1-digit/index.js';
-import {delay, Lazy} from '../../4-lazy/index.js';
-import {Empty} from './index.js';
+import {deepL, deepR, CachedMeasure, Split} from '../../0-core/index.js';
+import {One, Two, Three, Four} from '../../1-digit/index.js';
+import Lazy from '../../4-lazy/Lazy.js';
+import _prepend_small_list from '../../0-core/_fast/_prepend_small_list.js';
+import isSameMeasure from '../../_debug/isSameMeasure.js';
+import _from_by_filling from '../../0-core/_fast/_from_by_filling.js';
+import empty from '../../5-api/empty.js';
+import delayApp3RecurseStep from '../../4-lazy/delayApp3RecurseStep.js';
+import ForwardIterator from '../../0-core/_fast/fast-iterators/ForwardIterator.js';
+import BackwardIterator from '../../0-core/_fast/fast-iterators/BackwardIterator.js';
+import {Empty} from './0-Empty.js';
+import {Single} from './1-Single.js';
 
 export function Deep(M, left, middle, right) {
+	assert(
+		left instanceof One ||
+			left instanceof Two ||
+			left instanceof Three ||
+			left instanceof Four,
+	);
+	assert(
+		middle instanceof Empty ||
+			middle instanceof Single ||
+			middle instanceof Deep ||
+			middle instanceof Lazy,
+	);
+	assert(
+		right instanceof One ||
+			right instanceof Two ||
+			right instanceof Three ||
+			right instanceof Four,
+	);
 	assert(middle instanceof Lazy || middle.M instanceof CachedMeasure);
 	this.M = M;
-	this.left = left;
-	this.middle = middle;
-	this.right = right;
+	this._left = left;
+	this._middle = middle;
+	this._right = right;
 	this.v = null;
 }
 
@@ -29,8 +47,8 @@ Deep.prototype.measure = function () {
 		const M = this.M;
 
 		this.v = M.plus(
-			this.left.measure(M),
-			M.plus(this.middle.measure(), this.right.measure(M)),
+			this._left.measure(M),
+			M.plus(this._middle.measure(), this._right.measure(M)),
 		);
 	}
 
@@ -42,87 +60,52 @@ Deep.prototype.isEmpty = function () {
 };
 
 Deep.prototype.head = function () {
-	return this.left.head();
+	return this._left.head();
 };
 
 Deep.prototype.last = function () {
-	return this.right.last();
+	return this._right.last();
 };
 
 Deep.prototype.tail = function () {
-	if (this.left instanceof One) {
-		if (this.middle.isEmpty()) {
-			return _from_digit(this.M, this.right);
-		}
-
-		return new Deep(
-			this.M,
-			this.middle.head().digit(),
-			delay(() => this.middle.tail()),
-			this.right,
-		);
-	}
-
-	return new Deep(this.M, this.left.tail(), this.middle, this.right);
+	return this._left._isolated_tail(this);
 };
 
 Deep.prototype.init = function () {
-	if (this.right instanceof One) {
-		if (this.middle.isEmpty()) {
-			return _from_digit(this.M, this.left);
-		}
-
-		return new Deep(
-			this.M,
-			this.left,
-			delay(() => this.middle.init()),
-			this.middle.last().digit(),
-		);
-	}
-
-	return new Deep(this.M, this.left, this.middle, this.right.init());
+	return this._right._isolated_init(this);
 };
 
 Deep.prototype.cons = function (value) {
-	if (this.left instanceof Four) {
-		return new Deep(
-			this.M,
-			new Two(value, this.left.head()),
-			this.middle.cons(this.left.tail().node(this.M)),
-			this.right,
-		);
-	}
-
-	return new Deep(this.M, this.left.cons(value), this.middle, this.right);
+	return this._left._isolated_cons(this, value);
 };
 
 Deep.prototype.push = function (value) {
-	if (this.right instanceof Four) {
-		return new Deep(
-			this.M,
-			this.left,
-			this.middle.push(this.right.init().node(this.M)),
-			new Two(this.right.last(), value),
-		);
-	}
+	return this._right._isolated_push(this, value);
+};
 
-	return new Deep(this.M, this.left, this.middle, this.right.push(value));
+Deep.prototype._UNSAFE_push = function (value) {
+	return this._right._UNSAFE_push(this, value);
+};
+
+Deep.prototype.prepend = function (iterable) {
+	return _from_by_filling(this.M, iterable).concat(this);
+};
+
+Deep.prototype.append = function (iterable) {
+	return this.concat(_from_by_filling(this.M, iterable));
 };
 
 Deep.prototype.concat = function (other) {
-	return _app3(this, other);
+	assert(other instanceof Tree);
+	return other._concat_with_deep(this);
 };
 
-Deep.prototype[Symbol.iterator] = function* () {
-	yield* this.left;
-	for (const node of this.middle) yield* node;
-	yield* this.right;
+Deep.prototype[Symbol.iterator] = function () {
+	return new ForwardIterator(this);
 };
 
-Deep.prototype.reversed = function* () {
-	yield* this.right.reversed();
-	for (const node of this.middle.reversed()) yield* node.reversed();
-	yield* this.left.reversed();
+Deep.prototype.reversed = function () {
+	return new BackwardIterator(this);
 };
 
 /**
@@ -131,49 +114,86 @@ Deep.prototype.reversed = function* () {
 Deep.prototype.splitTree = function (p, i) {
 	assert(p(this.M.plus(i, this.measure())));
 
-	const {left, middle, right, M} = this;
-
-	// See if the split point is inside the left tree
-	const leftMeasure = M.plus(i, left.measure(M));
+	// See if the split point is inside the left digit
+	const leftMeasure = this.M.plus(i, this._left.measure(this.M));
 	if (p(leftMeasure)) {
-		const split = left.splitDigit(p, i, M);
+		const split = this._left._splitDigit(p, i, this.M);
 		return new Split(
-			_from_small_list(M, split.left),
-			split.middle,
-			_deepL(M, split.right, middle, right),
+			split._left === null ? empty(this.M) : split._left._tree(this.M),
+			split._middle,
+			deepL(this.M, split._right, this._middle, this._right),
 		);
 	}
 
 	// See if the split point is inside the middle tree
-	const midMeasure = M.plus(leftMeasure, middle.measure());
+	const midMeasure = this.M.plus(leftMeasure, this._middle.measure());
 
 	if (p(midMeasure)) {
-		const midSplit = middle.splitTree(p, leftMeasure);
-		// Midsplit.middle is a Node since middle is a Tree ( Node a )
-		const split = midSplit.middle
-			.digit()
-			.splitDigit(p, M.plus(leftMeasure, midSplit.left.measure()), M);
+		const midSplit = this._middle.splitTree(p, leftMeasure);
+		// Midsplit._middle is a Node since middle is a Tree ( Node a )
+		const split = midSplit._middle
+			._digit()
+			._splitDigit(
+				p,
+				this.M.plus(leftMeasure, midSplit._left.measure()),
+				this.M,
+			);
 		return new Split(
-			_deepR(M, left, midSplit.left, split.left),
-			split.middle,
-			_deepL(M, split.right, midSplit.right, right),
+			deepR(this.M, this._left, midSplit._left, split._left),
+			split._middle,
+			deepL(this.M, split._right, midSplit._right, this._right),
 		);
 	}
 
-	// The split point is in the right tree
-	const split = right.splitDigit(p, midMeasure, M);
+	// The split point is in the right digit
+	const split = this._right._splitDigit(p, midMeasure, this.M);
 	return new Split(
-		_deepR(M, left, middle, split.left),
-		split.middle,
-		_from_small_list(M, split.right),
+		deepR(this.M, this._left, this._middle, split._left),
+		split._middle,
+		split._right === null ? empty(this.M) : split._right._tree(this.M),
 	);
 };
 
 Deep.prototype.split = function (p) {
 	if (p(this.measure())) {
 		const split = this.splitTree(p, this.M.zero());
-		return [split.left, split.right.cons(split.middle)];
+		return [split._left, split._right.cons(split._middle)];
 	}
 
-	return [this, new Empty(this.M)];
+	return [this, empty(this.M)];
+};
+
+Deep.prototype._concat_with_deep = function (other) {
+	assert(other instanceof Deep);
+	assert(isSameMeasure(other.M, this.M));
+	return new Deep(
+		this.M,
+		other._left,
+		other._middle._app3(other._right._nodes(this.M, this._left), this._middle),
+		this._right,
+	);
+};
+
+Deep.prototype._app3 = function (list, other) {
+	assert(other instanceof Tree);
+	return other._app3_with_deep(list, this);
+};
+
+Deep.prototype._app3_with_empty = function (list) {
+	return _prepend_small_list(this, list);
+};
+
+Deep.prototype._app3_with_single = function (list, value) {
+	return _prepend_small_list(this, list).cons(value);
+};
+
+Deep.prototype._app3_with_deep = function (list, other) {
+	assert(other instanceof Deep);
+	assert(isSameMeasure(other.M, this.M));
+	return new Deep(
+		this.M,
+		other._left,
+		delayApp3RecurseStep(other, list, this),
+		this._right,
+	);
 };

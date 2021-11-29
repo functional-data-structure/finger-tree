@@ -1,25 +1,12 @@
-require('regenerator-runtime/runtime');
-const range = require('@iterable-iterator/range').range;
-const fingertree = require('..');
+import 'regenerator-runtime/runtime.js';
+import {range} from '@iterable-iterator/range';
+import {empty, from} from '../dist/index.modern.js';
 
-const empty = fingertree.empty;
-const from = fingertree.from;
-
-const COUNTER = {
-	plus(a, b) {
-		return a + b;
-	},
-	measure(_x) {
-		return 1;
-	},
-	zero() {
-		return 0;
-	},
-};
+import {FAST_COUNTER as COUNTER} from '../test/src/_fixtures.js';
 
 let t;
 let i;
-const length = 100_000;
+const length = 300_000;
 
 let start = Date.now();
 

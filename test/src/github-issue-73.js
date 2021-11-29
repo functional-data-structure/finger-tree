@@ -4,7 +4,7 @@ import {Measures} from '@functional-abstraction/measure';
 
 import {list} from '@iterable-iterator/list';
 
-import {from} from '../../src/index.js';
+import {from, leftTree, rightTree} from '../../src/index.js';
 
 const {COUNTER} = Measures;
 
@@ -14,7 +14,7 @@ function set(tree, index, value) {
 
 	const split = tree.splitTree((m) => m > index, tree.M.zero());
 
-	return split.left.push(value).concat(split.right);
+	return leftTree(split).push(value).concat(rightTree(split));
 }
 
 test('github issue #73', (t) => {

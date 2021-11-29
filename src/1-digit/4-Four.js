@@ -1,7 +1,10 @@
 import assert from 'assert';
+import {cache} from '../0-core/measure/cache.js';
+import {DigitSplit} from '../0-core/split/DigitSplit.js';
 import {node2, node3} from '../2-node/index.js';
-import {Split} from '../0-core/index.js';
-import {Digit, One, Two, Three} from './index.js';
+import empty from '../5-api/empty.js';
+import {Deep} from '../3-tree/implementations/2-Deep.js';
+import {One, Two, Three} from './index.js';
 
 export function Four(a, b, c, d) {
 	this.a = a;
@@ -10,8 +13,6 @@ export function Four(a, b, c, d) {
 	this.d = d;
 	this.v = null;
 }
-
-Four.prototype = new Digit();
 
 Four.prototype.measure = function (M) {
 	if (this.v === null)
@@ -46,46 +47,262 @@ Four.prototype.cons = function (_value) {
 	throw new Error('cannot cons digit Four');
 };
 
-Four.prototype.node = function (_M) {
+Four.prototype._node = function (_M) {
 	throw new Error('cannot convert Four to node');
+};
+
+Four.prototype._tree = function (M) {
+	return new Deep(
+		M,
+		new Two(this.a, this.b),
+		empty(cache(M)),
+		new Two(this.c, this.d),
+	);
 };
 
 /**
  * It is assumed that p(i+|this|) is true.
  */
-Four.prototype.splitDigit = function (p, i, M) {
+Four.prototype._splitDigit = function (p, i, M) {
 	assert(p(M.plus(i, this.measure(M)))); // /!\ Potential Heisenbug generator.
 	i = M.plus(i, M.measure(this.a));
-	if (p(i)) return new Split([], this.a, [this.b, this.c, this.d]);
+	if (p(i))
+		return new DigitSplit(null, this.a, new Three(this.b, this.c, this.d));
 	i = M.plus(i, M.measure(this.b));
-	if (p(i)) return new Split([this.a], this.b, [this.c, this.d]);
+	if (p(i))
+		return new DigitSplit(new One(this.a), this.b, new Two(this.c, this.d));
 	i = M.plus(i, M.measure(this.c));
-	if (p(i)) return new Split([this.a, this.b], this.c, [this.d]);
-	return new Split([this.a, this.b, this.c], this.d, []);
+	if (p(i))
+		return new DigitSplit(new Two(this.a, this.b), this.c, new One(this.d));
+	return new DigitSplit(new Three(this.a, this.b, this.c), this.d, null);
 };
 
 Four.prototype._nodes = function (M, other) {
-	if (other instanceof One)
-		return [node3(M, this.a, this.b, this.c), node2(M, this.d, other.a)];
-	if (other instanceof Two)
-		return [
-			node3(M, this.a, this.b, this.c),
-			node3(M, this.d, other.a, other.b),
-		];
-	if (other instanceof Three)
-		return [
-			node3(M, this.a, this.b, this.c),
-			node2(M, this.d, other.a),
-			node2(M, other.b, other.c),
-		];
+	return other._nodes_with_four(M, this);
+};
+
+Four.prototype._nodes_with_one = function (M, other) {
+	assert(other instanceof One);
+	return [node3(M, other.a, this.a, this.b), node2(M, this.c, this.d)];
+};
+
+Four.prototype._nodes_with_two = function (M, other) {
+	assert(other instanceof Two);
+	return [node3(M, other.a, other.b, this.a), node3(M, this.b, this.c, this.d)];
+};
+
+Four.prototype._nodes_with_three = function (M, other) {
+	assert(other instanceof Three);
+	return [other._node(M), node2(M, this.a, this.b), node2(M, this.c, this.d)];
+};
+
+Four.prototype._nodes_with_four = function (M, other) {
 	assert(other instanceof Four);
 	return [
-		node3(M, this.a, this.b, this.c),
-		node3(M, this.d, other.a, other.b),
-		node2(M, other.c, other.d),
+		node3(M, other.a, other.b, other.c),
+		node2(M, other.d, this.a),
+		node3(M, this.b, this.c, this.d),
 	];
+};
+
+Four.prototype._nodes_with_list = function (M, list, other) {
+	return other._nodes_with_list_and_four(M, list, this);
+};
+
+Four.prototype._nodes_with_list_and_one = function (M, list, other) {
+	assert(other instanceof One);
+	assert(Number.isInteger(list.length) && list.length >= 1 && list.length <= 4);
+	// eslint-disable-next-line default-case
+	switch (list.length & 0b11) {
+		case 0:
+			return [
+				node3(M, other.a, list[0], list[1]),
+				node3(M, list[2], list[3], this.a),
+				node3(M, this.b, this.c, this.d),
+			];
+		case 1:
+			return [
+				node3(M, other.a, list[0], this.a),
+				node3(M, this.b, this.c, this.d),
+			];
+		case 2:
+			return [
+				node2(M, other.a, list[0]),
+				node3(M, list[1], this.a, this.b),
+				node2(M, this.c, this.d),
+			];
+		case 3:
+			return [
+				node3(M, other.a, list[0], list[1]),
+				node2(M, list[2], this.a),
+				node3(M, this.b, this.c, this.d),
+			];
+	}
+};
+
+Four.prototype._nodes_with_list_and_two = function (M, list, other) {
+	assert(other instanceof Two);
+	assert(Number.isInteger(list.length) && list.length >= 1 && list.length <= 4);
+	// eslint-disable-next-line default-case
+	switch (list.length & 0b11) {
+		case 0:
+			return [
+				other._node(M),
+				node3(M, list[0], list[1], list[2]),
+				node3(M, list[3], this.a, this.b),
+				node2(M, this.c, this.d),
+			];
+		case 1:
+			return [
+				other._node(M),
+				node3(M, list[0], this.a, this.b),
+				node2(M, this.c, this.d),
+			];
+		case 2:
+			return [
+				other._node(M),
+				node3(M, list[0], list[1], this.a),
+				node3(M, this.b, this.c, this.d),
+			];
+		case 3:
+			return [
+				node3(M, other.a, other.b, list[0]),
+				node3(M, list[1], list[2], this.a),
+				node3(M, this.b, this.c, this.d),
+			];
+	}
+};
+
+Four.prototype._nodes_with_list_and_three = function (M, list, other) {
+	assert(other instanceof Three);
+	assert(Number.isInteger(list.length) && list.length >= 1 && list.length <= 4);
+	// eslint-disable-next-line default-case
+	switch (list.length & 0b11) {
+		case 0:
+			return [
+				other._node(M),
+				node2(M, list[0], list[1]),
+				node3(M, list[2], list[3], this.a),
+				node3(M, this.b, this.c, this.d),
+			];
+		case 1:
+			return [
+				other._node(M),
+				node2(M, list[0], this.a),
+				node3(M, this.b, this.c, this.d),
+			];
+		case 2:
+			return [
+				other._node(M),
+				node3(M, list[0], list[1], this.a),
+				node3(M, this.b, this.c, this.d),
+			];
+		case 3:
+			return [
+				other._node(M),
+				node2(M, list[0], list[1]),
+				node2(M, list[2], this.a),
+				node3(M, this.b, this.c, this.d),
+			];
+	}
+};
+
+Four.prototype._nodes_with_list_and_four = function (M, list, other) {
+	assert(other instanceof Four);
+	assert(Number.isInteger(list.length) && list.length >= 1 && list.length <= 4);
+	// eslint-disable-next-line default-case
+	switch (list.length & 0b11) {
+		case 0:
+			return [
+				node3(M, other.a, other.b, other.c),
+				node3(M, other.d, list[0], list[1]),
+				node3(M, list[2], list[3], this.a),
+				node3(M, this.b, this.c, this.d),
+			];
+		case 1:
+			return [
+				node3(M, other.a, other.b, other.c),
+				node3(M, other.d, list[0], this.a),
+				node3(M, this.b, this.c, this.d),
+			];
+		case 2:
+			return [
+				node2(M, other.a, other.b),
+				node3(M, other.c, other.d, list[0]),
+				node3(M, list[1], this.a, this.b),
+				node2(M, this.c, this.d),
+			];
+		case 3:
+			return [
+				node2(M, other.a, other.b),
+				node3(M, other.c, other.d, list[0]),
+				node3(M, list[1], list[2], this.a),
+				node3(M, this.b, this.c, this.d),
+			];
+	}
 };
 
 Four.prototype._list = function () {
 	return [this.a, this.b, this.c, this.d];
+};
+
+Four.prototype._isolated_cons = function (parent, value) {
+	assert(parent._left === this);
+	return new Deep(
+		parent.M,
+		new Two(value, this.a),
+		parent._middle.cons(node3(parent.M, this.b, this.c, this.d)),
+		parent._right,
+	);
+};
+
+Four.prototype._isolated_push = function (parent, value) {
+	assert(parent._right === this);
+	return new Deep(
+		parent.M,
+		parent._left,
+		parent._middle.push(node3(parent.M, this.a, this.b, this.c)),
+		new Two(this.d, value),
+	);
+};
+
+Four.prototype._UNSAFE_push = function (parent, value) {
+	assert(parent._right === this);
+	parent._middle = parent._middle._UNSAFE_push(this.init()._node(parent.M));
+	parent._right = new Two(this.last(), value);
+	return parent;
+};
+
+Four.prototype._isolated_init = function (parent) {
+	assert(parent._right === this);
+	return new Deep(parent.M, parent._left, parent._middle, this.init());
+};
+
+Four.prototype._isolated_tail = function (parent) {
+	assert(parent._left === this);
+	return new Deep(parent.M, this.tail(), parent._middle, parent._right);
+};
+
+Four.prototype._forward = function (iterator) {
+	assert(iterator._stack.length === 0);
+	assert(iterator._level.length === 0);
+	iterator._stack.push(this.d, this.c, this.b, this.a);
+	iterator._level.push(
+		iterator._currentLevel,
+		iterator._currentLevel,
+		iterator._currentLevel,
+		iterator._currentLevel,
+	);
+};
+
+Four.prototype._backward = function (iterator) {
+	assert(iterator._stack.length === 0);
+	assert(iterator._level.length === 0);
+	iterator._stack.push(this.a, this.b, this.c, this.d);
+	iterator._level.push(
+		iterator._currentLevel,
+		iterator._currentLevel,
+		iterator._currentLevel,
+		iterator._currentLevel,
+	);
 };

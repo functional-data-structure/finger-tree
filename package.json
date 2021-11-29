@@ -48,7 +48,7 @@
     "build-gh-pages": "npm run build-docs",
     "ci:build": "npm run build",
     "ci:test": "npm run lint-config && npm run lint && npm run cover",
-    "commit-msg": "commitlint --edit",
+    "commit-msg": "commitlint -g .commitlintrc.cjs --edit",
     "cover": "NODE_ENV=cover c8 --all --src src --reporter lcov --reporter text-summary --reporter text npm test",
     "debug": "NODE_ENV=debug npm run test -- -st --fail-fast",
     "dev": "npm run lint-config-and-fix && npm run lint-and-fix && npm run cover -- -- -st --fail-fast",
@@ -68,36 +68,36 @@
   "dependencies": {},
   "devDependencies": {
     "@babel/core": "7.16.0",
+    "@babel/eslint-parser": "7.16.3",
     "@babel/preset-env": "7.16.4",
     "@babel/register": "7.16.0",
     "@commitlint/cli": "15.0.0",
     "@functional-abstraction/measure": "4.0.0",
     "@functional-abstraction/predicate": "4.0.0",
     "@iterable-iterator/chain": "2.0.1",
+    "@iterable-iterator/cycle": "^1.0.0",
     "@iterable-iterator/list": "1.0.1",
     "@iterable-iterator/map": "1.0.1",
     "@iterable-iterator/range": "2.1.0",
+    "@iterable-iterator/reduce": "^1.0.1",
     "@iterable-iterator/repeat": "1.0.1",
     "@iterable-iterator/reversed": "1.0.0",
     "@iterable-iterator/tee": "2.0.0",
     "@js-library/commitlint-config": "0.0.4",
-    "argparse": "2.0.1",
+    "@set-theory/cartesian-product": "^2.0.1",
     "ava": "3.15.0",
     "babel-plugin-transform-remove-console": "6.9.4",
     "babel-plugin-unassert": "3.2.0",
     "babel-preset-power-assert": "3.0.0",
-    "benchmark": "2.1.4",
     "c8": "7.10.0",
     "esdoc": "1.1.0",
     "esdoc-inject-script-plugin": "1.0.0",
     "esdoc-inject-style-plugin": "1.0.0",
     "esdoc-standard-plugin": "1.0.0",
-    "fingertree": "0.1.7",
     "fixpack": "4.0.0",
     "husky": "7.0.4",
     "lint-staged": "12.1.2",
     "microbundle": "0.14.2",
-    "microtime": "3.0.0",
     "np": "7.6.0",
     "pinst": "2.1.6",
     "power-assert": "1.6.1",
@@ -210,15 +210,21 @@
     "trailingComma": "all"
   },
   "xo": {
+    "parser": "@babel/eslint-parser",
+    "parserOptions": {
+      "requireConfigFile": false
+    },
     "prettier": true,
     "plugins": [
       "unicorn"
     ],
     "rules": {
       "camelcase": "off",
+      "no-bitwise": "off",
       "unicorn/filename-case": "off",
       "unicorn/explicit-length-check": "off",
       "unicorn/no-array-push-push": "off",
+      "unicorn/prefer-math-trunc": "off",
       "unicorn/prefer-node-protocol": "off",
       "unicorn/prefer-module": "off"
     },
@@ -226,6 +232,7 @@
       {
         "files": "_benchmark/*.js",
         "rules": {
+          "unicorn/no-array-callback-reference": "off",
           "import/no-unassigned-import": "off",
           "no-undef": "off"
         }

@@ -1,5 +1,3 @@
-import {append, prepend} from '../../0-core/index.js';
-
 /**
  * Base class for all implementations.
  */
@@ -12,7 +10,7 @@ export function Tree() {}
  *
  * @returns {Tree} The shallow evaluated tree.
  */
-Tree.prototype.force = function () {
+Tree.prototype._force = function () {
 	return this;
 };
 
@@ -76,9 +74,9 @@ Tree.prototype.dropUntil = function (predicate) {
  *
  * @returns {Tree} The output tree.
  */
-Tree.prototype.append = function (iterable) {
-	return append(this, iterable);
-};
+// Tree.prototype.append = function (iterable) {
+// return append(this, iterable);
+// };
 
 /**
  * Returns a tree that contains all values of the input iterable in-order
@@ -95,6 +93,6 @@ Tree.prototype.append = function (iterable) {
  *
  * @returns {Tree} The output tree.
  */
-Tree.prototype.prepend = function (iterable) {
-	return prepend(this, iterable);
-};
+// Tree.prototype.prepend = function (iterable) {
+// return prepend(this, iterable);
+// };
