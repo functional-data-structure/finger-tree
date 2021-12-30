@@ -87,7 +87,7 @@
     "babel-plugin-unassert": "3.2.0",
     "babel-preset-power-assert": "3.0.0",
     "benchmark": "2.1.4",
-    "c8": "7.10.0",
+    "c8": "7.11.0",
     "esdoc": "1.1.0",
     "esdoc-inject-script-plugin": "1.0.0",
     "esdoc-inject-style-plugin": "1.0.0",
