@@ -68,7 +68,7 @@
   "dependencies": {},
   "devDependencies": {
     "@babel/core": "7.16.10",
-    "@babel/preset-env": "7.16.10",
+    "@babel/preset-env": "7.16.11",
     "@babel/register": "7.16.9",
     "@commitlint/cli": "16.0.3",
     "@functional-abstraction/measure": "4.0.0",
