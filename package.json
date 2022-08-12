@@ -97,7 +97,7 @@
     "husky": "8.0.1",
     "lint-staged": "13.0.3",
     "microbundle": "0.15.0",
-    "microtime": "3.1.0",
+    "microtime": "3.1.1",
     "np": "7.6.2",
     "pinst": "3.0.0",
     "power-assert": "1.6.1",
