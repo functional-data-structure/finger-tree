@@ -94,7 +94,7 @@
     "esdoc-standard-plugin": "1.0.0",
     "fingertree": "0.1.7",
     "fixpack": "4.0.0",
-    "husky": "8.0.2",
+    "husky": "8.0.3",
     "lint-staged": "13.1.0",
     "microbundle": "0.15.1",
     "microtime": "3.1.1",
