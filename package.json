@@ -98,7 +98,7 @@
     "lint-staged": "15.2.2",
     "microbundle": "0.15.1",
     "microtime": "3.1.1",
-    "np": "9.2.0",
+    "np": "10.0.0",
     "pinst": "3.0.0",
     "power-assert": "1.6.1",
     "regenerator-runtime": "0.14.1",
