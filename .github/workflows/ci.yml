@@ -1,0 +1,56 @@
+name: ci
+
+on:
+  - push
+  - pull_request
+
+jobs:
+
+  build:
+    name: Continuous integration (build)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v4
+
+      - name: Install 📦
+        uses: bahmutov/npm-install@v1
+        with:
+          install-command: yarn --frozen-lockfile --ignore-scripts
+          useRollingCache: true
+
+      - name: Build 🏗️
+        run: yarn build
+
+      - name: Archive build 💽
+        uses: actions/upload-artifact@v3
+        with:
+          name: dist
+          path: dist
+          retention-days: 1
+
+  test:
+    needs: ["build"]
+    name: Continuous integration (tests)
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        bundle: ["modern", "module", "cjs"]
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v4
+
+      - name: Install 📦
+        uses: bahmutov/npm-install@v1
+        with:
+          install-command: yarn --frozen-lockfile --ignore-scripts
+          useRollingCache: true
+
+      - name: Load build 💽
+        uses: actions/download-artifact@v3
+        with:
+          name: dist
+          path: dist
+
+      - name: Test 🔬
+        run: yarn test:${{ matrix.bundle }}

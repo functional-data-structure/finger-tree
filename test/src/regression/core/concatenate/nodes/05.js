@@ -3,7 +3,7 @@ import test from 'ava';
 import {Measures} from '@functional-abstraction/measure';
 import {nrepeat} from '@iterable-iterator/repeat';
 
-import {empty} from '../../../../../../src/index.js';
+import {empty} from '#module';
 
 const {COUNTER} = Measures;
 

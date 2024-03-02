@@ -1,0 +1,5 @@
+{
+  "imports": {
+    "#module": "./dist/index.module.js"
+  }
+}

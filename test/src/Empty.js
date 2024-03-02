@@ -4,7 +4,7 @@ import {Measures} from '@functional-abstraction/measure';
 
 import {gt} from '@functional-abstraction/predicate';
 
-import {empty} from '../../src/index.js';
+import {empty} from '#module';
 
 const {COUNTER} = Measures;
 

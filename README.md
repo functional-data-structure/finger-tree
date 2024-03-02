@@ -15,7 +15,7 @@ Parent is [@functional-data-structure/persistent](https://github.com/functional-
 
 [![License](https://img.shields.io/github/license/functional-data-structure/finger-tree.svg)](https://raw.githubusercontent.com/functional-data-structure/finger-tree/main/LICENSE)
 [![Version](https://img.shields.io/npm/v/@functional-data-structure/finger-tree.svg)](https://www.npmjs.org/package/@functional-data-structure/finger-tree)
-[![Tests](https://img.shields.io/github/workflow/status/functional-data-structure/finger-tree/ci:cover?event=push&label=tests)](https://github.com/functional-data-structure/finger-tree/actions/workflows/ci:cover.yml?query=branch:main)
+[![Tests](https://img.shields.io/github/workflow/status/functional-data-structure/finger-tree/ci?event=push&label=tests)](https://github.com/functional-data-structure/finger-tree/actions/workflows/ci.yml?query=branch:main)
 [![Dependencies](https://img.shields.io/librariesio/github/functional-data-structure/finger-tree.svg)](https://github.com/functional-data-structure/finger-tree/network/dependencies)
 [![GitHub issues](https://img.shields.io/github/issues/functional-data-structure/finger-tree.svg)](https://github.com/functional-data-structure/finger-tree/issues)
 [![Downloads](https://img.shields.io/npm/dm/@functional-data-structure/finger-tree.svg)](https://www.npmjs.org/package/@functional-data-structure/finger-tree)

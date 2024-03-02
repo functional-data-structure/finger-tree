@@ -7,7 +7,7 @@ import {range} from '@iterable-iterator/range';
 import {tee} from '@iterable-iterator/tee';
 import {reversed} from '@iterable-iterator/reversed';
 
-import {from} from '../../../src/index.js';
+import {from} from '#module';
 
 const {COUNTER} = Measures;
 

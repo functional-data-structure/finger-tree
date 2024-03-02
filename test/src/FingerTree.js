@@ -10,7 +10,7 @@ import {reversed} from '@iterable-iterator/reversed';
 
 import {gt} from '@functional-abstraction/predicate';
 
-import {empty, from} from '../../src/index.js';
+import {empty, from} from '#module';
 
 const {COUNTER} = Measures;
 
