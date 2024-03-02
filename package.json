@@ -219,7 +219,8 @@
       "unicorn/explicit-length-check": "off",
       "unicorn/no-array-push-push": "off",
       "unicorn/prefer-node-protocol": "off",
-      "unicorn/prefer-module": "off"
+      "unicorn/prefer-module": "off",
+      "unicorn/prevent-abbreviations": "off"
     },
     "overrides": [
       {
