@@ -1,7 +1,9 @@
 name: ci:lint-config
 on:
-  - push
-  - pull_request
+  push:
+    branches:
+      main
+  pull_request:
 jobs:
   cover:
     name: Continuous integration (config linting)
