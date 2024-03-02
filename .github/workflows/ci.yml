@@ -25,7 +25,7 @@ jobs:
         run: yarn build
 
       - name: Archive build 💽
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: dist
           path: dist
@@ -49,7 +49,7 @@ jobs:
           useRollingCache: true
 
       - name: Load build 💽
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: dist
           path: dist
