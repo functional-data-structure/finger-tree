@@ -28,6 +28,7 @@
     "unpkg",
     "exports",
     "files",
+    "publishConfig",
     "scripts",
     "bundledDependencies",
     "dependencies",
