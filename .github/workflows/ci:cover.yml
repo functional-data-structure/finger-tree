@@ -23,5 +23,6 @@ jobs:
 
       - name: Publish coverage report 📃
         uses: codecov/codecov-action@v3
+        continue-on-error: true
         with:
           fail_ci_if_error: true
