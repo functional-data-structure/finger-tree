@@ -87,7 +87,7 @@
     "@iterable-iterator/reversed": "1.0.0",
     "@iterable-iterator/tee": "2.0.0",
     "@js-library/commitlint-config": "0.0.4",
-    "@node-loader/babel": "2.0.1",
+    "@node-loader/babel": "2.1.0",
     "@node-loader/core": "2.0.0",
     "@node-loader/import-maps": "1.1.0",
     "argparse": "2.0.1",
