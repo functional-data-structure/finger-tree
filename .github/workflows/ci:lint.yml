@@ -1,0 +1,20 @@
+name: ci:lint
+on:
+  - push
+  - pull_request
+jobs:
+  cover:
+    name: Continuous integration (code linting)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v4
+
+      - name: Install 📦
+        uses: bahmutov/npm-install@v1
+        with:
+          install-command: yarn --frozen-lockfile --ignore-scripts
+          useRollingCache: true
+
+      - name: Lint 👕
+        run: yarn lint
