@@ -1,7 +1,6 @@
 import test from 'ava';
 
 import {Measures} from '@functional-abstraction/measure';
-
 import {list} from '@iterable-iterator/list';
 
 import {from} from '#module';

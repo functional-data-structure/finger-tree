@@ -1,4 +1,5 @@
 import assert from 'assert';
+
 import {One, Two, Three} from '../../1-digit/index.js';
 
 /**
@@ -13,11 +14,16 @@ import {One, Two, Three} from '../../1-digit/index.js';
 export function _digit(list) {
 	assert(Number.isInteger(list.length) && list.length >= 1 && list.length <= 3);
 	switch (list.length) {
-		case 1:
+		case 1: {
 			return new One(list[0]);
-		case 2:
+		}
+
+		case 2: {
 			return new Two(list[0], list[1]);
-		default:
+		}
+
+		default: {
 			return new Three(list[0], list[1], list[2]);
+		}
 	}
 }

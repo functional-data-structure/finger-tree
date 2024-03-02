@@ -1,11 +1,11 @@
 require('regenerator-runtime/runtime');
 
+const range = require('@iterable-iterator/range').range;
 const ArgumentParser = require('argparse').ArgumentParser;
 const Benchmark = require('benchmark');
-
-const range = require('@iterable-iterator/range').range;
-
 const qiao_fingertree = require('fingertree');
+
+// eslint-disable-next-line import/extensions
 const fds_finger_tree = require('..');
 
 const fromArray = qiao_fingertree.fromArray;

@@ -1,11 +1,10 @@
 import test from 'ava';
 
 import {Measures} from '@functional-abstraction/measure';
-
 import {list} from '@iterable-iterator/list';
 import {range} from '@iterable-iterator/range';
-import {tee} from '@iterable-iterator/tee';
 import {reversed} from '@iterable-iterator/reversed';
+import {tee} from '@iterable-iterator/tee';
 
 import {from} from '#module';
 

@@ -1,14 +1,12 @@
 import test from 'ava';
 
 import {Measures} from '@functional-abstraction/measure';
-
-import {map} from '@iterable-iterator/map';
-import {list} from '@iterable-iterator/list';
+import {gt} from '@functional-abstraction/predicate';
 import {_chain as chain} from '@iterable-iterator/chain';
+import {list} from '@iterable-iterator/list';
+import {map} from '@iterable-iterator/map';
 import {range} from '@iterable-iterator/range';
 import {reversed} from '@iterable-iterator/reversed';
-
-import {gt} from '@functional-abstraction/predicate';
 
 import {empty, from} from '#module';
 
@@ -30,7 +28,6 @@ test('FingerTree', (t) => {
 
 	let U = from(COUNTER, range(N));
 
-	// eslint-disable-next-line no-unused-vars
 	for (const _ of range(N)) {
 		U = U.push(T.head());
 		T = T.tail();

@@ -1,6 +1,8 @@
 console.time('prepare');
 require('regenerator-runtime/runtime');
 const ArgumentParser = require('argparse').ArgumentParser;
+
+// eslint-disable-next-line import/extensions
 const empty = require('..').empty;
 
 const COUNTER = {

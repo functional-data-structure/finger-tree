@@ -1,5 +1,7 @@
 require('regenerator-runtime/runtime');
 const range = require('@iterable-iterator/range').range;
+
+// eslint-disable-next-line import/extensions
 const fingertree = require('..');
 
 const empty = fingertree.empty;

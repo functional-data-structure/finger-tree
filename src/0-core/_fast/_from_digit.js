@@ -1,4 +1,5 @@
 import assert from 'assert';
+
 import {One, Two, Three, Four} from '../../1-digit/index.js';
 import {Empty, Single, Deep} from '../../3-tree/index.js';
 import {cache} from '../measure/index.js';

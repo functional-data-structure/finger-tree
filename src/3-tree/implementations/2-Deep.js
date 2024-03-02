@@ -1,5 +1,5 @@
 import assert from 'assert';
-import {Tree} from '../base/index.js';
+
 import {
 	_app3,
 	_from_digit,
@@ -11,6 +11,8 @@ import {
 } from '../../0-core/index.js';
 import {One, Two, Four} from '../../1-digit/index.js';
 import {delay, Lazy} from '../../4-lazy/index.js';
+import {Tree} from '../base/index.js';
+
 import {Empty} from './index.js';
 
 export function Deep(M, left, middle, right) {
