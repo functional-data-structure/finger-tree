@@ -104,7 +104,7 @@
     "fingertree": "0.1.7",
     "fixpack": "4.0.0",
     "husky": "9.1.7",
-    "lint-staged": "15.5.2",
+    "lint-staged": "16.0.0",
     "microbundle": "0.15.1",
     "microtime": "3.1.1",
     "np": "10.2.0",
